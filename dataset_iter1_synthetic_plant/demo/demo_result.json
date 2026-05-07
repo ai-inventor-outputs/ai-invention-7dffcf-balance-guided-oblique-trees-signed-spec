@@ -1,0 +1,13 @@
+{
+  "id": "data_id5_it1__opus",
+  "type": "code",
+  "title": "Synthetic Planted-Synergy Classification Datasets for Signed Spectral Clustering Validation",
+  "summary": "Demonstrates generation of synthetic classification datasets with planted synergistic feature modules for validating signed spectral clustering. The notebook generates 3 dataset variants (easy 2-module XOR, medium 4-module mixed XOR/AND, no-structure control), runs validation sanity checks (class balance, marginal MI, joint MI, redundancy correlation), and visualizes marginal MI per feature \u2014 showing that XOR features have near-zero marginal MI while interaction terms are highly informative. Uses 5000 samples per variant with 5-fold stratified CV splits. Mini demo data contains 50 balanced examples from the easy_2mod_xor variant.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_1/gen_art/data_id5_it1__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/data_id5_it1__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/data_id5_it1__opus/data_code_demo.ipynb"
+}

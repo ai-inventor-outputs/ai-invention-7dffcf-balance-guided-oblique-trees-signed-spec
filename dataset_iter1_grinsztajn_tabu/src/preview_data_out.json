@@ -1,0 +1,142 @@
+{
+  "datasets": [
+    {
+      "dataset": "electricity",
+      "examples": [
+        {
+          "input": "{\"date\":0.898987,\"period\":0.957447,\"nswprice\":0.068632,\"nswdemand\":0.568283,\"vicprice\":0.004456,\"vicdemand\":0.456499,\"transfer\":0.644737}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "date",
+            "period",
+            "nswprice"
+          ],
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 0,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\":0.867616,\"period\":0.234043,\"nswprice\":0.033716,\"nswdemand\":0.337102,\"vicprice\":0.001672,\"vicdemand\":0.329622,\"transfer\":0.84693}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "date",
+            "period",
+            "nswprice"
+          ],
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 1,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\":0.009159,\"period\":0.255319,\"nswprice\":0.059175,\"nswdemand\":0.185808,\"vicprice\":0.003467,\"vicdemand\":0.422915,\"transfer\":0.414912}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_feature_names": [
+            "date",
+            "period",
+            "nswprice"
+          ],
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 2,
+          "metadata_n_classes": 2
+        }
+      ]
+    },
+    {
+      "dataset": "adult",
+      "examples": [
+        {
+          "input": "{\"age\":90.0,\"fnlwgt\":77053.0,\"education.num\":9.0,\"capital.gain\":0.0,\"capital.loss\":4356.0,\"hours.per.week\":40.0}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "age",
+            "fnlwgt",
+            "education.num"
+          ],
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_scikit-learn/adult-census-income",
+          "metadata_row_index": 0,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"age\":82.0,\"fnlwgt\":132870.0,\"education.num\":9.0,\"capital.gain\":0.0,\"capital.loss\":4356.0,\"hours.per.week\":18.0}",
+          "output": "0",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "age",
+            "fnlwgt",
+            "education.num"
+          ],
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_scikit-learn/adult-census-income",
+          "metadata_row_index": 1,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"age\":66.0,\"fnlwgt\":186061.0,\"education.num\":10.0,\"capital.gain\":0.0,\"capital.loss\":4356.0,\"hours.per.week\":40.0}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "age",
+            "fnlwgt",
+            "education.num"
+          ],
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_scikit-learn/adult-census-income",
+          "metadata_row_index": 2,
+          "metadata_n_classes": 2
+        }
+      ]
+    },
+    {
+      "dataset": "california_housing",
+      "examples": [
+        {
+          "input": "{\"MedInc\":8.3252,\"HouseAge\":41.0,\"AveRooms\":6.984126984126984,\"AveBedrms\":1.0238095238095237,\"Population\":322.0,\"AveOccup\":2.5555555555555554,\"Latitude\":37.88,\"Longitude\":-122.23}",
+          "output": "4.526",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "MedInc",
+            "HouseAge",
+            "AveRooms"
+          ],
+          "metadata_task_type": "regression",
+          "metadata_source": "sklearn_california_housing",
+          "metadata_row_index": 0
+        },
+        {
+          "input": "{\"MedInc\":8.3014,\"HouseAge\":21.0,\"AveRooms\":6.238137082601054,\"AveBedrms\":0.9718804920913884,\"Population\":2401.0,\"AveOccup\":2.109841827768014,\"Latitude\":37.86,\"Longitude\":-122.22}",
+          "output": "3.585",
+          "metadata_fold": 3,
+          "metadata_feature_names": [
+            "MedInc",
+            "HouseAge",
+            "AveRooms"
+          ],
+          "metadata_task_type": "regression",
+          "metadata_source": "sklearn_california_housing",
+          "metadata_row_index": 1
+        },
+        {
+          "input": "{\"MedInc\":7.2574,\"HouseAge\":52.0,\"AveRooms\":8.288135593220339,\"AveBedrms\":1.073446327683616,\"Population\":496.0,\"AveOccup\":2.8022598870056497,\"Latitude\":37.85,\"Longitude\":-122.24}",
+          "output": "3.521",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "MedInc",
+            "HouseAge",
+            "AveRooms"
+          ],
+          "metadata_task_type": "regression",
+          "metadata_source": "sklearn_california_housing",
+          "metadata_row_index": 2
+        }
+      ]
+    }
+  ]
+}
