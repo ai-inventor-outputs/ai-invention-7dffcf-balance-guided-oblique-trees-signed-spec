@@ -1,0 +1,13 @@
+{
+  "id": "eval_id5_it3__opus",
+  "type": "code",
+  "title": "Comprehensive Statistical Analysis of Iteration 2 Results: Friedman/Nemenyi, Effect Sizes, Frustration Correlation, Subsampling Impact",
+  "summary": "Demonstrates a comprehensive statistical analysis pipeline for comparing tree-based methods (axis-aligned, random-oblique, signed-spectral FIGS) across 3 benchmark datasets. The notebook loads pre-computed experiment results from mini_demo_data.json (36 aggregated performance records, 4 synthetic variants, 6 subsampling stability points) and runs 9 analysis sections: Friedman/Nemenyi ranking tests, Cohen's d effect sizes, Bayesian signed-rank with bootstrap ROPE (10000 iterations), frustration-accuracy Spearman correlation with power analysis, subsampling noise-floor exponential decay model, interpretability Wilcoxon tests, California housing regression anomaly diagnosis, synthetic recovery method ranking, and success criteria evaluation. Produces a 4-panel visualization dashboard and summary table.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_3/gen_art/eval_id5_it3__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id5_it3__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id5_it3__opus/eval_code_demo.ipynb"
+}

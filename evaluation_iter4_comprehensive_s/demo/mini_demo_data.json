@@ -1,0 +1,967 @@
+{
+  "metrics_agg": {
+    "pooled_friedman_p": 0.02343351033614282,
+    "grand_mean_bacc_axis_aligned": 0.6979,
+    "grand_mean_bacc_random_oblique": 0.742,
+    "grand_mean_bacc_signed_spectral": 0.7071,
+    "grand_mean_bacc_unsigned_spectral": 0.7482,
+    "grand_mean_bacc_hard_threshold": 0.7485,
+    "module_acc_spearman_rho": 0.49694372668021414,
+    "module_acc_spearman_p": 5.758475230086727e-06,
+    "signed_vs_unsigned_hedges_g": -0.5259915101623803,
+    "xor_unsigned_vs_axis_cohens_d": 1.500372412046414,
+    "success_criteria_confirmed": 2,
+    "success_criteria_disconfirmed": 1,
+    "total_runtime_s": 1222.6
+  },
+  "method_ranking": {
+    "pooled": {
+      "friedman_chi2": 11.295774647887379,
+      "friedman_p": 0.02343351033614282,
+      "avg_ranks": {
+        "axis_aligned": 3.3,
+        "random_oblique": 3.3666666666666667,
+        "signed_spectral": 3.3333333333333335,
+        "unsigned_spectral": 2.6666666666666665,
+        "hard_threshold": 2.3333333333333335
+      },
+      "nemenyi_pairwise": {
+        "axis_aligned_vs_random_oblique": 0.9998408804828192,
+        "axis_aligned_vs_signed_spectral": 0.9999899618904603,
+        "axis_aligned_vs_unsigned_spectral": 0.5288969221697915,
+        "axis_aligned_vs_hard_threshold": 0.12417906241666954,
+        "random_oblique_vs_signed_spectral": 0.9999899618904603,
+        "random_oblique_vs_unsigned_spectral": 0.42481418542144533,
+        "random_oblique_vs_hard_threshold": 0.08382348785737437,
+        "signed_spectral_vs_unsigned_spectral": 0.4761337897022533,
+        "signed_spectral_vs_hard_threshold": 0.1024488973811728,
+        "unsigned_spectral_vs_hard_threshold": 0.925665231035643
+      },
+      "n_blocks": 30
+    },
+    "per_variant": {
+      "easy_2mod_xor": {
+        "friedman_chi2": 15.833333333333337,
+        "friedman_p": 0.003251156557844931,
+        "avg_ranks": {
+          "axis_aligned": 4.4,
+          "random_oblique": 1.8,
+          "signed_spectral": 4.6,
+          "unsigned_spectral": 2.2,
+          "hard_threshold": 2.0
+        },
+        "nemenyi_pairwise": {
+          "axis_aligned_vs_random_oblique": 0.07032412785494335,
+          "axis_aligned_vs_signed_spectral": 0.9996441964315063,
+          "axis_aligned_vs_unsigned_spectral": 0.17959696466629416,
+          "axis_aligned_vs_hard_threshold": 0.11523272364644754,
+          "random_oblique_vs_signed_spectral": 0.04087634015210595,
+          "random_oblique_vs_unsigned_spectral": 0.9946149695873462,
+          "random_oblique_vs_hard_threshold": 0.9996441964315063,
+          "signed_spectral_vs_unsigned_spectral": 0.11523272364644754,
+          "signed_spectral_vs_hard_threshold": 0.07032412785494335,
+          "unsigned_spectral_vs_hard_threshold": 0.9996441964315063
+        }
+      },
+      "medium_4mod_mixed": {
+        "friedman_chi2": 7.040000000000006,
+        "friedman_p": 0.1337894469588715,
+        "avg_ranks": {
+          "axis_aligned": 1.6,
+          "random_oblique": 4.2,
+          "signed_spectral": 3.2,
+          "unsigned_spectral": 3.2,
+          "hard_threshold": 2.8
+        },
+        "nemenyi_pairwise": {}
+      },
+      "overlapping_modules": {
+        "friedman_chi2": 10.464646464646464,
+        "friedman_p": 0.03328747567648819,
+        "avg_ranks": {
+          "axis_aligned": 1.8,
+          "random_oblique": 4.5,
+          "signed_spectral": 2.8,
+          "unsigned_spectral": 3.8,
+          "hard_threshold": 2.1
+        },
+        "nemenyi_pairwise": {
+          "axis_aligned_vs_random_oblique": 0.053938268693068614,
+          "axis_aligned_vs_signed_spectral": 0.8554745643109433,
+          "axis_aligned_vs_unsigned_spectral": 0.2658885848176523,
+          "axis_aligned_vs_hard_threshold": 0.9982400914368781,
+          "random_oblique_vs_signed_spectral": 0.43387799393354354,
+          "random_oblique_vs_unsigned_spectral": 0.9565436477413238,
+          "random_oblique_vs_hard_threshold": 0.11523272364644754,
+          "signed_spectral_vs_unsigned_spectral": 0.8554745643109433,
+          "signed_spectral_vs_hard_threshold": 0.9565436477413239,
+          "unsigned_spectral_vs_hard_threshold": 0.433877993933544
+        }
+      },
+      "no_structure_control": {
+        "friedman_chi2": 14.505050505050505,
+        "friedman_p": 0.005845950920073524,
+        "avg_ranks": {
+          "axis_aligned": 4.9,
+          "random_oblique": 2.6,
+          "signed_spectral": 3.7,
+          "unsigned_spectral": 1.4,
+          "hard_threshold": 2.4
+        },
+        "nemenyi_pairwise": {
+          "axis_aligned_vs_random_oblique": 0.14477468277747674,
+          "axis_aligned_vs_signed_spectral": 0.7514240977400495,
+          "axis_aligned_vs_unsigned_spectral": 0.004246221220126856,
+          "axis_aligned_vs_hard_threshold": 0.09057780384776293,
+          "random_oblique_vs_signed_spectral": 0.8066256029368726,
+          "random_oblique_vs_unsigned_spectral": 0.7514240977400495,
+          "random_oblique_vs_hard_threshold": 0.9996441964315063,
+          "signed_spectral_vs_unsigned_spectral": 0.14477468277747674,
+          "signed_spectral_vs_hard_threshold": 0.6912295420806518,
+          "unsigned_spectral_vs_hard_threshold": 0.8554745643109435
+        }
+      },
+      "hard_4mod_unequal": {
+        "friedman_chi2": 7.840000000000003,
+        "friedman_p": 0.09761818614230168,
+        "avg_ranks": {
+          "axis_aligned": 4.6,
+          "random_oblique": 2.8,
+          "signed_spectral": 3.2,
+          "unsigned_spectral": 2.2,
+          "hard_threshold": 2.2
+        },
+        "nemenyi_pairwise": {}
+      },
+      "highdim_8mod": {
+        "friedman_chi2": 6.702702702702713,
+        "friedman_p": 0.15245818778139528,
+        "avg_ranks": {
+          "axis_aligned": 2.5,
+          "random_oblique": 4.3,
+          "signed_spectral": 2.5,
+          "unsigned_spectral": 3.2,
+          "hard_threshold": 2.5
+        },
+        "nemenyi_pairwise": {}
+      }
+    },
+    "critical_difference": {
+      "cd_value": 1.1137013363854185,
+      "q_alpha_0_05": 2.728,
+      "method_ranks": {
+        "axis_aligned": 3.3,
+        "random_oblique": 3.3666666666666667,
+        "signed_spectral": 3.3333333333333335,
+        "unsigned_spectral": 2.6666666666666665,
+        "hard_threshold": 2.3333333333333335
+      }
+    }
+  },
+  "xor_analysis": {
+    "paired_tests": {
+      "unsigned_spectral_vs_axis_aligned": {
+        "t_stat": 3.3549347049011056,
+        "p_value": 0.02843820711196866,
+        "mean_diff": 0.12364000000000001,
+        "ci_lower": 0.021319179178906245,
+        "ci_upper": 0.22596082082109378
+      },
+      "unsigned_spectral_vs_random_oblique": {
+        "t_stat": -0.40741883515232163,
+        "p_value": 0.7045618501795617,
+        "mean_diff": -0.007919999999999993,
+        "ci_lower": -0.06189257891856009,
+        "ci_upper": 0.0460525789185601
+      },
+      "signed_spectral_vs_axis_aligned": {
+        "t_stat": -0.6733965557469553,
+        "p_value": 0.5376009334792361,
+        "mean_diff": -0.04365999999999996,
+        "ci_lower": -0.22367219676342787,
+        "ci_upper": 0.1363521967634279
+      },
+      "hard_threshold_vs_axis_aligned": {
+        "t_stat": 3.3379084161466883,
+        "p_value": 0.02889197517898154,
+        "mean_diff": 0.1244,
+        "ci_lower": 0.020925090557958895,
+        "ci_upper": 0.22787490944204108
+      }
+    },
+    "effect_sizes": {
+      "unsigned_spectral_vs_axis_aligned": {
+        "cohens_d": 1.500372412046414,
+        "interpretation": "large"
+      },
+      "unsigned_spectral_vs_random_oblique": {
+        "cohens_d": -0.18220324214287442,
+        "interpretation": "negligible"
+      },
+      "signed_spectral_vs_axis_aligned": {
+        "cohens_d": -0.30115209489288375,
+        "interpretation": "small"
+      },
+      "hard_threshold_vs_axis_aligned": {
+        "cohens_d": 1.4927580242345304,
+        "interpretation": "large"
+      }
+    },
+    "bootstrap_ci": {
+      "comparison": "unsigned_spectral_vs_axis_aligned",
+      "lower": 0.060780000000000035,
+      "upper": 0.1865,
+      "n_resamples": 10000
+    }
+  },
+  "pareto_analysis": {
+    "scatter_data": [
+      {
+        "method": "axis_aligned",
+        "variant": "easy_2mod_xor",
+        "accuracy": 0.6047,
+        "arity": 1.0
+      },
+      {
+        "method": "random_oblique",
+        "variant": "easy_2mod_xor",
+        "accuracy": 0.7362,
+        "arity": 1.96
+      },
+      {
+        "method": "signed_spectral",
+        "variant": "easy_2mod_xor",
+        "accuracy": 0.561,
+        "arity": 1.68
+      },
+      {
+        "method": "unsigned_spectral",
+        "variant": "easy_2mod_xor",
+        "accuracy": 0.7283,
+        "arity": 1.98
+      },
+      {
+        "method": "hard_threshold",
+        "variant": "easy_2mod_xor",
+        "accuracy": 0.7291,
+        "arity": 1.94
+      },
+      {
+        "method": "axis_aligned",
+        "variant": "medium_4mod_mixed",
+        "accuracy": 0.7646,
+        "arity": 1.0
+      },
+      {
+        "method": "random_oblique",
+        "variant": "medium_4mod_mixed",
+        "accuracy": 0.7533,
+        "arity": 2.9
+      },
+      {
+        "method": "signed_spectral",
+        "variant": "medium_4mod_mixed",
+        "accuracy": 0.756,
+        "arity": 2.4
+      },
+      {
+        "method": "unsigned_spectral",
+        "variant": "medium_4mod_mixed",
+        "accuracy": 0.7576,
+        "arity": 3.05
+      },
+      {
+        "method": "hard_threshold",
+        "variant": "medium_4mod_mixed",
+        "accuracy": 0.7625,
+        "arity": 2.9
+      },
+      {
+        "method": "axis_aligned",
+        "variant": "overlapping_modules",
+        "accuracy": 0.7611,
+        "arity": 1.0
+      },
+      {
+        "method": "random_oblique",
+        "variant": "overlapping_modules",
+        "accuracy": 0.747,
+        "arity": 2.4
+      },
+      {
+        "method": "signed_spectral",
+        "variant": "overlapping_modules",
+        "accuracy": 0.7574,
+        "arity": 2.4
+      },
+      {
+        "method": "unsigned_spectral",
+        "variant": "overlapping_modules",
+        "accuracy": 0.7516,
+        "arity": 2.7
+      },
+      {
+        "method": "hard_threshold",
+        "variant": "overlapping_modules",
+        "accuracy": 0.7608,
+        "arity": 2.95
+      },
+      {
+        "method": "axis_aligned",
+        "variant": "no_structure_control",
+        "accuracy": 0.8157,
+        "arity": 1.0
+      },
+      {
+        "method": "random_oblique",
+        "variant": "no_structure_control",
+        "accuracy": 0.8947,
+        "arity": 5.85
+      },
+      {
+        "method": "signed_spectral",
+        "variant": "no_structure_control",
+        "accuracy": 0.8718,
+        "arity": 3.45
+      },
+      {
+        "method": "unsigned_spectral",
+        "variant": "no_structure_control",
+        "accuracy": 0.9062,
+        "arity": 5.5
+      },
+      {
+        "method": "hard_threshold",
+        "variant": "no_structure_control",
+        "accuracy": 0.894,
+        "arity": 3.0
+      },
+      {
+        "method": "axis_aligned",
+        "variant": "hard_4mod_unequal",
+        "accuracy": 0.5561,
+        "arity": 1.0
+      },
+      {
+        "method": "random_oblique",
+        "variant": "hard_4mod_unequal",
+        "accuracy": 0.6462,
+        "arity": 3.8
+      },
+      {
+        "method": "signed_spectral",
+        "variant": "hard_4mod_unequal",
+        "accuracy": 0.6115,
+        "arity": 3.59
+      },
+      {
+        "method": "unsigned_spectral",
+        "variant": "hard_4mod_unequal",
+        "accuracy": 0.6703,
+        "arity": 3.24
+      },
+      {
+        "method": "hard_threshold",
+        "variant": "hard_4mod_unequal",
+        "accuracy": 0.6596,
+        "arity": 3.24
+      },
+      {
+        "method": "axis_aligned",
+        "variant": "highdim_8mod",
+        "accuracy": 0.6851,
+        "arity": 1.0
+      },
+      {
+        "method": "random_oblique",
+        "variant": "highdim_8mod",
+        "accuracy": 0.6744,
+        "arity": 1.77
+      },
+      {
+        "method": "signed_spectral",
+        "variant": "highdim_8mod",
+        "accuracy": 0.6851,
+        "arity": 1.0
+      },
+      {
+        "method": "unsigned_spectral",
+        "variant": "highdim_8mod",
+        "accuracy": 0.6755,
+        "arity": 1.7
+      },
+      {
+        "method": "hard_threshold",
+        "variant": "highdim_8mod",
+        "accuracy": 0.6851,
+        "arity": 1.0
+      }
+    ],
+    "efficiency_ratio": {
+      "axis_aligned": 0.6978833333333334,
+      "random_oblique": 0.23831905781584578,
+      "signed_spectral": 0.29220385674931126,
+      "unsigned_spectral": 0.24708310401761147,
+      "hard_threshold": 0.29880904856952767
+    },
+    "per_variant": {
+      "easy_2mod_xor": {
+        "pareto_optimal": [
+          "axis_aligned",
+          "random_oblique",
+          "hard_threshold"
+        ]
+      },
+      "medium_4mod_mixed": {
+        "pareto_optimal": [
+          "axis_aligned"
+        ]
+      },
+      "overlapping_modules": {
+        "pareto_optimal": [
+          "axis_aligned"
+        ]
+      },
+      "no_structure_control": {
+        "pareto_optimal": [
+          "axis_aligned",
+          "unsigned_spectral",
+          "hard_threshold"
+        ]
+      },
+      "hard_4mod_unequal": {
+        "pareto_optimal": [
+          "axis_aligned",
+          "unsigned_spectral"
+        ]
+      },
+      "highdim_8mod": {
+        "pareto_optimal": [
+          "axis_aligned",
+          "signed_spectral",
+          "hard_threshold"
+        ]
+      }
+    }
+  },
+  "signed_vs_unsigned": {
+    "per_variant": {
+      "easy_2mod_xor": {
+        "hedges_g": -1.8926081226878417,
+        "interpretation": "large",
+        "signed_mean": 0.561,
+        "unsigned_mean": 0.7283000000000001,
+        "diff": -0.1673
+      },
+      "medium_4mod_mixed": {
+        "hedges_g": -0.18195330330993054,
+        "interpretation": "negligible",
+        "signed_mean": 0.75596,
+        "unsigned_mean": 0.75762,
+        "diff": -0.0016599999999999948
+      },
+      "overlapping_modules": {
+        "hedges_g": 0.5834780463111265,
+        "interpretation": "medium",
+        "signed_mean": 0.75742,
+        "unsigned_mean": 0.75164,
+        "diff": 0.005780000000000007
+      },
+      "no_structure_control": {
+        "hedges_g": -0.972360161182584,
+        "interpretation": "large",
+        "signed_mean": 0.8718,
+        "unsigned_mean": 0.90622,
+        "diff": -0.034420000000000006
+      },
+      "hard_4mod_unequal": {
+        "hedges_g": -0.6244651771568539,
+        "interpretation": "medium",
+        "signed_mean": 0.61154,
+        "unsigned_mean": 0.67032,
+        "diff": -0.058780000000000054
+      },
+      "highdim_8mod": {
+        "hedges_g": 0.6383618879811843,
+        "interpretation": "medium",
+        "signed_mean": 0.68508,
+        "unsigned_mean": 0.67554,
+        "diff": 0.009539999999999993
+      }
+    },
+    "pooled": {
+      "pooled_g": -0.5259915101623803,
+      "interpretation": "medium",
+      "bootstrap_ci_lower": -0.7822717782242911,
+      "bootstrap_ci_upper": -0.28874861783316513
+    },
+    "win_loss_tie": {
+      "signed_wins": 2,
+      "unsigned_wins": 4,
+      "ties": 0
+    },
+    "overall_mean_diff": {
+      "mean": -0.04114,
+      "ci_lower": -0.06942016666666664,
+      "ci_upper": -0.015679666666666675
+    }
+  },
+  "no_structure_analysis": {
+    "method_accuracies": {
+      "axis_aligned": {
+        "mean": 0.8157,
+        "std": 0.0046717234507192085,
+        "per_fold": [
+          0.821,
+          0.8205,
+          0.8135,
+          0.8115,
+          0.812
+        ]
+      },
+      "random_oblique": {
+        "mean": 0.8947,
+        "std": 0.009718538984847496,
+        "per_fold": [
+          0.893,
+          0.906,
+          0.898,
+          0.8795,
+          0.897
+        ]
+      },
+      "signed_spectral": {
+        "mean": 0.8718,
+        "std": 0.035627587625322046,
+        "per_fold": [
+          0.885,
+          0.91,
+          0.8135,
+          0.872,
+          0.8785
+        ]
+      },
+      "unsigned_spectral": {
+        "mean": 0.90622,
+        "std": 0.008678536743022996,
+        "per_fold": [
+          0.9111,
+          0.9095,
+          0.8995,
+          0.895,
+          0.916
+        ]
+      },
+      "hard_threshold": {
+        "mean": 0.8939999999999999,
+        "std": 0.011554220008291352,
+        "per_fold": [
+          0.892,
+          0.913,
+          0.889,
+          0.894,
+          0.882
+        ]
+      }
+    },
+    "arity_comparison": {
+      "axis_aligned": 1.0,
+      "random_oblique": 5.85,
+      "signed_spectral": 3.45,
+      "unsigned_spectral": 5.5,
+      "hard_threshold": 3.0
+    }
+  },
+  "highdim_diagnosis": {
+    "method_comparison": {
+      "axis_aligned": {
+        "accuracy": 0.6851,
+        "arity": 1.0,
+        "path_length": 4.667
+      },
+      "random_oblique": {
+        "accuracy": 0.6744,
+        "arity": 1.77,
+        "path_length": 4.705
+      },
+      "signed_spectral": {
+        "accuracy": 0.6851,
+        "arity": 1.0,
+        "path_length": 4.667
+      },
+      "unsigned_spectral": {
+        "accuracy": 0.6755,
+        "arity": 1.7,
+        "path_length": 4.619
+      },
+      "hard_threshold": {
+        "accuracy": 0.6851,
+        "arity": 1.0,
+        "path_length": 4.667
+      }
+    },
+    "selected_k": {
+      "signed_spectral": [
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "unsigned_spectral": [
+        4,
+        2,
+        3,
+        2,
+        5
+      ]
+    }
+  },
+  "success_criteria": {
+    "criterion_1": {
+      "verdict": "DISCONFIRMED",
+      "signed_mean_ari": -0.117848,
+      "unsigned_mean_ari": 0.401352,
+      "hard_mean_ari": 0.229356,
+      "fraction_above_80": {
+        "signed_spectral": 0.0,
+        "unsigned_spectral": 0.36,
+        "hard_threshold": 0.2
+      },
+      "note": "Signed spectral (SPONGE) shows very poor module recovery across variants. Unsigned spectral achieves perfect recovery on easy_2mod_xor (ARI=1.0) but degrades on harder variants."
+    },
+    "criterion_2": {
+      "verdict": "INCONCLUSIVE",
+      "signed_mean_accuracy": 0.7071333333333333,
+      "random_mean_accuracy": 0.7419666666666666,
+      "accuracy_gap": -0.03483333333333327,
+      "signed_mean_arity": 2.42,
+      "random_mean_arity": 3.1133333333333333,
+      "arity_gap": -0.6933333333333334
+    },
+    "criterion_3": {
+      "verdict": "CONFIRMED",
+      "spearman_rho": -1.0,
+      "p_value": 0.0,
+      "n_datapoints": 6,
+      "note": "With n=6, significance at p<0.05 requires |rho| >= ~0.886"
+    },
+    "criterion_4": {
+      "verdict": "CONFIRMED",
+      "total_runtime_s": 1222.6,
+      "total_runtime_min": 20.376666666666665,
+      "threshold_min": 30
+    },
+    "disconfirmation_1": {
+      "verdict": "TRIGGERED",
+      "signed_mean_ari": -0.117848,
+      "threshold": 0.5
+    },
+    "disconfirmation_2": {
+      "verdict": "NOT_TRIGGERED",
+      "signed_grand_mean": 0.7071333333333333,
+      "unsigned_grand_mean": 0.74825,
+      "difference": -0.04111666666666669,
+      "note": "Unsigned outperforms signed, suggesting sign information hurts rather than helps"
+    },
+    "disconfirmation_3": {
+      "verdict": "NOT_TRIGGERED",
+      "frustration_correlation_p": 0.0
+    },
+    "overall_verdict": "Of 4 success criteria: 2 CONFIRMED, 1 DISCONFIRMED, 1 INCONCLUSIVE. Of 3 disconfirmation criteria: 1 TRIGGERED. The signed spectral (SPONGE) approach fails its primary module recovery criterion. Unsigned spectral shows promise but does not validate the signed information hypothesis. The pipeline meets runtime constraints. Frustration-benefit correlation is inconclusive with only 6 data points."
+  },
+  "datasets": [
+    {
+      "dataset": "easy_2mod_xor",
+      "examples": [
+        {
+          "input": "Evaluate method 'axis_aligned' on variant 'easy_2mod_xor' (n_features=10, n_modules=2, best_max_splits=20)",
+          "output": "mean_balanced_accuracy=0.6047, std=0.0865, mean_auc=0.6228, mean_arity=1.00",
+          "predict_method_result": "[axis_aligned] fold0=0.5062; fold1=0.6194; fold2=0.7091; fold3=0.5038; fold4=0.6848 | mean=0.6047 arity=1.00",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_method": "axis_aligned",
+          "metadata_best_max_splits": "20",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.6047,
+          "eval_std_balanced_accuracy": 0.0865,
+          "eval_mean_auc": 0.6228,
+          "eval_mean_split_arity": 1.0,
+          "eval_mean_path_length": 5.0
+        },
+        {
+          "input": "Evaluate method 'random_oblique' on variant 'easy_2mod_xor' (n_features=10, n_modules=2, best_max_splits=20)",
+          "output": "mean_balanced_accuracy=0.7362, std=0.0197, mean_auc=0.7689, mean_arity=1.96",
+          "predict_method_result": "[random_oblique] fold0=0.7518; fold1=0.7524; fold2=0.7224; fold3=0.7505; fold4=0.7040 | mean=0.7362 arity=1.96",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_method": "random_oblique",
+          "metadata_best_max_splits": "20",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.7362,
+          "eval_std_balanced_accuracy": 0.0197,
+          "eval_mean_auc": 0.7689,
+          "eval_mean_split_arity": 1.96,
+          "eval_mean_path_length": 4.934
+        },
+        {
+          "input": "Evaluate method 'signed_spectral' on variant 'easy_2mod_xor' (n_features=10, n_modules=2, best_max_splits=20)",
+          "output": "mean_balanced_accuracy=0.5610, std=0.0609, mean_auc=0.5898, mean_arity=1.68",
+          "predict_method_result": "[signed_spectral] fold0=0.5150; fold1=0.5957; fold2=0.5157; fold3=0.6654; fold4=0.5132 | mean=0.5610 arity=1.68",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_method": "signed_spectral",
+          "metadata_best_max_splits": "20",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.561,
+          "eval_std_balanced_accuracy": 0.0609,
+          "eval_mean_auc": 0.5898,
+          "eval_mean_split_arity": 1.68,
+          "eval_mean_path_length": 5.01,
+          "eval_mean_module_ari": -0.4,
+          "eval_mean_module_jaccard": 0.00952
+        }
+      ]
+    },
+    {
+      "dataset": "medium_4mod_mixed",
+      "examples": [
+        {
+          "input": "Evaluate method 'axis_aligned' on variant 'medium_4mod_mixed' (n_features=18, n_modules=4, best_max_splits=10)",
+          "output": "mean_balanced_accuracy=0.7646, std=0.0080, mean_auc=0.7754, mean_arity=1.00",
+          "predict_method_result": "[axis_aligned] fold0=0.7535; fold1=0.7591; fold2=0.7631; fold3=0.7746; fold4=0.7726 | mean=0.7646 arity=1.00",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_method": "axis_aligned",
+          "metadata_best_max_splits": "10",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.7646,
+          "eval_std_balanced_accuracy": 0.008,
+          "eval_mean_auc": 0.7754,
+          "eval_mean_split_arity": 1.0,
+          "eval_mean_path_length": 3.654
+        },
+        {
+          "input": "Evaluate method 'random_oblique' on variant 'medium_4mod_mixed' (n_features=18, n_modules=4, best_max_splits=20)",
+          "output": "mean_balanced_accuracy=0.7533, std=0.0076, mean_auc=0.7777, mean_arity=2.90",
+          "predict_method_result": "[random_oblique] fold0=0.7425; fold1=0.7503; fold2=0.7527; fold3=0.7659; fold4=0.7549 | mean=0.7533 arity=2.90",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_method": "random_oblique",
+          "metadata_best_max_splits": "20",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.7533,
+          "eval_std_balanced_accuracy": 0.0076,
+          "eval_mean_auc": 0.7777,
+          "eval_mean_split_arity": 2.9,
+          "eval_mean_path_length": 4.695
+        },
+        {
+          "input": "Evaluate method 'signed_spectral' on variant 'medium_4mod_mixed' (n_features=18, n_modules=4, best_max_splits=20)",
+          "output": "mean_balanced_accuracy=0.7560, std=0.0085, mean_auc=0.7830, mean_arity=2.40",
+          "predict_method_result": "[signed_spectral] fold0=0.7487; fold1=0.7430; fold2=0.7613; fold3=0.7619; fold4=0.7649 | mean=0.7560 arity=2.40",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_method": "signed_spectral",
+          "metadata_best_max_splits": "20",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.756,
+          "eval_std_balanced_accuracy": 0.0085,
+          "eval_mean_auc": 0.783,
+          "eval_mean_split_arity": 2.4,
+          "eval_mean_path_length": 4.657,
+          "eval_mean_module_ari": -0.10613999999999998,
+          "eval_mean_module_jaccard": 0.01568
+        }
+      ]
+    },
+    {
+      "dataset": "overlapping_modules",
+      "examples": [
+        {
+          "input": "Evaluate method 'axis_aligned' on variant 'overlapping_modules' (n_features=18, n_modules=4, best_max_splits=15)",
+          "output": "mean_balanced_accuracy=0.7611, std=0.0095, mean_auc=0.7873, mean_arity=1.00",
+          "predict_method_result": "[axis_aligned] fold0=0.7560; fold1=0.7516; fold2=0.7531; fold3=0.7749; fold4=0.7701 | mean=0.7611 arity=1.00",
+          "metadata_variant": "overlapping_modules",
+          "metadata_method": "axis_aligned",
+          "metadata_best_max_splits": "15",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.7611,
+          "eval_std_balanced_accuracy": 0.0095,
+          "eval_mean_auc": 0.7873,
+          "eval_mean_split_arity": 1.0,
+          "eval_mean_path_length": 4.475
+        },
+        {
+          "input": "Evaluate method 'random_oblique' on variant 'overlapping_modules' (n_features=18, n_modules=4, best_max_splits=20)",
+          "output": "mean_balanced_accuracy=0.7470, std=0.0099, mean_auc=0.7717, mean_arity=2.40",
+          "predict_method_result": "[random_oblique] fold0=0.7382; fold1=0.7456; fold2=0.7367; fold3=0.7503; fold4=0.7642 | mean=0.7470 arity=2.40",
+          "metadata_variant": "overlapping_modules",
+          "metadata_method": "random_oblique",
+          "metadata_best_max_splits": "20",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.747,
+          "eval_std_balanced_accuracy": 0.0099,
+          "eval_mean_auc": 0.7717,
+          "eval_mean_split_arity": 2.4,
+          "eval_mean_path_length": 4.657
+        },
+        {
+          "input": "Evaluate method 'signed_spectral' on variant 'overlapping_modules' (n_features=18, n_modules=4, best_max_splits=20)",
+          "output": "mean_balanced_accuracy=0.7574, std=0.0058, mean_auc=0.7773, mean_arity=2.40",
+          "predict_method_result": "[signed_spectral] fold0=0.7477; fold1=0.7556; fold2=0.7593; fold3=0.7655; fold4=0.7590 | mean=0.7574 arity=2.40",
+          "metadata_variant": "overlapping_modules",
+          "metadata_method": "signed_spectral",
+          "metadata_best_max_splits": "20",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.7574,
+          "eval_std_balanced_accuracy": 0.0058,
+          "eval_mean_auc": 0.7773,
+          "eval_mean_split_arity": 2.4,
+          "eval_mean_path_length": 4.714,
+          "eval_mean_module_ari": -0.06632,
+          "eval_mean_module_jaccard": 0.037919999999999995
+        }
+      ]
+    },
+    {
+      "dataset": "no_structure_control",
+      "examples": [
+        {
+          "input": "Evaluate method 'axis_aligned' on variant 'no_structure_control' (n_features=20, n_modules=0, best_max_splits=20)",
+          "output": "mean_balanced_accuracy=0.8157, std=0.0042, mean_auc=0.8821, mean_arity=1.00",
+          "predict_method_result": "[axis_aligned] fold0=0.8210; fold1=0.8205; fold2=0.8135; fold3=0.8115; fold4=0.8120 | mean=0.8157 arity=1.00",
+          "metadata_variant": "no_structure_control",
+          "metadata_method": "axis_aligned",
+          "metadata_best_max_splits": "20",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.8157,
+          "eval_std_balanced_accuracy": 0.0042,
+          "eval_mean_auc": 0.8821,
+          "eval_mean_split_arity": 1.0,
+          "eval_mean_path_length": 4.629
+        },
+        {
+          "input": "Evaluate method 'random_oblique' on variant 'no_structure_control' (n_features=20, n_modules=0, best_max_splits=20)",
+          "output": "mean_balanced_accuracy=0.8947, std=0.0087, mean_auc=0.9514, mean_arity=5.85",
+          "predict_method_result": "[random_oblique] fold0=0.8930; fold1=0.9060; fold2=0.8980; fold3=0.8795; fold4=0.8970 | mean=0.8947 arity=5.85",
+          "metadata_variant": "no_structure_control",
+          "metadata_method": "random_oblique",
+          "metadata_best_max_splits": "20",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.8947,
+          "eval_std_balanced_accuracy": 0.0087,
+          "eval_mean_auc": 0.9514,
+          "eval_mean_split_arity": 5.85,
+          "eval_mean_path_length": 4.629
+        },
+        {
+          "input": "Evaluate method 'signed_spectral' on variant 'no_structure_control' (n_features=20, n_modules=0, best_max_splits=20)",
+          "output": "mean_balanced_accuracy=0.8718, std=0.0319, mean_auc=0.9294, mean_arity=3.45",
+          "predict_method_result": "[signed_spectral] fold0=0.8850; fold1=0.9100; fold2=0.8135; fold3=0.8720; fold4=0.8785 | mean=0.8718 arity=3.45",
+          "metadata_variant": "no_structure_control",
+          "metadata_method": "signed_spectral",
+          "metadata_best_max_splits": "20",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.8718,
+          "eval_std_balanced_accuracy": 0.0319,
+          "eval_mean_auc": 0.9294,
+          "eval_mean_split_arity": 3.45,
+          "eval_mean_path_length": 4.6
+        }
+      ]
+    },
+    {
+      "dataset": "hard_4mod_unequal",
+      "examples": [
+        {
+          "input": "Evaluate method 'axis_aligned' on variant 'hard_4mod_unequal' (n_features=31, n_modules=4, best_max_splits=15)",
+          "output": "mean_balanced_accuracy=0.5561, std=0.0216, mean_auc=0.5760, mean_arity=1.00",
+          "predict_method_result": "[axis_aligned] fold0=0.5678; fold1=0.5904; fold2=0.5392; fold3=0.5290; fold4=0.5541 | mean=0.5561 arity=1.00",
+          "metadata_variant": "hard_4mod_unequal",
+          "metadata_method": "axis_aligned",
+          "metadata_best_max_splits": "15",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.5561,
+          "eval_std_balanced_accuracy": 0.0216,
+          "eval_mean_auc": 0.576,
+          "eval_mean_split_arity": 1.0,
+          "eval_mean_path_length": 4.625
+        },
+        {
+          "input": "Evaluate method 'random_oblique' on variant 'hard_4mod_unequal' (n_features=31, n_modules=4, best_max_splits=20)",
+          "output": "mean_balanced_accuracy=0.6462, std=0.0602, mean_auc=0.6768, mean_arity=3.80",
+          "predict_method_result": "[random_oblique] fold0=0.7058; fold1=0.5795; fold2=0.5705; fold3=0.6655; fold4=0.7098 | mean=0.6462 arity=3.80",
+          "metadata_variant": "hard_4mod_unequal",
+          "metadata_method": "random_oblique",
+          "metadata_best_max_splits": "20",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.6462,
+          "eval_std_balanced_accuracy": 0.0602,
+          "eval_mean_auc": 0.6768,
+          "eval_mean_split_arity": 3.8,
+          "eval_mean_path_length": 4.8
+        },
+        {
+          "input": "Evaluate method 'signed_spectral' on variant 'hard_4mod_unequal' (n_features=31, n_modules=4, best_max_splits=20)",
+          "output": "mean_balanced_accuracy=0.6115, std=0.0681, mean_auc=0.6352, mean_arity=3.59",
+          "predict_method_result": "[signed_spectral] fold0=0.7355; fold1=0.6234; fold2=0.5385; fold3=0.5664; fold4=0.5939 | mean=0.6115 arity=3.59",
+          "metadata_variant": "hard_4mod_unequal",
+          "metadata_method": "signed_spectral",
+          "metadata_best_max_splits": "20",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.6115,
+          "eval_std_balanced_accuracy": 0.0681,
+          "eval_mean_auc": 0.6352,
+          "eval_mean_split_arity": 3.59,
+          "eval_mean_path_length": 4.867,
+          "eval_mean_module_ari": -0.010320000000000001,
+          "eval_mean_module_jaccard": 0.0393
+        }
+      ]
+    },
+    {
+      "dataset": "highdim_8mod",
+      "examples": [
+        {
+          "input": "Evaluate method 'axis_aligned' on variant 'highdim_8mod' (n_features=200, n_modules=8, best_max_splits=20)",
+          "output": "mean_balanced_accuracy=0.6851, std=0.0031, mean_auc=0.7073, mean_arity=1.00",
+          "predict_method_result": "[axis_aligned] fold0=0.6883; fold1=0.6884; fold2=0.6852; fold3=0.6831; fold4=0.6804 | mean=0.6851 arity=1.00",
+          "metadata_variant": "highdim_8mod",
+          "metadata_method": "axis_aligned",
+          "metadata_best_max_splits": "20",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.6851,
+          "eval_std_balanced_accuracy": 0.0031,
+          "eval_mean_auc": 0.7073,
+          "eval_mean_split_arity": 1.0,
+          "eval_mean_path_length": 4.667
+        },
+        {
+          "input": "Evaluate method 'random_oblique' on variant 'highdim_8mod' (n_features=200, n_modules=8, best_max_splits=20)",
+          "output": "mean_balanced_accuracy=0.6744, std=0.0039, mean_auc=0.6984, mean_arity=1.77",
+          "predict_method_result": "[random_oblique] fold0=0.6700; fold1=0.6723; fold2=0.6720; fold3=0.6774; fold4=0.6804 | mean=0.6744 arity=1.77",
+          "metadata_variant": "highdim_8mod",
+          "metadata_method": "random_oblique",
+          "metadata_best_max_splits": "20",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.6744,
+          "eval_std_balanced_accuracy": 0.0039,
+          "eval_mean_auc": 0.6984,
+          "eval_mean_split_arity": 1.77,
+          "eval_mean_path_length": 4.705
+        },
+        {
+          "input": "Evaluate method 'signed_spectral' on variant 'highdim_8mod' (n_features=200, n_modules=8, best_max_splits=20)",
+          "output": "mean_balanced_accuracy=0.6851, std=0.0031, mean_auc=0.7073, mean_arity=1.00",
+          "predict_method_result": "[signed_spectral] fold0=0.6883; fold1=0.6884; fold2=0.6852; fold3=0.6831; fold4=0.6804 | mean=0.6851 arity=1.00",
+          "metadata_variant": "highdim_8mod",
+          "metadata_method": "signed_spectral",
+          "metadata_best_max_splits": "20",
+          "metadata_n_folds": "5",
+          "eval_mean_balanced_accuracy": 0.6851,
+          "eval_std_balanced_accuracy": 0.0031,
+          "eval_mean_auc": 0.7073,
+          "eval_mean_split_arity": 1.0,
+          "eval_mean_path_length": 4.667,
+          "eval_mean_module_ari": -0.006459999999999999,
+          "eval_mean_module_jaccard": 0.0012000000000000001
+        }
+      ]
+    }
+  ]
+}

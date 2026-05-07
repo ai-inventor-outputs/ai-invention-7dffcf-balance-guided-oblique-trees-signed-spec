@@ -1,0 +1,630 @@
+{
+  "description": "Mini demo data for comprehensive statistical analysis notebook",
+  "aggregated_results": [
+    {
+      "dataset": "electricity",
+      "method": "axis_aligned_figs",
+      "max_splits": 5,
+      "task_type": "classification",
+      "avg_split_arity_mean": 1.0,
+      "avg_path_length_mean": 2.142857142857143,
+      "fit_time_sec_mean": 0.6762344837188721,
+      "balanced_accuracy_mean": 0.7323384936395074,
+      "balanced_accuracy_std": 0.005956441196659378
+    },
+    {
+      "dataset": "electricity",
+      "method": "axis_aligned_figs",
+      "max_splits": 10,
+      "task_type": "classification",
+      "avg_split_arity_mean": 1.0,
+      "avg_path_length_mean": 3.5,
+      "fit_time_sec_mean": 0.5750960350036621,
+      "balanced_accuracy_mean": 0.7868693684686667,
+      "balanced_accuracy_std": 0.0028004758438554857
+    },
+    {
+      "dataset": "electricity",
+      "method": "axis_aligned_figs",
+      "max_splits": 15,
+      "task_type": "classification",
+      "avg_split_arity_mean": 1.0,
+      "avg_path_length_mean": 4.482352941176471,
+      "fit_time_sec_mean": 0.9030701637268066,
+      "balanced_accuracy_mean": 0.7942503324944188,
+      "balanced_accuracy_std": 0.0007216178343806508
+    },
+    {
+      "dataset": "electricity",
+      "method": "axis_aligned_figs",
+      "max_splits": 20,
+      "task_type": "classification",
+      "avg_split_arity_mean": 1.0,
+      "avg_path_length_mean": 4.637154150197629,
+      "fit_time_sec_mean": 1.2786692142486573,
+      "balanced_accuracy_mean": 0.7970062599741571,
+      "balanced_accuracy_std": 0.0024114398537209013
+    },
+    {
+      "dataset": "electricity",
+      "method": "random_oblique_figs",
+      "max_splits": 5,
+      "task_type": "classification",
+      "avg_split_arity_mean": 2.2800000000000002,
+      "avg_path_length_mean": 1.55,
+      "fit_time_sec_mean": 0.9098655223846436,
+      "balanced_accuracy_mean": 0.729270310531683,
+      "balanced_accuracy_std": 0.00789469082001881
+    },
+    {
+      "dataset": "electricity",
+      "method": "random_oblique_figs",
+      "max_splits": 10,
+      "task_type": "classification",
+      "avg_split_arity_mean": 1.92,
+      "avg_path_length_mean": 1.9923809523809524,
+      "fit_time_sec_mean": 2.6769404888153074,
+      "balanced_accuracy_mean": 0.7813839806593901,
+      "balanced_accuracy_std": 0.007400726283597339
+    },
+    {
+      "dataset": "electricity",
+      "method": "random_oblique_figs",
+      "max_splits": 15,
+      "task_type": "classification",
+      "avg_split_arity_mean": 1.9333333333333331,
+      "avg_path_length_mean": 2.294761904761905,
+      "fit_time_sec_mean": 4.968115377426147,
+      "balanced_accuracy_mean": 0.7867385121219278,
+      "balanced_accuracy_std": 0.006505514520898472
+    },
+    {
+      "dataset": "electricity",
+      "method": "random_oblique_figs",
+      "max_splits": 20,
+      "task_type": "classification",
+      "avg_split_arity_mean": 1.86,
+      "avg_path_length_mean": 2.528968660968661,
+      "fit_time_sec_mean": 7.687028551101685,
+      "balanced_accuracy_mean": 0.7898072424066707,
+      "balanced_accuracy_std": 0.0044042803175840875
+    },
+    {
+      "dataset": "electricity",
+      "method": "signed_spectral_figs",
+      "max_splits": 5,
+      "task_type": "classification",
+      "avg_split_arity_mean": 1.8,
+      "avg_path_length_mean": 1.625,
+      "fit_time_sec_mean": 0.7624236583709717,
+      "balanced_accuracy_mean": 0.7605916630773661,
+      "balanced_accuracy_std": 0.0069607578501357775
+    },
+    {
+      "dataset": "electricity",
+      "method": "signed_spectral_figs",
+      "max_splits": 10,
+      "task_type": "classification",
+      "avg_split_arity_mean": 1.72,
+      "avg_path_length_mean": 2.2876190476190477,
+      "fit_time_sec_mean": 2.18204026222229,
+      "balanced_accuracy_mean": 0.7777980736129944,
+      "balanced_accuracy_std": 0.003897145291448308
+    },
+    {
+      "dataset": "electricity",
+      "method": "signed_spectral_figs",
+      "max_splits": 15,
+      "task_type": "classification",
+      "avg_split_arity_mean": 1.64,
+      "avg_path_length_mean": 2.4676691729323306,
+      "fit_time_sec_mean": 3.968971014022827,
+      "balanced_accuracy_mean": 0.7840350528289182,
+      "balanced_accuracy_std": 0.005364115478239001
+    },
+    {
+      "dataset": "electricity",
+      "method": "signed_spectral_figs",
+      "max_splits": 20,
+      "task_type": "classification",
+      "avg_split_arity_mean": 1.6200000000000003,
+      "avg_path_length_mean": 2.563202279202279,
+      "fit_time_sec_mean": 6.290821361541748,
+      "balanced_accuracy_mean": 0.7887402811921918,
+      "balanced_accuracy_std": 0.008474443741943774
+    },
+    {
+      "dataset": "adult",
+      "method": "axis_aligned_figs",
+      "max_splits": 5,
+      "task_type": "classification",
+      "avg_split_arity_mean": 1.0,
+      "avg_path_length_mean": 1.4444444444444444,
+      "fit_time_sec_mean": 0.200600528717041,
+      "balanced_accuracy_mean": 0.6961658150794893,
+      "balanced_accuracy_std": 0.003327935437817964
+    },
+    {
+      "dataset": "adult",
+      "method": "axis_aligned_figs",
+      "max_splits": 10,
+      "task_type": "classification",
+      "avg_split_arity_mean": 1.0,
+      "avg_path_length_mean": 2.3219780219780217,
+      "fit_time_sec_mean": 0.4749914646148682,
+      "balanced_accuracy_mean": 0.6974268276385532,
+      "balanced_accuracy_std": 0.003173509207853686
+    },
+    {
+      "dataset": "adult",
+      "method": "axis_aligned_figs",
+      "max_splits": 15,
+      "task_type": "classification",
+      "avg_split_arity_mean": 1.0,
+      "avg_path_length_mean": 2.8912280701754387,
+      "fit_time_sec_mean": 0.7707880020141602,
+      "balanced_accuracy_mean": 0.7022939369133459,
+      "balanced_accuracy_std": 0.00205336801814766
+    },
+    {
+      "dataset": "adult",
+      "method": "axis_aligned_figs",
+      "max_splits": 20,
+      "task_type": "classification",
+      "avg_split_arity_mean": 1.0,
+      "avg_path_length_mean": 3.172463768115942,
+      "fit_time_sec_mean": 1.0905139923095704,
+      "balanced_accuracy_mean": 0.7005909894726979,
+      "balanced_accuracy_std": 0.004250836188570957
+    },
+    {
+      "dataset": "adult",
+      "method": "random_oblique_figs",
+      "max_splits": 5,
+      "task_type": "classification",
+      "avg_split_arity_mean": 2.12,
+      "avg_path_length_mean": 1.4333333333333333,
+      "fit_time_sec_mean": 0.7641657829284668,
+      "balanced_accuracy_mean": 0.6622491378997905,
+      "balanced_accuracy_std": 0.0358691304588675
+    },
+    {
+      "dataset": "adult",
+      "method": "random_oblique_figs",
+      "max_splits": 10,
+      "task_type": "classification",
+      "avg_split_arity_mean": 2.2,
+      "avg_path_length_mean": 1.7085714285714286,
+      "fit_time_sec_mean": 2.3293816089630126,
+      "balanced_accuracy_mean": 0.6931060384994183,
+      "balanced_accuracy_std": 0.029102266027792298
+    },
+    {
+      "dataset": "adult",
+      "method": "random_oblique_figs",
+      "max_splits": 15,
+      "task_type": "classification",
+      "avg_split_arity_mean": 2.146666666666667,
+      "avg_path_length_mean": 1.9994759626338574,
+      "fit_time_sec_mean": 4.4486932277679445,
+      "balanced_accuracy_mean": 0.7008062323622575,
+      "balanced_accuracy_std": 0.006064928130139067
+    },
+    {
+      "dataset": "adult",
+      "method": "random_oblique_figs",
+      "max_splits": 20,
+      "task_type": "classification",
+      "avg_split_arity_mean": 2.15,
+      "avg_path_length_mean": 2.3355820105820104,
+      "fit_time_sec_mean": 6.735204744338989,
+      "balanced_accuracy_mean": 0.6999572556843934,
+      "balanced_accuracy_std": 0.005928061607587085
+    },
+    {
+      "dataset": "adult",
+      "method": "signed_spectral_figs",
+      "max_splits": 5,
+      "task_type": "classification",
+      "avg_split_arity_mean": 2.2800000000000002,
+      "avg_path_length_mean": 1.5,
+      "fit_time_sec_mean": 0.6609038829803466,
+      "balanced_accuracy_mean": 0.6410926456383292,
+      "balanced_accuracy_std": 0.03693641219769049
+    },
+    {
+      "dataset": "adult",
+      "method": "signed_spectral_figs",
+      "max_splits": 10,
+      "task_type": "classification",
+      "avg_split_arity_mean": 2.2399999999999998,
+      "avg_path_length_mean": 1.8266666666666667,
+      "fit_time_sec_mean": 2.207506227493286,
+      "balanced_accuracy_mean": 0.7147738260036978,
+      "balanced_accuracy_std": 0.014583103300018144
+    },
+    {
+      "dataset": "adult",
+      "method": "signed_spectral_figs",
+      "max_splits": 15,
+      "task_type": "classification",
+      "avg_split_arity_mean": 2.24,
+      "avg_path_length_mean": 1.9044984001505738,
+      "fit_time_sec_mean": 4.600879287719726,
+      "balanced_accuracy_mean": 0.6982057932048054,
+      "balanced_accuracy_std": 0.02734353942622669
+    },
+    {
+      "dataset": "adult",
+      "method": "signed_spectral_figs",
+      "max_splits": 20,
+      "task_type": "classification",
+      "avg_split_arity_mean": 2.1100000000000003,
+      "avg_path_length_mean": 2.0879268241337208,
+      "fit_time_sec_mean": 7.154476737976074,
+      "balanced_accuracy_mean": 0.6874712154441684,
+      "balanced_accuracy_std": 0.022004452925396923
+    },
+    {
+      "dataset": "california_housing",
+      "method": "axis_aligned_figs",
+      "max_splits": 5,
+      "task_type": "regression",
+      "avg_split_arity_mean": 1.0,
+      "avg_path_length_mean": 1.5,
+      "fit_time_sec_mean": 0.17779765129089356,
+      "r2_mean": 0.5350612194705215,
+      "r2_std": 0.01316283378268477
+    },
+    {
+      "dataset": "california_housing",
+      "method": "axis_aligned_figs",
+      "max_splits": 10,
+      "task_type": "regression",
+      "avg_split_arity_mean": 1.0,
+      "avg_path_length_mean": 2.5384615384615383,
+      "fit_time_sec_mean": 0.43858928680419923,
+      "r2_mean": 0.6492403557242626,
+      "r2_std": 0.010906515271316013
+    },
+    {
+      "dataset": "california_housing",
+      "method": "axis_aligned_figs",
+      "max_splits": 15,
+      "task_type": "regression",
+      "avg_split_arity_mean": 1.0,
+      "avg_path_length_mean": 3.0,
+      "fit_time_sec_mean": 0.7236913204193115,
+      "r2_mean": 0.6907495897132041,
+      "r2_std": 0.012339840699839713
+    },
+    {
+      "dataset": "california_housing",
+      "method": "axis_aligned_figs",
+      "max_splits": 20,
+      "task_type": "regression",
+      "avg_split_arity_mean": 1.0,
+      "avg_path_length_mean": 3.443478260869565,
+      "fit_time_sec_mean": 1.0177865028381348,
+      "r2_mean": 0.7191310062301726,
+      "r2_std": 0.01415660990832795
+    },
+    {
+      "dataset": "california_housing",
+      "method": "random_oblique_figs",
+      "max_splits": 5,
+      "task_type": "regression",
+      "avg_split_arity_mean": 3.4,
+      "avg_path_length_mean": 1.5,
+      "fit_time_sec_mean": 0.6008321285247803,
+      "r2_mean": 0.6137237783561474,
+      "r2_std": 0.014521718495083373
+    },
+    {
+      "dataset": "california_housing",
+      "method": "random_oblique_figs",
+      "max_splits": 10,
+      "task_type": "regression",
+      "avg_split_arity_mean": 3.6400000000000006,
+      "avg_path_length_mean": 1.5125,
+      "fit_time_sec_mean": 2.295430326461792,
+      "r2_mean": 0.5251232692241581,
+      "r2_std": 0.030740889369063867
+    },
+    {
+      "dataset": "california_housing",
+      "method": "random_oblique_figs",
+      "max_splits": 15,
+      "task_type": "regression",
+      "avg_split_arity_mean": 3.7599999999999993,
+      "avg_path_length_mean": 1.7363636363636363,
+      "fit_time_sec_mean": 4.405670785903931,
+      "r2_mean": 0.6166735297631556,
+      "r2_std": 0.022107926569128047
+    },
+    {
+      "dataset": "california_housing",
+      "method": "random_oblique_figs",
+      "max_splits": 20,
+      "task_type": "regression",
+      "avg_split_arity_mean": 3.55,
+      "avg_path_length_mean": 1.8628078817733993,
+      "fit_time_sec_mean": 7.251739978790283,
+      "r2_mean": 0.6093234472879939,
+      "r2_std": 0.01655355831204619
+    },
+    {
+      "dataset": "california_housing",
+      "method": "signed_spectral_figs",
+      "max_splits": 5,
+      "task_type": "regression",
+      "avg_split_arity_mean": 3.6400000000000006,
+      "avg_path_length_mean": 1.4444444444444444,
+      "fit_time_sec_mean": 0.6141272068023682,
+      "r2_mean": 0.49563084324094087,
+      "r2_std": 0.09802061526732653
+    },
+    {
+      "dataset": "california_housing",
+      "method": "signed_spectral_figs",
+      "max_splits": 10,
+      "task_type": "regression",
+      "avg_split_arity_mean": 3.1399999999999997,
+      "avg_path_length_mean": 1.6333333333333335,
+      "fit_time_sec_mean": 1.9093674182891847,
+      "r2_mean": 0.5794299207379494,
+      "r2_std": 0.037113523781568826
+    },
+    {
+      "dataset": "california_housing",
+      "method": "signed_spectral_figs",
+      "max_splits": 15,
+      "task_type": "regression",
+      "avg_split_arity_mean": 2.9466666666666668,
+      "avg_path_length_mean": 1.9757575757575758,
+      "fit_time_sec_mean": 3.6675320148468016,
+      "r2_mean": 0.5709612253808928,
+      "r2_std": 0.08253358951504984
+    },
+    {
+      "dataset": "california_housing",
+      "method": "signed_spectral_figs",
+      "max_splits": 20,
+      "task_type": "regression",
+      "avg_split_arity_mean": 2.91,
+      "avg_path_length_mean": 2.2447089947089944,
+      "fit_time_sec_mean": 5.567221546173096,
+      "r2_mean": 0.6186001318960642,
+      "r2_std": 0.06662705480495336
+    }
+  ],
+  "best_max_splits": {
+    "electricity__axis_aligned_figs": 20,
+    "electricity__random_oblique_figs": 20,
+    "electricity__signed_spectral_figs": 20,
+    "adult__axis_aligned_figs": 15,
+    "adult__random_oblique_figs": 15,
+    "adult__signed_spectral_figs": 10,
+    "california_housing__axis_aligned_figs": 20,
+    "california_housing__random_oblique_figs": 15,
+    "california_housing__signed_spectral_figs": 20
+  },
+  "frustration_analysis": {
+    "electricity": {
+      "frustration_index": 1.5205373923685233e-16,
+      "ss_minus_aa": 0.00017515403368006943
+    },
+    "adult": {
+      "frustration_index": 0.05687352164216852,
+      "ss_minus_aa": -0.013733522203271398
+    },
+    "california_housing": {
+      "frustration_index": 0.06937017606620346,
+      "ss_minus_aa": -0.08239001247057842
+    }
+  },
+  "per_variant": {
+    "easy_2mod_xor": {
+      "name": "easy_2mod_xor",
+      "n_samples": 10000,
+      "n_features": 10,
+      "gt_n_modules": 2,
+      "frustration_index": 0.247895,
+      "coi_computation_time_sec": 2.38,
+      "methods": {
+        "sponge_auto_k": {
+          "adjusted_rand_index": 0.594595,
+          "module_focused_ari": 1.0,
+          "synergistic_pair_jaccard": 1.0,
+          "xor_recovery_fraction": 1.0
+        },
+        "sponge_oracle_k": {
+          "adjusted_rand_index": 0.237288,
+          "module_focused_ari": 1.0,
+          "synergistic_pair_jaccard": 1.0,
+          "xor_recovery_fraction": 1.0
+        },
+        "hard_threshold": {
+          "adjusted_rand_index": 0.761905,
+          "module_focused_ari": 1.0,
+          "synergistic_pair_jaccard": 1.0,
+          "xor_recovery_fraction": 1.0
+        },
+        "unsigned_spectral": {
+          "adjusted_rand_index": 0.237288,
+          "module_focused_ari": 1.0,
+          "synergistic_pair_jaccard": 1.0,
+          "xor_recovery_fraction": 1.0
+        },
+        "random_partition": {
+          "adjusted_rand_index": -0.074766,
+          "module_focused_ari": -0.111111,
+          "synergistic_pair_jaccard": 0.0,
+          "xor_recovery_fraction": 0.0
+        }
+      }
+    },
+    "medium_4mod_mixed": {
+      "name": "medium_4mod_mixed",
+      "n_samples": 20000,
+      "n_features": 18,
+      "gt_n_modules": 4,
+      "frustration_index": 0.312443,
+      "coi_computation_time_sec": 1.53,
+      "methods": {
+        "sponge_auto_k": {
+          "adjusted_rand_index": 0.174757,
+          "module_focused_ari": 0.645161,
+          "synergistic_pair_jaccard": 0.5,
+          "xor_recovery_fraction": 1.0
+        },
+        "sponge_oracle_k": {
+          "adjusted_rand_index": 0.338889,
+          "module_focused_ari": 0.753363,
+          "synergistic_pair_jaccard": 1.0,
+          "xor_recovery_fraction": 1.0
+        },
+        "hard_threshold": {
+          "adjusted_rand_index": 0.074898,
+          "module_focused_ari": 0.0,
+          "synergistic_pair_jaccard": 0.142857,
+          "xor_recovery_fraction": 1.0
+        },
+        "unsigned_spectral": {
+          "adjusted_rand_index": 0.338889,
+          "module_focused_ari": 0.753363,
+          "synergistic_pair_jaccard": 1.0,
+          "xor_recovery_fraction": 1.0
+        },
+        "random_partition": {
+          "adjusted_rand_index": -0.086111,
+          "module_focused_ari": -0.134529,
+          "synergistic_pair_jaccard": 0.0,
+          "xor_recovery_fraction": 0.0
+        }
+      }
+    },
+    "hard_4mod_unequal": {
+      "name": "hard_4mod_unequal",
+      "n_samples": 20000,
+      "n_features": 31,
+      "gt_n_modules": 4,
+      "frustration_index": 0.30098,
+      "coi_computation_time_sec": 4.12,
+      "methods": {
+        "sponge_auto_k": {
+          "adjusted_rand_index": 0.040657,
+          "module_focused_ari": 0.212943,
+          "synergistic_pair_jaccard": 0.298507,
+          "xor_recovery_fraction": 1.0
+        },
+        "sponge_oracle_k": {
+          "adjusted_rand_index": 0.092627,
+          "module_focused_ari": 0.369236,
+          "synergistic_pair_jaccard": 0.3125,
+          "xor_recovery_fraction": 0.666667
+        },
+        "hard_threshold": {
+          "adjusted_rand_index": 0.00937,
+          "module_focused_ari": -0.059122,
+          "synergistic_pair_jaccard": 0.178082,
+          "xor_recovery_fraction": 1.0
+        },
+        "unsigned_spectral": {
+          "adjusted_rand_index": 0.091154,
+          "module_focused_ari": 0.534209,
+          "synergistic_pair_jaccard": 0.457143,
+          "xor_recovery_fraction": 0.666667
+        },
+        "random_partition": {
+          "adjusted_rand_index": -0.01994,
+          "module_focused_ari": -0.051462,
+          "synergistic_pair_jaccard": 0.114286,
+          "xor_recovery_fraction": 0.0
+        }
+      }
+    },
+    "no_structure_control": {
+      "name": "no_structure_control",
+      "n_samples": 10000,
+      "n_features": 20,
+      "gt_n_modules": 0,
+      "frustration_index": 0.326793,
+      "coi_computation_time_sec": 1.85,
+      "methods": {
+        "sponge_auto_k": {
+          "adjusted_rand_index": null,
+          "module_focused_ari": null,
+          "synergistic_pair_jaccard": null,
+          "xor_recovery_fraction": null
+        },
+        "sponge_oracle_k": {
+          "adjusted_rand_index": null,
+          "module_focused_ari": null,
+          "synergistic_pair_jaccard": null,
+          "xor_recovery_fraction": null
+        },
+        "hard_threshold": {
+          "adjusted_rand_index": null,
+          "module_focused_ari": null,
+          "synergistic_pair_jaccard": null,
+          "xor_recovery_fraction": null
+        },
+        "unsigned_spectral": {
+          "adjusted_rand_index": null,
+          "module_focused_ari": null,
+          "synergistic_pair_jaccard": null,
+          "xor_recovery_fraction": null
+        },
+        "random_partition": {
+          "adjusted_rand_index": null,
+          "module_focused_ari": null,
+          "synergistic_pair_jaccard": null,
+          "xor_recovery_fraction": null
+        }
+      }
+    }
+  },
+  "subsampling_stability": {
+    "minimum_stable_n": 20000,
+    "results_by_subsample": [
+      {
+        "n_sub": 1000,
+        "spearman_r": 0.0726,
+        "sign_flip_rate": 0.4173,
+        "sponge_ari": 0.0143
+      },
+      {
+        "n_sub": 2000,
+        "spearman_r": 0.0165,
+        "sign_flip_rate": 0.482,
+        "sponge_ari": 0.0546
+      },
+      {
+        "n_sub": 5000,
+        "spearman_r": 0.2457,
+        "sign_flip_rate": 0.4101,
+        "sponge_ari": -0.0747
+      },
+      {
+        "n_sub": 10000,
+        "spearman_r": 0.3918,
+        "sign_flip_rate": 0.3669,
+        "sponge_ari": 0.183
+      },
+      {
+        "n_sub": 15000,
+        "spearman_r": 0.7103,
+        "sign_flip_rate": 0.223,
+        "sponge_ari": 0.8429
+      },
+      {
+        "n_sub": 20000,
+        "spearman_r": 1.0,
+        "sign_flip_rate": 0.0,
+        "sponge_ari": 1.0
+      }
+    ]
+  },
+  "total_wallclock_sec": 130.01
+}

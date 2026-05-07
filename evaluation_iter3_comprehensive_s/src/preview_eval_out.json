@@ -1,0 +1,628 @@
+{
+  "metadata": {
+    "evaluation_name": "comprehensive_statistical_analysis_iter2",
+    "description": "Rigorous statistical analysis of all iteration 2 experiment outputs",
+    "experiments_analyzed": [
+      "exp_id2_real_benchmarks",
+      "exp_id1_synthetic_recovery",
+      "exp_id4_estimator_validation"
+    ],
+    "analysis_sections": [
+      "A_friedman_nemenyi",
+      "B_cohens_d",
+      "C_bayesian_signed_rank"
+    ],
+    "detailed_results": {
+      "friedman_nemenyi": {
+        "max_splits_5": {
+          "friedman_chi2": 0.4000000000000057,
+          "friedman_p": 0.8187307530779795,
+          "avg_rank_aa": 1.8,
+          "avg_rank_ro": 2.2,
+          "avg_rank_ss": 2.0
+        },
+        "max_splits_10": {
+          "friedman_chi2": 5.200000000000003,
+          "friedman_p": 0.0742735782143338,
+          "avg_rank_aa": 1.4,
+          "avg_rank_ro": 2.8,
+          "avg_rank_ss": 1.8
+        },
+        "max_splits_15": {
+          "friedman_chi2": 8.400000000000006,
+          "friedman_p": 0.01499557682047766,
+          "avg_rank_aa": 1.0,
+          "avg_rank_ro": 2.2,
+          "avg_rank_ss": 2.8,
+          "nemenyi_aa_vs_ro": 0.13940464288897036,
+          "nemenyi_aa_vs_ss": 0.012310463300787,
+          "nemenyi_ro_vs_ss": 0.6094107155483861
+        },
+        "max_splits_20": {
+          "friedman_chi2": 2.8000000000000043,
+          "friedman_p": 0.24659696394160596,
+          "avg_rank_aa": 1.4,
+          "avg_rank_ro": 2.2,
+          "avg_rank_ss": 2.4
+        },
+        "best_max_splits": {
+          "friedman_chi2": 1.6000000000000014,
+          "friedman_p": 0.44932896411722134,
+          "avg_rank_aa": 1.6,
+          "avg_rank_ro": 2.4,
+          "avg_rank_ss": 2.0
+        }
+      },
+      "cohens_d": {
+        "win_loss_tie": {
+          "ss_vs_aa": {
+            "positive": 4,
+            "negligible": 1,
+            "negative": 15
+          },
+          "ss_vs_ro": {
+            "positive": 8,
+            "negligible": 4,
+            "negative": 8
+          }
+        }
+      },
+      "bayesian_tests": {
+        "ss_vs_aa": {
+          "p_left": 0.6718,
+          "p_rope": 0.3261,
+          "p_right": 0.0021,
+          "method": "bootstrap_10000",
+          "interpretation": "inconclusive"
+        },
+        "ss_vs_ro": {
+          "p_left": 0.0,
+          "p_rope": 0.9936,
+          "p_right": 0.0064,
+          "method": "bootstrap_10000",
+          "interpretation": "practically equivalent"
+        },
+        "ro_vs_aa": {
+          "p_left": 0.6667,
+          "p_rope": 0.3333,
+          "p_right": 0.0,
+          "method": "bootstrap_10000",
+          "interpretation": "inconclusive"
+        }
+      },
+      "frustration_correlation": {
+        "all_datasets": {
+          "n": 5,
+          "spearman_rho": -0.7,
+          "p_value": 0.1881204043741873,
+          "bootstrap_ci_lower": -1.0,
+          "bootstrap_ci_upper": 0.6666666666666666,
+          "required_n_for_power_80": 14,
+          "datasets": [
+            "electricity",
+            "adult",
+            "california_housing"
+          ],
+          "frustrations": [
+            1.5205373923685233e-16,
+            0.05687352164216852,
+            0.06937017606620346
+          ],
+          "gaps": [
+            0.00017515403368006943,
+            -0.013733522203271398,
+            -0.08239001247057842
+          ]
+        },
+        "excluding_california": {
+          "n": 4,
+          "spearman_rho": -0.39999999999999997,
+          "p_value": 0.6,
+          "bootstrap_ci_lower": -1.0,
+          "bootstrap_ci_upper": 1.0
+        }
+      },
+      "subsampling_impact": {
+        "model_type": "exponential_decay",
+        "model_params": {
+          "a": 0.6215209570974272,
+          "b": 5.117752753647315e-05,
+          "c": -0.09999999999999991
+        },
+        "data_points": {
+          "subsample_sizes": [
+            1000.0,
+            2000.0,
+            5000.0
+          ],
+          "sign_flip_rates": [
+            0.4173,
+            0.482,
+            0.4101
+          ],
+          "spearman_correlations": [
+            0.0726,
+            0.0165,
+            0.2457
+          ],
+          "sponge_aris": [
+            0.0143,
+            0.0546,
+            -0.0747
+          ]
+        },
+        "at_experiment_n_10k": {
+          "sign_flip_rate": 0.3669,
+          "spearman_r": 0.3918,
+          "sponge_ari": 0.183
+        },
+        "ari_improvement": {
+          "n10k_to_n15k": 0.6599,
+          "n15k_to_n20k": 0.1571
+        },
+        "recommended_minimum_n": 20000,
+        "recommended_n_from_model": 22155
+      },
+      "interpretability": {
+        "wilcoxon_arity": {
+          "statistic": 30.5,
+          "p_value": 0.005410396461745987,
+          "n_pairs": 20,
+          "n_nonzero": 20,
+          "mean_diff_ss_minus_ro": -0.9771666666666668,
+          "interpretation": "ss has lower arity"
+        },
+        "wilcoxon_path": {
+          "statistic": 88.0,
+          "p_value": 0.7982521057128906,
+          "n_pairs": 20,
+          "n_nonzero": 19,
+          "mean_diff_ss_minus_ro": -0.0030750307503722984
+        },
+        "pareto_at_ms20": [
+          {
+            "dataset": "electricity",
+            "pareto_dominant": [
+              "axis_aligned"
+            ],
+            "aa_perf": 0.7970062599741571,
+            "ro_perf": 0.7898072424066707,
+            "ss_perf": 0.7887402811921918,
+            "aa_arity": 1.0,
+            "ro_arity": 1.86,
+            "ss_arity": 1.6200000000000003,
+            "aa_path": 4.637154150197629,
+            "ro_path": 2.528968660968661,
+            "ss_path": 2.563202279202279
+          },
+          {
+            "dataset": "adult",
+            "pareto_dominant": [
+              "axis_aligned"
+            ],
+            "aa_perf": 0.7005909894726979,
+            "ro_perf": 0.6999572556843934,
+            "ss_perf": 0.6874712154441684,
+            "aa_arity": 1.0,
+            "ro_arity": 2.15,
+            "ss_arity": 2.1100000000000003,
+            "aa_path": 3.172463768115942,
+            "ro_path": 2.3355820105820104,
+            "ss_path": 2.0879268241337208
+          },
+          {
+            "dataset": "california_housing",
+            "pareto_dominant": [
+              "axis_aligned"
+            ],
+            "aa_perf": 0.7191310062301726,
+            "ro_perf": 0.6093234472879939,
+            "ss_perf": 0.6186001318960642,
+            "aa_arity": 1.0,
+            "ro_arity": 3.55,
+            "ss_arity": 2.91,
+            "aa_path": 3.443478260869565,
+            "ro_path": 1.8628078817733993,
+            "ss_path": 2.2447089947089944
+          }
+        ]
+      },
+      "california_diagnosis": {
+        "per_max_splits": [
+          {
+            "max_splits": 5,
+            "aa_r2": 0.5350612194705215,
+            "aa_r2_std": 0.01316283378268477,
+            "ro_r2": 0.6137237783561474,
+            "ro_r2_std": 0.014521718495083373,
+            "ss_r2": 0.49563084324094087,
+            "ss_r2_std": 0.09802061526732653,
+            "gap_ss_minus_aa": -0.03943037622958068,
+            "gap_ss_minus_ro": -0.11809293511520658,
+            "aa_arity": 1.0,
+            "ro_arity": 3.4,
+            "ss_arity": 3.6400000000000006,
+            "aa_path": 1.5,
+            "ro_path": 1.5,
+            "ss_path": 1.4444444444444444
+          },
+          {
+            "max_splits": 10,
+            "aa_r2": 0.6492403557242626,
+            "aa_r2_std": 0.010906515271316013,
+            "ro_r2": 0.5251232692241581,
+            "ro_r2_std": 0.030740889369063867,
+            "ss_r2": 0.5794299207379494,
+            "ss_r2_std": 0.037113523781568826,
+            "gap_ss_minus_aa": -0.06981043498631323,
+            "gap_ss_minus_ro": 0.054306651513791326,
+            "aa_arity": 1.0,
+            "ro_arity": 3.6400000000000006,
+            "ss_arity": 3.1399999999999997,
+            "aa_path": 2.5384615384615383,
+            "ro_path": 1.5125,
+            "ss_path": 1.6333333333333335
+          },
+          {
+            "max_splits": 15,
+            "aa_r2": 0.6907495897132041,
+            "aa_r2_std": 0.012339840699839713,
+            "ro_r2": 0.6166735297631556,
+            "ro_r2_std": 0.022107926569128047,
+            "ss_r2": 0.5709612253808928,
+            "ss_r2_std": 0.08253358951504984,
+            "gap_ss_minus_aa": -0.11978836433231133,
+            "gap_ss_minus_ro": -0.045712304382262814,
+            "aa_arity": 1.0,
+            "ro_arity": 3.7599999999999993,
+            "ss_arity": 2.9466666666666668,
+            "aa_path": 3.0,
+            "ro_path": 1.7363636363636363,
+            "ss_path": 1.9757575757575758
+          }
+        ],
+        "arity_cross_dataset": {
+          "electricity": {
+            "ss_arity": 1.6200000000000003,
+            "ro_arity": 1.86,
+            "ss_std": 0.008474443741943774
+          },
+          "adult": {
+            "ss_arity": 2.1100000000000003,
+            "ro_arity": 2.15,
+            "ss_std": 0.022004452925396923
+          },
+          "california_housing": {
+            "ss_arity": 2.91,
+            "ro_arity": 3.55,
+            "ss_std": 0.06662705480495336
+          },
+          "jannis": {
+            "ss_arity": 21.74,
+            "ro_arity": 26.22,
+            "ss_std": 0.005718142834110665
+          },
+          "higgs_small": {
+            "ss_arity": 1.4999999999999998,
+            "ro_arity": 1.5500000000000003,
+            "ss_std": 0.005648871252708576
+          }
+        },
+        "variance_ratio": {
+          "ms_5": {
+            "ss_std": 0.09802061526732653,
+            "aa_std": 0.01316283378268477,
+            "ratio": 7.446771484440462
+          },
+          "ms_10": {
+            "ss_std": 0.037113523781568826,
+            "aa_std": 0.010906515271316013,
+            "ratio": 3.4028764328764924
+          },
+          "ms_15": {
+            "ss_std": 0.08253358951504984,
+            "aa_std": 0.012339840699839713,
+            "ratio": 6.688383709533778
+          },
+          "ms_20": {
+            "ss_std": 0.06662705480495336,
+            "aa_std": 0.01415660990832795,
+            "ratio": 4.7064272616397
+          }
+        },
+        "classification_vs_regression": {
+          "mean_clf_gap": -0.006145195189997649,
+          "mean_reg_gap": -0.10053087433410834,
+          "clf_gaps": [
+            -0.008265978781965333,
+            -0.013119774028529485,
+            -0.003490795415074577
+          ],
+          "reg_gaps": [
+            -0.10053087433410834
+          ],
+          "regression_underperforms": true
+        }
+      },
+      "synthetic_summary": {
+        "method_avg_ranks": {
+          "sponge_auto_k__adjusted_rand_index": 3.2,
+          "sponge_auto_k__module_focused_ari": 2.8,
+          "sponge_auto_k__synergistic_pair_jaccard": 2.6,
+          "sponge_auto_k__xor_recovery_fraction": 1.2,
+          "sponge_oracle_k__adjusted_rand_index": 1.8,
+          "sponge_oracle_k__module_focused_ari": 1.8,
+          "sponge_oracle_k__synergistic_pair_jaccard": 2.0,
+          "sponge_oracle_k__xor_recovery_fraction": 2.6,
+          "hard_threshold__adjusted_rand_index": 3.2,
+          "hard_threshold__module_focused_ari": 4.2,
+          "hard_threshold__synergistic_pair_jaccard": 3.4,
+          "hard_threshold__xor_recovery_fraction": 2.2,
+          "unsigned_spectral__adjusted_rand_index": 2.2,
+          "unsigned_spectral__module_focused_ari": 1.8,
+          "unsigned_spectral__synergistic_pair_jaccard": 2.0,
+          "unsigned_spectral__xor_recovery_fraction": 4.0,
+          "random_partition__adjusted_rand_index": 4.6,
+          "random_partition__module_focused_ari": 4.4,
+          "random_partition__synergistic_pair_jaccard": 5.0,
+          "random_partition__xor_recovery_fraction": 5.0
+        },
+        "sponge_win_rates": {
+          "sponge_oracle_vs_hard_threshold": {
+            "adjusted_rand_index": 0.6,
+            "module_focused_ari": 0.8,
+            "synergistic_pair_jaccard": 0.6,
+            "xor_recovery_fraction": 0.0
+          },
+          "sponge_oracle_vs_unsigned_spectral": {
+            "adjusted_rand_index": 0.4,
+            "module_focused_ari": 0.0,
+            "synergistic_pair_jaccard": 0.2,
+            "xor_recovery_fraction": 0.2
+          },
+          "sponge_auto_vs_hard_threshold": {
+            "adjusted_rand_index": 0.6,
+            "module_focused_ari": 0.8,
+            "synergistic_pair_jaccard": 0.6,
+            "xor_recovery_fraction": 0.2
+          },
+          "sponge_auto_vs_unsigned_spectral": {
+            "adjusted_rand_index": 0.2,
+            "module_focused_ari": 0.0,
+            "synergistic_pair_jaccard": 0.0,
+            "xor_recovery_fraction": 0.4
+          }
+        },
+        "frustration_diagnostic": {
+          "no_structure_frustration": 0.326793,
+          "easy_structured_frustration": 0.247895,
+          "no_structure_higher": true
+        },
+        "scalability": {
+          "data": [
+            {
+              "variant": "easy_2mod_xor",
+              "d": 10,
+              "n": 10000,
+              "time_sec": 2.38
+            },
+            {
+              "variant": "medium_4mod_mixed",
+              "d": 18,
+              "n": 20000,
+              "time_sec": 1.53
+            },
+            {
+              "variant": "hard_4mod_unequal",
+              "d": 31,
+              "n": 20000,
+              "time_sec": 4.12
+            }
+          ],
+          "model": {
+            "model": "t = a * d^2 * n + b",
+            "a_coeff": 5.7386251878183145e-08,
+            "b_intercept": 1.8339792331338312,
+            "r_squared": 0.9997483557415233
+          }
+        }
+      },
+      "success_criteria": {
+        "criterion1_synthetic_recovery": {
+          "description": "Signed spectral recovers >80% of true synergistic pairs on synthetic data",
+          "max_jaccard_easy": 1.0,
+          "max_jaccard_medium": 1.0,
+          "passed": true
+        },
+        "criterion2_real_benchmark": {
+          "description": "Signed spectral matches/exceeds random-oblique accuracy with lower arity",
+          "matching_datasets": 4,
+          "total_datasets": 5,
+          "passed": true
+        },
+        "criterion3_frustration_correlation": {
+          "description": "Frustration-accuracy correlation significant (p < 0.05)",
+          "spearman_rho": -0.7,
+          "p_value": 0.1881204043741873,
+          "passed": false
+        },
+        "criterion4_timing": {
+          "description": "Pipeline completes within 30 min for d<=200, n<=100K",
+          "total_wallclock_sec": 130.01,
+          "passed": true
+        },
+        "overall_assessment": 3
+      }
+    }
+  },
+  "metrics_agg": {
+    "friedman_p_ms5": 0.8187307530779795,
+    "friedman_chi2_ms5": 0.4000000000000057,
+    "friedman_p_ms10": 0.0742735782143338,
+    "friedman_chi2_ms10": 5.200000000000003,
+    "friedman_p_ms15": 0.01499557682047766,
+    "friedman_chi2_ms15": 8.400000000000006,
+    "friedman_p_ms20": 0.24659696394160596,
+    "friedman_chi2_ms20": 2.8000000000000043,
+    "friedman_p_best_ms": 0.44932896411722134,
+    "friedman_chi2_best_ms": 1.6000000000000014,
+    "mean_cohens_d_ss_vs_aa": -0.3953579491020208,
+    "mean_cohens_d_ss_vs_ro": 0.23187197155323921,
+    "median_cohens_d_ss_vs_aa": -0.6971901316086655,
+    "median_cohens_d_ss_vs_ro": -0.06467177756671973,
+    "wins_ss_vs_aa": 4.0,
+    "losses_ss_vs_aa": 15.0,
+    "ties_ss_vs_aa": 1.0,
+    "wins_ss_vs_ro": 8.0,
+    "losses_ss_vs_ro": 8.0,
+    "ties_ss_vs_ro": 4.0,
+    "bayesian_p_right_ss_vs_aa": 0.0021,
+    "bayesian_p_rope_ss_vs_aa": 0.3261,
+    "bayesian_p_left_ss_vs_aa": 0.6718,
+    "bayesian_p_right_ss_vs_ro": 0.0064,
+    "bayesian_p_rope_ss_vs_ro": 0.9936,
+    "bayesian_p_left_ss_vs_ro": 0.0,
+    "bayesian_p_right_ro_vs_aa": 0.0,
+    "bayesian_p_rope_ro_vs_aa": 0.3333,
+    "bayesian_p_left_ro_vs_aa": 0.6667,
+    "frustration_spearman_rho": -0.7,
+    "frustration_p_value": 0.1881204043741873,
+    "frustration_required_n_power80": 14.0,
+    "frustration_rho_excl_calif": -0.39999999999999997,
+    "frustration_p_excl_calif": 0.6,
+    "subsampling_recommended_n": 20000.0,
+    "sign_flip_rate_at_10k": 0.3669,
+    "spearman_r_at_10k": 0.3918,
+    "sponge_ari_at_10k": 0.183,
+    "wilcoxon_arity_p": 0.005410396461745987,
+    "mean_arity_diff_ss_ro": -0.9771666666666668,
+    "wilcoxon_path_p": 0.7982521057128906,
+    "mean_path_diff_ss_ro": -0.0030750307503722984,
+    "calif_gap_ss_aa_ms20": -0.10053087433410834,
+    "calif_ss_std_ms20": 0.06662705480495336,
+    "calif_ss_arity_ms20": 2.91,
+    "mean_clf_gap_ss_aa": -0.006145195189997649,
+    "mean_reg_gap_ss_aa": -0.10053087433410834,
+    "success_criteria_passed": 3.0,
+    "criterion1_passed": 1.0,
+    "criterion2_passed": 1.0,
+    "criterion3_passed": 0.0,
+    "criterion4_passed": 1.0
+  },
+  "datasets": [
+    {
+      "dataset": "friedman_nemenyi_tests",
+      "examples": [
+        {
+          "input": "{\"analysis\": \"friedman_nemenyi\", \"max_splits\": \"5\"}",
+          "output": "{\"significant\": false}",
+          "eval_friedman_chi2": 0.4000000000000057,
+          "eval_friedman_p": 0.8187307530779795,
+          "eval_avg_rank_aa": 1.8,
+          "eval_avg_rank_ro": 2.2,
+          "eval_avg_rank_ss": 2.0,
+          "metadata_max_splits": "5"
+        },
+        {
+          "input": "{\"analysis\": \"friedman_nemenyi\", \"max_splits\": \"10\"}",
+          "output": "{\"significant\": false}",
+          "eval_friedman_chi2": 5.200000000000003,
+          "eval_friedman_p": 0.0742735782143338,
+          "eval_avg_rank_aa": 1.4,
+          "eval_avg_rank_ro": 2.8,
+          "eval_avg_rank_ss": 1.8,
+          "metadata_max_splits": "10"
+        },
+        {
+          "input": "{\"analysis\": \"friedman_nemenyi\", \"max_splits\": \"15\"}",
+          "output": "{\"significant\": true}",
+          "eval_friedman_chi2": 8.400000000000006,
+          "eval_friedman_p": 0.01499557682047766,
+          "eval_avg_rank_aa": 1.0,
+          "eval_avg_rank_ro": 2.2,
+          "eval_avg_rank_ss": 2.8,
+          "metadata_max_splits": "15",
+          "eval_nemenyi_aa_vs_ro": 0.13940464288897036,
+          "eval_nemenyi_aa_vs_ss": 0.012310463300787,
+          "eval_nemenyi_ro_vs_ss": 0.6094107155483861
+        }
+      ]
+    },
+    {
+      "dataset": "cohens_d_effect_sizes",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"electricity\", \"max_splits\": 5}",
+          "output": "{\"d_ss_vs_aa\": 4.3613, \"d_ss_vs_ro\": 4.2085}",
+          "eval_d_ss_vs_aa": 4.361341453436517,
+          "eval_d_ss_vs_ro": 4.208508138326778,
+          "eval_ss_mean": 0.7605916630773661,
+          "eval_aa_mean": 0.7323384936395074,
+          "eval_ro_mean": 0.729270310531683,
+          "metadata_dataset": "electricity",
+          "metadata_max_splits": 5,
+          "metadata_interp_vs_aa": "large",
+          "metadata_interp_vs_ro": "large"
+        },
+        {
+          "input": "{\"dataset\": \"electricity\", \"max_splits\": 10}",
+          "output": "{\"d_ss_vs_aa\": -2.6732, \"d_ss_vs_ro\": -0.6063}",
+          "eval_d_ss_vs_aa": -2.673212485150057,
+          "eval_d_ss_vs_ro": -0.6063087125524855,
+          "eval_ss_mean": 0.7777980736129944,
+          "eval_aa_mean": 0.7868693684686667,
+          "eval_ro_mean": 0.7813839806593901,
+          "metadata_dataset": "electricity",
+          "metadata_max_splits": 10,
+          "metadata_interp_vs_aa": "large",
+          "metadata_interp_vs_ro": "medium"
+        },
+        {
+          "input": "{\"dataset\": \"electricity\", \"max_splits\": 15}",
+          "output": "{\"d_ss_vs_aa\": -2.6691, \"d_ss_vs_ro\": -0.4534}",
+          "eval_d_ss_vs_aa": -2.669146781950885,
+          "eval_d_ss_vs_ro": -0.4534338272258539,
+          "eval_ss_mean": 0.7840350528289182,
+          "eval_aa_mean": 0.7942503324944188,
+          "eval_ro_mean": 0.7867385121219278,
+          "metadata_dataset": "electricity",
+          "metadata_max_splits": 15,
+          "metadata_interp_vs_aa": "large",
+          "metadata_interp_vs_ro": "medium"
+        }
+      ]
+    },
+    {
+      "dataset": "bayesian_signed_rank",
+      "examples": [
+        {
+          "input": "{\"comparison\": \"ss_vs_aa\"}",
+          "output": "{\"interpretation\": \"inconclusive\"}",
+          "eval_p_left": 0.6718,
+          "eval_p_rope": 0.3261,
+          "eval_p_right": 0.0021,
+          "metadata_comparison": "ss_vs_aa",
+          "metadata_method": "bootstrap_10000"
+        },
+        {
+          "input": "{\"comparison\": \"ss_vs_ro\"}",
+          "output": "{\"interpretation\": \"practically equivalent\"}",
+          "eval_p_left": 0.0,
+          "eval_p_rope": 0.9936,
+          "eval_p_right": 0.0064,
+          "metadata_comparison": "ss_vs_ro",
+          "metadata_method": "bootstrap_10000"
+        },
+        {
+          "input": "{\"comparison\": \"ro_vs_aa\"}",
+          "output": "{\"interpretation\": \"inconclusive\"}",
+          "eval_p_left": 0.6667,
+          "eval_p_rope": 0.3333,
+          "eval_p_right": 0.0,
+          "metadata_comparison": "ro_vs_aa",
+          "metadata_method": "bootstrap_10000"
+        }
+      ]
+    }
+  ]
+}

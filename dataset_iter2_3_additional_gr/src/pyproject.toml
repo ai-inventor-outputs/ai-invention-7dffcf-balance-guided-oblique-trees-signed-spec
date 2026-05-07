@@ -1,0 +1,16 @@
+[project]
+name = "data-id5-it2-grinsztajn-datasets"
+version = "1.0.0"
+requires-python = ">=3.11,<3.12"
+description = "3 additional Grinsztajn clf_num benchmark datasets (eye_movements, credit, miniboone)"
+dependencies = [
+    "joblib==1.5.3",
+    "loguru==0.7.3",
+    "numpy==2.4.3",
+    "pandas==3.0.1",
+    "python-dateutil==2.9.0.post0",
+    "scikit-learn==1.8.0",
+    "scipy==1.17.1",
+    "six==1.17.0",
+    "threadpoolctl==3.6.0",
+]

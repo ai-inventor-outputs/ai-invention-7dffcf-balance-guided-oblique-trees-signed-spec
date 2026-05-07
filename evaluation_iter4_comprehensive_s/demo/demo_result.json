@@ -1,0 +1,13 @@
+{
+  "id": "eval_id4_it4__opus",
+  "type": "code",
+  "title": "Comprehensive Statistical Analysis of Synthetic End-to-End Results (5 Methods \u00d7 6 Variants \u00d7 5 Folds)",
+  "summary": "Demo notebook for comprehensive statistical analysis of 5 methods x 6 variants x 5 folds from a balance-guided oblique decision tree experiment. Loads pre-computed evaluation results and demonstrates eight analyses: Friedman+Nemenyi ranking, XOR significance testing, module-accuracy correlation, Pareto frontier analysis, no-structure control, high-dimensional diagnosis, signed vs unsigned spectral effect sizes (Hedges' g), and success criteria assessment. Includes statistical helper functions (Cohen's d, Hedges' g, bootstrap CIs, Wilcoxon tests) and a four-panel visualization. Uses curated mini dataset (18 examples across 6 variants) with N_BOOTSTRAP=10000 (full original value).",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_4/gen_art/eval_id4_it4__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id4_it4__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id4_it4__opus/eval_code_demo.ipynb"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "eval_id3_it5__opus",
+  "type": "code",
+  "title": "Competitive FIGS-vs-Baselines Comparison: Friedman/Nemenyi, Bayesian Tests, Effect Sizes, and Paper Tables",
+  "summary": "Demo notebook loading pre-computed evaluation results comparing 3 FIGS variants (axis-aligned, random-oblique, signed-spectral) against 3 baselines (EBM, Random Forest, Logistic/Ridge) across 5 Grinsztajn benchmarks. Recomputes Friedman test + Nemenyi post-hoc from per-dataset means, displays Bayesian signed-rank tests, Cohen's d effect sizes, per-dataset results table, interpretability comparison, timing ratios, and winner analysis. Includes per-example accuracy recomputation from 15 demo examples (5 datasets x 3 each) and a 4-panel matplotlib visualization dashboard. Uses mini_demo_data.json (48KB) with full metadata sections and curated examples.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_5/gen_art/eval_id3_it5__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id3_it5__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id3_it5__opus/eval_code_demo.ipynb"
+}
