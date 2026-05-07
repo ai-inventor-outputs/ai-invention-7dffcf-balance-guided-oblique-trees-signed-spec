@@ -1,0 +1,1688 @@
+{
+  "metadata": {
+    "experiment": "sponge_signed_diagnostic",
+    "description": "Systematic diagnostic experiment investigating why unsigned spectral clustering matches signed SPONGE on synthetic CoI data",
+    "total_wallclock_sec": 148.35,
+    "summary": {
+      "signed_beats_unsigned_any_variant": true,
+      "signed_beats_unsigned_with_tuning": true,
+      "best_global_tau_p": 0.01,
+      "best_global_tau_n": 0.01,
+      "best_k_selection_strategy": "stability",
+      "root_cause_diagnosis": "high_frustration_limits_signed_benefit",
+      "recommendation": "Signed spectral clustering (SPONGE) can outperform unsigned spectral clustering when tau parameters are properly tuned. Use tau sweep to find optimal regularization per dataset."
+    },
+    "tau_sensitivity": {
+      "easy_2mod_xor": {
+        "heatmap_jaccard": [
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "heatmap_ari": [
+          [
+            0.237288,
+            0.237288,
+            0.237288
+          ],
+          [
+            0.237288,
+            0.237288,
+            0.237288
+          ],
+          [
+            0.237288,
+            0.237288,
+            0.237288
+          ]
+        ],
+        "heatmap_mfari": [
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "tau_values": [
+          0.01,
+          0.1,
+          0.5
+        ],
+        "best_tau_p": 0.01,
+        "best_tau_n": 0.01,
+        "best_jaccard": 1.0,
+        "default_tau1_jaccard": 1.0,
+        "unsigned_jaccard": 1.0,
+        "unsigned_ari": 0.237288,
+        "signed_beats_unsigned": false,
+        "failed_combos": 0
+      },
+      "medium_4mod_mixed": {
+        "heatmap_jaccard": [
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          [
+            1.0,
+            1.0,
+            1.0
+          ]
+        ],
+        "heatmap_ari": [
+          [
+            0.338889,
+            0.338889,
+            0.338889
+          ],
+          [
+            0.338889,
+            0.338889,
+            0.338889
+          ],
+          [
+            0.338889,
+            0.338889,
+            0.338889
+          ]
+        ],
+        "heatmap_mfari": [
+          [
+            0.753363,
+            0.753363,
+            0.753363
+          ],
+          [
+            0.753363,
+            0.753363,
+            0.753363
+          ],
+          [
+            0.753363,
+            0.753363,
+            0.753363
+          ]
+        ],
+        "tau_values": [
+          0.01,
+          0.1,
+          0.5
+        ],
+        "best_tau_p": 0.01,
+        "best_tau_n": 0.01,
+        "best_jaccard": 1.0,
+        "default_tau1_jaccard": 1.0,
+        "unsigned_jaccard": 1.0,
+        "unsigned_ari": 0.338889,
+        "signed_beats_unsigned": false,
+        "failed_combos": 0
+      },
+      "hard_4mod_unequal": {
+        "heatmap_jaccard": [
+          [
+            0.3125,
+            0.3125,
+            0.3125
+          ],
+          [
+            0.3125,
+            0.3125,
+            0.3125
+          ],
+          [
+            0.3125,
+            0.3125,
+            0.3125
+          ]
+        ],
+        "heatmap_ari": [
+          [
+            0.092627,
+            0.092627,
+            0.092627
+          ],
+          [
+            0.092627,
+            0.092627,
+            0.092627
+          ],
+          [
+            0.092627,
+            0.092627,
+            0.092627
+          ]
+        ],
+        "heatmap_mfari": [
+          [
+            0.369236,
+            0.369236,
+            0.369236
+          ],
+          [
+            0.369236,
+            0.369236,
+            0.369236
+          ],
+          [
+            0.369236,
+            0.369236,
+            0.369236
+          ]
+        ],
+        "tau_values": [
+          0.01,
+          0.1,
+          0.5
+        ],
+        "best_tau_p": 0.01,
+        "best_tau_n": 0.01,
+        "best_jaccard": 0.3125,
+        "default_tau1_jaccard": 0.3125,
+        "unsigned_jaccard": 0.457143,
+        "unsigned_ari": 0.091154,
+        "signed_beats_unsigned": false,
+        "failed_combos": 0
+      },
+      "overlapping_modules": {
+        "heatmap_jaccard": [
+          [
+            0.25,
+            0.25,
+            0.25
+          ],
+          [
+            0.25,
+            0.25,
+            0.25
+          ],
+          [
+            0.25,
+            0.25,
+            0.25
+          ]
+        ],
+        "heatmap_ari": [
+          [
+            0.05084,
+            0.05084,
+            0.05084
+          ],
+          [
+            0.05084,
+            0.05084,
+            0.05084
+          ],
+          [
+            0.05084,
+            0.05084,
+            0.05084
+          ]
+        ],
+        "heatmap_mfari": [
+          [
+            0.206186,
+            0.206186,
+            0.206186
+          ],
+          [
+            0.206186,
+            0.206186,
+            0.206186
+          ],
+          [
+            0.206186,
+            0.206186,
+            0.206186
+          ]
+        ],
+        "tau_values": [
+          0.01,
+          0.1,
+          0.5
+        ],
+        "best_tau_p": 0.01,
+        "best_tau_n": 0.01,
+        "best_jaccard": 0.25,
+        "default_tau1_jaccard": 0.25,
+        "unsigned_jaccard": 0.4,
+        "unsigned_ari": 0.081475,
+        "signed_beats_unsigned": false,
+        "failed_combos": 0
+      },
+      "highdim_8mod": {
+        "heatmap_jaccard": [
+          [
+            0.22,
+            0.22,
+            0.22
+          ],
+          [
+            0.192308,
+            0.192308,
+            0.192308
+          ],
+          [
+            0.22,
+            0.22,
+            0.192308
+          ]
+        ],
+        "heatmap_ari": [
+          [
+            0.012448,
+            0.012448,
+            0.012448
+          ],
+          [
+            0.011091,
+            0.011091,
+            0.011091
+          ],
+          [
+            0.011959,
+            0.011959,
+            0.011091
+          ]
+        ],
+        "heatmap_mfari": [
+          [
+            0.152951,
+            0.152951,
+            0.152951
+          ],
+          [
+            0.130779,
+            0.130779,
+            0.130779
+          ],
+          [
+            0.142531,
+            0.142531,
+            0.130779
+          ]
+        ],
+        "tau_values": [
+          0.01,
+          0.1,
+          0.5
+        ],
+        "best_tau_p": 100.0,
+        "best_tau_n": 0.1,
+        "best_jaccard": 0.254902,
+        "default_tau1_jaccard": 0.22,
+        "unsigned_jaccard": 0.137255,
+        "unsigned_ari": 0.010812,
+        "signed_beats_unsigned": true,
+        "failed_combos": 0
+      }
+    },
+    "k_selection": {
+      "easy_2mod_xor": {
+        "eigengap": {
+          "k_selected": 3,
+          "k_correct": false,
+          "ari": 0.594595,
+          "mfari": 1.0,
+          "jaccard": 1.0,
+          "cluster_sizes": [
+            3,
+            4,
+            3
+          ],
+          "time_sec": 0.0
+        },
+        "oracle": {
+          "k_selected": 2,
+          "k_correct": true,
+          "ari": 0.237288,
+          "mfari": 1.0,
+          "jaccard": 1.0,
+          "cluster_sizes": [
+            7,
+            3
+          ],
+          "time_sec": 0.0
+        },
+        "oracle_best_tau": {
+          "k_selected": 2,
+          "k_correct": true,
+          "tau_p": 0.01,
+          "tau_n": 0.01,
+          "ari": 0.237288,
+          "mfari": 1.0,
+          "jaccard": 1.0,
+          "cluster_sizes": [
+            7,
+            3
+          ],
+          "time_sec": 0.0
+        },
+        "silhouette": {
+          "k_selected": 3,
+          "k_correct": false,
+          "ari": 0.594595,
+          "mfari": 1.0,
+          "jaccard": 1.0,
+          "cluster_sizes": [
+            3,
+            4,
+            3
+          ],
+          "time_sec": 0.01
+        },
+        "stability": {
+          "k_selected": 2,
+          "k_correct": true,
+          "ari": 0.237288,
+          "mfari": 1.0,
+          "jaccard": 1.0,
+          "cluster_sizes": [
+            7,
+            3
+          ],
+          "time_sec": 0.08
+        },
+        "unsigned_oracle": {
+          "k_selected": 2,
+          "k_correct": true,
+          "ari": 0.237288,
+          "mfari": 1.0,
+          "jaccard": 1.0,
+          "cluster_sizes": [
+            7,
+            3
+          ]
+        }
+      },
+      "medium_4mod_mixed": {
+        "eigengap": {
+          "k_selected": 2,
+          "k_correct": false,
+          "ari": 0.068493,
+          "mfari": 0.266667,
+          "jaccard": 0.25,
+          "cluster_sizes": [
+            15,
+            3
+          ],
+          "time_sec": 0.0
+        },
+        "oracle": {
+          "k_selected": 4,
+          "k_correct": true,
+          "ari": 0.338889,
+          "mfari": 0.753363,
+          "jaccard": 1.0,
+          "cluster_sizes": [
+            6,
+            6,
+            3
+          ],
+          "time_sec": 0.0
+        },
+        "oracle_best_tau": {
+          "k_selected": 4,
+          "k_correct": true,
+          "tau_p": 0.01,
+          "tau_n": 0.01,
+          "ari": 0.338889,
+          "mfari": 0.753363,
+          "jaccard": 1.0,
+          "cluster_sizes": [
+            6,
+            6,
+            3
+          ],
+          "time_sec": 0.0
+        },
+        "silhouette": {
+          "k_selected": 3,
+          "k_correct": false,
+          "ari": 0.174757,
+          "mfari": 0.645161,
+          "jaccard": 0.5,
+          "cluster_sizes": [
+            12,
+            3,
+            3
+          ],
+          "time_sec": 0.02
+        },
+        "stability": {
+          "k_selected": 3,
+          "k_correct": false,
+          "ari": 0.174757,
+          "mfari": 0.645161,
+          "jaccard": 0.5,
+          "cluster_sizes": [
+            12,
+            3,
+            3
+          ],
+          "time_sec": 0.23
+        },
+        "unsigned_oracle": {
+          "k_selected": 4,
+          "k_correct": true,
+          "ari": 0.338889,
+          "mfari": 0.753363,
+          "jaccard": 1.0,
+          "cluster_sizes": [
+            6,
+            3,
+            3
+          ]
+        }
+      },
+      "hard_4mod_unequal": {
+        "eigengap": {
+          "k_selected": 2,
+          "k_correct": false,
+          "ari": 0.040657,
+          "mfari": 0.212943,
+          "jaccard": 0.298507,
+          "cluster_sizes": [
+            28,
+            3
+          ],
+          "time_sec": 0.0
+        },
+        "oracle": {
+          "k_selected": 4,
+          "k_correct": true,
+          "ari": 0.092627,
+          "mfari": 0.369236,
+          "jaccard": 0.3125,
+          "cluster_sizes": [
+            16,
+            3,
+            3
+          ],
+          "time_sec": 0.0
+        },
+        "oracle_best_tau": {
+          "k_selected": 4,
+          "k_correct": true,
+          "tau_p": 0.01,
+          "tau_n": 0.01,
+          "ari": 0.092627,
+          "mfari": 0.369236,
+          "jaccard": 0.3125,
+          "cluster_sizes": [
+            16,
+            3,
+            3
+          ],
+          "time_sec": 0.0
+        },
+        "silhouette": {
+          "k_selected": 2,
+          "k_correct": false,
+          "ari": 0.040657,
+          "mfari": 0.212943,
+          "jaccard": 0.298507,
+          "cluster_sizes": [
+            28,
+            3
+          ],
+          "time_sec": 0.03
+        },
+        "stability": {
+          "k_selected": 2,
+          "k_correct": false,
+          "ari": 0.040657,
+          "mfari": 0.212943,
+          "jaccard": 0.298507,
+          "cluster_sizes": [
+            28,
+            3
+          ],
+          "time_sec": 0.53
+        },
+        "unsigned_oracle": {
+          "k_selected": 4,
+          "k_correct": true,
+          "ari": 0.091154,
+          "mfari": 0.534209,
+          "jaccard": 0.457143,
+          "cluster_sizes": [
+            23,
+            2,
+            3
+          ]
+        }
+      },
+      "overlapping_modules": {
+        "eigengap": {
+          "k_selected": 2,
+          "k_correct": false,
+          "ari": -0.009132,
+          "mfari": 0.083899,
+          "jaccard": 0.3,
+          "cluster_sizes": [
+            15,
+            3
+          ],
+          "time_sec": 0.0
+        },
+        "oracle": {
+          "k_selected": 4,
+          "k_correct": true,
+          "ari": 0.05084,
+          "mfari": 0.206186,
+          "jaccard": 0.25,
+          "cluster_sizes": [
+            3,
+            7,
+            3
+          ],
+          "time_sec": 0.0
+        },
+        "oracle_best_tau": {
+          "k_selected": 4,
+          "k_correct": true,
+          "tau_p": 0.01,
+          "tau_n": 0.01,
+          "ari": 0.05084,
+          "mfari": 0.206186,
+          "jaccard": 0.25,
+          "cluster_sizes": [
+            3,
+            7,
+            3
+          ],
+          "time_sec": 0.0
+        },
+        "silhouette": {
+          "k_selected": 3,
+          "k_correct": false,
+          "ari": -0.017799,
+          "mfari": 0.143599,
+          "jaccard": 0.285714,
+          "cluster_sizes": [
+            12,
+            3,
+            3
+          ],
+          "time_sec": 0.02
+        },
+        "stability": {
+          "k_selected": 3,
+          "k_correct": false,
+          "ari": -0.017799,
+          "mfari": 0.143599,
+          "jaccard": 0.285714,
+          "cluster_sizes": [
+            12,
+            3,
+            3
+          ],
+          "time_sec": 0.23
+        },
+        "unsigned_oracle": {
+          "k_selected": 4,
+          "k_correct": true,
+          "ari": 0.081475,
+          "mfari": 0.319588,
+          "jaccard": 0.4,
+          "cluster_sizes": [
+            4,
+            8,
+            3
+          ]
+        }
+      },
+      "highdim_8mod": {
+        "eigengap": {
+          "k_selected": 4,
+          "k_correct": false,
+          "ari": 0.005915,
+          "mfari": 0.097804,
+          "jaccard": 0.164384,
+          "cluster_sizes": [
+            44,
+            37,
+            57
+          ],
+          "time_sec": 0.2
+        },
+        "oracle": {
+          "k_selected": 8,
+          "k_correct": true,
+          "ari": 0.011959,
+          "mfari": 0.142531,
+          "jaccard": 0.22,
+          "cluster_sizes": [
+            19,
+            32,
+            24
+          ],
+          "time_sec": 0.44
+        },
+        "oracle_best_tau": {
+          "k_selected": 8,
+          "k_correct": true,
+          "tau_p": 100.0,
+          "tau_n": 0.1,
+          "ari": 0.012882,
+          "mfari": 0.15445,
+          "jaccard": 0.254902,
+          "cluster_sizes": [
+            29,
+            26,
+            26
+          ],
+          "time_sec": 0.09
+        },
+        "silhouette": {
+          "k_selected": 2,
+          "k_correct": false,
+          "ari": 0.000123,
+          "mfari": 0.0,
+          "jaccard": 0.086957,
+          "cluster_sizes": [
+            199,
+            1
+          ],
+          "time_sec": 0.94
+        },
+        "stability": {
+          "k_selected": 3,
+          "k_correct": false,
+          "ari": 0.000247,
+          "mfari": 0.0,
+          "jaccard": 0.086957,
+          "cluster_sizes": [
+            198,
+            1,
+            1
+          ],
+          "time_sec": 12.97
+        },
+        "unsigned_oracle": {
+          "k_selected": 8,
+          "k_correct": true,
+          "ari": 0.010812,
+          "mfari": 0.164502,
+          "jaccard": 0.137255,
+          "cluster_sizes": [
+            6,
+            27,
+            13
+          ]
+        }
+      }
+    },
+    "decomposition_analysis": {
+      "easy_2mod_xor": {
+        "sign_distribution": {
+          "frac_positive": 0.0,
+          "frac_negative": 1.0,
+          "frac_near_zero": 0.0,
+          "sign_ratio_neg_over_nonzero": 1.0,
+          "n_nonzero_pairs": 45,
+          "n_total_pairs": 45
+        },
+        "condition_numbers": {
+          "cond_A_sponge": 2.4685,
+          "cond_B_sponge": 1.0,
+          "cond_L_unsigned": 1.5920765204770372e+16
+        },
+        "eigenvector_similarity": {
+          "cos_canonical_angles": [
+            1.0,
+            1.0
+          ],
+          "mean_cos_angle": 1.0,
+          "grassmann_distance": 0.0
+        },
+        "differential_features": {
+          "n_different": 0,
+          "n_total": 10,
+          "frac_different": 0.0,
+          "details": []
+        },
+        "frustration_index": 0.247895,
+        "effective_sign_structure": {
+          "median_nonzero_coi": 0.030134,
+          "strong_positive_edges": 0,
+          "strong_negative_edges": 22,
+          "strong_total": 22,
+          "strong_neg_frac": 1.0
+        }
+      },
+      "medium_4mod_mixed": {
+        "sign_distribution": {
+          "frac_positive": 0.0,
+          "frac_negative": 0.993464,
+          "frac_near_zero": 0.006536,
+          "sign_ratio_neg_over_nonzero": 1.0,
+          "n_nonzero_pairs": 152,
+          "n_total_pairs": 153
+        },
+        "condition_numbers": {
+          "cond_A_sponge": 2.2902,
+          "cond_B_sponge": 1.0,
+          "cond_L_unsigned": 2.391444610915424e+16
+        },
+        "eigenvector_similarity": {
+          "cos_canonical_angles": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mean_cos_angle": 1.0,
+          "grassmann_distance": 0.0
+        },
+        "differential_features": {
+          "n_different": 9,
+          "n_total": 18,
+          "frac_different": 0.5,
+          "details": [
+            {
+              "feature": 2,
+              "signed_cluster": 3,
+              "unsigned_cluster": 1,
+              "is_synergistic": true,
+              "is_redundant": false,
+              "is_noise": false,
+              "top_connections": [
+                [
+                  3,
+                  -0.13963
+                ],
+                [
+                  11,
+                  -0.034152
+                ],
+                [
+                  5,
+                  -0.033681
+                ]
+              ]
+            },
+            {
+              "feature": 3,
+              "signed_cluster": 3,
+              "unsigned_cluster": 1,
+              "is_synergistic": true,
+              "is_redundant": false,
+              "is_noise": false,
+              "top_connections": [
+                [
+                  2,
+                  -0.13963
+                ],
+                [
+                  9,
+                  -0.11881
+                ],
+                [
+                  11,
+                  -0.035121
+                ]
+              ]
+            },
+            {
+              "feature": 4,
+              "signed_cluster": 1,
+              "unsigned_cluster": 3,
+              "is_synergistic": true,
+              "is_redundant": false,
+              "is_noise": false,
+              "top_connections": [
+                [
+                  5,
+                  -0.058536
+                ],
+                [
+                  9,
+                  -0.034465
+                ],
+                [
+                  15,
+                  -0.032746
+                ]
+              ]
+            }
+          ]
+        },
+        "frustration_index": 0.312443,
+        "effective_sign_structure": {
+          "median_nonzero_coi": 0.028836,
+          "strong_positive_edges": 0,
+          "strong_negative_edges": 76,
+          "strong_total": 76,
+          "strong_neg_frac": 1.0
+        }
+      },
+      "hard_4mod_unequal": {
+        "sign_distribution": {
+          "frac_positive": 0.0,
+          "frac_negative": 0.991398,
+          "frac_near_zero": 0.008602,
+          "sign_ratio_neg_over_nonzero": 1.0,
+          "n_nonzero_pairs": 461,
+          "n_total_pairs": 465
+        },
+        "condition_numbers": {
+          "cond_A_sponge": 2.1693,
+          "cond_B_sponge": 1.0,
+          "cond_L_unsigned": 1.9732064589196344e+16
+        },
+        "eigenvector_similarity": {
+          "cos_canonical_angles": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mean_cos_angle": 1.0,
+          "grassmann_distance": 0.0
+        },
+        "differential_features": {
+          "n_different": 12,
+          "n_total": 31,
+          "frac_different": 0.3871,
+          "details": [
+            {
+              "feature": 5,
+              "signed_cluster": 1,
+              "unsigned_cluster": 3,
+              "is_synergistic": true,
+              "is_redundant": false,
+              "is_noise": false,
+              "top_connections": [
+                [
+                  6,
+                  -0.069443
+                ],
+                [
+                  7,
+                  -0.039641
+                ],
+                [
+                  17,
+                  -0.038233
+                ]
+              ]
+            },
+            {
+              "feature": 6,
+              "signed_cluster": 1,
+              "unsigned_cluster": 3,
+              "is_synergistic": true,
+              "is_redundant": false,
+              "is_noise": false,
+              "top_connections": [
+                [
+                  5,
+                  -0.069443
+                ],
+                [
+                  16,
+                  -0.058316
+                ],
+                [
+                  0,
+                  -0.040349
+                ]
+              ]
+            },
+            {
+              "feature": 7,
+              "signed_cluster": 3,
+              "unsigned_cluster": 1,
+              "is_synergistic": true,
+              "is_redundant": false,
+              "is_noise": false,
+              "top_connections": [
+                [
+                  8,
+                  -0.05557
+                ],
+                [
+                  30,
+                  -0.041291
+                ],
+                [
+                  26,
+                  -0.03968
+                ]
+              ]
+            }
+          ]
+        },
+        "frustration_index": 0.30098,
+        "effective_sign_structure": {
+          "median_nonzero_coi": 0.028544,
+          "strong_positive_edges": 0,
+          "strong_negative_edges": 232,
+          "strong_total": 232,
+          "strong_neg_frac": 1.0
+        }
+      },
+      "overlapping_modules": {
+        "sign_distribution": {
+          "frac_positive": 0.0,
+          "frac_negative": 1.0,
+          "frac_near_zero": 0.0,
+          "sign_ratio_neg_over_nonzero": 1.0,
+          "n_nonzero_pairs": 153,
+          "n_total_pairs": 153
+        },
+        "condition_numbers": {
+          "cond_A_sponge": 2.2896,
+          "cond_B_sponge": 1.0,
+          "cond_L_unsigned": 2.358085279643949e+16
+        },
+        "eigenvector_similarity": {
+          "cos_canonical_angles": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mean_cos_angle": 1.0,
+          "grassmann_distance": 0.0
+        },
+        "differential_features": {
+          "n_different": 15,
+          "n_total": 18,
+          "frac_different": 0.8333,
+          "details": [
+            {
+              "feature": 0,
+              "signed_cluster": 0,
+              "unsigned_cluster": 2,
+              "is_synergistic": true,
+              "is_redundant": false,
+              "is_noise": false,
+              "top_connections": [
+                [
+                  1,
+                  -0.151047
+                ],
+                [
+                  3,
+                  -0.044709
+                ],
+                [
+                  14,
+                  -0.040515
+                ]
+              ]
+            },
+            {
+              "feature": 1,
+              "signed_cluster": 0,
+              "unsigned_cluster": 2,
+              "is_synergistic": true,
+              "is_redundant": false,
+              "is_noise": false,
+              "top_connections": [
+                [
+                  0,
+                  -0.151047
+                ],
+                [
+                  8,
+                  -0.117618
+                ],
+                [
+                  6,
+                  -0.033697
+                ]
+              ]
+            },
+            {
+              "feature": 2,
+              "signed_cluster": 3,
+              "unsigned_cluster": 1,
+              "is_synergistic": true,
+              "is_redundant": false,
+              "is_noise": false,
+              "top_connections": [
+                [
+                  3,
+                  -0.064178
+                ],
+                [
+                  9,
+                  -0.055178
+                ],
+                [
+                  13,
+                  -0.034476
+                ]
+              ]
+            }
+          ]
+        },
+        "frustration_index": 0.357087,
+        "effective_sign_structure": {
+          "median_nonzero_coi": 0.031011,
+          "strong_positive_edges": 0,
+          "strong_negative_edges": 76,
+          "strong_total": 76,
+          "strong_neg_frac": 1.0
+        }
+      },
+      "highdim_8mod": {
+        "sign_distribution": {
+          "frac_positive": 0.0,
+          "frac_negative": 0.996382,
+          "frac_near_zero": 0.003618,
+          "sign_ratio_neg_over_nonzero": 1.0,
+          "n_nonzero_pairs": 19828,
+          "n_total_pairs": 19900
+        },
+        "condition_numbers": {
+          "cond_A_sponge": 2.0297,
+          "cond_B_sponge": 3.0,
+          "cond_L_unsigned": 3.126623306032346e+17
+        },
+        "eigenvector_similarity": {
+          "cos_canonical_angles": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "mean_cos_angle": 0.953102,
+          "grassmann_distance": 0.895898
+        },
+        "differential_features": {
+          "n_different": 171,
+          "n_total": 200,
+          "frac_different": 0.855,
+          "details": [
+            {
+              "feature": 0,
+              "signed_cluster": 1,
+              "unsigned_cluster": 2,
+              "is_synergistic": true,
+              "is_redundant": false,
+              "is_noise": false,
+              "top_connections": [
+                [
+                  1,
+                  -0.073216
+                ],
+                [
+                  25,
+                  -0.056476
+                ],
+                [
+                  70,
+                  -0.041115
+                ]
+              ]
+            },
+            {
+              "feature": 1,
+              "signed_cluster": 1,
+              "unsigned_cluster": 2,
+              "is_synergistic": true,
+              "is_redundant": false,
+              "is_noise": false,
+              "top_connections": [
+                [
+                  0,
+                  -0.073216
+                ],
+                [
+                  24,
+                  -0.044438
+                ],
+                [
+                  37,
+                  -0.037483
+                ]
+              ]
+            },
+            {
+              "feature": 2,
+              "signed_cluster": 3,
+              "unsigned_cluster": 4,
+              "is_synergistic": true,
+              "is_redundant": false,
+              "is_noise": false,
+              "top_connections": [
+                [
+                  193,
+                  -0.042866
+                ],
+                [
+                  135,
+                  -0.042829
+                ],
+                [
+                  147,
+                  -0.042734
+                ]
+              ]
+            }
+          ]
+        },
+        "frustration_index": 0.307533,
+        "effective_sign_structure": {
+          "median_nonzero_coi": 0.026834,
+          "strong_positive_edges": 0,
+          "strong_negative_edges": 9949,
+          "strong_total": 9949,
+          "strong_neg_frac": 1.0
+        }
+      }
+    },
+    "highdim_fix": {
+      "sparsification": [
+        {
+          "keep_frac": 0.05,
+          "threshold": 0.036277,
+          "n_nonzero_edges": 995,
+          "sponge_default_tau": {
+            "ari": 0.000244,
+            "mfari": -0.000665,
+            "jaccard": 0.082949,
+            "cluster_sizes": [
+              177,
+              5,
+              3
+            ]
+          },
+          "sponge_best_tau": {
+            "ari": 0.00096,
+            "mfari": -0.000945,
+            "jaccard": 0.084746,
+            "cluster_sizes": [
+              180,
+              3,
+              3
+            ]
+          },
+          "unsigned": {
+            "ari": 6.2e-05,
+            "mfari": -0.001721,
+            "jaccard": 0.082949,
+            "cluster_sizes": [
+              5,
+              1,
+              6
+            ]
+          }
+        },
+        {
+          "keep_frac": 0.1,
+          "threshold": 0.034243,
+          "n_nonzero_edges": 1990,
+          "sponge_default_tau": {
+            "ari": 6.3e-05,
+            "mfari": -0.000228,
+            "jaccard": 0.085106,
+            "cluster_sizes": [
+              191,
+              2,
+              2
+            ]
+          },
+          "sponge_best_tau": {
+            "ari": 6.3e-05,
+            "mfari": -0.000455,
+            "jaccard": 0.084746,
+            "cluster_sizes": [
+              191,
+              1,
+              3
+            ]
+          },
+          "unsigned": {
+            "ari": 0.000355,
+            "mfari": 0.0,
+            "jaccard": 0.086275,
+            "cluster_sizes": [
+              193,
+              1,
+              1
+            ]
+          }
+        },
+        {
+          "keep_frac": 0.2,
+          "threshold": 0.031797,
+          "n_nonzero_edges": 3980,
+          "sponge_default_tau": {
+            "ari": 0.012354,
+            "mfari": 0.127679,
+            "jaccard": 0.107143,
+            "cluster_sizes": [
+              15,
+              28,
+              31
+            ]
+          },
+          "sponge_best_tau": {
+            "ari": 0.008354,
+            "mfari": 0.089196,
+            "jaccard": 0.103448,
+            "cluster_sizes": [
+              19,
+              39,
+              25
+            ]
+          },
+          "unsigned": {
+            "ari": 0.001493,
+            "mfari": 0.037372,
+            "jaccard": 0.119403,
+            "cluster_sizes": [
+              37,
+              59,
+              1
+            ]
+          }
+        }
+      ],
+      "large_tau": [
+        {
+          "tau": 1.0,
+          "metrics": {
+            "ari": 0.011959,
+            "mfari": 0.142531,
+            "jaccard": 0.22,
+            "cluster_sizes": [
+              19,
+              32,
+              24
+            ]
+          }
+        },
+        {
+          "tau": 5.0,
+          "metrics": {
+            "ari": 0.011037,
+            "mfari": 0.130779,
+            "jaccard": 0.192308,
+            "cluster_sizes": [
+              31,
+              25,
+              24
+            ]
+          }
+        },
+        {
+          "tau": 10.0,
+          "metrics": {
+            "ari": 0.011037,
+            "mfari": 0.130779,
+            "jaccard": 0.192308,
+            "cluster_sizes": [
+              31,
+              25,
+              24
+            ]
+          }
+        }
+      ],
+      "threshold_zeroing": [
+        {
+          "threshold": 0.001,
+          "n_nonzero_edges": 19899,
+          "sponge": {
+            "ari": 0.011884,
+            "mfari": 0.155959,
+            "jaccard": 0.243902,
+            "cluster_sizes": [
+              12,
+              28,
+              35
+            ]
+          },
+          "unsigned": {
+            "ari": 0.013525,
+            "mfari": 0.181435,
+            "jaccard": 0.204545,
+            "cluster_sizes": [
+              23,
+              8,
+              34
+            ]
+          }
+        },
+        {
+          "threshold": 0.005,
+          "n_nonzero_edges": 19896,
+          "sponge": {
+            "ari": 0.012784,
+            "mfari": 0.160395,
+            "jaccard": 0.232558,
+            "cluster_sizes": [
+              21,
+              29,
+              26
+            ]
+          },
+          "unsigned": {
+            "ari": 0.012611,
+            "mfari": 0.170878,
+            "jaccard": 0.261905,
+            "cluster_sizes": [
+              26,
+              23,
+              26
+            ]
+          }
+        },
+        {
+          "threshold": 0.01,
+          "n_nonzero_edges": 19828,
+          "sponge": {
+            "ari": 0.008468,
+            "mfari": 0.099014,
+            "jaccard": 0.12,
+            "cluster_sizes": [
+              23,
+              22,
+              22
+            ]
+          },
+          "unsigned": {
+            "ari": 0.01266,
+            "mfari": 0.181435,
+            "jaccard": 0.181818,
+            "cluster_sizes": [
+              31,
+              28,
+              8
+            ]
+          }
+        }
+      ],
+      "combined_best": {
+        "sparsify_plus_tau": {
+          "keep_frac": 0.5,
+          "tau": 1.0,
+          "metrics": {
+            "ari": 0.00509,
+            "mfari": 0.051948,
+            "jaccard": 0.113208,
+            "cluster_sizes": [
+              24,
+              26,
+              23
+            ]
+          }
+        },
+        "threshold_plus_tau": {
+          "threshold": 0.001,
+          "tau": 1.0,
+          "metrics": {
+            "ari": 0.011884,
+            "mfari": 0.155959,
+            "jaccard": 0.243902,
+            "cluster_sizes": [
+              12,
+              28,
+              35
+            ]
+          }
+        },
+        "unsigned_full_baseline": {
+          "ari": 0.010812,
+          "mfari": 0.164502,
+          "jaccard": 0.137255,
+          "cluster_sizes": [
+            6,
+            27,
+            13
+          ]
+        }
+      }
+    },
+    "verdict": {
+      "per_variant": {
+        "easy_2mod_xor": {
+          "best_signed_jaccard": 1.0,
+          "best_unsigned_jaccard": 1.0,
+          "signed_advantage": 0.0,
+          "best_tau_p": 0.01,
+          "best_tau_n": 0.01,
+          "best_k_strategy": "eigengap",
+          "frustration_index": 0.247895,
+          "sign_distribution": 1.0,
+          "eigenvector_similarity": 1.0
+        },
+        "medium_4mod_mixed": {
+          "best_signed_jaccard": 1.0,
+          "best_unsigned_jaccard": 1.0,
+          "signed_advantage": 0.0,
+          "best_tau_p": 0.01,
+          "best_tau_n": 0.01,
+          "best_k_strategy": "oracle",
+          "frustration_index": 0.312443,
+          "sign_distribution": 1.0,
+          "eigenvector_similarity": 1.0
+        },
+        "hard_4mod_unequal": {
+          "best_signed_jaccard": 0.3125,
+          "best_unsigned_jaccard": 0.457143,
+          "signed_advantage": -0.144643,
+          "best_tau_p": 0.01,
+          "best_tau_n": 0.01,
+          "best_k_strategy": "unsigned_oracle",
+          "frustration_index": 0.30098,
+          "sign_distribution": 1.0,
+          "eigenvector_similarity": 1.0
+        },
+        "overlapping_modules": {
+          "best_signed_jaccard": 0.25,
+          "best_unsigned_jaccard": 0.4,
+          "signed_advantage": -0.15,
+          "best_tau_p": 0.01,
+          "best_tau_n": 0.01,
+          "best_k_strategy": "unsigned_oracle",
+          "frustration_index": 0.357087,
+          "sign_distribution": 1.0,
+          "eigenvector_similarity": 1.0
+        },
+        "highdim_8mod": {
+          "best_signed_jaccard": 0.254902,
+          "best_unsigned_jaccard": 0.137255,
+          "signed_advantage": 0.117647,
+          "best_tau_p": 100.0,
+          "best_tau_n": 0.1,
+          "best_k_strategy": "oracle_best_tau",
+          "frustration_index": 0.307533,
+          "sign_distribution": 1.0,
+          "eigenvector_similarity": 0.953102
+        }
+      },
+      "cross_variant": {
+        "mean_signed_advantage": -0.035399,
+        "mean_frustration": 0.305188,
+        "mean_sign_ratio": 1.0,
+        "corr_frustration_advantage": -0.392787,
+        "corr_sign_ratio_advantage": null,
+        "best_k_strategy_non_oracle": "stability",
+        "best_k_strategy_accuracy": 0.2
+      }
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "easy_2mod_xor",
+      "examples": [
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"feature_index\": 0, \"tau_p\": 0.01, \"tau_n\": 0.01, \"k_strategy\": \"oracle\"}",
+          "output": "0",
+          "predict_signed_default": "1",
+          "predict_signed_best_tau": "1",
+          "predict_unsigned": "1",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_feature_index": 0,
+          "metadata_individual_mi": 0.001016,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "metadata_tau_p": 0.01,
+          "metadata_tau_n": 0.01
+        },
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"feature_index\": 1, \"tau_p\": 0.01, \"tau_n\": 0.01, \"k_strategy\": \"oracle\"}",
+          "output": "0",
+          "predict_signed_default": "1",
+          "predict_signed_best_tau": "1",
+          "predict_unsigned": "1",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_feature_index": 1,
+          "metadata_individual_mi": 0.001406,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "metadata_tau_p": 0.01,
+          "metadata_tau_n": 0.01
+        },
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"feature_index\": 2, \"tau_p\": 0.01, \"tau_n\": 0.01, \"k_strategy\": \"oracle\"}",
+          "output": "1",
+          "predict_signed_default": "0",
+          "predict_signed_best_tau": "0",
+          "predict_unsigned": "0",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_feature_index": 2,
+          "metadata_individual_mi": 0.0,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "metadata_tau_p": 0.01,
+          "metadata_tau_n": 0.01
+        }
+      ]
+    },
+    {
+      "dataset": "medium_4mod_mixed",
+      "examples": [
+        {
+          "input": "{\"variant\": \"medium_4mod_mixed\", \"feature_index\": 0, \"tau_p\": 0.01, \"tau_n\": 0.01, \"k_strategy\": \"oracle\"}",
+          "output": "0",
+          "predict_signed_default": "2",
+          "predict_signed_best_tau": "2",
+          "predict_unsigned": "2",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_feature_index": 0,
+          "metadata_individual_mi": 0.0,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "metadata_tau_p": 0.01,
+          "metadata_tau_n": 0.01
+        },
+        {
+          "input": "{\"variant\": \"medium_4mod_mixed\", \"feature_index\": 1, \"tau_p\": 0.01, \"tau_n\": 0.01, \"k_strategy\": \"oracle\"}",
+          "output": "0",
+          "predict_signed_default": "2",
+          "predict_signed_best_tau": "2",
+          "predict_unsigned": "2",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_feature_index": 1,
+          "metadata_individual_mi": 0.000151,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "metadata_tau_p": 0.01,
+          "metadata_tau_n": 0.01
+        },
+        {
+          "input": "{\"variant\": \"medium_4mod_mixed\", \"feature_index\": 2, \"tau_p\": 0.01, \"tau_n\": 0.01, \"k_strategy\": \"oracle\"}",
+          "output": "1",
+          "predict_signed_default": "3",
+          "predict_signed_best_tau": "3",
+          "predict_unsigned": "1",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_feature_index": 2,
+          "metadata_individual_mi": 0.003028,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "metadata_tau_p": 0.01,
+          "metadata_tau_n": 0.01
+        }
+      ]
+    },
+    {
+      "dataset": "hard_4mod_unequal",
+      "examples": [
+        {
+          "input": "{\"variant\": \"hard_4mod_unequal\", \"feature_index\": 0, \"tau_p\": 0.01, \"tau_n\": 0.01, \"k_strategy\": \"oracle\"}",
+          "output": "0",
+          "predict_signed_default": "2",
+          "predict_signed_best_tau": "2",
+          "predict_unsigned": "2",
+          "metadata_variant": "hard_4mod_unequal",
+          "metadata_feature_index": 0,
+          "metadata_individual_mi": 0.0,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "metadata_tau_p": 0.01,
+          "metadata_tau_n": 0.01
+        },
+        {
+          "input": "{\"variant\": \"hard_4mod_unequal\", \"feature_index\": 1, \"tau_p\": 0.01, \"tau_n\": 0.01, \"k_strategy\": \"oracle\"}",
+          "output": "0",
+          "predict_signed_default": "2",
+          "predict_signed_best_tau": "2",
+          "predict_unsigned": "2",
+          "metadata_variant": "hard_4mod_unequal",
+          "metadata_feature_index": 1,
+          "metadata_individual_mi": 0.0,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "metadata_tau_p": 0.01,
+          "metadata_tau_n": 0.01
+        },
+        {
+          "input": "{\"variant\": \"hard_4mod_unequal\", \"feature_index\": 2, \"tau_p\": 0.01, \"tau_n\": 0.01, \"k_strategy\": \"oracle\"}",
+          "output": "1",
+          "predict_signed_default": "0",
+          "predict_signed_best_tau": "0",
+          "predict_unsigned": "0",
+          "metadata_variant": "hard_4mod_unequal",
+          "metadata_feature_index": 2,
+          "metadata_individual_mi": 0.0,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "metadata_tau_p": 0.01,
+          "metadata_tau_n": 0.01
+        }
+      ]
+    }
+  ]
+}

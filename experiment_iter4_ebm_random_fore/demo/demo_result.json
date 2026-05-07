@@ -1,0 +1,13 @@
+{
+  "id": "exp_id2_it4__opus",
+  "type": "code",
+  "title": "EBM + Random Forest + Logistic/Ridge Baselines on 8 Real Datasets",
+  "summary": "Demonstrates EBM, Random Forest, and Logistic/Ridge Regression baselines on the credit dataset (binary classification) from the Grinsztajn benchmark. Uses 80 curated examples with pre-assigned 5-fold CV splits. Trains each model per fold, computes balanced accuracy, AUC, fit time, and EBM interpretability metrics (n_terms, interactions, main effects). Visualizes aggregate results with bar charts comparing methods.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_4/gen_art/exp_id2_it4__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id2_it4__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id2_it4__opus/method_code_demo.ipynb"
+}

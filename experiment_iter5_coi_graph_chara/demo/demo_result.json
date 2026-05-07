@@ -1,0 +1,13 @@
+{
+  "id": "exp_id2_it5__opus",
+  "type": "code",
+  "title": "CoI Graph Characterization & Frustration Meta-Diagnostic Across 14 Datasets",
+  "summary": "Demo notebook for the CoI Graph Characterization & Frustration Meta-Diagnostic experiment. Demonstrates the full pipeline: computing pairwise Co-Information matrices via binning-based MI, graph characterization (sign distributions), unsigned and signed (SPONGE) spectral clustering, frustration index computation, and axis-aligned vs random-oblique FIGS comparison. Generates two synthetic datasets (XOR-structured and random) for live computation, then loads pre-computed results from 14 datasets to perform Spearman correlation analysis between frustration index and oblique benefit. Includes 4-panel visualization with scatter plot, CoI heatmap, sign distribution, and FIGS comparison charts.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_5/gen_art/exp_id2_it5__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id2_it5__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id2_it5__opus/method_code_demo.ipynb"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "exp_id1_it5__opus",
+  "type": "code",
+  "title": "Re-run Real Benchmark (5 FIGS x 8 Datasets x 5-fold CV) with Output Size Fix",
+  "summary": "Demo notebook demonstrating 5 FIGS (Fast Interpretable Greedy-tree Sums) split strategies with Co-Information (CoI) guided feature clustering on a synthetic adult dataset (60 examples, 6 features, 3-fold CV). Computes CoI matrix, applies 3 clustering methods (unsigned spectral, signed SPONGE, hard threshold), trains FIGS trees with all 5 strategies (axis-aligned, random-oblique, unsigned-spectral, signed-spectral, hard-threshold) across 3 max_splits values (5, 10, 20), and visualizes balanced accuracy comparison. Uses full original parameter values. Runs in ~10 seconds.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_5/gen_art/exp_id1_it5__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id1_it5__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id1_it5__opus/method_code_demo.ipynb"
+}

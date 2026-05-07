@@ -1,0 +1,4871 @@
+{
+  "metadata": {
+    "experiment": "CoI Graph Characterization & Frustration Meta-Diagnostic",
+    "description": "Computes pairwise Co-Information graphs for 14 datasets, runs unsigned and signed (SPONGE) spectral clustering, computes frustration index, then tests Spearman correlation between frustration index and oblique benefit.",
+    "n_datasets_total": 14,
+    "coi_method": "binning_based_mi",
+    "n_bins": 10,
+    "subsample_n": 20000,
+    "figs_max_splits": 10,
+    "master_seed": 42,
+    "per_dataset_results": {
+      "credit": {
+        "n_samples": 16714,
+        "n_features": 10,
+        "task_type": "classification",
+        "is_synthetic": false,
+        "coi_computation": {
+          "subsample_n": 16714,
+          "n_bins": 10,
+          "features_used": 10,
+          "time_s": 0.06
+        },
+        "mi_individual_top10": [
+          [
+            0,
+            0.117786
+          ],
+          [
+            6,
+            0.083301
+          ],
+          [
+            2,
+            0.082432
+          ],
+          [
+            8,
+            0.061054
+          ],
+          [
+            1,
+            0.02452
+          ],
+          [
+            5,
+            0.010658
+          ],
+          [
+            4,
+            0.010258
+          ],
+          [
+            3,
+            0.008639
+          ],
+          [
+            7,
+            0.005065
+          ],
+          [
+            9,
+            0.00413
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 10,
+          "sign_distribution": {
+            "n_positive": 25,
+            "n_negative": 13,
+            "n_near_zero": 7,
+            "n_total_pairs": 45,
+            "frac_positive": 0.5556,
+            "frac_negative": 0.2889,
+            "frac_near_zero": 0.1556
+          },
+          "value_distribution": {
+            "mean": 0.0042938,
+            "median": 0.00162275,
+            "std": 0.0126253,
+            "min": -0.02049668,
+            "max": 0.04227043,
+            "q25": -0.00188234,
+            "q75": 0.00420551,
+            "iqr": 0.00608785,
+            "abs_mean": 0.00780232
+          }
+        },
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            5,
+            5
+          ],
+          "modules": [
+            [
+              3,
+              4,
+              5,
+              7,
+              9
+            ],
+            [
+              0,
+              1,
+              2,
+              6,
+              8
+            ]
+          ],
+          "silhouette": 0.803794,
+          "time_s": 0.393,
+          "eigenvalues_top20": [
+            0.0,
+            0.39663839,
+            0.92918804,
+            1.00109234,
+            1.040687,
+            1.1473304,
+            1.24825148,
+            1.27488762,
+            1.38454557,
+            1.57737916
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 8,
+          "module_sizes": [
+            2,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "modules": [
+            [
+              3,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              4
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              7
+            ],
+            [
+              9
+            ],
+            [
+              1
+            ],
+            [
+              5
+            ]
+          ],
+          "silhouette": 0.059001,
+          "time_s": 0.011,
+          "eigenvalues_top20": [
+            0.08886115,
+            0.58556386,
+            0.85584937,
+            1.00030802,
+            1.05835343,
+            1.14153964,
+            1.25367052,
+            1.29411294,
+            1.36627482,
+            2.89272274
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.0080323911,
+          "normalized_by_max": 0.0450437064,
+          "normalized_by_d": 0.0008032391,
+          "lambda_min": 0.0080323911,
+          "lambda_max": 0.178324382
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            0.0,
+            0.0199155142,
+            0.024423637,
+            0.0334724465,
+            0.0415526395,
+            0.0502587203,
+            0.0781898848,
+            0.1278893695,
+            0.1482256452
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.0080323911,
+            0.0137435338,
+            0.0220570433,
+            0.0335157295,
+            0.0402926256,
+            0.05041826,
+            0.0791652339,
+            0.1277302435,
+            0.1489295843
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.746648,
+          "metric_random_oblique": 0.752633,
+          "oblique_benefit": 0.005984,
+          "metric_name": "balanced_accuracy",
+          "n_train": 13371,
+          "n_test": 3343,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 3.7
+        }
+      },
+      "adult": {
+        "n_samples": 32561,
+        "n_features": 6,
+        "task_type": "classification",
+        "is_synthetic": false,
+        "coi_computation": {
+          "subsample_n": 20000,
+          "n_bins": 10,
+          "features_used": 6,
+          "time_s": 0.03
+        },
+        "mi_individual_top10": [
+          [
+            0,
+            0.064591
+          ],
+          [
+            2,
+            0.057739
+          ],
+          [
+            5,
+            0.036159
+          ],
+          [
+            1,
+            0.000782
+          ],
+          [
+            3,
+            0.0
+          ],
+          [
+            4,
+            0.0
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 6,
+          "sign_distribution": {
+            "n_positive": 3,
+            "n_negative": 3,
+            "n_near_zero": 9,
+            "n_total_pairs": 15,
+            "frac_positive": 0.2,
+            "frac_negative": 0.2,
+            "frac_near_zero": 0.6
+          },
+          "value_distribution": {
+            "mean": 0.00192916,
+            "median": 0.0,
+            "std": 0.00472989,
+            "min": -0.00181602,
+            "max": 0.01421956,
+            "q25": 0.0,
+            "q75": 0.0,
+            "iqr": 0.0,
+            "abs_mean": 0.00251422
+          }
+        },
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            4,
+            2
+          ],
+          "modules": [
+            [
+              0,
+              1,
+              2,
+              5
+            ],
+            [
+              3,
+              4
+            ]
+          ],
+          "silhouette": 0.715482,
+          "time_s": 0.004,
+          "eigenvalues_top20": [
+            0.0,
+            1.0,
+            1.0,
+            1.05885948,
+            1.37580908,
+            1.56533144
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 2,
+          "module_sizes": [
+            5,
+            1
+          ],
+          "modules": [
+            [
+              0,
+              1,
+              2,
+              3,
+              5
+            ],
+            [
+              4
+            ]
+          ],
+          "silhouette": 0.548814,
+          "time_s": 0.006,
+          "eigenvalues_top20": [
+            -0.0,
+            0.0,
+            0.06146168,
+            1.06609495,
+            1.37579719,
+            1.57018729
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.0,
+          "normalized_by_max": 0.0,
+          "normalized_by_d": 0.0,
+          "lambda_min": 0.0,
+          "lambda_max": 0.0395414271
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            0.0,
+            0.0,
+            0.0,
+            0.0058425957,
+            0.0300426354
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.0,
+            0.0,
+            0.0,
+            0.0058425957,
+            0.0300426354
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.560811,
+          "metric_random_oblique": 0.68788,
+          "oblique_benefit": 0.127068,
+          "metric_name": "balanced_accuracy",
+          "n_train": 26048,
+          "n_test": 6513,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 2.4
+        }
+      },
+      "electricity": {
+        "n_samples": 38474,
+        "n_features": 7,
+        "task_type": "classification",
+        "is_synthetic": false,
+        "coi_computation": {
+          "subsample_n": 20000,
+          "n_bins": 10,
+          "features_used": 7,
+          "time_s": 0.04
+        },
+        "mi_individual_top10": [
+          [
+            2,
+            0.153786
+          ],
+          [
+            3,
+            0.067202
+          ],
+          [
+            4,
+            0.066715
+          ],
+          [
+            1,
+            0.065816
+          ],
+          [
+            5,
+            0.026684
+          ],
+          [
+            6,
+            0.007102
+          ],
+          [
+            0,
+            0.001457
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 7,
+          "sign_distribution": {
+            "n_positive": 11,
+            "n_negative": 9,
+            "n_near_zero": 1,
+            "n_total_pairs": 21,
+            "frac_positive": 0.5238,
+            "frac_negative": 0.4286,
+            "frac_near_zero": 0.0476
+          },
+          "value_distribution": {
+            "mean": 0.00105228,
+            "median": 0.00179886,
+            "std": 0.02843146,
+            "min": -0.0873113,
+            "max": 0.04191292,
+            "q25": -0.00748183,
+            "q75": 0.01988355,
+            "iqr": 0.02736538,
+            "abs_mean": 0.0208213
+          }
+        },
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            4,
+            3
+          ],
+          "modules": [
+            [
+              1,
+              3,
+              4,
+              5
+            ],
+            [
+              0,
+              2,
+              6
+            ]
+          ],
+          "silhouette": 0.720438,
+          "time_s": 0.004,
+          "eigenvalues_top20": [
+            0.0,
+            0.87539971,
+            0.97553709,
+            1.00590951,
+            1.29371854,
+            1.35865699,
+            1.49077816
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 5,
+          "module_sizes": [
+            1,
+            2,
+            2,
+            1,
+            1
+          ],
+          "modules": [
+            [
+              2
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              6
+            ],
+            [
+              4
+            ]
+          ],
+          "silhouette": 0.065512,
+          "time_s": 0.005,
+          "eigenvalues_top20": [
+            0.28076965,
+            0.76451196,
+            0.95325244,
+            1.08248365,
+            1.30495371,
+            1.36527736,
+            2.16344528
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.0077829438,
+          "normalized_by_max": 0.0271089524,
+          "normalized_by_d": 0.0011118491,
+          "lambda_min": 0.0077829438,
+          "lambda_max": 0.2870986542
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            0.0,
+            0.0368250874,
+            0.0749675945,
+            0.1262548582,
+            0.1720818908,
+            0.1783334984
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.0077829438,
+            0.0301365834,
+            0.0724574843,
+            0.1260627853,
+            0.1719979916,
+            0.1789582618
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.722912,
+          "metric_random_oblique": 0.762429,
+          "oblique_benefit": 0.039517,
+          "metric_name": "balanced_accuracy",
+          "n_train": 30779,
+          "n_test": 7695,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 2.7
+        }
+      },
+      "california_housing": {
+        "n_samples": 20640,
+        "n_features": 8,
+        "task_type": "regression",
+        "is_synthetic": false,
+        "coi_computation": {
+          "subsample_n": 20000,
+          "n_bins": 10,
+          "features_used": 8,
+          "time_s": 0.06
+        },
+        "mi_individual_top10": [
+          [
+            0,
+            0.32683
+          ],
+          [
+            7,
+            0.15811
+          ],
+          [
+            6,
+            0.131669
+          ],
+          [
+            2,
+            0.076148
+          ],
+          [
+            5,
+            0.061633
+          ],
+          [
+            1,
+            0.019529
+          ],
+          [
+            3,
+            0.017932
+          ],
+          [
+            4,
+            0.013768
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 8,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 28,
+            "n_near_zero": 0,
+            "n_total_pairs": 28,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "value_distribution": {
+            "mean": -0.04525358,
+            "median": -0.03630701,
+            "std": 0.02538163,
+            "min": -0.11967032,
+            "max": -0.01591978,
+            "q25": -0.06098142,
+            "q75": -0.02540013,
+            "iqr": 0.03558129,
+            "abs_mean": 0.04525358
+          }
+        },
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            5,
+            3
+          ],
+          "modules": [
+            [
+              2,
+              3,
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ]
+          ],
+          "silhouette": 0.73819,
+          "time_s": 0.005,
+          "eigenvalues_top20": [
+            0.0,
+            0.94183254,
+            1.01006635,
+            1.07774066,
+            1.15100418,
+            1.2460644,
+            1.2591246,
+            1.31416727
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 7,
+          "module_sizes": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "modules": [
+            [
+              2,
+              3
+            ],
+            [
+              5
+            ],
+            [
+              0
+            ],
+            [
+              7
+            ],
+            [
+              6
+            ],
+            [
+              1
+            ],
+            [
+              4
+            ]
+          ],
+          "silhouette": 0.004929,
+          "time_s": 0.006,
+          "eigenvalues_top20": [
+            0.76093661,
+            0.79420064,
+            0.80252466,
+            0.8688042,
+            0.92786249,
+            0.99002973,
+            1.06175617,
+            316775.16668446
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.1555255907,
+          "normalized_by_max": 0.2168972485,
+          "normalized_by_d": 0.0194406988,
+          "lambda_min": 0.1555255907,
+          "lambda_max": 0.7170473199
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            0.0,
+            0.191511411,
+            0.214613748,
+            0.3114466218,
+            0.3638762337,
+            0.4326029284,
+            0.4793685736
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.1555255907,
+            0.1804521263,
+            0.2186473981,
+            0.2760725937,
+            0.2935651404,
+            0.3329474689,
+            0.3599428185
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.520306,
+          "metric_random_oblique": 0.61028,
+          "oblique_benefit": 0.089973,
+          "metric_name": "r2",
+          "n_train": 16512,
+          "n_test": 4128,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 3.0
+        }
+      },
+      "easy_2mod_xor": {
+        "n_samples": 10000,
+        "n_features": 10,
+        "task_type": "classification",
+        "is_synthetic": true,
+        "coi_computation": {
+          "subsample_n": 10000,
+          "n_bins": 10,
+          "features_used": 10,
+          "time_s": 0.04
+        },
+        "mi_individual_top10": [
+          [
+            3,
+            0.000869
+          ],
+          [
+            8,
+            0.000758
+          ],
+          [
+            6,
+            0.000691
+          ],
+          [
+            0,
+            0.000609
+          ],
+          [
+            9,
+            0.000605
+          ],
+          [
+            5,
+            0.00051
+          ],
+          [
+            1,
+            0.000441
+          ],
+          [
+            2,
+            0.000395
+          ],
+          [
+            7,
+            0.000333
+          ],
+          [
+            4,
+            0.000277
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 10,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 45,
+            "n_near_zero": 0,
+            "n_total_pairs": 45,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "value_distribution": {
+            "mean": -0.01383559,
+            "median": -0.0039843,
+            "std": 0.03198314,
+            "min": -0.13296668,
+            "max": -0.00198483,
+            "q25": -0.00475908,
+            "q75": -0.00337384,
+            "iqr": 0.00138523,
+            "abs_mean": 0.01383559
+          },
+          "ground_truth_analysis": {
+            "synergistic_pairs": [
+              {
+                "module": 0,
+                "features": [
+                  0,
+                  1
+                ],
+                "coi_value": -0.132967,
+                "is_negative": true
+              },
+              {
+                "module": 1,
+                "features": [
+                  2,
+                  3
+                ],
+                "coi_value": -0.126089,
+                "is_negative": true
+              }
+            ],
+            "redundant_pairs": [
+              {
+                "features": [
+                  0,
+                  4
+                ],
+                "coi_value": -0.001985,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  2,
+                  5
+                ],
+                "coi_value": -0.003049,
+                "is_positive": false
+              }
+            ]
+          }
+        },
+        "unsigned_spectral": {
+          "k": 7,
+          "module_sizes": [
+            1,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "modules": [
+            [
+              6
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              5
+            ],
+            [
+              8
+            ],
+            [
+              4
+            ]
+          ],
+          "silhouette": 0.135421,
+          "time_s": 0.01,
+          "eigenvalues_top20": [
+            0.0,
+            0.21627593,
+            0.77087778,
+            1.01411472,
+            1.02105468,
+            1.06675426,
+            1.11457775,
+            1.13092753,
+            1.82221874,
+            1.84319862
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 9,
+          "module_sizes": [
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "modules": [
+            [
+              3
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              7
+            ],
+            [
+              9
+            ],
+            [
+              4
+            ],
+            [
+              6
+            ],
+            [
+              5
+            ],
+            [
+              8
+            ],
+            [
+              2
+            ]
+          ],
+          "silhouette": 0.030745,
+          "time_s": 0.007,
+          "eigenvalues_top20": [
+            0.54253355,
+            0.5487799,
+            0.88420845,
+            0.89717804,
+            0.93739818,
+            0.97937267,
+            0.98607459,
+            1.29718034,
+            4.62360804,
+            124521.40652965
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.0281112612,
+          "normalized_by_max": 0.0715402341,
+          "normalized_by_d": 0.0028111261,
+          "lambda_min": 0.0281112612,
+          "lambda_max": 0.3929433771
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            -0.0,
+            0.0355285362,
+            0.0394749631,
+            0.0400155961,
+            0.0414762179,
+            0.0429626114,
+            0.1430624899,
+            0.1471490002,
+            0.3719238218
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.0281112612,
+            0.0300121585,
+            0.0308809709,
+            0.0326511744,
+            0.0344647629,
+            0.0489536548,
+            0.1391378619,
+            0.141160585,
+            0.3668874267
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.512201,
+          "metric_random_oblique": 0.632247,
+          "oblique_benefit": 0.120046,
+          "metric_name": "balanced_accuracy",
+          "n_train": 8000,
+          "n_test": 2000,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 3.5
+        },
+        "ground_truth_recovery": {
+          "unsigned_ari": 1.0,
+          "sponge_ari": 0.5714,
+          "n_assigned_features": 4
+        }
+      },
+      "eye_movements": {
+        "n_samples": 7608,
+        "n_features": 20,
+        "task_type": "classification",
+        "is_synthetic": false,
+        "coi_computation": {
+          "subsample_n": 7608,
+          "n_bins": 10,
+          "features_used": 20,
+          "time_s": 0.14
+        },
+        "mi_individual_top10": [
+          [
+            18,
+            0.009798
+          ],
+          [
+            19,
+            0.005225
+          ],
+          [
+            6,
+            0.003871
+          ],
+          [
+            14,
+            0.003714
+          ],
+          [
+            8,
+            0.002658
+          ],
+          [
+            9,
+            0.002341
+          ],
+          [
+            7,
+            0.001737
+          ],
+          [
+            10,
+            0.001443
+          ],
+          [
+            16,
+            0.00133
+          ],
+          [
+            13,
+            0.001192
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 20,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 186,
+            "n_near_zero": 4,
+            "n_total_pairs": 190,
+            "frac_positive": 0.0,
+            "frac_negative": 0.9789,
+            "frac_near_zero": 0.0211
+          },
+          "value_distribution": {
+            "mean": -0.00486907,
+            "median": -0.00485326,
+            "std": 0.00229617,
+            "min": -0.01554684,
+            "max": -0.0001797,
+            "q25": -0.00583866,
+            "q75": -0.00358603,
+            "iqr": 0.00225263,
+            "abs_mean": 0.00486907
+          }
+        },
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            11,
+            9
+          ],
+          "modules": [
+            [
+              2,
+              3,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              17
+            ],
+            [
+              0,
+              1,
+              4,
+              13,
+              14,
+              15,
+              16,
+              18,
+              19
+            ]
+          ],
+          "silhouette": 0.676716,
+          "time_s": 0.004,
+          "eigenvalues_top20": [
+            -0.0,
+            0.92152127,
+            0.94030458,
+            0.98897821,
+            1.00074537,
+            1.00402943,
+            1.01275675,
+            1.01952393,
+            1.02854275,
+            1.02963618,
+            1.03947502,
+            1.05029568,
+            1.07164218,
+            1.07630158,
+            1.08514459,
+            1.10584255,
+            1.11836325,
+            1.13383044,
+            1.16067743,
+            1.21238881
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 2,
+          "module_sizes": [
+            10,
+            10
+          ],
+          "modules": [
+            [
+              3,
+              4,
+              6,
+              7,
+              8,
+              14,
+              15,
+              16,
+              17,
+              19
+            ],
+            [
+              0,
+              1,
+              2,
+              5,
+              9,
+              10,
+              11,
+              12,
+              13,
+              18
+            ]
+          ],
+          "silhouette": 0.480093,
+          "time_s": 0.004,
+          "eigenvalues_top20": [
+            0.82481133,
+            0.86155695,
+            0.88195768,
+            0.89415538,
+            0.90427877,
+            0.92152668,
+            0.92909672,
+            0.93313746,
+            0.95210128,
+            0.96201164,
+            0.97120634,
+            0.97223698,
+            0.98083851,
+            0.98739179,
+            0.99597601,
+            0.99924641,
+            1.01113258,
+            1.06346731,
+            1.08514695,
+            92512.33802737
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.0362001278,
+          "normalized_by_max": 0.1786544996,
+          "normalized_by_d": 0.0018100064,
+          "lambda_min": 0.0362001278,
+          "lambda_max": 0.2026264543
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            0.0,
+            0.0387151515,
+            0.054137684,
+            0.0697719569,
+            0.0858115935,
+            0.0878158458,
+            0.0895072292,
+            0.0904168442,
+            0.0936574595,
+            0.0960176063,
+            0.0961629746,
+            0.1012994892,
+            0.1018839697,
+            0.1025094827,
+            0.1060891178,
+            0.1136005344,
+            0.1183699314,
+            0.1256346017,
+            0.1331299454
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.0362001278,
+            0.0505051665,
+            0.0643304823,
+            0.0748918994,
+            0.0790171148,
+            0.079526182,
+            0.0835195596,
+            0.0843588574,
+            0.0861268228,
+            0.0867850701,
+            0.0886306756,
+            0.0902388901,
+            0.0929550988,
+            0.0972866888,
+            0.0999598988,
+            0.1044729723,
+            0.1129942257,
+            0.1171500496,
+            0.1186687986
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.557162,
+          "metric_random_oblique": 0.578187,
+          "oblique_benefit": 0.021025,
+          "metric_name": "balanced_accuracy",
+          "n_train": 6086,
+          "n_test": 1522,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 4.0
+        }
+      },
+      "no_structure_control": {
+        "n_samples": 10000,
+        "n_features": 20,
+        "task_type": "classification",
+        "is_synthetic": true,
+        "coi_computation": {
+          "subsample_n": 10000,
+          "n_bins": 10,
+          "features_used": 20,
+          "time_s": 0.17
+        },
+        "mi_individual_top10": [
+          [
+            0,
+            0.148622
+          ],
+          [
+            1,
+            0.072344
+          ],
+          [
+            2,
+            0.044297
+          ],
+          [
+            3,
+            0.031882
+          ],
+          [
+            4,
+            0.016862
+          ],
+          [
+            11,
+            0.000704
+          ],
+          [
+            8,
+            0.000632
+          ],
+          [
+            13,
+            0.00058
+          ],
+          [
+            18,
+            0.000497
+          ],
+          [
+            14,
+            0.000454
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 20,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 190,
+            "n_near_zero": 0,
+            "n_total_pairs": 190,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "value_distribution": {
+            "mean": -0.0045506,
+            "median": -0.00399557,
+            "std": 0.00335827,
+            "min": -0.04246365,
+            "max": -0.00263908,
+            "q25": -0.0045773,
+            "q75": -0.00355855,
+            "iqr": 0.00101875,
+            "abs_mean": 0.0045506
+          }
+        },
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            15,
+            5
+          ],
+          "modules": [
+            [
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "silhouette": 0.851805,
+          "time_s": 0.004,
+          "eigenvalues_top20": [
+            -0.0,
+            0.72684168,
+            0.98127442,
+            1.00721297,
+            1.02009242,
+            1.03012097,
+            1.03177248,
+            1.03538255,
+            1.04840219,
+            1.05178953,
+            1.05463141,
+            1.05703507,
+            1.06179717,
+            1.07230285,
+            1.08872693,
+            1.09295532,
+            1.09444767,
+            1.10533485,
+            1.11703653,
+            1.32284297
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 2,
+          "module_sizes": [
+            12,
+            8
+          ],
+          "modules": [
+            [
+              0,
+              1,
+              3,
+              5,
+              7,
+              9,
+              10,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            [
+              2,
+              4,
+              6,
+              8,
+              11,
+              17,
+              18,
+              19
+            ]
+          ],
+          "silhouette": 0.72536,
+          "time_s": 0.004,
+          "eigenvalues_top20": [
+            0.75594344,
+            0.89521817,
+            0.90469296,
+            0.91369228,
+            0.91493975,
+            0.91849327,
+            0.93256125,
+            0.94178875,
+            0.9460307,
+            0.94818728,
+            0.95074975,
+            0.95382045,
+            0.96581446,
+            0.96919423,
+            0.97074736,
+            0.98029135,
+            0.99282626,
+            1.01906938,
+            1.37579831,
+            86461.44761619
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.0659089842,
+          "normalized_by_max": 0.3163194069,
+          "normalized_by_d": 0.0032954492,
+          "lambda_min": 0.0659089842,
+          "lambda_max": 0.2083621263
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            0.0,
+            0.0719033701,
+            0.0752822319,
+            0.0766068843,
+            0.0779177417,
+            0.0786116165,
+            0.0789228738,
+            0.0797422802,
+            0.0803470546,
+            0.0807939571,
+            0.0817706497,
+            0.0827445838,
+            0.0841840677,
+            0.0859494748,
+            0.0872797563,
+            0.0887130105,
+            0.0953519987,
+            0.1080984929,
+            0.1317482976
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.0659089842,
+            0.0674093979,
+            0.069280151,
+            0.0697012576,
+            0.0706399546,
+            0.0712115188,
+            0.0719483224,
+            0.072225797,
+            0.0729429289,
+            0.0744323385,
+            0.0753791474,
+            0.077380015,
+            0.0786501193,
+            0.0786994804,
+            0.0833574159,
+            0.0893447169,
+            0.095275138,
+            0.1061779866,
+            0.1309010658
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.760113,
+          "metric_random_oblique": 0.88802,
+          "oblique_benefit": 0.127907,
+          "metric_name": "balanced_accuracy",
+          "n_train": 8000,
+          "n_test": 2000,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 3.8
+        }
+      },
+      "medium_4mod_mixed": {
+        "n_samples": 20000,
+        "n_features": 18,
+        "task_type": "classification",
+        "is_synthetic": true,
+        "coi_computation": {
+          "subsample_n": 20000,
+          "n_bins": 10,
+          "features_used": 18,
+          "time_s": 0.2
+        },
+        "mi_individual_top10": [
+          [
+            5,
+            0.026541
+          ],
+          [
+            7,
+            0.024893
+          ],
+          [
+            6,
+            0.02454
+          ],
+          [
+            4,
+            0.023788
+          ],
+          [
+            10,
+            0.018649
+          ],
+          [
+            11,
+            0.017264
+          ],
+          [
+            1,
+            0.000387
+          ],
+          [
+            3,
+            0.000379
+          ],
+          [
+            13,
+            0.000304
+          ],
+          [
+            15,
+            0.000299
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 18,
+          "sign_distribution": {
+            "n_positive": 2,
+            "n_negative": 151,
+            "n_near_zero": 0,
+            "n_total_pairs": 153,
+            "frac_positive": 0.0131,
+            "frac_negative": 0.9869,
+            "frac_near_zero": 0.0
+          },
+          "value_distribution": {
+            "mean": -0.00499507,
+            "median": -0.00210856,
+            "std": 0.01590697,
+            "min": -0.11162046,
+            "max": 0.01666326,
+            "q25": -0.00237104,
+            "q75": -0.00186932,
+            "iqr": 0.00050172,
+            "abs_mean": 0.00542284
+          },
+          "ground_truth_analysis": {
+            "synergistic_pairs": [
+              {
+                "module": 0,
+                "features": [
+                  0,
+                  1
+                ],
+                "coi_value": -0.11162,
+                "is_negative": true
+              },
+              {
+                "module": 1,
+                "features": [
+                  2,
+                  3
+                ],
+                "coi_value": -0.110289,
+                "is_negative": true
+              },
+              {
+                "module": 2,
+                "features": [
+                  4,
+                  5
+                ],
+                "coi_value": -0.028253,
+                "is_negative": true
+              },
+              {
+                "module": 3,
+                "features": [
+                  6,
+                  7
+                ],
+                "coi_value": -0.027464,
+                "is_negative": true
+              }
+            ],
+            "redundant_pairs": [
+              {
+                "features": [
+                  0,
+                  8
+                ],
+                "coi_value": -0.001313,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  2,
+                  9
+                ],
+                "coi_value": -0.001088,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  4,
+                  10
+                ],
+                "coi_value": 0.016663,
+                "is_positive": true
+              },
+              {
+                "features": [
+                  6,
+                  11
+                ],
+                "coi_value": 0.016061,
+                "is_positive": true
+              }
+            ]
+          }
+        },
+        "unsigned_spectral": {
+          "k": 5,
+          "module_sizes": [
+            3,
+            6,
+            3,
+            3,
+            3
+          ],
+          "modules": [
+            [
+              6,
+              7,
+              11
+            ],
+            [
+              12,
+              13,
+              14,
+              15,
+              16,
+              17
+            ],
+            [
+              0,
+              1,
+              8
+            ],
+            [
+              4,
+              5,
+              10
+            ],
+            [
+              2,
+              3,
+              9
+            ]
+          ],
+          "silhouette": 0.930562,
+          "time_s": 0.007,
+          "eigenvalues_top20": [
+            0.0,
+            0.2252446,
+            0.33949727,
+            0.59115448,
+            0.84340615,
+            1.00753352,
+            1.00964319,
+            1.02691719,
+            1.04392378,
+            1.05659908,
+            1.0742694,
+            1.08021613,
+            1.20238393,
+            1.21054173,
+            1.33630874,
+            1.34577796,
+            1.80202311,
+            1.80455974
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 4,
+          "module_sizes": [
+            2,
+            10,
+            4,
+            2
+          ],
+          "modules": [
+            [
+              0,
+              8
+            ],
+            [
+              1,
+              3,
+              5,
+              7,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17
+            ],
+            [
+              2,
+              4,
+              9,
+              10
+            ],
+            [
+              6,
+              11
+            ]
+          ],
+          "silhouette": 0.513,
+          "time_s": 0.007,
+          "eigenvalues_top20": [
+            0.55414194,
+            0.55480035,
+            0.60540132,
+            0.61362896,
+            0.9245722,
+            0.92965495,
+            0.94398464,
+            0.95726194,
+            0.97277025,
+            0.99041578,
+            0.99249733,
+            1.12475943,
+            1.19167439,
+            1.22796282,
+            1.30884919,
+            2.28644317,
+            4.43927374,
+            32.83915576
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.0309860287,
+          "normalized_by_max": 0.0925738327,
+          "normalized_by_d": 0.001721446,
+          "lambda_min": 0.0309860287,
+          "lambda_max": 0.3347169258
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            -0.0,
+            0.0340216802,
+            0.0353207181,
+            0.035847479,
+            0.0363253008,
+            0.0373146363,
+            0.0378864074,
+            0.0383408907,
+            0.0400112264,
+            0.0472872978,
+            0.0905578808,
+            0.0909025621,
+            0.1124865573,
+            0.1138843462,
+            0.1268461843,
+            0.1281384203,
+            0.3256128462
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.0309860287,
+            0.0310418205,
+            0.0315134346,
+            0.0320415863,
+            0.0326868763,
+            0.033240311,
+            0.0343289979,
+            0.0354419709,
+            0.0362387023,
+            0.0454591252,
+            0.0898017665,
+            0.0910861063,
+            0.1039394449,
+            0.1233645834,
+            0.1249913528,
+            0.1262958537,
+            0.322213125
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.75215,
+          "metric_random_oblique": 0.677965,
+          "oblique_benefit": -0.074185,
+          "metric_name": "balanced_accuracy",
+          "n_train": 16000,
+          "n_test": 4000,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 2.6
+        },
+        "ground_truth_recovery": {
+          "unsigned_ari": 1.0,
+          "sponge_ari": -0.2222,
+          "n_assigned_features": 8
+        }
+      },
+      "overlapping_modules": {
+        "n_samples": 20000,
+        "n_features": 18,
+        "task_type": "classification",
+        "is_synthetic": true,
+        "coi_computation": {
+          "subsample_n": 20000,
+          "n_bins": 10,
+          "features_used": 18,
+          "time_s": 0.26
+        },
+        "mi_individual_top10": [
+          [
+            6,
+            0.026613
+          ],
+          [
+            3,
+            0.02471
+          ],
+          [
+            7,
+            0.023165
+          ],
+          [
+            2,
+            0.021653
+          ],
+          [
+            9,
+            0.01797
+          ],
+          [
+            13,
+            0.000471
+          ],
+          [
+            10,
+            0.000444
+          ],
+          [
+            8,
+            0.000403
+          ],
+          [
+            17,
+            0.000335
+          ],
+          [
+            4,
+            0.000321
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 18,
+          "sign_distribution": {
+            "n_positive": 1,
+            "n_negative": 151,
+            "n_near_zero": 1,
+            "n_total_pairs": 153,
+            "frac_positive": 0.0065,
+            "frac_negative": 0.9869,
+            "frac_near_zero": 0.0065
+          },
+          "value_distribution": {
+            "mean": -0.00490975,
+            "median": -0.00200233,
+            "std": 0.01609292,
+            "min": -0.11632327,
+            "max": 0.01640404,
+            "q25": -0.00223726,
+            "q75": -0.00176575,
+            "iqr": 0.00047151,
+            "abs_mean": 0.00512419
+          },
+          "ground_truth_analysis": {
+            "synergistic_pairs": [
+              {
+                "module": 0,
+                "features": [
+                  0,
+                  1
+                ],
+                "coi_value": -0.111251,
+                "is_negative": true
+              },
+              {
+                "module": 0,
+                "features": [
+                  0,
+                  2
+                ],
+                "coi_value": -0.002045,
+                "is_negative": true
+              },
+              {
+                "module": 0,
+                "features": [
+                  1,
+                  2
+                ],
+                "coi_value": -0.003412,
+                "is_negative": true
+              },
+              {
+                "module": 1,
+                "features": [
+                  2,
+                  3
+                ],
+                "coi_value": -0.027278,
+                "is_negative": true
+              },
+              {
+                "module": 1,
+                "features": [
+                  2,
+                  4
+                ],
+                "coi_value": -0.001793,
+                "is_negative": true
+              },
+              {
+                "module": 1,
+                "features": [
+                  3,
+                  4
+                ],
+                "coi_value": -0.001334,
+                "is_negative": true
+              },
+              {
+                "module": 2,
+                "features": [
+                  4,
+                  5
+                ],
+                "coi_value": -0.116323,
+                "is_negative": true
+              },
+              {
+                "module": 2,
+                "features": [
+                  4,
+                  6
+                ],
+                "coi_value": -0.001506,
+                "is_negative": true
+              },
+              {
+                "module": 2,
+                "features": [
+                  5,
+                  6
+                ],
+                "coi_value": -0.001923,
+                "is_negative": true
+              },
+              {
+                "module": 3,
+                "features": [
+                  6,
+                  7
+                ],
+                "coi_value": -0.029421,
+                "is_negative": true
+              }
+            ],
+            "redundant_pairs": [
+              {
+                "features": [
+                  0,
+                  8
+                ],
+                "coi_value": -0.000995,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  3,
+                  9
+                ],
+                "coi_value": 0.016404,
+                "is_positive": true
+              },
+              {
+                "features": [
+                  5,
+                  10
+                ],
+                "coi_value": -0.001524,
+                "is_positive": false
+              }
+            ]
+          }
+        },
+        "unsigned_spectral": {
+          "k": 3,
+          "module_sizes": [
+            12,
+            3,
+            3
+          ],
+          "modules": [
+            [
+              2,
+              3,
+              6,
+              7,
+              9,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17
+            ],
+            [
+              0,
+              1,
+              8
+            ],
+            [
+              4,
+              5,
+              10
+            ]
+          ],
+          "silhouette": 0.864302,
+          "time_s": 0.006,
+          "eigenvalues_top20": [
+            -0.0,
+            0.21234481,
+            0.35277446,
+            0.61779148,
+            0.80631258,
+            1.00427048,
+            1.01204662,
+            1.03898716,
+            1.04062321,
+            1.0466104,
+            1.05740988,
+            1.07211871,
+            1.09364625,
+            1.21356952,
+            1.35495558,
+            1.45114213,
+            1.81026776,
+            1.81512898
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 3,
+          "module_sizes": [
+            11,
+            3,
+            4
+          ],
+          "modules": [
+            [
+              1,
+              2,
+              4,
+              6,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17
+            ],
+            [
+              3,
+              7,
+              9
+            ],
+            [
+              0,
+              5,
+              8,
+              10
+            ]
+          ],
+          "silhouette": 0.508886,
+          "time_s": 0.007,
+          "eigenvalues_top20": [
+            0.55077348,
+            0.55238925,
+            0.59669,
+            0.6902028,
+            0.91361599,
+            0.93216865,
+            0.94518476,
+            0.95496525,
+            0.96089709,
+            0.96203575,
+            0.98790848,
+            0.99568022,
+            1.16462636,
+            1.2567413,
+            1.4344335,
+            2.43282082,
+            4.70700688,
+            63.34435279
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.0289406191,
+          "normalized_by_max": 0.0854290179,
+          "normalized_by_d": 0.0016078122,
+          "lambda_min": 0.0289406191,
+          "lambda_max": 0.3387680188
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            -0.0,
+            0.0329251024,
+            0.0332425585,
+            0.0339204928,
+            0.0344333939,
+            0.0353671572,
+            0.0361794305,
+            0.0373851033,
+            0.0376111243,
+            0.0384857584,
+            0.0428412886,
+            0.0857026096,
+            0.0950298139,
+            0.1056840684,
+            0.1277986334,
+            0.1290124659,
+            0.3279476864
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.0289406191,
+            0.0293415436,
+            0.0302154879,
+            0.0310423117,
+            0.0311034816,
+            0.0312871074,
+            0.0326697595,
+            0.0333204786,
+            0.0336161389,
+            0.0365725127,
+            0.0448504134,
+            0.0850950135,
+            0.0921846754,
+            0.1108157049,
+            0.1256017935,
+            0.1263332713,
+            0.3262422783
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.748615,
+          "metric_random_oblique": 0.657523,
+          "oblique_benefit": -0.091092,
+          "metric_name": "balanced_accuracy",
+          "n_train": 16000,
+          "n_test": 4000,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 3.1
+        },
+        "ground_truth_recovery": {
+          "unsigned_ari": -0.0845,
+          "sponge_ari": -0.0845,
+          "n_assigned_features": 8
+        }
+      },
+      "higgs_small": {
+        "n_samples": 98050,
+        "n_features": 24,
+        "task_type": "classification",
+        "is_synthetic": false,
+        "coi_computation": {
+          "subsample_n": 20000,
+          "n_bins": 10,
+          "features_used": 24,
+          "time_s": 0.36
+        },
+        "mi_individual_top10": [
+          [
+            21,
+            0.045694
+          ],
+          [
+            22,
+            0.018915
+          ],
+          [
+            23,
+            0.017916
+          ],
+          [
+            18,
+            0.014777
+          ],
+          [
+            20,
+            0.007735
+          ],
+          [
+            3,
+            0.004916
+          ],
+          [
+            5,
+            0.002748
+          ],
+          [
+            0,
+            0.002735
+          ],
+          [
+            14,
+            0.000976
+          ],
+          [
+            8,
+            0.000734
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 24,
+          "sign_distribution": {
+            "n_positive": 1,
+            "n_negative": 274,
+            "n_near_zero": 1,
+            "n_total_pairs": 276,
+            "frac_positive": 0.0036,
+            "frac_negative": 0.9928,
+            "frac_near_zero": 0.0036
+          },
+          "value_distribution": {
+            "mean": -0.00259293,
+            "median": -0.00215953,
+            "std": 0.00147745,
+            "min": -0.01216719,
+            "max": 0.00137713,
+            "q25": -0.00260704,
+            "q75": -0.00191287,
+            "iqr": 0.00069417,
+            "abs_mean": 0.00260291
+          }
+        },
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            10,
+            14
+          ],
+          "modules": [
+            [
+              0,
+              5,
+              8,
+              11,
+              17,
+              18,
+              20,
+              21,
+              22,
+              23
+            ],
+            [
+              1,
+              2,
+              3,
+              4,
+              6,
+              7,
+              9,
+              10,
+              12,
+              13,
+              14,
+              15,
+              16,
+              19
+            ]
+          ],
+          "silhouette": 0.762057,
+          "time_s": 0.004,
+          "eigenvalues_top20": [
+            0.0,
+            0.80083575,
+            0.92409484,
+            0.9676826,
+            0.97252862,
+            0.98885738,
+            1.00476245,
+            1.01683361,
+            1.02318737,
+            1.03046307,
+            1.0358561,
+            1.04169159,
+            1.04604922,
+            1.04948449,
+            1.05662043,
+            1.06313371,
+            1.07071849,
+            1.08031548,
+            1.09054113,
+            1.09749408
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 2,
+          "module_sizes": [
+            13,
+            11
+          ],
+          "modules": [
+            [
+              1,
+              2,
+              3,
+              7,
+              8,
+              10,
+              11,
+              14,
+              17,
+              19,
+              20,
+              22,
+              23
+            ],
+            [
+              0,
+              4,
+              5,
+              6,
+              9,
+              12,
+              13,
+              15,
+              16,
+              18,
+              21
+            ]
+          ],
+          "silhouette": 0.561345,
+          "time_s": 0.004,
+          "eigenvalues_top20": [
+            0.77876561,
+            0.880762,
+            0.89046978,
+            0.9031578,
+            0.91120925,
+            0.91806771,
+            0.92691233,
+            0.93392164,
+            0.93993106,
+            0.94508256,
+            0.95108744,
+            0.95588649,
+            0.96007985,
+            0.96472681,
+            0.97040052,
+            0.97406441,
+            0.9831762,
+            0.99690815,
+            1.01142714,
+            1.02958944
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.0441635848,
+          "normalized_by_max": 0.3360685777,
+          "normalized_by_d": 0.0018401494,
+          "lambda_min": 0.0441635848,
+          "lambda_max": 0.1314124191
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            -0.0,
+            0.0477527224,
+            0.048224896,
+            0.0493224175,
+            0.0503531622,
+            0.0510005575,
+            0.0519553332,
+            0.0537457232,
+            0.0538935447,
+            0.0544933928,
+            0.0550632507,
+            0.0556702687,
+            0.0562967935,
+            0.0572014663,
+            0.0588393949,
+            0.0624913277,
+            0.0645506918,
+            0.0696894986,
+            0.0702241741,
+            0.0751761534
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.0441635848,
+            0.0449233007,
+            0.0458853059,
+            0.0465705889,
+            0.0473021637,
+            0.0474901508,
+            0.0485331649,
+            0.0491571203,
+            0.0498948837,
+            0.0505585234,
+            0.0515912812,
+            0.05200752,
+            0.0535975728,
+            0.0536822514,
+            0.0581255196,
+            0.0596288713,
+            0.0638575375,
+            0.0648370867,
+            0.0670150962,
+            0.0683168627
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.636614,
+          "metric_random_oblique": 0.666293,
+          "oblique_benefit": 0.029679,
+          "metric_name": "balanced_accuracy",
+          "n_train": 78440,
+          "n_test": 19610,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 4.3
+        }
+      },
+      "hard_4mod_unequal": {
+        "n_samples": 20000,
+        "n_features": 31,
+        "task_type": "classification",
+        "is_synthetic": true,
+        "coi_computation": {
+          "subsample_n": 20000,
+          "n_bins": 10,
+          "features_used": 31,
+          "time_s": 0.59
+        },
+        "mi_individual_top10": [
+          [
+            12,
+            0.001307
+          ],
+          [
+            11,
+            0.000969
+          ],
+          [
+            10,
+            0.000851
+          ],
+          [
+            9,
+            0.00078
+          ],
+          [
+            18,
+            0.000562
+          ],
+          [
+            13,
+            0.000525
+          ],
+          [
+            17,
+            0.000464
+          ],
+          [
+            5,
+            0.000377
+          ],
+          [
+            24,
+            0.00034
+          ],
+          [
+            7,
+            0.000327
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 31,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 465,
+            "n_near_zero": 0,
+            "n_total_pairs": 465,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "value_distribution": {
+            "mean": -0.00259976,
+            "median": -0.0020174,
+            "std": 0.00645775,
+            "min": -0.11517736,
+            "max": -0.00126524,
+            "q25": -0.00227672,
+            "q75": -0.00180382,
+            "iqr": 0.00047291,
+            "abs_mean": 0.00259976
+          },
+          "ground_truth_analysis": {
+            "synergistic_pairs": [
+              {
+                "module": 0,
+                "features": [
+                  0,
+                  1
+                ],
+                "coi_value": -0.115177,
+                "is_negative": true
+              },
+              {
+                "module": 1,
+                "features": [
+                  2,
+                  3
+                ],
+                "coi_value": -0.002171,
+                "is_negative": true
+              },
+              {
+                "module": 1,
+                "features": [
+                  2,
+                  4
+                ],
+                "coi_value": -0.002243,
+                "is_negative": true
+              },
+              {
+                "module": 1,
+                "features": [
+                  3,
+                  4
+                ],
+                "coi_value": -0.001494,
+                "is_negative": true
+              },
+              {
+                "module": 2,
+                "features": [
+                  5,
+                  6
+                ],
+                "coi_value": -0.03264,
+                "is_negative": true
+              },
+              {
+                "module": 2,
+                "features": [
+                  5,
+                  7
+                ],
+                "coi_value": -0.001776,
+                "is_negative": true
+              },
+              {
+                "module": 2,
+                "features": [
+                  5,
+                  8
+                ],
+                "coi_value": -0.002208,
+                "is_negative": true
+              },
+              {
+                "module": 2,
+                "features": [
+                  6,
+                  7
+                ],
+                "coi_value": -0.00172,
+                "is_negative": true
+              },
+              {
+                "module": 2,
+                "features": [
+                  6,
+                  8
+                ],
+                "coi_value": -0.002149,
+                "is_negative": true
+              },
+              {
+                "module": 2,
+                "features": [
+                  7,
+                  8
+                ],
+                "coi_value": -0.033751,
+                "is_negative": true
+              },
+              {
+                "module": 3,
+                "features": [
+                  9,
+                  10
+                ],
+                "coi_value": -0.002218,
+                "is_negative": true
+              },
+              {
+                "module": 3,
+                "features": [
+                  9,
+                  11
+                ],
+                "coi_value": -0.002854,
+                "is_negative": true
+              },
+              {
+                "module": 3,
+                "features": [
+                  9,
+                  12
+                ],
+                "coi_value": -0.002246,
+                "is_negative": true
+              },
+              {
+                "module": 3,
+                "features": [
+                  9,
+                  13
+                ],
+                "coi_value": -0.002558,
+                "is_negative": true
+              },
+              {
+                "module": 3,
+                "features": [
+                  10,
+                  11
+                ],
+                "coi_value": -0.002843,
+                "is_negative": true
+              },
+              {
+                "module": 3,
+                "features": [
+                  10,
+                  12
+                ],
+                "coi_value": -0.003769,
+                "is_negative": true
+              },
+              {
+                "module": 3,
+                "features": [
+                  10,
+                  13
+                ],
+                "coi_value": -0.003274,
+                "is_negative": true
+              },
+              {
+                "module": 3,
+                "features": [
+                  11,
+                  12
+                ],
+                "coi_value": -0.002764,
+                "is_negative": true
+              },
+              {
+                "module": 3,
+                "features": [
+                  11,
+                  13
+                ],
+                "coi_value": -0.002591,
+                "is_negative": true
+              },
+              {
+                "module": 3,
+                "features": [
+                  12,
+                  13
+                ],
+                "coi_value": -0.002529,
+                "is_negative": true
+              }
+            ],
+            "redundant_pairs": [
+              {
+                "features": [
+                  0,
+                  14
+                ],
+                "coi_value": -0.001386,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  2,
+                  15
+                ],
+                "coi_value": -0.001876,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  5,
+                  16
+                ],
+                "coi_value": -0.001944,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  9,
+                  17
+                ],
+                "coi_value": -0.001839,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  11,
+                  18
+                ],
+                "coi_value": -0.002018,
+                "is_positive": false
+              }
+            ]
+          }
+        },
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            28,
+            3
+          ],
+          "modules": [
+            [
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30
+            ],
+            [
+              0,
+              1,
+              14
+            ]
+          ],
+          "silhouette": 0.945377,
+          "time_s": 0.004,
+          "eigenvalues_top20": [
+            0.0,
+            0.40596107,
+            0.66574574,
+            0.7402724,
+            0.96573251,
+            0.99684965,
+            0.99746105,
+            1.00566451,
+            1.00656267,
+            1.01051883,
+            1.01254677,
+            1.01575923,
+            1.02113279,
+            1.02447856,
+            1.02763394,
+            1.03036203,
+            1.03350362,
+            1.03700233,
+            1.04138324,
+            1.04322945
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 2,
+          "module_sizes": [
+            20,
+            11
+          ],
+          "modules": [
+            [
+              1,
+              2,
+              3,
+              4,
+              6,
+              8,
+              9,
+              11,
+              15,
+              17,
+              18,
+              19,
+              20,
+              22,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29
+            ],
+            [
+              0,
+              5,
+              7,
+              10,
+              12,
+              13,
+              14,
+              16,
+              21,
+              23,
+              30
+            ]
+          ],
+          "silhouette": 0.605016,
+          "time_s": 0.006,
+          "eigenvalues_top20": [
+            0.59666812,
+            0.7205474,
+            0.73628452,
+            0.92124379,
+            0.92923135,
+            0.93731602,
+            0.94175673,
+            0.94565769,
+            0.9504723,
+            0.95309814,
+            0.95490477,
+            0.95854676,
+            0.96024645,
+            0.96430309,
+            0.96756733,
+            0.97051705,
+            0.97309376,
+            0.97609176,
+            0.97928875,
+            0.98446995
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.0547142323,
+          "normalized_by_max": 0.1581383645,
+          "normalized_by_d": 0.0017649752,
+          "lambda_min": 0.0547142323,
+          "lambda_max": 0.3459896176
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            -0.0,
+            0.0581556541,
+            0.0587775021,
+            0.058819365,
+            0.0596145583,
+            0.0601750001,
+            0.0607725151,
+            0.0609216956,
+            0.061558313,
+            0.0616444468,
+            0.0618575005,
+            0.0624276277,
+            0.0628022175,
+            0.0633177089,
+            0.0634366986,
+            0.0640866873,
+            0.0643596262,
+            0.0652742248,
+            0.065295948,
+            0.0656012931
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.0547142323,
+            0.0550383614,
+            0.0552341119,
+            0.0559429649,
+            0.0563136697,
+            0.0563961791,
+            0.0567991012,
+            0.0573506787,
+            0.0578046884,
+            0.0582189423,
+            0.0587379177,
+            0.0588277524,
+            0.0592863483,
+            0.0596834819,
+            0.0602046755,
+            0.0602386485,
+            0.060617392,
+            0.0607674138,
+            0.0609005557,
+            0.0610868684
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.534137,
+          "metric_random_oblique": 0.516117,
+          "oblique_benefit": -0.01802,
+          "metric_name": "balanced_accuracy",
+          "n_train": 16000,
+          "n_test": 4000,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 3.7
+        },
+        "ground_truth_recovery": {
+          "unsigned_ari": 0.1833,
+          "sponge_ari": -0.0204,
+          "n_assigned_features": 14
+        }
+      },
+      "miniboone": {
+        "n_samples": 72998,
+        "n_features": 50,
+        "task_type": "classification",
+        "is_synthetic": false,
+        "coi_computation": {
+          "subsample_n": 20000,
+          "n_bins": 10,
+          "features_used": 50,
+          "time_s": 1.42
+        },
+        "mi_individual_top10": [
+          [
+            0,
+            0.244603
+          ],
+          [
+            16,
+            0.215585
+          ],
+          [
+            2,
+            0.177029
+          ],
+          [
+            15,
+            0.17269
+          ],
+          [
+            5,
+            0.160105
+          ],
+          [
+            1,
+            0.159557
+          ],
+          [
+            26,
+            0.158283
+          ],
+          [
+            3,
+            0.14834
+          ],
+          [
+            31,
+            0.147291
+          ],
+          [
+            22,
+            0.147148
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 50,
+          "sign_distribution": {
+            "n_positive": 654,
+            "n_negative": 525,
+            "n_near_zero": 46,
+            "n_total_pairs": 1225,
+            "frac_positive": 0.5339,
+            "frac_negative": 0.4286,
+            "frac_near_zero": 0.0376
+          },
+          "value_distribution": {
+            "mean": 0.01095861,
+            "median": 0.00345624,
+            "std": 0.03156689,
+            "min": -0.08741905,
+            "max": 0.16114349,
+            "q25": -0.00903659,
+            "q75": 0.02709442,
+            "iqr": 0.03613101,
+            "abs_mean": 0.02359148
+          }
+        },
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            25,
+            25
+          ],
+          "modules": [
+            [
+              4,
+              8,
+              10,
+              11,
+              12,
+              13,
+              18,
+              19,
+              20,
+              21,
+              23,
+              25,
+              28,
+              29,
+              33,
+              35,
+              38,
+              39,
+              40,
+              42,
+              43,
+              44,
+              45,
+              46,
+              49
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              5,
+              6,
+              7,
+              9,
+              14,
+              15,
+              16,
+              17,
+              22,
+              24,
+              26,
+              27,
+              30,
+              31,
+              32,
+              34,
+              36,
+              37,
+              41,
+              47,
+              48
+            ]
+          ],
+          "silhouette": 0.719357,
+          "time_s": 0.013,
+          "eigenvalues_top20": [
+            0.0,
+            0.73256003,
+            0.8056335,
+            0.80909465,
+            0.8573069,
+            0.87889744,
+            0.89898755,
+            0.9207517,
+            0.9568721,
+            0.95835163,
+            0.96314636,
+            0.97132873,
+            0.97991815,
+            0.9852118,
+            0.99356811,
+            0.99613176,
+            1.00013239,
+            1.00931921,
+            1.01418719,
+            1.02097226
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 2,
+          "module_sizes": [
+            22,
+            28
+          ],
+          "modules": [
+            [
+              2,
+              8,
+              11,
+              12,
+              13,
+              17,
+              19,
+              20,
+              21,
+              24,
+              25,
+              28,
+              29,
+              31,
+              32,
+              35,
+              37,
+              41,
+              42,
+              43,
+              44,
+              49
+            ],
+            [
+              0,
+              1,
+              3,
+              4,
+              5,
+              6,
+              7,
+              9,
+              10,
+              14,
+              15,
+              16,
+              18,
+              22,
+              23,
+              26,
+              27,
+              30,
+              33,
+              34,
+              36,
+              38,
+              39,
+              40,
+              45,
+              46,
+              47,
+              48
+            ]
+          ],
+          "silhouette": 0.490398,
+          "time_s": 0.023,
+          "eigenvalues_top20": [
+            0.16925259,
+            0.69995402,
+            0.72796529,
+            0.74243075,
+            0.87583048,
+            0.91532788,
+            0.92077499,
+            0.93123821,
+            0.93639038,
+            0.95385319,
+            0.96124272,
+            0.96871386,
+            0.97128436,
+            0.97598174,
+            0.98441002,
+            0.99050685,
+            0.99614617,
+            1.00328499,
+            1.00433745,
+            1.01810112
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.205831272,
+          "normalized_by_max": 0.0741129094,
+          "normalized_by_d": 0.0041166254,
+          "lambda_min": 0.205831272,
+          "lambda_max": 2.777266114
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            0.0,
+            0.2344502046,
+            0.3469387863,
+            0.4338904622,
+            0.4537949432,
+            0.4965566969,
+            0.5333847029,
+            0.5360170572,
+            0.5643803553,
+            0.619607221,
+            0.643800428,
+            0.7011475674,
+            0.7124291954,
+            0.7308109922,
+            0.7657114907,
+            0.7678361097,
+            0.7806317633,
+            0.7972242493,
+            0.8303467913,
+            0.8383357884
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.205831272,
+            0.2297172881,
+            0.3383013935,
+            0.4236123183,
+            0.4289708861,
+            0.4815557349,
+            0.5083599188,
+            0.5523154263,
+            0.5554131416,
+            0.5876540141,
+            0.6370513207,
+            0.6634245517,
+            0.6953184931,
+            0.6972716985,
+            0.7381944504,
+            0.7565394134,
+            0.7600348711,
+            0.7958278064,
+            0.8007155107,
+            0.8209537406
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.853562,
+          "metric_random_oblique": 0.856781,
+          "oblique_benefit": 0.003219,
+          "metric_name": "balanced_accuracy",
+          "n_train": 58398,
+          "n_test": 14600,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 3.5
+        }
+      },
+      "jannis": {
+        "n_samples": 57580,
+        "n_features": 54,
+        "task_type": "classification",
+        "is_synthetic": false,
+        "coi_computation": {
+          "subsample_n": 20000,
+          "n_bins": 10,
+          "features_used": 54,
+          "time_s": 1.66
+        },
+        "mi_individual_top10": [
+          [
+            21,
+            0.072095
+          ],
+          [
+            1,
+            0.065881
+          ],
+          [
+            5,
+            0.064873
+          ],
+          [
+            19,
+            0.060492
+          ],
+          [
+            14,
+            0.059279
+          ],
+          [
+            22,
+            0.057014
+          ],
+          [
+            13,
+            0.054979
+          ],
+          [
+            12,
+            0.047293
+          ],
+          [
+            11,
+            0.044303
+          ],
+          [
+            0,
+            0.038049
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 54,
+          "sign_distribution": {
+            "n_positive": 118,
+            "n_negative": 1277,
+            "n_near_zero": 36,
+            "n_total_pairs": 1431,
+            "frac_positive": 0.0825,
+            "frac_negative": 0.8924,
+            "frac_near_zero": 0.0252
+          },
+          "value_distribution": {
+            "mean": -0.00138363,
+            "median": -0.0020053,
+            "std": 0.00596055,
+            "min": -0.036607,
+            "max": 0.06227535,
+            "q25": -0.00232653,
+            "q75": -0.00169846,
+            "iqr": 0.00062807,
+            "abs_mean": 0.00341816
+          }
+        },
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            43,
+            11
+          ],
+          "modules": [
+            [
+              2,
+              3,
+              4,
+              6,
+              7,
+              8,
+              9,
+              10,
+              15,
+              16,
+              17,
+              18,
+              20,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53
+            ],
+            [
+              0,
+              1,
+              5,
+              11,
+              12,
+              13,
+              14,
+              19,
+              21,
+              22,
+              23
+            ]
+          ],
+          "silhouette": 0.804148,
+          "time_s": 0.005,
+          "eigenvalues_top20": [
+            0.0,
+            0.57111378,
+            0.71615538,
+            0.79278908,
+            0.86012652,
+            0.89942928,
+            0.94501958,
+            0.96664395,
+            0.97516489,
+            0.99047406,
+            0.9946672,
+            0.99546732,
+            0.99665359,
+            0.99913822,
+            1.00069228,
+            1.00166304,
+            1.00285944,
+            1.00456467,
+            1.00642682,
+            1.00845433
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 2,
+          "module_sizes": [
+            35,
+            19
+          ],
+          "modules": [
+            [
+              2,
+              6,
+              8,
+              9,
+              15,
+              20,
+              24,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53
+            ],
+            [
+              0,
+              1,
+              3,
+              4,
+              5,
+              7,
+              10,
+              11,
+              12,
+              13,
+              14,
+              16,
+              17,
+              18,
+              19,
+              21,
+              22,
+              23,
+              25
+            ]
+          ],
+          "silhouette": 0.485625,
+          "time_s": 0.289,
+          "eigenvalues_top20": [
+            0.34061056,
+            0.75812291,
+            0.77768801,
+            0.83741481,
+            0.88849736,
+            0.89763912,
+            0.92043612,
+            0.93917327,
+            0.95170359,
+            0.95474641,
+            0.95883798,
+            0.96054938,
+            0.96120008,
+            0.96508528,
+            0.9671484,
+            0.96741647,
+            0.97097438,
+            0.97152783,
+            0.97286274,
+            0.97354992
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.0793101762,
+          "normalized_by_max": 0.1636392213,
+          "normalized_by_d": 0.001468707,
+          "lambda_min": 0.0793101762,
+          "lambda_max": 0.4846648351
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            0.0,
+            0.08281505,
+            0.1038490045,
+            0.1051314971,
+            0.1054583599,
+            0.1064151156,
+            0.1069827553,
+            0.1071424652,
+            0.1075627048,
+            0.1077457623,
+            0.1081161866,
+            0.108423736,
+            0.1086947138,
+            0.1092483795,
+            0.1095837653,
+            0.109774282,
+            0.1099923568,
+            0.1100383865,
+            0.1106699857,
+            0.1107449077
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.0793101762,
+            0.0812993496,
+            0.1001838238,
+            0.1013357211,
+            0.1015425092,
+            0.1023918932,
+            0.1030170684,
+            0.1034643667,
+            0.1036946833,
+            0.1038928284,
+            0.1040866193,
+            0.104665416,
+            0.1048926569,
+            0.1052104443,
+            0.1055269809,
+            0.1057679209,
+            0.106121643,
+            0.1065439938,
+            0.1066495579,
+            0.1073293191
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.717437,
+          "metric_random_oblique": 0.717176,
+          "oblique_benefit": -0.000261,
+          "metric_name": "balanced_accuracy",
+          "n_train": 46064,
+          "n_test": 11516,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 3.4
+        }
+      },
+      "highdim_8mod": {
+        "n_samples": 50000,
+        "n_features": 200,
+        "task_type": "classification",
+        "is_synthetic": true,
+        "coi_computation": {
+          "subsample_n": 20000,
+          "n_bins": 10,
+          "features_used": 100,
+          "time_s": 5.6
+        },
+        "mi_individual_top10": [
+          [
+            22,
+            0.006282
+          ],
+          [
+            20,
+            0.005764
+          ],
+          [
+            16,
+            0.005627
+          ],
+          [
+            15,
+            0.005256
+          ],
+          [
+            17,
+            0.005203
+          ],
+          [
+            12,
+            0.00498
+          ],
+          [
+            13,
+            0.004511
+          ],
+          [
+            18,
+            0.00451
+          ],
+          [
+            21,
+            0.004475
+          ],
+          [
+            14,
+            0.004463
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 100,
+          "sign_distribution": {
+            "n_positive": 5,
+            "n_negative": 4933,
+            "n_near_zero": 12,
+            "n_total_pairs": 4950,
+            "frac_positive": 0.001,
+            "frac_negative": 0.9966,
+            "frac_near_zero": 0.0024
+          },
+          "value_distribution": {
+            "mean": -0.0021392,
+            "median": -0.00201859,
+            "std": 0.001654,
+            "min": -0.04687442,
+            "max": 0.00216252,
+            "q25": -0.00224662,
+            "q75": -0.0018126,
+            "iqr": 0.00043401,
+            "abs_mean": 0.00214429
+          },
+          "ground_truth_analysis": {
+            "synergistic_pairs": [
+              {
+                "module": 0,
+                "features": [
+                  0,
+                  1
+                ],
+                "coi_value": -0.041237,
+                "is_negative": true
+              },
+              {
+                "module": 0,
+                "features": [
+                  0,
+                  2
+                ],
+                "coi_value": -0.002651,
+                "is_negative": true
+              },
+              {
+                "module": 0,
+                "features": [
+                  1,
+                  2
+                ],
+                "coi_value": -0.002271,
+                "is_negative": true
+              },
+              {
+                "module": 1,
+                "features": [
+                  3,
+                  4
+                ],
+                "coi_value": -0.046874,
+                "is_negative": true
+              },
+              {
+                "module": 1,
+                "features": [
+                  3,
+                  5
+                ],
+                "coi_value": -0.001587,
+                "is_negative": true
+              },
+              {
+                "module": 1,
+                "features": [
+                  4,
+                  5
+                ],
+                "coi_value": -0.002156,
+                "is_negative": true
+              },
+              {
+                "module": 2,
+                "features": [
+                  6,
+                  7
+                ],
+                "coi_value": -0.040038,
+                "is_negative": true
+              },
+              {
+                "module": 2,
+                "features": [
+                  6,
+                  8
+                ],
+                "coi_value": -0.001619,
+                "is_negative": true
+              },
+              {
+                "module": 2,
+                "features": [
+                  7,
+                  8
+                ],
+                "coi_value": -0.00203,
+                "is_negative": true
+              },
+              {
+                "module": 3,
+                "features": [
+                  9,
+                  10
+                ],
+                "coi_value": -0.041895,
+                "is_negative": true
+              },
+              {
+                "module": 3,
+                "features": [
+                  9,
+                  11
+                ],
+                "coi_value": -0.002213,
+                "is_negative": true
+              },
+              {
+                "module": 3,
+                "features": [
+                  10,
+                  11
+                ],
+                "coi_value": -0.002182,
+                "is_negative": true
+              },
+              {
+                "module": 4,
+                "features": [
+                  12,
+                  13
+                ],
+                "coi_value": -0.007989,
+                "is_negative": true
+              },
+              {
+                "module": 4,
+                "features": [
+                  12,
+                  14
+                ],
+                "coi_value": -0.006074,
+                "is_negative": true
+              },
+              {
+                "module": 4,
+                "features": [
+                  13,
+                  14
+                ],
+                "coi_value": -0.008338,
+                "is_negative": true
+              },
+              {
+                "module": 5,
+                "features": [
+                  15,
+                  16
+                ],
+                "coi_value": -0.007232,
+                "is_negative": true
+              },
+              {
+                "module": 5,
+                "features": [
+                  15,
+                  17
+                ],
+                "coi_value": -0.007866,
+                "is_negative": true
+              },
+              {
+                "module": 5,
+                "features": [
+                  16,
+                  17
+                ],
+                "coi_value": -0.007596,
+                "is_negative": true
+              },
+              {
+                "module": 6,
+                "features": [
+                  18,
+                  19
+                ],
+                "coi_value": -0.007675,
+                "is_negative": true
+              },
+              {
+                "module": 6,
+                "features": [
+                  18,
+                  20
+                ],
+                "coi_value": -0.007611,
+                "is_negative": true
+              },
+              {
+                "module": 6,
+                "features": [
+                  19,
+                  20
+                ],
+                "coi_value": -0.005422,
+                "is_negative": true
+              },
+              {
+                "module": 7,
+                "features": [
+                  21,
+                  22
+                ],
+                "coi_value": -0.007698,
+                "is_negative": true
+              },
+              {
+                "module": 7,
+                "features": [
+                  21,
+                  23
+                ],
+                "coi_value": -0.006424,
+                "is_negative": true
+              },
+              {
+                "module": 7,
+                "features": [
+                  22,
+                  23
+                ],
+                "coi_value": -0.006313,
+                "is_negative": true
+              }
+            ],
+            "redundant_pairs": [
+              {
+                "features": [
+                  0,
+                  24
+                ],
+                "coi_value": -0.001654,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  1,
+                  25
+                ],
+                "coi_value": -0.001571,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  2,
+                  26
+                ],
+                "coi_value": 0.001204,
+                "is_positive": true
+              },
+              {
+                "features": [
+                  3,
+                  27
+                ],
+                "coi_value": -0.0012,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  4,
+                  28
+                ],
+                "coi_value": -0.001589,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  5,
+                  29
+                ],
+                "coi_value": 0.000814,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  6,
+                  30
+                ],
+                "coi_value": -0.001364,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  7,
+                  31
+                ],
+                "coi_value": -0.00197,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  8,
+                  32
+                ],
+                "coi_value": 0.000303,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  9,
+                  33
+                ],
+                "coi_value": -0.002511,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  10,
+                  34
+                ],
+                "coi_value": -0.00182,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  11,
+                  35
+                ],
+                "coi_value": 0.000338,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  12,
+                  36
+                ],
+                "coi_value": 0.001451,
+                "is_positive": true
+              },
+              {
+                "features": [
+                  13,
+                  37
+                ],
+                "coi_value": 0.000316,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  14,
+                  38
+                ],
+                "coi_value": -7.1e-05,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  15,
+                  39
+                ],
+                "coi_value": 0.001067,
+                "is_positive": true
+              },
+              {
+                "features": [
+                  16,
+                  40
+                ],
+                "coi_value": 0.001471,
+                "is_positive": true
+              },
+              {
+                "features": [
+                  17,
+                  41
+                ],
+                "coi_value": 0.000849,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  18,
+                  42
+                ],
+                "coi_value": 0.000962,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  19,
+                  43
+                ],
+                "coi_value": -0.0,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  20,
+                  44
+                ],
+                "coi_value": 0.000795,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  21,
+                  45
+                ],
+                "coi_value": 0.000204,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  22,
+                  46
+                ],
+                "coi_value": 0.002163,
+                "is_positive": true
+              },
+              {
+                "features": [
+                  23,
+                  47
+                ],
+                "coi_value": 0.000659,
+                "is_positive": false
+              }
+            ]
+          }
+        },
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            96,
+            4
+          ],
+          "modules": [
+            [
+              0,
+              1,
+              2,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91,
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99
+            ],
+            [
+              3,
+              4,
+              27,
+              28
+            ]
+          ],
+          "silhouette": 0.8783,
+          "time_s": 0.122,
+          "eigenvalues_top20": [
+            0.0,
+            0.77748358,
+            0.79560759,
+            0.80438525,
+            0.82929769,
+            0.94418097,
+            0.94866087,
+            0.95104602,
+            0.95811276,
+            0.98415682,
+            0.98502316,
+            0.98574778,
+            0.98690534,
+            0.98708852,
+            0.98831561,
+            0.98904278,
+            0.98982808,
+            0.99065897,
+            0.99100128,
+            0.99218823
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 5,
+          "module_sizes": [
+            36,
+            37,
+            8,
+            9,
+            10
+          ],
+          "modules": [
+            [
+              2,
+              5,
+              8,
+              12,
+              14,
+              15,
+              16,
+              18,
+              21,
+              23,
+              29,
+              36,
+              38,
+              39,
+              40,
+              42,
+              45,
+              47,
+              51,
+              53,
+              60,
+              64,
+              65,
+              73,
+              75,
+              76,
+              77,
+              78,
+              85,
+              88,
+              91,
+              92,
+              93,
+              94,
+              95,
+              96
+            ],
+            [
+              13,
+              17,
+              19,
+              20,
+              22,
+              26,
+              32,
+              35,
+              37,
+              41,
+              43,
+              44,
+              46,
+              48,
+              49,
+              50,
+              52,
+              54,
+              55,
+              57,
+              58,
+              62,
+              63,
+              66,
+              67,
+              68,
+              69,
+              71,
+              74,
+              81,
+              82,
+              83,
+              86,
+              87,
+              89,
+              90,
+              98
+            ],
+            [
+              0,
+              9,
+              24,
+              33,
+              61,
+              70,
+              79,
+              84
+            ],
+            [
+              4,
+              7,
+              10,
+              28,
+              31,
+              34,
+              56,
+              72,
+              99
+            ],
+            [
+              1,
+              3,
+              6,
+              11,
+              25,
+              27,
+              30,
+              59,
+              80,
+              97
+            ]
+          ],
+          "silhouette": 0.432703,
+          "time_s": 0.033,
+          "eigenvalues_top20": [
+            0.80243582,
+            0.81930734,
+            0.82250232,
+            0.82454039,
+            0.93533392,
+            0.93739626,
+            0.94111847,
+            0.94328969,
+            0.94516025,
+            0.9455764,
+            0.95004692,
+            0.95626283,
+            0.96452398,
+            0.96498178,
+            0.96739189,
+            0.96985972,
+            0.97074508,
+            0.97139804,
+            0.9723501,
+            0.9728839
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.1891985502,
+          "normalized_by_max": 0.4345867516,
+          "normalized_by_d": 0.0018919855,
+          "lambda_min": 0.1891985502,
+          "lambda_max": 0.4353527794
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            -0.0,
+            0.193558481,
+            0.1945358964,
+            0.1955715875,
+            0.1959345702,
+            0.1965014282,
+            0.1968608023,
+            0.1970705421,
+            0.1975426529,
+            0.1976342876,
+            0.1978212602,
+            0.1979476599,
+            0.1981703424,
+            0.1983756179,
+            0.1984763262,
+            0.1987114972,
+            0.1989488904,
+            0.1990924998,
+            0.1993645557,
+            0.1997169714
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.1891985502,
+            0.190861022,
+            0.1915402872,
+            0.1923460493,
+            0.1925922972,
+            0.1927693906,
+            0.1929261958,
+            0.193213201,
+            0.1934316585,
+            0.1935825078,
+            0.194039018,
+            0.1940919666,
+            0.1942812265,
+            0.1944889658,
+            0.1947276475,
+            0.1950757411,
+            0.1951151383,
+            0.1953395835,
+            0.1953481446,
+            0.1954922146
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.605963,
+          "metric_random_oblique": 0.605282,
+          "oblique_benefit": -0.000681,
+          "metric_name": "balanced_accuracy",
+          "n_train": 40000,
+          "n_test": 10000,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 1.4
+        },
+        "ground_truth_recovery": {
+          "unsigned_ari": 0.0169,
+          "sponge_ari": -0.0425,
+          "n_assigned_features": 24
+        }
+      }
+    },
+    "correlation_analysis": {
+      "spearman_rho": -0.107692,
+      "p_value": 0.714031,
+      "n_datasets": 14,
+      "bootstrap_ci_95": {
+        "lower": -0.677856,
+        "upper": 0.526864,
+        "n_resamples": 2000,
+        "n_valid": 2000
+      },
+      "dataset_values": [
+        {
+          "dataset": "credit",
+          "frustration_index": 0.045044,
+          "oblique_benefit": 0.005984
+        },
+        {
+          "dataset": "adult",
+          "frustration_index": 0.0,
+          "oblique_benefit": 0.127068
+        },
+        {
+          "dataset": "electricity",
+          "frustration_index": 0.027109,
+          "oblique_benefit": 0.039517
+        },
+        {
+          "dataset": "california_housing",
+          "frustration_index": 0.216897,
+          "oblique_benefit": 0.089973
+        },
+        {
+          "dataset": "easy_2mod_xor",
+          "frustration_index": 0.07154,
+          "oblique_benefit": 0.120046
+        },
+        {
+          "dataset": "eye_movements",
+          "frustration_index": 0.178654,
+          "oblique_benefit": 0.021025
+        },
+        {
+          "dataset": "no_structure_control",
+          "frustration_index": 0.316319,
+          "oblique_benefit": 0.127907
+        },
+        {
+          "dataset": "medium_4mod_mixed",
+          "frustration_index": 0.092574,
+          "oblique_benefit": -0.074185
+        },
+        {
+          "dataset": "overlapping_modules",
+          "frustration_index": 0.085429,
+          "oblique_benefit": -0.091092
+        },
+        {
+          "dataset": "higgs_small",
+          "frustration_index": 0.336069,
+          "oblique_benefit": 0.029679
+        },
+        {
+          "dataset": "hard_4mod_unequal",
+          "frustration_index": 0.158138,
+          "oblique_benefit": -0.01802
+        },
+        {
+          "dataset": "miniboone",
+          "frustration_index": 0.074113,
+          "oblique_benefit": 0.003219
+        },
+        {
+          "dataset": "jannis",
+          "frustration_index": 0.163639,
+          "oblique_benefit": -0.000261
+        },
+        {
+          "dataset": "highdim_8mod",
+          "frustration_index": 0.434587,
+          "oblique_benefit": -0.000681
+        }
+      ],
+      "hypothesis_test": {
+        "h0": "No correlation between frustration index and oblique benefit",
+        "h1": "Negative correlation: lower frustration (cleaner modules) -> more oblique benefit",
+        "significant_at_0.05": false,
+        "direction": "negative"
+      },
+      "synthetic_only_spearman": {
+        "rho": 0.314286,
+        "p_value": 0.544093,
+        "n": 6
+      },
+      "real_only_spearman": {
+        "rho": -0.166667,
+        "p_value": 0.693239,
+        "n": 8
+      },
+      "kendall_tau": {
+        "tau": -0.054945,
+        "p_value": 0.82991
+      }
+    },
+    "summary": {
+      "total_datasets": 14,
+      "total_time_s": 68.5,
+      "mean_frustration": 0.157151,
+      "std_frustration": 0.124242,
+      "mean_oblique_benefit": 0.027156,
+      "std_oblique_benefit": 0.066411,
+      "key_finding": "DISCONFIRM/INCONCLUSIVE"
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "credit",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"credit\", \"n_samples\": 16714, \"n_features\": 10, \"task_type\": \"classification\", \"is_synthetic\": false}",
+          "output": "{\"frustration_normalized\": 0.045044, \"unsigned_k\": 2, \"sponge_k\": 8, \"oblique_benefit\": 0.005984, \"frac_negative_coi\": 0.2889, \"frac_positive_coi\": 0.5556}",
+          "predict_axis_aligned": "0.746648",
+          "predict_random_oblique": "0.752633",
+          "metadata_frustration_raw": 0.00803239,
+          "metadata_frustration_normalized": 0.04504371,
+          "metadata_unsigned_k": 2,
+          "metadata_sponge_k": 8,
+          "metadata_unsigned_silhouette": 0.803794,
+          "metadata_sponge_silhouette": 0.059001,
+          "metadata_coi_frac_negative": 0.2889,
+          "metadata_coi_frac_positive": 0.5556,
+          "metadata_oblique_benefit": 0.005984
+        }
+      ]
+    },
+    {
+      "dataset": "adult",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"adult\", \"n_samples\": 32561, \"n_features\": 6, \"task_type\": \"classification\", \"is_synthetic\": false}",
+          "output": "{\"frustration_normalized\": 0.0, \"unsigned_k\": 2, \"sponge_k\": 2, \"oblique_benefit\": 0.127068, \"frac_negative_coi\": 0.2, \"frac_positive_coi\": 0.2}",
+          "predict_axis_aligned": "0.560811",
+          "predict_random_oblique": "0.68788",
+          "metadata_frustration_raw": 0.0,
+          "metadata_frustration_normalized": 0.0,
+          "metadata_unsigned_k": 2,
+          "metadata_sponge_k": 2,
+          "metadata_unsigned_silhouette": 0.715482,
+          "metadata_sponge_silhouette": 0.548814,
+          "metadata_coi_frac_negative": 0.2,
+          "metadata_coi_frac_positive": 0.2,
+          "metadata_oblique_benefit": 0.127068
+        }
+      ]
+    },
+    {
+      "dataset": "electricity",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"electricity\", \"n_samples\": 38474, \"n_features\": 7, \"task_type\": \"classification\", \"is_synthetic\": false}",
+          "output": "{\"frustration_normalized\": 0.027109, \"unsigned_k\": 2, \"sponge_k\": 5, \"oblique_benefit\": 0.039517, \"frac_negative_coi\": 0.4286, \"frac_positive_coi\": 0.5238}",
+          "predict_axis_aligned": "0.722912",
+          "predict_random_oblique": "0.762429",
+          "metadata_frustration_raw": 0.00778294,
+          "metadata_frustration_normalized": 0.02710895,
+          "metadata_unsigned_k": 2,
+          "metadata_sponge_k": 5,
+          "metadata_unsigned_silhouette": 0.720438,
+          "metadata_sponge_silhouette": 0.065512,
+          "metadata_coi_frac_negative": 0.4286,
+          "metadata_coi_frac_positive": 0.5238,
+          "metadata_oblique_benefit": 0.039517
+        }
+      ]
+    },
+    {
+      "dataset": "california_housing",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"california_housing\", \"n_samples\": 20640, \"n_features\": 8, \"task_type\": \"regression\", \"is_synthetic\": false}",
+          "output": "{\"frustration_normalized\": 0.216897, \"unsigned_k\": 2, \"sponge_k\": 7, \"oblique_benefit\": 0.089973, \"frac_negative_coi\": 1.0, \"frac_positive_coi\": 0.0}",
+          "predict_axis_aligned": "0.520306",
+          "predict_random_oblique": "0.61028",
+          "metadata_frustration_raw": 0.15552559,
+          "metadata_frustration_normalized": 0.21689725,
+          "metadata_unsigned_k": 2,
+          "metadata_sponge_k": 7,
+          "metadata_unsigned_silhouette": 0.73819,
+          "metadata_sponge_silhouette": 0.004929,
+          "metadata_coi_frac_negative": 1.0,
+          "metadata_coi_frac_positive": 0.0,
+          "metadata_oblique_benefit": 0.089973
+        }
+      ]
+    },
+    {
+      "dataset": "easy_2mod_xor",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"easy_2mod_xor\", \"n_samples\": 10000, \"n_features\": 10, \"task_type\": \"classification\", \"is_synthetic\": true}",
+          "output": "{\"frustration_normalized\": 0.07154, \"unsigned_k\": 7, \"sponge_k\": 9, \"oblique_benefit\": 0.120046, \"frac_negative_coi\": 1.0, \"frac_positive_coi\": 0.0}",
+          "predict_axis_aligned": "0.512201",
+          "predict_random_oblique": "0.632247",
+          "metadata_frustration_raw": 0.02811126,
+          "metadata_frustration_normalized": 0.07154023,
+          "metadata_unsigned_k": 7,
+          "metadata_sponge_k": 9,
+          "metadata_unsigned_silhouette": 0.135421,
+          "metadata_sponge_silhouette": 0.030745,
+          "metadata_coi_frac_negative": 1.0,
+          "metadata_coi_frac_positive": 0.0,
+          "metadata_oblique_benefit": 0.120046
+        }
+      ]
+    },
+    {
+      "dataset": "eye_movements",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"eye_movements\", \"n_samples\": 7608, \"n_features\": 20, \"task_type\": \"classification\", \"is_synthetic\": false}",
+          "output": "{\"frustration_normalized\": 0.178654, \"unsigned_k\": 2, \"sponge_k\": 2, \"oblique_benefit\": 0.021025, \"frac_negative_coi\": 0.9789, \"frac_positive_coi\": 0.0}",
+          "predict_axis_aligned": "0.557162",
+          "predict_random_oblique": "0.578187",
+          "metadata_frustration_raw": 0.03620013,
+          "metadata_frustration_normalized": 0.1786545,
+          "metadata_unsigned_k": 2,
+          "metadata_sponge_k": 2,
+          "metadata_unsigned_silhouette": 0.676716,
+          "metadata_sponge_silhouette": 0.480093,
+          "metadata_coi_frac_negative": 0.9789,
+          "metadata_coi_frac_positive": 0.0,
+          "metadata_oblique_benefit": 0.021025
+        }
+      ]
+    },
+    {
+      "dataset": "no_structure_control",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"no_structure_control\", \"n_samples\": 10000, \"n_features\": 20, \"task_type\": \"classification\", \"is_synthetic\": true}",
+          "output": "{\"frustration_normalized\": 0.316319, \"unsigned_k\": 2, \"sponge_k\": 2, \"oblique_benefit\": 0.127907, \"frac_negative_coi\": 1.0, \"frac_positive_coi\": 0.0}",
+          "predict_axis_aligned": "0.760113",
+          "predict_random_oblique": "0.88802",
+          "metadata_frustration_raw": 0.06590898,
+          "metadata_frustration_normalized": 0.31631941,
+          "metadata_unsigned_k": 2,
+          "metadata_sponge_k": 2,
+          "metadata_unsigned_silhouette": 0.851805,
+          "metadata_sponge_silhouette": 0.72536,
+          "metadata_coi_frac_negative": 1.0,
+          "metadata_coi_frac_positive": 0.0,
+          "metadata_oblique_benefit": 0.127907
+        }
+      ]
+    },
+    {
+      "dataset": "medium_4mod_mixed",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"medium_4mod_mixed\", \"n_samples\": 20000, \"n_features\": 18, \"task_type\": \"classification\", \"is_synthetic\": true}",
+          "output": "{\"frustration_normalized\": 0.092574, \"unsigned_k\": 5, \"sponge_k\": 4, \"oblique_benefit\": -0.074185, \"frac_negative_coi\": 0.9869, \"frac_positive_coi\": 0.0131}",
+          "predict_axis_aligned": "0.75215",
+          "predict_random_oblique": "0.677965",
+          "metadata_frustration_raw": 0.03098603,
+          "metadata_frustration_normalized": 0.09257383,
+          "metadata_unsigned_k": 5,
+          "metadata_sponge_k": 4,
+          "metadata_unsigned_silhouette": 0.930562,
+          "metadata_sponge_silhouette": 0.513,
+          "metadata_coi_frac_negative": 0.9869,
+          "metadata_coi_frac_positive": 0.0131,
+          "metadata_oblique_benefit": -0.074185
+        }
+      ]
+    },
+    {
+      "dataset": "overlapping_modules",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"overlapping_modules\", \"n_samples\": 20000, \"n_features\": 18, \"task_type\": \"classification\", \"is_synthetic\": true}",
+          "output": "{\"frustration_normalized\": 0.085429, \"unsigned_k\": 3, \"sponge_k\": 3, \"oblique_benefit\": -0.091092, \"frac_negative_coi\": 0.9869, \"frac_positive_coi\": 0.0065}",
+          "predict_axis_aligned": "0.748615",
+          "predict_random_oblique": "0.657523",
+          "metadata_frustration_raw": 0.02894062,
+          "metadata_frustration_normalized": 0.08542902,
+          "metadata_unsigned_k": 3,
+          "metadata_sponge_k": 3,
+          "metadata_unsigned_silhouette": 0.864302,
+          "metadata_sponge_silhouette": 0.508886,
+          "metadata_coi_frac_negative": 0.9869,
+          "metadata_coi_frac_positive": 0.0065,
+          "metadata_oblique_benefit": -0.091092
+        }
+      ]
+    },
+    {
+      "dataset": "higgs_small",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"higgs_small\", \"n_samples\": 98050, \"n_features\": 24, \"task_type\": \"classification\", \"is_synthetic\": false}",
+          "output": "{\"frustration_normalized\": 0.336069, \"unsigned_k\": 2, \"sponge_k\": 2, \"oblique_benefit\": 0.029679, \"frac_negative_coi\": 0.9928, \"frac_positive_coi\": 0.0036}",
+          "predict_axis_aligned": "0.636614",
+          "predict_random_oblique": "0.666293",
+          "metadata_frustration_raw": 0.04416358,
+          "metadata_frustration_normalized": 0.33606858,
+          "metadata_unsigned_k": 2,
+          "metadata_sponge_k": 2,
+          "metadata_unsigned_silhouette": 0.762057,
+          "metadata_sponge_silhouette": 0.561345,
+          "metadata_coi_frac_negative": 0.9928,
+          "metadata_coi_frac_positive": 0.0036,
+          "metadata_oblique_benefit": 0.029679
+        }
+      ]
+    },
+    {
+      "dataset": "hard_4mod_unequal",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"hard_4mod_unequal\", \"n_samples\": 20000, \"n_features\": 31, \"task_type\": \"classification\", \"is_synthetic\": true}",
+          "output": "{\"frustration_normalized\": 0.158138, \"unsigned_k\": 2, \"sponge_k\": 2, \"oblique_benefit\": -0.01802, \"frac_negative_coi\": 1.0, \"frac_positive_coi\": 0.0}",
+          "predict_axis_aligned": "0.534137",
+          "predict_random_oblique": "0.516117",
+          "metadata_frustration_raw": 0.05471423,
+          "metadata_frustration_normalized": 0.15813836,
+          "metadata_unsigned_k": 2,
+          "metadata_sponge_k": 2,
+          "metadata_unsigned_silhouette": 0.945377,
+          "metadata_sponge_silhouette": 0.605016,
+          "metadata_coi_frac_negative": 1.0,
+          "metadata_coi_frac_positive": 0.0,
+          "metadata_oblique_benefit": -0.01802
+        }
+      ]
+    },
+    {
+      "dataset": "miniboone",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"miniboone\", \"n_samples\": 72998, \"n_features\": 50, \"task_type\": \"classification\", \"is_synthetic\": false}",
+          "output": "{\"frustration_normalized\": 0.074113, \"unsigned_k\": 2, \"sponge_k\": 2, \"oblique_benefit\": 0.003219, \"frac_negative_coi\": 0.4286, \"frac_positive_coi\": 0.5339}",
+          "predict_axis_aligned": "0.853562",
+          "predict_random_oblique": "0.856781",
+          "metadata_frustration_raw": 0.20583127,
+          "metadata_frustration_normalized": 0.07411291,
+          "metadata_unsigned_k": 2,
+          "metadata_sponge_k": 2,
+          "metadata_unsigned_silhouette": 0.719357,
+          "metadata_sponge_silhouette": 0.490398,
+          "metadata_coi_frac_negative": 0.4286,
+          "metadata_coi_frac_positive": 0.5339,
+          "metadata_oblique_benefit": 0.003219
+        }
+      ]
+    },
+    {
+      "dataset": "jannis",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"jannis\", \"n_samples\": 57580, \"n_features\": 54, \"task_type\": \"classification\", \"is_synthetic\": false}",
+          "output": "{\"frustration_normalized\": 0.163639, \"unsigned_k\": 2, \"sponge_k\": 2, \"oblique_benefit\": -0.000261, \"frac_negative_coi\": 0.8924, \"frac_positive_coi\": 0.0825}",
+          "predict_axis_aligned": "0.717437",
+          "predict_random_oblique": "0.717176",
+          "metadata_frustration_raw": 0.07931018,
+          "metadata_frustration_normalized": 0.16363922,
+          "metadata_unsigned_k": 2,
+          "metadata_sponge_k": 2,
+          "metadata_unsigned_silhouette": 0.804148,
+          "metadata_sponge_silhouette": 0.485625,
+          "metadata_coi_frac_negative": 0.8924,
+          "metadata_coi_frac_positive": 0.0825,
+          "metadata_oblique_benefit": -0.000261
+        }
+      ]
+    },
+    {
+      "dataset": "highdim_8mod",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"highdim_8mod\", \"n_samples\": 50000, \"n_features\": 200, \"task_type\": \"classification\", \"is_synthetic\": true}",
+          "output": "{\"frustration_normalized\": 0.434587, \"unsigned_k\": 2, \"sponge_k\": 5, \"oblique_benefit\": -0.000681, \"frac_negative_coi\": 0.9966, \"frac_positive_coi\": 0.001}",
+          "predict_axis_aligned": "0.605963",
+          "predict_random_oblique": "0.605282",
+          "metadata_frustration_raw": 0.18919855,
+          "metadata_frustration_normalized": 0.43458675,
+          "metadata_unsigned_k": 2,
+          "metadata_sponge_k": 5,
+          "metadata_unsigned_silhouette": 0.8783,
+          "metadata_sponge_silhouette": 0.432703,
+          "metadata_coi_frac_negative": 0.9966,
+          "metadata_coi_frac_positive": 0.001,
+          "metadata_oblique_benefit": -0.000681
+        }
+      ]
+    }
+  ]
+}

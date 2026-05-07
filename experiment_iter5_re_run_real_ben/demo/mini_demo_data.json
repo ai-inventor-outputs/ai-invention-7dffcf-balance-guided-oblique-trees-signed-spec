@@ -1,0 +1,489 @@
+{
+  "datasets": [
+    {
+      "dataset": "adult",
+      "examples": [
+        {
+          "input": "{\"age\": 68, \"fnlwgt\": 143932, \"education.num\": 15, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 24}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 69, \"fnlwgt\": 799201, \"education.num\": 8, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 89}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 75, \"fnlwgt\": 1445257, \"education.num\": 16, \"capital.gain\": 0, \"capital.loss\": 1999, \"hours.per.week\": 3}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 23, \"fnlwgt\": 501492, \"education.num\": 9, \"capital.gain\": 87413, \"capital.loss\": 0, \"hours.per.week\": 9}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 18, \"fnlwgt\": 660531, \"education.num\": 12, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 4}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 22, \"fnlwgt\": 1401673, \"education.num\": 4, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 14}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 31, \"fnlwgt\": 499879, \"education.num\": 14, \"capital.gain\": 91487, \"capital.loss\": 0, \"hours.per.week\": 24}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 76, \"fnlwgt\": 938075, \"education.num\": 13, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 88}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 24, \"fnlwgt\": 25986, \"education.num\": 3, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 12}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 64, \"fnlwgt\": 925910, \"education.num\": 7, \"capital.gain\": 77473, \"capital.loss\": 0, \"hours.per.week\": 47}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 17, \"fnlwgt\": 226020, \"education.num\": 10, \"capital.gain\": 7010, \"capital.loss\": 0, \"hours.per.week\": 63}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 68, \"fnlwgt\": 1245916, \"education.num\": 16, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 13}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 75, \"fnlwgt\": 391989, \"education.num\": 12, \"capital.gain\": 64144, \"capital.loss\": 0, \"hours.per.week\": 30}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 78, \"fnlwgt\": 822208, \"education.num\": 1, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 27}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 53, \"fnlwgt\": 240576, \"education.num\": 3, \"capital.gain\": 0, \"capital.loss\": 3843, \"hours.per.week\": 52}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 74, \"fnlwgt\": 205075, \"education.num\": 12, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 81}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 18, \"fnlwgt\": 1032545, \"education.num\": 12, \"capital.gain\": 0, \"capital.loss\": 1807, \"hours.per.week\": 32}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 84, \"fnlwgt\": 1244310, \"education.num\": 11, \"capital.gain\": 12788, \"capital.loss\": 0, \"hours.per.week\": 11}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 32, \"fnlwgt\": 1478976, \"education.num\": 9, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 19}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 35, \"fnlwgt\": 154483, \"education.num\": 16, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 1}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 73, \"fnlwgt\": 837816, \"education.num\": 2, \"capital.gain\": 86081, \"capital.loss\": 362, \"hours.per.week\": 60}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 17, \"fnlwgt\": 1426447, \"education.num\": 14, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 48}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 36, \"fnlwgt\": 919317, \"education.num\": 8, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 89}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 34, \"fnlwgt\": 714335, \"education.num\": 14, \"capital.gain\": 2969, \"capital.loss\": 0, \"hours.per.week\": 33}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 64, \"fnlwgt\": 1119447, \"education.num\": 16, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 86}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 46, \"fnlwgt\": 146508, \"education.num\": 3, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 4}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 65, \"fnlwgt\": 642271, \"education.num\": 1, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 93}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 69, \"fnlwgt\": 127294, \"education.num\": 3, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 18}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 70, \"fnlwgt\": 995609, \"education.num\": 3, \"capital.gain\": 0, \"capital.loss\": 3109, \"hours.per.week\": 2}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 49, \"fnlwgt\": 1453578, \"education.num\": 6, \"capital.gain\": 19290, \"capital.loss\": 2555, \"hours.per.week\": 7}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 61, \"fnlwgt\": 276512, \"education.num\": 8, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 51}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 79, \"fnlwgt\": 296821, \"education.num\": 10, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 97}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 76, \"fnlwgt\": 15051, \"education.num\": 12, \"capital.gain\": 0, \"capital.loss\": 735, \"hours.per.week\": 30}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 79, \"fnlwgt\": 40251, \"education.num\": 10, \"capital.gain\": 0, \"capital.loss\": 2938, \"hours.per.week\": 12}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 74, \"fnlwgt\": 762201, \"education.num\": 1, \"capital.gain\": 7905, \"capital.loss\": 0, \"hours.per.week\": 22}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 83, \"fnlwgt\": 752427, \"education.num\": 10, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 47}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 78, \"fnlwgt\": 203475, \"education.num\": 5, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 23}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 85, \"fnlwgt\": 662419, \"education.num\": 15, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 16}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 18, \"fnlwgt\": 630992, \"education.num\": 12, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 35}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 49, \"fnlwgt\": 737948, \"education.num\": 3, \"capital.gain\": 93710, \"capital.loss\": 0, \"hours.per.week\": 35}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 24, \"fnlwgt\": 624956, \"education.num\": 10, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 68}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 45, \"fnlwgt\": 543831, \"education.num\": 4, \"capital.gain\": 60792, \"capital.loss\": 0, \"hours.per.week\": 73}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 65, \"fnlwgt\": 881474, \"education.num\": 16, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 62}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 28, \"fnlwgt\": 1227856, \"education.num\": 7, \"capital.gain\": 43386, \"capital.loss\": 4052, \"hours.per.week\": 86}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 35, \"fnlwgt\": 190352, \"education.num\": 4, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 83}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 32, \"fnlwgt\": 885332, \"education.num\": 5, \"capital.gain\": 0, \"capital.loss\": 3736, \"hours.per.week\": 39}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 58, \"fnlwgt\": 557977, \"education.num\": 7, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 7}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 56, \"fnlwgt\": 51081, \"education.num\": 9, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 83}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 81, \"fnlwgt\": 1298643, \"education.num\": 1, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 61}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 55, \"fnlwgt\": 823721, \"education.num\": 10, \"capital.gain\": 0, \"capital.loss\": 3809, \"hours.per.week\": 20}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 77, \"fnlwgt\": 168542, \"education.num\": 9, \"capital.gain\": 52324, \"capital.loss\": 0, \"hours.per.week\": 25}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 54, \"fnlwgt\": 1303380, \"education.num\": 6, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 75}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 52, \"fnlwgt\": 627650, \"education.num\": 3, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 54}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 32, \"fnlwgt\": 1233078, \"education.num\": 9, \"capital.gain\": 7214, \"capital.loss\": 0, \"hours.per.week\": 28}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 52, \"fnlwgt\": 1384249, \"education.num\": 8, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 63}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 49, \"fnlwgt\": 329428, \"education.num\": 4, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 47}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 26, \"fnlwgt\": 490007, \"education.num\": 14, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 65}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 65, \"fnlwgt\": 1189354, \"education.num\": 5, \"capital.gain\": 0, \"capital.loss\": 4100, \"hours.per.week\": 1}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 71, \"fnlwgt\": 1335483, \"education.num\": 1, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 74}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        },
+        {
+          "input": "{\"age\": 33, \"fnlwgt\": 1099341, \"education.num\": 1, \"capital.gain\": 0, \"capital.loss\": 0, \"hours.per.week\": 39}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "grinsztajn_adult"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1889 @@
+{
+  "metadata": {
+    "method_name": "CoI Estimator Bias & SPONGE Failure Diagnosis",
+    "description": "Two-part diagnostic: (1) Compare CoI estimation methods to determine whether universally negative CoI is genuine or bias artifact; (2) Diagnose SPONGE failure on all-negative graphs.",
+    "methods_compared": [
+      "npeet_ksg (k=5, abs-clipped)",
+      "raw_npeet_ksg (k=5, no abs)",
+      "binned_10"
+    ],
+    "part1_estimator_bias": {
+      "calibration_pure_xor": {
+        "npeet_ksg": {
+          "method": "npeet_ksg",
+          "n_features": 5,
+          "n_pairs": 10,
+          "sign_distribution": {
+            "n_positive": 7,
+            "n_negative": 3,
+            "n_near_zero": 0,
+            "frac_positive": 0.7,
+            "frac_negative": 0.3,
+            "frac_near_zero": 0.0
+          },
+          "distribution_stats": {
+            "mean": -0.109204,
+            "median": 0.006619,
+            "std": 0.235981,
+            "min": -0.666897,
+            "max": 0.012343,
+            "q25": -0.002226,
+            "q75": 0.008862
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "coi_value": 0.006315,
+              "sign": "positive"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.666897,
+              "sign": "negative"
+            }
+          ],
+          "runtime_s": 0.4,
+          "mi_individual": [
+            0.006483,
+            0.002018,
+            0.01166
+          ]
+        },
+        "raw_npeet_ksg": {
+          "method": "raw_npeet_ksg",
+          "n_features": 5,
+          "n_pairs": 10,
+          "sign_distribution": {
+            "n_positive": 3,
+            "n_negative": 7,
+            "n_near_zero": 0,
+            "frac_positive": 0.3,
+            "frac_negative": 0.7,
+            "frac_near_zero": 0.0
+          },
+          "distribution_stats": {
+            "mean": -0.121759,
+            "median": -0.010041,
+            "std": 0.23476,
+            "min": -0.670933,
+            "max": 0.007889,
+            "q25": -0.02377,
+            "q75": 0.001453
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "coi_value": 0.00665,
+              "sign": "positive"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.670933,
+              "sign": "negative"
+            }
+          ],
+          "runtime_s": 0.4,
+          "mi_individual": [
+            0.006483,
+            -0.002018,
+            -0.01166
+          ],
+          "n_negative_individual_mi": 4,
+          "negative_mi_values": [
+            -0.002018,
+            -0.01166,
+            -0.006733
+          ]
+        },
+        "binned_10": {
+          "method": "binned_10",
+          "n_features": 5,
+          "n_pairs": 10,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 2,
+            "n_near_zero": 8,
+            "frac_positive": 0.0,
+            "frac_negative": 0.2,
+            "frac_near_zero": 0.8
+          },
+          "distribution_stats": {
+            "mean": -0.095791,
+            "median": -0.000672,
+            "std": 0.19374,
+            "min": -0.556861,
+            "max": -0.000256,
+            "q25": -0.000845,
+            "q75": -0.000527
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "coi_value": -0.000256,
+              "sign": "near_zero"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.556861,
+              "sign": "negative"
+            }
+          ],
+          "runtime_s": 0.0,
+          "mi_individual": [
+            0.000181,
+            9.6e-05,
+            0.000159
+          ]
+        },
+        "binned_20": {
+          "method": "binned_20",
+          "n_features": 5,
+          "n_pairs": 10,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 9,
+            "n_near_zero": 1,
+            "frac_positive": 0.0,
+            "frac_negative": 0.9,
+            "frac_near_zero": 0.1
+          },
+          "distribution_stats": {
+            "mean": -0.103234,
+            "median": -0.002642,
+            "std": 0.204306,
+            "min": -0.577122,
+            "max": -0.000744,
+            "q25": -0.002895,
+            "q75": -0.002303
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "coi_value": -0.000744,
+              "sign": "near_zero"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.577122,
+              "sign": "negative"
+            }
+          ],
+          "runtime_s": 0.0,
+          "mi_individual": [
+            0.000243,
+            0.000193,
+            0.00029
+          ]
+        },
+        "binned_50": {
+          "method": "binned_50",
+          "n_features": 5,
+          "n_pairs": 10,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 10,
+            "n_near_zero": 0,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "distribution_stats": {
+            "mean": -0.117017,
+            "median": -0.013724,
+            "std": 0.212611,
+            "min": -0.611861,
+            "max": -0.003936,
+            "q25": -0.014565,
+            "q75": -0.012181
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "coi_value": -0.003936,
+              "sign": "negative"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.611861,
+              "sign": "negative"
+            }
+          ],
+          "runtime_s": 0.0,
+          "mi_individual": [
+            0.000606,
+            0.00048,
+            0.000538
+          ]
+        },
+        "sklearn_ksg": {
+          "method": "sklearn_ksg",
+          "n_features": 5,
+          "n_pairs": 10,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 10,
+            "n_near_zero": 0,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "distribution_stats": {
+            "mean": -0.120237,
+            "median": -0.005757,
+            "std": 0.234589,
+            "min": -0.674805,
+            "max": -0.001092,
+            "q25": -0.008965,
+            "q75": -0.002762
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "coi_value": -0.006308,
+              "sign": "negative"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.674805,
+              "sign": "negative"
+            }
+          ],
+          "runtime_s": 0.4,
+          "mi_individual": [
+            0.000593,
+            0.0,
+            0.0
+          ]
+        },
+        "analytical_ground_truth": {
+          "coi_matrix_known_pairs": {
+            "X0_X1_xor_synergy": -0.693147,
+            "X0_X3_redundant_copy": 0.0,
+            "X0_X4_noise": 0.0
+          },
+          "note": "XOR(X0,X1)=Y exactly. X3=X0+noise. X4=pure noise."
+        },
+        "bias_analysis": {
+          "npeet_ksg": {
+            "xor_pair_01_coi": -0.666897,
+            "error_vs_analytical": 0.0263,
+            "redundant_pair_03_coi": 0.006315
+          },
+          "raw_npeet_ksg": {
+            "xor_pair_01_coi": -0.670933,
+            "error_vs_analytical": 0.0222,
+            "redundant_pair_03_coi": 0.00665
+          },
+          "binned_10": {
+            "xor_pair_01_coi": -0.556861,
+            "error_vs_analytical": 0.1363,
+            "redundant_pair_03_coi": -0.000256
+          },
+          "binned_20": {
+            "xor_pair_01_coi": -0.577122,
+            "error_vs_analytical": 0.116,
+            "redundant_pair_03_coi": -0.000744
+          },
+          "binned_50": {
+            "xor_pair_01_coi": -0.611861,
+            "error_vs_analytical": 0.0813,
+            "redundant_pair_03_coi": -0.003936
+          },
+          "sklearn_ksg": {
+            "xor_pair_01_coi": -0.674805,
+            "error_vs_analytical": 0.0183,
+            "redundant_pair_03_coi": -0.006308
+          }
+        }
+      },
+      "easy_2mod_xor": {
+        "npeet_ksg": {
+          "method": "npeet_ksg",
+          "n_features": 10,
+          "n_pairs": 45,
+          "sign_distribution": {
+            "n_positive": 30,
+            "n_negative": 14,
+            "n_near_zero": 1,
+            "frac_positive": 0.6667,
+            "frac_negative": 0.3111,
+            "frac_near_zero": 0.0222
+          },
+          "distribution_stats": {
+            "mean": -0.006254,
+            "median": 0.004203,
+            "std": 0.032722,
+            "min": -0.130195,
+            "max": 0.017188,
+            "q25": -0.002229,
+            "q75": 0.007248
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "coi_value": 0.001487,
+              "sign": "positive"
+            },
+            {
+              "pair": [
+                2,
+                5
+              ],
+              "coi_value": 0.005453,
+              "sign": "positive"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.130195,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.114095,
+              "sign": "negative"
+            }
+          ],
+          "noise_pair_mean_coi": -0.000324,
+          "runtime_s": 0.7,
+          "mi_individual": [
+            0.001688,
+            0.007754,
+            0.013172
+          ]
+        },
+        "raw_npeet_ksg": {
+          "method": "raw_npeet_ksg",
+          "n_features": 10,
+          "n_pairs": 45,
+          "sign_distribution": {
+            "n_positive": 18,
+            "n_negative": 25,
+            "n_near_zero": 2,
+            "frac_positive": 0.4,
+            "frac_negative": 0.5556,
+            "frac_near_zero": 0.0444
+          },
+          "distribution_stats": {
+            "mean": -0.013901,
+            "median": -0.003305,
+            "std": 0.035946,
+            "min": -0.145704,
+            "max": 0.015013,
+            "q25": -0.012183,
+            "q75": 0.004308
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "coi_value": 0.001487,
+              "sign": "positive"
+            },
+            {
+              "pair": [
+                2,
+                5
+              ],
+              "coi_value": -0.020891,
+              "sign": "negative"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.145704,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.140439,
+              "sign": "negative"
+            }
+          ],
+          "noise_pair_mean_coi": 0.001038,
+          "runtime_s": 0.9,
+          "mi_individual": [
+            0.001688,
+            -0.007754,
+            -0.013172
+          ],
+          "n_negative_individual_mi": 2,
+          "negative_mi_values": [
+            -0.007754,
+            -0.013172
+          ]
+        },
+        "binned_10": {
+          "method": "binned_10",
+          "n_features": 10,
+          "n_pairs": 45,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 43,
+            "n_near_zero": 2,
+            "frac_positive": 0.0,
+            "frac_negative": 0.9556,
+            "frac_near_zero": 0.0444
+          },
+          "distribution_stats": {
+            "mean": -0.01103,
+            "median": -0.003337,
+            "std": 0.024944,
+            "min": -0.106362,
+            "max": -0.000595,
+            "q25": -0.004047,
+            "q75": -0.003055
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "coi_value": -0.000595,
+              "sign": "near_zero"
+            },
+            {
+              "pair": [
+                2,
+                5
+              ],
+              "coi_value": -0.000964,
+              "sign": "near_zero"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.100205,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.106362,
+              "sign": "negative"
+            }
+          ],
+          "noise_pair_mean_coi": -0.003613,
+          "runtime_s": 0.1,
+          "mi_individual": [
+            0.000441,
+            0.000483,
+            0.000524
+          ]
+        },
+        "binned_20": {
+          "method": "binned_20",
+          "n_features": 10,
+          "n_pairs": 45,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 45,
+            "n_near_zero": 0,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "distribution_stats": {
+            "mean": -0.020614,
+            "median": -0.013102,
+            "std": 0.026542,
+            "min": -0.117435,
+            "max": -0.003662,
+            "q25": -0.013902,
+            "q75": -0.012042
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "coi_value": -0.003662,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                5
+              ],
+              "coi_value": -0.003731,
+              "sign": "negative"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.115018,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.117435,
+              "sign": "negative"
+            }
+          ],
+          "noise_pair_mean_coi": -0.01373,
+          "runtime_s": 0.1,
+          "mi_individual": [
+            0.000874,
+            0.001182,
+            0.001191
+          ]
+        },
+        "binned_50": {
+          "method": "binned_50",
+          "n_features": 10,
+          "n_pairs": 45,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 45,
+            "n_near_zero": 0,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "distribution_stats": {
+            "mean": -0.06899,
+            "median": -0.062669,
+            "std": 0.031586,
+            "min": -0.182076,
+            "max": -0.016303,
+            "q25": -0.065412,
+            "q75": -0.058189
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "coi_value": -0.016303,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                5
+              ],
+              "coi_value": -0.019668,
+              "sign": "negative"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.174293,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.182076,
+              "sign": "negative"
+            }
+          ],
+          "noise_pair_mean_coi": -0.06482,
+          "runtime_s": 0.1,
+          "mi_individual": [
+            0.002085,
+            0.002004,
+            0.002557
+          ]
+        },
+        "sklearn_ksg": {
+          "method": "sklearn_ksg",
+          "n_features": 10,
+          "n_pairs": 45,
+          "sign_distribution": {
+            "n_positive": 9,
+            "n_negative": 27,
+            "n_near_zero": 9,
+            "frac_positive": 0.2,
+            "frac_negative": 0.6,
+            "frac_near_zero": 0.2
+          },
+          "distribution_stats": {
+            "mean": -0.013326,
+            "median": -0.002102,
+            "std": 0.033768,
+            "min": -0.137215,
+            "max": 0.00862,
+            "q25": -0.008566,
+            "q75": 9.6e-05
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "coi_value": -0.001158,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                5
+              ],
+              "coi_value": -0.011675,
+              "sign": "negative"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.137215,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.132842,
+              "sign": "negative"
+            }
+          ],
+          "noise_pair_mean_coi": -0.002155,
+          "runtime_s": 0.7,
+          "mi_individual": [
+            0.001016,
+            0.001406,
+            0.0
+          ]
+        }
+      },
+      "medium_4mod_mixed": {
+        "npeet_ksg": {
+          "method": "npeet_ksg",
+          "n_features": 18,
+          "n_pairs": 153,
+          "sign_distribution": {
+            "n_positive": 97,
+            "n_negative": 44,
+            "n_near_zero": 12,
+            "frac_positive": 0.634,
+            "frac_negative": 0.2876,
+            "frac_near_zero": 0.0784
+          },
+          "distribution_stats": {
+            "mean": 0.001383,
+            "median": 0.004289,
+            "std": 0.018165,
+            "min": -0.111199,
+            "max": 0.025586,
+            "q25": -0.002728,
+            "q75": 0.010868
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                8
+              ],
+              "coi_value": 0.005457,
+              "sign": "positive"
+            },
+            {
+              "pair": [
+                2,
+                9
+              ],
+              "coi_value": 0.012568,
+              "sign": "positive"
+            },
+            {
+              "pair": [
+                4,
+                10
+              ],
+              "coi_value": 0.024773,
+              "sign": "positive"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.111199,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.105937,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                5
+              ],
+              "module": 2,
+              "module_type": "and",
+              "coi_value": -0.016924,
+              "sign": "negative"
+            }
+          ],
+          "noise_pair_mean_coi": 0.004066,
+          "runtime_s": 1.8,
+          "mi_individual": [
+            0.003965,
+            0.006027,
+            0.006336
+          ]
+        },
+        "raw_npeet_ksg": {
+          "method": "raw_npeet_ksg",
+          "n_features": 18,
+          "n_pairs": 153,
+          "sign_distribution": {
+            "n_positive": 57,
+            "n_negative": 84,
+            "n_near_zero": 12,
+            "frac_positive": 0.3725,
+            "frac_negative": 0.549,
+            "frac_near_zero": 0.0784
+          },
+          "distribution_stats": {
+            "mean": -0.005296,
+            "median": -0.002986,
+            "std": 0.020318,
+            "min": -0.118609,
+            "max": 0.025586,
+            "q25": -0.011314,
+            "q75": 0.004756
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                8
+              ],
+              "coi_value": -0.024166,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                9
+              ],
+              "coi_value": -0.022067,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                10
+              ],
+              "coi_value": 0.024773,
+              "sign": "positive"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.111199,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.118609,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                5
+              ],
+              "module": 2,
+              "module_type": "and",
+              "coi_value": -0.016924,
+              "sign": "negative"
+            }
+          ],
+          "noise_pair_mean_coi": 0.00464,
+          "runtime_s": 2.0,
+          "mi_individual": [
+            0.003965,
+            0.006027,
+            -0.006336
+          ],
+          "n_negative_individual_mi": 5,
+          "negative_mi_values": [
+            -0.006336,
+            -0.014811,
+            -0.010981
+          ]
+        },
+        "binned_10": {
+          "method": "binned_10",
+          "n_features": 18,
+          "n_pairs": 153,
+          "sign_distribution": {
+            "n_positive": 2,
+            "n_negative": 148,
+            "n_near_zero": 3,
+            "frac_positive": 0.0131,
+            "frac_negative": 0.9673,
+            "frac_near_zero": 0.0196
+          },
+          "distribution_stats": {
+            "mean": -0.003612,
+            "median": -0.001745,
+            "std": 0.01043,
+            "min": -0.071227,
+            "max": 0.016332,
+            "q25": -0.002008,
+            "q75": -0.001523
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                8
+              ],
+              "coi_value": -0.000378,
+              "sign": "near_zero"
+            },
+            {
+              "pair": [
+                2,
+                9
+              ],
+              "coi_value": -0.00036,
+              "sign": "near_zero"
+            },
+            {
+              "pair": [
+                4,
+                10
+              ],
+              "coi_value": 0.016332,
+              "sign": "positive"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.071227,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.068106,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                5
+              ],
+              "module": 2,
+              "module_type": "and",
+              "coi_value": -0.025524,
+              "sign": "negative"
+            }
+          ],
+          "noise_pair_mean_coi": -0.00189,
+          "runtime_s": 0.2,
+          "mi_individual": [
+            0.000133,
+            0.000221,
+            0.000141
+          ]
+        },
+        "binned_20": {
+          "method": "binned_20",
+          "n_features": 18,
+          "n_pairs": 153,
+          "sign_distribution": {
+            "n_positive": 2,
+            "n_negative": 151,
+            "n_near_zero": 0,
+            "frac_positive": 0.0131,
+            "frac_negative": 0.9869,
+            "frac_near_zero": 0.0
+          },
+          "distribution_stats": {
+            "mean": -0.008657,
+            "median": -0.006545,
+            "std": 0.012759,
+            "min": -0.089498,
+            "max": 0.01611,
+            "q25": -0.00709,
+            "q75": -0.005979
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                8
+              ],
+              "coi_value": -0.001492,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                9
+              ],
+              "coi_value": -0.001448,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                10
+              ],
+              "coi_value": 0.01611,
+              "sign": "positive"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.089498,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.088544,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                5
+              ],
+              "module": 2,
+              "module_type": "and",
+              "coi_value": -0.029973,
+              "sign": "negative"
+            }
+          ],
+          "noise_pair_mean_coi": -0.00664,
+          "runtime_s": 0.2,
+          "mi_individual": [
+            0.000384,
+            0.000446,
+            0.00023
+          ]
+        },
+        "binned_50": {
+          "method": "binned_50",
+          "n_features": 18,
+          "n_pairs": 153,
+          "sign_distribution": {
+            "n_positive": 2,
+            "n_negative": 151,
+            "n_near_zero": 0,
+            "frac_positive": 0.0131,
+            "frac_negative": 0.9869,
+            "frac_near_zero": 0.0
+          },
+          "distribution_stats": {
+            "mean": -0.034531,
+            "median": -0.032901,
+            "std": 0.015488,
+            "min": -0.13171,
+            "max": 0.007504,
+            "q25": -0.033884,
+            "q75": -0.031312
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                8
+              ],
+              "coi_value": -0.008946,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                9
+              ],
+              "coi_value": -0.009444,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                10
+              ],
+              "coi_value": 0.007504,
+              "sign": "positive"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.13171,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.128922,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                5
+              ],
+              "module": 2,
+              "module_type": "and",
+              "coi_value": -0.057842,
+              "sign": "negative"
+            }
+          ],
+          "noise_pair_mean_coi": -0.032905,
+          "runtime_s": 0.2,
+          "mi_individual": [
+            0.001006,
+            0.001492,
+            0.001035
+          ]
+        },
+        "sklearn_ksg": {
+          "method": "sklearn_ksg",
+          "n_features": 18,
+          "n_pairs": 153,
+          "sign_distribution": {
+            "n_positive": 58,
+            "n_negative": 71,
+            "n_near_zero": 24,
+            "frac_positive": 0.3791,
+            "frac_negative": 0.4641,
+            "frac_near_zero": 0.1569
+          },
+          "distribution_stats": {
+            "mean": -0.004002,
+            "median": -0.000587,
+            "std": 0.018388,
+            "min": -0.116667,
+            "max": 0.02233,
+            "q25": -0.006461,
+            "q75": 0.003477
+          },
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                8
+              ],
+              "coi_value": -0.011402,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                9
+              ],
+              "coi_value": -0.00475,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                10
+              ],
+              "coi_value": 0.02233,
+              "sign": "positive"
+            }
+          ],
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.114239,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.116667,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                5
+              ],
+              "module": 2,
+              "module_type": "and",
+              "coi_value": -0.017672,
+              "sign": "negative"
+            }
+          ],
+          "noise_pair_mean_coi": 0.003362,
+          "runtime_s": 2.8,
+          "mi_individual": [
+            0.001917,
+            0.005034,
+            0.0
+          ]
+        }
+      },
+      "no_structure_control": {
+        "npeet_ksg": {
+          "method": "npeet_ksg",
+          "n_features": 20,
+          "n_pairs": 190,
+          "sign_distribution": {
+            "n_positive": 126,
+            "n_negative": 43,
+            "n_near_zero": 21,
+            "frac_positive": 0.6632,
+            "frac_negative": 0.2263,
+            "frac_near_zero": 0.1105
+          },
+          "distribution_stats": {
+            "mean": 0.003352,
+            "median": 0.004139,
+            "std": 0.009547,
+            "min": -0.05466,
+            "max": 0.028601,
+            "q25": -0.000529,
+            "q75": 0.00957
+          },
+          "redundant_pair_coi": [],
+          "synergistic_pair_coi": [],
+          "noise_pair_mean_coi": 0.006941,
+          "runtime_s": 2.3,
+          "mi_individual": [
+            0.150225,
+            0.066916,
+            0.050401
+          ]
+        },
+        "raw_npeet_ksg": {
+          "method": "raw_npeet_ksg",
+          "n_features": 20,
+          "n_pairs": 190,
+          "sign_distribution": {
+            "n_positive": 76,
+            "n_negative": 100,
+            "n_near_zero": 14,
+            "frac_positive": 0.4,
+            "frac_negative": 0.5263,
+            "frac_near_zero": 0.0737
+          },
+          "distribution_stats": {
+            "mean": -0.002235,
+            "median": -0.001796,
+            "std": 0.011845,
+            "min": -0.05466,
+            "max": 0.028601,
+            "q25": -0.010142,
+            "q75": 0.006079
+          },
+          "redundant_pair_coi": [],
+          "synergistic_pair_coi": [],
+          "noise_pair_mean_coi": 6.2e-05,
+          "runtime_s": 2.6,
+          "mi_individual": [
+            0.150225,
+            0.066916,
+            0.050401
+          ],
+          "n_negative_individual_mi": 6,
+          "negative_mi_values": [
+            -0.010072,
+            -0.00277,
+            -0.006773
+          ]
+        },
+        "binned_10": {
+          "method": "binned_10",
+          "n_features": 20,
+          "n_pairs": 190,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 190,
+            "n_near_zero": 0,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "distribution_stats": {
+            "mean": -0.003685,
+            "median": -0.003304,
+            "std": 0.002882,
+            "min": -0.035676,
+            "max": -0.001718,
+            "q25": -0.003727,
+            "q75": -0.00283
+          },
+          "redundant_pair_coi": [],
+          "synergistic_pair_coi": [],
+          "noise_pair_mean_coi": -0.003375,
+          "runtime_s": 0.1,
+          "mi_individual": [
+            0.144059,
+            0.070379,
+            0.043109
+          ]
+        },
+        "binned_20": {
+          "method": "binned_20",
+          "n_features": 20,
+          "n_pairs": 190,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 190,
+            "n_near_zero": 0,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "distribution_stats": {
+            "mean": -0.012358,
+            "median": -0.012102,
+            "std": 0.003163,
+            "min": -0.045326,
+            "max": -0.008378,
+            "q25": -0.013146,
+            "q75": -0.010906
+          },
+          "redundant_pair_coi": [],
+          "synergistic_pair_coi": [],
+          "noise_pair_mean_coi": -0.012343,
+          "runtime_s": 0.2,
+          "mi_individual": [
+            0.14889,
+            0.074891,
+            0.04591
+          ]
+        },
+        "binned_50": {
+          "method": "binned_50",
+          "n_features": 20,
+          "n_pairs": 190,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 190,
+            "n_near_zero": 0,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "distribution_stats": {
+            "mean": -0.058275,
+            "median": -0.058309,
+            "std": 0.006385,
+            "min": -0.075935,
+            "max": -0.042915,
+            "q25": -0.062643,
+            "q75": -0.054077
+          },
+          "redundant_pair_coi": [],
+          "synergistic_pair_coi": [],
+          "noise_pair_mean_coi": -0.060335,
+          "runtime_s": 0.2,
+          "mi_individual": [
+            0.152516,
+            0.076496,
+            0.047795
+          ]
+        },
+        "sklearn_ksg": {
+          "method": "sklearn_ksg",
+          "n_features": 20,
+          "n_pairs": 190,
+          "sign_distribution": {
+            "n_positive": 34,
+            "n_negative": 127,
+            "n_near_zero": 29,
+            "frac_positive": 0.1789,
+            "frac_negative": 0.6684,
+            "frac_near_zero": 0.1526
+          },
+          "distribution_stats": {
+            "mean": -0.003804,
+            "median": -0.002802,
+            "std": 0.00742,
+            "min": -0.056435,
+            "max": 0.019505,
+            "q25": -0.007235,
+            "q75": -0.000107
+          },
+          "redundant_pair_coi": [],
+          "synergistic_pair_coi": [],
+          "noise_pair_mean_coi": -0.002536,
+          "runtime_s": 2.3,
+          "mi_individual": [
+            0.14587,
+            0.069496,
+            0.047679
+          ]
+        }
+      }
+    },
+    "part2_sponge_diagnosis": {
+      "easy_2mod_xor": {
+        "eigenspectrum": {
+          "L_pos": {
+            "eigenvalues": [
+              -0.0,
+              0.01374213,
+              0.01531792
+            ],
+            "rank": 9,
+            "min_eval": -0.0,
+            "max_eval": 0.09306238
+          },
+          "L_neg": {
+            "eigenvalues": [
+              0.0,
+              0.00212931,
+              0.00452186
+            ],
+            "rank": 9,
+            "min_eval": 0.0,
+            "max_eval": 0.34204324
+          },
+          "L_abs": {
+            "eigenvalues": [
+              -0.0,
+              0.04227764,
+              0.05281532
+            ],
+            "rank": 9,
+            "min_eval": -0.0,
+            "max_eval": 0.38880624
+          },
+          "L_signed": {
+            "eigenvalues": [
+              0.02064964,
+              0.03916399,
+              0.04430198
+            ],
+            "rank": 10,
+            "min_eval": 0.02064964,
+            "max_eval": 0.39886812
+          },
+          "positive_edge_fraction": 0.294806,
+          "negative_edge_fraction": 0.705194
+        },
+        "condition_numbers": [
+          {
+            "tau": 0.001,
+            "sponge_cond": 8464.37,
+            "sponge_sym_cond": 1995.63,
+            "sponge_min_eval_B": 4.042e-05,
+            "sponge_sym_min_eval_B": 0.001
+          },
+          {
+            "tau": 0.01,
+            "sponge_cond": 850.55,
+            "sponge_sym_cond": 200.46,
+            "sponge_min_eval_B": 0.00040268,
+            "sponge_sym_min_eval_B": 0.01
+          },
+          {
+            "tau": 0.1,
+            "sponge_cond": 88.77,
+            "sponge_sym_cond": 20.95,
+            "sponge_min_eval_B": 0.00390436,
+            "sponge_sym_min_eval_B": 0.1
+          }
+        ],
+        "frustration_index": 0.051771,
+        "clustering_comparison": {
+          "dataset": "easy_2mod_xor",
+          "k_true": 2,
+          "unsigned_spectral_ari": 1.0,
+          "sponge_sym_weighted_ari": -0.5,
+          "sponge_sym_unweighted_ari": -0.5
+        },
+        "edge_injection": {
+          "dataset": "easy_2mod_xor",
+          "strategies": {
+            "median_thresholding": {
+              "ari": -0.5,
+              "n_positive_edges": 31,
+              "frac_positive": 0.6889
+            },
+            "percentile_shift": {
+              "ari": -0.5,
+              "n_positive_edges": 33,
+              "frac_positive": 0.7333
+            },
+            "known_structure_injection": {
+              "ari": -0.5,
+              "n_positive_edges": 31,
+              "frac_positive": 0.6889
+            }
+          }
+        },
+        "clustering_binned20": {
+          "dataset": "easy_2mod_xor_binned20",
+          "k_true": 2,
+          "unsigned_spectral_ari": 1.0,
+          "sponge_sym_weighted_ari": -0.5,
+          "sponge_sym_unweighted_ari": -0.5
+        }
+      },
+      "medium_4mod_mixed": {
+        "eigenspectrum": {
+          "L_pos": {
+            "eigenvalues": [
+              -0.0,
+              0.02898493,
+              0.03683732
+            ],
+            "rank": 17,
+            "min_eval": -0.0,
+            "max_eval": 0.23928188
+          },
+          "L_neg": {
+            "eigenvalues": [
+              -0.0,
+              0.0,
+              0.01219267
+            ],
+            "rank": 16,
+            "min_eval": -0.0,
+            "max_eval": 0.29817318
+          },
+          "L_abs": {
+            "eigenvalues": [
+              0.0,
+              0.07078414,
+              0.09149825
+            ],
+            "rank": 17,
+            "min_eval": 0.0,
+            "max_eval": 0.39349023
+          },
+          "L_signed": {
+            "eigenvalues": [
+              0.05221241,
+              0.07081677,
+              0.0902283
+            ],
+            "rank": 18,
+            "min_eval": 0.05221241,
+            "max_eval": 0.41433097
+          },
+          "positive_edge_fraction": 0.564861,
+          "negative_edge_fraction": 0.435139
+        },
+        "condition_numbers": [
+          {
+            "tau": 0.001,
+            "sponge_cond": 3087.32,
+            "sponge_sym_cond": 1920.01,
+            "sponge_min_eval_B": 9.661e-05,
+            "sponge_sym_min_eval_B": 0.001
+          },
+          {
+            "tau": 0.01,
+            "sponge_cond": 311.56,
+            "sponge_sym_cond": 192.9,
+            "sponge_min_eval_B": 0.00095977,
+            "sponge_sym_min_eval_B": 0.01
+          },
+          {
+            "tau": 0.1,
+            "sponge_cond": 33.83,
+            "sponge_sym_cond": 20.19,
+            "sponge_min_eval_B": 0.00906862,
+            "sponge_sym_min_eval_B": 0.1
+          }
+        ],
+        "frustration_index": 0.126016,
+        "clustering_comparison": {
+          "dataset": "medium_4mod_mixed",
+          "k_true": 4,
+          "unsigned_spectral_ari": 0.6038,
+          "sponge_sym_weighted_ari": -0.1887,
+          "sponge_sym_unweighted_ari": -0.1887
+        },
+        "edge_injection": {
+          "dataset": "medium_4mod_mixed",
+          "strategies": {
+            "median_thresholding": {
+              "ari": -0.1887,
+              "n_positive_edges": 103,
+              "frac_positive": 0.6732
+            },
+            "percentile_shift": {
+              "ari": -0.2069,
+              "n_positive_edges": 114,
+              "frac_positive": 0.7451
+            },
+            "known_structure_injection": {
+              "ari": -0.1887,
+              "n_positive_edges": 103,
+              "frac_positive": 0.6732
+            }
+          }
+        },
+        "clustering_binned20": {
+          "dataset": "medium_4mod_mixed_binned20",
+          "k_true": 4,
+          "unsigned_spectral_ari": 1.0,
+          "sponge_sym_weighted_ari": -0.0769,
+          "sponge_sym_unweighted_ari": -0.0769
+        }
+      }
+    },
+    "conclusions": {
+      "is_all_negative_genuine": false,
+      "explanation": "Some AND-module redundant pairs show positive CoI with certain estimators, suggesting estimator bias partially explains the all-negative pattern.",
+      "frac_negative_by_method": {
+        "easy_2mod_xor/npeet_ksg": 0.3111,
+        "easy_2mod_xor/raw_npeet_ksg": 0.5556,
+        "easy_2mod_xor/binned_20": 1.0,
+        "easy_2mod_xor/sklearn_ksg": 0.6,
+        "medium_4mod_mixed/npeet_ksg": 0.2876,
+        "medium_4mod_mixed/raw_npeet_ksg": 0.549,
+        "medium_4mod_mixed/binned_20": 0.9869,
+        "medium_4mod_mixed/sklearn_ksg": 0.4641,
+        "no_structure_control/npeet_ksg": 0.2263,
+        "no_structure_control/raw_npeet_ksg": 0.5263,
+        "no_structure_control/binned_20": 1.0,
+        "no_structure_control/sklearn_ksg": 0.6684
+      },
+      "raw_ksg_negative_individual_mi": {
+        "calibration_pure_xor": {
+          "n_negative_individual_mi": 4,
+          "negative_mi_values": [
+            -0.002018,
+            -0.01166,
+            -0.006733
+          ]
+        },
+        "easy_2mod_xor": {
+          "n_negative_individual_mi": 2,
+          "negative_mi_values": [
+            -0.007754,
+            -0.013172
+          ]
+        },
+        "medium_4mod_mixed": {
+          "n_negative_individual_mi": 5,
+          "negative_mi_values": [
+            -0.006336,
+            -0.014811,
+            -0.010981
+          ]
+        },
+        "no_structure_control": {
+          "n_negative_individual_mi": 6,
+          "negative_mi_values": [
+            -0.010072,
+            -0.00277,
+            -0.006773
+          ]
+        }
+      },
+      "sponge_failure_mechanism": "When CoI is predominantly negative, A_pos ~= 0, so L_pos has rank ~0. SPONGE's B matrix (L_neg + tau*D_pos) degenerates to L_neg. The generalized eigenproblem becomes trivial (A~=0), yielding uninform...",
+      "sponge_diagnostic_details": [
+        {
+          "dataset": "easy_2mod_xor",
+          "L_pos_rank": 9,
+          "positive_edge_fraction": 0.294806,
+          "frustration_index": 0.051771,
+          "unsigned_ari": 1.0,
+          "sponge_weighted_ari": -0.5,
+          "sponge_unweighted_ari": -0.5
+        },
+        {
+          "dataset": "medium_4mod_mixed",
+          "L_pos_rank": 17,
+          "positive_edge_fraction": 0.564861,
+          "frustration_index": 0.126016,
+          "unsigned_ari": 0.6038,
+          "sponge_weighted_ari": -0.1887,
+          "sponge_unweighted_ari": -0.1887
+        }
+      ],
+      "recommendations": "1) Use unsigned spectral on |CoI| — discards signs but preserves magnitudes. 2) Center CoI by subtracting median to create artificial sign structure. 3) Consider partial correlation or conditional MI ..."
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "calibration_pure_xor",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"calibration_pure_xor\", \"n_samples\": 50000, \"n_features\": 5, \"n_modules\": 1, \"module_types\": [\"xor\"], \"ground_truth_modules\": [[0, 1]], \"redundant_pairs\": [[0, 3]]}",
+          "output": "{\"sign_distributions_by_method\": {\"npeet_ksg\": {\"frac_positive\": 0.7, \"frac_negative\": 0.3, \"frac_near_zero\": 0.0}, \"raw_npeet_ksg\": {\"frac_positive\": 0.3, \"frac_negative\": 0.7, \"frac_near_zero\": 0.0}...",
+          "metadata_dataset": "calibration_pure_xor",
+          "metadata_n_features": 5,
+          "metadata_n_samples": 50000,
+          "predict_baseline_unsigned_spectral": "N/A",
+          "predict_sponge_sym_weighted": "N/A"
+        },
+        {
+          "input": "{\"dataset\": \"calibration_pure_xor\", \"method\": \"npeet_ksg\", \"query\": \"coi_analysis\"}",
+          "output": "{\"sign_distribution\": {\"n_positive\": 7, \"n_negative\": 3, \"n_near_zero\": 0, \"frac_positive\": 0.7, \"frac_negative\": 0.3, \"frac_near_zero\": 0.0}, \"distribution_stats\": {\"mean\": -0.109204, \"median\": 0.006...",
+          "metadata_dataset": "calibration_pure_xor",
+          "metadata_method": "npeet_ksg",
+          "predict_frac_negative": "0.3",
+          "predict_frac_positive": "0.7"
+        },
+        {
+          "input": "{\"dataset\": \"calibration_pure_xor\", \"method\": \"raw_npeet_ksg\", \"query\": \"coi_analysis\"}",
+          "output": "{\"sign_distribution\": {\"n_positive\": 3, \"n_negative\": 7, \"n_near_zero\": 0, \"frac_positive\": 0.3, \"frac_negative\": 0.7, \"frac_near_zero\": 0.0}, \"distribution_stats\": {\"mean\": -0.121759, \"median\": -0.01...",
+          "metadata_dataset": "calibration_pure_xor",
+          "metadata_method": "raw_npeet_ksg",
+          "predict_frac_negative": "0.7",
+          "predict_frac_positive": "0.3"
+        }
+      ]
+    },
+    {
+      "dataset": "easy_2mod_xor",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"easy_2mod_xor\", \"n_samples\": 10000, \"n_features\": 10, \"n_modules\": 2, \"module_types\": [\"xor\", \"xor\"], \"ground_truth_modules\": [[0, 1], [2, 3]], \"redundant_pairs\": [[0, 4], [2, 5]]}",
+          "output": "{\"sign_distributions_by_method\": {\"npeet_ksg\": {\"frac_positive\": 0.6667, \"frac_negative\": 0.3111, \"frac_near_zero\": 0.0222}, \"raw_npeet_ksg\": {\"frac_positive\": 0.4, \"frac_negative\": 0.5556, \"frac_near...",
+          "metadata_dataset": "easy_2mod_xor",
+          "metadata_n_features": 10,
+          "metadata_n_samples": 10000,
+          "predict_baseline_unsigned_spectral": "1.0",
+          "predict_sponge_sym_weighted": "-0.5",
+          "predict_sponge_sym_unweighted": "-0.5",
+          "predict_injection_median_thresholding": "-0.5",
+          "predict_injection_percentile_shift": "-0.5",
+          "predict_injection_known_structure_injection": "-0.5"
+        },
+        {
+          "input": "{\"dataset\": \"easy_2mod_xor\", \"method\": \"npeet_ksg\", \"query\": \"coi_analysis\"}",
+          "output": "{\"sign_distribution\": {\"n_positive\": 30, \"n_negative\": 14, \"n_near_zero\": 1, \"frac_positive\": 0.6667, \"frac_negative\": 0.3111, \"frac_near_zero\": 0.0222}, \"distribution_stats\": {\"mean\": -0.006254, \"med...",
+          "metadata_dataset": "easy_2mod_xor",
+          "metadata_method": "npeet_ksg",
+          "predict_frac_negative": "0.3111",
+          "predict_frac_positive": "0.6667"
+        },
+        {
+          "input": "{\"dataset\": \"easy_2mod_xor\", \"method\": \"raw_npeet_ksg\", \"query\": \"coi_analysis\"}",
+          "output": "{\"sign_distribution\": {\"n_positive\": 18, \"n_negative\": 25, \"n_near_zero\": 2, \"frac_positive\": 0.4, \"frac_negative\": 0.5556, \"frac_near_zero\": 0.0444}, \"distribution_stats\": {\"mean\": -0.013901, \"median...",
+          "metadata_dataset": "easy_2mod_xor",
+          "metadata_method": "raw_npeet_ksg",
+          "predict_frac_negative": "0.5556",
+          "predict_frac_positive": "0.4"
+        }
+      ]
+    },
+    {
+      "dataset": "medium_4mod_mixed",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"medium_4mod_mixed\", \"n_samples\": 20000, \"n_features\": 18, \"n_modules\": 4, \"module_types\": [\"xor\", \"xor\", \"and\", \"and\"], \"ground_truth_modules\": [[0, 1], [2, 3], [4, 5], [6, 7]], \"redundan...",
+          "output": "{\"sign_distributions_by_method\": {\"npeet_ksg\": {\"frac_positive\": 0.634, \"frac_negative\": 0.2876, \"frac_near_zero\": 0.0784}, \"raw_npeet_ksg\": {\"frac_positive\": 0.3725, \"frac_negative\": 0.549, \"frac_nea...",
+          "metadata_dataset": "medium_4mod_mixed",
+          "metadata_n_features": 18,
+          "metadata_n_samples": 20000,
+          "predict_baseline_unsigned_spectral": "0.6038",
+          "predict_sponge_sym_weighted": "-0.1887",
+          "predict_sponge_sym_unweighted": "-0.1887",
+          "predict_injection_median_thresholding": "-0.1887",
+          "predict_injection_percentile_shift": "-0.2069",
+          "predict_injection_known_structure_injection": "-0.1887"
+        },
+        {
+          "input": "{\"dataset\": \"medium_4mod_mixed\", \"method\": \"npeet_ksg\", \"query\": \"coi_analysis\"}",
+          "output": "{\"sign_distribution\": {\"n_positive\": 97, \"n_negative\": 44, \"n_near_zero\": 12, \"frac_positive\": 0.634, \"frac_negative\": 0.2876, \"frac_near_zero\": 0.0784}, \"distribution_stats\": {\"mean\": 0.001383, \"medi...",
+          "metadata_dataset": "medium_4mod_mixed",
+          "metadata_method": "npeet_ksg",
+          "predict_frac_negative": "0.2876",
+          "predict_frac_positive": "0.634"
+        },
+        {
+          "input": "{\"dataset\": \"medium_4mod_mixed\", \"method\": \"raw_npeet_ksg\", \"query\": \"coi_analysis\"}",
+          "output": "{\"sign_distribution\": {\"n_positive\": 57, \"n_negative\": 84, \"n_near_zero\": 12, \"frac_positive\": 0.3725, \"frac_negative\": 0.549, \"frac_near_zero\": 0.0784}, \"distribution_stats\": {\"mean\": -0.005296, \"med...",
+          "metadata_dataset": "medium_4mod_mixed",
+          "metadata_method": "raw_npeet_ksg",
+          "predict_frac_negative": "0.549",
+          "predict_frac_positive": "0.3725"
+        }
+      ]
+    }
+  ]
+}

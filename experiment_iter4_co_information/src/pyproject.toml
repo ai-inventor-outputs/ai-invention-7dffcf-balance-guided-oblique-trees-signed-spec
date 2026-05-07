@@ -1,0 +1,15 @@
+[project]
+name = "coi-estimator-bias-sponge-diagnosis"
+version = "0.1.0"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "numpy==2.2.6",
+    "scipy==1.15.3",
+    "scikit-learn==1.7.2",
+    "loguru==0.7.3",
+    "joblib==1.5.3",
+    "npeet @ git+https://github.com/gregversteeg/NPEET.git",
+]
+
+[project.optional-dependencies]
+dev = []

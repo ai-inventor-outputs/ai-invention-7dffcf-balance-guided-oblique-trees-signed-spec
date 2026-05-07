@@ -1,0 +1,484 @@
+{
+  "metadata": {
+    "experiment_name": "balance_guided_oblique_trees_real_benchmark",
+    "description": "5 FIGS variants (axis-aligned, random-oblique, unsigned-spectral, signed-spectral, hard-threshold) on 8 Grinsztajn tabular datasets with CoI-guided feature clustering. Output contains aggregate metric...",
+    "methods": [
+      "axis_aligned",
+      "random_oblique",
+      "unsigned_spectral"
+    ],
+    "max_splits_for_predictions": 10,
+    "max_splits_values_tested": [
+      5,
+      10,
+      20
+    ],
+    "coi_subsample_strategy": "min(n, 20000)",
+    "mi_estimator": "binning (10 quantile bins, sklearn mutual_info_score)",
+    "n_datasets": 8,
+    "hardware": {
+      "n_cpus": 4,
+      "ram_gb": 32.0
+    },
+    "total_time_s": 1678.9,
+    "results_per_fold": [
+      {
+        "dataset": "adult",
+        "method": "axis_aligned",
+        "max_splits": 5,
+        "fold": 0,
+        "n_train": 26048,
+        "n_test": 6513,
+        "n_features": 6,
+        "task_type": "classification",
+        "balanced_accuracy": 0.582035,
+        "auc": 0.775906,
+        "total_splits": 5,
+        "avg_split_arity": 1.0,
+        "avg_path_length": 2.6667,
+        "fit_time_s": 0.089
+      },
+      {
+        "dataset": "adult",
+        "method": "axis_aligned",
+        "max_splits": 5,
+        "fold": 1,
+        "n_train": 26049,
+        "n_test": 6512,
+        "n_features": 6,
+        "task_type": "classification",
+        "balanced_accuracy": 0.575073,
+        "auc": 0.769251,
+        "total_splits": 5,
+        "avg_split_arity": 1.0,
+        "avg_path_length": 2.6667,
+        "fit_time_s": 0.042
+      },
+      {
+        "dataset": "adult",
+        "method": "axis_aligned",
+        "max_splits": 5,
+        "fold": 2,
+        "n_train": 26049,
+        "n_test": 6512,
+        "n_features": 6,
+        "task_type": "classification",
+        "balanced_accuracy": 0.587727,
+        "auc": 0.78845,
+        "total_splits": 5,
+        "avg_split_arity": 1.0,
+        "avg_path_length": 2.6667,
+        "fit_time_s": 0.042
+      }
+    ],
+    "results_summary": [
+      {
+        "dataset": "adult",
+        "method": "axis_aligned",
+        "max_splits": 5,
+        "n_samples": 32561,
+        "n_features": 6,
+        "task_type": "classification",
+        "balanced_accuracy_mean": 0.583286,
+        "balanced_accuracy_std": 0.005545,
+        "auc_mean": 0.778191,
+        "auc_std": 0.006717,
+        "total_splits_mean": 5.0,
+        "total_splits_std": 0.0,
+        "avg_split_arity_mean": 1.0,
+        "avg_split_arity_std": 0.0,
+        "avg_path_length_mean": 2.6667,
+        "avg_path_length_std": 0.0,
+        "fit_time_s_mean": 0.0514,
+        "fit_time_s_std": 0.0188,
+        "method_total_time_s": 1.92
+      },
+      {
+        "dataset": "adult",
+        "method": "axis_aligned",
+        "max_splits": 10,
+        "n_samples": 32561,
+        "n_features": 6,
+        "task_type": "classification",
+        "balanced_accuracy_mean": 0.673017,
+        "balanced_accuracy_std": 0.00796,
+        "auc_mean": 0.806176,
+        "auc_std": 0.005824,
+        "total_splits_mean": 10.0,
+        "total_splits_std": 0.0,
+        "avg_split_arity_mean": 1.0,
+        "avg_split_arity_std": 0.0,
+        "avg_path_length_mean": 3.9091,
+        "avg_path_length_std": 0.0,
+        "fit_time_s_mean": 0.095,
+        "fit_time_s_std": 0.0,
+        "method_total_time_s": 2.12
+      },
+      {
+        "dataset": "adult",
+        "method": "axis_aligned",
+        "max_splits": 20,
+        "n_samples": 32561,
+        "n_features": 6,
+        "task_type": "classification",
+        "balanced_accuracy_mean": 0.677758,
+        "balanced_accuracy_std": 0.018409,
+        "auc_mean": 0.827257,
+        "auc_std": 0.006646,
+        "total_splits_mean": 20.0,
+        "total_splits_std": 0.0,
+        "avg_split_arity_mean": 1.0,
+        "avg_split_arity_std": 0.0,
+        "avg_path_length_mean": 5.03808,
+        "avg_path_length_std": 0.046638,
+        "fit_time_s_mean": 0.2372,
+        "fit_time_s_std": 0.0004,
+        "method_total_time_s": 2.87
+      }
+    ],
+    "clustering_info": {
+      "adult": {
+        "unsigned_spectral": {
+          "k": 4,
+          "module_sizes": [
+            3
+          ]
+        },
+        "signed_spectral": {
+          "k": 3,
+          "module_sizes": [
+            3,
+            2
+          ],
+          "frustration_index": -0.0
+        },
+        "hard_threshold": {
+          "k": 5,
+          "module_sizes": [
+            2
+          ]
+        },
+        "coi_time_s": 0.04,
+        "coi_subsample_n": 20000,
+        "n_valid_features": 6,
+        "n_positive_coi_pairs": 3,
+        "n_negative_coi_pairs": 3
+      },
+      "electricity": {
+        "unsigned_spectral": {
+          "k": 5,
+          "module_sizes": [
+            2,
+            2
+          ]
+        },
+        "signed_spectral": {
+          "k": 6,
+          "module_sizes": [
+            2
+          ],
+          "frustration_index": 0.00824
+        },
+        "hard_threshold": {
+          "k": 4,
+          "module_sizes": [
+            3,
+            2
+          ]
+        },
+        "coi_time_s": 0.03,
+        "coi_subsample_n": 20000,
+        "n_valid_features": 7,
+        "n_positive_coi_pairs": 12,
+        "n_negative_coi_pairs": 9
+      },
+      "eye_movements": {
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            12,
+            8
+          ]
+        },
+        "signed_spectral": {
+          "k": 2,
+          "module_sizes": [
+            10,
+            10
+          ],
+          "frustration_index": 0.0362
+        },
+        "hard_threshold": {
+          "k": 7,
+          "module_sizes": [
+            14
+          ]
+        },
+        "coi_time_s": 0.12,
+        "coi_subsample_n": 7608,
+        "n_valid_features": 20,
+        "n_positive_coi_pairs": 0,
+        "n_negative_coi_pairs": 190
+      },
+      "credit": {
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            5,
+            5
+          ]
+        },
+        "signed_spectral": {
+          "k": 9,
+          "module_sizes": [
+            2
+          ],
+          "frustration_index": 0.008032
+        },
+        "hard_threshold": {
+          "k": 7,
+          "module_sizes": [
+            4
+          ]
+        },
+        "coi_time_s": 0.05,
+        "coi_subsample_n": 16714,
+        "n_valid_features": 10,
+        "n_positive_coi_pairs": 30,
+        "n_negative_coi_pairs": 15
+      },
+      "california_housing": {
+        "unsigned_spectral": {
+          "k": 6,
+          "module_sizes": [
+            2,
+            2
+          ]
+        },
+        "signed_spectral": {
+          "k": 7,
+          "module_sizes": [
+            2
+          ],
+          "frustration_index": 0.154531
+        },
+        "hard_threshold": {
+          "k": 6,
+          "module_sizes": [
+            3
+          ]
+        },
+        "coi_time_s": 0.05,
+        "coi_subsample_n": 20000,
+        "n_valid_features": 8,
+        "n_positive_coi_pairs": 0,
+        "n_negative_coi_pairs": 28
+      },
+      "higgs_small": {
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            14,
+            10
+          ]
+        },
+        "signed_spectral": {
+          "k": 2,
+          "module_sizes": [
+            12,
+            12
+          ],
+          "frustration_index": 0.045187
+        },
+        "hard_threshold": {
+          "k": 11,
+          "module_sizes": [
+            11,
+            3,
+            2
+          ]
+        },
+        "coi_time_s": 0.37,
+        "coi_subsample_n": 20000,
+        "n_valid_features": 24,
+        "n_positive_coi_pairs": 3,
+        "n_negative_coi_pairs": 273
+      },
+      "jannis": {
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            44,
+            10
+          ]
+        },
+        "signed_spectral": {
+          "k": 4,
+          "module_sizes": [
+            9,
+            14,
+            18
+          ],
+          "frustration_index": 0.077807
+        },
+        "hard_threshold": {
+          "k": 28,
+          "module_sizes": [
+            27
+          ]
+        },
+        "coi_time_s": 1.24,
+        "coi_subsample_n": 20000,
+        "n_valid_features": 54,
+        "n_positive_coi_pairs": 138,
+        "n_negative_coi_pairs": 1293
+      },
+      "miniboone": {
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            28,
+            22
+          ]
+        },
+        "signed_spectral": {
+          "k": 4,
+          "module_sizes": [
+            13,
+            11,
+            12
+          ],
+          "frustration_index": 0.208689
+        },
+        "hard_threshold": {
+          "k": 19,
+          "module_sizes": [
+            30,
+            3
+          ]
+        },
+        "coi_time_s": 1.06,
+        "coi_subsample_n": 20000,
+        "n_valid_features": 50,
+        "n_positive_coi_pairs": 669,
+        "n_negative_coi_pairs": 556
+      }
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "adult",
+      "examples": [
+        {
+          "input": "{\"age\":90.0,\"fnlwgt\":77053.0,\"education.num\":9.0,\"capital.gain\":0.0,\"capital.loss\":4356.0,\"hours.per.week\":40.0}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "predict_axis_aligned": "0",
+          "predict_random_oblique": "0",
+          "predict_unsigned_spectral": "1",
+          "predict_signed_spectral": "1",
+          "predict_hard_threshold": "0"
+        },
+        {
+          "input": "{\"age\":41.0,\"fnlwgt\":264663.0,\"education.num\":10.0,\"capital.gain\":0.0,\"capital.loss\":3900.0,\"hours.per.week\":40.0}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "predict_axis_aligned": "0",
+          "predict_random_oblique": "0",
+          "predict_unsigned_spectral": "0",
+          "predict_signed_spectral": "0",
+          "predict_hard_threshold": "0"
+        },
+        {
+          "input": "{\"age\":74.0,\"fnlwgt\":88638.0,\"education.num\":16.0,\"capital.gain\":0.0,\"capital.loss\":3683.0,\"hours.per.week\":20.0}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "predict_axis_aligned": "0",
+          "predict_random_oblique": "1",
+          "predict_unsigned_spectral": "1",
+          "predict_signed_spectral": "1",
+          "predict_hard_threshold": "1"
+        }
+      ]
+    },
+    {
+      "dataset": "electricity",
+      "examples": [
+        {
+          "input": "{\"date\":0.898987,\"period\":0.957447,\"nswprice\":0.068632,\"nswdemand\":0.568283,\"vicprice\":0.004456,\"vicdemand\":0.456499,\"transfer\":0.644737}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "predict_axis_aligned": "0",
+          "predict_random_oblique": "0",
+          "predict_unsigned_spectral": "0",
+          "predict_signed_spectral": "0",
+          "predict_hard_threshold": "0"
+        },
+        {
+          "input": "{\"date\":0.009159,\"period\":0.255319,\"nswprice\":0.059175,\"nswdemand\":0.185808,\"vicprice\":0.003467,\"vicdemand\":0.422915,\"transfer\":0.414912}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "predict_axis_aligned": "0",
+          "predict_random_oblique": "0",
+          "predict_unsigned_spectral": "0",
+          "predict_signed_spectral": "0",
+          "predict_hard_threshold": "0"
+        },
+        {
+          "input": "{\"date\":0.867616,\"period\":0.234043,\"nswprice\":0.033716,\"nswdemand\":0.337102,\"vicprice\":0.001672,\"vicdemand\":0.329622,\"transfer\":0.84693}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "predict_axis_aligned": "1",
+          "predict_random_oblique": "1",
+          "predict_unsigned_spectral": "1",
+          "predict_signed_spectral": "1",
+          "predict_hard_threshold": "1"
+        }
+      ]
+    },
+    {
+      "dataset": "eye_movements",
+      "examples": [
+        {
+          "input": "{\"lineNo\":2065.0,\"assgNo\":66.0,\"prevFixDur\":119.0,\"firstfixDur\":159.0,\"firstPassFixDur\":239.0,\"nextFixDur\":100.0,\"firstSaccLen\":306.1066,\"lastSaccLen\":117.2359,\"prevFixPos\":321.014,\"landingPos\":47.320...",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "binary_classification",
+          "predict_axis_aligned": "1",
+          "predict_random_oblique": "0",
+          "predict_unsigned_spectral": "1",
+          "predict_signed_spectral": "0",
+          "predict_hard_threshold": "1"
+        },
+        {
+          "input": "{\"lineNo\":2828.0,\"assgNo\":86.0,\"prevFixDur\":359.0,\"firstfixDur\":239.0,\"firstPassFixDur\":239.0,\"nextFixDur\":199.0,\"firstSaccLen\":103.64,\"lastSaccLen\":100.3606,\"prevFixPos\":151.0033,\"landingPos\":58.6195...",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "binary_classification",
+          "predict_axis_aligned": "0",
+          "predict_random_oblique": "0",
+          "predict_unsigned_spectral": "0",
+          "predict_signed_spectral": "0",
+          "predict_hard_threshold": "0"
+        },
+        {
+          "input": "{\"lineNo\":9684.0,\"assgNo\":298.0,\"prevFixDur\":99.0,\"firstfixDur\":119.0,\"firstPassFixDur\":119.0,\"nextFixDur\":238.0,\"firstSaccLen\":300.1666,\"lastSaccLen\":288.0156,\"prevFixPos\":246.0732,\"landingPos\":56.63...",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_task_type": "binary_classification",
+          "predict_axis_aligned": "0",
+          "predict_random_oblique": "1",
+          "predict_unsigned_spectral": "0",
+          "predict_signed_spectral": "1",
+          "predict_hard_threshold": "1"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1134 @@
+{
+  "metadata": {
+    "experiment": "CoI Graph Characterization & Frustration Meta-Diagnostic",
+    "description": "Computes pairwise Co-Information graphs for 14 datasets, runs unsigned and signed (SPONGE) spectral clustering, computes frustration index, then tests Spearman correlation between frustration index and oblique benefit.",
+    "n_datasets_total": 14,
+    "coi_method": "binning_based_mi",
+    "n_bins": 10,
+    "subsample_n": 20000,
+    "figs_max_splits": 10,
+    "master_seed": 42,
+    "per_dataset_results": {
+      "credit": {
+        "n_samples": 16714,
+        "n_features": 10,
+        "task_type": "classification",
+        "is_synthetic": false,
+        "coi_computation": {
+          "subsample_n": 16714,
+          "n_bins": 10,
+          "features_used": 10,
+          "time_s": 0.06
+        },
+        "mi_individual_top10": [
+          [
+            0,
+            0.117786
+          ],
+          [
+            6,
+            0.083301
+          ],
+          [
+            2,
+            0.082432
+          ],
+          [
+            8,
+            0.061054
+          ],
+          [
+            1,
+            0.02452
+          ],
+          [
+            5,
+            0.010658
+          ],
+          [
+            4,
+            0.010258
+          ],
+          [
+            3,
+            0.008639
+          ],
+          [
+            7,
+            0.005065
+          ],
+          [
+            9,
+            0.00413
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 10,
+          "sign_distribution": {
+            "n_positive": 25,
+            "n_negative": 13,
+            "n_near_zero": 7,
+            "n_total_pairs": 45,
+            "frac_positive": 0.5556,
+            "frac_negative": 0.2889,
+            "frac_near_zero": 0.1556
+          },
+          "value_distribution": {
+            "mean": 0.0042938,
+            "median": 0.00162275,
+            "std": 0.0126253,
+            "min": -0.02049668,
+            "max": 0.04227043,
+            "q25": -0.00188234,
+            "q75": 0.00420551,
+            "iqr": 0.00608785,
+            "abs_mean": 0.00780232
+          }
+        },
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            5,
+            5
+          ],
+          "modules": [
+            [
+              3,
+              4,
+              5,
+              7,
+              9
+            ],
+            [
+              0,
+              1,
+              2,
+              6,
+              8
+            ]
+          ],
+          "silhouette": 0.803794,
+          "time_s": 0.393,
+          "eigenvalues_top20": [
+            0.0,
+            0.39663839,
+            0.92918804,
+            1.00109234,
+            1.040687,
+            1.1473304,
+            1.24825148,
+            1.27488762,
+            1.38454557,
+            1.57737916
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 8,
+          "module_sizes": [
+            2,
+            1,
+            1,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "modules": [
+            [
+              3,
+              6
+            ],
+            [
+              8
+            ],
+            [
+              4
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              7
+            ],
+            [
+              9
+            ],
+            [
+              1
+            ],
+            [
+              5
+            ]
+          ],
+          "silhouette": 0.059001,
+          "time_s": 0.011,
+          "eigenvalues_top20": [
+            0.08886115,
+            0.58556386,
+            0.85584937,
+            1.00030802,
+            1.05835343,
+            1.14153964,
+            1.25367052,
+            1.29411294,
+            1.36627482,
+            2.89272274
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.0080323911,
+          "normalized_by_max": 0.0450437064,
+          "normalized_by_d": 0.0008032391,
+          "lambda_min": 0.0080323911,
+          "lambda_max": 0.178324382
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            0.0,
+            0.0199155142,
+            0.024423637,
+            0.0334724465,
+            0.0415526395,
+            0.0502587203,
+            0.0781898848,
+            0.1278893695,
+            0.1482256452
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.0080323911,
+            0.0137435338,
+            0.0220570433,
+            0.0335157295,
+            0.0402926256,
+            0.05041826,
+            0.0791652339,
+            0.1277302435,
+            0.1489295843
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.746648,
+          "metric_random_oblique": 0.752633,
+          "oblique_benefit": 0.005984,
+          "metric_name": "balanced_accuracy",
+          "n_train": 13371,
+          "n_test": 3343,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 3.7
+        }
+      },
+      "california_housing": {
+        "n_samples": 20640,
+        "n_features": 8,
+        "task_type": "regression",
+        "is_synthetic": false,
+        "coi_computation": {
+          "subsample_n": 20000,
+          "n_bins": 10,
+          "features_used": 8,
+          "time_s": 0.06
+        },
+        "mi_individual_top10": [
+          [
+            0,
+            0.32683
+          ],
+          [
+            7,
+            0.15811
+          ],
+          [
+            6,
+            0.131669
+          ],
+          [
+            2,
+            0.076148
+          ],
+          [
+            5,
+            0.061633
+          ],
+          [
+            1,
+            0.019529
+          ],
+          [
+            3,
+            0.017932
+          ],
+          [
+            4,
+            0.013768
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 8,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 28,
+            "n_near_zero": 0,
+            "n_total_pairs": 28,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "value_distribution": {
+            "mean": -0.04525358,
+            "median": -0.03630701,
+            "std": 0.02538163,
+            "min": -0.11967032,
+            "max": -0.01591978,
+            "q25": -0.06098142,
+            "q75": -0.02540013,
+            "iqr": 0.03558129,
+            "abs_mean": 0.04525358
+          }
+        },
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            5,
+            3
+          ],
+          "modules": [
+            [
+              2,
+              3,
+              4,
+              6,
+              7
+            ],
+            [
+              0,
+              1,
+              5
+            ]
+          ],
+          "silhouette": 0.73819,
+          "time_s": 0.005,
+          "eigenvalues_top20": [
+            0.0,
+            0.94183254,
+            1.01006635,
+            1.07774066,
+            1.15100418,
+            1.2460644,
+            1.2591246,
+            1.31416727
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 7,
+          "module_sizes": [
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "modules": [
+            [
+              2,
+              3
+            ],
+            [
+              5
+            ],
+            [
+              0
+            ],
+            [
+              7
+            ],
+            [
+              6
+            ],
+            [
+              1
+            ],
+            [
+              4
+            ]
+          ],
+          "silhouette": 0.004929,
+          "time_s": 0.006,
+          "eigenvalues_top20": [
+            0.76093661,
+            0.79420064,
+            0.80252466,
+            0.8688042,
+            0.92786249,
+            0.99002973,
+            1.06175617,
+            316775.16668446
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.1555255907,
+          "normalized_by_max": 0.2168972485,
+          "normalized_by_d": 0.0194406988,
+          "lambda_min": 0.1555255907,
+          "lambda_max": 0.7170473199
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            0.0,
+            0.191511411,
+            0.214613748,
+            0.3114466218,
+            0.3638762337,
+            0.4326029284,
+            0.4793685736
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.1555255907,
+            0.1804521263,
+            0.2186473981,
+            0.2760725937,
+            0.2935651404,
+            0.3329474689,
+            0.3599428185
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.520306,
+          "metric_random_oblique": 0.61028,
+          "oblique_benefit": 0.089973,
+          "metric_name": "r2",
+          "n_train": 16512,
+          "n_test": 4128,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 3.0
+        }
+      },
+      "easy_2mod_xor": {
+        "n_samples": 10000,
+        "n_features": 10,
+        "task_type": "classification",
+        "is_synthetic": true,
+        "coi_computation": {
+          "subsample_n": 10000,
+          "n_bins": 10,
+          "features_used": 10,
+          "time_s": 0.04
+        },
+        "mi_individual_top10": [
+          [
+            3,
+            0.000869
+          ],
+          [
+            8,
+            0.000758
+          ],
+          [
+            6,
+            0.000691
+          ],
+          [
+            0,
+            0.000609
+          ],
+          [
+            9,
+            0.000605
+          ],
+          [
+            5,
+            0.00051
+          ],
+          [
+            1,
+            0.000441
+          ],
+          [
+            2,
+            0.000395
+          ],
+          [
+            7,
+            0.000333
+          ],
+          [
+            4,
+            0.000277
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 10,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 45,
+            "n_near_zero": 0,
+            "n_total_pairs": 45,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "value_distribution": {
+            "mean": -0.01383559,
+            "median": -0.0039843,
+            "std": 0.03198314,
+            "min": -0.13296668,
+            "max": -0.00198483,
+            "q25": -0.00475908,
+            "q75": -0.00337384,
+            "iqr": 0.00138523,
+            "abs_mean": 0.01383559
+          },
+          "ground_truth_analysis": {
+            "synergistic_pairs": [
+              {
+                "module": 0,
+                "features": [
+                  0,
+                  1
+                ],
+                "coi_value": -0.132967,
+                "is_negative": true
+              },
+              {
+                "module": 1,
+                "features": [
+                  2,
+                  3
+                ],
+                "coi_value": -0.126089,
+                "is_negative": true
+              }
+            ],
+            "redundant_pairs": [
+              {
+                "features": [
+                  0,
+                  4
+                ],
+                "coi_value": -0.001985,
+                "is_positive": false
+              },
+              {
+                "features": [
+                  2,
+                  5
+                ],
+                "coi_value": -0.003049,
+                "is_positive": false
+              }
+            ]
+          }
+        },
+        "unsigned_spectral": {
+          "k": 7,
+          "module_sizes": [
+            1,
+            2,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          "modules": [
+            [
+              6
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              7,
+              9
+            ],
+            [
+              5
+            ],
+            [
+              8
+            ],
+            [
+              4
+            ]
+          ],
+          "silhouette": 0.135421,
+          "time_s": 0.01,
+          "eigenvalues_top20": [
+            0.0,
+            0.21627593,
+            0.77087778,
+            1.01411472,
+            1.02105468,
+            1.06675426,
+            1.11457775,
+            1.13092753,
+            1.82221874,
+            1.84319862
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 9,
+          "module_sizes": [
+            1,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "modules": [
+            [
+              3
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              7
+            ],
+            [
+              9
+            ],
+            [
+              4
+            ],
+            [
+              6
+            ],
+            [
+              5
+            ],
+            [
+              8
+            ],
+            [
+              2
+            ]
+          ],
+          "silhouette": 0.030745,
+          "time_s": 0.007,
+          "eigenvalues_top20": [
+            0.54253355,
+            0.5487799,
+            0.88420845,
+            0.89717804,
+            0.93739818,
+            0.97937267,
+            0.98607459,
+            1.29718034,
+            4.62360804,
+            124521.40652965
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.0281112612,
+          "normalized_by_max": 0.0715402341,
+          "normalized_by_d": 0.0028111261,
+          "lambda_min": 0.0281112612,
+          "lambda_max": 0.3929433771
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            -0.0,
+            0.0355285362,
+            0.0394749631,
+            0.0400155961,
+            0.0414762179,
+            0.0429626114,
+            0.1430624899,
+            0.1471490002,
+            0.3719238218
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.0281112612,
+            0.0300121585,
+            0.0308809709,
+            0.0326511744,
+            0.0344647629,
+            0.0489536548,
+            0.1391378619,
+            0.141160585,
+            0.3668874267
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.512201,
+          "metric_random_oblique": 0.632247,
+          "oblique_benefit": 0.120046,
+          "metric_name": "balanced_accuracy",
+          "n_train": 8000,
+          "n_test": 2000,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 3.5
+        },
+        "ground_truth_recovery": {
+          "unsigned_ari": 1.0,
+          "sponge_ari": 0.5714,
+          "n_assigned_features": 4
+        }
+      },
+      "no_structure_control": {
+        "n_samples": 10000,
+        "n_features": 20,
+        "task_type": "classification",
+        "is_synthetic": true,
+        "coi_computation": {
+          "subsample_n": 10000,
+          "n_bins": 10,
+          "features_used": 20,
+          "time_s": 0.17
+        },
+        "mi_individual_top10": [
+          [
+            0,
+            0.148622
+          ],
+          [
+            1,
+            0.072344
+          ],
+          [
+            2,
+            0.044297
+          ],
+          [
+            3,
+            0.031882
+          ],
+          [
+            4,
+            0.016862
+          ],
+          [
+            11,
+            0.000704
+          ],
+          [
+            8,
+            0.000632
+          ],
+          [
+            13,
+            0.00058
+          ],
+          [
+            18,
+            0.000497
+          ],
+          [
+            14,
+            0.000454
+          ]
+        ],
+        "graph_characterization": {
+          "n_features": 20,
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 190,
+            "n_near_zero": 0,
+            "n_total_pairs": 190,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "value_distribution": {
+            "mean": -0.0045506,
+            "median": -0.00399557,
+            "std": 0.00335827,
+            "min": -0.04246365,
+            "max": -0.00263908,
+            "q25": -0.0045773,
+            "q75": -0.00355855,
+            "iqr": 0.00101875,
+            "abs_mean": 0.0045506
+          }
+        },
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            15,
+            5
+          ],
+          "modules": [
+            [
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19
+            ],
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          "silhouette": 0.851805,
+          "time_s": 0.004,
+          "eigenvalues_top20": [
+            -0.0,
+            0.72684168,
+            0.98127442,
+            1.00721297,
+            1.02009242,
+            1.03012097,
+            1.03177248,
+            1.03538255,
+            1.04840219,
+            1.05178953,
+            1.05463141,
+            1.05703507,
+            1.06179717,
+            1.07230285,
+            1.08872693,
+            1.09295532,
+            1.09444767,
+            1.10533485,
+            1.11703653,
+            1.32284297
+          ]
+        },
+        "signed_spectral_sponge": {
+          "k": 2,
+          "module_sizes": [
+            12,
+            8
+          ],
+          "modules": [
+            [
+              0,
+              1,
+              3,
+              5,
+              7,
+              9,
+              10,
+              12,
+              13,
+              14,
+              15,
+              16
+            ],
+            [
+              2,
+              4,
+              6,
+              8,
+              11,
+              17,
+              18,
+              19
+            ]
+          ],
+          "silhouette": 0.72536,
+          "time_s": 0.004,
+          "eigenvalues_top20": [
+            0.75594344,
+            0.89521817,
+            0.90469296,
+            0.91369228,
+            0.91493975,
+            0.91849327,
+            0.93256125,
+            0.94178875,
+            0.9460307,
+            0.94818728,
+            0.95074975,
+            0.95382045,
+            0.96581446,
+            0.96919423,
+            0.97074736,
+            0.98029135,
+            0.99282626,
+            1.01906938,
+            1.37579831,
+            86461.44761619
+          ]
+        },
+        "frustration_index": {
+          "frustration_raw": 0.0659089842,
+          "normalized_by_max": 0.3163194069,
+          "normalized_by_d": 0.0032954492,
+          "lambda_min": 0.0659089842,
+          "lambda_max": 0.2083621263
+        },
+        "eigenspectrum": {
+          "unsigned_laplacian_eigenvalues": [
+            0.0,
+            0.0719033701,
+            0.0752822319,
+            0.0766068843,
+            0.0779177417,
+            0.0786116165,
+            0.0789228738,
+            0.0797422802,
+            0.0803470546,
+            0.0807939571,
+            0.0817706497,
+            0.0827445838,
+            0.0841840677,
+            0.0859494748,
+            0.0872797563,
+            0.0887130105,
+            0.0953519987,
+            0.1080984929,
+            0.1317482976
+          ],
+          "signed_laplacian_eigenvalues": [
+            0.0659089842,
+            0.0674093979,
+            0.069280151,
+            0.0697012576,
+            0.0706399546,
+            0.0712115188,
+            0.0719483224,
+            0.072225797,
+            0.0729429289,
+            0.0744323385,
+            0.0753791474,
+            0.077380015,
+            0.0786501193,
+            0.0786994804,
+            0.0833574159,
+            0.0893447169,
+            0.095275138,
+            0.1061779866,
+            0.1309010658
+          ]
+        },
+        "figs_comparison": {
+          "metric_axis_aligned": 0.760113,
+          "metric_random_oblique": 0.88802,
+          "oblique_benefit": 0.127907,
+          "metric_name": "balanced_accuracy",
+          "n_train": 8000,
+          "n_test": 2000,
+          "aa_splits": 10,
+          "ro_splits": 10,
+          "ro_mean_arity": 3.8
+        }
+      }
+    },
+    "correlation_analysis": {
+      "spearman_rho": -0.107692,
+      "p_value": 0.714031,
+      "n_datasets": 14,
+      "bootstrap_ci_95": {
+        "lower": -0.677856,
+        "upper": 0.526864,
+        "n_resamples": 2000,
+        "n_valid": 2000
+      },
+      "dataset_values": [
+        {
+          "dataset": "credit",
+          "frustration_index": 0.045044,
+          "oblique_benefit": 0.005984
+        },
+        {
+          "dataset": "adult",
+          "frustration_index": 0.0,
+          "oblique_benefit": 0.127068
+        },
+        {
+          "dataset": "electricity",
+          "frustration_index": 0.027109,
+          "oblique_benefit": 0.039517
+        },
+        {
+          "dataset": "california_housing",
+          "frustration_index": 0.216897,
+          "oblique_benefit": 0.089973
+        },
+        {
+          "dataset": "easy_2mod_xor",
+          "frustration_index": 0.07154,
+          "oblique_benefit": 0.120046
+        },
+        {
+          "dataset": "eye_movements",
+          "frustration_index": 0.178654,
+          "oblique_benefit": 0.021025
+        },
+        {
+          "dataset": "no_structure_control",
+          "frustration_index": 0.316319,
+          "oblique_benefit": 0.127907
+        },
+        {
+          "dataset": "medium_4mod_mixed",
+          "frustration_index": 0.092574,
+          "oblique_benefit": -0.074185
+        },
+        {
+          "dataset": "overlapping_modules",
+          "frustration_index": 0.085429,
+          "oblique_benefit": -0.091092
+        },
+        {
+          "dataset": "higgs_small",
+          "frustration_index": 0.336069,
+          "oblique_benefit": 0.029679
+        },
+        {
+          "dataset": "hard_4mod_unequal",
+          "frustration_index": 0.158138,
+          "oblique_benefit": -0.01802
+        },
+        {
+          "dataset": "miniboone",
+          "frustration_index": 0.074113,
+          "oblique_benefit": 0.003219
+        },
+        {
+          "dataset": "jannis",
+          "frustration_index": 0.163639,
+          "oblique_benefit": -0.000261
+        },
+        {
+          "dataset": "highdim_8mod",
+          "frustration_index": 0.434587,
+          "oblique_benefit": -0.000681
+        }
+      ],
+      "hypothesis_test": {
+        "h0": "No correlation between frustration index and oblique benefit",
+        "h1": "Negative correlation: lower frustration (cleaner modules) -> more oblique benefit",
+        "significant_at_0.05": false,
+        "direction": "negative"
+      },
+      "synthetic_only_spearman": {
+        "rho": 0.314286,
+        "p_value": 0.544093,
+        "n": 6
+      },
+      "real_only_spearman": {
+        "rho": -0.166667,
+        "p_value": 0.693239,
+        "n": 8
+      },
+      "kendall_tau": {
+        "tau": -0.054945,
+        "p_value": 0.82991
+      }
+    },
+    "summary": {
+      "total_datasets": 14,
+      "total_time_s": 68.5,
+      "mean_frustration": 0.157151,
+      "std_frustration": 0.124242,
+      "mean_oblique_benefit": 0.027156,
+      "std_oblique_benefit": 0.066411,
+      "key_finding": "DISCONFIRM/INCONCLUSIVE"
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "credit",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"credit\", \"n_samples\": 16714, \"n_features\": 10, \"task_type\": \"classification\", \"is_synthetic\": false}",
+          "output": "{\"frustration_normalized\": 0.045044, \"unsigned_k\": 2, \"sponge_k\": 8, \"oblique_benefit\": 0.005984, \"frac_negative_coi\": 0.2889, \"frac_positive_coi\": 0.5556}",
+          "predict_axis_aligned": "0.746648",
+          "predict_random_oblique": "0.752633",
+          "metadata_frustration_raw": 0.00803239,
+          "metadata_frustration_normalized": 0.04504371,
+          "metadata_unsigned_k": 2,
+          "metadata_sponge_k": 8,
+          "metadata_unsigned_silhouette": 0.803794,
+          "metadata_sponge_silhouette": 0.059001,
+          "metadata_coi_frac_negative": 0.2889,
+          "metadata_coi_frac_positive": 0.5556,
+          "metadata_oblique_benefit": 0.005984
+        }
+      ]
+    },
+    {
+      "dataset": "california_housing",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"california_housing\", \"n_samples\": 20640, \"n_features\": 8, \"task_type\": \"regression\", \"is_synthetic\": false}",
+          "output": "{\"frustration_normalized\": 0.216897, \"unsigned_k\": 2, \"sponge_k\": 7, \"oblique_benefit\": 0.089973, \"frac_negative_coi\": 1.0, \"frac_positive_coi\": 0.0}",
+          "predict_axis_aligned": "0.520306",
+          "predict_random_oblique": "0.61028",
+          "metadata_frustration_raw": 0.15552559,
+          "metadata_frustration_normalized": 0.21689725,
+          "metadata_unsigned_k": 2,
+          "metadata_sponge_k": 7,
+          "metadata_unsigned_silhouette": 0.73819,
+          "metadata_sponge_silhouette": 0.004929,
+          "metadata_coi_frac_negative": 1.0,
+          "metadata_coi_frac_positive": 0.0,
+          "metadata_oblique_benefit": 0.089973
+        }
+      ]
+    },
+    {
+      "dataset": "easy_2mod_xor",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"easy_2mod_xor\", \"n_samples\": 10000, \"n_features\": 10, \"task_type\": \"classification\", \"is_synthetic\": true}",
+          "output": "{\"frustration_normalized\": 0.07154, \"unsigned_k\": 7, \"sponge_k\": 9, \"oblique_benefit\": 0.120046, \"frac_negative_coi\": 1.0, \"frac_positive_coi\": 0.0}",
+          "predict_axis_aligned": "0.512201",
+          "predict_random_oblique": "0.632247",
+          "metadata_frustration_raw": 0.02811126,
+          "metadata_frustration_normalized": 0.07154023,
+          "metadata_unsigned_k": 7,
+          "metadata_sponge_k": 9,
+          "metadata_unsigned_silhouette": 0.135421,
+          "metadata_sponge_silhouette": 0.030745,
+          "metadata_coi_frac_negative": 1.0,
+          "metadata_coi_frac_positive": 0.0,
+          "metadata_oblique_benefit": 0.120046
+        }
+      ]
+    },
+    {
+      "dataset": "no_structure_control",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"no_structure_control\", \"n_samples\": 10000, \"n_features\": 20, \"task_type\": \"classification\", \"is_synthetic\": true}",
+          "output": "{\"frustration_normalized\": 0.316319, \"unsigned_k\": 2, \"sponge_k\": 2, \"oblique_benefit\": 0.127907, \"frac_negative_coi\": 1.0, \"frac_positive_coi\": 0.0}",
+          "predict_axis_aligned": "0.760113",
+          "predict_random_oblique": "0.88802",
+          "metadata_frustration_raw": 0.06590898,
+          "metadata_frustration_normalized": 0.31631941,
+          "metadata_unsigned_k": 2,
+          "metadata_sponge_k": 2,
+          "metadata_unsigned_silhouette": 0.851805,
+          "metadata_sponge_silhouette": 0.72536,
+          "metadata_coi_frac_negative": 1.0,
+          "metadata_coi_frac_positive": 0.0,
+          "metadata_oblique_benefit": 0.127907
+        }
+      ]
+    }
+  ]
+}

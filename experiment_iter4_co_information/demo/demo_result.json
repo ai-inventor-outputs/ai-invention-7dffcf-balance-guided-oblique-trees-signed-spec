@@ -1,0 +1,13 @@
+{
+  "id": "exp_id3_it4__opus",
+  "type": "code",
+  "title": "Co-Information Estimator Bias Diagnosis & SPONGE Failure Mechanism Analysis",
+  "summary": "Demo notebook for the Co-Information Estimator Bias Diagnosis & SPONGE Failure Mechanism Analysis experiment. Generates synthetic XOR datasets, computes CoI matrices using 4 estimation methods (NPEET KSG, raw KSG, binned MI, sklearn KSG), analyzes sign distributions, and diagnoses SPONGE spectral clustering failure on all-negative CoI graphs. Includes eigenspectrum analysis, clustering comparison (unsigned spectral ARI=1.0 vs SPONGE ARI=-0.5), and edge injection tests. Visualizes precomputed full-run results alongside live demo computation with near-original parameters (n=15000/10000). Total compute ~5s.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_4/gen_art/exp_id3_it4__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id3_it4__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id3_it4__opus/method_code_demo.ipynb"
+}

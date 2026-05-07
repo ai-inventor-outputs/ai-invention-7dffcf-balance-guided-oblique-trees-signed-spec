@@ -1,0 +1,13 @@
+{
+  "id": "exp_id4_it3__opus",
+  "type": "code",
+  "title": "SPONGE Signed Spectral Diagnostic: Tau Sensitivity, K-Selection, and Signed vs Unsigned Decomposition Analysis",
+  "summary": "Demo notebook for the SPONGE Signed Spectral Diagnostic experiment. Demonstrates signed (SPONGE) vs unsigned spectral clustering on synthetic Co-Information matrices across 4 variants (easy_2mod_xor, medium_4mod_mixed, hard_4mod_unequal, highdim_8mod). Runs 5 investigations: tau sensitivity sweep (7x7 grid), k-selection analysis (eigengap/silhouette/stability), signed vs unsigned decomposition (sign distribution, condition numbers, Grassmann distance), high-dimensional fix (sparsification/threshold zeroing), and final verdict with root cause diagnosis. Uses pre-computed CoI matrices with planted module structure. Full parameter sweep runs in ~48 seconds.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_3/gen_art/exp_id4_it3__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id4_it3__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id4_it3__opus/method_code_demo.ipynb"
+}

@@ -1,0 +1,3877 @@
+{
+  "metadata": {
+    "experiment": "baselines_ebm_rf_linear",
+    "description": "EBM, Random Forest, and Logistic/Ridge Regression baselines on 8 Grinsztajn benchmark datasets",
+    "date": "2026-03-19",
+    "methods": [
+      "ebm",
+      "random_forest",
+      "linear"
+    ],
+    "n_folds": 5,
+    "random_state": 42,
+    "ebm_config": {
+      "outer_bags": 8,
+      "interactions": 10,
+      "max_rounds": 5000
+    },
+    "rf_config": {
+      "n_estimators": 100
+    },
+    "linear_config": {
+      "logistic_C": 1.0,
+      "logistic_max_iter": 1000,
+      "ridge_alpha": 1.0
+    },
+    "total_runtime_s": 1520.5,
+    "per_dataset_results": {
+      "eye_movements": {
+        "ebm": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.657030223390276,
+              "r2": null,
+              "auc": 0.7291861286328764,
+              "n_terms": 30,
+              "n_interaction_terms": 10,
+              "n_main_effects": 20,
+              "fit_time": 49.88,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.6281208935611038,
+              "r2": null,
+              "auc": 0.6795954558719162,
+              "n_terms": 30,
+              "n_interaction_terms": 10,
+              "n_main_effects": 20,
+              "fit_time": 17.887,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.6176084099868594,
+              "r2": null,
+              "auc": 0.6584789707159644,
+              "n_terms": 30,
+              "n_interaction_terms": 10,
+              "n_main_effects": 20,
+              "fit_time": 20.206,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.647604433224981,
+              "r2": null,
+              "auc": 0.7198699771768449,
+              "n_terms": 30,
+              "n_interaction_terms": 10,
+              "n_main_effects": 20,
+              "fit_time": 50.171,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.6568045853793485,
+              "r2": null,
+              "auc": 0.7148972958019227,
+              "n_terms": 30,
+              "n_interaction_terms": 10,
+              "n_main_effects": 20,
+              "fit_time": 15.164,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.641434,
+            "balanced_accuracy_std": 0.01589,
+            "auc_mean": 0.700406,
+            "auc_std": 0.026863,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 30.6616,
+            "fit_time_std": 15.891187,
+            "total_fit_time": 153.31,
+            "n_successful_folds": 5,
+            "n_terms_mean": 30.0,
+            "n_interaction_terms_mean": 10.0,
+            "n_main_effects_mean": 20.0
+          }
+        },
+        "random_forest": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.652431011826544,
+              "r2": null,
+              "auc": 0.7087206300583125,
+              "fit_time": 0.524,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.6340341655716163,
+              "r2": null,
+              "auc": 0.6835393639671157,
+              "fit_time": 0.358,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.6038107752956636,
+              "r2": null,
+              "auc": 0.6574696825015842,
+              "fit_time": 0.346,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.6462748115360675,
+              "r2": null,
+              "auc": 0.6991804412476659,
+              "fit_time": 0.285,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.6489262742928279,
+              "r2": null,
+              "auc": 0.7094422159208797,
+              "fit_time": 0.292,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.637095,
+            "balanced_accuracy_std": 0.017758,
+            "auc_mean": 0.69167,
+            "auc_std": 0.019487,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 0.361,
+            "fit_time_std": 0.086418,
+            "total_fit_time": 1.8,
+            "n_successful_folds": 5
+          }
+        },
+        "linear": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.573587385019711,
+              "r2": null,
+              "auc": 0.607662302005971,
+              "fit_time": 0.034,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.5400788436268069,
+              "r2": null,
+              "auc": 0.5623764291054892,
+              "fit_time": 0.006,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.5413929040735874,
+              "r2": null,
+              "auc": 0.5572514206875593,
+              "fit_time": 0.003,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.5746438204578463,
+              "r2": null,
+              "auc": 0.6035030085068124,
+              "fit_time": 0.004,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.5719837125665675,
+              "r2": null,
+              "auc": 0.5937910643889619,
+              "fit_time": 0.004,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.560337,
+            "balanced_accuracy_std": 0.016032,
+            "auc_mean": 0.584917,
+            "auc_std": 0.021048,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 0.0102,
+            "fit_time_std": 0.01194,
+            "total_fit_time": 0.05,
+            "n_successful_folds": 5
+          }
+        }
+      },
+      "credit": {
+        "ebm": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.7777344096736045,
+              "r2": null,
+              "auc": 0.8620951554666002,
+              "n_terms": 20,
+              "n_interaction_terms": 10,
+              "n_main_effects": 10,
+              "fit_time": 2.413,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7747454107359144,
+              "r2": null,
+              "auc": 0.8525494002674385,
+              "n_terms": 20,
+              "n_interaction_terms": 10,
+              "n_main_effects": 10,
+              "fit_time": 2.622,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7708696623229364,
+              "r2": null,
+              "auc": 0.848909700806611,
+              "n_terms": 20,
+              "n_interaction_terms": 10,
+              "n_main_effects": 10,
+              "fit_time": 3.46,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7774511151389163,
+              "r2": null,
+              "auc": 0.8582321132519564,
+              "n_terms": 20,
+              "n_interaction_terms": 10,
+              "n_main_effects": 10,
+              "fit_time": 3.267,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7752842609216037,
+              "r2": null,
+              "auc": 0.8580742135080746,
+              "n_terms": 20,
+              "n_interaction_terms": 10,
+              "n_main_effects": 10,
+              "fit_time": 3.087,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.775217,
+            "balanced_accuracy_std": 0.002468,
+            "auc_mean": 0.855972,
+            "auc_std": 0.004661,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 2.9698,
+            "fit_time_std": 0.393281,
+            "total_fit_time": 14.85,
+            "n_successful_folds": 5,
+            "n_terms_mean": 20.0,
+            "n_interaction_terms_mean": 10.0,
+            "n_main_effects_mean": 10.0
+          }
+        },
+        "random_forest": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.778933624251587,
+              "r2": null,
+              "auc": 0.8532301661612821,
+              "fit_time": 0.362,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7639796815361399,
+              "r2": null,
+              "auc": 0.838766754285747,
+              "fit_time": 0.358,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7645876104902374,
+              "r2": null,
+              "auc": 0.8367683019364962,
+              "fit_time": 0.515,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7720631501636415,
+              "r2": null,
+              "auc": 0.8494662680857522,
+              "fit_time": 0.462,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7800718132854578,
+              "r2": null,
+              "auc": 0.8466015290227454,
+              "fit_time": 0.349,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.771927,
+            "balanced_accuracy_std": 0.006819,
+            "auc_mean": 0.844967,
+            "auc_std": 0.006275,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 0.4092,
+            "fit_time_std": 0.067015,
+            "total_fit_time": 2.05,
+            "n_successful_folds": 5
+          }
+        },
+        "linear": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.7436078874352521,
+              "r2": null,
+              "auc": 0.8105935333682666,
+              "fit_time": 0.018,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7077177090760196,
+              "r2": null,
+              "auc": 0.7785842932776694,
+              "fit_time": 0.013,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7140611443739101,
+              "r2": null,
+              "auc": 0.786385720094262,
+              "fit_time": 0.01,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7230286780686006,
+              "r2": null,
+              "auc": 0.7898775981491185,
+              "fit_time": 0.01,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7333931777378815,
+              "r2": null,
+              "auc": 0.8080316133170453,
+              "fit_time": 0.01,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.724362,
+            "balanced_accuracy_std": 0.012937,
+            "auc_mean": 0.794695,
+            "auc_std": 0.012509,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 0.0122,
+            "fit_time_std": 0.003124,
+            "total_fit_time": 0.06,
+            "n_successful_folds": 5
+          }
+        }
+      },
+      "california_housing": {
+        "ebm": {
+          "fold_results": [
+            {
+              "r2": 0.8323305095773984,
+              "balanced_accuracy": null,
+              "auc": null,
+              "n_terms": 18,
+              "n_interaction_terms": 10,
+              "n_main_effects": 8,
+              "fit_time": 44.387,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "r2": 0.8444686085847122,
+              "balanced_accuracy": null,
+              "auc": null,
+              "n_terms": 18,
+              "n_interaction_terms": 10,
+              "n_main_effects": 8,
+              "fit_time": 39.331,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "r2": 0.8272986397654105,
+              "balanced_accuracy": null,
+              "auc": null,
+              "n_terms": 18,
+              "n_interaction_terms": 10,
+              "n_main_effects": 8,
+              "fit_time": 44.503,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "r2": 0.84880464911384,
+              "balanced_accuracy": null,
+              "auc": null,
+              "n_terms": 18,
+              "n_interaction_terms": 10,
+              "n_main_effects": 8,
+              "fit_time": 42.847,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "r2": 0.8253769791847706,
+              "balanced_accuracy": null,
+              "auc": null,
+              "n_terms": 18,
+              "n_interaction_terms": 10,
+              "n_main_effects": 8,
+              "fit_time": 33.764,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": null,
+            "balanced_accuracy_std": null,
+            "auc_mean": null,
+            "auc_std": null,
+            "r2_mean": 0.835656,
+            "r2_std": 0.00935,
+            "fit_time_mean": 40.9664,
+            "fit_time_std": 4.05694,
+            "total_fit_time": 204.83,
+            "n_successful_folds": 5,
+            "n_terms_mean": 18.0,
+            "n_interaction_terms_mean": 10.0,
+            "n_main_effects_mean": 8.0
+          }
+        },
+        "random_forest": {
+          "fold_results": [
+            {
+              "r2": 0.8053221134589628,
+              "balanced_accuracy": null,
+              "auc": null,
+              "fit_time": 1.842,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "r2": 0.8113892336699138,
+              "balanced_accuracy": null,
+              "auc": null,
+              "fit_time": 1.812,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "r2": 0.8042386316758701,
+              "balanced_accuracy": null,
+              "auc": null,
+              "fit_time": 1.783,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "r2": 0.8222168289278974,
+              "balanced_accuracy": null,
+              "auc": null,
+              "fit_time": 2.084,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "r2": 0.8046861535337775,
+              "balanced_accuracy": null,
+              "auc": null,
+              "fit_time": 1.849,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": null,
+            "balanced_accuracy_std": null,
+            "auc_mean": null,
+            "auc_std": null,
+            "r2_mean": 0.809571,
+            "r2_std": 0.006835,
+            "fit_time_mean": 1.874,
+            "fit_time_std": 0.107586,
+            "total_fit_time": 9.37,
+            "n_successful_folds": 5
+          }
+        },
+        "linear": {
+          "fold_results": [
+            {
+              "r2": 0.5758157428913679,
+              "balanced_accuracy": null,
+              "auc": null,
+              "fit_time": 0.021,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "r2": 0.6137453514925355,
+              "balanced_accuracy": null,
+              "auc": null,
+              "fit_time": 0.001,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "r2": 0.6085495327132203,
+              "balanced_accuracy": null,
+              "auc": null,
+              "fit_time": 0.001,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "r2": 0.6212649662621673,
+              "balanced_accuracy": null,
+              "auc": null,
+              "fit_time": 0.001,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "r2": 0.5875290698456891,
+              "balanced_accuracy": null,
+              "auc": null,
+              "fit_time": 0.001,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": null,
+            "balanced_accuracy_std": null,
+            "auc_mean": null,
+            "auc_std": null,
+            "r2_mean": 0.601381,
+            "r2_std": 0.017001,
+            "fit_time_mean": 0.005,
+            "fit_time_std": 0.008,
+            "total_fit_time": 0.03,
+            "n_successful_folds": 5
+          }
+        }
+      },
+      "adult": {
+        "ebm": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.7117778391406313,
+              "r2": null,
+              "auc": 0.8782696990229384,
+              "n_terms": 16,
+              "n_interaction_terms": 10,
+              "n_main_effects": 6,
+              "fit_time": 6.927,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7064334835876098,
+              "r2": null,
+              "auc": 0.8705520322510072,
+              "n_terms": 16,
+              "n_interaction_terms": 10,
+              "n_main_effects": 6,
+              "fit_time": 5.866,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7188304933623935,
+              "r2": null,
+              "auc": 0.8730035969181362,
+              "n_terms": 16,
+              "n_interaction_terms": 10,
+              "n_main_effects": 6,
+              "fit_time": 8.261,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7208376675913084,
+              "r2": null,
+              "auc": 0.8799778823847499,
+              "n_terms": 16,
+              "n_interaction_terms": 10,
+              "n_main_effects": 6,
+              "fit_time": 6.865,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7158594627171257,
+              "r2": null,
+              "auc": 0.8679104568101512,
+              "n_terms": 16,
+              "n_interaction_terms": 10,
+              "n_main_effects": 6,
+              "fit_time": 8.069,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.714748,
+            "balanced_accuracy_std": 0.005156,
+            "auc_mean": 0.873943,
+            "auc_std": 0.004559,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 7.1976,
+            "fit_time_std": 0.877173,
+            "total_fit_time": 35.99,
+            "n_successful_folds": 5,
+            "n_terms_mean": 16.0,
+            "n_interaction_terms_mean": 10.0,
+            "n_main_effects_mean": 6.0
+          }
+        },
+        "random_forest": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.7056878337572011,
+              "r2": null,
+              "auc": 0.8289790200919515,
+              "fit_time": 0.448,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.6990683409286045,
+              "r2": null,
+              "auc": 0.8200370940245029,
+              "fit_time": 0.454,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7020311158443959,
+              "r2": null,
+              "auc": 0.8170859287282873,
+              "fit_time": 0.826,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7155870236444092,
+              "r2": null,
+              "auc": 0.8276177886203024,
+              "fit_time": 0.488,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7087904943530811,
+              "r2": null,
+              "auc": 0.8228140505291922,
+              "fit_time": 0.459,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.706233,
+            "balanced_accuracy_std": 0.005715,
+            "auc_mean": 0.823307,
+            "auc_std": 0.004481,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 0.535,
+            "fit_time_std": 0.146148,
+            "total_fit_time": 2.68,
+            "n_successful_folds": 5
+          }
+        },
+        "linear": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.6677476068487133,
+              "r2": null,
+              "auc": 0.8319604039428985,
+              "fit_time": 0.007,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.662091960570636,
+              "r2": null,
+              "auc": 0.8255778494650287,
+              "fit_time": 0.007,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.6766984099465029,
+              "r2": null,
+              "auc": 0.8307294246582129,
+              "fit_time": 0.007,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.672871879334258,
+              "r2": null,
+              "auc": 0.8394775310002642,
+              "fit_time": 0.007,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.6784331451027013,
+              "r2": null,
+              "auc": 0.8303217335174361,
+              "fit_time": 0.007,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.671569,
+            "balanced_accuracy_std": 0.005992,
+            "auc_mean": 0.831613,
+            "auc_std": 0.004491,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 0.007,
+            "fit_time_std": 0.0,
+            "total_fit_time": 0.04,
+            "n_successful_folds": 5
+          }
+        }
+      },
+      "electricity": {
+        "ebm": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.8426253656627974,
+              "r2": null,
+              "auc": 0.9261328723896959,
+              "n_terms": 17,
+              "n_interaction_terms": 10,
+              "n_main_effects": 7,
+              "fit_time": 72.808,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.8473042687365536,
+              "r2": null,
+              "auc": 0.9276699666613885,
+              "n_terms": 17,
+              "n_interaction_terms": 10,
+              "n_main_effects": 7,
+              "fit_time": 71.763,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.8441832999442825,
+              "r2": null,
+              "auc": 0.9274342752702511,
+              "n_terms": 17,
+              "n_interaction_terms": 10,
+              "n_main_effects": 7,
+              "fit_time": 71.468,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.8469126994763855,
+              "r2": null,
+              "auc": 0.9308831786736648,
+              "n_terms": 17,
+              "n_interaction_terms": 10,
+              "n_main_effects": 7,
+              "fit_time": 73.542,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.8396152846373798,
+              "r2": null,
+              "auc": 0.9247876046942145,
+              "n_terms": 17,
+              "n_interaction_terms": 10,
+              "n_main_effects": 7,
+              "fit_time": 73.631,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.844128,
+            "balanced_accuracy_std": 0.002845,
+            "auc_mean": 0.927382,
+            "auc_std": 0.002032,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 72.6424,
+            "fit_time_std": 0.890684,
+            "total_fit_time": 363.21,
+            "n_successful_folds": 5,
+            "n_terms_mean": 17.0,
+            "n_interaction_terms_mean": 10.0,
+            "n_main_effects_mean": 7.0
+          }
+        },
+        "random_forest": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.8782321267699484,
+              "r2": null,
+              "auc": 0.9540908432577265,
+              "fit_time": 0.889,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.8830415754479961,
+              "r2": null,
+              "auc": 0.9556563434422807,
+              "fit_time": 0.774,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.8846002528092469,
+              "r2": null,
+              "auc": 0.9558154976175512,
+              "fit_time": 0.964,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.8901888206216254,
+              "r2": null,
+              "auc": 0.9578785910342967,
+              "fit_time": 0.802,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.8838055627761893,
+              "r2": null,
+              "auc": 0.9558012417928311,
+              "fit_time": 0.761,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.883974,
+            "balanced_accuracy_std": 0.003818,
+            "auc_mean": 0.955849,
+            "auc_std": 0.001204,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 0.838,
+            "fit_time_std": 0.077198,
+            "total_fit_time": 4.19,
+            "n_successful_folds": 5
+          }
+        },
+        "linear": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.7411220544993615,
+              "r2": null,
+              "auc": 0.8196465020938638,
+              "fit_time": 0.012,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7411204332344181,
+              "r2": null,
+              "auc": 0.819477687881639,
+              "fit_time": 0.012,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7372417257392563,
+              "r2": null,
+              "auc": 0.8156838603615313,
+              "fit_time": 0.013,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7419193790879519,
+              "r2": null,
+              "auc": 0.8228722789094507,
+              "fit_time": 0.011,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7387574733558617,
+              "r2": null,
+              "auc": 0.8172544592827997,
+              "fit_time": 0.092,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.740032,
+            "balanced_accuracy_std": 0.001752,
+            "auc_mean": 0.818987,
+            "auc_std": 0.002437,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 0.028,
+            "fit_time_std": 0.032006,
+            "total_fit_time": 0.14,
+            "n_successful_folds": 5
+          }
+        }
+      },
+      "jannis": {
+        "ebm": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.7739666550885724,
+              "r2": null,
+              "auc": 0.8512603272357917,
+              "n_terms": 64,
+              "n_interaction_terms": 10,
+              "n_main_effects": 54,
+              "fit_time": 28.044,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7731851337269886,
+              "r2": null,
+              "auc": 0.8508595980933424,
+              "n_terms": 64,
+              "n_interaction_terms": 10,
+              "n_main_effects": 54,
+              "fit_time": 24.008,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7697985411601251,
+              "r2": null,
+              "auc": 0.8474769567170299,
+              "n_terms": 64,
+              "n_interaction_terms": 10,
+              "n_main_effects": 54,
+              "fit_time": 25.547,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7750086835706843,
+              "r2": null,
+              "auc": 0.8498175997729904,
+              "n_terms": 64,
+              "n_interaction_terms": 10,
+              "n_main_effects": 54,
+              "fit_time": 28.571,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7659777700590483,
+              "r2": null,
+              "auc": 0.8414681007417261,
+              "n_terms": 64,
+              "n_interaction_terms": 10,
+              "n_main_effects": 54,
+              "fit_time": 30.096,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.771587,
+            "balanced_accuracy_std": 0.003304,
+            "auc_mean": 0.848177,
+            "auc_std": 0.003603,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 27.2532,
+            "fit_time_std": 2.185677,
+            "total_fit_time": 136.27,
+            "n_successful_folds": 5,
+            "n_terms_mean": 64.0,
+            "n_interaction_terms_mean": 10.0,
+            "n_main_effects_mean": 54.0
+          }
+        },
+        "random_forest": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.7849947898575895,
+              "r2": null,
+              "auc": 0.8650793598130259,
+              "fit_time": 6.21,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7924626606460576,
+              "r2": null,
+              "auc": 0.8665621722547763,
+              "fit_time": 6.246,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7868183397012851,
+              "r2": null,
+              "auc": 0.8624007693179134,
+              "fit_time": 6.271,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.779350468912817,
+              "r2": null,
+              "auc": 0.8596948824300631,
+              "fit_time": 6.224,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7777005904828065,
+              "r2": null,
+              "auc": 0.8537855904242927,
+              "fit_time": 6.166,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.784265,
+            "balanced_accuracy_std": 0.00532,
+            "auc_mean": 0.861505,
+            "auc_std": 0.004517,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 6.2234,
+            "fit_time_std": 0.035359,
+            "total_fit_time": 31.12,
+            "n_successful_folds": 5
+          }
+        },
+        "linear": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.7362799583188606,
+              "r2": null,
+              "auc": 0.8116874044852468,
+              "fit_time": 1.097,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7315908301493574,
+              "r2": null,
+              "auc": 0.8094351353858853,
+              "fit_time": 0.925,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.729940951719347,
+              "r2": null,
+              "auc": 0.8047165995004488,
+              "fit_time": 1.034,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7245571378951025,
+              "r2": null,
+              "auc": 0.8025108398349017,
+              "fit_time": 0.877,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7222125738103509,
+              "r2": null,
+              "auc": 0.7996286725411319,
+              "fit_time": 1.556,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.728916,
+            "balanced_accuracy_std": 0.005027,
+            "auc_mean": 0.805596,
+            "auc_std": 0.004421,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 1.0978,
+            "fit_time_std": 0.241922,
+            "total_fit_time": 5.49,
+            "n_successful_folds": 5
+          }
+        }
+      },
+      "miniboone": {
+        "ebm": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.9272602739726028,
+              "r2": null,
+              "auc": 0.9763608556952522,
+              "n_terms": 60,
+              "n_interaction_terms": 10,
+              "n_main_effects": 50,
+              "fit_time": 26.874,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.9338356164383561,
+              "r2": null,
+              "auc": 0.9783211109026083,
+              "n_terms": 60,
+              "n_interaction_terms": 10,
+              "n_main_effects": 50,
+              "fit_time": 32.657,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.931986301369863,
+              "r2": null,
+              "auc": 0.9788760367798838,
+              "n_terms": 60,
+              "n_interaction_terms": 10,
+              "n_main_effects": 50,
+              "fit_time": 25.379,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.9319140828073653,
+              "r2": null,
+              "auc": 0.9777721662002863,
+              "n_terms": 60,
+              "n_interaction_terms": 10,
+              "n_main_effects": 50,
+              "fit_time": 25.842,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.9254734463531316,
+              "r2": null,
+              "auc": 0.9775193824637265,
+              "n_terms": 60,
+              "n_interaction_terms": 10,
+              "n_main_effects": 50,
+              "fit_time": 26.193,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.930094,
+            "balanced_accuracy_std": 0.003171,
+            "auc_mean": 0.97777,
+            "auc_std": 0.000846,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 27.389,
+            "fit_time_std": 2.678835,
+            "total_fit_time": 136.94,
+            "n_successful_folds": 5,
+            "n_terms_mean": 60.0,
+            "n_interaction_terms_mean": 10.0,
+            "n_main_effects_mean": 50.0
+          }
+        },
+        "random_forest": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.9288356164383562,
+              "r2": null,
+              "auc": 0.9779147682492024,
+              "fit_time": 8.648,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.9333561643835616,
+              "r2": null,
+              "auc": 0.9796824638769001,
+              "fit_time": 8.499,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.9380136986301371,
+              "r2": null,
+              "auc": 0.9803711671983486,
+              "fit_time": 8.386,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.9360239909013619,
+              "r2": null,
+              "auc": 0.9804617258509799,
+              "fit_time": 8.428,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.9299255762189229,
+              "r2": null,
+              "auc": 0.9788940594226644,
+              "fit_time": 8.388,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.933231,
+            "balanced_accuracy_std": 0.003491,
+            "auc_mean": 0.979465,
+            "auc_std": 0.000958,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 8.4698,
+            "fit_time_std": 0.09805,
+            "total_fit_time": 42.35,
+            "n_successful_folds": 5
+          }
+        },
+        "linear": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.8734246575342466,
+              "r2": null,
+              "auc": 0.9396363858134733,
+              "fit_time": 4.737,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.8704794520547945,
+              "r2": null,
+              "auc": 0.9401048977294051,
+              "fit_time": 7.732,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.8721232876712328,
+              "r2": null,
+              "auc": 0.9400299493338338,
+              "fit_time": 4.002,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.8779369382557565,
+              "r2": null,
+              "auc": 0.9453108607484229,
+              "fit_time": 5.395,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.8675935716470824,
+              "r2": null,
+              "auc": 0.9370660082916219,
+              "fit_time": 4.718,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.872312,
+            "balanced_accuracy_std": 0.003422,
+            "auc_mean": 0.94043,
+            "auc_std": 0.002685,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 5.3168,
+            "fit_time_std": 1.285514,
+            "total_fit_time": 26.58,
+            "n_successful_folds": 5
+          }
+        }
+      },
+      "higgs_small": {
+        "ebm": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.7160632330443651,
+              "r2": null,
+              "auc": 0.7944273246720015,
+              "n_terms": 34,
+              "n_interaction_terms": 10,
+              "n_main_effects": 24,
+              "fit_time": 49.663,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7142784293727691,
+              "r2": null,
+              "auc": 0.7939815697274829,
+              "n_terms": 34,
+              "n_interaction_terms": 10,
+              "n_main_effects": 24,
+              "fit_time": 50.306,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7149923508414074,
+              "r2": null,
+              "auc": 0.7921751565002505,
+              "n_terms": 34,
+              "n_interaction_terms": 10,
+              "n_main_effects": 24,
+              "fit_time": 52.566,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7135645079041306,
+              "r2": null,
+              "auc": 0.7895328097285127,
+              "n_terms": 34,
+              "n_interaction_terms": 10,
+              "n_main_effects": 24,
+              "fit_time": 46.16,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7162162162162162,
+              "r2": null,
+              "auc": 0.7957923724769674,
+              "n_terms": 34,
+              "n_interaction_terms": 10,
+              "n_main_effects": 24,
+              "fit_time": 53.189,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.715023,
+            "balanced_accuracy_std": 0.001019,
+            "auc_mean": 0.793182,
+            "auc_std": 0.00216,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 50.3768,
+            "fit_time_std": 2.489859,
+            "total_fit_time": 251.88,
+            "n_successful_folds": 5,
+            "n_terms_mean": 34.0,
+            "n_interaction_terms_mean": 10.0,
+            "n_main_effects_mean": 24.0
+          }
+        },
+        "random_forest": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.7197858235594085,
+              "r2": null,
+              "auc": 0.7946508262469508,
+              "fit_time": 6.862,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7193778684344723,
+              "r2": null,
+              "auc": 0.7948208578239464,
+              "fit_time": 6.932,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7184089750127486,
+              "r2": null,
+              "auc": 0.7956121212184253,
+              "fit_time": 6.921,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7175930647628761,
+              "r2": null,
+              "auc": 0.7951955014678116,
+              "fit_time": 6.901,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.7179500254971953,
+              "r2": null,
+              "auc": 0.7955664525040952,
+              "fit_time": 6.874,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.718623,
+            "balanced_accuracy_std": 0.000834,
+            "auc_mean": 0.795169,
+            "auc_std": 0.000386,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 6.898,
+            "fit_time_std": 0.026706,
+            "total_fit_time": 34.49,
+            "n_successful_folds": 5
+          }
+        },
+        "linear": {
+          "fold_results": [
+            {
+              "balanced_accuracy": 0.6320754716981132,
+              "r2": null,
+              "auc": 0.6787819595836299,
+              "fit_time": 0.222,
+              "fold": 0,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.6320754716981132,
+              "r2": null,
+              "auc": 0.6801888742773736,
+              "fit_time": 0.213,
+              "fold": 1,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.6367159612442631,
+              "r2": null,
+              "auc": 0.6817180506880601,
+              "fit_time": 0.343,
+              "fold": 2,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.6299337072921978,
+              "r2": null,
+              "auc": 0.6745557546038624,
+              "fit_time": 0.247,
+              "fold": 3,
+              "status": "success"
+            },
+            {
+              "balanced_accuracy": 0.6353391126976032,
+              "r2": null,
+              "auc": 0.6832958655017096,
+              "fit_time": 0.216,
+              "fold": 4,
+              "status": "success"
+            }
+          ],
+          "aggregate": {
+            "balanced_accuracy_mean": 0.633228,
+            "balanced_accuracy_std": 0.002455,
+            "auc_mean": 0.679708,
+            "auc_std": 0.002985,
+            "r2_mean": null,
+            "r2_std": null,
+            "fit_time_mean": 0.2482,
+            "fit_time_std": 0.048889,
+            "total_fit_time": 1.24,
+            "n_successful_folds": 5
+          }
+        }
+      }
+    },
+    "cross_dataset_summary": {
+      "ebm": {
+        "balanced_accuracy_mean": [
+          {
+            "dataset": "electricity",
+            "value": 0.844128
+          },
+          {
+            "dataset": "adult",
+            "value": 0.714748
+          },
+          {
+            "dataset": "california_housing",
+            "value": null
+          },
+          {
+            "dataset": "jannis",
+            "value": 0.771587
+          },
+          {
+            "dataset": "higgs_small",
+            "value": 0.715023
+          },
+          {
+            "dataset": "eye_movements",
+            "value": 0.641434
+          },
+          {
+            "dataset": "credit",
+            "value": 0.775217
+          },
+          {
+            "dataset": "miniboone",
+            "value": 0.930094
+          }
+        ],
+        "auc_mean": [
+          {
+            "dataset": "electricity",
+            "value": 0.927382
+          },
+          {
+            "dataset": "adult",
+            "value": 0.873943
+          },
+          {
+            "dataset": "california_housing",
+            "value": null
+          },
+          {
+            "dataset": "jannis",
+            "value": 0.848177
+          },
+          {
+            "dataset": "higgs_small",
+            "value": 0.793182
+          },
+          {
+            "dataset": "eye_movements",
+            "value": 0.700406
+          },
+          {
+            "dataset": "credit",
+            "value": 0.855972
+          },
+          {
+            "dataset": "miniboone",
+            "value": 0.97777
+          }
+        ],
+        "r2_mean": [
+          {
+            "dataset": "electricity",
+            "value": null
+          },
+          {
+            "dataset": "adult",
+            "value": null
+          },
+          {
+            "dataset": "california_housing",
+            "value": 0.835656
+          },
+          {
+            "dataset": "jannis",
+            "value": null
+          },
+          {
+            "dataset": "higgs_small",
+            "value": null
+          },
+          {
+            "dataset": "eye_movements",
+            "value": null
+          },
+          {
+            "dataset": "credit",
+            "value": null
+          },
+          {
+            "dataset": "miniboone",
+            "value": null
+          }
+        ],
+        "total_fit_time": [
+          {
+            "dataset": "electricity",
+            "value": 363.21
+          },
+          {
+            "dataset": "adult",
+            "value": 35.99
+          },
+          {
+            "dataset": "california_housing",
+            "value": 204.83
+          },
+          {
+            "dataset": "jannis",
+            "value": 136.27
+          },
+          {
+            "dataset": "higgs_small",
+            "value": 251.88
+          },
+          {
+            "dataset": "eye_movements",
+            "value": 153.31
+          },
+          {
+            "dataset": "credit",
+            "value": 14.85
+          },
+          {
+            "dataset": "miniboone",
+            "value": 136.94
+          }
+        ]
+      },
+      "random_forest": {
+        "balanced_accuracy_mean": [
+          {
+            "dataset": "electricity",
+            "value": 0.883974
+          },
+          {
+            "dataset": "adult",
+            "value": 0.706233
+          },
+          {
+            "dataset": "california_housing",
+            "value": null
+          },
+          {
+            "dataset": "jannis",
+            "value": 0.784265
+          },
+          {
+            "dataset": "higgs_small",
+            "value": 0.718623
+          },
+          {
+            "dataset": "eye_movements",
+            "value": 0.637095
+          },
+          {
+            "dataset": "credit",
+            "value": 0.771927
+          },
+          {
+            "dataset": "miniboone",
+            "value": 0.933231
+          }
+        ],
+        "auc_mean": [
+          {
+            "dataset": "electricity",
+            "value": 0.955849
+          },
+          {
+            "dataset": "adult",
+            "value": 0.823307
+          },
+          {
+            "dataset": "california_housing",
+            "value": null
+          },
+          {
+            "dataset": "jannis",
+            "value": 0.861505
+          },
+          {
+            "dataset": "higgs_small",
+            "value": 0.795169
+          },
+          {
+            "dataset": "eye_movements",
+            "value": 0.69167
+          },
+          {
+            "dataset": "credit",
+            "value": 0.844967
+          },
+          {
+            "dataset": "miniboone",
+            "value": 0.979465
+          }
+        ],
+        "r2_mean": [
+          {
+            "dataset": "electricity",
+            "value": null
+          },
+          {
+            "dataset": "adult",
+            "value": null
+          },
+          {
+            "dataset": "california_housing",
+            "value": 0.809571
+          },
+          {
+            "dataset": "jannis",
+            "value": null
+          },
+          {
+            "dataset": "higgs_small",
+            "value": null
+          },
+          {
+            "dataset": "eye_movements",
+            "value": null
+          },
+          {
+            "dataset": "credit",
+            "value": null
+          },
+          {
+            "dataset": "miniboone",
+            "value": null
+          }
+        ],
+        "total_fit_time": [
+          {
+            "dataset": "electricity",
+            "value": 4.19
+          },
+          {
+            "dataset": "adult",
+            "value": 2.68
+          },
+          {
+            "dataset": "california_housing",
+            "value": 9.37
+          },
+          {
+            "dataset": "jannis",
+            "value": 31.12
+          },
+          {
+            "dataset": "higgs_small",
+            "value": 34.49
+          },
+          {
+            "dataset": "eye_movements",
+            "value": 1.8
+          },
+          {
+            "dataset": "credit",
+            "value": 2.05
+          },
+          {
+            "dataset": "miniboone",
+            "value": 42.35
+          }
+        ]
+      },
+      "linear": {
+        "balanced_accuracy_mean": [
+          {
+            "dataset": "electricity",
+            "value": 0.740032
+          },
+          {
+            "dataset": "adult",
+            "value": 0.671569
+          },
+          {
+            "dataset": "california_housing",
+            "value": null
+          },
+          {
+            "dataset": "jannis",
+            "value": 0.728916
+          },
+          {
+            "dataset": "higgs_small",
+            "value": 0.633228
+          },
+          {
+            "dataset": "eye_movements",
+            "value": 0.560337
+          },
+          {
+            "dataset": "credit",
+            "value": 0.724362
+          },
+          {
+            "dataset": "miniboone",
+            "value": 0.872312
+          }
+        ],
+        "auc_mean": [
+          {
+            "dataset": "electricity",
+            "value": 0.818987
+          },
+          {
+            "dataset": "adult",
+            "value": 0.831613
+          },
+          {
+            "dataset": "california_housing",
+            "value": null
+          },
+          {
+            "dataset": "jannis",
+            "value": 0.805596
+          },
+          {
+            "dataset": "higgs_small",
+            "value": 0.679708
+          },
+          {
+            "dataset": "eye_movements",
+            "value": 0.584917
+          },
+          {
+            "dataset": "credit",
+            "value": 0.794695
+          },
+          {
+            "dataset": "miniboone",
+            "value": 0.94043
+          }
+        ],
+        "r2_mean": [
+          {
+            "dataset": "electricity",
+            "value": null
+          },
+          {
+            "dataset": "adult",
+            "value": null
+          },
+          {
+            "dataset": "california_housing",
+            "value": 0.601381
+          },
+          {
+            "dataset": "jannis",
+            "value": null
+          },
+          {
+            "dataset": "higgs_small",
+            "value": null
+          },
+          {
+            "dataset": "eye_movements",
+            "value": null
+          },
+          {
+            "dataset": "credit",
+            "value": null
+          },
+          {
+            "dataset": "miniboone",
+            "value": null
+          }
+        ],
+        "total_fit_time": [
+          {
+            "dataset": "electricity",
+            "value": 0.14
+          },
+          {
+            "dataset": "adult",
+            "value": 0.04
+          },
+          {
+            "dataset": "california_housing",
+            "value": 0.03
+          },
+          {
+            "dataset": "jannis",
+            "value": 5.49
+          },
+          {
+            "dataset": "higgs_small",
+            "value": 1.24
+          },
+          {
+            "dataset": "eye_movements",
+            "value": 0.05
+          },
+          {
+            "dataset": "credit",
+            "value": 0.06
+          },
+          {
+            "dataset": "miniboone",
+            "value": 26.58
+          }
+        ]
+      }
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "credit",
+      "examples": [
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.0,\"age\":61.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.286305337,\"MonthlyIncome\":7250.0,\"NumberOfOpenCreditLinesAndLoans\":5.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 6902,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.796410179,\"age\":48.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":0.28336731,\"MonthlyIncome\":8338.0,\"NumberOfOpenCreditLinesAndLoans\":9.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":2.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":3.0}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 1303,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.004351718,\"age\":31.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.15814031,\"MonthlyIncome\":6000.0,\"NumberOfOpenCreditLinesAndLoans\":4.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":1.0}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 183,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.063785323,\"age\":43.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":0.358580825,\"MonthlyIncome\":5016.0,\"NumberOfOpenCreditLinesAndLoans\":18.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":1.0}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 8256,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.392443607,\"age\":47.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.28579364,\"MonthlyIncome\":7200.0,\"NumberOfOpenCreditLinesAndLoans\":16.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":1.0}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 3000,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.022780051,\"age\":53.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.323067693,\"MonthlyIncome\":10000.0,\"NumberOfOpenCreditLinesAndLoans\":14.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":2.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":1.0}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 2615,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.021999154,\"age\":53.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":3.411043736,\"MonthlyIncome\":7750.0,\"NumberOfOpenCreditLinesAndLoans\":8.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 2532,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.069438631,\"age\":49.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.299699984,\"MonthlyIncome\":6332.0,\"NumberOfOpenCreditLinesAndLoans\":2.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":1.0}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 1746,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.9999999,\"age\":50.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":0.073769581,\"MonthlyIncome\":9000.0,\"NumberOfOpenCreditLinesAndLoans\":3.0,\"NumberOfTimes90DaysLate\":1.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":1.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 16254,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.056828985,\"age\":48.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.362922574,\"MonthlyIncome\":4584.0,\"NumberOfOpenCreditLinesAndLoans\":7.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 9418,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.72204872,\"age\":37.0,\"NumberOfTime30-59DaysPastDueNotWorse\":4.0,\"DebtRatio\":0.235770751,\"MonthlyIncome\":5059.0,\"NumberOfOpenCreditLinesAndLoans\":9.0,\"NumberOfTimes90DaysLate\":1.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":1.0,\"NumberOfDependents\":3.0}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 15661,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.517572518,\"age\":53.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":0.304592315,\"MonthlyIncome\":3200.0,\"NumberOfOpenCreditLinesAndLoans\":11.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":1.0}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 16262,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.509118382,\"age\":45.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.408892671,\"MonthlyIncome\":9400.0,\"NumberOfOpenCreditLinesAndLoans\":15.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":2.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":1.0}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 13663,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.727677844,\"age\":43.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":0.696327684,\"MonthlyIncome\":5663.0,\"NumberOfOpenCreditLinesAndLoans\":13.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 9309,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":1.141860298,\"age\":49.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":0.778060503,\"MonthlyIncome\":3536.0,\"NumberOfOpenCreditLinesAndLoans\":8.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":1.0,\"NumberOfDependents\":1.0}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 14424,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.9999999,\"age\":54.0,\"NumberOfTime30-59DaysPastDueNotWorse\":4.0,\"DebtRatio\":0.411070525,\"MonthlyIncome\":3558.0,\"NumberOfOpenCreditLinesAndLoans\":3.0,\"NumberOfTimes90DaysLate\":1.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":2.0,\"NumberOfDependents\":2.0}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 12585,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.12400254,\"age\":65.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.420587307,\"MonthlyIncome\":9500.0,\"NumberOfOpenCreditLinesAndLoans\":17.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":2.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 501,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.04080806,\"age\":36.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":0.007664112,\"MonthlyIncome\":3000.0,\"NumberOfOpenCreditLinesAndLoans\":6.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 442,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.466233349,\"age\":58.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.248041775,\"MonthlyIncome\":7276.0,\"NumberOfOpenCreditLinesAndLoans\":9.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 1337,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.012047126,\"age\":44.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.147385261,\"MonthlyIncome\":10000.0,\"NumberOfOpenCreditLinesAndLoans\":15.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":3.0}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 2690,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.098231102,\"age\":50.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.059169977,\"MonthlyIncome\":7300.0,\"NumberOfOpenCreditLinesAndLoans\":6.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 2908,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.018877082,\"age\":57.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.352700553,\"MonthlyIncome\":13200.0,\"NumberOfOpenCreditLinesAndLoans\":15.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":2.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":2.0}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 5799,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.9999999,\"age\":24.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.679738562,\"MonthlyIncome\":764.0,\"NumberOfOpenCreditLinesAndLoans\":2.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 6618,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.374059125,\"age\":78.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.48905576,\"MonthlyIncome\":6258.0,\"NumberOfOpenCreditLinesAndLoans\":10.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":2.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 376,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.441673867,\"age\":65.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.238800156,\"MonthlyIncome\":5133.0,\"NumberOfOpenCreditLinesAndLoans\":9.0,\"NumberOfTimes90DaysLate\":2.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 14123,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.429246744,\"age\":60.0,\"NumberOfTime30-59DaysPastDueNotWorse\":3.0,\"DebtRatio\":1.50041632,\"MonthlyIncome\":1200.0,\"NumberOfOpenCreditLinesAndLoans\":16.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 10421,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.851882962,\"age\":46.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":0.378373889,\"MonthlyIncome\":12040.0,\"NumberOfOpenCreditLinesAndLoans\":13.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":2.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":1.0}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 15853,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.9999999,\"age\":44.0,\"NumberOfTime30-59DaysPastDueNotWorse\":98.0,\"DebtRatio\":0.0,\"MonthlyIncome\":6283.0,\"NumberOfOpenCreditLinesAndLoans\":1.0,\"NumberOfTimes90DaysLate\":98.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":98.0,\"NumberOfDependents\":2.0}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 15101,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.7007525,\"age\":45.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":0.211802136,\"MonthlyIncome\":13200.0,\"NumberOfOpenCreditLinesAndLoans\":6.0,\"NumberOfTimes90DaysLate\":1.0,\"NumberRealEstateLoansOrLines\":3.0,\"NumberOfTime60-89DaysPastDueNotWorse\":1.0,\"NumberOfDependents\":1.0}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 15727,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.242218997,\"age\":56.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":1.401459854,\"MonthlyIncome\":684.0,\"NumberOfOpenCreditLinesAndLoans\":6.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 14048,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.043149829,\"age\":42.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.468318661,\"MonthlyIncome\":9200.0,\"NumberOfOpenCreditLinesAndLoans\":16.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":6.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":3.0}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 12744,
+          "predict_ebm": "0",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.9999999,\"age\":55.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.132851696,\"MonthlyIncome\":4982.0,\"NumberOfOpenCreditLinesAndLoans\":1.0,\"NumberOfTimes90DaysLate\":1.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 10646,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.073379082,\"age\":50.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.463487009,\"MonthlyIncome\":13816.0,\"NumberOfOpenCreditLinesAndLoans\":17.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":3.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":1.0}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 4496,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.0,\"age\":56.0,\"NumberOfTime30-59DaysPastDueNotWorse\":2.0,\"DebtRatio\":0.382423515,\"MonthlyIncome\":3333.0,\"NumberOfOpenCreditLinesAndLoans\":6.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":2.0}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 6459,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.020396861,\"age\":37.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.311746368,\"MonthlyIncome\":17000.0,\"NumberOfOpenCreditLinesAndLoans\":14.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":2.0}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 3108,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.123988581,\"age\":49.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.093913337,\"MonthlyIncome\":5930.0,\"NumberOfOpenCreditLinesAndLoans\":8.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":1.0}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 83,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.022443186,\"age\":77.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.011563216,\"MonthlyIncome\":9166.0,\"NumberOfOpenCreditLinesAndLoans\":13.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":1.0}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 7914,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.085767226,\"age\":66.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.29936538,\"MonthlyIncome\":13708.0,\"NumberOfOpenCreditLinesAndLoans\":20.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":2.0}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 8323,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.160447445,\"age\":59.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.166417653,\"MonthlyIncome\":8700.0,\"NumberOfOpenCreditLinesAndLoans\":7.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":2.0}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 1579,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.0,\"age\":50.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.391949426,\"MonthlyIncome\":7750.0,\"NumberOfOpenCreditLinesAndLoans\":8.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 7379,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.520696491,\"age\":58.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":1.092363055,\"MonthlyIncome\":2500.0,\"NumberOfOpenCreditLinesAndLoans\":13.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 12986,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":1.019150708,\"age\":42.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":0.090268886,\"MonthlyIncome\":3123.0,\"NumberOfOpenCreditLinesAndLoans\":1.0,\"NumberOfTimes90DaysLate\":1.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":4.0}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 11791,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.409374454,\"age\":51.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.701799903,\"MonthlyIncome\":18500.0,\"NumberOfOpenCreditLinesAndLoans\":21.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":6.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 11098,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":1.381546135,\"age\":46.0,\"NumberOfTime30-59DaysPastDueNotWorse\":2.0,\"DebtRatio\":0.119017571,\"MonthlyIncome\":10300.0,\"NumberOfOpenCreditLinesAndLoans\":7.0,\"NumberOfTimes90DaysLate\":1.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":2.0}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 9719,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.546625459,\"age\":40.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":0.098308891,\"MonthlyIncome\":14250.0,\"NumberOfOpenCreditLinesAndLoans\":4.0,\"NumberOfTimes90DaysLate\":1.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 10329,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":1.205801646,\"age\":61.0,\"NumberOfTime30-59DaysPastDueNotWorse\":3.0,\"DebtRatio\":0.178360883,\"MonthlyIncome\":8650.0,\"NumberOfOpenCreditLinesAndLoans\":12.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":1.0}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 15769,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.179494391,\"age\":63.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.442011046,\"MonthlyIncome\":5250.0,\"NumberOfOpenCreditLinesAndLoans\":5.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":2.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 11749,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.9999999,\"age\":30.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":0.109424181,\"MonthlyIncome\":5400.0,\"NumberOfOpenCreditLinesAndLoans\":4.0,\"NumberOfTimes90DaysLate\":3.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":2.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 2,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 9050,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.109053567,\"age\":63.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.417742229,\"MonthlyIncome\":5500.0,\"NumberOfOpenCreditLinesAndLoans\":7.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":4.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "0",
+          "metadata_fold": 3,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 935,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.0,\"age\":89.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.0,\"MonthlyIncome\":3333.0,\"NumberOfOpenCreditLinesAndLoans\":4.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "0",
+          "metadata_fold": 3,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 3835,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.0,\"age\":54.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.759056778,\"MonthlyIncome\":7590.0,\"NumberOfOpenCreditLinesAndLoans\":5.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":2.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "0",
+          "metadata_fold": 3,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 944,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.760598795,\"age\":47.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.321583357,\"MonthlyIncome\":3460.0,\"NumberOfOpenCreditLinesAndLoans\":8.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":2.0}",
+          "output": "0",
+          "metadata_fold": 3,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 3643,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.463053743,\"age\":32.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.505998957,\"MonthlyIncome\":3833.0,\"NumberOfOpenCreditLinesAndLoans\":10.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":2.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":1.0}",
+          "output": "0",
+          "metadata_fold": 3,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 3501,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.006274982,\"age\":57.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.258617406,\"MonthlyIncome\":5250.0,\"NumberOfOpenCreditLinesAndLoans\":11.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":3.0}",
+          "output": "0",
+          "metadata_fold": 3,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 7295,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.367333289,\"age\":56.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":1.044285112,\"MonthlyIncome\":4741.0,\"NumberOfOpenCreditLinesAndLoans\":20.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":2.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":1.0}",
+          "output": "0",
+          "metadata_fold": 3,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 2732,
+          "predict_ebm": "0",
+          "predict_random_forest": "1",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.208599838,\"age\":38.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.20463198,\"MonthlyIncome\":3151.0,\"NumberOfOpenCreditLinesAndLoans\":8.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":3.0}",
+          "output": "0",
+          "metadata_fold": 3,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 367,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.150901703,\"age\":40.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.311668833,\"MonthlyIncome\":10000.0,\"NumberOfOpenCreditLinesAndLoans\":27.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":3.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":5.0}",
+          "output": "1",
+          "metadata_fold": 3,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 13262,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.001882132,\"age\":35.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":0.330762639,\"MonthlyIncome\":5834.0,\"NumberOfOpenCreditLinesAndLoans\":5.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":4.0}",
+          "output": "1",
+          "metadata_fold": 3,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 14206,
+          "predict_ebm": "0",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.767448806,\"age\":79.0,\"NumberOfTime30-59DaysPastDueNotWorse\":3.0,\"DebtRatio\":0.657151152,\"MonthlyIncome\":20667.0,\"NumberOfOpenCreditLinesAndLoans\":33.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":3.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 3,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 9794,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.515013189,\"age\":42.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":3.407943732,\"MonthlyIncome\":2416.0,\"NumberOfOpenCreditLinesAndLoans\":19.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":6.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 3,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 12276,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.9999999,\"age\":39.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.003951211,\"MonthlyIncome\":5820.0,\"NumberOfOpenCreditLinesAndLoans\":0.0,\"NumberOfTimes90DaysLate\":1.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":3.0}",
+          "output": "1",
+          "metadata_fold": 3,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 9376,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":1.035964036,\"age\":43.0,\"NumberOfTime30-59DaysPastDueNotWorse\":2.0,\"DebtRatio\":0.354019159,\"MonthlyIncome\":2400.0,\"NumberOfOpenCreditLinesAndLoans\":10.0,\"NumberOfTimes90DaysLate\":2.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":1.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 3,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 14315,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.982806877,\"age\":38.0,\"NumberOfTime30-59DaysPastDueNotWorse\":5.0,\"DebtRatio\":0.876475669,\"MonthlyIncome\":3472.0,\"NumberOfOpenCreditLinesAndLoans\":8.0,\"NumberOfTimes90DaysLate\":2.0,\"NumberRealEstateLoansOrLines\":3.0,\"NumberOfTime60-89DaysPastDueNotWorse\":3.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 3,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 11490,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":1.210526316,\"age\":38.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":0.012567838,\"MonthlyIncome\":3500.0,\"NumberOfOpenCreditLinesAndLoans\":2.0,\"NumberOfTimes90DaysLate\":7.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":1.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 3,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 15719,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.138739657,\"age\":47.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.1377964,\"MonthlyIncome\":10500.0,\"NumberOfOpenCreditLinesAndLoans\":11.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "0",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 5707,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.248649932,\"age\":55.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.078733471,\"MonthlyIncome\":8242.0,\"NumberOfOpenCreditLinesAndLoans\":8.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "0",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 8164,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.853629274,\"age\":56.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.402444988,\"MonthlyIncome\":2044.0,\"NumberOfOpenCreditLinesAndLoans\":7.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "0",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 3543,
+          "predict_ebm": "0",
+          "predict_random_forest": "1",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.003407542,\"age\":66.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.018396321,\"MonthlyIncome\":5000.0,\"NumberOfOpenCreditLinesAndLoans\":7.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "0",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 5239,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.9999999,\"age\":54.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.001469328,\"MonthlyIncome\":8166.0,\"NumberOfOpenCreditLinesAndLoans\":2.0,\"NumberOfTimes90DaysLate\":1.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":1.0,\"NumberOfDependents\":2.0}",
+          "output": "0",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 1529,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.540147428,\"age\":41.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":0.430742568,\"MonthlyIncome\":7500.0,\"NumberOfOpenCreditLinesAndLoans\":10.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":1.0}",
+          "output": "0",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 6376,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.073251754,\"age\":51.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.446688128,\"MonthlyIncome\":10250.0,\"NumberOfOpenCreditLinesAndLoans\":9.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":2.0}",
+          "output": "0",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 660,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.442968912,\"age\":50.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.167196141,\"MonthlyIncome\":8498.0,\"NumberOfOpenCreditLinesAndLoans\":11.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":1.0}",
+          "output": "0",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 493,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.9999999,\"age\":31.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":0.678390749,\"MonthlyIncome\":4150.0,\"NumberOfOpenCreditLinesAndLoans\":3.0,\"NumberOfTimes90DaysLate\":2.0,\"NumberRealEstateLoansOrLines\":3.0,\"NumberOfTime60-89DaysPastDueNotWorse\":3.0,\"NumberOfDependents\":1.0}",
+          "output": "1",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 15493,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.968063872,\"age\":23.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.003230272,\"MonthlyIncome\":4333.0,\"NumberOfOpenCreditLinesAndLoans\":2.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 11265,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.956690727,\"age\":50.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.055145362,\"MonthlyIncome\":4333.0,\"NumberOfOpenCreditLinesAndLoans\":5.0,\"NumberOfTimes90DaysLate\":4.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 12084,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":1.00419958,\"age\":56.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.766327396,\"MonthlyIncome\":2357.0,\"NumberOfOpenCreditLinesAndLoans\":6.0,\"NumberOfTimes90DaysLate\":1.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 9409,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.9999999,\"age\":25.0,\"NumberOfTime30-59DaysPastDueNotWorse\":0.0,\"DebtRatio\":0.275886032,\"MonthlyIncome\":1438.0,\"NumberOfOpenCreditLinesAndLoans\":2.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":1.0}",
+          "output": "1",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 11273,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.9999999,\"age\":52.0,\"NumberOfTime30-59DaysPastDueNotWorse\":1.0,\"DebtRatio\":0.131982402,\"MonthlyIncome\":7500.0,\"NumberOfOpenCreditLinesAndLoans\":5.0,\"NumberOfTimes90DaysLate\":0.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 9602,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "0"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":1.191616766,\"age\":62.0,\"NumberOfTime30-59DaysPastDueNotWorse\":3.0,\"DebtRatio\":0.182461987,\"MonthlyIncome\":4800.0,\"NumberOfOpenCreditLinesAndLoans\":6.0,\"NumberOfTimes90DaysLate\":3.0,\"NumberRealEstateLoansOrLines\":0.0,\"NumberOfTime60-89DaysPastDueNotWorse\":1.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 12936,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        },
+        {
+          "input": "{\"RevolvingUtilizationOfUnsecuredLines\":0.985002586,\"age\":56.0,\"NumberOfTime30-59DaysPastDueNotWorse\":4.0,\"DebtRatio\":0.428350356,\"MonthlyIncome\":3230.0,\"NumberOfOpenCreditLinesAndLoans\":6.0,\"NumberOfTimes90DaysLate\":2.0,\"NumberRealEstateLoansOrLines\":1.0,\"NumberOfTime60-89DaysPastDueNotWorse\":0.0,\"NumberOfDependents\":0.0}",
+          "output": "1",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "RevolvingUtilizationOfUnsecuredLines",
+            "age",
+            "NumberOfTime30-59DaysPastDueNotWorse",
+            "DebtRatio",
+            "MonthlyIncome",
+            "NumberOfOpenCreditLinesAndLoans",
+            "NumberOfTimes90DaysLate",
+            "NumberRealEstateLoansOrLines",
+            "NumberOfTime60-89DaysPastDueNotWorse",
+            "NumberOfDependents"
+          ],
+          "metadata_task_type": "binary_classification",
+          "metadata_n_classes": 2,
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_credit",
+          "metadata_row_index": 11917,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1"
+        }
+      ]
+    }
+  ]
+}
