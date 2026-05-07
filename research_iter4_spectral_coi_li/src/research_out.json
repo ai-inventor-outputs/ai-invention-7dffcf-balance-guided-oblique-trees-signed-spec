@@ -1,0 +1,173 @@
+{
+  "title": "Spectral CoI Modules for Oblique Trees: Literature Survey",
+  "summary": "Four-thread literature survey confirming a clear novelty gap: no prior work combines spectral clustering on information-theoretic (MI/Co-Information) feature interaction graphs with oblique decision tree split construction. Covers spectral feature grouping methods (gap confirmed), Co-Information estimation bias (KSG underestimates joint MI biasing CoI negative toward apparent synergy), state-of-the-art interpretable oblique trees (none use IT criteria for feature selection), and paper positioning (Framing C recommended: Spectral Decomposition of Feature Interactions for Constrained Oblique Trees). Includes comparison table of oblique tree methods and three candidate framings with risk mitigations.",
+  "answer": "This four-thread literature survey confirms a clear novelty gap: no prior work combines spectral clustering on an information-theoretic (MI or Co-Information) feature interaction graph with oblique decision tree split construction. The survey covers spectral feature grouping methods, Co-Information estimation bias, state-of-the-art interpretable oblique trees, and paper positioning strategies.\n\n**THREAD 1 - Spectral Feature Grouping for Tree Learning: Gap Confirmed.**\nThe closest prior work in spectral feature selection is Zhao & Liu (2007) [1], who proposed SPEC, a unified spectral framework using graph Laplacians for feature selection. However, SPEC evaluates features INDIVIDUALLY via spectral scores projected onto eigenvectors of the graph Laplacian -- it does NOT group features for joint use in splits, and has no connection to tree construction. Zheng et al. (2020) [2] proposed graph-based feature grouping (GBFG) using minimum spanning trees on three-way mutual information metrics, clustering redundant features together. This is the closest to our graph-based grouping approach, but it uses MST rather than spectral clustering, focuses on redundancy removal rather than synergy exploitation, and has no connection to oblique trees. A comprehensive review of feature grouping approaches [3] confirms that MST-based methods dominate graph-based feature grouping, with NO spectral clustering methods documented for this purpose. No method in the review distinguishes synergy from redundancy or connects to oblique tree construction.\n\nPIDF (Westphal et al., AISTATS 2025) [4] is a key related work that decomposes per-feature synergy and redundancy using Partial Information Decomposition. It computes Feature-Wise Synergy (FWS) and Feature-Wise Redundancy (FWR) with a pairwise theta measure for synergy/redundancy detection. However, PIDF does NOT build a graph, does NOT use spectral methods, does NOT connect to tree learning, uses MINE neural estimator with O(k^2) complexity, and takes 45 minutes for 6-feature datasets on GPU clusters.\n\nInteraction Forests (Hornung & Boulesteix, 2022) [5] detect feature interactions via bivariate splits in random forest trees, using the EIM (Effect Importance Measure) to rank covariate pairs. The method is purely structural (tree co-occurrence based), NOT information-theoretic, does NOT build a graph, and uses a screening step for >100 features (pre-selecting top 5000 pairs). A recent extension, Unity Forests (2026) [6], addresses sequential split selection limitations but still uses structural rather than information-theoretic interaction detection.\n\nFoLDTree (2024) [7] uses Forward ULDA (Fisher's criterion) for oblique splits with intrinsic variable selection -- NOT information-theoretic. The BioData Mining 2025 paper on Feature Graphs for Interpretable Unsupervised Tree Ensembles [8] builds feature graphs from tree ensembles POST-HOC (after fitting), using parent-child node splits as edges, and can apply spectral clustering to these graphs. However, this is fundamentally different from our approach: the graph is built AFTER tree fitting for interpretation, not BEFORE to guide tree construction, and the edge weights are structural co-occurrence, not information-theoretic.\n\n**THREAD 2 - Co-Information Properties & Estimation Bias.**\nCo-Information was introduced by Bell (2003) [9] as a renaming of McGill's (1954) interaction information [10]. Two OPPOSITE sign conventions exist in the literature: in Bell's co-information convention, positive = redundancy and negative = synergy; in the interaction information convention (used by some authors), the signs are reversed [11]. The formula for three variables is I(X;Y;Z) = I(X;Y|Z) - I(X;Y). Negative co-information (synergy in Bell's convention) is WIDESPREAD in empirical data [12], a phenomenon that has been a standing interpretive puzzle since the 1950s. The prevalence of synergy is partly explained by the ubiquity of collider (common-effect) causal structures in nature, which naturally induce synergistic dependencies [12].\n\nCritically, estimation bias systematically inflates apparent synergy. For discrete estimators, PID sampling bias analysis [13] shows that synergy bias is QUADRATIC in the number of discrete response states, while redundancy bias is only sub-linear. This means finite-sample estimates are artificially biased toward synergy. O-information estimation [14] shows that independent systems are severely biased toward synergy when sample size is smaller than the number of jointly possible observations. The Miller-Maddow correction can partially address this.\n\nFor KSG (continuous) estimators, Gao et al. (2015) [15] demonstrated that KSG requires exponentially many samples for strongly dependent variables due to implicit reliance on local uniformity of the underlying joint distribution. The LNC (Local Non-uniformity Correction) estimator was proposed as a fix. KSG systematically UNDERESTIMATES mutual information [16, 17], especially for high-dimensional joint distributions, due to the curse of dimensionality. This has direct implications for Co-Information estimation: CoI = I(Xi;Y) + I(Xj;Y) - I(Xi,Xj;Y). If KSG underestimates the joint MI I(Xi,Xj;Y) (which involves higher-dimensional density estimation), CoI will be biased NEGATIVE (toward apparent synergy). This is consistent with the observed near-universal negativity of Co-Information in experiments. Gao et al. (2016) [18] showed KSG is consistent under standard assumptions and proposed the BI-KSG (Bias-Improved KSG) estimator exploiting a 'correlation boosting' effect. Holmes & Nemenman (2019) [19] provided a self-consistent method for verifying absence of bias and choosing the k parameter. Gaussian PID bias correction (NeurIPS 2023) [20] addressed bias at finite sample sizes for Gaussian distributions specifically.\n\nTimme et al. (2014) [21] reviewed multivariate information measures from an experimentalist's perspective, comparing interaction information, total correlation, and other measures, noting that synergy and redundancy have been treated as mutually exclusive by some authors based on the sign of interaction information. Co-information confounds synergy and redundancy -- it can underreport synergy when both are simultaneously present [12, 21].\n\n**THREAD 3 - Interpretable Oblique Trees: State of the Art.**\nNO existing oblique tree method uses information-theoretic criteria to select which features to combine in splits. TAO (Carreira-Perpinan & Tavallali, NeurIPS 2018) [22] uses alternating optimization with L1 sparsity penalty on split weights, optimizing each node as a simple classifier. Sparsity is achieved via l1 regularization (LASSO-like path), but feature selection is purely loss-driven, not information-theoretic. Sparse Oblique Trees (Hada et al., 2021/2023) [23] apply TAO to neural net feature interpretation using L1 regularization. LHT (2025) [24] uses statistical class-separation (differences in feature expectations between classes) with threshold parameters alpha (variance) and beta (weight) to filter features -- NOT information-theoretic. CART-ELC (2025) [25] performs exhaustive search on restricted hyperplanes with complexity Theta(C(n,r)*C(m,r)*r(r^2+n)), practically limited to bivariate splits (r<=2). EBM/GA2M (Lou et al., KDD 2013) [26] uses the FAST algorithm to rank feature pairs by interaction strength via boosting residuals (statistical, not information-theoretic), producing additive models with pairwise terms rather than oblique tree splits [27]. FIGS (Tan & Singh, 2022) [28] extends CART to simultaneously grow tree sums, using axis-aligned splits with no information-theoretic criteria.\n\nThe comparison table clearly shows our method fills a unique niche: it is the ONLY approach that uses information-theoretic criteria (Co-Information) to build a feature interaction graph, applies spectral decomposition to identify interaction modules, and constrains oblique splits to use features within these modules.\n\n**THREAD 4 - Paper Positioning.**\nGiven the confirmed literature gap and the empirical findings (unsigned spectral clustering works as well as signed, spectral modules reduce split arity, frustration index does not predict oblique split benefit), Framing C ('Spectral Decomposition of Feature Interactions for Constrained Oblique Trees') is recommended as the strongest positioning. The signed spectral clustering methodology draws on SPONGE [29] and its regularized extensions [30], but the key finding that unsigned clustering on |CoI| performs equally well simplifies the practical method. This framing: (1) is the most general, allowing presentation of both positive (arity reduction) and negative (no signed advantage) results as contributions; (2) bridges three distinct fields (information theory, spectral graph methods, interpretable tree learning) in a novel combination; (3) avoids over-claiming about signed spectral advantage; (4) positions the signed vs unsigned result as an ablation finding rather than a failure; (5) emphasizes the confirmed novelty gap. The importance of tree-based methods for tabular data is well-established by benchmarks showing they outperform deep learning [31]. Elements of Framing A (interpretability through principled sparsity) should be incorporated for the interpretability narrative. Framing B (diagnostic/analytical) risks framing around negative results, which is harder to publish.",
+  "sources": [
+    {"index": 1, "url": "https://dl.acm.org/doi/abs/10.1145/1273496.1273641", "title": "Zhao & Liu (2007) - Spectral Feature Selection for Supervised and Unsupervised Learning, ICML", "summary": "Unified spectral framework using graph Laplacians for feature selection; evaluates features individually via spectral scores, does NOT group features for joint splits or connect to tree construction"},
+    {"index": 2, "url": "https://www.sciencedirect.com/science/article/abs/pii/S0020025520309336", "title": "Zheng et al. (2020) - Feature Grouping and Selection: A Graph-Based Approach, Information Sciences", "summary": "Graph-based feature grouping using MST and three-way MI metrics; closest to graph-based grouping but uses MST not spectral clustering, no oblique tree connection"},
+    {"index": 3, "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10358338/", "title": "PeerJ CS (2023) - Review of Feature Selection Approaches Based on Grouping of Features", "summary": "Comprehensive review confirming MST dominance in graph-based feature grouping; no spectral clustering methods documented for feature grouping in tree learning context"},
+    {"index": 4, "url": "https://arxiv.org/html/2405.19212", "title": "Westphal et al. (2025) - PIDF: Per-feature Synergy/Redundancy via PID, AISTATS", "summary": "Key related work decomposing feature synergy/redundancy using PID; no graph, no spectral methods, no tree connection, O(k^2) complexity with MINE neural estimator"},
+    {"index": 5, "url": "https://www.sciencedirect.com/science/article/pii/S0167947322000408", "title": "Hornung & Boulesteix (2022) - Interaction Forests, Computational Statistics & Data Analysis", "summary": "Tree-structural interaction detection with EIM measure; purely structural co-occurrence based, NOT information-theoretic, no graph construction"},
+    {"index": 6, "url": "https://arxiv.org/html/2601.07003", "title": "Unity Forests (2026) - Improving Interaction Modelling in Random Forests", "summary": "Extension of Interaction Forests addressing sequential split selection limitations; still uses structural rather than information-theoretic interaction detection"},
+    {"index": 7, "url": "https://arxiv.org/html/2410.23147", "title": "FoLDTree (2024) - Forward ULDA Oblique Decision Trees", "summary": "Oblique tree with Forward ULDA feature selection based on Fisher's criterion; NOT information-theoretic, no interaction graph"},
+    {"index": 8, "url": "https://biodatamining.biomedcentral.com/articles/10.1186/s13040-025-00430-3", "title": "Feature Graphs for Interpretable Unsupervised Tree Ensembles (BioData Mining, 2025)", "summary": "Builds feature graphs POST-HOC from tree ensembles for interpretation; uses spectral clustering but after tree fitting, not before to guide construction; structural not IT"},
+    {"index": 9, "url": "https://www.semanticscholar.org/paper/THE-CO-INFORMATION-LATTICE-Bell/25a0cd8d486d5ffd204485685226f189e6eadd4d", "title": "Bell (2003) - The Co-Information Lattice, ICA 2003", "summary": "Introduced co-information terminology and lattice structure via Mobius inversion; positive = redundancy, negative = synergy sign convention"},
+    {"index": 10, "url": "https://en.wikipedia.org/wiki/Interaction_information", "title": "Interaction Information - Wikipedia (McGill 1954 definition)", "summary": "Original definition of interaction information by McGill (1954); documents sign conventions and relationship to co-information"},
+    {"index": 11, "url": "https://en-academic.com/dic.nsf/enwiki/3582538", "title": "Interaction Information - en-academic", "summary": "Detailed sign conventions for interaction information: negative II = common cause (redundancy), positive II = common effect/collider (synergy)"},
+    {"index": 12, "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11507062/", "title": "Synergistic Perspective on Multivariate Computation and Causality (PMC, 2024)", "summary": "Confirms negative co-information (synergy) is widespread in empirical data; explains prevalence via collider causal structures; notes co-information confounds synergy and redundancy"},
+    {"index": 13, "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11185652/", "title": "Sampling Bias Corrections for Accurate Neural Measures of Redundant, Unique, and Synergistic Information (PMC, 2024)", "summary": "Synergy bias is QUADRATIC in number of discrete response states while redundancy bias is sub-linear; finite-sample estimates are artificially biased toward synergy"},
+    {"index": 14, "url": "https://www.mdpi.com/1099-4300/26/10/837", "title": "Bias in O-Information Estimation (Entropy, 2024)", "summary": "O-information of independent systems severely biased toward synergy when sample size < number of jointly possible observations; Miller-Maddow correction derived"},
+    {"index": 15, "url": "https://proceedings.mlr.press/v38/gao15.html", "title": "Gao et al. (2015) - Efficient Estimation of MI for Strongly Dependent Variables, AISTATS", "summary": "KSG requires exponentially many samples for strongly dependent variables due to local uniformity assumption failure; proposed LNC (Local Non-uniformity Correction) estimator"},
+    {"index": 16, "url": "https://arxiv.org/html/2410.07642v1", "title": "Improving Numerical Stability of NMI Estimation in High Dimensions (2024)", "summary": "Documents KSG systematic underestimation of MI in high dimensions due to curse of dimensionality; dimension-dependent bias"},
+    {"index": 17, "url": "https://arxiv.org/pdf/2110.13883", "title": "Marx & Fischer - Geodesic KSG (G-KSG) for MI Estimation", "summary": "Proposes G-KSG using geodesic distances to address classical KSG over/underestimation in high dimensions and on manifolds"},
+    {"index": 18, "url": "https://arxiv.org/pdf/1604.03006", "title": "Gao et al. (2016) - Demystifying Fixed k-NN Information Estimators", "summary": "Proves KSG consistency under standard assumptions; proposes BI-KSG via correlation boosting effect for improved finite-sample performance"},
+    {"index": 19, "url": "https://arxiv.org/abs/1903.09280", "title": "Holmes & Nemenman (2019) - Estimation of MI with Error Bars and Controlled Bias, Phys. Rev. E", "summary": "Improved KSG method with self-consistent bias verification, error bars, and guidelines for choosing k parameter"},
+    {"index": 20, "url": "https://arxiv.org/abs/2307.10515", "title": "Gaussian PID Bias Correction (NeurIPS 2023)", "summary": "First bias correction method for Gaussian Partial Information Decomposition at finite sample sizes; works at high dimensionality"},
+    {"index": 21, "url": "https://pubmed.ncbi.nlm.nih.gov/23820856/", "title": "Timme et al. (2014) - Synergy, Redundancy, and Multivariate Information Measures, J. Comp. Neurosci.", "summary": "Reviews multivariate information measures from experimentalist's perspective; discusses sign-based synergy/redundancy interpretations and their limitations"},
+    {"index": 22, "url": "https://proceedings.neurips.cc/paper/2018/hash/185c29dc24325934ee377cfda20e414c-Abstract.html", "title": "Carreira-Perpinan & Tavallali (2018) - TAO: Alternating Optimization of Decision Trees, NeurIPS", "summary": "State-of-art oblique tree using alternating optimization with L1 sparsity penalty; purely loss-driven feature selection, no IT criteria"},
+    {"index": 23, "url": "https://arxiv.org/abs/2104.02922", "title": "Hada et al. (2021/2023) - Sparse Oblique Decision Trees for Neural Net Features", "summary": "TAO-based sparse oblique trees applied to neural net feature interpretation; L1 regularization approach, no IT criteria"},
+    {"index": 24, "url": "https://arxiv.org/html/2505.04139v1", "title": "LHT (2025) - Statistically-Driven Oblique Decision Trees", "summary": "Uses statistical class-separation (feature mean differences) with alpha/beta thresholds; NOT information-theoretic"},
+    {"index": 25, "url": "https://arxiv.org/html/2505.05402", "title": "CART-ELC (2025) - Exhaustive Linear Combinations for Oblique Trees", "summary": "Exhaustive search on restricted hyperplanes; practically limited to bivariate splits (r<=2); built-in sparsity via r parameter"},
+    {"index": 26, "url": "https://www.cs.cornell.edu/~yinlou/papers/lou-kdd13.pdf", "title": "Lou et al. (2013) - GA2M: Accurate Intelligible Models with Pairwise Interactions, KDD", "summary": "FAST algorithm ranks feature pairs by interaction strength via boosting residuals; statistical not IT; produces additive models not oblique trees"},
+    {"index": 27, "url": "https://interpret.ml/docs/ebm.html", "title": "InterpretML - EBM Documentation", "summary": "EBM implementation of GA2M: cyclic gradient boosting with automatic pairwise interaction detection via FAST; additive model structure"},
+    {"index": 28, "url": "https://arxiv.org/abs/2201.11931", "title": "Tan & Singh (2022) - FIGS: Fast Interpretable Greedy-Tree Sums", "summary": "Axis-aligned tree sums with additive structure; no IT criteria; no oblique splits; greedy residual-based growth"},
+    {"index": 29, "url": "https://arxiv.org/abs/1904.08575", "title": "Cucuringu et al. (2019) - SPONGE: Signed Spectral Clustering, AISTATS", "summary": "Principled signed spectral clustering via generalized eigenproblem on positive/negative adjacency matrices; theoretical guarantees for signed SBM"},
+    {"index": 30, "url": "https://www.jmlr.org/papers/v22/20-1289.html", "title": "Cucuringu et al. (2021) - Regularized Signed Spectral Methods, JMLR", "summary": "Extends SPONGE to unequal cluster sizes and sparse graphs with regularization; enables practical signed spectral clustering"},
+    {"index": 31, "url": "https://arxiv.org/abs/2207.08815", "title": "Grinsztajn et al. (2022) - Why Tree-Based Models Outperform Deep Learning on Tabular Data, NeurIPS", "summary": "Benchmark establishing tree-based models as state-of-the-art on tabular data; motivates improving tree methods over deep learning alternatives"}
+  ],
+  "follow_up_questions": [
+    "Does KSG negative bias for joint MI systematically inflate apparent synergy in Co-Information, and can this be verified on synthetic data with known ground truth CoI values?",
+    "Are there datasets where signed spectral clustering on the Co-Information graph outperforms unsigned, perhaps with specific causal structures (e.g., mixture of common-cause and collider structures)?",
+    "Could alternative MI estimators (LNC-KSG, BI-KSG, or G-KSG) reduce the apparent synergy dominance in Co-Information estimates, potentially changing the spectral structure of the interaction graph and downstream oblique split quality?",
+    "Would hierarchical spectral clustering (recursive bisection) on the CoI graph produce better-calibrated interaction modules than flat k-way spectral clustering?"
+  ],
+  "thread_findings": {
+    "spectral_feature_grouping": {
+      "gap_confirmed": true,
+      "closest_prior_work": "Zheng et al. (2020) uses MST-based feature grouping with three-way MI metrics, and Zhao & Liu (2007) uses spectral methods for individual feature ranking. Neither combines spectral clustering on an IT feature interaction graph with oblique tree split construction.",
+      "key_differentiators": [
+        "SPEC (Zhao & Liu 2007): Spectral but evaluates features individually, no grouping for joint splits",
+        "GBFG (Zheng et al. 2020): MI-based grouping but uses MST not spectral clustering, no tree connection",
+        "PIDF (Westphal et al. 2025): PID-based synergy/redundancy but no graph, no spectral, no trees",
+        "Interaction Forests (Hornung & Boulesteix 2022): Tree interaction detection but structural not IT",
+        "Feature Graphs (BioData Mining 2025): Post-hoc graph from trees, not pre-construction guidance",
+        "FoLDTree (2024): Oblique with ULDA, not IT; no interaction graph"
+      ],
+      "gap_statement": "No prior work combines spectral clustering on an information-theoretic (MI or Co-Information) feature interaction graph with oblique decision tree split construction. Existing spectral feature selection evaluates features individually. Existing interaction detection does not build exploitable graph structure. Existing oblique trees do not use IT criteria to select which features to combine.",
+      "key_papers": [
+        "Zhao & Liu 2007 (SPEC)",
+        "Zheng et al. 2020 (GBFG)",
+        "PeerJ CS 2023 (Review)",
+        "Westphal et al. 2025 (PIDF)",
+        "Hornung & Boulesteix 2022 (Interaction Forests)",
+        "FoLDTree 2024",
+        "BioData Mining 2025 (Feature Graphs)"
+      ]
+    },
+    "co_information_properties": {
+      "sign_distribution_known": true,
+      "sign_conventions": {
+        "bell_co_information": "Positive = redundancy, Negative = synergy",
+        "mcgill_interaction_information": "Signs reversed from Bell convention",
+        "warning": "Authors MUST specify which convention they use; the two are negatives of each other"
+      },
+      "empirical_sign_prevalence": "Negative co-information (synergy in Bell convention) is widespread in empirical data. This is partly explained by the ubiquity of collider causal structures. Co-information confounds synergy and redundancy, so pure negativity may underreport cases where both are present.",
+      "bias_risk": "HIGH. Three independent bias mechanisms all push toward apparent synergy: (1) Discrete PID bias is quadratic for synergy, sub-linear for redundancy; (2) O-information of independent systems biased toward synergy with small samples; (3) KSG underestimates joint MI (higher-dimensional) more than marginal MIs, making CoI = I(Xi;Y) + I(Xj;Y) - I(Xi,Xj;Y) biased negative. The observed near-universal negativity of CoI may be partly artifactual.",
+      "ksg_specific_risks": [
+        "KSG requires exponentially many samples for strongly dependent variables (Gao 2015)",
+        "KSG systematically underestimates MI, especially in higher dimensions",
+        "Joint MI I(Xi,Xj;Y) involves higher-dimensional density estimation than marginal MIs",
+        "This differential underestimation biases CoI negative (toward apparent synergy)",
+        "KSG fails with added independent dimensions (estimates 0 MI)"
+      ],
+      "recommended_mitigations": [
+        "Compare KSG vs LNC-KSG (Gao 2015) vs BI-KSG (Gao 2016) on synthetic data with known ground truth",
+        "Use Holmes & Nemenman (2019) self-consistent bias verification",
+        "Include bias analysis section in paper comparing estimators",
+        "Report results with multiple k values to check stability"
+      ],
+      "key_papers": [
+        "Bell 2003 (co-information lattice)",
+        "McGill 1954 (interaction information)",
+        "Timme et al. 2014 (measures review)",
+        "PMC 2024 (PID sampling bias)",
+        "Entropy 2024 (O-information bias)",
+        "Gao et al. 2015 (KSG bias for dependent variables)",
+        "Gao et al. 2016 (Demystifying KSG)",
+        "Holmes & Nemenman 2019 (improved KSG)",
+        "NeurIPS 2023 (Gaussian PID bias)"
+      ]
+    },
+    "interpretable_oblique_trees": {
+      "comparison_table": "| Method | How features selected for split | Info-theoretic? | Sparsity metric | Connection to feature interactions |\n|--------|-------------------------------|-----------------|-----------------|------------------------------------|\n| TAO (2018) | L1 penalty on split weights | No | ||w||_0 implicitly | No |\n| Sparse OT (2021) | L1 regularization via TAO | No | Nonzero coefficients | No |\n| LHT (2025) | Class-separation statistics | No | Threshold beta | No |\n| FoLDTree (2024) | Forward ULDA | No | ULDA intrinsic | No |\n| CART-ELC (2025) | Exhaustive search | No | Bivariate (r<=2) | No |\n| STree | SVM at each node | No | SVM support | No |\n| EBM/GA2M (2013) | FAST pairwise ranking | No (statistical) | Pairwise terms | Yes (detection only) |\n| FIGS (2022) | Greedy residual reduction | No | Tree count + splits | No (additive) |\n| **Ours** | Spectral modules from CoI graph | **Yes** | Module-constrained arity | **Yes (graph structure)** |",
+      "it_criteria_used_by_any_existing_method": false,
+      "key_insight": "All existing oblique tree methods select features for splits via loss-driven optimization (L1/L2 penalties), statistical criteria (class separation, ULDA), or exhaustive search. NONE use information-theoretic measures to determine which features should be combined. EBM uses statistical interaction detection but produces additive models, not oblique tree splits.",
+      "key_papers": [
+        "Carreira-Perpinan & Tavallali 2018 (TAO)",
+        "Hada et al. 2021/2023 (Sparse OT)",
+        "LHT 2025",
+        "FoLDTree 2024",
+        "CART-ELC 2025",
+        "Lou et al. 2013 (GA2M/EBM)",
+        "Tan & Singh 2022 (FIGS)"
+      ]
+    },
+    "paper_positioning": {
+      "recommended_framing": "C",
+      "framing_details": {
+        "A": {
+          "title": "CoI-Guided Feature Grouping for Sparse Oblique Splits",
+          "emphasis": "Interpretability through principled sparsity",
+          "core_claim": "Computing all-pairs Co-Information and clustering features into interaction modules produces oblique splits that are both accurate and sparse (few features per split), making them interpretable.",
+          "novelty": "First method to use information-theoretic feature interaction structure to constrain oblique split construction.",
+          "risk": "Overstates accuracy contribution; accuracy improvement may be modest"
+        },
+        "B": {
+          "title": "When Does Synergy Structure Help Oblique Trees?",
+          "emphasis": "Diagnostic/analytical contribution",
+          "core_claim": "We characterize when and how feature synergy structure can improve oblique trees, finding spectral decomposition helps interpretability but not accuracy, and signed structure is not more informative than magnitude alone.",
+          "novelty": "First systematic study of whether IT interaction structure is useful for oblique tree construction.",
+          "risk": "Framing around negative results is harder to publish"
+        },
+        "C": {
+          "title": "Spectral Decomposition of Feature Interactions for Constrained Oblique Trees",
+          "emphasis": "General methodology bridging three fields",
+          "core_claim": "We propose a pipeline that (1) computes pairwise Co-Information, (2) builds a feature interaction graph, (3) decomposes it via spectral clustering into interaction modules, and (4) constrains oblique splits to use features within modules, producing interpretable oblique splits with controlled arity.",
+          "novelty": "Bridges information theory, spectral graph methods, and interpretable tree learning in a novel combination.",
+          "advantages": [
+            "Most general framing allows presenting both positive and negative results as contributions",
+            "Signed vs unsigned result becomes ablation finding, not failure",
+            "Emphasizes confirmed novelty gap across three fields",
+            "Interpretability narrative (arity reduction) is the primary positive result",
+            "Estimation bias discussion adds depth and scientific rigor"
+          ]
+        }
+      },
+      "recommended_framing_rationale": "Framing C is recommended because: (1) the literature gap analysis (Thread 1) confirms no prior work combines spectral clustering on IT graphs with oblique trees, making the methodological contribution clear; (2) the interpretability angle (Thread 3) shows no existing oblique tree uses IT criteria, establishing clear differentiation; (3) the Co-Information bias analysis (Thread 2) can be presented as a methodological contribution; (4) the signed vs unsigned result becomes a valuable ablation finding rather than the paper's central claim.",
+      "title_suggestions": [
+        "Spectral Decomposition of Feature Interactions for Constrained Oblique Trees",
+        "Information-Theoretic Feature Modules for Interpretable Oblique Decision Trees",
+        "Co-Information Spectral Modules: Bridging Feature Interactions and Oblique Tree Sparsity",
+        "From Feature Interaction Graphs to Sparse Oblique Splits via Spectral Clustering"
+      ],
+      "key_risks_and_mitigations": [
+        {
+          "risk": "Accuracy improvement over unconstrained oblique trees may be modest or absent",
+          "mitigation": "Frame interpretability (arity reduction) as the primary contribution; accuracy parity is sufficient"
+        },
+        {
+          "risk": "Near-universal negativity of CoI may be partly estimation artifact",
+          "mitigation": "Include bias analysis section; argue method works regardless of sign (unsigned clustering performs equally)"
+        },
+        {
+          "risk": "Signed spectral clustering offers no advantage over unsigned",
+          "mitigation": "Present as ablation finding showing |CoI| magnitude suffices; reduces practitioner burden"
+        },
+        {
+          "risk": "Scalability of all-pairs CoI computation for many features",
+          "mitigation": "Document O(p^2 * n * log(n)) complexity; compare to PIDF's O(k^2) with neural estimator"
+        }
+      ]
+    }
+  }
+}

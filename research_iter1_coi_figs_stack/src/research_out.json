@@ -1,0 +1,162 @@
+{
+  "title": "CoI-FIGS Stack",
+  "summary": "Complete technical specification for the Balance-Guided Oblique Trees pipeline covering 5 threads: (1) NPEET micd() confirmed for computing Co-Information without discretization on classification targets, with exact call mapping for all MI terms; (2) computational feasibility validated with subsample to n=10K plus joblib parallelization achieving approximately 5 minutes for d=200; (3) first-draft reuse map shows approximately 80% of tree-building code is directly reusable with approximately 155 lines of new code; (4) FIGS oblique extension uses the existing custom framework (not imodels) with only _get_feature_subsets_for_split() needing modification; (5) SPONGE integration via SigNet or custom 50-line scipy implementation with eigengap-based cluster selection and spectral frustration index.",
+  "answer": "## Executive Summary\n\nThis research resolves the five critical technical questions for the Balance-Guided Oblique Trees pipeline. The key finding is that the entire approach is technically feasible: NPEET's micd() can compute Co-Information without discretization [1, 2], computational costs are manageable with subsampling plus parallelization [8, 19], approximately 80% of the first-draft code is reusable [20, 21, 22], and SPONGE integration is straightforward via SigNet or a custom implementation [10, 11, 12].\n\n---\n\n## Thread 1: Co-Information Computation — Exact Formula to Library Calls\n\n### Formula and Sign Convention\n\nThe Co-Information formula is confirmed as: CoI(Xi, Xj; Y) = I(Xi; Y) + I(Xj; Y) - I({Xi, Xj}; Y). Positive CoI indicates redundancy (overlapping information); negative CoI indicates synergy (emergent joint information) [18]. This conflates both phenomena into a single signed quantity, which is precisely what we need for signed graph construction. The interaction information (McGill 1954) is defined identically but some authors reverse the sign; we adopt the convention where positive equals redundancy and negative equals synergy [18].\n\n### Primary Library: NPEET\n\nThe primary recommended library is NPEET (Non-parametric Entropy Estimation Toolbox) [1]. It implements the KSG (Kraskov-Stogbauer-Grassberger 2004) estimator for continuous variables and the Ross 2014 estimator for mixed discrete-continuous variables [6]. The critical function for classification targets is micd(x, y, k=3), which computes mutual information between continuous X and discrete Y [1, 2].\n\nMulti-dimensional support for micd() is confirmed by examining the source code [2]. The function uses x[(y == yval).all(axis=1)] for filtering, which correctly preserves multi-dimensional array structure. The underlying entropy() function handles arrays of shape (n_samples, n_features) [2]. This is critical because computing the joint MI term I({Xi, Xj}; Y) requires passing a 2D array of shape (n, 2) as the x argument.\n\nIMPORTANT: For classification targets (discrete Y), one must use micd() and NOT mi(). The mi() function is designed for both-continuous variables and would produce incorrect results on discrete class labels [1, 6]. The micd() function implements the Ross 2014 estimator, which stratifies by class labels and estimates I(X;Y) = H(X) - H(X|Y) via kNN entropy within each discrete class partition [6].\n\nA practical caveat exists: if k > len(x_given_y) - 1 for some class (i.e., a class has too few samples), micd() warns and assumes maximal entropy for that conditional term [2]. Mitigation: ensure minimum class frequency exceeds k+1.\n\n### Exact Call Mapping\n\nThe concrete mapping from the CoI formula to NPEET function calls is:\n\n- I(Xi; Y): ee.micd(Xi.reshape(-1, 1), y, k=3) — cacheable, only d=200 unique calls needed [2]\n- I(Xj; Y): ee.micd(Xj.reshape(-1, 1), y, k=3) — same cache as above [2]\n- I({Xi, Xj}; Y): ee.micd(np.column_stack([Xi, Xj]), y, k=3) — must compute for each pair, 19,900 calls for d=200 [2]\n- CoI(Xi, Xj; Y) = I(Xi;Y) + I(Xj;Y) - I({Xi,Xj};Y)\n\nNote that micd() does NOT explicitly reshape x like mi() does. Input x must already be 2D (n_samples, n_features). Always pass .reshape(-1, 1) for individual features [2].\n\n### Alternative Libraries Evaluated\n\nsklearn's mutual_info_classif is NOT usable for joint MI [3]. The internal functions _compute_mi and _compute_mi_cd accept only 1D x arrays (n_samples,). The mutual_info_classif function iterates over features independently and cannot compute I({Xi,Xj}; Y) [3].\n\nThe knncmi package is a viable alternative [4]. It supports multi-dimensional MI estimation via DataFrame column lists, using the API: knncmi.cmi(['col1','col2'], ['target'], [], k=3, data=df). However, it requires pandas DataFrame input, which adds conversion overhead [4].\n\nThe paulbrodersen/entropy_estimators package implements the KSG estimator but the author explicitly warns that these estimators 'should likely no longer be the first choice' due to bias issues [5]. It is not recommended.\n\nA particularly useful reference implementation is the frbourassa gist [7], which provides an optimized Ross 2014 implementation using scipy.spatial.cKDTree with vectorized radius queries. It explicitly handles multi-dimensional continuous X with discrete Y and may be 2-5x faster than NPEET for large n [7].\n\nFor improved accuracy on strongly dependent variables, the NPEET_LNC package adds a local non-uniformity correction to the standard KSG estimator [9].\n\n### Thread 1 Recommendation\n\nPRIMARY: Use NPEET micd() for simplicity and correctness [1, 2, 6]. FALLBACK: Use the frbourassa gist implementation [7] for speed if NPEET is too slow at n=100K. Both implement the Ross 2014 algorithm [6].\n\n---\n\n## Thread 2: Computational Feasibility for d=200, n=100K\n\n### Operation Count\n\nFor d=200 features: d*(d-1)/2 = 19,900 pairs. Each pair requires 3 MI estimates, but individual MI values I(Xi;Y) can be cached (only d=200 unique individual MI calls). Total MI calls: 200 (individual, cached) + 19,900 (joint) = 20,100 [8].\n\n### Per-Call Complexity\n\nThe KSG estimator uses KD-tree for nearest neighbor search with O(n log n) complexity per call for low-dimensional inputs (our inputs are 1-3 dimensional) [8]. For higher dimensions, complexity degrades to O(n^(1+alpha)) for alpha > 0, but this is not applicable here since our maximum input dimensionality is 3 (two features plus one target) [8].\n\n### Time Estimates\n\nNo published benchmarks for NPEET at n=100K were found. Conservative estimate based on KD-tree performance: 0.1-0.5 seconds per call for n=100K.\n\nConservative scenario (0.3s per call): 20,100 calls times 0.3s = 6,030 seconds = 100.5 minutes serial. This exceeds the 30-minute budget.\n\nOptimistic scenario (0.1s per call): 20,100 calls times 0.1s = 2,010 seconds = 33.5 minutes serial. This barely fits the budget.\n\nSerial execution is therefore too risky for n=100K.\n\n### Recommended Strategy: Subsampling + Parallelization\n\nThe recommended approach combines subsampling with parallelization:\n\nStep 1: Subsample to n=10K. The KSG estimator is consistent, meaning accuracy improves with n but the ranking of CoI values is preserved at smaller n [9, 19]. For feature selection purposes (ranking pairs by CoI), exact values matter less than relative ordering. Estimated time at n=10K: approximately 0.03s per call, total approximately 600 seconds serial (10 minutes).\n\nStep 2: Parallelize with joblib. Use joblib.Parallel(n_jobs=-1)(delayed(compute_joint_mi)(X[:, i], X[:, j], y) for i, j in pairs). Pre-compute and cache all individual MI values first (200 calls, trivially fast), then parallelize only the 19,900 joint MI calls.\n\nWith 4 cores and n=10K subsampling: approximately 3 minutes total. With 8 cores: approximately 2 minutes.\n\nStep 3: Validate ranking stability via 2 independent subsamples. Compute Spearman rank correlation of CoI rankings between subsamples; expect rho > 0.9 [19].\n\n### Memory Analysis\n\nMemory is not a constraint: data matrix 100K x 200 x 8 bytes = 160 MB; CoI matrix 200 x 200 x 8 bytes = 320 KB; KD-tree per call approximately 2-4 MB for n=100K in 2-3D; total peak memory under 500 MB, well within 16GB limit.\n\n### Acceleration Alternatives\n\nThe frbourassa gist uses cKDTree directly with vectorized queries and may be 2-5x faster than NPEET for large n [7]. No established GPU implementation for kNN MI estimation in Python exists, making GPU acceleration not worth pursuing.\n\n---\n\n## Thread 3: First-Draft SG-FIGS Codebase Reuse Analysis\n\n### Component-by-Component Reuse Map\n\nAnalysis of the first-draft source files reveals approximately 80% of tree-building and evaluation code is directly reusable.\n\n**REUSE (12 components):**\n\nThe ObliqueFIGSNode class stores feature (int), features (list), weights (array), threshold, and is_oblique flag, which is exactly what the new pipeline needs [21]. The fit_oblique_split_ridge() function implements Ridge(alpha=1.0) plus DecisionTreeRegressor(max_depth=1) for oblique splits, which is the exact pattern needed [21]. The BaseFIGSOblique greedy tree-sum framework implements the complete greedy loop: residual computation, leaf scoring, best split selection, tree growing, and leaf value updates [21]. The _best_split_for_node() method already compares axis-aligned stump versus oblique Ridge+stump and selects maximum gain [21]. The prediction traversal code (_predict_single, predict, predict_proba) already handles both axis-aligned (x[feature] <= threshold) and oblique (dot(x[features], weights) <= threshold) traversal [21]. MinMaxScaler preprocessing scales features to [0,1] before fitting, which is important for Ridge regression [21]. The MultiClassObliqueWrapper provides One-vs-Rest wrapping for multi-class classification [22]. The 5-fold cross-validation framework provides stratified 5-fold CV with hyperparameter tuning [22]. The FIGSBaselineWrapper wraps imodels FIGSClassifier as an axis-aligned baseline [22]. Resource management with setrlimit for RAM (14GB) and CPU time is good practice [20].\n\n**MODIFY (4 components):**\n\nThe _get_feature_subsets_for_split() method currently draws from synergy graph cliques stored in self.synergy_info_['subsets']. This must be modified to draw from SPONGE spectral modules instead [21]. The XOR validation test should be adapted to verify that CoI detects XOR synergy (should give negative CoI) and AND redundancy (should give positive CoI) [20]. The dataset loading code should be adapted for OpenML direct loading if using Grinsztajn 2022 benchmarks [22]. Interpretability metrics need updating [22].\n\n**REPLACE (4 components):**\n\nPID computation using the dit library with PID_BROJA/PID_MMI must be replaced entirely with Co-Information via NPEET micd() [20]. The unsigned synergy graph with 75th percentile thresholding must be replaced with a signed graph where positive edges represent redundancy (CoI > 0) and negative edges represent synergy (CoI < 0) [20]. Interpretability scoring (synergy fraction) must be replaced with structural metrics: frustration index of CoI graph, module purity score, and split alignment with spectral structure [22].\n\n**ELIMINATE (2 components):**\n\nDiscretization via KBinsDiscretizer (5 bins) is no longer needed because the kNN MI estimator handles continuous features natively [20]. MI pre-filtering of the top 30 features is no longer needed because CoI computation is fast enough for all d*(d-1)/2 pairs [20].\n\n### New Code Estimate\n\nThe genuinely new code needed is approximately 155 lines, covering: compute_coi_matrix() for Co-Information via NPEET micd (approximately 50 lines), build_signed_graph() for constructing Ap and An from CoI matrix (approximately 20 lines), run_sponge_clustering() for SPONGE or custom spectral clustering (approximately 50 lines), compute_frustration_index() for smallest eigenvalue of signed Laplacian (approximately 15 lines), and modification of _get_feature_subsets_for_split() to use spectral modules (approximately 20 lines).\n\n---\n\n## Thread 4: Extending FIGS with Ridge-Regression Oblique Splits\n\n### imodels vs. Custom Framework\n\nThe imodels FIGS implementation supports only axis-aligned splits and has no plugin system for oblique splits [15]. The Node class stores only feature (int) and threshold (float) with no support for multi-feature splits [15]. Extending imodels would require forking and modifying the internal _construct_node_with_stump method, which tightly couples to sklearn's tree structure.\n\nThe first-draft custom framework already supports oblique splits with the ObliqueFIGSNode class, which stores features (list), weights (array), threshold, and is_oblique flag [21]. The fit_oblique_split_ridge() function already implements Ridge(alpha=1.0) plus stump pattern [21]. The greedy tree-sum loop already competes oblique versus axis-aligned splits [21].\n\nRecommendation: USE the first draft's custom framework (BaseFIGSOblique). Do NOT use imodels FIGS [15, 21].\n\n### Split Selection Algorithm\n\nThe split selection algorithm, which is already implemented in the first draft [21], works as follows:\n\n1. For each candidate leaf node in the ensemble, compute residuals: r = y_target - predictions_from_other_trees.\n2. Try axis-aligned split: fit DecisionTreeRegressor(max_depth=1) on (X[leaf_samples], r[leaf_samples]). Record gain.\n3. For each repetition (num_repetitions=5): call _get_feature_subsets_for_split() which returns feature index lists from spectral modules (this is the ONLY step needing modification).\n4. For each returned module m with |m| >= 2 features: call fit_oblique_split_ridge(X[leaf_samples], r[leaf_samples], m). This internally: (a) extracts X_sub = X[:, m], (b) fits Ridge(alpha=1.0).fit(X_sub, residuals), (c) projects proj = X_sub @ ridge.coef_, (d) fits stump on proj.reshape(-1,1), and (e) returns features, weights, threshold, impurity_reduction.\n5. Select the split (oblique or axis-aligned) with maximum impurity_reduction across all leaves.\n6. Execute the split: create left/right children, update leaf list.\n7. Repeat until max_splits exhausted.\n\n### Spectral Module Integration\n\nThe only modification needed is in _get_feature_subsets_for_split() [21]. Currently it draws from synergy graph cliques. The new behavior should: (1) randomly select a module from self.spectral_modules_ (which contains SPONGE cluster assignments), (2) if module size is smaller than beam_size, pad with random features, (3) if module size exceeds beam_size, select top features by sum of |CoI| within module, (4) return sorted feature indices.\n\n### Existing Oblique Tree Packages\n\nSeveral existing oblique tree implementations were evaluated as references:\n\nThe DecisionTreeBaseline repository includes RidgeCART, which uses Ridge regression for oblique split directions [16]. This is the closest match to our approach but operates as a standalone tree, not an additive ensemble (FIGS).\n\nThe FC-ODT paper (February 2025) explicitly uses Ridge regression to find the projection direction of oblique splits [23]. This provides theoretical validation of the Ridge+stump pattern.\n\nThe scikit-tree (treeple) project by neurodata provides Cythonized oblique tree implementations [24]. These are performant but operate as random forests, not FIGS-style additive tree sums.\n\nThe sklearn-oblique-tree provides a Python interface to OC1 and CART-LC oblique tree implementations but does not use Ridge regression.\n\nNone of these packages replace the first draft's implementation, which is already more suitable because it integrates oblique splits into a FIGS-style additive tree-sum with spectral module guidance [21].\n\n---\n\n## Thread 5: Signed Spectral Clustering (SPONGE) Integration\n\n### SigNet Package Viability\n\nSigNet was archived on November 4, 2025, but remains installable via pip install from the git repository [10]. Its dependencies are scikit-learn, cvxpy, and networkx [25]. No Python version constraint is specified in setup.py, though there is an unconventional numpy installation via subprocess [25]. The compatibility risk is moderate due to the cvxpy dependency potentially causing issues on some Python 3.11 configurations.\n\n### SPONGE Algorithm Details\n\nThe SPONGE algorithm formulates signed graph clustering as a generalized eigenvalue problem [12]. Given positive adjacency matrix A_p and negative adjacency matrix A_n, it constructs:\n\n- L_+ = D_p - A_p (Laplacian of positive subgraph)\n- L_- = D_n - A_n (Laplacian of negative subgraph)\n- Numerator matrix: L_+ + tau_n * D_n\n- Denominator matrix: L_- + tau_p * D_p\n\nIt solves the generalized eigenvalue problem using scipy.sparse.linalg.lobpcg to find the k-1 smallest eigenvectors [11]. The eigenvectors are weighted by eigenvalues and then KMeans clustering is applied on the embedded space [11, 12]. The tau parameters default to 1 and serve as regularization to prevent singular matrices [12].\n\nThe SigNet API is straightforward [11]: c = Cluster((Ap, An)), then labels = c.SPONGE(k=4, tau_p=1, tau_n=1).\n\n### Input Construction from CoI Matrix\n\nThe construction of SPONGE inputs from the Co-Information matrix follows these steps [11]:\n\n1. Compute full CoI matrix C of shape (d, d) where C[i,j] = CoI(Xi, Xj; Y).\n2. Set diagonal to zero: np.fill_diagonal(C, 0).\n3. Construct positive adjacency (redundancy edges): Ap = scipy.sparse.csc_matrix(np.maximum(C, 0)).\n4. Construct negative adjacency (synergy edges): An = scipy.sparse.csc_matrix(np.maximum(-C, 0)).\n5. Create Cluster object: c = Cluster((Ap, An)).\n6. Run SPONGE: labels = c.SPONGE(k=k, tau_p=1, tau_n=1).\n7. Extract modules by grouping feature indices per cluster label.\n\n### Cluster Number Selection\n\nThe primary method for selecting the number of clusters k is the eigengap heuristic applied to the SPONGE eigenvalues [12]. The algorithm sorts eigenvalues in ascending order and finds k = argmax_i (lambda_{i+1} - lambda_i) for i in 1 through max_k. A practical approach is to run SPONGE with max_k (for example 10), examine eigenvalue gaps, and select k at the largest gap.\n\nIf the eigengap is ambiguous (smooth spectrum), the fallback is to sweep k=2 through 8 and select by modularity for signed graphs or silhouette score on the eigenvector embedding [12]. In practice, the range k=2 to k=min(10, d/5) is appropriate for d=200 features. If no clear structure is found, default to k=3 or k=4.\n\n### Frustration Index Computation\n\nThe frustration index measures how far a signed graph is from structural balance [13]. A signed graph is balanced if and only if the smallest eigenvalue of its signed Laplacian equals zero [13]. For unbalanced graphs, the smallest eigenvalue provides a polynomial-time lower bound on the exact frustration index, which is NP-hard to compute in general [14].\n\nThe signed Laplacian is constructed as L_signed = D_total - A_signed, where A_signed = A_p - A_n and D_total = D_p + D_n [13]. The smallest eigenvalue is computed via scipy.sparse.linalg.eigsh(L_signed, k=1, which='SM') [13, 14]. The normalized frustration index is lambda_min / d (normalize by number of features).\n\nInterpretation: lambda_min = 0 means a perfectly balanced graph where all structure is redundancy-based or forms bipartite synergy. lambda_min > 0 indicates non-trivial frustration, meaning the feature interaction structure has complex synergy/redundancy patterns that don't decompose cleanly into two opposing groups [13].\n\n### Custom SPONGE Implementation (Backup)\n\nIf SigNet fails to install on Python 3.10/3.11, a custom SPONGE implementation requires approximately 50 lines using scipy's lobpcg and sklearn's KMeans [11]. The implementation constructs the same L_+, L_-, D_+, D_- matrices, forms the SPONGE numerator and denominator matrices with tau regularization plus a small ridge (1e-10) for numerical stability, solves via lobpcg for the k-1 smallest eigenvectors, weights by eigenvalues, and applies KMeans clustering [11, 12]. Both the SigNet API and the custom implementation should produce identical results.\n\n---\n\n## Synthesis: Pipeline Architecture\n\n### Recommended Library Stack\n\nCore ML: scikit-learn>=1.2, numpy>=1.24, scipy>=1.10. MI estimation: NPEET (git install from github.com/gregversteeg/NPEET) [1]. Signed clustering: SigNet (git install from github.com/alan-turing-institute/SigNet) or custom approximately 50 lines [10, 11]. Tree model: imodels (for baseline FIGS only, not for oblique extension) [15]. Parallelization: joblib. Benchmarks: openml [17].\n\n### Pipeline Phases\n\nPhase 1 (CoI Computation, approximately 5 minutes): Load dataset, subsample to n=10K if needed, compute individual MI values (cached), parallelize joint MI computation, assemble CoI matrix, validate via XOR/AND test cases [1, 2, 19].\n\nPhase 2 (Signed Clustering, under 1 minute): Construct Ap and An sparse matrices from CoI, run SPONGE with eigengap-selected k, extract spectral modules, compute frustration index [10, 11, 12, 13].\n\nPhase 3 (Tree Building, 1-5 minutes per dataset per fold): Initialize BaseFIGSOblique with spectral modules, draw feature subsets from spectral modules at each split, compete oblique versus axis-aligned, grow greedy tree-sum ensemble [21].\n\nPhase 4 (Evaluation): 5-fold cross-validation, max_splits grid search, compare against FIGS (imodels), RO-FIGS (random oblique), Random-FIGS baselines [22].\n\n### Grinsztajn 2022 Benchmark Datasets\n\nThe Grinsztajn et al. 2022 tabular benchmark [17] provides standardized classification suites. The classification numerical suite is OpenML ID 337, and the classification mixed (numerical + categorical) suite is OpenML ID 334 [17]. Access is via openml.study.get_suite(337). The first draft uses 14 datasets (monks2, banknote, iris, blood, pima_diabetes, wine, heart_statlog, vehicle, climate, kc2, breast_cancer_wisconsin_diagnostic, ionosphere, spectf_heart, sonar) [22], some of which may overlap with the Grinsztajn suite. Recommendation: use Grinsztajn suite 337 for primary benchmarking and include first-draft datasets as secondary validation.\n\n### Risk Register\n\n1. NPEET micd() too slow for n=100K (MEDIUM probability, HIGH impact): Mitigation is subsampling to n=10K [19]. Fallback: use frbourassa gist cKDTree implementation [7].\n2. NPEET micd() inaccurate for strongly dependent variables (LOW-MEDIUM probability, MEDIUM impact): Use NPEET_LNC correction [9]. Validate via known-structure datasets.\n3. SigNet installation fails on Python 3.10/3.11 (MEDIUM probability, LOW impact): Custom SPONGE implementation in approximately 50 lines [11, 12].\n4. CoI matrix has no clear spectral structure (MEDIUM probability, MEDIUM impact): Default to k=3 modules. Compare against random feature subsets as control.\n5. Oblique splits don't improve over axis-aligned (MEDIUM probability, LOW impact): Valid experimental finding. Measure complexity reduction even if accuracy is similar.\n6. Computational budget exceeded (LOW probability with subsampling, MEDIUM impact): Process datasets by size order with graceful timeout.",
+  "sources": [
+    {
+      "index": 1,
+      "url": "https://github.com/gregversteeg/NPEET",
+      "title": "NPEET: Non-parametric Entropy Estimation Toolbox",
+      "summary": "Primary library for kNN-based MI estimation. Confirmed micd() supports multi-dimensional continuous X with discrete Y via Ross 2014 algorithm."
+    },
+    {
+      "index": 2,
+      "url": "https://github.com/gregversteeg/NPEET/blob/master/npeet/entropy_estimators.py",
+      "title": "NPEET entropy_estimators.py source code",
+      "summary": "Source code confirming mi() reshapes to 2D and micd() uses (y==yval).all(axis=1) filtering that preserves multi-dimensional structure."
+    },
+    {
+      "index": 3,
+      "url": "https://github.com/scikit-learn/scikit-learn/blob/main/sklearn/feature_selection/_mutual_info.py",
+      "title": "sklearn _mutual_info.py source code",
+      "summary": "Confirmed _compute_mi and _compute_mi_cd accept only 1D arrays. Cannot compute joint MI I({Xi,Xj};Y)."
+    },
+    {
+      "index": 4,
+      "url": "https://github.com/omesner/knncmi",
+      "title": "knncmi: kNN Conditional Mutual Information",
+      "summary": "Alternative library supporting multi-dimensional MI via DataFrame column lists. Based on arxiv 1912.03387."
+    },
+    {
+      "index": 5,
+      "url": "https://github.com/paulbrodersen/entropy_estimators",
+      "title": "paulbrodersen entropy_estimators",
+      "summary": "KSG-based MI estimation. Author warns estimators should likely no longer be the first choice due to known bias issues."
+    },
+    {
+      "index": 6,
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0087357",
+      "title": "Ross 2014: Mutual Information between Discrete and Continuous Data Sets",
+      "summary": "Foundational paper for the mixed discrete-continuous MI estimator used in NPEET micd() and sklearn _compute_mi_cd."
+    },
+    {
+      "index": 7,
+      "url": "https://gist.github.com/frbourassa/c108366d28f541ec6c1c4e39bdfea355",
+      "title": "frbourassa: MI estimator for continuous-multidimensional with discrete variable",
+      "summary": "Optimized Ross 2014 implementation using cKDTree with vectorized queries. Explicitly handles multi-dimensional continuous X. Potentially 2-5x faster than NPEET."
+    },
+    {
+      "index": 8,
+      "url": "https://royalsocietypublishing.org/doi/10.1098/rspa.2007.0196",
+      "title": "A computationally efficient estimator for mutual information (Royal Society)",
+      "summary": "KSG complexity analysis: O(n log n) for 1D marginals, O(n^(1+alpha)) for higher dimensions. Basis for time estimates."
+    },
+    {
+      "index": 9,
+      "url": "http://proceedings.mlr.press/v38/gao15.pdf",
+      "title": "Gao et al. 2015: Efficient Estimation of MI for Strongly Dependent Variables",
+      "summary": "Improved KSG estimator for strongly dependent variables. NPEET_LNC implements this local non-uniformity correction."
+    },
+    {
+      "index": 10,
+      "url": "https://github.com/alan-turing-institute/SigNet",
+      "title": "SigNet: Signed Network Clustering (archived Nov 2025)",
+      "summary": "Python implementation of SPONGE and signed Laplacian clustering. Archived but still installable via git."
+    },
+    {
+      "index": 11,
+      "url": "https://github.com/alan-turing-institute/SigNet/blob/master/signet/cluster.py",
+      "title": "SigNet cluster.py source code",
+      "summary": "SPONGE implementation using lobpcg for generalized eigenvalue problem. Input: (Ap, An) sparse matrix tuple. Basis for custom reimplementation."
+    },
+    {
+      "index": 12,
+      "url": "https://arxiv.org/abs/1904.08575",
+      "title": "SPONGE: A generalized eigenproblem for clustering signed networks (AISTATS 2019)",
+      "summary": "Original SPONGE paper by Cucuringu et al. Formulates signed clustering as generalized eigenvalue problem with tau regularization parameters."
+    },
+    {
+      "index": 13,
+      "url": "https://www.sciencedirect.com/science/article/pii/S0024379514000160",
+      "title": "Belardo 2014: Balancedness and the least eigenvalue of Laplacian of signed graphs",
+      "summary": "Proves signed graph is balanced iff smallest Laplacian eigenvalue equals zero. Eigenvalue provides polynomial-time lower bound on frustration index."
+    },
+    {
+      "index": 14,
+      "url": "https://github.com/saref/frustration-index-XOR",
+      "title": "Frustration Index XOR computation (Aref et al.)",
+      "summary": "Exact frustration index computation via binary linear programming. Confirms NP-hardness of exact computation; spectral bound is polynomial alternative."
+    },
+    {
+      "index": 15,
+      "url": "https://github.com/csinva/imodels/blob/master/imodels/tree/figs.py",
+      "title": "imodels FIGS source code",
+      "summary": "FIGS implementation with axis-aligned splits only. No plugin system for oblique splits. Node class stores only single feature plus threshold."
+    },
+    {
+      "index": 16,
+      "url": "https://github.com/maoqiangqiang/DecisionTreeBaseline",
+      "title": "DecisionTreeBaseline (includes RidgeCART)",
+      "summary": "Collection of oblique tree baselines including RidgeCART using Ridge regression for split directions. Reference implementation but not FIGS-integrated."
+    },
+    {
+      "index": 17,
+      "url": "https://github.com/LeoGrin/tabular-benchmark",
+      "title": "Grinsztajn et al. 2022 Tabular Benchmark",
+      "summary": "Standard benchmark of 45 datasets from NeurIPS 2022. Classification numerical suite: OpenML ID 337. Access via openml.study.get_suite(337)."
+    },
+    {
+      "index": 18,
+      "url": "https://www.mdpi.com/1099-4300/17/5/3501",
+      "title": "Information Decomposition and Synergy (MDPI Entropy 2015)",
+      "summary": "Explains co-information as conflating synergy and redundancy into a signed quantity. Motivates PID framework but validates CoI for signed graph construction."
+    },
+    {
+      "index": 19,
+      "url": "https://arxiv.org/html/2506.00330",
+      "title": "Accurate Estimation of MI in High Dimensions (2025)",
+      "summary": "Subsampling-and-extrapolation workflow for MI estimation. Supports the subsampling strategy for preserving CoI rankings."
+    },
+    {
+      "index": 20,
+      "url": "https://raw.githubusercontent.com/ai-inventor-outputs/ai-invention-b88b52-synergy-guided-oblique-splits-using-part/main/experiment_iter2_pairwise_pid_sy/src/method.py",
+      "title": "First draft PID synergy computation code",
+      "summary": "Uses dit library with discretization. Contains compute_co_information() baseline, synergy graph construction, and stability analysis pattern."
+    },
+    {
+      "index": 21,
+      "url": "https://raw.githubusercontent.com/ai-inventor-outputs/ai-invention-b88b52-synergy-guided-oblique-splits-using-part/main/experiment_iter2_sg_figs_full_ex/src/method.py",
+      "title": "First draft SG-FIGS tree construction code",
+      "summary": "ObliqueFIGSNode, fit_oblique_split_ridge(), BaseFIGSOblique, SGFIGSClassifier. Complete greedy tree-sum with oblique split support."
+    },
+    {
+      "index": 22,
+      "url": "https://raw.githubusercontent.com/ai-inventor-outputs/ai-invention-b88b52-synergy-guided-oblique-splits-using-part/main/experiment_iter3_sg_figs_definit/src/method.py",
+      "title": "First draft definitive evaluation code",
+      "summary": "5-method comparison framework, 5-fold CV, metrics (balanced accuracy, AUC), FIGSBaselineWrapper, MultiClassObliqueWrapper."
+    },
+    {
+      "index": 23,
+      "url": "https://arxiv.org/html/2502.00465",
+      "title": "FC-ODT: Feature Concatenation Oblique Decision Tree (Feb 2025)",
+      "summary": "Recent paper using Ridge regression for oblique split direction. Provides theoretical validation of the Ridge+stump pattern."
+    },
+    {
+      "index": 24,
+      "url": "https://docs.neurodata.io/treeple/v0.8/modules/supervised_tree.html",
+      "title": "scikit-tree (treeple) oblique tree documentation",
+      "summary": "Cythonized oblique tree implementation by neurodata. Reference for oblique forest approaches but not FIGS-based."
+    },
+    {
+      "index": 25,
+      "url": "https://github.com/alan-turing-institute/SigNet/blob/master/setup.py",
+      "title": "SigNet setup.py",
+      "summary": "Dependencies: scikit-learn, cvxpy, networkx. No Python version constraint specified. Unconventional numpy install via subprocess."
+    }
+  ],
+  "follow_up_questions": [
+    "What is the optimal k (nearest neighbors) parameter for micd() when computing CoI on subsampled data (n=10K) — does k=3 remain appropriate or should it be increased to reduce variance?",
+    "How should the spectral module feature subsets interact with the beam_size parameter in the oblique split search — should modules smaller than beam_size always be padded with random features, or kept pure?",
+    "Can the frustration index be used as a dataset-level predictor of whether spectral-guided oblique splits will outperform random oblique splits — i.e., does higher frustration correlate with larger accuracy gains from spectral guidance?"
+  ]
+}

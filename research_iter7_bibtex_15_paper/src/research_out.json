@@ -1,0 +1,150 @@
+{
+  "title": "Complete Bibliography for Balance-Guided Oblique Trees Paper",
+  "summary": "All 15 BibTeX entries successfully obtained and verified. 10 entries retrieved directly via Semantic Scholar batch API, 3 recovered via DOI/title retry, 2 manually constructed from verified web sources (Bell 2003 workshop paper, McGill 1954 classic). Multiple corrections applied: Kraskov year fixed 2003->2004, Hornung year fixed 2021->2022 and DOI corrected, Westphal year fixed 2024->2025, Breiman venue corrected, entry types standardized. Novelty gap confirmed: no 2024-2026 prior work combines spectral clustering on information-theoretic feature graphs with oblique tree construction (confirmed by dependency research_id5_it4__opus survey of 31 sources).",
+  "answer": "All 15 BibTeX entries for the Balance-Guided Oblique Trees paper have been successfully obtained and verified. 10 entries were retrieved directly from Semantic Scholar's batch API in a single call [1]. Three additional entries (Lou 2013, Murthy 1994, Hornung 2022) were recovered by retrying with corrected DOIs [2, 3, 4]. Two entries (Bell 2003, McGill 1954) required manual construction from verified web sources [5, 6]. Multiple corrections were applied to Semantic Scholar output: Kraskov's year was fixed from 2003 to 2004 (matching Physical Review E vol. 69 publication date), Hornung's year was fixed from 2021 to 2022 and the DOI corrected from a university repository DOI to the publisher DOI (10.1016/j.csda.2022.107460), Westphal's year was fixed from 2024 to 2025 (AISTATS 2025 proceedings), Breiman's venue was corrected from 'Machine-mediated learning' to 'Machine Learning', and several entry types were standardized (e.g., Breiman, Hornung, McGill changed to @article). The novelty gap remains confirmed: the dependency survey (research_id5_it4__opus) examined 31 sources across spectral feature grouping, Co-Information estimation, and interpretable oblique trees, finding no prior work combining spectral clustering on an information-theoretic feature interaction graph with oblique tree split construction [7].",
+  "bib_content": "@inproceedings{Cucuringu2019,\n  author    = {Mihai Cucuringu and Peter Davies and Aldo Glielmo and Hemant Tyagi},\n  booktitle = {International Conference on Artificial Intelligence and Statistics (AISTATS)},\n  title     = {{SPONGE}: A Generalized Eigenproblem for Clustering Signed Networks},\n  pages     = {1088--1098},\n  year      = {2019}\n}\n\n@inproceedings{Lou2013,\n  author    = {Yin Lou and Rich Caruana and Johannes Gehrke and Giles Hooker},\n  booktitle = {Proceedings of the 19th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},\n  title     = {Accurate Intelligible Models with Pairwise Interactions},\n  pages     = {623--631},\n  year      = {2013},\n  doi       = {10.1145/2487575.2487579}\n}\n\n@article{Nori2019,\n  author  = {Harsha Nori and Samuel Jenkins and Paul Koch and Rich Caruana},\n  journal = {arXiv preprint arXiv:1909.09223},\n  title   = {{InterpretML}: A Unified Framework for Machine Learning Interpretability},\n  year    = {2019}\n}\n\n@inproceedings{Grinsztajn2022,\n  author    = {L\\'{e}o Grinsztajn and Edouard Oyallon and Ga\\\"{e}l Varoquaux},\n  booktitle = {Advances in Neural Information Processing Systems},\n  title     = {Why Do Tree-Based Models Still Outperform Deep Learning on Typical Tabular Data?},\n  year      = {2022},\n  doi       = {10.48550/arXiv.2207.08815}\n}\n\n@article{Tan2022,\n  author  = {Yan Shuo Tan and Chandan Singh and Keyan Nasseri and Abhineet Agarwal and James Duncan and Omer Ronen and Matthew Epland and Aaron E. Kornblith and Bin Yu},\n  journal = {Proceedings of the National Academy of Sciences},\n  title   = {Fast Interpretable Greedy-Tree Sums},\n  volume  = {122},\n  year    = {2025},\n  doi     = {10.1073/pnas.2310151122}\n}\n\n@article{Kraskov2004,\n  author  = {Alexander Kraskov and Harald St\\\"{o}gbauer and Peter Grassberger},\n  journal = {Physical Review E},\n  title   = {Estimating Mutual Information},\n  volume  = {69},\n  number  = {6},\n  pages   = {066138},\n  year    = {2004},\n  doi     = {10.1103/PhysRevE.69.066138}\n}\n\n@article{Williams2010,\n  author  = {Paul L. Williams and Randall D. Beer},\n  journal = {arXiv preprint arXiv:1004.2515},\n  title   = {Nonnegative Decomposition of Multivariate Information},\n  year    = {2010}\n}\n\n@inproceedings{Bell2003,\n  author    = {Anthony J. Bell},\n  booktitle = {Proceedings of the 4th International Symposium on Independent Component Analysis and Blind Signal Separation (ICA 2003)},\n  title     = {The Co-Information Lattice},\n  year      = {2003},\n  address   = {Nara, Japan}\n}\n\n@article{McGill1954,\n  author  = {William J. McGill},\n  journal = {Psychometrika},\n  title   = {Multivariate Information Transmission},\n  volume  = {19},\n  number  = {2},\n  pages   = {97--116},\n  year    = {1954},\n  doi     = {10.1007/BF02289159}\n}\n\n@article{Breiman2001,\n  author  = {Leo Breiman},\n  journal = {Machine Learning},\n  title   = {Random Forests},\n  volume  = {45},\n  number  = {1},\n  pages   = {5--32},\n  year    = {2001},\n  doi     = {10.1023/A:1010933404324}\n}\n\n@article{Murthy1994,\n  author  = {Sreerama K. Murthy and Simon Kasif and Steven Salzberg},\n  journal = {Journal of Artificial Intelligence Research},\n  title   = {A System for Induction of Oblique Decision Trees},\n  volume  = {2},\n  pages   = {1--32},\n  year    = {1994},\n  doi     = {10.1613/jair.63}\n}\n\n@article{Hornung2022,\n  author  = {Roman Hornung and Anne-Laure Boulesteix},\n  journal = {Computational Statistics \\& Data Analysis},\n  title   = {Interaction Forests: Identifying and Exploiting Interpretable Quantitative and Qualitative Interaction Effects},\n  volume  = {171},\n  pages   = {107460},\n  year    = {2022},\n  doi     = {10.1016/j.csda.2022.107460}\n}\n\n@inproceedings{Westphal2025,\n  author    = {Charles Westphal and Stephen Hailes and Mirco Musolesi},\n  booktitle = {International Conference on Artificial Intelligence and Statistics (AISTATS)},\n  title     = {Partial Information Decomposition for Data Interpretability and Feature Selection},\n  pages     = {1873--1881},\n  year      = {2025},\n  doi       = {10.48550/arXiv.2405.19212}\n}\n\n@article{Heider1946,\n  author  = {Fritz Heider},\n  journal = {The Journal of Psychology},\n  title   = {Attitudes and Cognitive Organization},\n  volume  = {21},\n  pages   = {107--112},\n  year    = {1946},\n  doi     = {10.1080/00223980.1946.9917275}\n}\n\n@article{Cartwright1956,\n  author  = {Dorwin Cartwright and Frank Harary},\n  journal = {Psychological Review},\n  title   = {Structural Balance: A Generalization of {Heider}'s Theory},\n  volume  = {63},\n  number  = {5},\n  pages   = {277--293},\n  year    = {1956},\n  doi     = {10.1037/h0046049}\n}",
+  "entries": [
+    {
+      "citation_key": "Cucuringu2019",
+      "paper_number": 1,
+      "title": "SPONGE: A Generalized Eigenproblem for Clustering Signed Networks",
+      "bibtex": "@inproceedings{Cucuringu2019,\n  author    = {Mihai Cucuringu and Peter Davies and Aldo Glielmo and Hemant Tyagi},\n  booktitle = {International Conference on Artificial Intelligence and Statistics (AISTATS)},\n  title     = {{SPONGE}: A Generalized Eigenproblem for Clustering Signed Networks},\n  pages     = {1088--1098},\n  year      = {2019}\n}",
+      "verified": true,
+      "verification_notes": "Retrieved directly from Semantic Scholar via ArXiv 1904.08575. All 4 authors present, AISTATS venue confirmed, pages 1088-1098 correct. No DOI in Semantic Scholar entry (AISTATS proceedings)."
+    },
+    {
+      "citation_key": "Lou2013",
+      "paper_number": 2,
+      "title": "Accurate Intelligible Models with Pairwise Interactions",
+      "bibtex": "@inproceedings{Lou2013,\n  author    = {Yin Lou and Rich Caruana and Johannes Gehrke and Giles Hooker},\n  booktitle = {Proceedings of the 19th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},\n  title     = {Accurate Intelligible Models with Pairwise Interactions},\n  pages     = {623--631},\n  year      = {2013},\n  doi       = {10.1145/2487575.2487579}\n}",
+      "verified": true,
+      "verification_notes": "Failed initial title search, recovered via DOI 10.1145/2487575.2487579 found through WebSearch. Author names expanded to full names from ACM DL page. Pages 623-631 from KDD 2013 proceedings. Full author list: Lou, Caruana, Gehrke, Hooker (Semantic Scholar abbreviated some names)."
+    },
+    {
+      "citation_key": "Nori2019",
+      "paper_number": 3,
+      "title": "InterpretML: A Unified Framework for Machine Learning Interpretability",
+      "bibtex": "@article{Nori2019,\n  author  = {Harsha Nori and Samuel Jenkins and Paul Koch and Rich Caruana},\n  journal = {arXiv preprint arXiv:1909.09223},\n  title   = {{InterpretML}: A Unified Framework for Machine Learning Interpretability},\n  year    = {2019}\n}",
+      "verified": true,
+      "verification_notes": "Retrieved directly from Semantic Scholar via ArXiv 1909.09223. ArXiv preprint, no formal publication venue. All 4 authors present. Entry type changed from article with booktitle to clean article format."
+    },
+    {
+      "citation_key": "Grinsztajn2022",
+      "paper_number": 4,
+      "title": "Why Do Tree-Based Models Still Outperform Deep Learning on Typical Tabular Data?",
+      "bibtex": "@inproceedings{Grinsztajn2022,\n  author    = {L\\'{e}o Grinsztajn and Edouard Oyallon and Ga\\\"{e}l Varoquaux},\n  booktitle = {Advances in Neural Information Processing Systems},\n  title     = {Why Do Tree-Based Models Still Outperform Deep Learning on Typical Tabular Data?},\n  year      = {2022},\n  doi       = {10.48550/arXiv.2207.08815}\n}",
+      "verified": true,
+      "verification_notes": "Retrieved directly from Semantic Scholar via ArXiv 2207.08815. Venue corrected from 'arXiv.org' to NeurIPS 2022. All 3 authors present with correct diacritics. DOI is ArXiv DOI; NeurIPS proceedings DOI may differ."
+    },
+    {
+      "citation_key": "Tan2022",
+      "paper_number": 5,
+      "title": "Fast Interpretable Greedy-Tree Sums",
+      "bibtex": "@article{Tan2022,\n  author  = {Yan Shuo Tan and Chandan Singh and Keyan Nasseri and Abhineet Agarwal and James Duncan and Omer Ronen and Matthew Epland and Aaron E. Kornblith and Bin Yu},\n  journal = {Proceedings of the National Academy of Sciences},\n  title   = {Fast Interpretable Greedy-Tree Sums},\n  volume  = {122},\n  year    = {2025},\n  doi     = {10.1073/pnas.2310151122}\n}",
+      "verified": true,
+      "verification_notes": "Retrieved from Semantic Scholar via ArXiv 2201.11931. ArXiv preprint from 2022, but PUBLISHED in PNAS vol. 122 (2025). Citation key kept as Tan2022 for recognition (when the work was first disseminated), but year field is 2025 (publication year). All 9 authors present. PNAS DOI confirmed."
+    },
+    {
+      "citation_key": "Kraskov2004",
+      "paper_number": 6,
+      "title": "Estimating Mutual Information",
+      "bibtex": "@article{Kraskov2004,\n  author  = {Alexander Kraskov and Harald St\\\"{o}gbauer and Peter Grassberger},\n  journal = {Physical Review E},\n  title   = {Estimating Mutual Information},\n  volume  = {69},\n  number  = {6},\n  pages   = {066138},\n  year    = {2004},\n  doi     = {10.1103/PhysRevE.69.066138}\n}",
+      "verified": true,
+      "verification_notes": "Retrieved from Semantic Scholar via DOI 10.1103/PhysRevE.69.066138. CRITICAL FIX: Year corrected from 2003 (Semantic Scholar) to 2004 (Physical Review E vol. 69 published June 2004). Author names expanded to full names. Pages cleaned from whitespace to '066138'. Journal name cleaned to 'Physical Review E'."
+    },
+    {
+      "citation_key": "Williams2010",
+      "paper_number": 7,
+      "title": "Nonnegative Decomposition of Multivariate Information",
+      "bibtex": "@article{Williams2010,\n  author  = {Paul L. Williams and Randall D. Beer},\n  journal = {arXiv preprint arXiv:1004.2515},\n  title   = {Nonnegative Decomposition of Multivariate Information},\n  year    = {2010}\n}",
+      "verified": true,
+      "verification_notes": "Retrieved directly from Semantic Scholar via ArXiv 1004.2515. ArXiv preprint, no formal publication. Beer's full name expanded to Randall D. Beer. This is the foundational PID paper."
+    },
+    {
+      "citation_key": "Bell2003",
+      "paper_number": 8,
+      "title": "The Co-Information Lattice",
+      "bibtex": "@inproceedings{Bell2003,\n  author    = {Anthony J. Bell},\n  booktitle = {Proceedings of the 4th International Symposium on Independent Component Analysis and Blind Signal Separation (ICA 2003)},\n  title     = {The Co-Information Lattice},\n  year      = {2003},\n  address   = {Nara, Japan}\n}",
+      "verified": true,
+      "verification_notes": "MANUALLY CONSTRUCTED. Failed both Semantic Scholar search attempts (title and corpus ID). Verified via Semantic Scholar page (corpus ID 5031248, 257 citations) and original PDF on ICA 2003 CD-ROM at NTT website. Workshop paper with no DOI as expected. Single author: Anthony J. Bell (Redwood Neuroscience Institute)."
+    },
+    {
+      "citation_key": "McGill1954",
+      "paper_number": 9,
+      "title": "Multivariate Information Transmission",
+      "bibtex": "@article{McGill1954,\n  author  = {William J. McGill},\n  journal = {Psychometrika},\n  title   = {Multivariate Information Transmission},\n  volume  = {19},\n  number  = {2},\n  pages   = {97--116},\n  year    = {1954},\n  doi     = {10.1007/BF02289159}\n}",
+      "verified": true,
+      "verification_notes": "MANUALLY CONSTRUCTED. Failed both Semantic Scholar search attempts (DOI and title). Verified via Springer Nature link.springer.com page: Psychometrika vol. 19, issue 2, pages 97-116, June 1954. DOI 10.1007/BF02289159 confirmed. 961 citations on Semantic Scholar."
+    },
+    {
+      "citation_key": "Breiman2001",
+      "paper_number": 10,
+      "title": "Random Forests",
+      "bibtex": "@article{Breiman2001,\n  author  = {Leo Breiman},\n  journal = {Machine Learning},\n  title   = {Random Forests},\n  volume  = {45},\n  number  = {1},\n  pages   = {5--32},\n  year    = {2001},\n  doi     = {10.1023/A:1010933404324}\n}",
+      "verified": true,
+      "verification_notes": "Retrieved from Semantic Scholar via DOI 10.1023/A:1010933404324. CRITICAL FIX: Venue corrected from 'Machine-mediated learning' (Semantic Scholar booktitle error) to 'Machine Learning' journal. Entry type changed from @inproceedings to @article. Pages 5-32 confirmed. Issue number 1 added."
+    },
+    {
+      "citation_key": "Murthy1994",
+      "paper_number": 11,
+      "title": "A System for Induction of Oblique Decision Trees",
+      "bibtex": "@article{Murthy1994,\n  author  = {Sreerama K. Murthy and Simon Kasif and Steven Salzberg},\n  journal = {Journal of Artificial Intelligence Research},\n  title   = {A System for Induction of Oblique Decision Trees},\n  volume  = {2},\n  pages   = {1--32},\n  year    = {1994},\n  doi     = {10.1613/jair.63}\n}",
+      "verified": true,
+      "verification_notes": "Failed initial title search, recovered via DOI 10.1613/jair.63 found through WebSearch. Entry type changed from @inproceedings to @article (JAIR is a journal). Author names expanded. Pages 1-32, JAIR vol. 2 confirmed. 986 citations on Semantic Scholar."
+    },
+    {
+      "citation_key": "Hornung2022",
+      "paper_number": 12,
+      "title": "Interaction Forests: Identifying and Exploiting Interpretable Quantitative and Qualitative Interaction Effects",
+      "bibtex": "@article{Hornung2022,\n  author  = {Roman Hornung and Anne-Laure Boulesteix},\n  journal = {Computational Statistics \\& Data Analysis},\n  title   = {Interaction Forests: Identifying and Exploiting Interpretable Quantitative and Qualitative Interaction Effects},\n  volume  = {171},\n  pages   = {107460},\n  year    = {2022},\n  doi     = {10.1016/j.csda.2022.107460}\n}",
+      "verified": true,
+      "verification_notes": "Failed initial DOI search, recovered via full title search. TWO FIXES: (1) Year corrected from 2021 (Semantic Scholar) to 2022 (CSDA vol. 171 published July 2022). (2) DOI corrected from 10.5282/UBM/EPUB.75269 (university repository) to 10.1016/j.csda.2022.107460 (Elsevier publisher DOI). Author names expanded."
+    },
+    {
+      "citation_key": "Westphal2025",
+      "paper_number": 13,
+      "title": "Partial Information Decomposition for Data Interpretability and Feature Selection",
+      "bibtex": "@inproceedings{Westphal2025,\n  author    = {Charles Westphal and Stephen Hailes and Mirco Musolesi},\n  booktitle = {International Conference on Artificial Intelligence and Statistics (AISTATS)},\n  title     = {Partial Information Decomposition for Data Interpretability and Feature Selection},\n  pages     = {1873--1881},\n  year      = {2025},\n  doi       = {10.48550/arXiv.2405.19212}\n}",
+      "verified": true,
+      "verification_notes": "Retrieved from Semantic Scholar via ArXiv 2405.19212. Year corrected from 2024 to 2025 (AISTATS 2025 conference proceedings). Citation key updated from Westphal2024 to Westphal2025. All 3 authors present. Pages 1873-1881 confirmed."
+    },
+    {
+      "citation_key": "Heider1946",
+      "paper_number": 14,
+      "title": "Attitudes and Cognitive Organization",
+      "bibtex": "@article{Heider1946,\n  author  = {Fritz Heider},\n  journal = {The Journal of Psychology},\n  title   = {Attitudes and Cognitive Organization},\n  volume  = {21},\n  pages   = {107--112},\n  year    = {1946},\n  doi     = {10.1080/00223980.1946.9917275}\n}",
+      "verified": true,
+      "verification_notes": "Retrieved from Semantic Scholar via DOI 10.1080/00223980.1946.9917275. Entry type changed from @inproceedings to @article. Pages cleaned from whitespace. Journal name cleaned to 'The Journal of Psychology'. Author first name expanded to Fritz."
+    },
+    {
+      "citation_key": "Cartwright1956",
+      "paper_number": 15,
+      "title": "Structural Balance: A Generalization of Heider's Theory",
+      "bibtex": "@article{Cartwright1956,\n  author  = {Dorwin Cartwright and Frank Harary},\n  journal = {Psychological Review},\n  title   = {Structural Balance: A Generalization of {Heider}'s Theory},\n  volume  = {63},\n  number  = {5},\n  pages   = {277--293},\n  year    = {1956},\n  doi     = {10.1037/h0046049}\n}",
+      "verified": true,
+      "verification_notes": "Retrieved from Semantic Scholar via DOI 10.1037/h0046049. Entry type changed from @inproceedings to @article. Venue corrected from 'Psychology Review' to 'Psychological Review'. Pages cleaned. DOI case normalized to lowercase. Author first names expanded. Issue number 5 added."
+    }
+  ],
+  "novelty_gap_check": {
+    "queries_run": [
+      "Dependency survey (research_id5_it4__opus) examined 31 sources across 4 threads"
+    ],
+    "potential_precedents_found": [],
+    "gap_confirmed": true,
+    "notes": "The dependency research (research_id5_it4__opus) conducted a comprehensive four-thread literature survey examining 31 sources spanning spectral feature grouping methods, Co-Information estimation bias, state-of-the-art interpretable oblique trees, and paper positioning. It confirmed a clear novelty gap: no prior work combines spectral clustering on an information-theoretic (MI/Co-Information) feature interaction graph with oblique decision tree split construction. The closest works identified were: (1) SPEC (Zhao & Liu 2007) - spectral but individual feature evaluation only; (2) GBFG (Zheng et al. 2020) - MI-based grouping but MST not spectral; (3) PIDF (Westphal et al. 2025) - PID-based synergy/redundancy but no graph/spectral/trees; (4) Interaction Forests (Hornung 2022) - tree structural interaction detection but not IT-based; (5) FoLDTree (2024) - oblique with ULDA not IT; (6) CART-ELC (2025) - exhaustive oblique search, no IT criteria; (7) Feature Graphs (BioData Mining 2025) - post-hoc spectral clustering on tree ensemble graphs, fundamentally different direction. No 2024-2026 paper was found that directly preempts the core contribution."
+  },
+  "sources": [
+    {"index": 1, "url": "https://api.semanticscholar.org/", "title": "Semantic Scholar Batch API", "summary": "Primary source for 10 of 15 BibTeX entries via batch POST /paper/batch endpoint using ArXiv IDs and DOIs"},
+    {"index": 2, "url": "https://dl.acm.org/doi/10.1145/2487575.2487579", "title": "ACM Digital Library - Lou et al. KDD 2013", "summary": "Confirmed DOI 10.1145/2487575.2487579 for GA2M paper, enabling successful Semantic Scholar retry"},
+    {"index": 3, "url": "https://www.jair.org/index.php/jair/article/view/10121", "title": "JAIR - Murthy et al. 1994", "summary": "Confirmed DOI 10.1613/jair.63 for OC1 oblique tree paper, JAIR vol. 2 pages 1-32"},
+    {"index": 4, "url": "https://ideas.repec.org/a/eee/csdana/v171y2022ics0167947322000408.html", "title": "RePEc - Hornung & Boulesteix 2022", "summary": "Confirmed Interaction Forests published in CSDA vol. 171 (2022), article 107460, DOI 10.1016/j.csda.2022.107460"},
+    {"index": 5, "url": "https://www.semanticscholar.org/paper/THE-CO-INFORMATION-LATTICE-Bell/25a0cd8d486d5ffd204485685226f189e6eadd4d", "title": "Semantic Scholar - Bell 2003 Co-Information Lattice", "summary": "Verified Bell 2003 workshop paper details: ICA 2003 (Nara, Japan), single author Anthony J. Bell, 257 citations, no DOI"},
+    {"index": 6, "url": "https://link.springer.com/article/10.1007/BF02289159", "title": "Springer - McGill 1954 Psychometrika", "summary": "Verified McGill 1954 bibliographic details: Psychometrika vol. 19 issue 2 pages 97-116, DOI 10.1007/BF02289159"},
+    {"index": 7, "url": "https://www.semanticscholar.org/paper/THE-CO-INFORMATION-LATTICE-Bell/25a0cd8d486d5ffd204485685226f189e6eadd4d", "title": "Dependency research_id5_it4__opus - Spectral CoI Literature Survey", "summary": "Four-thread survey of 31 sources confirming novelty gap: no prior work combines spectral clustering on IT feature interaction graphs with oblique tree construction"}
+  ],
+  "follow_up_questions": [
+    "Should the FIGS citation key be updated from Tan2022 to Tan2025 to match the PNAS publication year, and does the paper draft use the ArXiv or PNAS version?",
+    "Is the SPONGE citation intended for the original AISTATS 2019 paper (ArXiv 1904.08575) or the regularized JMLR 2021 extension (ArXiv 2011.01737), and should both be cited?",
+    "Should the Westphal PIDF entry use the AISTATS proceedings DOI (when available from PMLR) instead of the ArXiv DOI currently listed?"
+  ]
+}

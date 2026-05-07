@@ -1,0 +1,642 @@
+{
+  "title": "EBM/GA2M + Benchmark Evaluation Protocol Survey",
+  "summary": "Comprehensive survey covering InterpretML EBM/GA2M API (constructor parameters, methods, fitted attributes, FAST interaction detection), Grinsztajn 2022 tabular benchmark protocol (45 datasets across 4 OpenML suites, random search tuning, dataset selection criteria), interpretability metrics for tree-based and additive models (split arity, path length, total splits, number of terms), and Friedman/Nemenyi statistical testing methodology with autorank and scikit-posthocs implementations. Synthesized into a complete evaluation protocol for comparing 6 methods across 5-8 classification-numerical benchmark datasets.",
+  "research_topics": {
+    "step1_interpretml_ebm_api": {
+      "title": "InterpretML EBM API Reference",
+      "constructor_parameters_classifier": {
+        "feature_names": {"type": "list of str", "default": "None", "description": "Feature identifiers"},
+        "feature_types": {"type": "list of FeatureType", "default": "None", "description": "auto, quantile, rounded_quantile, uniform, continuous, nominal, or custom bins"},
+        "max_bins": {"type": "int", "default": 1024, "description": "Max number of bins per feature for main effects stage"},
+        "max_interaction_bins": {"type": "int", "default": 64, "description": "Max number of bins per feature for interaction terms"},
+        "interactions": {"type": "int/float/str/list", "default": "3x", "description": "Interaction count specification. '3x' means 3x the number of features. Accepts counts, percentages, or feature index tuples"},
+        "exclude": {"type": "str or list", "default": "None", "description": "Terms or features to omit"},
+        "validation_size": {"type": "int or float", "default": 0.15, "description": "Validation set proportion for early stopping"},
+        "outer_bags": {"type": "int", "default": 14, "description": "Number of bagged models for error bounds"},
+        "inner_bags": {"type": "int", "default": 0, "description": "Inner bagging count; 0 disables"},
+        "learning_rate": {"type": "float", "default": 0.015, "description": "Boosting step magnitude (classifier)"},
+        "greedy_ratio": {"type": "float", "default": 10.0, "description": "Proportion of greedy vs cyclic boosting; 0 disables greedy"},
+        "cyclic_progress": {"type": "bool or float", "default": false, "description": "Forward progress expectation ratio"},
+        "smoothing_rounds": {"type": "int", "default": 75, "description": "Initial regularization iterations for main effects"},
+        "interaction_smoothing_rounds": {"type": "int", "default": 75, "description": "Initial regularization iterations for interactions"},
+        "max_rounds": {"type": "int", "default": 50000, "description": "Total boosting iterations"},
+        "early_stopping_rounds": {"type": "int", "default": 100, "description": "Patience rounds before termination"},
+        "early_stopping_tolerance": {"type": "float", "default": 1e-5, "description": "Minimum improvement threshold"},
+        "min_samples_leaf": {"type": "int", "default": 4, "description": "Minimum leaf samples"},
+        "min_hessian": {"type": "float", "default": 1e-4, "description": "Minimum Hessian validity threshold"},
+        "reg_alpha": {"type": "float", "default": 0.0, "description": "L1 penalty coefficient"},
+        "reg_lambda": {"type": "float", "default": 0.0, "description": "L2 penalty coefficient"},
+        "max_leaves": {"type": "int", "default": 2, "description": "Maximum tree leaves per boosting step (depth-1 stump)"},
+        "monotone_constraints": {"type": "list of int", "default": "None", "description": "Per-feature monotonicity (-1, 0, +1)"},
+        "objective": {"type": "str", "default": "log_loss", "description": "Loss function (classifier)"},
+        "n_jobs": {"type": "int", "default": -2, "description": "Parallel execution threads"},
+        "random_state": {"type": "int or None", "default": 42, "description": "Reproducibility seed"}
+      },
+      "regressor_differences": {
+        "interactions_default": "5x (vs 3x for classifier)",
+        "learning_rate_default": 0.04,
+        "smoothing_rounds_default": 500,
+        "interaction_smoothing_rounds_default": 100,
+        "min_hessian_default": 0.0,
+        "objective_default": "rmse"
+      },
+      "key_methods": {
+        "training_prediction": [
+          "fit(X, y, sample_weight, bags, init_score)",
+          "predict(X, init_score)",
+          "predict_proba(X, init_score)",
+          "predict_with_uncertainty(X, init_score)",
+          "decision_function(X, init_score)"
+        ],
+        "explanation": [
+          "explain_global(name) - feature importance visualization",
+          "explain_local(X, y, name, init_score) - instance-level contribution",
+          "eval_terms(X) - per-term contribution scores",
+          "term_importances(importance_type) - additive term rankings"
+        ],
+        "model_modification": [
+          "remove_features(features)",
+          "remove_terms(terms)",
+          "monotonize(term, increasing, passthrough)",
+          "scale(term, factor)",
+          "sweep(terms, bins, features)"
+        ],
+        "export": [
+          "to_json(file, detail, indent)",
+          "to_excel(file)",
+          "to_jsonable(detail)",
+          "score(X, y, sample_weight)",
+          "copy()"
+        ]
+      },
+      "fitted_attributes": {
+        "term_features_": "List[tuple] - Feature indices composing each term. Single features = 1-tuples, interactions = 2-tuples",
+        "term_names_": "List[str] - Human-readable term identifiers",
+        "term_scores_": "Multi-dimensional array - Per-bin contributions (lookup tables)",
+        "bagged_scores_": "Multi-dimensional array - Ensemble model outputs from each outer bag",
+        "bin_weights_": "List - Sample mass per term bin",
+        "standard_deviations_": "Multi-dimensional array - Bagging uncertainty estimates",
+        "intercept_": "(n_classes,) or (1,) - Baseline prediction",
+        "best_iteration_": "(n_stages, n_outer_bags) - Boosting rounds completed",
+        "feature_names_in_": "List[str] - Resolved feature identifiers",
+        "feature_types_in_": "List[str] - continuous, nominal, or ordinal",
+        "bins_": "List - Binning specifications per feature",
+        "n_features_in_": "int - Feature count",
+        "link_": "str - logit, probit, or other transformation"
+      },
+      "interpretability_extraction": {
+        "total_terms": "len(model.term_names_)",
+        "interaction_terms_count": "sum(1 for t in model.term_features_ if len(t) == 2)",
+        "interaction_term_names": "[model.term_names_[i] for i, t in enumerate(model.term_features_) if len(t) == 2]",
+        "feature_importance": "model.term_importances('avg_weight')",
+        "importance_note": "term_importances computes the average of absolute predicted values per feature across training set"
+      },
+      "minimal_code_example": "from interpret.glassbox import ExplainableBoostingClassifier\nfrom interpret import show\n\nebm = ExplainableBoostingClassifier()\nebm.fit(X_train, y_train)\n\n# Number of terms\nn_terms = len(ebm.term_names_)\nprint(f'Total terms: {n_terms}')\n\n# Interaction terms\ninteraction_terms = [ebm.term_names_[i] for i, t in enumerate(ebm.term_features_) if len(t) == 2]\nprint(f'Interaction terms ({len(interaction_terms)}): {interaction_terms}')\n\n# Feature importances\nimportances = ebm.term_importances('avg_weight')\n\n# Global explanation\nebm_global = ebm.explain_global(name='EBM')\nshow(ebm_global)\n\n# Local explanation\nebm_local = ebm.explain_local(X_test, y_test, name='EBM')\nshow(ebm_local)"
+    },
+
+    "step2_fast_algorithm": {
+      "title": "FAST Algorithm and GA2M Interaction Detection",
+      "algorithm_overview": "FAST (Feature Appropriate Scoring for Tabular data) is a computationally efficient method for ranking all O(d^2) pairwise feature interactions as candidates for inclusion in a GA2M model. Introduced by Lou, Caruana, Gehrke, and Hooker at KDD 2013.",
+      "algorithm_steps": [
+        "Step 1 - Train Main Effects (GAM): Fit all univariate terms f_i(x_i) via cyclic gradient boosting with round-robin feature training. Each boosting step trains a depth-1 tree (stump) on a single feature using very low learning rate (0.015) so feature order is irrelevant.",
+        "Step 2 - Compute Residuals: After main effects converge, compute residuals r = y - (intercept + sum of f_i(x_i)). These residuals capture variance unexplained by additive main effects.",
+        "Step 3 - Discretize Features: Discretize each feature into b equi-frequency bins (typically b <= 256). This reduces the scoring cost per pair from O(n*log(n)) to O(b^2 + n).",
+        "Step 4 - Score All Pairs: For all O(d^2) feature pairs (x_i, x_j), fit a shallow tree (depth-2) to predict residuals r using only features (x_i, x_j). Score each pair by residual sum of squares (RSS) reduction. Lower RSS = stronger interaction signal.",
+        "Step 5 - Rank and Select Pairs: Rank all pairs by their RSS score. The FAST algorithm is run on each of the outer_bags (default 14), giving k rankings per pair, which are aggregated. Select top-k pairs where k is the 'interactions' parameter (default '3x' = 3 * n_features for classifier, '5x' for regressor).",
+        "Step 6 - Refit Full Model: Include selected interaction terms f_{i,j}(x_i, x_j) in the additive model. Refit the complete model including both main effects and interactions via cyclic gradient boosting. Spurious interactions (from correlated features) diminish automatically as boosting proceeds."
+      ],
+      "computational_complexity": {
+        "per_pair_scoring": "O(b^2 + n) per pair with b bins (typically b <= 256)",
+        "total_ranking": "O(d^2 * (b^2 + n)) for ranking all pairs",
+        "comparison": "FAST is 3-4 orders of magnitude faster than ANOVA and Grove methods for interaction detection",
+        "practical_note": "FAST is not sensitive to bin size within a wide range"
+      },
+      "key_properties": {
+        "detection_method": "Residual-based statistical ranking using shallow trees on discretized features",
+        "selection_strategy": "Greedy forward selection of top-k pairs based on aggregated RSS across outer bags",
+        "spurious_handling": "Spurious interactions from correlated features are down-weighted during refitting via gradient boosting",
+        "default_k_classifier": "3 * n_features (interactions='3x')",
+        "default_k_regressor": "5 * n_features (interactions='5x')"
+      },
+      "comparison_with_co_information_spectral": {
+        "FAST_residual_based": {
+          "detection_method": "Residual-based RSS scoring of shallow trees on feature pairs",
+          "structural_analysis": "None - ranks pairs independently with no graph structure",
+          "computational_cost": "O(d^2 * (b^2 + n)) - efficient with binning",
+          "group_detection": "No - only detects pairwise interactions, no higher-order groups",
+          "signed_information": "No - uses unsigned residual reduction only",
+          "output": "Ranked list of top-k feature pairs"
+        },
+        "co_information_spectral": {
+          "detection_method": "Information-theoretic Co-Information (synergy/redundancy)",
+          "structural_analysis": "Signed graph + spectral clustering (SPONGE) reveals interaction structure",
+          "computational_cost": "O(d^2 * n) for pairwise CI computation + O(d^3) for spectral decomposition",
+          "group_detection": "Yes - spectral clustering identifies synergistic groups of features",
+          "signed_information": "Yes - distinguishes synergistic (positive CI) from redundant (negative CI) interactions",
+          "output": "Feature clusters with signed interaction structure, guiding oblique split construction"
+        }
+      }
+    },
+
+    "step3_grinsztajn_benchmark": {
+      "title": "Grinsztajn et al. 2022 Benchmark Protocol",
+      "paper": "Why do tree-based models still outperform deep learning on typical tabular data?",
+      "venue": "NeurIPS 2022 (Datasets and Benchmarks Track)",
+      "authors": "Leo Grinsztajn, Edouard Oyallon, Gael Varoquaux",
+      "dataset_selection_criteria": [
+        "Heterogeneous columns (not same sensor repeated, excludes images/signals)",
+        "d/n < 1/10 (not high-dimensional relative to samples)",
+        "d < 500 (not too many features)",
+        "n >= 3000 (not too small)",
+        "d >= 4 (not too few features)",
+        "I.I.D. data (no time series)",
+        "Real-world data (not synthetic, but allows simulated data of practical importance like Higgs)",
+        "Training set truncated to 10,000 samples for larger datasets",
+        "No missing data",
+        "Not too easy (relative difference with default models > 5%)",
+        "Low-cardinality categoricals (max 20 levels per feature)",
+        "High-cardinality numericals (>= 10 unique values)"
+      ],
+      "openml_suites": {
+        "337": "Classification on numerical features only",
+        "334": "Classification on numerical and categorical features",
+        "336": "Regression on numerical features only",
+        "335": "Regression on numerical and categorical features"
+      },
+      "total_datasets": 45,
+      "recommended_classification_numerical_datasets": [
+        {
+          "name": "clf_num_electricity",
+          "approximate_samples": 38474,
+          "approximate_features": 8,
+          "n_classes": 2,
+          "description": "Electricity market pricing classification"
+        },
+        {
+          "name": "clf_num_california",
+          "approximate_samples": 20634,
+          "approximate_features": 8,
+          "n_classes": 2,
+          "description": "California housing adapted for binary classification"
+        },
+        {
+          "name": "clf_num_Higgs",
+          "approximate_samples": 98050,
+          "approximate_features": 28,
+          "n_classes": 2,
+          "description": "Higgs boson signal vs background from Monte Carlo simulations. Training truncated to 10K."
+        },
+        {
+          "name": "clf_num_jannis",
+          "approximate_samples": 57580,
+          "approximate_features": 54,
+          "n_classes": 4,
+          "description": "Anonymized multi-class classification dataset"
+        },
+        {
+          "name": "clf_num_eye_movements",
+          "approximate_samples": 7608,
+          "approximate_features": 23,
+          "n_classes": 3,
+          "description": "Eye tracking classification"
+        },
+        {
+          "name": "clf_num_credit",
+          "approximate_samples": 16714,
+          "approximate_features": 10,
+          "n_classes": 2,
+          "description": "Credit-related binary classification"
+        },
+        {
+          "name": "clf_num_MiniBooNE",
+          "approximate_samples": 72998,
+          "approximate_features": 50,
+          "n_classes": 2,
+          "description": "Particle physics signal/background classification"
+        },
+        {
+          "name": "clf_num_heloc",
+          "approximate_samples": 10000,
+          "approximate_features": 22,
+          "n_classes": 2,
+          "description": "Home equity line of credit risk"
+        }
+      ],
+      "evaluation_protocol": {
+        "split_method": "Random train/test split with stratification. Training set truncated to 10,000 samples.",
+        "hyperparameter_tuning": "Random search with ~20,000 compute hours total per learner. Performance evaluated as function of number of random search iterations.",
+        "validation": "Validation set carved from training data for early stopping and hyperparameter selection",
+        "metrics_classification": ["Test accuracy", "AUC-ROC (binary)"],
+        "metrics_regression": ["R-squared"],
+        "preprocessing": [
+          "Gaussianization of numerical features",
+          "One-hot encoding of categorical features",
+          "Transformation of regression targets"
+        ],
+        "repetitions": "15 shuffles of random search order to estimate variance",
+        "default_baselines": "Each method's default hyperparameters serve as first random search iteration"
+      },
+      "dataset_loading_code_openml": "import openml\nSUITE_ID = 337  # Classification, numerical features\nbenchmark_suite = openml.study.get_suite(SUITE_ID)\nfor task_id in benchmark_suite.tasks:\n    task = openml.tasks.get_task(task_id)\n    dataset = task.get_dataset()\n    X, y, categorical_indicator, attribute_names = dataset.get_data(\n        dataset_format='dataframe',\n        target=dataset.default_target_attribute\n    )",
+      "dataset_loading_code_huggingface": "from datasets import load_dataset\ndataset = load_dataset('inria-soda/tabular-benchmark', 'clf_num_electricity')\nX = dataset['train'].to_pandas()"
+    },
+
+    "step4_interpretability_metrics": {
+      "title": "Interpretability and Accuracy Metrics",
+      "accuracy_metrics": {
+        "balanced_accuracy": {
+          "formula": "(sensitivity + specificity) / 2",
+          "when_to_use": "Imbalanced classification",
+          "python": "sklearn.metrics.balanced_accuracy_score(y_true, y_pred)"
+        },
+        "auc_roc": {
+          "formula": "Area under ROC curve",
+          "when_to_use": "Binary classification, threshold-independent",
+          "python": "sklearn.metrics.roc_auc_score(y_true, y_prob)"
+        },
+        "test_accuracy": {
+          "formula": "n_correct / n_total",
+          "when_to_use": "Balanced multi-class classification",
+          "python": "sklearn.metrics.accuracy_score(y_true, y_pred)"
+        },
+        "r_squared": {
+          "formula": "1 - SS_res / SS_tot",
+          "when_to_use": "Regression tasks",
+          "python": "sklearn.metrics.r2_score(y_true, y_pred)"
+        }
+      },
+      "interpretability_metrics": {
+        "total_splits": {
+          "description": "Total number of splits summed across all trees in the ensemble. Lower = simpler.",
+          "for_FIGS": "model.complexity_ gives the total number of rules/splits",
+          "for_oblique_trees": "Sum of internal nodes across all trees",
+          "for_EBM": "Not directly applicable (uses lookup tables, not tree splits)"
+        },
+        "average_path_length": {
+          "description": "Mean number of splits from root to leaf, averaged across all trees and samples. Lower = simpler.",
+          "computation": "Traverse each tree, compute depth of leaf reached for each sample, average",
+          "for_FIGS": "Traverse model.trees_ to compute average depth"
+        },
+        "split_arity": {
+          "description": "Average number of features used per split. 1 = axis-aligned, >1 = oblique. Lower = more interpretable.",
+          "for_axis_aligned": "Always 1.0",
+          "for_oblique": "Count features with non-zero coefficients per split node, average across all splits",
+          "for_bivariate": "Always 2.0",
+          "for_sparse_oblique": "Varies, typically 2-5"
+        },
+        "max_split_arity": {
+          "description": "Maximum number of features in any single split. Worst-case interpretability measure.",
+          "computation": "max(n_nonzero_coefficients) across all split nodes"
+        },
+        "number_of_trees": {
+          "description": "Total trees in the ensemble.",
+          "for_FIGS": "len(model.trees_)"
+        },
+        "number_of_terms_ebm": {
+          "description": "Total univariate + interaction terms in EBM. Direct interpretability measure for GAMs.",
+          "computation": "len(model.term_names_)"
+        },
+        "number_of_interaction_terms_ebm": {
+          "description": "Count of pairwise interaction terms specifically.",
+          "computation": "sum(1 for t in model.term_features_ if len(t) == 2)"
+        },
+        "model_size": {
+          "description": "Total number of parameters or lookup table entries.",
+          "for_EBM": "Sum of sizes of all term_scores_ arrays",
+          "for_trees": "Total number of nodes across all trees"
+        }
+      },
+      "computation_code": {
+        "figs_metrics": "# FIGS interpretability metrics\nfrom imodels import FIGSClassifier\nmodel = FIGSClassifier(max_rules=12)\nmodel.fit(X_train, y_train)\n\ntotal_splits = model.complexity_  # total rules/splits\nn_trees = len(model.trees_)\n\n# Average path length - traverse trees\ndef avg_path_length(model, X):\n    depths = []\n    for tree in model.trees_:\n        for sample in X:\n            depth = 0\n            node = tree\n            while hasattr(node, 'feature'):\n                depth += 1\n                if sample[node.feature] <= node.threshold:\n                    node = node.left\n                else:\n                    node = node.right\n            depths.append(depth)\n    return np.mean(depths)",
+        "ebm_metrics": "# EBM interpretability metrics\nfrom interpret.glassbox import ExplainableBoostingClassifier\nebm = ExplainableBoostingClassifier()\nebm.fit(X_train, y_train)\n\nn_total_terms = len(ebm.term_names_)\nn_main_effects = sum(1 for t in ebm.term_features_ if len(t) == 1)\nn_interactions = sum(1 for t in ebm.term_features_ if len(t) == 2)\nimportances = ebm.term_importances('avg_weight')\n\nprint(f'Total terms: {n_total_terms}')\nprint(f'Main effects: {n_main_effects}')\nprint(f'Interactions: {n_interactions}')",
+        "oblique_tree_metrics": "# Oblique tree split arity\ndef compute_split_arity(tree_nodes):\n    arities = []\n    for node in tree_nodes:\n        if node.is_split:\n            n_nonzero = np.count_nonzero(node.coefficients)\n            arities.append(n_nonzero)\n    return {\n        'mean_arity': np.mean(arities),\n        'max_arity': np.max(arities),\n        'min_arity': np.min(arities)\n    }"
+      },
+      "scalability_metrics": {
+        "wall_clock_time": "Total time for full pipeline (info computation + graph analysis + tree fitting)",
+        "component_times": [
+          "Co-Information computation time",
+          "Graph construction and spectral clustering time",
+          "Tree construction / model fitting time"
+        ]
+      },
+      "interpretability_tradeoff_evidence": "Recent research (Springer BISE 2024) challenges the strict performance-interpretability tradeoff for tabular data. Advanced interpretable models like EBM, IGANN, and GAMI-Net can achieve high predictive performance while remaining fully interpretable. EBM even surpasses most black-box models on average."
+    },
+
+    "step5_statistical_testing": {
+      "title": "Statistical Testing Protocol for Multi-Dataset Comparison",
+      "decision_tree": {
+        "two_methods": "Wilcoxon signed-rank test (paired, non-parametric)",
+        "three_plus_all_pairs": "Friedman test + Nemenyi post-hoc test",
+        "three_plus_vs_control": "Friedman test + Holm-corrected pairwise Wilcoxon",
+        "minimum_datasets": ">=5 datasets recommended (5-8 is sufficient)",
+        "bayesian_alternative": "Bayesian signed-rank test with ROPE (baycomp package)"
+      },
+      "friedman_nemenyi_protocol": [
+        "1. Organize results as matrix: rows = datasets, columns = methods, cells = metric value (e.g. balanced accuracy)",
+        "2. Compute ranks per dataset (row): best method gets rank 1, ties get average ranks",
+        "3. Compute average ranks across datasets for each method",
+        "4. Run Friedman test: scipy.stats.friedmanchisquare(*[col for col in data.T]). If p < 0.05, proceed.",
+        "5. Run Nemenyi post-hoc: scikit_posthocs.posthoc_nemenyi_friedman(data). Returns p-value matrix.",
+        "6. Compute Critical Difference: CD = q_alpha * sqrt(k*(k+1)/(6*N)) where k = number of methods, N = number of datasets",
+        "7. Plot CD diagram: methods on horizontal axis by average rank; crossbars connect methods NOT significantly different"
+      ],
+      "implementation_option_a_autorank": {
+        "description": "Recommended for simplicity. Auto-selects appropriate test based on data characteristics.",
+        "code": "from autorank import autorank, plot_stats, create_report, latex_table\n\n# Input: DataFrame with columns = methods, rows = datasets\nresult = autorank(df, alpha=0.05, verbose=True)\ncreate_report(result)  # text summary\nplot_stats(result)     # CD diagram\nlatex_table(result)    # for paper",
+        "auto_selection_logic": [
+          "Shapiro-Wilk test for normality (with Bonferroni correction)",
+          "If all normal + homoscedastic -> repeated measures ANOVA + Tukey HSD",
+          "If any non-normal or heteroscedastic -> Friedman + Nemenyi",
+          "Two populations: paired t-test (normal) or Wilcoxon signed-rank (non-normal)"
+        ],
+        "input_format": "Pandas DataFrame where each column is a method/population, each row is a dataset/observation. All columns must be numeric and equal length.",
+        "parameters": {
+          "alpha": "Significance level (default 0.05)",
+          "verbose": "Boolean for output detail",
+          "approach": "frequentist (default) or bayesian"
+        }
+      },
+      "implementation_option_b_manual": {
+        "code_friedman": "from scipy.stats import friedmanchisquare\nimport scikit_posthocs as sp\nimport numpy as np\n\n# data: numpy array, rows = datasets, columns = methods\nstat, p = friedmanchisquare(*[data[:, i] for i in range(data.shape[1])])\nprint(f'Friedman chi2={stat:.4f}, p={p:.4f}')\n\nif p < 0.05:\n    nemenyi = sp.posthoc_nemenyi_friedman(data)\n    print(nemenyi)",
+        "code_cd_diagram": "import scikit_posthocs as sp\nimport matplotlib.pyplot as plt\nimport pandas as pd\n\n# Compute average ranks\navg_rank = data.rank(axis=1).mean(axis=0)\n\n# Run post-hoc test\nnemenyi_results = sp.posthoc_nemenyi_friedman(data.values)\n\n# Plot critical difference diagram\nplt.figure(figsize=(10, 2), dpi=100)\nsp.critical_difference_diagram(avg_rank, nemenyi_results)\nplt.tight_layout()\nplt.savefig('cd_diagram.pdf', bbox_inches='tight')"
+      },
+      "garcia_herrera_2008_extensions": {
+        "description": "More powerful post-hoc corrections than Nemenyi",
+        "holm_procedure": "Pairwise Wilcoxon with Holm correction - more power than Nemenyi for control comparisons",
+        "advanced_corrections": ["Hochberg (1988)", "Hommel (1988)", "Shaffer static", "Bergmann-Hommel (highest power, up to 9 algorithms)"],
+        "recommendation": "For up to 9 methods, Bergmann-Hommel has highest power. For more, use Shaffer or Holm."
+      },
+      "effect_size_kendall_w": {
+        "formula": "W = chi2 / (N * (K - 1))",
+        "interpretation": {
+          "small": "0.1 - 0.3",
+          "moderate": "0.3 - 0.5",
+          "large": ">= 0.5"
+        },
+        "description": "Kendall's W (coefficient of concordance) quantifies how consistently methods are ranked across datasets. Report alongside Friedman chi2 and p-value.",
+        "python": "W = friedman_stat / (n_datasets * (n_methods - 1))"
+      },
+      "bayesian_alternative": {
+        "method": "Bayesian signed-rank test with ROPE",
+        "package": "baycomp",
+        "description": "Computes posterior probabilities: p_left (method A better), p_rope (methods equivalent), p_right (method B better)",
+        "rope_definition": "Region of Practical Equivalence. Default: (-0.01, 0.01) for accuracy differences. Two classifiers are 'practically equivalent' if difference falls within ROPE.",
+        "advantage": "Can declare practical equivalence (impossible with NHST). More conservative than frequentist tests.",
+        "code": "from baycomp import SignedRankTest\nresult = SignedRankTest(accuracy_diffs, rope=0.01)\nprint(f'P(A better): {result.probs()[0]:.3f}')\nprint(f'P(equivalent): {result.probs()[1]:.3f}')\nprint(f'P(B better): {result.probs()[2]:.3f}')"
+      },
+      "cd_diagram_libraries": [
+        "scikit-posthocs: sp.critical_difference_diagram(avg_rank, sig_matrix) - most integrated",
+        "autorank: plot_stats(result) - simplest, auto-generates from autorank result",
+        "Orange3: Orange.evaluation.compute_CD() + Orange.evaluation.graph_ranks()",
+        "aeon: aeon.visualisation.plot_critical_difference",
+        "hfawaz/cd-diagram: GitHub repo with Wilcoxon-Holm post-hoc CD diagrams"
+      ]
+    },
+
+    "step6_complete_evaluation_protocol": {
+      "title": "Complete Evaluation Protocol Summary",
+      "methods_table": [
+        {
+          "method": "Axis-aligned FIGS",
+          "implementation": "imodels.FIGSClassifier",
+          "key_hyperparameters": "max_rules",
+          "tuning_strategy": "Grid: [4, 8, 12, 16, 20]"
+        },
+        {
+          "method": "Random-oblique FIGS",
+          "implementation": "Custom (Ridge on random feature subsets)",
+          "key_hyperparameters": "max_rules, n_features_per_split",
+          "tuning_strategy": "Grid x Grid: max_rules [4,8,12,16,20] x n_features [2,3,4,5]"
+        },
+        {
+          "method": "SG-FIGS (hard threshold)",
+          "implementation": "Custom (first draft: threshold on co-information)",
+          "key_hyperparameters": "threshold_percentile",
+          "tuning_strategy": "Grid: [75, 80, 85, 90, 95]"
+        },
+        {
+          "method": "Unsigned spectral FIGS",
+          "implementation": "Custom (unsigned Laplacian spectral clustering)",
+          "key_hyperparameters": "k_clusters",
+          "tuning_strategy": "Grid: [2, 3, 4, 5]"
+        },
+        {
+          "method": "Signed spectral FIGS (ours)",
+          "implementation": "Custom (SPONGE signed spectral clustering)",
+          "key_hyperparameters": "k_clusters",
+          "tuning_strategy": "Grid: [2, 3, 4, 5]"
+        },
+        {
+          "method": "EBM",
+          "implementation": "interpret.ExplainableBoostingClassifier",
+          "key_hyperparameters": "interactions, max_bins",
+          "tuning_strategy": "Default ('3x', 1024) — standard practice for EBM"
+        }
+      ],
+      "evaluation_checklist": [
+        "1. Balanced accuracy (5-fold stratified CV, report mean +/- std)",
+        "2. AUC-ROC (same CV folds, for binary classification datasets)",
+        "3. Total number of splits (for tree-based methods)",
+        "4. Average split arity (1 for axis-aligned, >1 for oblique)",
+        "5. Average path length (mean root-to-leaf depth)",
+        "6. Wall-clock training time (total pipeline time)",
+        "7. For EBM: number of terms, number of interaction terms",
+        "8. Frustration index (dataset-level, compute once per dataset)",
+        "9. Correlation: frustration index vs (oblique accuracy - axis-aligned accuracy)"
+      ],
+      "reporting_requirements": {
+        "table_1": "Accuracy results (mean +/- std) across all datasets and methods",
+        "table_2": "Interpretability metrics across all datasets and methods",
+        "figure_1": "Critical difference diagram for balanced accuracy",
+        "figure_2": "Scatter plot of frustration index vs oblique accuracy gain",
+        "table_3": "Statistical test results (Friedman p-value, Kendall's W, pairwise Nemenyi p-values)"
+      },
+      "statistical_analysis_for_experiment": {
+        "methods_k": 6,
+        "datasets_n": "5-8 (from Grinsztajn classification-numerical suite)",
+        "primary_metric": "Balanced accuracy",
+        "secondary_metrics": ["AUC-ROC", "Split arity", "Total splits"],
+        "protocol": [
+          "Run Friedman + Nemenyi separately for each metric",
+          "Report Kendall's W effect size alongside p-values",
+          "Paired Wilcoxon between signed-spectral (ours) and each baseline for focused comparison",
+          "Report both frequentist (Friedman/Nemenyi) and descriptive (mean +/- std across datasets)"
+        ]
+      },
+      "figs_constructor_reference": {
+        "max_rules": {"type": "int", "default": 12, "description": "Maximum total number of rules/splits across all trees"},
+        "max_trees": {"type": "int", "default": "None", "description": "Maximum total number of trees"},
+        "min_impurity_decrease": {"type": "float", "default": 0.0, "description": "Minimum impurity decrease threshold for splits"},
+        "max_features": {"type": "str", "default": "None", "description": "Number of features to consider for best split"},
+        "max_depth": {"type": "int", "default": "None", "description": "Maximum depth allowed for nodes"},
+        "random_state": {"type": "optional", "default": "None", "description": "Random seed"},
+        "fitted_attributes": {
+          "trees_": "List of root nodes of all trees",
+          "complexity_": "Integer counting total number of rules/splits in the model",
+          "feature_importances_": "Gini impurity-based feature importance scores"
+        }
+      }
+    }
+  },
+
+  "sources": [
+    {
+      "index": 1,
+      "url": "https://interpret.ml/docs/python/api/ExplainableBoostingClassifier.html",
+      "title": "ExplainableBoostingClassifier API - InterpretML Documentation",
+      "summary": "Complete constructor parameters, methods, and fitted attributes for EBM classifier"
+    },
+    {
+      "index": 2,
+      "url": "https://interpret.ml/docs/python/api/ExplainableBoostingRegressor.html",
+      "title": "ExplainableBoostingRegressor API - InterpretML Documentation",
+      "summary": "Regressor variant parameters showing differences from classifier (interactions='5x', learning_rate=0.04)"
+    },
+    {
+      "index": 3,
+      "url": "https://interpret.ml/docs/ebm.html",
+      "title": "Explainable Boosting Machine - InterpretML Documentation",
+      "summary": "Conceptual overview of EBM training algorithm, cyclic gradient boosting, and interaction detection"
+    },
+    {
+      "index": 4,
+      "url": "https://dl.acm.org/doi/10.1145/2487575.2487579",
+      "title": "Accurate Intelligible Models with Pairwise Interactions (Lou et al., KDD 2013)",
+      "summary": "Original GA2M/FAST algorithm paper defining interaction detection via residual-based pair ranking"
+    },
+    {
+      "index": 5,
+      "url": "https://www.microsoft.com/en-us/research/publication/accurate-intelligible-models-pairwise-interactions/",
+      "title": "Microsoft Research - Accurate Intelligible Models with Pairwise Interactions",
+      "summary": "FAST algorithm overview and GA2M model description from Microsoft Research"
+    },
+    {
+      "index": 6,
+      "url": "https://github.com/interpretml/interpret",
+      "title": "InterpretML GitHub Repository",
+      "summary": "EBM implementation source code, FAST algorithm integration, and recent updates (greedy/smoothing defaults)"
+    },
+    {
+      "index": 7,
+      "url": "https://arxiv.org/abs/2207.08815",
+      "title": "Why do tree-based models still outperform deep learning on tabular data? (Grinsztajn et al., 2022)",
+      "summary": "NeurIPS 2022 benchmark paper defining 45 datasets, 4 OpenML suites, and evaluation protocol"
+    },
+    {
+      "index": 8,
+      "url": "https://github.com/LeoGrin/tabular-benchmark",
+      "title": "Tabular Benchmark GitHub Repository",
+      "summary": "Code and dataset loading instructions for Grinsztajn benchmark using OpenML suites 334-337"
+    },
+    {
+      "index": 9,
+      "url": "https://huggingface.co/datasets/inria-soda/tabular-benchmark",
+      "title": "inria-soda/tabular-benchmark - Hugging Face Datasets",
+      "summary": "Full catalog of 60+ benchmark datasets with HuggingFace loading code"
+    },
+    {
+      "index": 10,
+      "url": "https://jmlr.org/papers/volume7/demsar06a/demsar06a.pdf",
+      "title": "Statistical Comparisons of Classifiers over Multiple Data Sets (Demsar, 2006)",
+      "summary": "Foundational paper recommending Friedman test + Nemenyi post-hoc for multi-classifier comparison"
+    },
+    {
+      "index": 11,
+      "url": "https://www.jmlr.org/papers/volume9/garcia08a/garcia08a.pdf",
+      "title": "An Extension on Statistical Comparisons of Classifiers (Garcia & Herrera, 2008)",
+      "summary": "Extended post-hoc procedures including Holm, Hochberg, and Bergmann-Hommel corrections"
+    },
+    {
+      "index": 12,
+      "url": "https://sherbold.github.io/autorank/",
+      "title": "Autorank - Automated Statistical Testing",
+      "summary": "Python library auto-selecting appropriate statistical tests with CD diagram generation"
+    },
+    {
+      "index": 13,
+      "url": "https://scikit-posthocs.readthedocs.io/en/latest/generated/scikit_posthocs.posthoc_nemenyi_friedman.html",
+      "title": "scikit-posthocs posthoc_nemenyi_friedman Documentation",
+      "summary": "Function signature and usage for Nemenyi post-hoc test after Friedman"
+    },
+    {
+      "index": 14,
+      "url": "https://scikit-posthocs.readthedocs.io/en/latest/tutorial.html",
+      "title": "scikit-posthocs Tutorial",
+      "summary": "End-to-end tutorial for Friedman test, Nemenyi post-hoc, and critical difference diagrams"
+    },
+    {
+      "index": 15,
+      "url": "https://www.jmlr.org/papers/volume18/16-305/16-305.pdf",
+      "title": "Time for a Change: Comparing Multiple Classifiers Through Bayesian Analysis (Benavoli et al., 2017)",
+      "summary": "Bayesian signed-rank test with ROPE for classifier comparison"
+    },
+    {
+      "index": 16,
+      "url": "https://csinva.io/imodels/figs.html",
+      "title": "FIGS Documentation - imodels",
+      "summary": "FIGS algorithm description, max_rules parameter, and interpretability constraints"
+    },
+    {
+      "index": 17,
+      "url": "https://bair.berkeley.edu/blog/2022/06/30/figs/",
+      "title": "FIGS: Attaining XGBoost-level performance with interpretability (BAIR Blog)",
+      "summary": "FIGS algorithm overview, simultaneous tree growth, and interpretability-accuracy tradeoff"
+    },
+    {
+      "index": 18,
+      "url": "https://github.com/csinva/imodels/blob/master/imodels/tree/figs.py",
+      "title": "FIGS Source Code - imodels",
+      "summary": "FIGS constructor parameters (max_rules=12 default), fitted attributes (trees_, complexity_)"
+    },
+    {
+      "index": 19,
+      "url": "https://link.springer.com/article/10.1007/s12599-024-00922-2",
+      "title": "Challenging the Performance-Interpretability Trade-Off (Springer BISE, 2024)",
+      "summary": "Evidence that EBM matches/exceeds black-box models while maintaining full interpretability"
+    },
+    {
+      "index": 20,
+      "url": "https://arxiv.org/html/2505.04139v1",
+      "title": "LHT: Statistically-Driven Oblique Decision Trees for Interpretable Classification",
+      "summary": "Recent oblique tree work with explicit feature contributions at splitting nodes"
+    },
+    {
+      "index": 21,
+      "url": "https://link.springer.com/article/10.1007/s10489-021-02281-x",
+      "title": "Optimal Bivariate Splits for Oblique Decision Trees (Applied Intelligence)",
+      "summary": "Bivariate oblique splits as interpretability middle ground between axis-aligned and full multivariate"
+    },
+    {
+      "index": 22,
+      "url": "https://github.com/hfawaz/cd-diagram",
+      "title": "CD-Diagram: Critical Difference Diagrams with Wilcoxon-Holm",
+      "summary": "Python implementation for critical difference diagrams using Wilcoxon-Holm post-hoc analysis"
+    },
+    {
+      "index": 23,
+      "url": "https://www.emergentmind.com/topics/explainable-boosting-machines",
+      "title": "Explainable Boosting Machines - Emergent Mind",
+      "summary": "EBM overview including FAST interaction detection, cyclic boosting, and performance benchmarks"
+    },
+    {
+      "index": 24,
+      "url": "https://github.com/interpretml/interpret/issues/263",
+      "title": "How are feature importances calculated in EBM? - GitHub Issue",
+      "summary": "Discussion of term_importances computation as average absolute predicted values"
+    },
+    {
+      "index": 25,
+      "url": "https://rpkgs.datanovia.com/rstatix/reference/friedman_effsize.html",
+      "title": "Friedman Test Effect Size (Kendall's W) - rstatix",
+      "summary": "Kendall's W formula and interpretation guidelines for Friedman test effect size"
+    }
+  ],
+
+  "answer": "This survey establishes a complete, actionable evaluation protocol for comparing Balance-Guided Oblique Trees against state-of-the-art interpretable models on tabular data, covering five tightly integrated components.\n\n**EBM Baseline Configuration.** The ExplainableBoostingClassifier from InterpretML [1, 3] provides the gold-standard interpretable baseline. Key defaults include interactions='3x' (3 times feature count), max_bins=1024 for mains and 64 for interactions, outer_bags=14 for bagging, learning_rate=0.015, and max_leaves=2 (depth-1 stumps) [1]. After fitting, interpretability is measured via len(model.term_names_) for total terms and counting 2-tuples in model.term_features_ for interaction count [1, 24]. The FAST algorithm underlying EBM's interaction detection [4, 5] works by training main effects first via cyclic gradient boosting, computing residuals, then scoring all O(d^2) feature pairs by fitting shallow trees to residuals on discretized features (O(b^2+n) per pair) [4, 23]. This is fundamentally different from our Co-Information spectral approach: FAST uses greedy residual-based pair ranking with no structural analysis, while our method builds a signed interaction graph enabling spectral clustering of synergistic feature groups [4, 5].\n\n**Benchmark Protocol.** Following Grinsztajn et al. 2022 [7, 8], we select 5-8 classification-numerical datasets from OpenML Suite 337 [8, 9]: electricity (~38K samples, 8 features), california (~21K, 8), Higgs (~98K, 28), jannis (~58K, 54), eye_movements (~7.6K, 23), credit (~17K, 10), MiniBooNE (~73K, 50), and heloc (~10K, 22). Dataset selection criteria require d/n < 1/10, d < 500, no missing data, heterogeneous columns, and real-world origin [7]. Training sets are truncated to 10,000 samples per the benchmark protocol. Evaluation uses 5-fold stratified cross-validation with random search hyperparameter tuning. Metrics include balanced accuracy (primary) and AUC-ROC (secondary for binary) [7].\n\n**Interpretability Metrics.** Beyond accuracy, we measure: total number of splits (FIGS: model.complexity_) [16, 18], average split arity (features per split: 1 for axis-aligned, >1 for oblique) [20, 21], average path length, number of trees (len(model.trees_) for FIGS) [18], and for EBM: number of terms and interaction terms [1]. Recent evidence challenges the strict performance-interpretability tradeoff, showing EBM matches or exceeds black-box models while remaining fully interpretable [19]. The split arity metric is particularly important for oblique trees: bivariate splits (arity=2) retain reasonable interpretability while being competitive with full multivariate splits [21].\n\n**Statistical Testing.** Following Demsar 2006 [10] and Garcia & Herrera 2008 [11], we compare k=6 methods across N=5-8 datasets using the Friedman test followed by Nemenyi post-hoc test. The autorank library [12] automates test selection: Shapiro-Wilk normality check, then Friedman + Nemenyi for non-normal multi-population comparisons. Critical difference diagrams are generated via scikit-posthocs [13, 14] or autorank's plot_stats() [12]. We report Kendall's W effect size (W = chi2/(N*(K-1)), thresholds: 0.1 small, 0.3 moderate, 0.5 large) alongside p-values [25]. For focused pairwise comparisons of our method against each baseline, we use paired Wilcoxon tests with Holm correction [11]. The Bayesian signed-rank test with ROPE provides a complementary analysis capable of declaring practical equivalence [15].\n\n**Complete Protocol.** Six methods are compared: (i) Axis-aligned FIGS (max_rules grid [4,8,12,16,20]), (ii) Random-oblique FIGS, (iii) Hard-threshold SG-FIGS, (iv) Unsigned spectral FIGS, (v) Signed spectral FIGS (ours), (vi) EBM (default settings). The evaluation checklist covers: balanced accuracy, AUC-ROC, total splits, split arity, path length, training time, EBM term counts, frustration index, and frustration-vs-accuracy-gain correlation. Reporting includes accuracy tables (mean +/- std), interpretability metric tables, CD diagrams, frustration index scatter plots, and full statistical test results.",
+
+  "follow_up_questions": [
+    "What are the exact dataset sizes (n_samples, n_features, n_classes) for each of the 16 classification-numerical datasets in OpenML Suite 337, and which 5-8 best match our 10K-100K sample range hypothesis?",
+    "Does FIGS support sample_weight for handling imbalanced datasets, and what is the recommended strategy for class imbalance across the benchmark datasets?",
+    "What is the recommended random search budget (number of iterations) for EBM hyperparameter tuning, given that the default configuration already performs well — should we tune EBM or use defaults only?",
+    "How should we handle the frustration index computation for datasets with many features (d>20) where the pairwise Co-Information matrix becomes expensive to compute?"
+  ]
+}
