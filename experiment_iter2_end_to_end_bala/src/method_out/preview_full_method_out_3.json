@@ -1,0 +1,156 @@
+{
+  "metadata": {
+    "experiment": "balance_guided_oblique_trees_real_benchmarks",
+    "hypothesis": "Signed spectral clustering of Co-Information graph improves oblique tree construction",
+    "datasets": [
+      "electricity",
+      "adult",
+      "california_housing"
+    ],
+    "methods": [
+      "axis_aligned_figs",
+      "random_oblique_figs",
+      "signed_spectral_figs"
+    ],
+    "max_splits_grid": [
+      5,
+      10,
+      15
+    ],
+    "best_max_splits": {
+      "electricity__axis_aligned_figs": 20,
+      "electricity__random_oblique_figs": 20,
+      "electricity__signed_spectral_figs": 20,
+      "adult__axis_aligned_figs": 15,
+      "adult__random_oblique_figs": 15,
+      "adult__signed_spectral_figs": 10,
+      "california_housing__axis_aligned_figs": 20,
+      "california_housing__random_oblique_figs": 15,
+      "california_housing__signed_spectral_figs": 20,
+      "jannis__axis_aligned_figs": 20,
+      "jannis__random_oblique_figs": 20,
+      "jannis__signed_spectral_figs": 20,
+      "higgs_small__axis_aligned_figs": 20,
+      "higgs_small__random_oblique_figs": 20,
+      "higgs_small__signed_spectral_figs": 20
+    },
+    "aggregated_results": [
+      {
+        "dataset": "electricity",
+        "method": "axis_aligned_figs",
+        "max_splits": 5,
+        "n_folds": 5,
+        "task_type": "classification",
+        "balanced_accuracy_mean": 0.7323384936395074,
+        "balanced_accuracy_std": 0.005956441196659378,
+        "auc_roc_mean": 0.8248821989749093,
+        "auc_roc_std": 0.002973207297758808,
+        "total_splits_mean": 5.0,
+        "avg_split_arity_mean": 1.0,
+        "avg_path_length_mean": 2.142857142857143,
+        "fit_time_sec_mean": 0.6762344837188721,
+        "frustration_index_mean": 1.5205373923685235e-16
+      },
+      {
+        "dataset": "electricity",
+        "method": "axis_aligned_figs",
+        "max_splits": 10,
+        "n_folds": 5,
+        "task_type": "classification",
+        "balanced_accuracy_mean": 0.7868693684686667,
+        "balanced_accuracy_std": 0.0028004758438554857,
+        "auc_roc_mean": 0.8532190644331441,
+        "auc_roc_std": 0.0018910070640815468,
+        "total_splits_mean": 10.0,
+        "avg_split_arity_mean": 1.0,
+        "avg_path_length_mean": 3.5,
+        "fit_time_sec_mean": 0.5750960350036621,
+        "frustration_index_mean": 1.5205373923685235e-16
+      },
+      {
+        "dataset": "electricity",
+        "method": "axis_aligned_figs",
+        "max_splits": 15,
+        "n_folds": 5,
+        "task_type": "classification",
+        "balanced_accuracy_mean": 0.7942503324944188,
+        "balanced_accuracy_std": 0.0007216178343806508,
+        "auc_roc_mean": 0.8605694743576932,
+        "auc_roc_std": 0.0018432560667712052,
+        "total_splits_mean": 15.0,
+        "avg_split_arity_mean": 1.0,
+        "avg_path_length_mean": 4.482352941176471,
+        "fit_time_sec_mean": 0.9030701637268066,
+        "frustration_index_mean": 1.5205373923685235e-16
+      }
+    ],
+    "frustration_analysis": {
+      "electricity": {
+        "frustration_index": 1.5205373923685233e-16,
+        "ss_minus_aa": 0.00017515403368006943
+      },
+      "adult": {
+        "frustration_index": 0.05687352164216852,
+        "ss_minus_aa": -0.013733522203271398
+      },
+      "california_housing": {
+        "frustration_index": 0.06937017606620346,
+        "ss_minus_aa": -0.08239001247057842
+      },
+      "jannis": {
+        "frustration_index": 0.005289836092468142,
+        "ss_minus_aa": 0.00372525182354988
+      },
+      "higgs_small": {
+        "frustration_index": 0.000342322983772324,
+        "ss_minus_aa": -0.002636409994900668
+      }
+    },
+    "n_folds": 5,
+    "coi_k_neighbors": 5,
+    "coi_subsample_n": 10000
+  },
+  "datasets": [
+    {
+      "dataset": "higgs_small",
+      "examples": [
+        {
+          "input": "{\"lepton_pT\":1.109584093093872,\"lepton_eta\":0.1772081702947616,\"lepton_phi\":-1.2603337764739992,\"missing_energy_magnitude\":1.07051944732666,\"missing_energy_phi\":0.5294701457023621,\"jet_1_pt\":0.7178341...",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_Higgs",
+          "metadata_row_index": 0,
+          "metadata_n_classes": 2,
+          "predict_axis_aligned_figs": "0",
+          "predict_random_oblique_figs": "0",
+          "predict_signed_spectral_figs": "0"
+        },
+        {
+          "input": "{\"lepton_pT\":1.613591194152832,\"lepton_eta\":0.5628997683525085,\"lepton_phi\":-0.0168870482593774,\"missing_energy_magnitude\":1.0077449083328247,\"missing_energy_phi\":-0.2404591888189316,\"jet_1_pt\":1.1006...",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_Higgs",
+          "metadata_row_index": 1,
+          "metadata_n_classes": 2,
+          "predict_axis_aligned_figs": "0",
+          "predict_random_oblique_figs": "1",
+          "predict_signed_spectral_figs": "1"
+        },
+        {
+          "input": "{\"lepton_pT\":0.6575517058372498,\"lepton_eta\":-1.7356663942337036,\"lepton_phi\":-0.245489627122879,\"missing_energy_magnitude\":1.8611581325531004,\"missing_energy_phi\":-1.1344585418701172,\"jet_1_pt\":1.379...",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_Higgs",
+          "metadata_row_index": 2,
+          "metadata_n_classes": 2,
+          "predict_axis_aligned_figs": "1",
+          "predict_random_oblique_figs": "1",
+          "predict_signed_spectral_figs": "1"
+        }
+      ]
+    }
+  ]
+}

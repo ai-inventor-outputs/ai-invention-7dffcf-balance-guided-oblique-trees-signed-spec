@@ -1,0 +1,1205 @@
+{
+  "metadata": {
+    "experiment": "signed_spectral_recovery_synthetic",
+    "hypothesis_test": "Does SPONGE recover planted synergistic modules?",
+    "methods_compared": [
+      "sponge_auto_k",
+      "sponge_oracle_k",
+      "hard_threshold",
+      "unsigned_spectral",
+      "random_partition"
+    ],
+    "summary": {
+      "sponge_oracle_mean_ari": 0.146321,
+      "sponge_auto_mean_ari": 0.158491,
+      "hard_threshold_mean_ari": 0.184,
+      "unsigned_spectral_mean_ari": 0.151924,
+      "random_mean_ari": -0.043192,
+      "sponge_oracle_mean_mfari": 0.494263,
+      "sponge_auto_mean_mfari": 0.400341,
+      "hard_threshold_mean_mfari": 0.20491,
+      "unsigned_spectral_mean_mfari": 0.554332,
+      "random_mean_mfari": -0.058245,
+      "sponge_oracle_mean_jaccard": 0.5565,
+      "sponge_auto_mean_jaccard": 0.434236,
+      "hard_threshold_mean_jaccard": 0.341209,
+      "unsigned_spectral_mean_jaccard": 0.59888,
+      "random_mean_jaccard": 0.046085,
+      "sponge_beats_hard_threshold": true,
+      "sponge_beats_unsigned": false,
+      "sponge_beats_random": true,
+      "xor_features_recovered": true,
+      "frustration_diagnostic_works": true
+    },
+    "per_variant": {
+      "easy_2mod_xor": {
+        "name": "easy_2mod_xor",
+        "n_samples": 10000,
+        "n_features": 10,
+        "gt_n_modules": 2,
+        "frustration_index": 0.247895,
+        "coi_computation_time_sec": 2.38,
+        "xor_marginal_mi": [
+          {
+            "feature": 0,
+            "mi": 0.001016
+          },
+          {
+            "feature": 1,
+            "mi": 0.001406
+          },
+          {
+            "feature": 2,
+            "mi": 0.0
+          },
+          {
+            "feature": 3,
+            "mi": 0.0
+          }
+        ],
+        "coi_sign_diagnostics": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "coi": -0.169155,
+            "is_synergistic": true,
+            "module_type": "xor"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "coi": -0.164198,
+            "is_synergistic": true,
+            "module_type": "xor"
+          }
+        ],
+        "methods": {
+          "sponge_auto_k": {
+            "k_used": 3,
+            "adjusted_rand_index": 0.594595,
+            "module_focused_ari": 1.0,
+            "synergistic_pair_jaccard": 1.0,
+            "xor_recovery_fraction": 1.0,
+            "time_sec": 0.333,
+            "cluster_sizes": [
+              3,
+              4,
+              3
+            ]
+          },
+          "sponge_oracle_k": {
+            "k_used": 2,
+            "adjusted_rand_index": 0.237288,
+            "module_focused_ari": 1.0,
+            "synergistic_pair_jaccard": 1.0,
+            "xor_recovery_fraction": 1.0,
+            "time_sec": 0.003,
+            "cluster_sizes": [
+              7,
+              3
+            ]
+          },
+          "hard_threshold": {
+            "k_used": 5,
+            "adjusted_rand_index": 0.761905,
+            "module_focused_ari": 1.0,
+            "synergistic_pair_jaccard": 1.0,
+            "xor_recovery_fraction": 1.0,
+            "time_sec": 0.007,
+            "cluster_sizes": [
+              3,
+              4,
+              1,
+              1,
+              1
+            ]
+          },
+          "unsigned_spectral": {
+            "k_used": 2,
+            "adjusted_rand_index": 0.237288,
+            "module_focused_ari": 1.0,
+            "synergistic_pair_jaccard": 1.0,
+            "xor_recovery_fraction": 1.0,
+            "time_sec": 0.004,
+            "cluster_sizes": [
+              7,
+              3
+            ]
+          },
+          "random_partition": {
+            "k_used": 2,
+            "adjusted_rand_index": -0.074766,
+            "module_focused_ari": -0.111111,
+            "synergistic_pair_jaccard": 0.0,
+            "xor_recovery_fraction": 0.0,
+            "time_sec": 0.0,
+            "cluster_sizes": [
+              6,
+              4
+            ]
+          }
+        }
+      },
+      "medium_4mod_mixed": {
+        "name": "medium_4mod_mixed",
+        "n_samples": 20000,
+        "n_features": 18,
+        "gt_n_modules": 4,
+        "frustration_index": 0.312443,
+        "coi_computation_time_sec": 1.53,
+        "xor_marginal_mi": [
+          {
+            "feature": 0,
+            "mi": 0.0
+          },
+          {
+            "feature": 1,
+            "mi": 0.000151
+          },
+          {
+            "feature": 2,
+            "mi": 0.003028
+          },
+          {
+            "feature": 3,
+            "mi": 0.001698
+          }
+        ],
+        "coi_sign_diagnostics": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "coi": -0.154428,
+            "is_synergistic": true,
+            "module_type": "xor"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "coi": -0.13963,
+            "is_synergistic": true,
+            "module_type": "xor"
+          },
+          {
+            "pair": [
+              4,
+              5
+            ],
+            "coi": -0.058536,
+            "is_synergistic": true,
+            "module_type": "and"
+          },
+          {
+            "pair": [
+              6,
+              7
+            ],
+            "coi": -0.055333,
+            "is_synergistic": true,
+            "module_type": "and"
+          }
+        ],
+        "methods": {
+          "sponge_auto_k": {
+            "k_used": 3,
+            "adjusted_rand_index": 0.174757,
+            "module_focused_ari": 0.645161,
+            "synergistic_pair_jaccard": 0.5,
+            "xor_recovery_fraction": 1.0,
+            "time_sec": 0.025,
+            "cluster_sizes": [
+              12,
+              3,
+              3
+            ]
+          },
+          "sponge_oracle_k": {
+            "k_used": 4,
+            "adjusted_rand_index": 0.338889,
+            "module_focused_ari": 0.753363,
+            "synergistic_pair_jaccard": 1.0,
+            "xor_recovery_fraction": 1.0,
+            "time_sec": 0.005,
+            "cluster_sizes": [
+              6,
+              6,
+              3,
+              3
+            ]
+          },
+          "hard_threshold": {
+            "k_used": 4,
+            "adjusted_rand_index": 0.074898,
+            "module_focused_ari": 0.0,
+            "synergistic_pair_jaccard": 0.142857,
+            "xor_recovery_fraction": 1.0,
+            "time_sec": 0.0,
+            "cluster_sizes": [
+              15,
+              1,
+              1,
+              1
+            ]
+          },
+          "unsigned_spectral": {
+            "k_used": 4,
+            "adjusted_rand_index": 0.338889,
+            "module_focused_ari": 0.753363,
+            "synergistic_pair_jaccard": 1.0,
+            "xor_recovery_fraction": 1.0,
+            "time_sec": 0.004,
+            "cluster_sizes": [
+              6,
+              3,
+              3,
+              6
+            ]
+          },
+          "random_partition": {
+            "k_used": 4,
+            "adjusted_rand_index": -0.086111,
+            "module_focused_ari": -0.134529,
+            "synergistic_pair_jaccard": 0.0,
+            "xor_recovery_fraction": 0.0,
+            "time_sec": 0.0,
+            "cluster_sizes": [
+              5,
+              2,
+              6,
+              5
+            ]
+          }
+        }
+      },
+      "hard_4mod_unequal": {
+        "name": "hard_4mod_unequal",
+        "n_samples": 20000,
+        "n_features": 31,
+        "gt_n_modules": 4,
+        "frustration_index": 0.30098,
+        "coi_computation_time_sec": 4.12,
+        "xor_marginal_mi": [
+          {
+            "feature": 0,
+            "mi": 0.0
+          },
+          {
+            "feature": 1,
+            "mi": 0.0
+          },
+          {
+            "feature": 2,
+            "mi": 0.0
+          },
+          {
+            "feature": 3,
+            "mi": 0.0
+          },
+          {
+            "feature": 4,
+            "mi": 0.0
+          },
+          {
+            "feature": 5,
+            "mi": 0.000114
+          },
+          {
+            "feature": 6,
+            "mi": 0.0
+          },
+          {
+            "feature": 7,
+            "mi": 0.0
+          },
+          {
+            "feature": 8,
+            "mi": 0.012702
+          }
+        ],
+        "coi_sign_diagnostics": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "coi": -0.151304,
+            "is_synergistic": true,
+            "module_type": "xor_2way"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "coi": -0.03332,
+            "is_synergistic": true,
+            "module_type": "xor_3way"
+          },
+          {
+            "pair": [
+              5,
+              6
+            ],
+            "coi": -0.069443,
+            "is_synergistic": true,
+            "module_type": "xor_pairwise_sum"
+          },
+          {
+            "pair": [
+              9,
+              10
+            ],
+            "coi": -0.028634,
+            "is_synergistic": true,
+            "module_type": "and_chain"
+          }
+        ],
+        "methods": {
+          "sponge_auto_k": {
+            "k_used": 2,
+            "adjusted_rand_index": 0.040657,
+            "module_focused_ari": 0.212943,
+            "synergistic_pair_jaccard": 0.298507,
+            "xor_recovery_fraction": 1.0,
+            "time_sec": 0.052,
+            "cluster_sizes": [
+              28,
+              3
+            ]
+          },
+          "sponge_oracle_k": {
+            "k_used": 4,
+            "adjusted_rand_index": 0.092627,
+            "module_focused_ari": 0.369236,
+            "synergistic_pair_jaccard": 0.3125,
+            "xor_recovery_fraction": 0.666667,
+            "time_sec": 0.005,
+            "cluster_sizes": [
+              16,
+              3,
+              3,
+              9
+            ]
+          },
+          "hard_threshold": {
+            "k_used": 8,
+            "adjusted_rand_index": 0.00937,
+            "module_focused_ari": -0.059122,
+            "synergistic_pair_jaccard": 0.178082,
+            "xor_recovery_fraction": 1.0,
+            "time_sec": 0.0,
+            "cluster_sizes": [
+              24,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "unsigned_spectral": {
+            "k_used": 4,
+            "adjusted_rand_index": 0.091154,
+            "module_focused_ari": 0.534209,
+            "synergistic_pair_jaccard": 0.457143,
+            "xor_recovery_fraction": 0.666667,
+            "time_sec": 0.005,
+            "cluster_sizes": [
+              23,
+              2,
+              3,
+              3
+            ]
+          },
+          "random_partition": {
+            "k_used": 4,
+            "adjusted_rand_index": -0.01994,
+            "module_focused_ari": -0.051462,
+            "synergistic_pair_jaccard": 0.114286,
+            "xor_recovery_fraction": 0.0,
+            "time_sec": 0.0,
+            "cluster_sizes": [
+              6,
+              7,
+              9,
+              9
+            ]
+          }
+        }
+      },
+      "overlapping_modules": {
+        "name": "overlapping_modules",
+        "n_samples": 20000,
+        "n_features": 18,
+        "gt_n_modules": 4,
+        "frustration_index": 0.357087,
+        "coi_computation_time_sec": 1.43,
+        "xor_marginal_mi": [
+          {
+            "feature": 0,
+            "mi": 0.0
+          },
+          {
+            "feature": 1,
+            "mi": 0.003713
+          },
+          {
+            "feature": 2,
+            "mi": 0.026721
+          },
+          {
+            "feature": 4,
+            "mi": 0.008092
+          },
+          {
+            "feature": 5,
+            "mi": 0.0
+          },
+          {
+            "feature": 6,
+            "mi": 0.023404
+          }
+        ],
+        "coi_sign_diagnostics": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "coi": -0.151047,
+            "is_synergistic": true,
+            "module_type": "xor"
+          },
+          {
+            "pair": [
+              2,
+              3
+            ],
+            "coi": -0.064178,
+            "is_synergistic": true,
+            "module_type": "and"
+          },
+          {
+            "pair": [
+              4,
+              5
+            ],
+            "coi": -0.145051,
+            "is_synergistic": true,
+            "module_type": "xor"
+          },
+          {
+            "pair": [
+              6,
+              7
+            ],
+            "coi": -0.072927,
+            "is_synergistic": true,
+            "module_type": "and"
+          }
+        ],
+        "methods": {
+          "sponge_auto_k": {
+            "k_used": 3,
+            "adjusted_rand_index": -0.017799,
+            "module_focused_ari": 0.143599,
+            "synergistic_pair_jaccard": 0.285714,
+            "xor_recovery_fraction": 0.0,
+            "time_sec": 0.019,
+            "cluster_sizes": [
+              12,
+              3,
+              3
+            ]
+          },
+          "sponge_oracle_k": {
+            "k_used": 4,
+            "adjusted_rand_index": 0.05084,
+            "module_focused_ari": 0.206186,
+            "synergistic_pair_jaccard": 0.25,
+            "xor_recovery_fraction": 0.0,
+            "time_sec": 0.004,
+            "cluster_sizes": [
+              3,
+              7,
+              3,
+              5
+            ]
+          },
+          "hard_threshold": {
+            "k_used": 5,
+            "adjusted_rand_index": 0.073764,
+            "module_focused_ari": 0.083899,
+            "synergistic_pair_jaccard": 0.3,
+            "xor_recovery_fraction": 0.5,
+            "time_sec": 0.0,
+            "cluster_sizes": [
+              12,
+              3,
+              1,
+              1,
+              1
+            ]
+          },
+          "unsigned_spectral": {
+            "k_used": 4,
+            "adjusted_rand_index": 0.081475,
+            "module_focused_ari": 0.319588,
+            "synergistic_pair_jaccard": 0.4,
+            "xor_recovery_fraction": 0.0,
+            "time_sec": 0.004,
+            "cluster_sizes": [
+              4,
+              8,
+              3,
+              3
+            ]
+          },
+          "random_partition": {
+            "k_used": 4,
+            "adjusted_rand_index": -0.038889,
+            "module_focused_ari": -0.043956,
+            "synergistic_pair_jaccard": 0.076923,
+            "xor_recovery_fraction": 0.0,
+            "time_sec": 0.0,
+            "cluster_sizes": [
+              5,
+              2,
+              6,
+              5
+            ]
+          }
+        }
+      },
+      "no_structure_control": {
+        "name": "no_structure_control",
+        "n_samples": 10000,
+        "n_features": 20,
+        "gt_n_modules": 0,
+        "frustration_index": 0.326793,
+        "coi_computation_time_sec": 1.85,
+        "xor_marginal_mi": [],
+        "coi_sign_diagnostics": [],
+        "methods": {
+          "sponge_auto_k": {
+            "k_used": 2,
+            "adjusted_rand_index": null,
+            "module_focused_ari": null,
+            "synergistic_pair_jaccard": null,
+            "xor_recovery_fraction": null,
+            "time_sec": 0.456,
+            "cluster_sizes": [
+              13,
+              7
+            ]
+          },
+          "sponge_oracle_k": {
+            "k_used": 0,
+            "adjusted_rand_index": null,
+            "module_focused_ari": null,
+            "synergistic_pair_jaccard": null,
+            "xor_recovery_fraction": null,
+            "time_sec": 0.0,
+            "cluster_sizes": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "hard_threshold": {
+            "k_used": 7,
+            "adjusted_rand_index": null,
+            "module_focused_ari": null,
+            "synergistic_pair_jaccard": null,
+            "xor_recovery_fraction": null,
+            "time_sec": 0.0,
+            "cluster_sizes": [
+              14,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "unsigned_spectral": {
+            "k_used": 2,
+            "adjusted_rand_index": null,
+            "module_focused_ari": null,
+            "synergistic_pair_jaccard": null,
+            "xor_recovery_fraction": null,
+            "time_sec": 0.003,
+            "cluster_sizes": [
+              13,
+              7
+            ]
+          },
+          "random_partition": {
+            "k_used": 2,
+            "adjusted_rand_index": null,
+            "module_focused_ari": null,
+            "synergistic_pair_jaccard": null,
+            "xor_recovery_fraction": null,
+            "time_sec": 0.0,
+            "cluster_sizes": [
+              8,
+              12
+            ]
+          }
+        }
+      },
+      "highdim_8mod": {
+        "name": "highdim_8mod",
+        "n_samples": 50000,
+        "n_features": 200,
+        "gt_n_modules": 8,
+        "frustration_index": 0.307533,
+        "coi_computation_time_sec": 116.6,
+        "xor_marginal_mi": [
+          {
+            "feature": 0,
+            "mi": 0.0
+          },
+          {
+            "feature": 1,
+            "mi": 0.004296
+          },
+          {
+            "feature": 2,
+            "mi": 0.000245
+          },
+          {
+            "feature": 3,
+            "mi": 0.0
+          },
+          {
+            "feature": 4,
+            "mi": 0.0
+          },
+          {
+            "feature": 5,
+            "mi": 0.004749
+          },
+          {
+            "feature": 6,
+            "mi": 0.004486
+          },
+          {
+            "feature": 7,
+            "mi": 0.0
+          },
+          {
+            "feature": 8,
+            "mi": 0.013476
+          },
+          {
+            "feature": 9,
+            "mi": 0.000439
+          },
+          {
+            "feature": 10,
+            "mi": 0.00495
+          },
+          {
+            "feature": 11,
+            "mi": 0.005584
+          }
+        ],
+        "coi_sign_diagnostics": [
+          {
+            "pair": [
+              0,
+              1
+            ],
+            "coi": -0.073216,
+            "is_synergistic": true,
+            "module_type": "xor_plus_linear"
+          },
+          {
+            "pair": [
+              3,
+              4
+            ],
+            "coi": -0.080753,
+            "is_synergistic": true,
+            "module_type": "xor_plus_linear"
+          },
+          {
+            "pair": [
+              6,
+              7
+            ],
+            "coi": -0.066022,
+            "is_synergistic": true,
+            "module_type": "xor_plus_linear"
+          },
+          {
+            "pair": [
+              9,
+              10
+            ],
+            "coi": -0.06664,
+            "is_synergistic": true,
+            "module_type": "xor_plus_linear"
+          },
+          {
+            "pair": [
+              12,
+              13
+            ],
+            "coi": -0.038276,
+            "is_synergistic": true,
+            "module_type": "and_three_way"
+          },
+          {
+            "pair": [
+              15,
+              16
+            ],
+            "coi": -0.035212,
+            "is_synergistic": true,
+            "module_type": "and_three_way"
+          },
+          {
+            "pair": [
+              18,
+              19
+            ],
+            "coi": -0.039851,
+            "is_synergistic": true,
+            "module_type": "and_three_way"
+          },
+          {
+            "pair": [
+              21,
+              22
+            ],
+            "coi": -0.040549,
+            "is_synergistic": true,
+            "module_type": "and_three_way"
+          }
+        ],
+        "methods": {
+          "sponge_auto_k": {
+            "k_used": 3,
+            "adjusted_rand_index": 0.000247,
+            "module_focused_ari": 0.0,
+            "synergistic_pair_jaccard": 0.086957,
+            "xor_recovery_fraction": 1.0,
+            "time_sec": 0.322,
+            "cluster_sizes": [
+              198,
+              1,
+              1
+            ]
+          },
+          "sponge_oracle_k": {
+            "k_used": 8,
+            "adjusted_rand_index": 0.011959,
+            "module_focused_ari": 0.142531,
+            "synergistic_pair_jaccard": 0.22,
+            "xor_recovery_fraction": 0.25,
+            "time_sec": 0.142,
+            "cluster_sizes": [
+              19,
+              32,
+              24,
+              25,
+              28,
+              22,
+              24,
+              26
+            ]
+          },
+          "hard_threshold": {
+            "k_used": 10,
+            "adjusted_rand_index": 6.5e-05,
+            "module_focused_ari": -0.000228,
+            "synergistic_pair_jaccard": 0.085106,
+            "xor_recovery_fraction": 0.75,
+            "time_sec": 0.001,
+            "cluster_sizes": [
+              191,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          },
+          "unsigned_spectral": {
+            "k_used": 8,
+            "adjusted_rand_index": 0.010812,
+            "module_focused_ari": 0.164502,
+            "synergistic_pair_jaccard": 0.137255,
+            "xor_recovery_fraction": 0.0,
+            "time_sec": 0.125,
+            "cluster_sizes": [
+              6,
+              27,
+              13,
+              19,
+              29,
+              37,
+              25,
+              44
+            ]
+          },
+          "random_partition": {
+            "k_used": 8,
+            "adjusted_rand_index": 0.003748,
+            "module_focused_ari": 0.049835,
+            "synergistic_pair_jaccard": 0.039216,
+            "xor_recovery_fraction": 0.0,
+            "time_sec": 0.0,
+            "cluster_sizes": [
+              22,
+              24,
+              22,
+              31,
+              20,
+              30,
+              33,
+              18
+            ]
+          }
+        }
+      }
+    },
+    "total_wallclock_sec": 130.01
+  },
+  "datasets": [
+    {
+      "dataset": "easy_2mod_xor",
+      "examples": [
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"feature_index\": 0, \"feature_name\": \"X0\", \"n_samples\": 10000, \"n_features\": 10}",
+          "output": "0",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_feature_index": 0,
+          "metadata_individual_mi": 0.001016,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "2",
+          "predict_sponge_oracle_k": "1",
+          "predict_hard_threshold": "0",
+          "predict_unsigned_spectral": "1",
+          "predict_random_partition": "0"
+        },
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"feature_index\": 1, \"feature_name\": \"X1\", \"n_samples\": 10000, \"n_features\": 10}",
+          "output": "0",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_feature_index": 1,
+          "metadata_individual_mi": 0.001406,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "2",
+          "predict_sponge_oracle_k": "1",
+          "predict_hard_threshold": "0",
+          "predict_unsigned_spectral": "1",
+          "predict_random_partition": "1"
+        },
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"feature_index\": 2, \"feature_name\": \"X2\", \"n_samples\": 10000, \"n_features\": 10}",
+          "output": "1",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_feature_index": 2,
+          "metadata_individual_mi": 0.0,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "0",
+          "predict_sponge_oracle_k": "0",
+          "predict_hard_threshold": "1",
+          "predict_unsigned_spectral": "0",
+          "predict_random_partition": "1"
+        }
+      ]
+    },
+    {
+      "dataset": "medium_4mod_mixed",
+      "examples": [
+        {
+          "input": "{\"variant\": \"medium_4mod_mixed\", \"feature_index\": 0, \"feature_name\": \"X0\", \"n_samples\": 20000, \"n_features\": 18}",
+          "output": "0",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_feature_index": 0,
+          "metadata_individual_mi": 0.0,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "1",
+          "predict_sponge_oracle_k": "2",
+          "predict_hard_threshold": "0",
+          "predict_unsigned_spectral": "2",
+          "predict_random_partition": "0"
+        },
+        {
+          "input": "{\"variant\": \"medium_4mod_mixed\", \"feature_index\": 1, \"feature_name\": \"X1\", \"n_samples\": 20000, \"n_features\": 18}",
+          "output": "0",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_feature_index": 1,
+          "metadata_individual_mi": 0.000151,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "1",
+          "predict_sponge_oracle_k": "2",
+          "predict_hard_threshold": "0",
+          "predict_unsigned_spectral": "2",
+          "predict_random_partition": "3"
+        },
+        {
+          "input": "{\"variant\": \"medium_4mod_mixed\", \"feature_index\": 2, \"feature_name\": \"X2\", \"n_samples\": 20000, \"n_features\": 18}",
+          "output": "1",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_feature_index": 2,
+          "metadata_individual_mi": 0.003028,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "2",
+          "predict_sponge_oracle_k": "3",
+          "predict_hard_threshold": "0",
+          "predict_unsigned_spectral": "1",
+          "predict_random_partition": "2"
+        }
+      ]
+    },
+    {
+      "dataset": "hard_4mod_unequal",
+      "examples": [
+        {
+          "input": "{\"variant\": \"hard_4mod_unequal\", \"feature_index\": 0, \"feature_name\": \"X0\", \"n_samples\": 20000, \"n_features\": 31}",
+          "output": "0",
+          "metadata_variant": "hard_4mod_unequal",
+          "metadata_feature_index": 0,
+          "metadata_individual_mi": 0.0,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "1",
+          "predict_sponge_oracle_k": "2",
+          "predict_hard_threshold": "0",
+          "predict_unsigned_spectral": "2",
+          "predict_random_partition": "0"
+        },
+        {
+          "input": "{\"variant\": \"hard_4mod_unequal\", \"feature_index\": 1, \"feature_name\": \"X1\", \"n_samples\": 20000, \"n_features\": 31}",
+          "output": "0",
+          "metadata_variant": "hard_4mod_unequal",
+          "metadata_feature_index": 1,
+          "metadata_individual_mi": 0.0,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "1",
+          "predict_sponge_oracle_k": "2",
+          "predict_hard_threshold": "0",
+          "predict_unsigned_spectral": "2",
+          "predict_random_partition": "3"
+        },
+        {
+          "input": "{\"variant\": \"hard_4mod_unequal\", \"feature_index\": 2, \"feature_name\": \"X2\", \"n_samples\": 20000, \"n_features\": 31}",
+          "output": "1",
+          "metadata_variant": "hard_4mod_unequal",
+          "metadata_feature_index": 2,
+          "metadata_individual_mi": 0.0,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "0",
+          "predict_sponge_oracle_k": "0",
+          "predict_hard_threshold": "0",
+          "predict_unsigned_spectral": "0",
+          "predict_random_partition": "2"
+        }
+      ]
+    },
+    {
+      "dataset": "overlapping_modules",
+      "examples": [
+        {
+          "input": "{\"variant\": \"overlapping_modules\", \"feature_index\": 0, \"feature_name\": \"X0\", \"n_samples\": 20000, \"n_features\": 18}",
+          "output": "0",
+          "metadata_variant": "overlapping_modules",
+          "metadata_feature_index": 0,
+          "metadata_individual_mi": 0.0,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "2",
+          "predict_sponge_oracle_k": "0",
+          "predict_hard_threshold": "0",
+          "predict_unsigned_spectral": "2",
+          "predict_random_partition": "0"
+        },
+        {
+          "input": "{\"variant\": \"overlapping_modules\", \"feature_index\": 1, \"feature_name\": \"X1\", \"n_samples\": 20000, \"n_features\": 18}",
+          "output": "0",
+          "metadata_variant": "overlapping_modules",
+          "metadata_feature_index": 1,
+          "metadata_individual_mi": 0.003713,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "2",
+          "predict_sponge_oracle_k": "0",
+          "predict_hard_threshold": "0",
+          "predict_unsigned_spectral": "2",
+          "predict_random_partition": "3"
+        },
+        {
+          "input": "{\"variant\": \"overlapping_modules\", \"feature_index\": 2, \"feature_name\": \"X2\", \"n_samples\": 20000, \"n_features\": 18}",
+          "output": "0",
+          "metadata_variant": "overlapping_modules",
+          "metadata_feature_index": 2,
+          "metadata_individual_mi": 0.026721,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "0",
+          "predict_sponge_oracle_k": "3",
+          "predict_hard_threshold": "0",
+          "predict_unsigned_spectral": "1",
+          "predict_random_partition": "2"
+        }
+      ]
+    },
+    {
+      "dataset": "no_structure_control",
+      "examples": [
+        {
+          "input": "{\"variant\": \"no_structure_control\", \"feature_index\": 0, \"feature_name\": \"X0\", \"n_samples\": 10000, \"n_features\": 20}",
+          "output": "0",
+          "metadata_variant": "no_structure_control",
+          "metadata_feature_index": 0,
+          "metadata_individual_mi": 0.14587,
+          "metadata_is_synergistic": false,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "1",
+          "predict_sponge_oracle_k": "0",
+          "predict_hard_threshold": "0",
+          "predict_unsigned_spectral": "1",
+          "predict_random_partition": "0"
+        },
+        {
+          "input": "{\"variant\": \"no_structure_control\", \"feature_index\": 1, \"feature_name\": \"X1\", \"n_samples\": 10000, \"n_features\": 20}",
+          "output": "1",
+          "metadata_variant": "no_structure_control",
+          "metadata_feature_index": 1,
+          "metadata_individual_mi": 0.069496,
+          "metadata_is_synergistic": false,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "1",
+          "predict_sponge_oracle_k": "1",
+          "predict_hard_threshold": "0",
+          "predict_unsigned_spectral": "1",
+          "predict_random_partition": "1"
+        },
+        {
+          "input": "{\"variant\": \"no_structure_control\", \"feature_index\": 2, \"feature_name\": \"X2\", \"n_samples\": 10000, \"n_features\": 20}",
+          "output": "2",
+          "metadata_variant": "no_structure_control",
+          "metadata_feature_index": 2,
+          "metadata_individual_mi": 0.047679,
+          "metadata_is_synergistic": false,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "1",
+          "predict_sponge_oracle_k": "2",
+          "predict_hard_threshold": "0",
+          "predict_unsigned_spectral": "1",
+          "predict_random_partition": "1"
+        }
+      ]
+    },
+    {
+      "dataset": "highdim_8mod",
+      "examples": [
+        {
+          "input": "{\"variant\": \"highdim_8mod\", \"feature_index\": 0, \"feature_name\": \"X0\", \"n_samples\": 50000, \"n_features\": 200}",
+          "output": "0",
+          "metadata_variant": "highdim_8mod",
+          "metadata_feature_index": 0,
+          "metadata_individual_mi": 0.0,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "0",
+          "predict_sponge_oracle_k": "1",
+          "predict_hard_threshold": "0",
+          "predict_unsigned_spectral": "2",
+          "predict_random_partition": "0"
+        },
+        {
+          "input": "{\"variant\": \"highdim_8mod\", \"feature_index\": 1, \"feature_name\": \"X1\", \"n_samples\": 50000, \"n_features\": 200}",
+          "output": "0",
+          "metadata_variant": "highdim_8mod",
+          "metadata_feature_index": 1,
+          "metadata_individual_mi": 0.004296,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "0",
+          "predict_sponge_oracle_k": "1",
+          "predict_hard_threshold": "0",
+          "predict_unsigned_spectral": "2",
+          "predict_random_partition": "6"
+        },
+        {
+          "input": "{\"variant\": \"highdim_8mod\", \"feature_index\": 2, \"feature_name\": \"X2\", \"n_samples\": 50000, \"n_features\": 200}",
+          "output": "0",
+          "metadata_variant": "highdim_8mod",
+          "metadata_feature_index": 2,
+          "metadata_individual_mi": 0.000245,
+          "metadata_is_synergistic": true,
+          "metadata_is_redundant": false,
+          "metadata_is_noise": false,
+          "predict_sponge_auto_k": "0",
+          "predict_sponge_oracle_k": "3",
+          "predict_hard_threshold": "0",
+          "predict_unsigned_spectral": "4",
+          "predict_random_partition": "5"
+        }
+      ]
+    }
+  ]
+}

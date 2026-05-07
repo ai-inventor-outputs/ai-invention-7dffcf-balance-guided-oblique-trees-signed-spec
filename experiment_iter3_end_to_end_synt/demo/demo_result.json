@@ -1,0 +1,13 @@
+{
+  "id": "exp_id3_it3__opus",
+  "type": "code",
+  "title": "End-to-End Synthetic Pipeline: CoI \u2192 SPONGE \u2192 Oblique FIGS with Module-Accuracy Correlation",
+  "summary": "Demo notebook for the end-to-end synthetic pipeline comparing 5 FIGS tree methods (axis-aligned, random-oblique, signed spectral via SPONGE, unsigned spectral, hard-threshold). Generates a 2-module XOR dataset (5000 samples, 10 features), computes pairwise Co-Information matrices to discover feature interactions, clusters features using three methods (SPONGE signed spectral, unsigned spectral, hard threshold), then trains oblique FIGS models. Runs in ~8s with 3-fold CV, producing meaningful accuracy differences showing oblique methods outperform axis-aligned on XOR-structured data. Includes visualization comparing demo results with full-scale pre-computed results across all 6 dataset variants.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_3/gen_art/exp_id3_it3__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id3_it3__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id3_it3__opus/method_code_demo.ipynb"
+}

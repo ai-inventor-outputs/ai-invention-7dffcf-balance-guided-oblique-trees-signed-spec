@@ -1,0 +1,13 @@
+{
+  "id": "exp_id1_it2__opus",
+  "type": "code",
+  "title": "Signed Spectral Clustering Recovery on Synthetic Planted-Synergy Data",
+  "summary": "Demonstrates SPONGE signed spectral clustering on a synthetic planted-synergy dataset (easy_2mod_xor: 500 samples, 10 features, 2 XOR modules). Computes Co-Information matrix using custom KSG MI estimator, runs SPONGE_sym with auto-k and oracle-k selection, and compares against 3 baselines (hard thresholding, unsigned spectral, random partition). Reports ARI, module-focused ARI, synergistic pair Jaccard, and XOR recovery fraction. Key result: SPONGE perfectly recovers XOR modules (Jac=1.0, XOR=1.0) while random partition fails (Jac=0.0). Includes CoI heatmap and method comparison bar chart. Runtime: 0.7s.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_2/gen_art/exp_id1_it2__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id1_it2__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id1_it2__opus/method_code_demo.ipynb"
+}
