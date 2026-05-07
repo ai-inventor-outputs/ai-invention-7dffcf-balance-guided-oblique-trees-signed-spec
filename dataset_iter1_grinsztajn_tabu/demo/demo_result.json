@@ -1,0 +1,13 @@
+{
+  "id": "data_id4_it1__opus",
+  "type": "code",
+  "title": "Grinsztajn Tabular Benchmark: 5 Standardized Datasets for Balance-Guided Oblique Trees",
+  "summary": "Demo notebook for the Grinsztajn Tabular Benchmark dataset (5 standardized datasets: electricity, adult, california_housing, jannis, higgs_small). Walks through the data processing pipeline: loading JSON data, parsing JSON-stringified feature inputs, converting records to grouped schema format, partitioning outputs by size, and computing summary statistics. Includes visualization of feature counts per dataset and electricity feature value distributions. Uses 15 mini examples (3 per dataset) loaded via GitHub URL with local fallback.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_1/gen_art/data_id4_it1__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/data_id4_it1__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/data_id4_it1__opus/data_code_demo.ipynb"
+}
