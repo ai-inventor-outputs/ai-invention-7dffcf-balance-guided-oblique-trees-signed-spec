@@ -1,0 +1,13 @@
+{
+  "id": "data_id5_it2__opus",
+  "type": "code",
+  "title": "3 Additional Grinsztajn clf_num Benchmark Datasets (eye_movements, credit, MiniBooNE)",
+  "summary": "Demo notebook for the Grinsztajn 2022 clf_num benchmark datasets (eye_movements, credit, MiniBooNE) standardized to exp_sel_data_out schema. Uses a 50-example stratified subset from the credit dataset (10 features, binary classification, 5-fold CV). The notebook loads data via GitHub URL, explores the schema structure, converts JSON-string inputs to a pandas DataFrame, prints class/fold distribution statistics, and visualizes feature distributions by class label with matplotlib histograms and fold-balance bar charts.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_2/gen_art/data_id5_it2__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/data_id5_it2__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/data_id5_it2__opus/data_code_demo.ipynb"
+}

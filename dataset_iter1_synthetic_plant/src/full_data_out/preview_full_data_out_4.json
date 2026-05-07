@@ -1,0 +1,395 @@
+{
+  "metadata": {
+    "source": "synthetic",
+    "description": "Synthetic classification datasets with planted synergistic feature modules for validating signed spectral clustering recovery",
+    "master_seed": 42,
+    "generation_date": "2026-03-19",
+    "variants": {
+      "easy_2mod_xor": {
+        "n_samples": 10000,
+        "n_features": 10,
+        "n_modules": 2,
+        "ground_truth_modules": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "module_types": [
+          "xor",
+          "xor"
+        ],
+        "module_weights": [
+          1.0,
+          1.0
+        ],
+        "sigma_noise": 0.1,
+        "redundant_pairs": [
+          [
+            0,
+            4
+          ],
+          [
+            2,
+            5
+          ]
+        ],
+        "redundant_sigma": 0.3,
+        "noise_features": [
+          6,
+          7,
+          8
+        ],
+        "feature_names": [
+          "X0",
+          "X1",
+          "X2"
+        ]
+      },
+      "medium_4mod_mixed": {
+        "n_samples": 20000,
+        "n_features": 18,
+        "n_modules": 4,
+        "ground_truth_modules": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "module_types": [
+          "xor",
+          "xor",
+          "and"
+        ],
+        "module_weights": [
+          1.0,
+          1.0,
+          2.5
+        ],
+        "sigma_noise": 0.2,
+        "redundant_pairs": [
+          [
+            0,
+            8
+          ],
+          [
+            2,
+            9
+          ],
+          [
+            4,
+            10
+          ]
+        ],
+        "redundant_sigma": 0.3,
+        "noise_features": [
+          12,
+          13,
+          14
+        ],
+        "feature_names": [
+          "X0",
+          "X1",
+          "X2"
+        ]
+      },
+      "hard_4mod_unequal": {
+        "n_samples": 20000,
+        "n_features": 31,
+        "n_modules": 4,
+        "ground_truth_modules": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            5,
+            6,
+            7
+          ]
+        ],
+        "module_types": [
+          "xor_2way",
+          "xor_3way",
+          "xor_pairwise_sum"
+        ],
+        "module_weights": [
+          1.5,
+          1.5,
+          0.8
+        ],
+        "sigma_noise": 0.5,
+        "redundant_pairs": [
+          [
+            0,
+            14
+          ],
+          [
+            2,
+            15
+          ],
+          [
+            5,
+            16
+          ]
+        ],
+        "redundant_sigma": 0.5,
+        "noise_features": [
+          19,
+          20,
+          21
+        ],
+        "feature_names": [
+          "X0",
+          "X1",
+          "X2"
+        ]
+      },
+      "overlapping_modules": {
+        "n_samples": 20000,
+        "n_features": 18,
+        "n_modules": 4,
+        "ground_truth_modules": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            4,
+            5,
+            6
+          ]
+        ],
+        "module_types": [
+          "xor",
+          "and",
+          "xor"
+        ],
+        "module_weights": [
+          1.0,
+          2.5,
+          1.0
+        ],
+        "sigma_noise": 0.2,
+        "primary_modules": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            2,
+            3,
+            4
+          ],
+          [
+            4,
+            5,
+            6
+          ]
+        ],
+        "shared_features": {
+          "2": [
+            0,
+            1
+          ],
+          "4": [
+            1,
+            2
+          ],
+          "6": [
+            2,
+            3
+          ]
+        },
+        "redundant_pairs": [
+          [
+            0,
+            8
+          ],
+          [
+            3,
+            9
+          ],
+          [
+            5,
+            10
+          ]
+        ],
+        "redundant_sigma": 0.3,
+        "noise_features": [
+          11,
+          12,
+          13
+        ],
+        "feature_names": [
+          "X0",
+          "X1",
+          "X2"
+        ]
+      },
+      "no_structure_control": {
+        "n_samples": 10000,
+        "n_features": 20,
+        "n_modules": 0,
+        "ground_truth_modules": [],
+        "module_types": [],
+        "informative_features": [
+          0,
+          1,
+          2
+        ],
+        "linear_weights": [
+          0.8,
+          0.6,
+          0.5
+        ],
+        "sigma_noise": 0.3,
+        "noise_features": [
+          5,
+          6,
+          7
+        ],
+        "feature_names": [
+          "X0",
+          "X1",
+          "X2"
+        ],
+        "note": "Purely additive model — no synergistic interactions. Control case."
+      },
+      "highdim_8mod": {
+        "n_samples": 50000,
+        "n_features": 200,
+        "n_modules": 8,
+        "ground_truth_modules": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            6,
+            7,
+            8
+          ]
+        ],
+        "module_types": [
+          "xor_plus_linear",
+          "xor_plus_linear",
+          "xor_plus_linear"
+        ],
+        "module_weights": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "sigma_noise": 0.3,
+        "redundant_pairs": [
+          [
+            0,
+            24
+          ],
+          [
+            1,
+            25
+          ],
+          [
+            2,
+            26
+          ]
+        ],
+        "redundant_sigma": 0.5,
+        "noise_features": [
+          48,
+          49,
+          50
+        ],
+        "feature_names": [
+          "X0",
+          "X1",
+          "X2"
+        ]
+      }
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "highdim_8mod",
+      "examples": [
+        {
+          "input": "{\"X0\": 1.271855, \"X1\": 0.920332, \"X2\": 0.849003, \"X3\": -0.521615, \"X4\": 0.192799, \"X5\": -0.501079, \"X6\": -0.349212, \"X7\": 0.187936, \"X8\": -2.192003, \"X9\": -0.74805, \"X10\": -0.209593, \"X11\": -0.973885,...",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_variant": "highdim_8mod",
+          "metadata_sample_idx": 31298,
+          "metadata_row_index": 31298,
+          "metadata_feature_names": [
+            "X0",
+            "X1",
+            "X2"
+          ],
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"X0\": 1.004353, \"X1\": 0.722611, \"X2\": -0.733354, \"X3\": -0.743784, \"X4\": 1.034562, \"X5\": -1.562832, \"X6\": -1.247517, \"X7\": -1.813201, \"X8\": -1.121287, \"X9\": 0.282257, \"X10\": 0.149093, \"X11\": 2.718888,...",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_variant": "highdim_8mod",
+          "metadata_sample_idx": 31299,
+          "metadata_row_index": 31299,
+          "metadata_feature_names": [
+            "X0",
+            "X1",
+            "X2"
+          ],
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"X0\": 0.402786, \"X1\": -0.27211, \"X2\": -1.153631, \"X3\": -1.045462, \"X4\": -1.710963, \"X5\": 0.199933, \"X6\": -0.547895, \"X7\": 1.237953, \"X8\": -0.488987, \"X9\": -0.205496, \"X10\": 1.282225, \"X11\": 0.423085,...",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_variant": "highdim_8mod",
+          "metadata_sample_idx": 31300,
+          "metadata_row_index": 31300,
+          "metadata_feature_names": [
+            "X0",
+            "X1",
+            "X2"
+          ],
+          "metadata_task_type": "classification",
+          "metadata_n_classes": 2
+        }
+      ]
+    }
+  ]
+}
