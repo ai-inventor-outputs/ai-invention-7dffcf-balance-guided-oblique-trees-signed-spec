@@ -1,0 +1,252 @@
+{
+  "metadata": {
+    "experiment": "coi_estimator_validation",
+    "hypothesis": "Balance-Guided Oblique Trees",
+    "description": "Validates CoI measurement tool by comparing three MI estimators (NPEET micd, sklearn+custom KSG, frbourassa cKDTree) on synthetic data with known ground-truth synergy/redundancy structure.",
+    "estimator_comparison_summary": {
+      "easy_2mod_xor": {
+        "pairwise_correlations": {
+          "kendall_tau": {
+            "npeet_vs_sklearn_custom": 0.4812,
+            "npeet_vs_frbourassa": 0.4812,
+            "sklearn_custom_vs_frbourassa": 1.0
+          },
+          "sign_agreement": {
+            "npeet_vs_sklearn_custom": 0.6222,
+            "npeet_vs_frbourassa": 0.6222,
+            "sklearn_custom_vs_frbourassa": 1.0
+          },
+          "abs_value_pearson": {
+            "npeet_vs_sklearn_custom": 0.9867,
+            "npeet_vs_frbourassa": 0.9867,
+            "sklearn_custom_vs_frbourassa": 1.0
+          }
+        },
+        "ground_truth_summary": {
+          "npeet": {
+            "synergy_pairs_correct_sign": 1.0,
+            "redundant_pairs_correct_sign": 0.0,
+            "noise_pairs_near_zero": 1.0,
+            "xor_marginal_mi_near_zero": 1.0,
+            "synergy_total": 2,
+            "redundant_total": 2
+          },
+          "sklearn_custom": {
+            "synergy_pairs_correct_sign": 1.0,
+            "redundant_pairs_correct_sign": 0.0,
+            "noise_pairs_near_zero": 1.0,
+            "xor_marginal_mi_near_zero": 1.0,
+            "synergy_total": 2,
+            "redundant_total": 2
+          },
+          "frbourassa": {
+            "synergy_pairs_correct_sign": 1.0,
+            "redundant_pairs_correct_sign": 0.0,
+            "noise_pairs_near_zero": 1.0,
+            "xor_marginal_mi_near_zero": 1.0,
+            "synergy_total": 2,
+            "redundant_total": 2
+          }
+        },
+        "estimator_times": {
+          "npeet": 0.81,
+          "sklearn_custom": 4.13,
+          "frbourassa": 1.61
+        }
+      },
+      "medium_4mod_mixed": {
+        "pairwise_correlations": {
+          "kendall_tau": {
+            "npeet_vs_sklearn_custom": 0.4273,
+            "npeet_vs_frbourassa": 0.4273,
+            "sklearn_custom_vs_frbourassa": 1.0
+          },
+          "sign_agreement": {
+            "npeet_vs_sklearn_custom": 0.6078,
+            "npeet_vs_frbourassa": 0.6078,
+            "sklearn_custom_vs_frbourassa": 1.0
+          },
+          "abs_value_pearson": {
+            "npeet_vs_sklearn_custom": 0.9641,
+            "npeet_vs_frbourassa": 0.9641,
+            "sklearn_custom_vs_frbourassa": 1.0
+          }
+        },
+        "ground_truth_summary": {
+          "npeet": {
+            "synergy_pairs_correct_sign": 1.0,
+            "redundant_pairs_correct_sign": 0.25,
+            "noise_pairs_near_zero": 1.0,
+            "xor_marginal_mi_near_zero": 1.0,
+            "synergy_total": 2,
+            "redundant_total": 4
+          },
+          "sklearn_custom": {
+            "synergy_pairs_correct_sign": 1.0,
+            "redundant_pairs_correct_sign": 0.25,
+            "noise_pairs_near_zero": 1.0,
+            "xor_marginal_mi_near_zero": 1.0,
+            "synergy_total": 2,
+            "redundant_total": 4
+          },
+          "frbourassa": {
+            "synergy_pairs_correct_sign": 1.0,
+            "redundant_pairs_correct_sign": 0.25,
+            "noise_pairs_near_zero": 1.0,
+            "xor_marginal_mi_near_zero": 1.0,
+            "synergy_total": 2,
+            "redundant_total": 4
+          }
+        },
+        "estimator_times": {
+          "npeet": 5.1,
+          "sklearn_custom": 29.39,
+          "frbourassa": 9.35
+        }
+      }
+    },
+    "subsampling_stability": {
+      "variant": "medium_4mod_mixed",
+      "estimator": "npeet",
+      "full_n": 20000,
+      "results_by_subsample": [
+        {
+          "n_sub": 1000,
+          "spearman_r": 0.0726,
+          "sign_flip_rate": 0.4173,
+          "sponge_ari": 0.0143
+        },
+        {
+          "n_sub": 2000,
+          "spearman_r": 0.0165,
+          "sign_flip_rate": 0.482,
+          "sponge_ari": 0.0546
+        },
+        {
+          "n_sub": 5000,
+          "spearman_r": 0.2457,
+          "sign_flip_rate": 0.4101,
+          "sponge_ari": -0.0747
+        },
+        {
+          "n_sub": 10000,
+          "spearman_r": 0.3918,
+          "sign_flip_rate": 0.3669,
+          "sponge_ari": 0.183
+        },
+        {
+          "n_sub": 15000,
+          "spearman_r": 0.7103,
+          "sign_flip_rate": 0.223,
+          "sponge_ari": 0.8429
+        },
+        {
+          "n_sub": 20000,
+          "spearman_r": 1.0,
+          "sign_flip_rate": 0.0,
+          "sponge_ari": 1.0
+        }
+      ],
+      "minimum_stable_n": 20000
+    },
+    "reproducibility": {
+      "variant": "medium_4mod_mixed",
+      "estimator": "npeet",
+      "n_sub": 10000,
+      "n_seeds": 10,
+      "median_cv": 1.54,
+      "mean_pairwise_ari": 0.2095,
+      "frac_stable_sign_pairs": 0.2026,
+      "cv_per_pair_summary": {
+        "min": 0.0327,
+        "p25": 0.9431,
+        "median": 1.54,
+        "p75": 2.7319,
+        "max": 205.5739
+      }
+    },
+    "recommendation": {
+      "best_estimator": "npeet",
+      "reasoning": "Selected based on ground-truth accuracy on easy_2mod_xor (synergy+redundancy correct sign rate) and computational efficiency. All three estimators show strong rank agreement (Kendall tau).",
+      "minimum_subsample_size": 20000,
+      "recommended_k_neighbors": 5,
+      "caveats": [
+        "KSG estimator has known negative bias for strongly dependent variables",
+        "NPEET may be slightly slower than sklearn for individual MI but handles joint MI natively",
+        "Subsampling stability depends on the strength of the planted signals"
+      ]
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "easy_2mod_xor",
+      "examples": [
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 1, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"synergy_xor\"}",
+          "output": "synergy_xor",
+          "predict_npeet": "-0.187832",
+          "predict_sklearn_custom": "-0.132167",
+          "predict_frbourassa": "-0.132167",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(0,1)",
+          "metadata_ground_truth_type": "synergy_xor"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 2, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.002202",
+          "predict_sklearn_custom": "-0.002521",
+          "predict_frbourassa": "-0.002521",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(0,2)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 3, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.000518",
+          "predict_sklearn_custom": "-0.003977",
+          "predict_frbourassa": "-0.003977",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(0,3)",
+          "metadata_ground_truth_type": "unknown"
+        }
+      ]
+    },
+    {
+      "dataset": "medium_4mod_mixed",
+      "examples": [
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 1, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"synergy_xor\"}",
+          "output": "synergy_xor",
+          "predict_npeet": "-0.151939",
+          "predict_sklearn_custom": "-0.110381",
+          "predict_frbourassa": "-0.110381",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,1)",
+          "metadata_ground_truth_type": "synergy_xor"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 2, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.003249",
+          "predict_sklearn_custom": "0.001641",
+          "predict_frbourassa": "0.001641",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,2)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 3, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.000525",
+          "predict_sklearn_custom": "0.003769",
+          "predict_frbourassa": "0.003769",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,3)",
+          "metadata_ground_truth_type": "unknown"
+        }
+      ]
+    }
+  ]
+}

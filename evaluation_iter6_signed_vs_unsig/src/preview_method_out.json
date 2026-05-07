@@ -1,0 +1,734 @@
+{
+  "metadata": {
+    "evaluation_name": "signed_vs_unsigned_spectral_ablation",
+    "description": "Comprehensive ablation evaluation comparing signed (SPONGE) vs unsigned spectral clustering for CoI-guided oblique FIGS splits. Synthesises evidence from real-data benchmark (8 datasets), synthetic be...",
+    "section_a_real_data": {
+      "n_paired_observations": 105,
+      "aggregate_wilcoxon": {
+        "W": 1727.0,
+        "p": 0.1086508606327614
+      },
+      "aggregate_hedges_g": {
+        "g": 0.072,
+        "classification": "negligible"
+      },
+      "per_dataset_wilcoxon": {
+        "adult": {
+          "W": NaN,
+          "p_raw": NaN,
+          "n": 15,
+          "p_adjusted": 0.0
+        },
+        "california_housing": {
+          "W": NaN,
+          "p_raw": NaN,
+          "n": 0,
+          "p_adjusted": 0.0
+        },
+        "credit": {
+          "W": 21.0,
+          "p_raw": 0.02557373046875,
+          "n": 15,
+          "p_adjusted": 0.07672119140625
+        },
+        "electricity": {
+          "W": 45.0,
+          "p_raw": 0.42120361328125,
+          "n": 15,
+          "p_adjusted": 0.42120361328125
+        },
+        "eye_movements": {
+          "W": 32.0,
+          "p_raw": 0.12054443359375,
+          "n": 15,
+          "p_adjusted": 0.2410888671875
+        },
+        "higgs_small": {
+          "W": 0.0,
+          "p_raw": 6.103515625e-05,
+          "n": 15,
+          "p_adjusted": 0.0003662109375
+        },
+        "jannis": {
+          "W": 0.0,
+          "p_raw": 0.0006533107814151376,
+          "n": 15,
+          "p_adjusted": 0.0026132431256605504
+        },
+        "miniboone": {
+          "W": 0.0,
+          "p_raw": 6.103515625e-05,
+          "n": 15,
+          "p_adjusted": 0.0003662109375
+        }
+      },
+      "per_dataset_hedges_g": {
+        "adult": {
+          "hedges_g": -0.1093306170172322,
+          "classification": "negligible"
+        },
+        "california_housing": {
+          "hedges_g": 0.0,
+          "classification": "negligible"
+        },
+        "credit": {
+          "hedges_g": 0.6447753488673383,
+          "classification": "medium"
+        },
+        "electricity": {
+          "hedges_g": 0.3553503955296802,
+          "classification": "small"
+        },
+        "eye_movements": {
+          "hedges_g": -0.522826183243907,
+          "classification": "medium"
+        },
+        "higgs_small": {
+          "hedges_g": 1.4465427979705945,
+          "classification": "large"
+        },
+        "jannis": {
+          "hedges_g": -1.3254225477716215,
+          "classification": "large"
+        },
+        "miniboone": {
+          "hedges_g": 2.805781054438166,
+          "classification": "large"
+        }
+      },
+      "win_loss_tie": {
+        "total_unsigned_wins": 53,
+        "total_signed_wins": 33,
+        "total_ties": 19,
+        "total_configs": 24,
+        "detail": [
+          {
+            "dataset": "adult",
+            "max_splits": 5,
+            "unsigned_wins": 0,
+            "signed_wins": 0,
+            "ties": 5
+          },
+          {
+            "dataset": "adult",
+            "max_splits": 10,
+            "unsigned_wins": 1,
+            "signed_wins": 0,
+            "ties": 4
+          },
+          {
+            "dataset": "adult",
+            "max_splits": 20,
+            "unsigned_wins": 0,
+            "signed_wins": 1,
+            "ties": 4
+          }
+        ]
+      },
+      "per_dataset_comparison_table": [
+        {
+          "dataset": "adult",
+          "max_splits": 5,
+          "unsigned_bacc_mean": 0.695384,
+          "unsigned_bacc_std": 0.009311,
+          "signed_bacc_mean": 0.695384,
+          "signed_bacc_std": 0.009311,
+          "delta_mean": 0.0,
+          "p_value": null,
+          "hedges_g": 0.0,
+          "unsigned_avg_arity": 2.2,
+          "signed_avg_arity": 2.2
+        },
+        {
+          "dataset": "adult",
+          "max_splits": 10,
+          "unsigned_bacc_mean": 0.702612,
+          "unsigned_bacc_std": 0.009237,
+          "signed_bacc_mean": 0.702391,
+          "signed_bacc_std": 0.009533,
+          "delta_mean": 0.000221,
+          "p_value": null,
+          "hedges_g": 0.3578,
+          "unsigned_avg_arity": 1.76,
+          "signed_avg_arity": 1.78
+        },
+        {
+          "dataset": "adult",
+          "max_splits": 20,
+          "unsigned_bacc_mean": 0.701338,
+          "unsigned_bacc_std": 0.0246,
+          "signed_bacc_mean": 0.701791,
+          "signed_bacc_std": 0.024706,
+          "delta_mean": -0.000453,
+          "p_value": null,
+          "hedges_g": -0.3578,
+          "unsigned_avg_arity": 1.65,
+          "signed_avg_arity": 1.69
+        }
+      ],
+      "auc_delta": {
+        "wilcoxon_W": 1626.0,
+        "wilcoxon_p": 0.03205079856999961,
+        "hedges_g": 0.1953,
+        "classification": "negligible",
+        "mean_delta_auc": 0.002449
+      },
+      "coi_sign_distribution": [
+        {
+          "dataset": "adult",
+          "n_positive_coi_pairs": 3,
+          "n_negative_coi_pairs": 3,
+          "frac_negative": 0.5,
+          "mean_delta_bacc": -7.7e-05,
+          "frustration_index": -0.0
+        },
+        {
+          "dataset": "california_housing",
+          "n_positive_coi_pairs": 0,
+          "n_negative_coi_pairs": 28,
+          "frac_negative": 1.0,
+          "mean_delta_bacc": 0.0,
+          "frustration_index": 0.154531
+        },
+        {
+          "dataset": "credit",
+          "n_positive_coi_pairs": 30,
+          "n_negative_coi_pairs": 15,
+          "frac_negative": 0.3333,
+          "mean_delta_bacc": 0.003033,
+          "frustration_index": 0.008032
+        }
+      ],
+      "coi_sign_correlation": {
+        "spearman_rho": -0.4072,
+        "spearman_p": 0.3167
+      },
+      "mean_delta_bacc_unsigned_minus_signed": 0.000949,
+      "median_delta_bacc": 0.001104
+    },
+    "section_b_synthetic": {
+      "variant_comparison": [
+        {
+          "variant": "easy_2mod_xor",
+          "signed_mean_bacc": 0.561,
+          "unsigned_mean_bacc": 0.7283,
+          "delta_mean": 0.1673,
+          "n_paired_folds_best": 5,
+          "mean_fold_delta_best": 0.1673
+        },
+        {
+          "variant": "hard_4mod_unequal",
+          "signed_mean_bacc": 0.6115,
+          "unsigned_mean_bacc": 0.6703,
+          "delta_mean": 0.0588,
+          "n_paired_folds_best": 5,
+          "mean_fold_delta_best": 0.0588
+        },
+        {
+          "variant": "highdim_8mod",
+          "signed_mean_bacc": 0.6851,
+          "unsigned_mean_bacc": 0.6755,
+          "delta_mean": -0.0096,
+          "n_paired_folds_best": 5,
+          "mean_fold_delta_best": -0.0095
+        }
+      ],
+      "module_recovery_ari": [
+        {
+          "variant": "easy_2mod_xor",
+          "method": "signed_spectral",
+          "mean_ari": -0.4,
+          "std_ari": 0.2,
+          "n_folds": 5
+        },
+        {
+          "variant": "easy_2mod_xor",
+          "method": "unsigned_spectral",
+          "mean_ari": 1.0,
+          "std_ari": 0.0,
+          "n_folds": 5
+        },
+        {
+          "variant": "hard_4mod_unequal",
+          "method": "signed_spectral",
+          "mean_ari": -0.0103,
+          "std_ari": 0.0649,
+          "n_folds": 5
+        }
+      ],
+      "module_recovery_jaccard": [
+        {
+          "variant": "easy_2mod_xor",
+          "method": "signed_spectral",
+          "mean_jaccard": 0.0095,
+          "std_jaccard": 0.019,
+          "n_folds": 5
+        },
+        {
+          "variant": "easy_2mod_xor",
+          "method": "unsigned_spectral",
+          "mean_jaccard": 0.0959,
+          "std_jaccard": 0.0127,
+          "n_folds": 5
+        },
+        {
+          "variant": "hard_4mod_unequal",
+          "method": "signed_spectral",
+          "mean_jaccard": 0.0393,
+          "std_jaccard": 0.0077,
+          "n_folds": 5
+        }
+      ],
+      "paired_test_best_max_splits": {
+        "n_observations": 30,
+        "wilcoxon_W": 139.5,
+        "wilcoxon_p": 0.05576006941628535,
+        "hedges_g": 0.519,
+        "classification": "medium",
+        "mean_delta": 0.04114,
+        "median_delta": 0.0061
+      },
+      "paired_test_all_configs": {
+        "n_observations": 120,
+        "wilcoxon_W": 1465.5,
+        "wilcoxon_p": 6.606933800314513e-08,
+        "hedges_g": 0.5901,
+        "classification": "medium",
+        "mean_delta": 0.040646
+      }
+    },
+    "section_c_root_cause": {
+      "coi_sign_by_estimator_conclusions": [
+        {
+          "dataset": "easy_2mod_xor",
+          "estimator": "npeet_ksg",
+          "frac_negative": 0.3111
+        },
+        {
+          "dataset": "easy_2mod_xor",
+          "estimator": "raw_npeet_ksg",
+          "frac_negative": 0.5556
+        },
+        {
+          "dataset": "easy_2mod_xor",
+          "estimator": "binned_20",
+          "frac_negative": 1.0
+        }
+      ],
+      "estimator_aggregate": {
+        "npeet_ksg": {
+          "mean_frac_negative": 0.275,
+          "min_frac_negative": 0.2263,
+          "max_frac_negative": 0.3111,
+          "n_datasets": 3
+        },
+        "raw_npeet_ksg": {
+          "mean_frac_negative": 0.5436,
+          "min_frac_negative": 0.5263,
+          "max_frac_negative": 0.5556,
+          "n_datasets": 3
+        },
+        "binned_20": {
+          "mean_frac_negative": 0.9956,
+          "min_frac_negative": 0.9869,
+          "max_frac_negative": 1.0,
+          "n_datasets": 3
+        },
+        "sklearn_ksg": {
+          "mean_frac_negative": 0.5775,
+          "min_frac_negative": 0.4641,
+          "max_frac_negative": 0.6684,
+          "n_datasets": 3
+        }
+      },
+      "full_sign_distribution_table": [
+        {
+          "dataset": "calibration_pure_xor",
+          "estimator": "binned_10",
+          "frac_positive": 0.0,
+          "frac_negative": 0.2,
+          "frac_near_zero": 0.8,
+          "n_pairs": 10
+        },
+        {
+          "dataset": "calibration_pure_xor",
+          "estimator": "binned_20",
+          "frac_positive": 0.0,
+          "frac_negative": 0.9,
+          "frac_near_zero": 0.1,
+          "n_pairs": 10
+        },
+        {
+          "dataset": "calibration_pure_xor",
+          "estimator": "binned_50",
+          "frac_positive": 0.0,
+          "frac_negative": 1.0,
+          "frac_near_zero": 0.0,
+          "n_pairs": 10
+        }
+      ],
+      "individual_mi_negativity": {
+        "calibration_pure_xor": {
+          "n_negative_individual_mi": 4,
+          "negative_mi_values": [
+            -0.002018,
+            -0.01166,
+            -0.006733
+          ]
+        },
+        "easy_2mod_xor": {
+          "n_negative_individual_mi": 2,
+          "negative_mi_values": [
+            -0.007754,
+            -0.013172
+          ]
+        },
+        "medium_4mod_mixed": {
+          "n_negative_individual_mi": 5,
+          "negative_mi_values": [
+            -0.006336,
+            -0.014811,
+            -0.010981
+          ]
+        },
+        "no_structure_control": {
+          "n_negative_individual_mi": 6,
+          "negative_mi_values": [
+            -0.010072,
+            -0.00277,
+            -0.006773
+          ]
+        }
+      },
+      "eigenspectrum_analysis": {
+        "easy_2mod_xor": {
+          "L_pos_rank": 9,
+          "L_pos_min_eval": -0.0,
+          "L_pos_max_eval": 0.09306238,
+          "L_neg_rank": 9,
+          "L_neg_min_eval": 0.0,
+          "L_neg_max_eval": 0.34204324,
+          "L_abs_rank": 9,
+          "L_abs_min_eval": -0.0,
+          "L_abs_max_eval": 0.38880624,
+          "positive_edge_fraction": 0.294806,
+          "negative_edge_fraction": 0.705194
+        },
+        "medium_4mod_mixed": {
+          "L_pos_rank": 17,
+          "L_pos_min_eval": -0.0,
+          "L_pos_max_eval": 0.23928188,
+          "L_neg_rank": 16,
+          "L_neg_min_eval": -0.0,
+          "L_neg_max_eval": 0.29817318,
+          "L_abs_rank": 17,
+          "L_abs_min_eval": 0.0,
+          "L_abs_max_eval": 0.39349023,
+          "positive_edge_fraction": 0.564861,
+          "negative_edge_fraction": 0.435139
+        }
+      },
+      "condition_number_analysis": {
+        "easy_2mod_xor": [
+          {
+            "tau": 0.001,
+            "sponge_cond": 8464.37,
+            "sponge_sym_cond": 1995.63,
+            "sponge_min_eval_B": 4.042e-05,
+            "sponge_sym_min_eval_B": 0.001
+          },
+          {
+            "tau": 0.01,
+            "sponge_cond": 850.55,
+            "sponge_sym_cond": 200.46,
+            "sponge_min_eval_B": 0.00040268,
+            "sponge_sym_min_eval_B": 0.01
+          },
+          {
+            "tau": 0.1,
+            "sponge_cond": 88.77,
+            "sponge_sym_cond": 20.95,
+            "sponge_min_eval_B": 0.00390436,
+            "sponge_sym_min_eval_B": 0.1
+          }
+        ],
+        "medium_4mod_mixed": [
+          {
+            "tau": 0.001,
+            "sponge_cond": 3087.32,
+            "sponge_sym_cond": 1920.01,
+            "sponge_min_eval_B": 9.661e-05,
+            "sponge_sym_min_eval_B": 0.001
+          },
+          {
+            "tau": 0.01,
+            "sponge_cond": 311.56,
+            "sponge_sym_cond": 192.9,
+            "sponge_min_eval_B": 0.00095977,
+            "sponge_sym_min_eval_B": 0.01
+          },
+          {
+            "tau": 0.1,
+            "sponge_cond": 33.83,
+            "sponge_sym_cond": 20.19,
+            "sponge_min_eval_B": 0.00906862,
+            "sponge_sym_min_eval_B": 0.1
+          }
+        ]
+      },
+      "edge_injection_failure": {
+        "easy_2mod_xor": {
+          "strategies": {
+            "median_thresholding": {
+              "ari": -0.5,
+              "n_positive_edges": 31,
+              "frac_positive": 0.6889
+            },
+            "percentile_shift": {
+              "ari": -0.5,
+              "n_positive_edges": 33,
+              "frac_positive": 0.7333
+            },
+            "known_structure_injection": {
+              "ari": -0.5,
+              "n_positive_edges": 31,
+              "frac_positive": 0.6889
+            }
+          },
+          "all_failed": true
+        },
+        "medium_4mod_mixed": {
+          "strategies": {
+            "median_thresholding": {
+              "ari": -0.1887,
+              "n_positive_edges": 103,
+              "frac_positive": 0.6732
+            },
+            "percentile_shift": {
+              "ari": -0.2069,
+              "n_positive_edges": 114,
+              "frac_positive": 0.7451
+            },
+            "known_structure_injection": {
+              "ari": -0.1887,
+              "n_positive_edges": 103,
+              "frac_positive": 0.6732
+            }
+          },
+          "all_failed": true
+        }
+      },
+      "clustering_comparison": [
+        {
+          "dataset": "easy_2mod_xor",
+          "k_true": 2,
+          "unsigned_spectral_ari": 1.0,
+          "sponge_sym_weighted_ari": -0.5,
+          "sponge_sym_unweighted_ari": -0.5
+        },
+        {
+          "dataset": "medium_4mod_mixed",
+          "k_true": 4,
+          "unsigned_spectral_ari": 0.6038,
+          "sponge_sym_weighted_ari": -0.1887,
+          "sponge_sym_unweighted_ari": -0.1887
+        }
+      ],
+      "sponge_diagnostic_details": [
+        {
+          "dataset": "easy_2mod_xor",
+          "L_pos_rank": 9,
+          "positive_edge_fraction": 0.294806,
+          "frustration_index": 0.051771,
+          "unsigned_ari": 1.0,
+          "sponge_weighted_ari": -0.5,
+          "sponge_unweighted_ari": -0.5
+        },
+        {
+          "dataset": "medium_4mod_mixed",
+          "L_pos_rank": 17,
+          "positive_edge_fraction": 0.564861,
+          "frustration_index": 0.126016,
+          "unsigned_ari": 0.6038,
+          "sponge_weighted_ari": -0.1887,
+          "sponge_unweighted_ari": -0.1887
+        }
+      ],
+      "sponge_failure_mechanism": "When CoI is predominantly negative, A_pos ~= 0, so L_pos has rank ~0. SPONGE's B matrix (L_neg + tau*D_pos) degenerates to L_neg. The generalized eigenproblem becomes trivial (A~=0), yielding uninform..."
+    },
+    "section_d_synthesis": {
+      "combined_hedges_g": {
+        "g": 0.4051,
+        "classification": "small",
+        "n_real_obs": 105,
+        "n_synth_obs": 120,
+        "n_total_obs": 225,
+        "mean_delta_combined": 0.022121
+      },
+      "causal_chain": [
+        {
+          "dataset": "easy_2mod_xor",
+          "estimator_frac_negative": 1.0,
+          "L_pos_effective_rank": 9,
+          "sponge_condition_number_tau001": 850.55,
+          "unsigned_spectral_ari": 1.0,
+          "sponge_ari": -0.5,
+          "downstream_delta_bacc": 0.1673
+        },
+        {
+          "dataset": "medium_4mod_mixed",
+          "estimator_frac_negative": 0.9869,
+          "L_pos_effective_rank": 17,
+          "sponge_condition_number_tau001": 311.56,
+          "unsigned_spectral_ari": 0.6038,
+          "sponge_ari": -0.1887,
+          "downstream_delta_bacc": 0.0016
+        }
+      ],
+      "frustration_index_analysis": {
+        "all_frustrations": [
+          {
+            "dataset": "adult",
+            "frustration_index": -0.0,
+            "mean_delta_bacc": -7.7e-05,
+            "source": "real"
+          },
+          {
+            "dataset": "credit",
+            "frustration_index": 0.008032,
+            "mean_delta_bacc": 0.003033,
+            "source": "real"
+          },
+          {
+            "dataset": "electricity",
+            "frustration_index": 0.00824,
+            "mean_delta_bacc": 0.005025,
+            "source": "real"
+          }
+        ],
+        "spearman_rho": -0.1099,
+        "spearman_p": 0.7208,
+        "n_datasets": 13
+      }
+    }
+  },
+  "metrics_agg": {
+    "real_wilcoxon_p": 0.10865086,
+    "real_hedges_g": 0.072,
+    "real_mean_delta_bacc": 0.000949,
+    "real_median_delta_bacc": 0.001104,
+    "real_unsigned_wins": 53,
+    "real_signed_wins": 33,
+    "real_ties": 19,
+    "real_n_paired": 105,
+    "real_auc_wilcoxon_p": 0.0320508,
+    "real_auc_hedges_g": 0.1953,
+    "real_auc_mean_delta": 0.002449,
+    "real_coi_sign_spearman_rho": -0.4072,
+    "synth_wilcoxon_p_best": 0.05576007,
+    "synth_hedges_g_best": 0.519,
+    "synth_mean_delta_best": 0.04114,
+    "synth_n_paired_best": 30,
+    "synth_wilcoxon_p_all": 7e-08,
+    "synth_hedges_g_all": 0.5901,
+    "combined_hedges_g": 0.4051,
+    "combined_n_obs": 225,
+    "combined_mean_delta": 0.022121,
+    "frustration_spearman_rho": -0.1099
+  },
+  "datasets": [
+    {
+      "dataset": "real_data_ablation",
+      "examples": [
+        {
+          "input": "{\"experiment\": \"real_data_ablation\", \"dataset\": \"adult\", \"max_splits\": 5, \"metric\": \"balanced_accuracy\"}",
+          "output": "{\"unsigned_mean\": 0.695384, \"signed_mean\": 0.695384, \"delta\": 0.0, \"hedges_g\": 0.0}",
+          "metadata_dataset": "adult",
+          "metadata_max_splits": 5,
+          "predict_unsigned_spectral": "0.695384",
+          "predict_signed_spectral": "0.695384",
+          "eval_delta_bacc": 0.0,
+          "eval_hedges_g": 0.0
+        },
+        {
+          "input": "{\"experiment\": \"real_data_ablation\", \"dataset\": \"adult\", \"max_splits\": 10, \"metric\": \"balanced_accuracy\"}",
+          "output": "{\"unsigned_mean\": 0.702612, \"signed_mean\": 0.702391, \"delta\": 0.000221, \"hedges_g\": 0.3578}",
+          "metadata_dataset": "adult",
+          "metadata_max_splits": 10,
+          "predict_unsigned_spectral": "0.702612",
+          "predict_signed_spectral": "0.702391",
+          "eval_delta_bacc": 0.000221,
+          "eval_hedges_g": 0.3578
+        },
+        {
+          "input": "{\"experiment\": \"real_data_ablation\", \"dataset\": \"adult\", \"max_splits\": 20, \"metric\": \"balanced_accuracy\"}",
+          "output": "{\"unsigned_mean\": 0.701338, \"signed_mean\": 0.701791, \"delta\": -0.000453, \"hedges_g\": -0.3578}",
+          "metadata_dataset": "adult",
+          "metadata_max_splits": 20,
+          "predict_unsigned_spectral": "0.701338",
+          "predict_signed_spectral": "0.701791",
+          "eval_delta_bacc": -0.000453,
+          "eval_hedges_g": -0.3578
+        }
+      ]
+    },
+    {
+      "dataset": "synthetic_ablation",
+      "examples": [
+        {
+          "input": "{\"experiment\": \"synthetic_ablation\", \"variant\": \"easy_2mod_xor\", \"metric\": \"balanced_accuracy\"}",
+          "output": "{\"unsigned_mean\": 0.7283, \"signed_mean\": 0.561, \"delta\": 0.1673}",
+          "metadata_variant": "easy_2mod_xor",
+          "predict_unsigned_spectral": "0.7283",
+          "predict_signed_spectral": "0.561",
+          "eval_delta_bacc": 0.1673
+        },
+        {
+          "input": "{\"experiment\": \"synthetic_ablation\", \"variant\": \"hard_4mod_unequal\", \"metric\": \"balanced_accuracy\"}",
+          "output": "{\"unsigned_mean\": 0.6703, \"signed_mean\": 0.6115, \"delta\": 0.0588}",
+          "metadata_variant": "hard_4mod_unequal",
+          "predict_unsigned_spectral": "0.6703",
+          "predict_signed_spectral": "0.6115",
+          "eval_delta_bacc": 0.0588
+        },
+        {
+          "input": "{\"experiment\": \"synthetic_ablation\", \"variant\": \"highdim_8mod\", \"metric\": \"balanced_accuracy\"}",
+          "output": "{\"unsigned_mean\": 0.6755, \"signed_mean\": 0.6851, \"delta\": -0.0096}",
+          "metadata_variant": "highdim_8mod",
+          "predict_unsigned_spectral": "0.6755",
+          "predict_signed_spectral": "0.6851",
+          "eval_delta_bacc": -0.0096
+        }
+      ]
+    },
+    {
+      "dataset": "module_recovery",
+      "examples": [
+        {
+          "input": "{\"experiment\": \"module_recovery_ari\", \"variant\": \"easy_2mod_xor\", \"method\": \"signed_spectral\"}",
+          "output": "{\"mean_ari\": -0.4, \"std_ari\": 0.2}",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_method": "signed_spectral",
+          "predict_ari": "-0.4",
+          "eval_mean_ari": -0.4
+        },
+        {
+          "input": "{\"experiment\": \"module_recovery_ari\", \"variant\": \"easy_2mod_xor\", \"method\": \"unsigned_spectral\"}",
+          "output": "{\"mean_ari\": 1.0, \"std_ari\": 0.0}",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_method": "unsigned_spectral",
+          "predict_ari": "1.0",
+          "eval_mean_ari": 1.0
+        },
+        {
+          "input": "{\"experiment\": \"module_recovery_ari\", \"variant\": \"hard_4mod_unequal\", \"method\": \"signed_spectral\"}",
+          "output": "{\"mean_ari\": -0.0103, \"std_ari\": 0.0649}",
+          "metadata_variant": "hard_4mod_unequal",
+          "metadata_method": "signed_spectral",
+          "predict_ari": "-0.0103",
+          "eval_mean_ari": -0.0103
+        }
+      ]
+    }
+  ]
+}

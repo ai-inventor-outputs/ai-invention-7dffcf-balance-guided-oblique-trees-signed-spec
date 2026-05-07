@@ -1,0 +1,236 @@
+{
+  "metadata": {
+    "evaluation_name": "hypothesis_verdict_synthesis",
+    "description": "Cross-experiment evidence mapping for paper Discussion and Conclusion sections. Loads results from 4 upstream experiments, recomputes definitive verdicts for all 4 hypothesis success criteria, validat...",
+    "verdicts": {
+      "SC1_synthetic_module_recovery": "PARTIALLY_CONFIRMED",
+      "SC2_real_benchmark_accuracy": "PARTIALLY_CONFIRMED",
+      "SC3_frustration_correlation": "DISCONFIRMED",
+      "SC4_scalability": "CONFIRMED"
+    },
+    "experiments_analyzed": [
+      "exp_id1_it2__opus (Synthetic Module Recovery)",
+      "exp_id1_it5__opus (Real Benchmark 5 FIGS x 8 Datasets x 5-fold CV)",
+      "exp_id2_it5__opus (CoI Graph Characterization & Frustration Meta-Diagnostic)"
+    ],
+    "sc1_detail": {
+      "target": "Jaccard > 0.80",
+      "sponge_oracle_mean_jaccard": 0.5565,
+      "sponge_vs_ht_p": 0.125,
+      "sponge_vs_unsigned_p": 0.875,
+      "e2e_cross_check": {
+        "easy_2mod_xor": {
+          "signed_spectral": 0.00952,
+          "unsigned_spectral": 0.09587999999999999,
+          "hard_threshold": 0.22220000000000004
+        },
+        "medium_4mod_mixed": {
+          "signed_spectral": 0.01568,
+          "unsigned_spectral": 0.12808,
+          "hard_threshold": 0.054979999999999994
+        },
+        "overlapping_modules": {
+          "signed_spectral": 0.03792,
+          "unsigned_spectral": 0.09996,
+          "hard_threshold": 0.12358000000000001
+        },
+        "hard_4mod_unequal": {
+          "signed_spectral": 0.0393,
+          "unsigned_spectral": 0.05673999999999999,
+          "hard_threshold": 0.04842
+        },
+        "highdim_8mod": {
+          "signed_spectral": 0.0012000000000000001,
+          "unsigned_spectral": 0.0012,
+          "hard_threshold": 0.00124
+        }
+      }
+    },
+    "sc2_detail": {
+      "primary_max_splits": 10,
+      "win_rate": 0.425,
+      "mean_acc_delta": -0.006741950000000005,
+      "mean_arity_delta": 2.1825,
+      "friedman_p": 0.20972247654170356,
+      "avg_method_ranks": {
+        "axis_aligned": 3.9375,
+        "hard_threshold": 2.75,
+        "random_oblique": 2.875,
+        "signed_spectral": 3.3125,
+        "unsigned_spectral": 2.125
+      }
+    },
+    "sc3_detail": {
+      "spearman_rho": -0.107692,
+      "p_value": 0.714031,
+      "bootstrap_ci": [
+        -0.677856,
+        0.526864
+      ],
+      "min_detectable_rho": 0.8442317648177381
+    },
+    "sc4_detail": {
+      "total_time_s": 1678.9,
+      "max_dataset_time_s": 488.85999999999996,
+      "highdim_coi_s": 116.6
+    },
+    "contribution_claims": [
+      "CoI-based spectral feature grouping recovers planted synergistic modules on synthetic data",
+      "Module-guided oblique splits produce different arity than random oblique splits",
+      "Unsigned spectral clustering often matches or exceeds signed SPONGE -- important negative result"
+    ],
+    "assumptions": [
+      "Pairwise CoI sufficiency -- synergistic pairs have most negative CoI",
+      "Structural balance -- CoI graphs have balanced signed structure",
+      "KSG estimator accuracy -- experiments used binning instead of KSG"
+    ],
+    "limitations": [
+      "CoI computed on subsampled data -- min(n, 20000) or min(n, 10000), not full dataset",
+      "Maximum dimensionality gap: real data max d=54 (jannis), far below d<=1000 aspiration. Only synthetic tested d=200",
+      "Single regression dataset (california_housing); all others classification. Regression generalization unvalidated"
+    ]
+  },
+  "metrics_agg": {
+    "sc1_sponge_oracle_mean_jaccard": 0.5565,
+    "sc1_sponge_auto_mean_jaccard": 0.43423560000000005,
+    "sc1_hard_threshold_mean_jaccard": 0.341209,
+    "sc1_unsigned_spectral_mean_jaccard": 0.5988796,
+    "sc1_random_mean_jaccard": 0.046085,
+    "sc1_variants_above_080": 2.0,
+    "sc1_sponge_vs_ht_p": 0.125,
+    "sc1_sponge_vs_unsigned_p": 0.875,
+    "sc1_sponge_beats_ht_count": 3.0,
+    "sc1_sponge_beats_unsigned_count": 1.0,
+    "sc1_verdict": 0.5,
+    "sc2_win_rate": 0.425,
+    "sc2_total_wins": 17.0,
+    "sc2_total_losses": 21.0,
+    "sc2_total_ties": 2.0,
+    "sc2_mean_acc_delta": -0.006741950000000005,
+    "sc2_mean_arity_delta": 2.1825,
+    "sc2_arity_wilcoxon_p": 0.80859375,
+    "sc2_friedman_stat": 5.8616352201258035,
+    "sc2_friedman_p": 0.20972247654170356,
+    "sc2_n_noninferior": 6.0,
+    "sc2_verdict": 0.5,
+    "sc3_spearman_rho": -0.107692,
+    "sc3_p_value": 0.714031,
+    "sc3_bootstrap_ci_lower": -0.677856,
+    "sc3_bootstrap_ci_upper": 0.526864,
+    "sc3_kendall_tau": -0.054945,
+    "sc3_kendall_p": 0.82991,
+    "sc3_synthetic_rho": 0.314286,
+    "sc3_synthetic_p": 0.544093,
+    "sc3_real_rho": -0.166667,
+    "sc3_real_p": 0.693239,
+    "sc3_effect_size": 0.107692,
+    "sc3_min_detectable_rho": 0.8442317648177381,
+    "sc3_n_datasets": 14.0,
+    "sc3_verdict": 0.0,
+    "sc4_total_benchmark_time_s": 1678.9,
+    "sc4_max_dataset_time_s": 488.85999999999996,
+    "sc4_highdim_coi_time_s": 116.6,
+    "sc4_threshold_s": 1800.0,
+    "sc4_verdict": 1.0,
+    "n_success_criteria": 4.0,
+    "n_confirmed": 1.0,
+    "n_partially_confirmed": 2.0,
+    "n_disconfirmed": 1.0,
+    "n_experiments_analyzed": 4.0
+  },
+  "datasets": [
+    {
+      "dataset": "sc1_synthetic_module_recovery",
+      "examples": [
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"n_features\": 10, \"n_samples\": 10000, \"gt_n_modules\": 2}",
+          "output": "{\"sponge_oracle_jaccard\": 1.0, \"sponge_auto_jaccard\": 1.0, \"hard_threshold_jaccard\": 1.0, \"unsigned_spectral_jaccard\": 1.0, \"random_jaccard\": 0.0}",
+          "eval_sponge_oracle_jaccard": 1.0,
+          "eval_sponge_auto_jaccard": 1.0,
+          "eval_hard_threshold_jaccard": 1.0,
+          "eval_unsigned_spectral_jaccard": 1.0,
+          "eval_random_jaccard": 0.0,
+          "eval_sponge_oracle_ari": 0.237288,
+          "eval_sponge_oracle_mfari": 1.0
+        },
+        {
+          "input": "{\"variant\": \"medium_4mod_mixed\", \"n_features\": 18, \"n_samples\": 20000, \"gt_n_modules\": 4}",
+          "output": "{\"sponge_oracle_jaccard\": 1.0, \"sponge_auto_jaccard\": 0.5, \"hard_threshold_jaccard\": 0.142857, \"unsigned_spectral_jaccard\": 1.0, \"random_jaccard\": 0.0}",
+          "eval_sponge_oracle_jaccard": 1.0,
+          "eval_sponge_auto_jaccard": 0.5,
+          "eval_hard_threshold_jaccard": 0.142857,
+          "eval_unsigned_spectral_jaccard": 1.0,
+          "eval_random_jaccard": 0.0,
+          "eval_sponge_oracle_ari": 0.338889,
+          "eval_sponge_oracle_mfari": 0.753363
+        },
+        {
+          "input": "{\"variant\": \"hard_4mod_unequal\", \"n_features\": 31, \"n_samples\": 20000, \"gt_n_modules\": 4}",
+          "output": "{\"sponge_oracle_jaccard\": 0.3125, \"sponge_auto_jaccard\": 0.298507, \"hard_threshold_jaccard\": 0.178082, \"unsigned_spectral_jaccard\": 0.457143, \"random_jaccard\": 0.114286}",
+          "eval_sponge_oracle_jaccard": 0.3125,
+          "eval_sponge_auto_jaccard": 0.298507,
+          "eval_hard_threshold_jaccard": 0.178082,
+          "eval_unsigned_spectral_jaccard": 0.457143,
+          "eval_random_jaccard": 0.114286,
+          "eval_sponge_oracle_ari": 0.092627,
+          "eval_sponge_oracle_mfari": 0.369236
+        }
+      ]
+    },
+    {
+      "dataset": "sc2_real_benchmark_accuracy",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"adult\", \"max_splits\": 5}",
+          "output": "{\"signed_mean_acc\": 0.695384, \"robliq_mean_acc\": 0.69487, \"acc_diff\": 0.000513, \"arity_diff\": -1.48, \"wins\": 2, \"losses\": 3, \"ties\": 0}",
+          "eval_acc_diff": 0.0005131999999999692,
+          "eval_arity_diff": -1.48,
+          "eval_p_value": 0.9430911183643411,
+          "eval_signed_mean_acc": 0.6953836000000001,
+          "eval_robliq_mean_acc": 0.6948703999999999
+        },
+        {
+          "input": "{\"dataset\": \"adult\", \"max_splits\": 10}",
+          "output": "{\"signed_mean_acc\": 0.702391, \"robliq_mean_acc\": 0.673508, \"acc_diff\": 0.028883, \"arity_diff\": -1.26, \"wins\": 3, \"losses\": 2, \"ties\": 0}",
+          "eval_acc_diff": 0.028883399999999983,
+          "eval_arity_diff": -1.26,
+          "eval_p_value": 0.2227224609595521,
+          "eval_signed_mean_acc": 0.7023912,
+          "eval_robliq_mean_acc": 0.6735078
+        },
+        {
+          "input": "{\"dataset\": \"adult\", \"max_splits\": 20}",
+          "output": "{\"signed_mean_acc\": 0.701791, \"robliq_mean_acc\": 0.707565, \"acc_diff\": -0.005774, \"arity_diff\": -1.21, \"wins\": 3, \"losses\": 2, \"ties\": 0}",
+          "eval_acc_diff": -0.005774199999999996,
+          "eval_arity_diff": -1.21,
+          "eval_p_value": 0.6958272845305432,
+          "eval_signed_mean_acc": 0.7017906,
+          "eval_robliq_mean_acc": 0.7075648000000001
+        }
+      ]
+    },
+    {
+      "dataset": "sc3_frustration_correlation",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"credit\"}",
+          "output": "{\"frustration_index\": 0.045044, \"oblique_benefit\": 0.005984}",
+          "eval_frustration_index": 0.045044,
+          "eval_oblique_benefit": 0.005984
+        },
+        {
+          "input": "{\"dataset\": \"adult\"}",
+          "output": "{\"frustration_index\": 0.0, \"oblique_benefit\": 0.127068}",
+          "eval_frustration_index": 0.0,
+          "eval_oblique_benefit": 0.127068
+        },
+        {
+          "input": "{\"dataset\": \"electricity\"}",
+          "output": "{\"frustration_index\": 0.027109, \"oblique_benefit\": 0.039517}",
+          "eval_frustration_index": 0.027109,
+          "eval_oblique_benefit": 0.039517
+        }
+      ]
+    }
+  ]
+}

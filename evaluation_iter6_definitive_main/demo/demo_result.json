@@ -1,0 +1,13 @@
+{
+  "id": "eval_id1_it6__opus",
+  "type": "code",
+  "title": "Definitive Main Results Table: 8 Methods \u00d7 8 Datasets with Statistical Tests",
+  "summary": "Demo notebook for the definitive main results evaluation of 8 methods (5 FIGS variants + 3 baselines) across 8 Grinsztajn datasets. Loads pre-computed evaluation output and demonstrates: (A) 8\u00d78 main results table with mean\u00b1std, (B) Friedman test + Nemenyi post-hoc with critical difference computation, (C) Bayesian signed-rank tests, (D) Cohen's d effect sizes, (E) winner analysis, (F) method rankings. Includes heatmap visualization of performance and ranking bar chart. Uses mini_demo_data.json (65 KB) containing full metadata with 249 aggregate metrics and 1 dataset with 3 examples.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_6/gen_art/eval_id1_it6__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id1_it6__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id1_it6__opus/eval_code_demo.ipynb"
+}

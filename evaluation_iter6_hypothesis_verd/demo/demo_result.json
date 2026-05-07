@@ -1,0 +1,13 @@
+{
+  "id": "eval_id4_it6__opus",
+  "type": "code",
+  "title": "Hypothesis Verdict Synthesis: Cross-Experiment Evidence Mapping for Paper Discussion",
+  "summary": "Demo notebook for the cross-experiment evidence mapping evaluation. Loads pre-computed results from 4 upstream experiments (synthetic module recovery, real benchmark, frustration meta-diagnostic, scalability) and re-derives definitive verdicts for 4 hypothesis success criteria: SC1 PARTIALLY_CONFIRMED (Jaccard=0.557), SC2 PARTIALLY_CONFIRMED (accuracy comparable, arity higher), SC3 DISCONFIRMED (rho=-0.108, p=0.714), SC4 CONFIRMED (max time 8.1 min < 30 min). Includes contribution claims, assumption validation, limitations catalogue, narrative arc, and a 4-panel visualization summarizing all verdicts and key metrics. Uses 24 examples across 8 datasets from mini_demo_data.json (16KB).",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_6/gen_art/eval_id4_it6__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id4_it6__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id4_it6__opus/eval_code_demo.ipynb"
+}

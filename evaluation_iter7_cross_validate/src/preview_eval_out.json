@@ -1,0 +1,105 @@
+{
+  "metadata": {
+    "evaluation_name": "cross_validate_paper_claims",
+    "description": "Master fact sheet recomputing all quantitative claims from raw experiment data",
+    "blocks_clean": [
+      "block_A_main_results",
+      "block_B_arity",
+      "block_C_ablation"
+    ],
+    "blocks_flagged": [
+      "block_F_module_recovery"
+    ],
+    "n_claims_total": 193,
+    "consistency_rate": 0.989637
+  },
+  "metrics_agg": {
+    "n_claims_total": 193,
+    "n_match": 191,
+    "n_approximate": 0,
+    "n_mismatch": 2,
+    "consistency_rate": 0.989637,
+    "n_blocks_clean": 5,
+    "n_blocks_flagged": 1
+  },
+  "datasets": [
+    {
+      "dataset": "block_A_main_results",
+      "examples": [
+        {
+          "input": "{\"claim_id\": \"A_adult_axis_aligned_mean\", \"claim_text\": \"Mean balanced_accuracy for axis_aligned on adult at best_max_splits=20\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"ev...",
+          "output": "{\"expected_value\": 0.677758, \"recomputed_value\": 0.6777576000000001, \"tolerance\": 0.0001, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"A_adult_axis_aligned_std\", \"claim_text\": \"Std balanced_accuracy for axis_aligned on adult at best_max_splits=20\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval...",
+          "output": "{\"expected_value\": 0.018409, \"recomputed_value\": 0.01840889203184155, \"tolerance\": 0.001, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"A_adult_random_oblique_mean\", \"claim_text\": \"Mean balanced_accuracy for random_oblique on adult at best_max_splits=20\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\":...",
+          "output": "{\"expected_value\": 0.707565, \"recomputed_value\": 0.7075648000000001, \"tolerance\": 0.0001, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        }
+      ]
+    },
+    {
+      "dataset": "block_B_arity",
+      "examples": [
+        {
+          "input": "{\"claim_id\": \"B1_arity_us_vs_ro_wilcoxon_p\", \"claim_text\": \"Wilcoxon p for unsigned_spectral vs random_oblique arity\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id2_it6_...",
+          "output": "{\"expected_value\": 1e-06, \"recomputed_value\": 1.3359620261614865e-06, \"tolerance\": 1.0, \"tolerance_type\": \"order_of_magnitude\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"B2_arity_us_vs_ro_cohens_d\", \"claim_text\": \"Cohen's d for unsigned_spectral vs random_oblique arity\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id2_it6__op...",
+          "output": "{\"expected_value\": 0.857, \"recomputed_value\": 0.8570409388466709, \"tolerance\": 0.01, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"B3_arity_ss_vs_ro_wilcoxon_p\", \"claim_text\": \"Wilcoxon p for signed_spectral vs random_oblique arity\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id2_it6__o...",
+          "output": "{\"expected_value\": 0.000131, \"recomputed_value\": 0.00013144217046084065, \"tolerance\": 1.0, \"tolerance_type\": \"order_of_magnitude\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        }
+      ]
+    },
+    {
+      "dataset": "block_C_ablation",
+      "examples": [
+        {
+          "input": "{\"claim_id\": \"C1_ablation_wilcoxon_W\", \"claim_text\": \"Wilcoxon W for unsigned vs signed (105 pairs)\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id3_it6__opus\"}",
+          "output": "{\"expected_value\": 1727, \"recomputed_value\": 1727.0, \"tolerance\": 5, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"C2_ablation_wilcoxon_p\", \"claim_text\": \"Wilcoxon p-value for unsigned vs signed ablation\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id3_it6__opus\"}",
+          "output": "{\"expected_value\": 0.1087, \"recomputed_value\": 0.1086508606327614, \"tolerance\": 0.5, \"tolerance_type\": \"relative\", \"status\": \"MATCH\", \"notes\": \"p=0.1087, expected ~0.1087\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"C3_ablation_hedges_g\", \"claim_text\": \"Hedges' g for unsigned vs signed on real data\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id3_it6__opus\"}",
+          "output": "{\"expected_value\": 0.072, \"recomputed_value\": 0.07251896923634497, \"tolerance\": 0.005, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        }
+      ]
+    }
+  ]
+}

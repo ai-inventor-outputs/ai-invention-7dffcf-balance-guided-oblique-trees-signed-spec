@@ -1,0 +1,729 @@
+{
+  "datasets": [
+    {
+      "dataset": "electricity",
+      "examples": [
+        {
+          "input": "{\"date\": 0.773956, \"period\": 0.438878, \"nswprice\": 0.858598, \"nswdemand\": 0.697368, \"vicprice\": 0.094177, \"vicdemand\": 0.975622, \"transfer\": 0.76114}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 0,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.786064, \"period\": 0.128114, \"nswprice\": 0.450386, \"nswdemand\": 0.370798, \"vicprice\": 0.926765, \"vicdemand\": 0.643865, \"transfer\": 0.822762}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 1,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.443414, \"period\": 0.227239, \"nswprice\": 0.554585, \"nswdemand\": 0.063817, \"vicprice\": 0.827631, \"vicdemand\": 0.631664, \"transfer\": 0.758088}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 2,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.354526, \"period\": 0.970698, \"nswprice\": 0.893121, \"nswdemand\": 0.778383, \"vicprice\": 0.194639, \"vicdemand\": 0.466721, \"transfer\": 0.043804}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 3,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.154289, \"period\": 0.683049, \"nswprice\": 0.744762, \"nswdemand\": 0.96751, \"vicprice\": 0.325825, \"vicdemand\": 0.37046, \"transfer\": 0.469556}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 4,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.189471, \"period\": 0.129922, \"nswprice\": 0.475705, \"nswdemand\": 0.226909, \"vicprice\": 0.669814, \"vicdemand\": 0.437152, \"transfer\": 0.832678}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 5,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.700265, \"period\": 0.312367, \"nswprice\": 0.83226, \"nswdemand\": 0.804764, \"vicprice\": 0.387478, \"vicdemand\": 0.288328, \"transfer\": 0.682496}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 6,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.139752, \"period\": 0.199908, \"nswprice\": 0.007362, \"nswdemand\": 0.786924, \"vicprice\": 0.664851, \"vicdemand\": 0.705165, \"transfer\": 0.780729}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 7,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.458916, \"period\": 0.568741, \"nswprice\": 0.139797, \"nswdemand\": 0.11453, \"vicprice\": 0.668403, \"vicdemand\": 0.471096, \"transfer\": 0.565236}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 8,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.764999, \"period\": 0.634718, \"nswprice\": 0.553579, \"nswdemand\": 0.559207, \"vicprice\": 0.30395, \"vicdemand\": 0.030818, \"transfer\": 0.436717}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 9,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.214585, \"period\": 0.408529, \"nswprice\": 0.853403, \"nswdemand\": 0.233939, \"vicprice\": 0.058303, \"vicdemand\": 0.281384, \"transfer\": 0.293594}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 10,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.661917, \"period\": 0.557032, \"nswprice\": 0.783898, \"nswdemand\": 0.664314, \"vicprice\": 0.406387, \"vicdemand\": 0.81402, \"transfer\": 0.166973}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 11,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.022712, \"period\": 0.090048, \"nswprice\": 0.722359, \"nswdemand\": 0.461877, \"vicprice\": 0.161272, \"vicdemand\": 0.501045, \"transfer\": 0.152312}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 12,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.69632, \"period\": 0.446156, \"nswprice\": 0.381021, \"nswdemand\": 0.301512, \"vicprice\": 0.630283, \"vicdemand\": 0.361813, \"transfer\": 0.08765}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 13,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.118006, \"period\": 0.961898, \"nswprice\": 0.908581, \"nswdemand\": 0.699707, \"vicprice\": 0.26587, \"vicdemand\": 0.969176, \"transfer\": 0.778751}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 14,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.71689, \"period\": 0.449362, \"nswprice\": 0.272242, \"nswdemand\": 0.096391, \"vicprice\": 0.902602, \"vicdemand\": 0.455776, \"transfer\": 0.202363}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 15,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.305957, \"period\": 0.57922, \"nswprice\": 0.176773, \"nswdemand\": 0.856614, \"vicprice\": 0.75852, \"vicdemand\": 0.719463, \"transfer\": 0.432093}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 16,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.627309, \"period\": 0.584098, \"nswprice\": 0.649847, \"nswdemand\": 0.084444, \"vicprice\": 0.415807, \"vicdemand\": 0.041614, \"transfer\": 0.493991}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 17,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.329861, \"period\": 0.144524, \"nswprice\": 0.103403, \"nswdemand\": 0.587645, \"vicprice\": 0.170593, \"vicdemand\": 0.92512, \"transfer\": 0.581061}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 18,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.34687, \"period\": 0.590915, \"nswprice\": 0.022804, \"nswdemand\": 0.958559, \"vicprice\": 0.482303, \"vicdemand\": 0.782735, \"transfer\": 0.08273}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 19,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.486658, \"period\": 0.490707, \"nswprice\": 0.937826, \"nswdemand\": 0.571728, \"vicprice\": 0.473489, \"vicdemand\": 0.266976, \"transfer\": 0.331569}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 20,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.520672, \"period\": 0.438911, \"nswprice\": 0.021612, \"nswdemand\": 0.826292, \"vicprice\": 0.896161, \"vicdemand\": 0.140249, \"transfer\": 0.554036}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 21,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.108576, \"period\": 0.67224, \"nswprice\": 0.281234, \"nswdemand\": 0.659423, \"vicprice\": 0.726995, \"vicdemand\": 0.768647, \"transfer\": 0.107741}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 22,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.916012, \"period\": 0.230214, \"nswprice\": 0.037413, \"nswdemand\": 0.554852, \"vicprice\": 0.370922, \"vicdemand\": 0.82979, \"transfer\": 0.808251}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 23,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.317139, \"period\": 0.952899, \"nswprice\": 0.290918, \"nswdemand\": 0.515057, \"vicprice\": 0.255965, \"vicdemand\": 0.936044, \"transfer\": 0.164608}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 24,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.044911, \"period\": 0.435097, \"nswprice\": 0.992376, \"nswdemand\": 0.891677, \"vicprice\": 0.748608, \"vicdemand\": 0.890792, \"transfer\": 0.893447}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 25,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.518858, \"period\": 0.315929, \"nswprice\": 0.772012, \"nswdemand\": 0.661661, \"vicprice\": 0.373658, \"vicdemand\": 0.094467, \"transfer\": 0.74679}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 26,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.262461, \"period\": 0.936813, \"nswprice\": 0.240971, \"nswdemand\": 0.122758, \"vicprice\": 0.831113, \"vicdemand\": 0.153284, \"transfer\": 0.179268}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 27,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.599383, \"period\": 0.874562, \"nswprice\": 0.196435, \"nswdemand\": 0.310324, \"vicprice\": 0.777405, \"vicdemand\": 0.971826, \"transfer\": 0.500741}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 28,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.143898, \"period\": 0.013936, \"nswprice\": 0.229656, \"nswdemand\": 0.131822, \"vicprice\": 0.677659, \"vicdemand\": 0.121833, \"transfer\": 0.50633}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 29,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.694262, \"period\": 0.581117, \"nswprice\": 0.199776, \"nswdemand\": 0.804125, \"vicprice\": 0.715407, \"vicdemand\": 0.738984, \"transfer\": 0.131058}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 30,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.123754, \"period\": 0.927563, \"nswprice\": 0.397578, \"nswdemand\": 0.300949, \"vicprice\": 0.488584, \"vicdemand\": 0.662864, \"transfer\": 0.955623}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 31,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.286446, \"period\": 0.924808, \"nswprice\": 0.024859, \"nswdemand\": 0.555198, \"vicprice\": 0.633975, \"vicdemand\": 0.105897, \"transfer\": 0.14034}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 32,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.419114, \"period\": 0.966232, \"nswprice\": 0.596043, \"nswdemand\": 0.933023, \"vicprice\": 0.804361, \"vicdemand\": 0.467382, \"transfer\": 0.784763}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 33,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.017837, \"period\": 0.109144, \"nswprice\": 0.829429, \"nswdemand\": 0.796817, \"vicprice\": 0.232641, \"vicdemand\": 0.53077, \"transfer\": 0.606016}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 34,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.867739, \"period\": 0.603107, \"nswprice\": 0.412572, \"nswdemand\": 0.374184, \"vicprice\": 0.425882, \"vicdemand\": 0.651931, \"transfer\": 0.867491}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 35,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.453897, \"period\": 0.24784, \"nswprice\": 0.236662, \"nswdemand\": 0.746014, \"vicprice\": 0.816569, \"vicdemand\": 0.105278, \"transfer\": 0.066559}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 36,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.594434, \"period\": 0.146173, \"nswprice\": 0.824664, \"nswdemand\": 0.310335, \"vicprice\": 0.143872, \"vicdemand\": 0.92097, \"transfer\": 0.165532}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 37,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.28472, \"period\": 0.153613, \"nswprice\": 0.11549, \"nswdemand\": 0.021148, \"vicprice\": 0.055395, \"vicdemand\": 0.174641, \"transfer\": 0.053382}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 38,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.591144, \"period\": 0.680715, \"nswprice\": 0.39363, \"nswdemand\": 0.317991, \"vicprice\": 0.504526, \"vicdemand\": 0.875005, \"transfer\": 0.851132}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 39,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.043475, \"period\": 0.181498, \"nswprice\": 0.236745, \"nswdemand\": 0.249388, \"vicprice\": 0.571233, \"vicdemand\": 0.416262, \"transfer\": 0.049254}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 40,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.373614, \"period\": 0.523753, \"nswprice\": 0.101672, \"nswdemand\": 0.833459, \"vicprice\": 0.051962, \"vicdemand\": 0.924842, \"transfer\": 0.099113}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 41,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.843575, \"period\": 0.902653, \"nswprice\": 0.979571, \"nswdemand\": 0.802026, \"vicprice\": 0.779478, \"vicdemand\": 0.642483, \"transfer\": 0.778996}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 42,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.134552, \"period\": 0.536068, \"nswprice\": 0.514223, \"nswdemand\": 0.857572, \"vicprice\": 0.462799, \"vicdemand\": 0.385089, \"transfer\": 0.639563}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 43,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.266463, \"period\": 0.139768, \"nswprice\": 0.477877, \"nswdemand\": 0.416889, \"vicprice\": 0.23257, \"vicdemand\": 0.367512, \"transfer\": 0.366392}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 44,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.327496, \"period\": 0.379464, \"nswprice\": 0.685743, \"nswdemand\": 0.296876, \"vicprice\": 0.948858, \"vicdemand\": 0.916348, \"transfer\": 0.48091}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 45,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.328361, \"period\": 0.535435, \"nswprice\": 0.84856, \"nswdemand\": 0.652587, \"vicprice\": 0.804392, \"vicdemand\": 0.532722, \"transfer\": 0.632918}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 46,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.288156, \"period\": 0.734893, \"nswprice\": 0.202405, \"nswdemand\": 0.694798, \"vicprice\": 0.860719, \"vicdemand\": 0.132103, \"transfer\": 0.61438}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 47,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.095096, \"period\": 0.725716, \"nswprice\": 0.084493, \"nswdemand\": 0.93594, \"vicprice\": 0.137408, \"vicdemand\": 0.95888, \"transfer\": 0.800884}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 48,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.593682, \"period\": 0.782624, \"nswprice\": 0.795115, \"nswdemand\": 0.946027, \"vicprice\": 0.253383, \"vicdemand\": 0.590076, \"transfer\": 0.095049}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 49,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.616166, \"period\": 0.171291, \"nswprice\": 0.564951, \"nswdemand\": 0.572431, \"vicprice\": 0.465985, \"vicdemand\": 0.522632, \"transfer\": 0.763923}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 50,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.799245, \"period\": 0.492153, \"nswprice\": 0.599593, \"nswdemand\": 0.931236, \"vicprice\": 0.119734, \"vicdemand\": 0.117104, \"transfer\": 0.087709}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 51,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.657863, \"period\": 0.418608, \"nswprice\": 0.774321, \"nswdemand\": 0.671231, \"vicprice\": 0.333638, \"vicdemand\": 0.898367, \"transfer\": 0.762532}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 52,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.270535, \"period\": 0.364192, \"nswprice\": 0.31444, \"nswdemand\": 0.157612, \"vicprice\": 0.147783, \"vicdemand\": 0.936127, \"transfer\": 0.437904}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 53,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.38332, \"period\": 0.729686, \"nswprice\": 0.552993, \"nswdemand\": 0.93614, \"vicprice\": 0.780301, \"vicdemand\": 0.47937, \"transfer\": 0.376359}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 54,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.986632, \"period\": 0.71776, \"nswprice\": 0.951195, \"nswdemand\": 0.118479, \"vicprice\": 0.850534, \"vicdemand\": 0.637074, \"transfer\": 0.121922}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 55,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.588258, \"period\": 0.686096, \"nswprice\": 0.012303, \"nswdemand\": 0.454318, \"vicprice\": 0.8254, \"vicdemand\": 0.295359, \"transfer\": 0.458548}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 56,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.442314, \"period\": 0.301927, \"nswprice\": 0.918442, \"nswdemand\": 0.781294, \"vicprice\": 0.110588, \"vicdemand\": 0.997035, \"transfer\": 0.8792}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 57,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.283908, \"period\": 0.836897, \"nswprice\": 0.10642, \"nswdemand\": 0.999105, \"vicprice\": 0.665685, \"vicdemand\": 0.650125, \"transfer\": 0.090441}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 58,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.897033, \"period\": 0.029, \"nswprice\": 0.240828, \"nswdemand\": 0.143022, \"vicprice\": 0.776768, \"vicdemand\": 0.198204, \"transfer\": 0.910638}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 59,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.656269, \"period\": 0.036163, \"nswprice\": 0.00543, \"nswdemand\": 0.051658, \"vicprice\": 0.605925, \"vicdemand\": 0.801482, \"transfer\": 0.238553}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 60,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.849409, \"period\": 0.057232, \"nswprice\": 0.800964, \"nswdemand\": 0.927795, \"vicprice\": 0.772108, \"vicdemand\": 0.698121, \"transfer\": 0.83798}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 61,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.040151, \"period\": 0.201782, \"nswprice\": 0.124924, \"nswdemand\": 0.504531, \"vicprice\": 0.745188, \"vicdemand\": 0.630012, \"transfer\": 0.851131}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 62,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.155213, \"period\": 0.734621, \"nswprice\": 0.193041, \"nswdemand\": 0.270759, \"vicprice\": 0.709905, \"vicdemand\": 0.980205, \"transfer\": 0.611544}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 63,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.0545, \"period\": 0.616309, \"nswprice\": 0.042351, \"nswdemand\": 0.884146, \"vicprice\": 0.709578, \"vicdemand\": 0.173128, \"transfer\": 0.091721}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 64,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.183533, \"period\": 0.980027, \"nswprice\": 0.458561, \"nswdemand\": 0.784081, \"vicprice\": 0.636408, \"vicdemand\": 0.572413, \"transfer\": 0.14513}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 65,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.946024, \"period\": 0.301343, \"nswprice\": 0.578017, \"nswdemand\": 0.699776, \"vicprice\": 0.649233, \"vicdemand\": 0.940594, \"transfer\": 0.148439}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 66,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.508353, \"period\": 0.404034, \"nswprice\": 0.474169, \"nswdemand\": 0.119218, \"vicprice\": 0.134095, \"vicdemand\": 0.278076, \"transfer\": 0.304705}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 67,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.427903, \"period\": 0.610988, \"nswprice\": 0.634629, \"nswdemand\": 0.411811, \"vicprice\": 0.408783, \"vicdemand\": 0.217629, \"transfer\": 0.588306}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 68,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.317041, \"period\": 0.03606, \"nswprice\": 0.4184, \"nswdemand\": 0.474133, \"vicprice\": 0.225593, \"vicdemand\": 0.572458, \"transfer\": 0.565772}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 69,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.702002, \"period\": 0.647948, \"nswprice\": 0.652433, \"nswdemand\": 0.316214, \"vicprice\": 0.787432, \"vicdemand\": 0.549144, \"transfer\": 0.431418}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 70,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.626012, \"period\": 0.360657, \"nswprice\": 0.512739, \"nswdemand\": 0.736706, \"vicprice\": 0.886403, \"vicdemand\": 0.921057, \"transfer\": 0.503633}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 71,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.520275, \"period\": 0.79987, \"nswprice\": 0.314451, \"nswdemand\": 0.837382, \"vicprice\": 0.494142, \"vicdemand\": 0.115857, \"transfer\": 0.072059}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 72,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.841993, \"period\": 0.055568, \"nswprice\": 0.280611, \"nswdemand\": 0.33413, \"vicprice\": 0.172994, \"vicdemand\": 0.313893, \"transfer\": 0.742693}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 73,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.014683, \"period\": 0.827173, \"nswprice\": 0.856548, \"nswdemand\": 0.372262, \"vicprice\": 0.153613, \"vicdemand\": 0.60084, \"transfer\": 0.119673}",
+          "output": "1",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 74,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.364919, \"period\": 0.958429, \"nswprice\": 0.995464, \"nswdemand\": 0.772105, \"vicprice\": 0.310962, \"vicdemand\": 0.687665, \"transfer\": 0.705406}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 75,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.387842, \"period\": 0.640889, \"nswprice\": 0.010728, \"nswdemand\": 0.209058, \"vicprice\": 0.525088, \"vicdemand\": 0.163751, \"transfer\": 0.165907}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 76,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.836304, \"period\": 0.989133, \"nswprice\": 0.555969, \"nswdemand\": 0.83907, \"vicprice\": 0.990322, \"vicdemand\": 0.141596, \"transfer\": 0.448246}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 77,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.392573, \"period\": 0.080049, \"nswprice\": 0.75533, \"nswdemand\": 0.433779, \"vicprice\": 0.469327, \"vicdemand\": 0.150673, \"transfer\": 0.180927}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 78,
+          "metadata_n_classes": 2
+        },
+        {
+          "input": "{\"date\": 0.907104, \"period\": 0.044649, \"nswprice\": 0.232852, \"nswdemand\": 0.292059, \"vicprice\": 0.490198, \"vicdemand\": 0.586445, \"transfer\": 0.49329}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 79,
+          "metadata_n_classes": 2
+        }
+      ]
+    }
+  ]
+}

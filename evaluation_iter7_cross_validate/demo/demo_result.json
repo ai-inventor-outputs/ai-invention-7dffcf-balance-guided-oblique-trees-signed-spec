@@ -1,0 +1,13 @@
+{
+  "id": "eval_id3_it7__opus",
+  "type": "code",
+  "title": "Cross-Validate All Paper Claims: Master Fact Sheet from Raw Experiment Data",
+  "summary": "Demo notebook that cross-validates quantitative paper claims across 6 verification blocks (A-F). Loads pre-computed evaluation results (18 claims from mini dataset), re-verifies each claim using tolerance-based matching logic (absolute, relative, order-of-magnitude), computes per-block and overall consistency statistics, and visualizes results with stacked bar chart and expected-vs-recomputed scatter plot. Uses scipy.stats for statistical helpers (Cohen's d, Hedges' g, Friedman chi2, bootstrap Spearman CI).",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_7/gen_art/eval_id3_it7__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id3_it7__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id3_it7__opus/eval_code_demo.ipynb"
+}

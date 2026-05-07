@@ -1,0 +1,13 @@
+[project]
+name = "coi-estimator-validation"
+version = "0.1.0"
+requires-python = ">=3.10,<3.12"
+description = "CoI Estimator Validation: Accuracy, Consistency, and Subsampling Stability on Planted-Synergy Data"
+dependencies = [
+    "numpy==2.2.6",
+    "scipy==1.15.3",
+    "scikit-learn==1.7.2",
+    "joblib==1.5.2",
+    "loguru==0.7.3",
+    "npeet @ git+https://github.com/gregversteeg/NPEET.git@8b0d9485423f74e5eb199324cf362765596538d3",
+]

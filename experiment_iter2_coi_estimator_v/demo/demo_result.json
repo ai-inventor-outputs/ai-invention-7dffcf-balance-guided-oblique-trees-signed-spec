@@ -1,0 +1,13 @@
+{
+  "id": "exp_id4_it2__opus",
+  "type": "code",
+  "title": "CoI Estimator Validation: Accuracy, Consistency, and Subsampling Stability on Planted-Synergy Data",
+  "summary": "Demo notebook for CoI Estimator Validation experiment. Compares three mutual information estimators (NPEET micd, sklearn+custom KSG, frbourassa cKDTree) on synthetic planted-synergy data with known ground-truth structure. The notebook generates synthetic datasets, runs all three estimators to compute Co-Information matrices, validates against ground truth (XOR synergy pairs, redundant pairs, noise), tests subsampling stability, and checks reproducibility across seeds. Includes 4-panel visualization: CoI heatmap, estimator timing comparison, ground truth validation accuracy, and subsampling stability curve. Uses mini_demo_data.json (32 curated examples across 5 ground-truth types from both easy_2mod_xor and medium_4mod_mixed datasets) as reference data loaded via GitHub URL with local fallback.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_2/gen_art/exp_id4_it2__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id4_it2__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id4_it2__opus/method_code_demo.ipynb"
+}

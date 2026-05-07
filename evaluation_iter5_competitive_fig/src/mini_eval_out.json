@@ -1,0 +1,1102 @@
+{
+  "metadata": {
+    "evaluation_name": "FIGS_vs_Baselines_Competitive_Comparison",
+    "description": "Paper-ready comparison of 3 FIGS variants against 3 baselines across 5 Grinsztajn benchmarks (Friedman/Nemenyi, Bayesian, Cohen's d, interpretability, timing, winner analysis)",
+    "date": "2026-03-19",
+    "overlapping_datasets": [
+      "electricity",
+      "adult",
+      "california_housing",
+      "jannis",
+      "higgs_small"
+    ],
+    "classification_datasets": [
+      "electricity",
+      "adult",
+      "jannis",
+      "higgs_small"
+    ],
+    "regression_datasets": [
+      "california_housing"
+    ],
+    "figs_methods": [
+      "axis_aligned_figs",
+      "random_oblique_figs",
+      "signed_spectral_figs"
+    ],
+    "baseline_methods": [
+      "ebm",
+      "random_forest",
+      "linear"
+    ],
+    "n_folds": 5,
+    "sections": {
+      "A_friedman_nemenyi": {
+        "avg_rank_axis_aligned_figs": 3.4,
+        "avg_rank_random_oblique_figs": 4.4,
+        "avg_rank_signed_spectral_figs": 3.8,
+        "avg_rank_ebm": 1.8,
+        "avg_rank_random_forest": 1.6,
+        "avg_rank_linear": 6.0,
+        "friedman_chi2": 19.514285714285705,
+        "friedman_pvalue": 0.0015410019952137705,
+        "nemenyi_cd": 3.372165476366781,
+        "nemenyi_pairwise": {
+          "axis_aligned_figs_vs_random_oblique_figs": {
+            "rank_diff": 1.0000000000000004,
+            "significant": false
+          },
+          "axis_aligned_figs_vs_signed_spectral_figs": {
+            "rank_diff": 0.3999999999999999,
+            "significant": false
+          },
+          "axis_aligned_figs_vs_ebm": {
+            "rank_diff": 1.5999999999999999,
+            "significant": false
+          },
+          "axis_aligned_figs_vs_random_forest": {
+            "rank_diff": 1.7999999999999998,
+            "significant": false
+          },
+          "axis_aligned_figs_vs_linear": {
+            "rank_diff": 2.6,
+            "significant": false
+          },
+          "random_oblique_figs_vs_signed_spectral_figs": {
+            "rank_diff": 0.6000000000000005,
+            "significant": false
+          },
+          "random_oblique_figs_vs_ebm": {
+            "rank_diff": 2.6000000000000005,
+            "significant": false
+          },
+          "random_oblique_figs_vs_random_forest": {
+            "rank_diff": 2.8000000000000003,
+            "significant": false
+          },
+          "random_oblique_figs_vs_linear": {
+            "rank_diff": 1.5999999999999996,
+            "significant": false
+          },
+          "signed_spectral_figs_vs_ebm": {
+            "rank_diff": 1.9999999999999998,
+            "significant": false
+          },
+          "signed_spectral_figs_vs_random_forest": {
+            "rank_diff": 2.1999999999999997,
+            "significant": false
+          },
+          "signed_spectral_figs_vs_linear": {
+            "rank_diff": 2.2,
+            "significant": false
+          },
+          "ebm_vs_random_forest": {
+            "rank_diff": 0.19999999999999996,
+            "significant": false
+          },
+          "ebm_vs_linear": {
+            "rank_diff": 4.2,
+            "significant": true
+          },
+          "random_forest_vs_linear": {
+            "rank_diff": 4.4,
+            "significant": true
+          }
+        },
+        "nemenyi_cliques": [
+          [
+            "axis_aligned_figs",
+            "ebm",
+            "linear",
+            "random_forest",
+            "random_oblique_figs",
+            "signed_spectral_figs"
+          ],
+          [
+            "axis_aligned_figs",
+            "ebm",
+            "random_forest",
+            "random_oblique_figs",
+            "signed_spectral_figs"
+          ],
+          [
+            "axis_aligned_figs",
+            "linear",
+            "random_oblique_figs",
+            "signed_spectral_figs"
+          ]
+        ],
+        "friedman_perfold_chi2": 94.5771428571428,
+        "friedman_perfold_pvalue": 7.328820414588829e-19
+      },
+      "B_bayesian_signed_rank": {
+        "bayesian_signed_spectral_vs_ebm_prob_left": 0.0,
+        "bayesian_signed_spectral_vs_ebm_prob_rope": 0.0,
+        "bayesian_signed_spectral_vs_ebm_prob_right": 1.0,
+        "bayesian_signed_spectral_vs_ebm_mean_diff": -0.029893985979878895,
+        "bayesian_signed_spectral_vs_ebm_std_diff": 0.021213797574345612,
+        "bayesian_signed_spectral_vs_ebm_interpretation": "ebm_wins",
+        "bayesian_random_oblique_vs_ebm_prob_left": 0.0,
+        "bayesian_random_oblique_vs_ebm_prob_rope": 0.0,
+        "bayesian_random_oblique_vs_ebm_prob_right": 1.0,
+        "bayesian_random_oblique_vs_ebm_mean_diff": -0.03346041728578441,
+        "bayesian_random_oblique_vs_ebm_std_diff": 0.014785635155457366,
+        "bayesian_random_oblique_vs_ebm_interpretation": "ebm_wins",
+        "bayesian_axis_aligned_vs_ebm_prob_left": 0.0,
+        "bayesian_axis_aligned_vs_ebm_prob_rope": 0.0,
+        "bayesian_axis_aligned_vs_ebm_prob_right": 1.0,
+        "bayesian_axis_aligned_vs_ebm_mean_diff": -0.029832420734100012,
+        "bayesian_axis_aligned_vs_ebm_std_diff": 0.013069659962346932,
+        "bayesian_axis_aligned_vs_ebm_interpretation": "ebm_wins"
+      },
+      "C_cohens_d": {
+        "cohens_d_axis_aligned_vs_ebm": -2.224774558334215,
+        "cohens_d_axis_aligned_vs_ebm_effect": "large",
+        "cohens_d_axis_aligned_vs_random_forest": -1.3577476758934146,
+        "cohens_d_axis_aligned_vs_random_forest_effect": "large",
+        "cohens_d_axis_aligned_vs_linear": 2.2126651872615195,
+        "cohens_d_axis_aligned_vs_linear_effect": "large",
+        "cohens_d_random_oblique_vs_ebm": -2.2057341639169055,
+        "cohens_d_random_oblique_vs_ebm_effect": "large",
+        "cohens_d_random_oblique_vs_random_forest": -1.3641913836198332,
+        "cohens_d_random_oblique_vs_random_forest_effect": "large",
+        "cohens_d_random_oblique_vs_linear": 1.8905164464222424,
+        "cohens_d_random_oblique_vs_linear_effect": "large",
+        "cohens_d_signed_spectral_vs_ebm": -1.3734953983196478,
+        "cohens_d_signed_spectral_vs_ebm_effect": "large",
+        "cohens_d_signed_spectral_vs_random_forest": -1.0868915074828973,
+        "cohens_d_signed_spectral_vs_random_forest_effect": "large",
+        "cohens_d_signed_spectral_vs_linear": 2.1885190516448234,
+        "cohens_d_signed_spectral_vs_linear_effect": "large",
+        "wlt_axis_aligned_wins": 4,
+        "wlt_axis_aligned_losses": 8,
+        "wlt_axis_aligned_ties": 0,
+        "wlt_random_oblique_wins": 4,
+        "wlt_random_oblique_losses": 8,
+        "wlt_random_oblique_ties": 0,
+        "wlt_signed_spectral_wins": 5,
+        "wlt_signed_spectral_losses": 6,
+        "wlt_signed_spectral_ties": 1
+      },
+      "D_results_table": {
+        "electricity": {
+          "task_type": "classification",
+          "primary_metric": "balanced_accuracy",
+          "methods": {
+            "axis_aligned_figs": {
+              "primary_mean": 0.7970062599741571,
+              "primary_std": 0.0024114398537209013,
+              "best_max_splits": 20,
+              "fit_time_mean": 1.2786692142486573,
+              "total_splits_mean": 20.0,
+              "avg_split_arity_mean": 1.0,
+              "avg_path_length_mean": 4.637154150197629,
+              "auc_mean": 0.8667409041697434,
+              "auc_std": 0.0008817937065873644
+            },
+            "random_oblique_figs": {
+              "primary_mean": 0.7898072424066707,
+              "primary_std": 0.0044042803175840875,
+              "best_max_splits": 20,
+              "fit_time_mean": 7.687028551101685,
+              "total_splits_mean": 20.0,
+              "avg_split_arity_mean": 1.86,
+              "avg_path_length_mean": 2.528968660968661,
+              "auc_mean": 0.8641212774248686,
+              "auc_std": 0.004439301664632657
+            },
+            "signed_spectral_figs": {
+              "primary_mean": 0.7887402811921918,
+              "primary_std": 0.008474443741943774,
+              "best_max_splits": 20,
+              "fit_time_mean": 6.290821361541748,
+              "total_splits_mean": 20.0,
+              "avg_split_arity_mean": 1.6200000000000003,
+              "avg_path_length_mean": 2.563202279202279,
+              "auc_mean": 0.8595364217516502,
+              "auc_std": 0.008702971609155258
+            },
+            "ebm": {
+              "primary_mean": 0.8441281836914797,
+              "primary_std": 0.0028449534994823057,
+              "fit_time_mean": 72.6424,
+              "auc_mean": 0.9273815795378428,
+              "auc_std": 0.002031507593509795,
+              "n_terms": 17.0
+            },
+            "random_forest": {
+              "primary_mean": 0.8839736676850013,
+              "primary_std": 0.00381793353062704,
+              "fit_time_mean": 0.8379999999999999,
+              "auc_mean": 0.9558485034289372,
+              "auc_std": 0.0012042319933633417
+            },
+            "linear": {
+              "primary_mean": 0.74003221318337,
+              "primary_std": 0.0017518649450544938,
+              "fit_time_mean": 0.028000000000000004,
+              "auc_mean": 0.8189869577058568,
+              "auc_std": 0.0024365360088558752
+            }
+          },
+          "winner": "random_forest",
+          "winner_value": 0.8839736676850013,
+          "second_best": "ebm",
+          "second_best_value": 0.8441281836914797
+        },
+        "adult": {
+          "task_type": "classification",
+          "primary_metric": "balanced_accuracy",
+          "methods": {
+            "axis_aligned_figs": {
+              "primary_mean": 0.7022939369133459,
+              "primary_std": 0.00205336801814766,
+              "best_max_splits": 15,
+              "fit_time_mean": 0.7707880020141602,
+              "total_splits_mean": 15.0,
+              "avg_split_arity_mean": 1.0,
+              "avg_path_length_mean": 2.8912280701754387,
+              "auc_mean": 0.8464932725430533,
+              "auc_std": 0.004931896817608862
+            },
+            "random_oblique_figs": {
+              "primary_mean": 0.7008062323622575,
+              "primary_std": 0.006064928130139067,
+              "best_max_splits": 15,
+              "fit_time_mean": 4.4486932277679445,
+              "total_splits_mean": 15.0,
+              "avg_split_arity_mean": 2.146666666666667,
+              "avg_path_length_mean": 1.9994759626338574,
+              "auc_mean": 0.8438392313009253,
+              "auc_std": 0.007875447050194384
+            },
+            "signed_spectral_figs": {
+              "primary_mean": 0.7147738260036978,
+              "primary_std": 0.014583103300018144,
+              "best_max_splits": 10,
+              "fit_time_mean": 2.207506227493286,
+              "total_splits_mean": 10.0,
+              "avg_split_arity_mean": 2.2399999999999998,
+              "avg_path_length_mean": 1.8266666666666667,
+              "auc_mean": 0.8277541062970395,
+              "auc_std": 0.004131886866138806
+            },
+            "ebm": {
+              "primary_mean": 0.7147477892798137,
+              "primary_std": 0.005156339617957599,
+              "fit_time_mean": 7.1975999999999996,
+              "auc_mean": 0.8739427334773966,
+              "auc_std": 0.004558790349204602,
+              "n_terms": 16.0
+            },
+            "random_forest": {
+              "primary_mean": 0.7062329617055384,
+              "primary_std": 0.005715311225079686,
+              "fit_time_mean": 0.535,
+              "auc_mean": 0.8233067763988473,
+              "auc_std": 0.004480886569408622
+            },
+            "linear": {
+              "primary_mean": 0.6715686003605622,
+              "primary_std": 0.0059923643099150615,
+              "fit_time_mean": 0.007000000000000001,
+              "auc_mean": 0.831613388516768,
+              "auc_std": 0.0044909387235255
+            }
+          },
+          "winner": "signed_spectral_figs",
+          "winner_value": 0.7147738260036978,
+          "second_best": "ebm",
+          "second_best_value": 0.7147477892798137
+        },
+        "california_housing": {
+          "task_type": "regression",
+          "primary_metric": "r2",
+          "methods": {
+            "axis_aligned_figs": {
+              "primary_mean": 0.7191310062301726,
+              "primary_std": 0.01415660990832795,
+              "best_max_splits": 20,
+              "fit_time_mean": 1.0177865028381348,
+              "total_splits_mean": 20.0,
+              "avg_split_arity_mean": 1.0,
+              "avg_path_length_mean": 3.443478260869565
+            },
+            "random_oblique_figs": {
+              "primary_mean": 0.6166735297631556,
+              "primary_std": 0.022107926569128047,
+              "best_max_splits": 15,
+              "fit_time_mean": 4.405670785903931,
+              "total_splits_mean": 15.0,
+              "avg_split_arity_mean": 3.7599999999999993,
+              "avg_path_length_mean": 1.7363636363636363
+            },
+            "signed_spectral_figs": {
+              "primary_mean": 0.6186001318960642,
+              "primary_std": 0.06662705480495336,
+              "best_max_splits": 20,
+              "fit_time_mean": 5.567221546173096,
+              "total_splits_mean": 20.0,
+              "avg_split_arity_mean": 2.91,
+              "avg_path_length_mean": 2.2447089947089944
+            },
+            "ebm": {
+              "primary_mean": 0.8356558772452264,
+              "primary_std": 0.009349991113068683,
+              "fit_time_mean": 40.96640000000001,
+              "n_terms": 18.0
+            },
+            "random_forest": {
+              "primary_mean": 0.8095705922532843,
+              "primary_std": 0.006834791524284054,
+              "fit_time_mean": 1.8739999999999999
+            },
+            "linear": {
+              "primary_mean": 0.601380932640996,
+              "primary_std": 0.017000561775507107,
+              "fit_time_mean": 0.005000000000000001
+            }
+          },
+          "winner": "ebm",
+          "winner_value": 0.8356558772452264,
+          "second_best": "random_forest",
+          "second_best_value": 0.8095705922532843
+        },
+        "jannis": {
+          "task_type": "classification",
+          "primary_metric": "balanced_accuracy",
+          "methods": {
+            "axis_aligned_figs": {
+              "primary_mean": 0.7446856547412295,
+              "primary_std": 0.004452021891383178,
+              "best_max_splits": 20,
+              "fit_time_mean": 19.319130754470827,
+              "total_splits_mean": 20.0,
+              "avg_split_arity_mean": 1.0,
+              "avg_path_length_mean": 2.712,
+              "auc_mean": 0.8215798132649249,
+              "auc_std": 0.003790499234662617
+            },
+            "random_oblique_figs": {
+              "primary_mean": 0.7371830496700242,
+              "primary_std": 0.006158996589980538,
+              "best_max_splits": 20,
+              "fit_time_mean": 38.38528447151184,
+              "total_splits_mean": 20.0,
+              "avg_split_arity_mean": 26.22,
+              "avg_path_length_mean": 2.832076923076923,
+              "auc_mean": 0.80951842406976,
+              "auc_std": 0.009805304838306748
+            },
+            "signed_spectral_figs": {
+              "primary_mean": 0.7411948593261549,
+              "primary_std": 0.005718142834110665,
+              "best_max_splits": 20,
+              "fit_time_mean": 42.446047115325925,
+              "total_splits_mean": 20.0,
+              "avg_split_arity_mean": 21.74,
+              "avg_path_length_mean": 2.2087478141271246,
+              "auc_mean": 0.8157199382866261,
+              "auc_std": 0.009232992901662969
+            },
+            "ebm": {
+              "primary_mean": 0.7715873567210838,
+              "primary_std": 0.0033041414353487866,
+              "fit_time_mean": 27.2532,
+              "auc_mean": 0.8481765165121761,
+              "auc_std": 0.0036026155963525533,
+              "n_terms": 64.0
+            },
+            "random_forest": {
+              "primary_mean": 0.7842653699201112,
+              "primary_std": 0.00531973428596628,
+              "fit_time_mean": 6.2234,
+              "auc_mean": 0.8615045548480141,
+              "auc_std": 0.0045170621156252165
+            },
+            "linear": {
+              "primary_mean": 0.7289162903786037,
+              "primary_std": 0.005027299982790118,
+              "fit_time_mean": 1.0977999999999999,
+              "auc_mean": 0.805595730349523,
+              "auc_std": 0.004421418872596578
+            }
+          },
+          "winner": "random_forest",
+          "winner_value": 0.7842653699201112,
+          "second_best": "ebm",
+          "second_best_value": 0.7715873567210838
+        },
+        "higgs_small": {
+          "task_type": "classification",
+          "primary_metric": "balanced_accuracy",
+          "methods": {
+            "axis_aligned_figs": {
+              "primary_mean": 0.6804895461499235,
+              "primary_std": 0.0021827981969470504,
+              "best_max_splits": 20,
+              "fit_time_mean": 15.289652252197266,
+              "total_splits_mean": 20.0,
+              "avg_split_arity_mean": 1.0,
+              "avg_path_length_mean": 2.7381538461538466,
+              "auc_mean": 0.7471342291460636,
+              "auc_std": 0.0022585788884841767
+            },
+            "random_oblique_figs": {
+              "primary_mean": 0.6838041815400306,
+              "primary_std": 0.0022783937631579757,
+              "best_max_splits": 20,
+              "fit_time_mean": 32.13915152549744,
+              "total_splits_mean": 20.0,
+              "avg_split_arity_mean": 1.5500000000000003,
+              "avg_path_length_mean": 1.8708045977011494,
+              "auc_mean": 0.749932825227063,
+              "auc_std": 0.0013134418094123204
+            },
+            "signed_spectral_figs": {
+              "primary_mean": 0.6807853136155023,
+              "primary_std": 0.005648871252708576,
+              "best_max_splits": 20,
+              "fit_time_mean": 31.03656859397888,
+              "total_splits_mean": 20.0,
+              "avg_split_arity_mean": 1.4999999999999998,
+              "avg_path_length_mean": 2.023741252773511,
+              "auc_mean": 0.743790808059558,
+              "auc_std": 0.008826471529870239
+            },
+            "ebm": {
+              "primary_mean": 0.7150229474757778,
+              "primary_std": 0.0010186632117640756,
+              "fit_time_mean": 50.376799999999996,
+              "auc_mean": 0.793181846621043,
+              "auc_std": 0.0021603015117891166,
+              "n_terms": 34.0
+            },
+            "random_forest": {
+              "primary_mean": 0.7186231514533402,
+              "primary_std": 0.0008344402720686504,
+              "fit_time_mean": 6.898000000000001,
+              "auc_mean": 0.7951691518522458,
+              "auc_std": 0.0003859362985849585
+            },
+            "linear": {
+              "primary_mean": 0.633227944926058,
+              "primary_std": 0.002454859583205382,
+              "fit_time_mean": 0.24819999999999998,
+              "auc_mean": 0.6797081009309272,
+              "auc_std": 0.002984878762074109
+            }
+          },
+          "winner": "random_forest",
+          "winner_value": 0.7186231514533402,
+          "second_best": "ebm",
+          "second_best_value": 0.7150229474757778
+        }
+      },
+      "E_interpretability": {
+        "per_dataset": {
+          "electricity": {
+            "figs_total_splits": 20.0,
+            "figs_avg_split_arity": 1.6200000000000003,
+            "figs_avg_path_length": 2.563202279202279,
+            "ebm_n_terms": 17.0,
+            "ebm_n_interaction_terms": 10.0,
+            "ebm_n_main_effects": 7.0,
+            "complexity_ratio": 1.1764705882352942
+          },
+          "adult": {
+            "figs_total_splits": 10.0,
+            "figs_avg_split_arity": 2.2399999999999998,
+            "figs_avg_path_length": 1.8266666666666667,
+            "ebm_n_terms": 16.0,
+            "ebm_n_interaction_terms": 10.0,
+            "ebm_n_main_effects": 6.0,
+            "complexity_ratio": 0.625
+          },
+          "california_housing": {
+            "figs_total_splits": 20.0,
+            "figs_avg_split_arity": 2.91,
+            "figs_avg_path_length": 2.2447089947089944,
+            "ebm_n_terms": 18.0,
+            "ebm_n_interaction_terms": 10.0,
+            "ebm_n_main_effects": 8.0,
+            "complexity_ratio": 1.1111111111111112
+          },
+          "jannis": {
+            "figs_total_splits": 20.0,
+            "figs_avg_split_arity": 21.74,
+            "figs_avg_path_length": 2.2087478141271246,
+            "ebm_n_terms": 64.0,
+            "ebm_n_interaction_terms": 10.0,
+            "ebm_n_main_effects": 54.0,
+            "complexity_ratio": 0.3125
+          },
+          "higgs_small": {
+            "figs_total_splits": 20.0,
+            "figs_avg_split_arity": 1.4999999999999998,
+            "figs_avg_path_length": 2.023741252773511,
+            "ebm_n_terms": 34.0,
+            "ebm_n_interaction_terms": 10.0,
+            "ebm_n_main_effects": 24.0,
+            "complexity_ratio": 0.5882352941176471
+          }
+        },
+        "avg_complexity_ratio": 0.7626633986928104,
+        "wilcoxon_arity_vs_interactions_stat": 5.0,
+        "wilcoxon_arity_vs_interactions_pvalue": 0.625
+      },
+      "F_timing": {
+        "per_dataset": {
+          "electricity": {
+            "axis_aligned_figs": 1.2786692142486573,
+            "random_oblique_figs": 7.687028551101685,
+            "signed_spectral_figs": 6.290821361541748,
+            "ebm": 72.6424,
+            "random_forest": 0.8379999999999999,
+            "linear": 0.028000000000000004,
+            "time_ratios": {
+              "axis_aligned_figs": 1.0,
+              "random_oblique_figs": 6.011741320931515,
+              "signed_spectral_figs": 4.919819208471535,
+              "ebm": 56.81093999176674,
+              "random_forest": 0.6553688715282056,
+              "linear": 0.021897766590441244
+            }
+          },
+          "adult": {
+            "axis_aligned_figs": 0.7707880020141602,
+            "random_oblique_figs": 4.4486932277679445,
+            "signed_spectral_figs": 2.207506227493286,
+            "ebm": 7.1975999999999996,
+            "random_forest": 0.535,
+            "linear": 0.007000000000000001,
+            "time_ratios": {
+              "axis_aligned_figs": 1.0,
+              "random_oblique_figs": 5.771617119289588,
+              "signed_spectral_figs": 2.8639602870371763,
+              "ebm": 9.337976176577502,
+              "random_forest": 0.6940948725226415,
+              "linear": 0.009081615154501852
+            }
+          },
+          "california_housing": {
+            "axis_aligned_figs": 1.0177865028381348,
+            "random_oblique_figs": 4.405670785903931,
+            "signed_spectral_figs": 5.567221546173096,
+            "ebm": 40.96640000000001,
+            "random_forest": 1.8739999999999999,
+            "linear": 0.005000000000000001,
+            "time_ratios": {
+              "axis_aligned_figs": 1.0,
+              "random_oblique_figs": 4.328678729398118,
+              "signed_spectral_figs": 5.469930609856483,
+              "ebm": 40.25048464070186,
+              "random_forest": 1.841250591135059,
+              "linear": 0.004912621641235484
+            }
+          },
+          "jannis": {
+            "axis_aligned_figs": 19.319130754470827,
+            "random_oblique_figs": 38.38528447151184,
+            "signed_spectral_figs": 42.446047115325925,
+            "ebm": 27.2532,
+            "random_forest": 6.2234,
+            "linear": 1.0977999999999999,
+            "time_ratios": {
+              "axis_aligned_figs": 1.0,
+              "random_oblique_figs": 1.986905361289546,
+              "signed_spectral_figs": 2.197099220186347,
+              "ebm": 1.4106845875398961,
+              "random_forest": 0.3221366467826086,
+              "linear": 0.05682450281806532
+            }
+          },
+          "higgs_small": {
+            "axis_aligned_figs": 15.289652252197266,
+            "random_oblique_figs": 32.13915152549744,
+            "signed_spectral_figs": 31.03656859397888,
+            "ebm": 50.376799999999996,
+            "random_forest": 6.898000000000001,
+            "linear": 0.24819999999999998,
+            "time_ratios": {
+              "axis_aligned_figs": 1.0,
+              "random_oblique_figs": 2.1020197840587738,
+              "signed_spectral_figs": 2.029906768449795,
+              "ebm": 3.2948296775526975,
+              "random_forest": 0.45115479974429723,
+              "linear": 0.0162332011157632
+            }
+          }
+        },
+        "avg_time_ratios": {
+          "axis_aligned_figs": 1.0,
+          "random_oblique_figs": 4.040192462993508,
+          "signed_spectral_figs": 3.4961432188002677,
+          "ebm": 22.22098301482774,
+          "random_forest": 0.7928011563425624,
+          "linear": 0.02178994146400142
+        }
+      },
+      "G_winner_analysis": {
+        "per_dataset": {
+          "electricity": {
+            "winner": "random_forest",
+            "winner_value": 0.8839736676850013,
+            "rankings": {
+              "random_forest": 1,
+              "ebm": 2,
+              "axis_aligned_figs": 3,
+              "random_oblique_figs": 4,
+              "signed_spectral_figs": 5,
+              "linear": 6
+            },
+            "best_figs": 0.7970062599741571,
+            "best_baseline": 0.8839736676850013,
+            "figs_minus_baseline_gap": -0.08696740771084421
+          },
+          "adult": {
+            "winner": "signed_spectral_figs",
+            "winner_value": 0.7147738260036978,
+            "rankings": {
+              "signed_spectral_figs": 1,
+              "ebm": 2,
+              "random_forest": 3,
+              "axis_aligned_figs": 4,
+              "random_oblique_figs": 5,
+              "linear": 6
+            },
+            "best_figs": 0.7147738260036978,
+            "best_baseline": 0.7147477892798137,
+            "figs_minus_baseline_gap": 2.6036723884015345e-05
+          },
+          "california_housing": {
+            "winner": "ebm",
+            "winner_value": 0.8356558772452264,
+            "rankings": {
+              "ebm": 1,
+              "random_forest": 2,
+              "axis_aligned_figs": 3,
+              "signed_spectral_figs": 4,
+              "random_oblique_figs": 5,
+              "linear": 6
+            },
+            "best_figs": 0.7191310087630732,
+            "best_baseline": 0.8356558772452264,
+            "figs_minus_baseline_gap": -0.11652486848215315
+          },
+          "jannis": {
+            "winner": "random_forest",
+            "winner_value": 0.7842653699201112,
+            "rankings": {
+              "random_forest": 1,
+              "ebm": 2,
+              "axis_aligned_figs": 3,
+              "signed_spectral_figs": 4,
+              "random_oblique_figs": 5,
+              "linear": 6
+            },
+            "best_figs": 0.7446856547412295,
+            "best_baseline": 0.7842653699201112,
+            "figs_minus_baseline_gap": -0.0395797151788817
+          },
+          "higgs_small": {
+            "winner": "random_forest",
+            "winner_value": 0.7186231514533402,
+            "rankings": {
+              "random_forest": 1,
+              "ebm": 2,
+              "random_oblique_figs": 3,
+              "axis_aligned_figs": 4,
+              "signed_spectral_figs": 5,
+              "linear": 6
+            },
+            "best_figs": 0.6838480835860651,
+            "best_baseline": 0.7186231514533402,
+            "figs_minus_baseline_gap": -0.03477506786727513
+          }
+        },
+        "n_datasets_figs_wins": 1,
+        "n_datasets_baseline_wins": 4,
+        "avg_figs_baseline_gap": -0.055564204503054035,
+        "max_figs_baseline_gap": 2.6036723884015345e-05,
+        "min_figs_baseline_gap": -0.11652486848215315,
+        "frustration_correlation": -0.09999999999999999,
+        "frustration_correlation_pvalue": 0.8728885715695384
+      }
+    }
+  },
+  "metrics_agg": {
+    "avg_rank_axis_aligned_figs": 3.4,
+    "avg_rank_random_oblique_figs": 4.4,
+    "avg_rank_signed_spectral_figs": 3.8,
+    "avg_rank_ebm": 1.8,
+    "avg_rank_random_forest": 1.6,
+    "avg_rank_linear": 6.0,
+    "friedman_chi2": 19.514285714285705,
+    "friedman_pvalue": 0.0015410019952137705,
+    "nemenyi_cd": 3.372165476366781,
+    "friedman_perfold_chi2": 94.5771428571428,
+    "friedman_perfold_pvalue": 7.328820414588829e-19,
+    "bayesian_signed_spectral_vs_ebm_prob_left": 0.0,
+    "bayesian_signed_spectral_vs_ebm_prob_rope": 0.0,
+    "bayesian_signed_spectral_vs_ebm_prob_right": 1.0,
+    "bayesian_signed_spectral_vs_ebm_mean_diff": -0.029893985979878895,
+    "bayesian_signed_spectral_vs_ebm_std_diff": 0.021213797574345612,
+    "bayesian_random_oblique_vs_ebm_prob_left": 0.0,
+    "bayesian_random_oblique_vs_ebm_prob_rope": 0.0,
+    "bayesian_random_oblique_vs_ebm_prob_right": 1.0,
+    "bayesian_random_oblique_vs_ebm_mean_diff": -0.03346041728578441,
+    "bayesian_random_oblique_vs_ebm_std_diff": 0.014785635155457366,
+    "bayesian_axis_aligned_vs_ebm_prob_left": 0.0,
+    "bayesian_axis_aligned_vs_ebm_prob_rope": 0.0,
+    "bayesian_axis_aligned_vs_ebm_prob_right": 1.0,
+    "bayesian_axis_aligned_vs_ebm_mean_diff": -0.029832420734100012,
+    "bayesian_axis_aligned_vs_ebm_std_diff": 0.013069659962346932,
+    "cohens_d_axis_aligned_vs_ebm": -2.224774558334215,
+    "cohens_d_axis_aligned_vs_random_forest": -1.3577476758934146,
+    "cohens_d_axis_aligned_vs_linear": 2.2126651872615195,
+    "cohens_d_random_oblique_vs_ebm": -2.2057341639169055,
+    "cohens_d_random_oblique_vs_random_forest": -1.3641913836198332,
+    "cohens_d_random_oblique_vs_linear": 1.8905164464222424,
+    "cohens_d_signed_spectral_vs_ebm": -1.3734953983196478,
+    "cohens_d_signed_spectral_vs_random_forest": -1.0868915074828973,
+    "cohens_d_signed_spectral_vs_linear": 2.1885190516448234,
+    "wlt_axis_aligned_wins": 4,
+    "wlt_axis_aligned_losses": 8,
+    "wlt_axis_aligned_ties": 0,
+    "wlt_random_oblique_wins": 4,
+    "wlt_random_oblique_losses": 8,
+    "wlt_random_oblique_ties": 0,
+    "wlt_signed_spectral_wins": 5,
+    "wlt_signed_spectral_losses": 6,
+    "wlt_signed_spectral_ties": 1,
+    "n_datasets_figs_wins": 1,
+    "n_datasets_baseline_wins": 4,
+    "avg_figs_baseline_gap": -0.055564204503054035,
+    "max_figs_baseline_gap": 2.6036723884015345e-05,
+    "min_figs_baseline_gap": -0.11652486848215315,
+    "frustration_correlation": -0.09999999999999999,
+    "frustration_correlation_pvalue": 0.8728885715695384,
+    "avg_complexity_ratio": 0.7626633986928104,
+    "wilcoxon_arity_vs_interactions_stat": 5.0,
+    "wilcoxon_arity_vs_interactions_pvalue": 0.625,
+    "avg_time_ratio_axis_aligned_figs": 1.0,
+    "avg_time_ratio_random_oblique_figs": 4.040192462993508,
+    "avg_time_ratio_signed_spectral_figs": 3.4961432188002677,
+    "avg_time_ratio_ebm": 22.22098301482774,
+    "avg_time_ratio_random_forest": 0.7928011563425624,
+    "avg_time_ratio_linear": 0.02178994146400142
+  },
+  "datasets": [
+    {
+      "dataset": "electricity",
+      "examples": [
+        {
+          "input": "{\"date\":0.898987,\"period\":0.957447,\"nswprice\":0.068632,\"nswdemand\":0.568283,\"vicprice\":0.004456,\"vicdemand\":0.456499,\"transfer\":0.644737}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 0,
+          "predict_ebm": "0",
+          "predict_random_forest": "1",
+          "predict_linear": "1",
+          "predict_axis_aligned_figs": "1",
+          "predict_random_oblique_figs": "1",
+          "predict_signed_spectral_figs": "1",
+          "eval_correct_axis_aligned_figs": 0,
+          "eval_correct_random_oblique_figs": 0,
+          "eval_correct_signed_spectral_figs": 0,
+          "eval_correct_ebm": 1,
+          "eval_correct_random_forest": 0,
+          "eval_correct_linear": 0
+        },
+        {
+          "input": "{\"date\":0.9158,\"period\":0.659574,\"nswprice\":0.053441,\"nswdemand\":0.341119,\"vicprice\":0.003671,\"vicdemand\":0.308907,\"transfer\":0.363596}",
+          "output": "0",
+          "metadata_fold": 4,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 19,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0",
+          "predict_axis_aligned_figs": "0",
+          "predict_random_oblique_figs": "0",
+          "predict_signed_spectral_figs": "0",
+          "eval_correct_axis_aligned_figs": 1,
+          "eval_correct_random_oblique_figs": 1,
+          "eval_correct_signed_spectral_figs": 1,
+          "eval_correct_ebm": 1,
+          "eval_correct_random_forest": 1,
+          "eval_correct_linear": 1
+        },
+        {
+          "input": "{\"date\":0.885403,\"period\":0.617021,\"nswprice\":0.029242,\"nswdemand\":0.535109,\"vicprice\":0.001992,\"vicdemand\":0.516054,\"transfer\":0.435526}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 38,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0",
+          "predict_axis_aligned_figs": "0",
+          "predict_random_oblique_figs": "0",
+          "predict_signed_spectral_figs": "0",
+          "eval_correct_axis_aligned_figs": 1,
+          "eval_correct_random_oblique_figs": 1,
+          "eval_correct_signed_spectral_figs": 1,
+          "eval_correct_ebm": 1,
+          "eval_correct_random_forest": 1,
+          "eval_correct_linear": 1
+        }
+      ]
+    },
+    {
+      "dataset": "adult",
+      "examples": [
+        {
+          "input": "{\"age\":90.0,\"fnlwgt\":77053.0,\"education.num\":9.0,\"capital.gain\":0.0,\"capital.loss\":4356.0,\"hours.per.week\":40.0}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 0,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "1",
+          "predict_axis_aligned_figs": "1",
+          "predict_random_oblique_figs": "0",
+          "predict_signed_spectral_figs": "1",
+          "eval_correct_axis_aligned_figs": 0,
+          "eval_correct_random_oblique_figs": 1,
+          "eval_correct_signed_spectral_figs": 0,
+          "eval_correct_ebm": 1,
+          "eval_correct_random_forest": 1,
+          "eval_correct_linear": 0
+        },
+        {
+          "input": "{\"age\":45.0,\"fnlwgt\":172822.0,\"education.num\":7.0,\"capital.gain\":0.0,\"capital.loss\":2824.0,\"hours.per.week\":76.0}",
+          "output": "1",
+          "metadata_fold": 4,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 16,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1",
+          "predict_axis_aligned_figs": "1",
+          "predict_random_oblique_figs": "1",
+          "predict_signed_spectral_figs": "0",
+          "eval_correct_axis_aligned_figs": 1,
+          "eval_correct_random_oblique_figs": 1,
+          "eval_correct_signed_spectral_figs": 0,
+          "eval_correct_ebm": 1,
+          "eval_correct_random_forest": 1,
+          "eval_correct_linear": 1
+        },
+        {
+          "input": "{\"age\":52.0,\"fnlwgt\":198863.0,\"education.num\":15.0,\"capital.gain\":0.0,\"capital.loss\":2559.0,\"hours.per.week\":60.0}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 32,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1",
+          "predict_axis_aligned_figs": "1",
+          "predict_random_oblique_figs": "1",
+          "predict_signed_spectral_figs": "1",
+          "eval_correct_axis_aligned_figs": 1,
+          "eval_correct_random_oblique_figs": 1,
+          "eval_correct_signed_spectral_figs": 1,
+          "eval_correct_ebm": 1,
+          "eval_correct_random_forest": 1,
+          "eval_correct_linear": 1
+        }
+      ]
+    },
+    {
+      "dataset": "california_housing",
+      "examples": [
+        {
+          "input": "{\"MedInc\":8.3252,\"HouseAge\":41.0,\"AveRooms\":6.984126984126984,\"AveBedrms\":1.0238095238095237,\"Population\":322.0,\"AveOccup\":2.5555555555555554,\"Latitude\":37.88,\"Longitude\":-122.23}",
+          "output": "4.526",
+          "metadata_fold": 0,
+          "metadata_task_type": "regression",
+          "metadata_row_index": 0,
+          "predict_ebm": "4.053128749775027",
+          "predict_random_forest": "4.111931899999999",
+          "predict_linear": "4.151814301799721",
+          "predict_axis_aligned_figs": "4.77775",
+          "predict_random_oblique_figs": "4.761619",
+          "predict_signed_spectral_figs": "4.03863",
+          "eval_abs_error_axis_aligned_figs": 0.25175,
+          "eval_abs_error_random_oblique_figs": 0.235619,
+          "eval_abs_error_signed_spectral_figs": 0.48737,
+          "eval_abs_error_ebm": 0.472871,
+          "eval_abs_error_random_forest": 0.414068,
+          "eval_abs_error_linear": 0.374186
+        },
+        {
+          "input": "{\"MedInc\":3.2031,\"HouseAge\":52.0,\"AveRooms\":5.477611940298507,\"AveBedrms\":1.0796019900497513,\"Population\":910.0,\"AveOccup\":2.263681592039801,\"Latitude\":37.85,\"Longitude\":-122.26}",
+          "output": "2.815",
+          "metadata_fold": 2,
+          "metadata_task_type": "regression",
+          "metadata_row_index": 10,
+          "predict_ebm": "2.4586146999878427",
+          "predict_random_forest": "2.3549202",
+          "predict_linear": "2.2283075757439126",
+          "predict_axis_aligned_figs": "2.341497",
+          "predict_random_oblique_figs": "2.615548",
+          "predict_signed_spectral_figs": "2.241273",
+          "eval_abs_error_axis_aligned_figs": 0.473503,
+          "eval_abs_error_random_oblique_figs": 0.199452,
+          "eval_abs_error_signed_spectral_figs": 0.573727,
+          "eval_abs_error_ebm": 0.356385,
+          "eval_abs_error_random_forest": 0.46008,
+          "eval_abs_error_linear": 0.586692
+        },
+        {
+          "input": "{\"MedInc\":1.3578,\"HouseAge\":40.0,\"AveRooms\":4.524096385542169,\"AveBedrms\":1.108433734939759,\"Population\":409.0,\"AveOccup\":2.463855421686747,\"Latitude\":37.85,\"Longitude\":-122.27}",
+          "output": "1.475",
+          "metadata_fold": 1,
+          "metadata_task_type": "regression",
+          "metadata_row_index": 20,
+          "predict_ebm": "1.422929249812667",
+          "predict_random_forest": "1.2105200000000003",
+          "predict_linear": "1.4324883267909831",
+          "predict_axis_aligned_figs": "1.274182",
+          "predict_random_oblique_figs": "1.342764",
+          "predict_signed_spectral_figs": "0.894795",
+          "eval_abs_error_axis_aligned_figs": 0.200818,
+          "eval_abs_error_random_oblique_figs": 0.132236,
+          "eval_abs_error_signed_spectral_figs": 0.580205,
+          "eval_abs_error_ebm": 0.052071,
+          "eval_abs_error_random_forest": 0.26448,
+          "eval_abs_error_linear": 0.042512
+        }
+      ]
+    },
+    {
+      "dataset": "jannis",
+      "examples": [
+        {
+          "input": "{\"V1\":0.0674479,\"V2\":0.270833,\"V3\":0.444444,\"V4\":0.90323,\"V5\":0.455349,\"V6\":0.220512,\"V7\":0.343834,\"V8\":0.0379236,\"V9\":0.439663,\"V10\":137.861,\"V11\":130.003,\"V12\":111.708,\"V13\":37.3249,\"V14\":28.7283,\"V15\":31.3541,\"V16\":0.884162,\"V17\":1.01782,\"V18\":1.30439,\"V19\":76.2393,\"V20\":-0.70509,\"V21\":7.14692,\"V22\":6.82754,\"V23\":3.02276,\"V24\":4.24676,\"V25\":0.74796,\"V26\":-0.227901,\"V27\":-1.00407,\"V28\":25.4022,\"V29\":1.0,\"V30\":8.0118,\"V31\":56.8733,\"V32\":0.107101,\"V33\":10.728,\"V34\":0.180911,\"V35\":10.9203,\"V36\":-0.439048,\"V37\":80.0756,\"V38\":0.266667,\"V39\":126.141,\"V40\":35.635,\"V41\":0.510657,\"V42\":46.6673,\"V43\":14.3869,\"V44\":124.45,\"V45\":22.0108,\"V46\":0.495493,\"V47\":0.263158,\"V48\":0.109403,\"V49\":13.8732,\"V50\":1.03221,\"V51\":11.7019,\"V52\":10.3183,\"V53\":0.00665509,\"V54\":0.156715}",
+          "output": "0",
+          "metadata_fold": 3,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 0,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "1",
+          "predict_axis_aligned_figs": "0",
+          "predict_random_oblique_figs": "1",
+          "predict_signed_spectral_figs": "0",
+          "eval_correct_axis_aligned_figs": 1,
+          "eval_correct_random_oblique_figs": 0,
+          "eval_correct_signed_spectral_figs": 1,
+          "eval_correct_ebm": 1,
+          "eval_correct_random_forest": 1,
+          "eval_correct_linear": 0
+        },
+        {
+          "input": "{\"V1\":0.0606655,\"V2\":0.189583,\"V3\":0.936111,\"V4\":0.916638,\"V5\":0.534473,\"V6\":0.123943,\"V7\":0.857418,\"V8\":0.0762186,\"V9\":0.658167,\"V10\":97.104,\"V11\":95.842,\"V12\":94.9731,\"V13\":45.8354,\"V14\":45.6466,\"V15\":46.4117,\"V16\":0.729028,\"V17\":0.73917,\"V18\":0.747777,\"V19\":65.6905,\"V20\":0.210171,\"V21\":0.646555,\"V22\":13.1504,\"V23\":1.35822,\"V24\":2.92235,\"V25\":0.174787,\"V26\":0.505616,\"V27\":-0.00258714,\"V28\":85.5039,\"V29\":0.310417,\"V30\":-4.41584,\"V31\":20.3031,\"V32\":0.300138,\"V33\":7.91134,\"V34\":0.688606,\"V35\":-3.09434,\"V36\":-0.667756,\"V37\":137.491,\"V38\":0.284375,\"V39\":148.334,\"V40\":56.1521,\"V41\":5.84354,\"V42\":45.4084,\"V43\":26.0736,\"V44\":150.443,\"V45\":26.5507,\"V46\":0.376695,\"V47\":0.423322,\"V48\":0.0529173,\"V49\":176.819,\"V50\":0.755582,\"V51\":14.8146,\"V52\":14.0239,\"V53\":0.231997,\"V54\":0.230027}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 28,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1",
+          "predict_axis_aligned_figs": "1",
+          "predict_random_oblique_figs": "1",
+          "predict_signed_spectral_figs": "1",
+          "eval_correct_axis_aligned_figs": 0,
+          "eval_correct_random_oblique_figs": 0,
+          "eval_correct_signed_spectral_figs": 0,
+          "eval_correct_ebm": 0,
+          "eval_correct_random_forest": 0,
+          "eval_correct_linear": 0
+        },
+        {
+          "input": "{\"V1\":0.383947,\"V2\":1.0,\"V3\":0.577778,\"V4\":0.501331,\"V5\":0.778444,\"V6\":0.932695,\"V7\":0.494895,\"V8\":0.0258945,\"V9\":0.335477,\"V10\":176.284,\"V11\":141.489,\"V12\":87.5994,\"V13\":34.4946,\"V14\":29.302,\"V15\":23.9319,\"V16\":-2.02879,\"V17\":-1.87355,\"V18\":-1.43163,\"V19\":79.3829,\"V20\":1.25819,\"V21\":22.3169,\"V22\":8.80309,\"V23\":1.3906,\"V24\":3.96263,\"V25\":-3.50387,\"V26\":-1.97067,\"V27\":2.87892,\"V28\":97.1253,\"V29\":1.0,\"V30\":1.4683,\"V31\":51.8753,\"V32\":0.122415,\"V33\":1.74469,\"V34\":0.182393,\"V35\":-1.26111,\"V36\":0.131547,\"V37\":113.168,\"V38\":0.130556,\"V39\":63.5987,\"V40\":8.64016,\"V41\":0.213688,\"V42\":14.2213,\"V43\":18.0099,\"V44\":109.466,\"V45\":17.0899,\"V46\":0.375596,\"V47\":0.292738,\"V48\":0.0570117,\"V49\":190.97,\"V50\":-2.80679,\"V51\":51.4307,\"V52\":5.79206,\"V53\":0.195521,\"V54\":0.979991}",
+          "output": "0",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 57,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0",
+          "predict_axis_aligned_figs": "0",
+          "predict_random_oblique_figs": "0",
+          "predict_signed_spectral_figs": "0",
+          "eval_correct_axis_aligned_figs": 1,
+          "eval_correct_random_oblique_figs": 1,
+          "eval_correct_signed_spectral_figs": 1,
+          "eval_correct_ebm": 1,
+          "eval_correct_random_forest": 1,
+          "eval_correct_linear": 1
+        }
+      ]
+    },
+    {
+      "dataset": "higgs_small",
+      "examples": [
+        {
+          "input": "{\"lepton_pT\":1.109584093093872,\"lepton_eta\":0.1772081702947616,\"lepton_phi\":-1.2603337764739992,\"missing_energy_magnitude\":1.07051944732666,\"missing_energy_phi\":0.5294701457023621,\"jet_1_pt\":0.717834174633026,\"jet_1_eta\":-0.4436484575271606,\"jet_1_phi\":0.5190562009811401,\"jet_2_pt\":1.3948848247528076,\"jet_2_eta\":0.4993463158607482,\"jet_2_phi\":1.5922609567642212,\"jet_3_pt\":0.8965469002723693,\"jet_3_eta\":0.1913251131772995,\"jet_3_phi\":0.1874060779809952,\"jet_4_pt\":0.409897655248642,\"jet_4_eta\":0.4534280300140381,\"jet_4_phi\":-0.8748083114624023,\"m_jj\":0.643871545791626,\"m_jjj\":1.3227072954177856,\"m_lv\":1.5085541009902952,\"m_jlv\":0.7179272174835205,\"m_bb\":0.5425049066543579,\"m_wbb\":0.7857176065444946,\"m_wwbb\":0.7646083831787109}",
+          "output": "0",
+          "metadata_fold": 2,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 0,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0",
+          "predict_axis_aligned_figs": "0",
+          "predict_random_oblique_figs": "0",
+          "predict_signed_spectral_figs": "0",
+          "eval_correct_axis_aligned_figs": 1,
+          "eval_correct_random_oblique_figs": 1,
+          "eval_correct_signed_spectral_figs": 1,
+          "eval_correct_ebm": 1,
+          "eval_correct_random_forest": 1,
+          "eval_correct_linear": 1
+        },
+        {
+          "input": "{\"lepton_pT\":1.3194955587387087,\"lepton_eta\":0.0496182516217231,\"lepton_phi\":-1.578824162483215,\"missing_energy_magnitude\":1.4302014112472536,\"missing_energy_phi\":1.3271025419235227,\"jet_1_pt\":0.5953552722930908,\"jet_1_eta\":1.0367454290390017,\"jet_1_phi\":-0.0348676070570945,\"jet_2_pt\":0.6403452157974244,\"jet_2_eta\":0.3798673748970032,\"jet_2_phi\":0.3522164225578308,\"jet_3_pt\":0.9801427125930786,\"jet_3_eta\":1.2071626186370843,\"jet_3_phi\":-1.0042707920074463,\"jet_4_pt\":0.8375639915466307,\"jet_4_eta\":-0.3627387881278992,\"jet_4_phi\":-0.7882420420646667,\"m_jj\":0.912020206451416,\"m_jjj\":0.7636725306510925,\"m_lv\":0.9919291734695432,\"m_jlv\":0.8150469660758973,\"m_bb\":0.6989313960075378,\"m_wbb\":0.8320611715316772,\"m_wwbb\":0.7411256432533263}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 49,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "1",
+          "predict_axis_aligned_figs": "0",
+          "predict_random_oblique_figs": "0",
+          "predict_signed_spectral_figs": "0",
+          "eval_correct_axis_aligned_figs": 1,
+          "eval_correct_random_oblique_figs": 1,
+          "eval_correct_signed_spectral_figs": 1,
+          "eval_correct_ebm": 1,
+          "eval_correct_random_forest": 1,
+          "eval_correct_linear": 0
+        },
+        {
+          "input": "{\"lepton_pT\":0.6085052490234376,\"lepton_eta\":0.3564184010028839,\"lepton_phi\":0.6540431976318359,\"missing_energy_magnitude\":0.8077067732810975,\"missing_energy_phi\":0.0185371506959199,\"jet_1_pt\":0.924499988555908,\"jet_1_eta\":1.2545958757400513,\"jet_1_phi\":1.520258069038391,\"jet_2_pt\":0.9310563206672668,\"jet_2_eta\":1.792244791984558,\"jet_2_phi\":-0.1389106065034866,\"jet_3_pt\":0.8410505652427674,\"jet_3_eta\":-0.0371473021805286,\"jet_3_phi\":-0.8899953365325926,\"jet_4_pt\":0.9862858057022093,\"jet_4_eta\":0.1902558207511901,\"jet_4_phi\":-1.5434774160385132,\"m_jj\":0.7224648594856262,\"m_jjj\":0.9796409606933592,\"m_lv\":0.991458773612976,\"m_jlv\":1.4583286046981812,\"m_bb\":1.1886882781982415,\"m_wbb\":1.0230066776275637,\"m_wwbb\":1.0173420906066897}",
+          "output": "1",
+          "metadata_fold": 1,
+          "metadata_task_type": "classification",
+          "metadata_row_index": 98,
+          "predict_ebm": "1",
+          "predict_random_forest": "1",
+          "predict_linear": "1",
+          "predict_axis_aligned_figs": "1",
+          "predict_random_oblique_figs": "1",
+          "predict_signed_spectral_figs": "1",
+          "eval_correct_axis_aligned_figs": 1,
+          "eval_correct_random_oblique_figs": 1,
+          "eval_correct_signed_spectral_figs": 1,
+          "eval_correct_ebm": 1,
+          "eval_correct_random_forest": 1,
+          "eval_correct_linear": 1
+        }
+      ]
+    }
+  ]
+}

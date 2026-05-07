@@ -1,0 +1,13 @@
+{
+  "id": "eval_id5_it6__opus",
+  "type": "code",
+  "title": "Scalability & Computational Cost Analysis: Timing Breakdowns, Scaling Laws, and Overhead Assessment",
+  "summary": "Demo notebook for the Scalability & Computational Cost Analysis of Balance-Guided Oblique Trees. Loads pre-computed timing data (64 rows: 8 datasets x 8 methods) and reproduces all 6 analyses: (A) timing breakdown table, (B) scaling with n via power-law fits, (C) scaling with d + CoI complexity validation (exponent 1.69, R\u00b2=0.96), (D) overhead ratio cost-benefit (15/24 justified), (E) cross-method comparison (FIGS 21.25x faster than EBM), (F) summary statistics. Includes a 4-panel matplotlib visualization.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_6/gen_art/eval_id5_it6__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id5_it6__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id5_it6__opus/eval_code_demo.ipynb"
+}

@@ -1,0 +1,11 @@
+[project]
+name = "eval-figures"
+version = "0.1.0"
+requires-python = ">=3.10,<3.12"
+dependencies = [
+    "matplotlib==3.10.8",
+    "numpy==2.4.3",
+    "scipy==1.17.1",
+    "scikit-posthocs==0.12.0",
+    "loguru==0.7.3",
+]

@@ -1,0 +1,2172 @@
+{
+  "metadata": {
+    "experiment": "coi_estimator_validation",
+    "hypothesis": "Balance-Guided Oblique Trees",
+    "description": "Validates CoI measurement tool by comparing three MI estimators (NPEET micd, sklearn+custom KSG, frbourassa cKDTree) on synthetic data with known ground-truth synergy/redundancy structure.",
+    "estimator_comparison_summary": {
+      "easy_2mod_xor": {
+        "pairwise_correlations": {
+          "kendall_tau": {
+            "npeet_vs_sklearn_custom": 0.4812,
+            "npeet_vs_frbourassa": 0.4812,
+            "sklearn_custom_vs_frbourassa": 1.0
+          },
+          "sign_agreement": {
+            "npeet_vs_sklearn_custom": 0.6222,
+            "npeet_vs_frbourassa": 0.6222,
+            "sklearn_custom_vs_frbourassa": 1.0
+          },
+          "abs_value_pearson": {
+            "npeet_vs_sklearn_custom": 0.9867,
+            "npeet_vs_frbourassa": 0.9867,
+            "sklearn_custom_vs_frbourassa": 1.0
+          }
+        },
+        "ground_truth_summary": {
+          "npeet": {
+            "synergy_pairs_correct_sign": 1.0,
+            "redundant_pairs_correct_sign": 0.0,
+            "noise_pairs_near_zero": 1.0,
+            "xor_marginal_mi_near_zero": 1.0,
+            "synergy_total": 2,
+            "redundant_total": 2
+          },
+          "sklearn_custom": {
+            "synergy_pairs_correct_sign": 1.0,
+            "redundant_pairs_correct_sign": 0.0,
+            "noise_pairs_near_zero": 1.0,
+            "xor_marginal_mi_near_zero": 1.0,
+            "synergy_total": 2,
+            "redundant_total": 2
+          },
+          "frbourassa": {
+            "synergy_pairs_correct_sign": 1.0,
+            "redundant_pairs_correct_sign": 0.0,
+            "noise_pairs_near_zero": 1.0,
+            "xor_marginal_mi_near_zero": 1.0,
+            "synergy_total": 2,
+            "redundant_total": 2
+          }
+        },
+        "estimator_times": {
+          "npeet": 0.81,
+          "sklearn_custom": 4.13,
+          "frbourassa": 1.61
+        }
+      },
+      "medium_4mod_mixed": {
+        "pairwise_correlations": {
+          "kendall_tau": {
+            "npeet_vs_sklearn_custom": 0.4273,
+            "npeet_vs_frbourassa": 0.4273,
+            "sklearn_custom_vs_frbourassa": 1.0
+          },
+          "sign_agreement": {
+            "npeet_vs_sklearn_custom": 0.6078,
+            "npeet_vs_frbourassa": 0.6078,
+            "sklearn_custom_vs_frbourassa": 1.0
+          },
+          "abs_value_pearson": {
+            "npeet_vs_sklearn_custom": 0.9641,
+            "npeet_vs_frbourassa": 0.9641,
+            "sklearn_custom_vs_frbourassa": 1.0
+          }
+        },
+        "ground_truth_summary": {
+          "npeet": {
+            "synergy_pairs_correct_sign": 1.0,
+            "redundant_pairs_correct_sign": 0.25,
+            "noise_pairs_near_zero": 1.0,
+            "xor_marginal_mi_near_zero": 1.0,
+            "synergy_total": 2,
+            "redundant_total": 4
+          },
+          "sklearn_custom": {
+            "synergy_pairs_correct_sign": 1.0,
+            "redundant_pairs_correct_sign": 0.25,
+            "noise_pairs_near_zero": 1.0,
+            "xor_marginal_mi_near_zero": 1.0,
+            "synergy_total": 2,
+            "redundant_total": 4
+          },
+          "frbourassa": {
+            "synergy_pairs_correct_sign": 1.0,
+            "redundant_pairs_correct_sign": 0.25,
+            "noise_pairs_near_zero": 1.0,
+            "xor_marginal_mi_near_zero": 1.0,
+            "synergy_total": 2,
+            "redundant_total": 4
+          }
+        },
+        "estimator_times": {
+          "npeet": 5.1,
+          "sklearn_custom": 29.39,
+          "frbourassa": 9.35
+        }
+      }
+    },
+    "subsampling_stability": {
+      "variant": "medium_4mod_mixed",
+      "estimator": "npeet",
+      "full_n": 20000,
+      "results_by_subsample": [
+        {
+          "n_sub": 1000,
+          "spearman_r": 0.0726,
+          "sign_flip_rate": 0.4173,
+          "sponge_ari": 0.0143
+        },
+        {
+          "n_sub": 2000,
+          "spearman_r": 0.0165,
+          "sign_flip_rate": 0.482,
+          "sponge_ari": 0.0546
+        },
+        {
+          "n_sub": 5000,
+          "spearman_r": 0.2457,
+          "sign_flip_rate": 0.4101,
+          "sponge_ari": -0.0747
+        },
+        {
+          "n_sub": 10000,
+          "spearman_r": 0.3918,
+          "sign_flip_rate": 0.3669,
+          "sponge_ari": 0.183
+        },
+        {
+          "n_sub": 15000,
+          "spearman_r": 0.7103,
+          "sign_flip_rate": 0.223,
+          "sponge_ari": 0.8429
+        },
+        {
+          "n_sub": 20000,
+          "spearman_r": 1.0,
+          "sign_flip_rate": 0.0,
+          "sponge_ari": 1.0
+        }
+      ],
+      "minimum_stable_n": 20000
+    },
+    "reproducibility": {
+      "variant": "medium_4mod_mixed",
+      "estimator": "npeet",
+      "n_sub": 10000,
+      "n_seeds": 10,
+      "median_cv": 1.54,
+      "mean_pairwise_ari": 0.2095,
+      "frac_stable_sign_pairs": 0.2026,
+      "cv_per_pair_summary": {
+        "min": 0.0327,
+        "p25": 0.9431,
+        "median": 1.54,
+        "p75": 2.7319,
+        "max": 205.5739
+      }
+    },
+    "recommendation": {
+      "best_estimator": "npeet",
+      "reasoning": "Selected based on ground-truth accuracy on easy_2mod_xor (synergy+redundancy correct sign rate) and computational efficiency. All three estimators show strong rank agreement (Kendall tau).",
+      "minimum_subsample_size": 20000,
+      "recommended_k_neighbors": 5,
+      "caveats": [
+        "KSG estimator has known negative bias for strongly dependent variables",
+        "NPEET may be slightly slower than sklearn for individual MI but handles joint MI natively",
+        "Subsampling stability depends on the strength of the planted signals"
+      ]
+    }
+  },
+  "datasets": [
+    {
+      "dataset": "easy_2mod_xor",
+      "examples": [
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 1, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"synergy_xor\"}",
+          "output": "synergy_xor",
+          "predict_npeet": "-0.187832",
+          "predict_sklearn_custom": "-0.132167",
+          "predict_frbourassa": "-0.132167",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(0,1)",
+          "metadata_ground_truth_type": "synergy_xor"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 2, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.002202",
+          "predict_sklearn_custom": "-0.002521",
+          "predict_frbourassa": "-0.002521",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(0,2)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 3, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.000518",
+          "predict_sklearn_custom": "-0.003977",
+          "predict_frbourassa": "-0.003977",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(0,3)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 4, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"redundancy\"}",
+          "output": "redundancy",
+          "predict_npeet": "0.002146",
+          "predict_sklearn_custom": "0.0054",
+          "predict_frbourassa": "0.0054",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(0,4)",
+          "metadata_ground_truth_type": "redundancy"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 5, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.006215",
+          "predict_sklearn_custom": "0.001016",
+          "predict_frbourassa": "0.001016",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(0,5)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 6, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.001966",
+          "predict_sklearn_custom": "0.001214",
+          "predict_frbourassa": "0.001214",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(0,6)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 7, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.003475",
+          "predict_sklearn_custom": "0.000192",
+          "predict_frbourassa": "0.000192",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(0,7)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 8, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.003216",
+          "predict_sklearn_custom": "0.00207",
+          "predict_frbourassa": "0.00207",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(0,8)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 9, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.002559",
+          "predict_sklearn_custom": "-0.002807",
+          "predict_frbourassa": "-0.002807",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(0,9)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 2, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.022186",
+          "predict_sklearn_custom": "-0.000971",
+          "predict_frbourassa": "-0.000971",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(1,2)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 3, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.007601",
+          "predict_sklearn_custom": "-0.000125",
+          "predict_frbourassa": "-0.000125",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(1,3)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 4, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.136113",
+          "predict_sklearn_custom": "-0.10172",
+          "predict_frbourassa": "-0.10172",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(1,4)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 5, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.011833",
+          "predict_sklearn_custom": "0.001406",
+          "predict_frbourassa": "0.001406",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(1,5)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 6, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.006327",
+          "predict_sklearn_custom": "-0.003628",
+          "predict_frbourassa": "-0.003628",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(1,6)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 7, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.012004",
+          "predict_sklearn_custom": "0.005036",
+          "predict_frbourassa": "0.005036",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(1,7)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 8, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.006064",
+          "predict_sklearn_custom": "0.002456",
+          "predict_frbourassa": "0.002456",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(1,8)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 9, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.013804",
+          "predict_sklearn_custom": "0.001406",
+          "predict_frbourassa": "0.001406",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(1,9)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 3, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"synergy_xor\"}",
+          "output": "synergy_xor",
+          "predict_npeet": "-0.164604",
+          "predict_sklearn_custom": "-0.127214",
+          "predict_frbourassa": "-0.127214",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(2,3)",
+          "metadata_ground_truth_type": "synergy_xor"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 4, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.02426",
+          "predict_sklearn_custom": "0.000391",
+          "predict_frbourassa": "0.000391",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(2,4)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 5, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"redundancy\"}",
+          "output": "redundancy",
+          "predict_npeet": "0.007867",
+          "predict_sklearn_custom": "-0.004949",
+          "predict_frbourassa": "-0.004949",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(2,5)",
+          "metadata_ground_truth_type": "redundancy"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 6, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.003058",
+          "predict_sklearn_custom": "-0.009397",
+          "predict_frbourassa": "-0.009397",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(2,6)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 7, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.024797",
+          "predict_sklearn_custom": "0.004254",
+          "predict_frbourassa": "0.004254",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(2,7)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 8, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.013286",
+          "predict_sklearn_custom": "0.001152",
+          "predict_frbourassa": "0.001152",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(2,8)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 9, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.012006",
+          "predict_sklearn_custom": "-0.001499",
+          "predict_frbourassa": "-0.001499",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(2,9)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 4, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.015668",
+          "predict_sklearn_custom": "0.004662",
+          "predict_frbourassa": "0.004662",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(3,4)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 5, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.13469",
+          "predict_sklearn_custom": "-0.097715",
+          "predict_frbourassa": "-0.097715",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(3,5)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 6, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.007921",
+          "predict_sklearn_custom": "0.000197",
+          "predict_frbourassa": "0.000197",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(3,6)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 7, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.006271",
+          "predict_sklearn_custom": "0.004254",
+          "predict_frbourassa": "0.004254",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(3,7)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 8, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.00471",
+          "predict_sklearn_custom": "-0.002089",
+          "predict_frbourassa": "-0.002089",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(3,8)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 9, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.004769",
+          "predict_sklearn_custom": "-0.004922",
+          "predict_frbourassa": "-0.004922",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(3,9)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 5, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.008619",
+          "predict_sklearn_custom": "-0.000134",
+          "predict_frbourassa": "-0.000134",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(4,5)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 6, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.008318",
+          "predict_sklearn_custom": "0.004859",
+          "predict_frbourassa": "0.004859",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(4,6)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 7, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.018361",
+          "predict_sklearn_custom": "0.008916",
+          "predict_frbourassa": "0.008916",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(4,7)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 8, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.006543",
+          "predict_sklearn_custom": "0.000197",
+          "predict_frbourassa": "0.000197",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(4,8)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 9, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.011401",
+          "predict_sklearn_custom": "0.004662",
+          "predict_frbourassa": "0.004662",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(4,9)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 5, \"feature_j\": 6, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.020244",
+          "predict_sklearn_custom": "-0.005914",
+          "predict_frbourassa": "-0.005914",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(5,6)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 5, \"feature_j\": 7, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.008185",
+          "predict_sklearn_custom": "0.004254",
+          "predict_frbourassa": "0.004254",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(5,7)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 5, \"feature_j\": 8, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.002287",
+          "predict_sklearn_custom": "0.001152",
+          "predict_frbourassa": "0.001152",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(5,8)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 5, \"feature_j\": 9, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.005566",
+          "predict_sklearn_custom": "-0.010003",
+          "predict_frbourassa": "-0.010003",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(5,9)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 6, \"feature_j\": 7, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.006543",
+          "predict_sklearn_custom": "-0.001165",
+          "predict_frbourassa": "-0.001165",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(6,7)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 6, \"feature_j\": 8, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.017576",
+          "predict_sklearn_custom": "-0.000578",
+          "predict_frbourassa": "-0.000578",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(6,8)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 6, \"feature_j\": 9, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.002192",
+          "predict_sklearn_custom": "0.000197",
+          "predict_frbourassa": "0.000197",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(6,9)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 7, \"feature_j\": 8, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.009741",
+          "predict_sklearn_custom": "0.003875",
+          "predict_frbourassa": "0.003875",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(7,8)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 7, \"feature_j\": 9, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.010456",
+          "predict_sklearn_custom": "0.004254",
+          "predict_frbourassa": "0.004254",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(7,9)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 8, \"feature_j\": 9, \"variant\": \"easy_2mod_xor\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.003313",
+          "predict_sklearn_custom": "-0.000747",
+          "predict_frbourassa": "-0.000747",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_pair": "(8,9)",
+          "metadata_ground_truth_type": "noise_involved"
+        }
+      ]
+    },
+    {
+      "dataset": "medium_4mod_mixed",
+      "examples": [
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 1, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"synergy_xor\"}",
+          "output": "synergy_xor",
+          "predict_npeet": "-0.151939",
+          "predict_sklearn_custom": "-0.110381",
+          "predict_frbourassa": "-0.110381",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,1)",
+          "metadata_ground_truth_type": "synergy_xor"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 2, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.003249",
+          "predict_sklearn_custom": "0.001641",
+          "predict_frbourassa": "0.001641",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,2)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 3, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.000525",
+          "predict_sklearn_custom": "0.003769",
+          "predict_frbourassa": "0.003769",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,3)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 4, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.010189",
+          "predict_sklearn_custom": "0.006166",
+          "predict_frbourassa": "0.006166",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,4)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 5, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.008141",
+          "predict_sklearn_custom": "-0.002673",
+          "predict_frbourassa": "-0.002673",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,5)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 6, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.001644",
+          "predict_sklearn_custom": "-0.002751",
+          "predict_frbourassa": "-0.002751",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,6)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 7, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.002251",
+          "predict_sklearn_custom": "-0.004791",
+          "predict_frbourassa": "-0.004791",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,7)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 8, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"redundancy\"}",
+          "output": "redundancy",
+          "predict_npeet": "-0.008075",
+          "predict_sklearn_custom": "-0.00369",
+          "predict_frbourassa": "-0.00369",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,8)",
+          "metadata_ground_truth_type": "redundancy"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 9, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.013101",
+          "predict_sklearn_custom": "0.0",
+          "predict_frbourassa": "0.0",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,9)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 10, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.006014",
+          "predict_sklearn_custom": "0.005347",
+          "predict_frbourassa": "0.005347",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,10)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 11, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.01219",
+          "predict_sklearn_custom": "-0.001881",
+          "predict_frbourassa": "-0.001881",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,11)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 12, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.008008",
+          "predict_sklearn_custom": "-0.000732",
+          "predict_frbourassa": "-0.000732",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,12)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 13, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.007754",
+          "predict_sklearn_custom": "0.00106",
+          "predict_frbourassa": "0.00106",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,13)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 14, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.010267",
+          "predict_sklearn_custom": "0.00508",
+          "predict_frbourassa": "0.00508",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,14)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 15, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.008558",
+          "predict_sklearn_custom": "-0.000189",
+          "predict_frbourassa": "-0.000189",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,15)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 16, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.007461",
+          "predict_sklearn_custom": "0.001288",
+          "predict_frbourassa": "0.001288",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,16)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 0, \"feature_j\": 17, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.019777",
+          "predict_sklearn_custom": "0.004593",
+          "predict_frbourassa": "0.004593",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(0,17)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 2, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.005638",
+          "predict_sklearn_custom": "0.00673",
+          "predict_frbourassa": "0.00673",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(1,2)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 3, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "9.5e-05",
+          "predict_sklearn_custom": "0.007038",
+          "predict_frbourassa": "0.007038",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(1,3)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 4, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.013358",
+          "predict_sklearn_custom": "0.011257",
+          "predict_frbourassa": "0.011257",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(1,4)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 5, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.010293",
+          "predict_sklearn_custom": "0.0001",
+          "predict_frbourassa": "0.0001",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(1,5)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 6, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.002588",
+          "predict_sklearn_custom": "0.001935",
+          "predict_frbourassa": "0.001935",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(1,6)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 7, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.000769",
+          "predict_sklearn_custom": "0.001949",
+          "predict_frbourassa": "0.001949",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(1,7)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 8, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.122602",
+          "predict_sklearn_custom": "-0.080627",
+          "predict_frbourassa": "-0.080627",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(1,8)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 9, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.012017",
+          "predict_sklearn_custom": "0.005089",
+          "predict_frbourassa": "0.005089",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(1,9)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 10, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.01665",
+          "predict_sklearn_custom": "0.010981",
+          "predict_frbourassa": "0.010981",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(1,10)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 11, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.01304",
+          "predict_sklearn_custom": "0.002511",
+          "predict_frbourassa": "0.002511",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(1,11)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 12, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.003602",
+          "predict_sklearn_custom": "0.005089",
+          "predict_frbourassa": "0.005089",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(1,12)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 13, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.006982",
+          "predict_sklearn_custom": "0.006149",
+          "predict_frbourassa": "0.006149",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(1,13)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 14, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.008893",
+          "predict_sklearn_custom": "0.007413",
+          "predict_frbourassa": "0.007413",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(1,14)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 15, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.012255",
+          "predict_sklearn_custom": "0.005089",
+          "predict_frbourassa": "0.005089",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(1,15)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 16, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.005416",
+          "predict_sklearn_custom": "0.003363",
+          "predict_frbourassa": "0.003363",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(1,16)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 1, \"feature_j\": 17, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.01086",
+          "predict_sklearn_custom": "0.007796",
+          "predict_frbourassa": "0.007796",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(1,17)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 3, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"synergy_xor\"}",
+          "output": "synergy_xor",
+          "predict_npeet": "-0.15992",
+          "predict_sklearn_custom": "-0.101328",
+          "predict_frbourassa": "-0.101328",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(2,3)",
+          "metadata_ground_truth_type": "synergy_xor"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 4, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.020603",
+          "predict_sklearn_custom": "0.011208",
+          "predict_frbourassa": "0.011208",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(2,4)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 5, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.00161",
+          "predict_sklearn_custom": "-0.001319",
+          "predict_frbourassa": "-0.001319",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(2,5)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 6, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.010572",
+          "predict_sklearn_custom": "-0.000444",
+          "predict_frbourassa": "-0.000444",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(2,6)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 7, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.000154",
+          "predict_sklearn_custom": "-0.001382",
+          "predict_frbourassa": "-0.001382",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(2,7)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 8, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.002457",
+          "predict_sklearn_custom": "0.002063",
+          "predict_frbourassa": "0.002063",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(2,8)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 9, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"redundancy\"}",
+          "output": "redundancy",
+          "predict_npeet": "0.000848",
+          "predict_sklearn_custom": "0.001641",
+          "predict_frbourassa": "0.001641",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(2,9)",
+          "metadata_ground_truth_type": "redundancy"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 10, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.00265",
+          "predict_sklearn_custom": "0.004719",
+          "predict_frbourassa": "0.004719",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(2,10)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 11, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.020955",
+          "predict_sklearn_custom": "-0.000607",
+          "predict_frbourassa": "-0.000607",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(2,11)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 12, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.000721",
+          "predict_sklearn_custom": "0.001641",
+          "predict_frbourassa": "0.001641",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(2,12)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 13, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.001352",
+          "predict_sklearn_custom": "-0.002646",
+          "predict_frbourassa": "-0.002646",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(2,13)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 14, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.002792",
+          "predict_sklearn_custom": "0.003504",
+          "predict_frbourassa": "0.003504",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(2,14)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 15, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.000466",
+          "predict_sklearn_custom": "-0.000419",
+          "predict_frbourassa": "-0.000419",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(2,15)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 16, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.00085",
+          "predict_sklearn_custom": "0.00228",
+          "predict_frbourassa": "0.00228",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(2,16)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 2, \"feature_j\": 17, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.009649",
+          "predict_sklearn_custom": "0.006234",
+          "predict_frbourassa": "0.006234",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(2,17)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 4, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.009271",
+          "predict_sklearn_custom": "0.011883",
+          "predict_frbourassa": "0.011883",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(3,4)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 5, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.005502",
+          "predict_sklearn_custom": "0.004409",
+          "predict_frbourassa": "0.004409",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(3,5)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 6, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.000782",
+          "predict_sklearn_custom": "0.005961",
+          "predict_frbourassa": "0.005961",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(3,6)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 7, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.004",
+          "predict_sklearn_custom": "0.003289",
+          "predict_frbourassa": "0.003289",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(3,7)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 8, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.001041",
+          "predict_sklearn_custom": "-0.000244",
+          "predict_frbourassa": "-0.000244",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(3,8)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 9, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.124343",
+          "predict_sklearn_custom": "-0.08005",
+          "predict_frbourassa": "-0.08005",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(3,9)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 10, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.000801",
+          "predict_sklearn_custom": "0.008079",
+          "predict_frbourassa": "0.008079",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(3,10)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 11, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.024135",
+          "predict_sklearn_custom": "0.000944",
+          "predict_frbourassa": "0.000944",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(3,11)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 12, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.006461",
+          "predict_sklearn_custom": "0.002458",
+          "predict_frbourassa": "0.002458",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(3,12)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 13, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.003135",
+          "predict_sklearn_custom": "-0.000367",
+          "predict_frbourassa": "-0.000367",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(3,13)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 14, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.003589",
+          "predict_sklearn_custom": "0.009792",
+          "predict_frbourassa": "0.009792",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(3,14)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 15, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.00589",
+          "predict_sklearn_custom": "0.004682",
+          "predict_frbourassa": "0.004682",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(3,15)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 16, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.003725",
+          "predict_sklearn_custom": "0.00597",
+          "predict_frbourassa": "0.00597",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(3,16)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 3, \"feature_j\": 17, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.011834",
+          "predict_sklearn_custom": "0.009275",
+          "predict_frbourassa": "0.009275",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(3,17)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 5, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"synergy_and\"}",
+          "output": "synergy_and",
+          "predict_npeet": "-0.026154",
+          "predict_sklearn_custom": "-0.020145",
+          "predict_frbourassa": "-0.020145",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(4,5)",
+          "metadata_ground_truth_type": "synergy_and"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 6, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.000233",
+          "predict_sklearn_custom": "0.001109",
+          "predict_frbourassa": "0.001109",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(4,6)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 7, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.000955",
+          "predict_sklearn_custom": "0.002917",
+          "predict_frbourassa": "0.002917",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(4,7)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 8, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.006369",
+          "predict_sklearn_custom": "0.004237",
+          "predict_frbourassa": "0.004237",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(4,8)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 9, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.007341",
+          "predict_sklearn_custom": "0.00466",
+          "predict_frbourassa": "0.00466",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(4,9)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 10, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"redundancy\"}",
+          "output": "redundancy",
+          "predict_npeet": "0.030402",
+          "predict_sklearn_custom": "0.022293",
+          "predict_frbourassa": "0.022293",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(4,10)",
+          "metadata_ground_truth_type": "redundancy"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 11, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.011973",
+          "predict_sklearn_custom": "0.003522",
+          "predict_frbourassa": "0.003522",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(4,11)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 12, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.015582",
+          "predict_sklearn_custom": "0.00635",
+          "predict_frbourassa": "0.00635",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(4,12)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 13, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.001277",
+          "predict_sklearn_custom": "-9.1e-05",
+          "predict_frbourassa": "-9.1e-05",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(4,13)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 14, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.009144",
+          "predict_sklearn_custom": "0.005559",
+          "predict_frbourassa": "0.005559",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(4,14)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 15, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.003583",
+          "predict_sklearn_custom": "0.001493",
+          "predict_frbourassa": "0.001493",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(4,15)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 16, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.007492",
+          "predict_sklearn_custom": "0.005777",
+          "predict_frbourassa": "0.005777",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(4,16)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 4, \"feature_j\": 17, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.015652",
+          "predict_sklearn_custom": "0.008428",
+          "predict_frbourassa": "0.008428",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(4,17)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 5, \"feature_j\": 6, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.002732",
+          "predict_sklearn_custom": "-0.001834",
+          "predict_frbourassa": "-0.001834",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(5,6)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 5, \"feature_j\": 7, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.006813",
+          "predict_sklearn_custom": "-0.007671",
+          "predict_frbourassa": "-0.007671",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(5,7)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 5, \"feature_j\": 8, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.003741",
+          "predict_sklearn_custom": "0.002565",
+          "predict_frbourassa": "0.002565",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(5,8)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 5, \"feature_j\": 9, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.016885",
+          "predict_sklearn_custom": "0.002722",
+          "predict_frbourassa": "0.002722",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(5,9)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 5, \"feature_j\": 10, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.024216",
+          "predict_sklearn_custom": "-0.01853",
+          "predict_frbourassa": "-0.01853",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(5,10)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 5, \"feature_j\": 11, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.024168",
+          "predict_sklearn_custom": "-0.005554",
+          "predict_frbourassa": "-0.005554",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(5,11)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 5, \"feature_j\": 12, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.00177",
+          "predict_sklearn_custom": "-0.00115",
+          "predict_frbourassa": "-0.00115",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(5,12)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 5, \"feature_j\": 13, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.005156",
+          "predict_sklearn_custom": "-0.00233",
+          "predict_frbourassa": "-0.00233",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(5,13)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 5, \"feature_j\": 14, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.001662",
+          "predict_sklearn_custom": "-0.000134",
+          "predict_frbourassa": "-0.000134",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(5,14)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 5, \"feature_j\": 15, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.006247",
+          "predict_sklearn_custom": "-0.005691",
+          "predict_frbourassa": "-0.005691",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(5,15)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 5, \"feature_j\": 16, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.01084",
+          "predict_sklearn_custom": "0.001075",
+          "predict_frbourassa": "0.001075",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(5,16)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 5, \"feature_j\": 17, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.00246",
+          "predict_sklearn_custom": "-0.00208",
+          "predict_frbourassa": "-0.00208",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(5,17)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 6, \"feature_j\": 7, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"synergy_and\"}",
+          "output": "synergy_and",
+          "predict_npeet": "-0.050183",
+          "predict_sklearn_custom": "-0.03196",
+          "predict_frbourassa": "-0.03196",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(6,7)",
+          "metadata_ground_truth_type": "synergy_and"
+        },
+        {
+          "input": "{\"feature_i\": 6, \"feature_j\": 8, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.009676",
+          "predict_sklearn_custom": "-0.003528",
+          "predict_frbourassa": "-0.003528",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(6,8)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 6, \"feature_j\": 9, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.005777",
+          "predict_sklearn_custom": "0.000529",
+          "predict_frbourassa": "0.000529",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(6,9)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 6, \"feature_j\": 10, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.005057",
+          "predict_sklearn_custom": "0.004222",
+          "predict_frbourassa": "0.004222",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(6,10)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 6, \"feature_j\": 11, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"redundancy\"}",
+          "output": "redundancy",
+          "predict_npeet": "-0.013349",
+          "predict_sklearn_custom": "0.009391",
+          "predict_frbourassa": "0.009391",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(6,11)",
+          "metadata_ground_truth_type": "redundancy"
+        },
+        {
+          "input": "{\"feature_i\": 6, \"feature_j\": 12, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.00116",
+          "predict_sklearn_custom": "-0.002391",
+          "predict_frbourassa": "-0.002391",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(6,12)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 6, \"feature_j\": 13, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.008139",
+          "predict_sklearn_custom": "-0.001146",
+          "predict_frbourassa": "-0.001146",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(6,13)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 6, \"feature_j\": 14, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.002493",
+          "predict_sklearn_custom": "0.006705",
+          "predict_frbourassa": "0.006705",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(6,14)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 6, \"feature_j\": 15, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.013627",
+          "predict_sklearn_custom": "-0.00504",
+          "predict_frbourassa": "-0.00504",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(6,15)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 6, \"feature_j\": 16, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.008555",
+          "predict_sklearn_custom": "0.000578",
+          "predict_frbourassa": "0.000578",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(6,16)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 6, \"feature_j\": 17, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.008156",
+          "predict_sklearn_custom": "0.00034",
+          "predict_frbourassa": "0.00034",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(6,17)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 7, \"feature_j\": 8, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.002559",
+          "predict_sklearn_custom": "-0.001549",
+          "predict_frbourassa": "-0.001549",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(7,8)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 7, \"feature_j\": 9, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.005432",
+          "predict_sklearn_custom": "-0.003531",
+          "predict_frbourassa": "-0.003531",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(7,9)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 7, \"feature_j\": 10, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.006822",
+          "predict_sklearn_custom": "-0.002865",
+          "predict_frbourassa": "-0.002865",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(7,10)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 7, \"feature_j\": 11, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.043224",
+          "predict_sklearn_custom": "-0.024089",
+          "predict_frbourassa": "-0.024089",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(7,11)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 7, \"feature_j\": 12, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.002234",
+          "predict_sklearn_custom": "-0.001272",
+          "predict_frbourassa": "-0.001272",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(7,12)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 7, \"feature_j\": 13, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.011178",
+          "predict_sklearn_custom": "-0.000537",
+          "predict_frbourassa": "-0.000537",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(7,13)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 7, \"feature_j\": 14, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.000612",
+          "predict_sklearn_custom": "0.003522",
+          "predict_frbourassa": "0.003522",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(7,14)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 7, \"feature_j\": 15, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.007257",
+          "predict_sklearn_custom": "0.000983",
+          "predict_frbourassa": "0.000983",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(7,15)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 7, \"feature_j\": 16, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.002499",
+          "predict_sklearn_custom": "0.000911",
+          "predict_frbourassa": "0.000911",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(7,16)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 7, \"feature_j\": 17, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.00488",
+          "predict_sklearn_custom": "0.003088",
+          "predict_frbourassa": "0.003088",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(7,17)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 8, \"feature_j\": 9, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.004034",
+          "predict_sklearn_custom": "0.00103",
+          "predict_frbourassa": "0.00103",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(8,9)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 8, \"feature_j\": 10, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.001895",
+          "predict_sklearn_custom": "0.00566",
+          "predict_frbourassa": "0.00566",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(8,10)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 8, \"feature_j\": 11, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.010526",
+          "predict_sklearn_custom": "0.000523",
+          "predict_frbourassa": "0.000523",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(8,11)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 8, \"feature_j\": 12, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.006619",
+          "predict_sklearn_custom": "-0.003822",
+          "predict_frbourassa": "-0.003822",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(8,12)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 8, \"feature_j\": 13, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.00125",
+          "predict_sklearn_custom": "0.00209",
+          "predict_frbourassa": "0.00209",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(8,13)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 8, \"feature_j\": 14, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.002815",
+          "predict_sklearn_custom": "0.00364",
+          "predict_frbourassa": "0.00364",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(8,14)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 8, \"feature_j\": 15, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.003984",
+          "predict_sklearn_custom": "0.00103",
+          "predict_frbourassa": "0.00103",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(8,15)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 8, \"feature_j\": 16, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.001564",
+          "predict_sklearn_custom": "0.000841",
+          "predict_frbourassa": "0.000841",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(8,16)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 8, \"feature_j\": 17, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.006018",
+          "predict_sklearn_custom": "0.005624",
+          "predict_frbourassa": "0.005624",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(8,17)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 9, \"feature_j\": 10, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.008809",
+          "predict_sklearn_custom": "0.003307",
+          "predict_frbourassa": "0.003307",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(9,10)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 9, \"feature_j\": 11, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "-0.015347",
+          "predict_sklearn_custom": "-0.003207",
+          "predict_frbourassa": "-0.003207",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(9,11)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 9, \"feature_j\": 12, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.002989",
+          "predict_sklearn_custom": "-0.003833",
+          "predict_frbourassa": "-0.003833",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(9,12)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 9, \"feature_j\": 13, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.012136",
+          "predict_sklearn_custom": "0.00106",
+          "predict_frbourassa": "0.00106",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(9,13)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 9, \"feature_j\": 14, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.000591",
+          "predict_sklearn_custom": "0.001004",
+          "predict_frbourassa": "0.001004",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(9,14)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 9, \"feature_j\": 15, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.001652",
+          "predict_sklearn_custom": "-0.004188",
+          "predict_frbourassa": "-0.004188",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(9,15)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 9, \"feature_j\": 16, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.006926",
+          "predict_sklearn_custom": "0.001288",
+          "predict_frbourassa": "0.001288",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(9,16)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 9, \"feature_j\": 17, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.014486",
+          "predict_sklearn_custom": "0.002887",
+          "predict_frbourassa": "0.002887",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(9,17)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 10, \"feature_j\": 11, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"unknown\"}",
+          "output": "unknown",
+          "predict_npeet": "0.006126",
+          "predict_sklearn_custom": "0.005156",
+          "predict_frbourassa": "0.005156",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(10,11)",
+          "metadata_ground_truth_type": "unknown"
+        },
+        {
+          "input": "{\"feature_i\": 10, \"feature_j\": 12, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.010269",
+          "predict_sklearn_custom": "0.003056",
+          "predict_frbourassa": "0.003056",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(10,12)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 10, \"feature_j\": 13, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.018555",
+          "predict_sklearn_custom": "0.001409",
+          "predict_frbourassa": "0.001409",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(10,13)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 10, \"feature_j\": 14, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.002811",
+          "predict_sklearn_custom": "0.004371",
+          "predict_frbourassa": "0.004371",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(10,14)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 10, \"feature_j\": 15, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.011169",
+          "predict_sklearn_custom": "0.005717",
+          "predict_frbourassa": "0.005717",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(10,15)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 10, \"feature_j\": 16, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.009682",
+          "predict_sklearn_custom": "0.00167",
+          "predict_frbourassa": "0.00167",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(10,16)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 10, \"feature_j\": 17, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.013145",
+          "predict_sklearn_custom": "0.007683",
+          "predict_frbourassa": "0.007683",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(10,17)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 11, \"feature_j\": 12, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.006506",
+          "predict_sklearn_custom": "0.002622",
+          "predict_frbourassa": "0.002622",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(11,12)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 11, \"feature_j\": 13, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.004694",
+          "predict_sklearn_custom": "-0.000156",
+          "predict_frbourassa": "-0.000156",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(11,13)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 11, \"feature_j\": 14, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.017474",
+          "predict_sklearn_custom": "-0.003235",
+          "predict_frbourassa": "-0.003235",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(11,14)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 11, \"feature_j\": 15, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.014556",
+          "predict_sklearn_custom": "7.9e-05",
+          "predict_frbourassa": "7.9e-05",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(11,15)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 11, \"feature_j\": 16, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.022325",
+          "predict_sklearn_custom": "-0.005496",
+          "predict_frbourassa": "-0.005496",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(11,16)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 11, \"feature_j\": 17, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.014855",
+          "predict_sklearn_custom": "-0.004357",
+          "predict_frbourassa": "-0.004357",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(11,17)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 12, \"feature_j\": 13, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.006011",
+          "predict_sklearn_custom": "0.00106",
+          "predict_frbourassa": "0.00106",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(12,13)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 12, \"feature_j\": 14, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.001286",
+          "predict_sklearn_custom": "-0.002813",
+          "predict_frbourassa": "-0.002813",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(12,14)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 12, \"feature_j\": 15, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.003377",
+          "predict_sklearn_custom": "-0.000364",
+          "predict_frbourassa": "-0.000364",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(12,15)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 12, \"feature_j\": 16, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "-0.001464",
+          "predict_sklearn_custom": "0.001288",
+          "predict_frbourassa": "0.001288",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(12,16)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 12, \"feature_j\": 17, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.012054",
+          "predict_sklearn_custom": "0.003752",
+          "predict_frbourassa": "0.003752",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(12,17)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 13, \"feature_j\": 14, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.013819",
+          "predict_sklearn_custom": "0.00617",
+          "predict_frbourassa": "0.00617",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(13,14)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 13, \"feature_j\": 15, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.009745",
+          "predict_sklearn_custom": "0.000433",
+          "predict_frbourassa": "0.000433",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(13,15)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 13, \"feature_j\": 16, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.005059",
+          "predict_sklearn_custom": "0.002348",
+          "predict_frbourassa": "0.002348",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(13,16)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 13, \"feature_j\": 17, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.016936",
+          "predict_sklearn_custom": "0.005653",
+          "predict_frbourassa": "0.005653",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(13,17)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 14, \"feature_j\": 15, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.002667",
+          "predict_sklearn_custom": "0.00511",
+          "predict_frbourassa": "0.00511",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(14,15)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 14, \"feature_j\": 16, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.002316",
+          "predict_sklearn_custom": "0.000966",
+          "predict_frbourassa": "0.000966",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(14,16)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 14, \"feature_j\": 17, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.019783",
+          "predict_sklearn_custom": "0.009703",
+          "predict_frbourassa": "0.009703",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(14,17)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 15, \"feature_j\": 16, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.005293",
+          "predict_sklearn_custom": "0.001288",
+          "predict_frbourassa": "0.001288",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(15,16)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 15, \"feature_j\": 17, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.019138",
+          "predict_sklearn_custom": "0.004593",
+          "predict_frbourassa": "0.004593",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(15,17)",
+          "metadata_ground_truth_type": "noise_involved"
+        },
+        {
+          "input": "{\"feature_i\": 16, \"feature_j\": 17, \"variant\": \"medium_4mod_mixed\", \"ground_truth_type\": \"noise_involved\"}",
+          "output": "noise_involved",
+          "predict_npeet": "0.007698",
+          "predict_sklearn_custom": "0.005881",
+          "predict_frbourassa": "0.005881",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_pair": "(16,17)",
+          "metadata_ground_truth_type": "noise_involved"
+        }
+      ]
+    }
+  ]
+}

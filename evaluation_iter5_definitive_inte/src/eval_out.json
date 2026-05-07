@@ -1,0 +1,861 @@
+{
+  "metadata": {
+    "evaluation": "definitive_interpretability_analysis",
+    "description": "Comprehensive 6-part interpretability evaluation of signed spectral FIGS vs. random oblique FIGS",
+    "analyses": [
+      "A_arity_table",
+      "B_pareto",
+      "C_arity_significance",
+      "D_path_length",
+      "E_interp_cost",
+      "F_practical",
+      "perfold_accuracy"
+    ],
+    "n_conditions": 20,
+    "n_datasets": 5,
+    "n_methods": 3,
+    "n_max_splits_levels": 4
+  },
+  "metrics_agg": {
+    "arity_table_mean_delta_ss_ro": -0.977167,
+    "arity_table_pct_reduction_mean": 8.7418,
+    "arity_table_n_conditions_ss_lower": 15,
+    "pareto_rate_axis_aligned": 1.0,
+    "pareto_rate_random_oblique": 0.1,
+    "pareto_rate_signed_spectral": 0.25,
+    "pareto_dominates_ss_over_ro": 9,
+    "pareto_dominates_ro_over_ss": 4,
+    "wilcoxon_arity_ss_vs_ro_statistic": 30.5,
+    "wilcoxon_arity_ss_vs_ro_p": 0.0027052,
+    "arity_diff_mean_ss_minus_ro": -0.977167,
+    "arity_diff_bootstrap_ci_lower": -1.788025,
+    "arity_diff_bootstrap_ci_upper": -0.316975,
+    "arity_diff_cohens_d": -0.568339,
+    "arity_diff_n_negative": 15,
+    "wilcoxon_path_ss_vs_ro_p": 0.61091141,
+    "path_diff_mean_ss_minus_ro": -0.003075,
+    "path_diff_mean_ss_minus_aa": -0.742901,
+    "path_diff_mean_ro_minus_aa": -0.739826,
+    "mean_arity_cost_per_acc_point_ss": 1305.63803,
+    "mean_arity_cost_per_acc_point_ro": 635.145424,
+    "n_positive_acc_delta_ss": 5,
+    "n_positive_acc_delta_ro": 3,
+    "mean_arity_normalized_accuracy_aa": 0.704625,
+    "mean_arity_normalized_accuracy_ro": 0.271464,
+    "mean_arity_normalized_accuracy_ss": 0.292547,
+    "adult_features_per_pred_aa": 2.8912,
+    "adult_features_per_pred_ro": 4.2922,
+    "adult_features_per_pred_ss": 4.0917,
+    "jannis_features_per_pred_aa": 2.712,
+    "jannis_features_per_pred_ro": 74.2571,
+    "jannis_features_per_pred_ss": 48.0182,
+    "mean_cognitive_complexity_reduction_ss_vs_ro": 9.3986,
+    "perfold_wilcoxon_acc_ss_vs_ro_p": 0.19081426,
+    "perfold_wilcoxon_acc_ss_vs_aa_p": 0.07098365,
+    "perfold_mean_acc_diff_ss_minus_ro": 0.00316403
+  },
+  "datasets": [
+    {
+      "dataset": "arity_comparison",
+      "examples": [
+        {
+          "input": "Arity comparison for adult at max_splits=5",
+          "output": "AA=1.0000, RO=2.1200, SS=2.2800, delta=0.1600",
+          "metadata_dataset": "adult",
+          "metadata_max_splits": 5,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 2.12,
+          "eval_arity_ss": 2.28,
+          "eval_delta_ss_ro": 0.16,
+          "eval_pct_reduction": -7.5472
+        },
+        {
+          "input": "Arity comparison for adult at max_splits=10",
+          "output": "AA=1.0000, RO=2.2000, SS=2.2400, delta=0.0400",
+          "metadata_dataset": "adult",
+          "metadata_max_splits": 10,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 2.2,
+          "eval_arity_ss": 2.24,
+          "eval_delta_ss_ro": 0.04,
+          "eval_pct_reduction": -1.8182
+        },
+        {
+          "input": "Arity comparison for adult at max_splits=15",
+          "output": "AA=1.0000, RO=2.1467, SS=2.2400, delta=0.0933",
+          "metadata_dataset": "adult",
+          "metadata_max_splits": 15,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 2.146667,
+          "eval_arity_ss": 2.24,
+          "eval_delta_ss_ro": 0.093333,
+          "eval_pct_reduction": -4.3478
+        },
+        {
+          "input": "Arity comparison for adult at max_splits=20",
+          "output": "AA=1.0000, RO=2.1500, SS=2.1100, delta=-0.0400",
+          "metadata_dataset": "adult",
+          "metadata_max_splits": 20,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 2.15,
+          "eval_arity_ss": 2.11,
+          "eval_delta_ss_ro": -0.04,
+          "eval_pct_reduction": 1.8605
+        },
+        {
+          "input": "Arity comparison for california_housing at max_splits=5",
+          "output": "AA=1.0000, RO=3.4000, SS=3.6400, delta=0.2400",
+          "metadata_dataset": "california_housing",
+          "metadata_max_splits": 5,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 3.4,
+          "eval_arity_ss": 3.64,
+          "eval_delta_ss_ro": 0.24,
+          "eval_pct_reduction": -7.0588
+        },
+        {
+          "input": "Arity comparison for california_housing at max_splits=10",
+          "output": "AA=1.0000, RO=3.6400, SS=3.1400, delta=-0.5000",
+          "metadata_dataset": "california_housing",
+          "metadata_max_splits": 10,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 3.64,
+          "eval_arity_ss": 3.14,
+          "eval_delta_ss_ro": -0.5,
+          "eval_pct_reduction": 13.7363
+        },
+        {
+          "input": "Arity comparison for california_housing at max_splits=15",
+          "output": "AA=1.0000, RO=3.7600, SS=2.9467, delta=-0.8133",
+          "metadata_dataset": "california_housing",
+          "metadata_max_splits": 15,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 3.76,
+          "eval_arity_ss": 2.946667,
+          "eval_delta_ss_ro": -0.813333,
+          "eval_pct_reduction": 21.6312
+        },
+        {
+          "input": "Arity comparison for california_housing at max_splits=20",
+          "output": "AA=1.0000, RO=3.5500, SS=2.9100, delta=-0.6400",
+          "metadata_dataset": "california_housing",
+          "metadata_max_splits": 20,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 3.55,
+          "eval_arity_ss": 2.91,
+          "eval_delta_ss_ro": -0.64,
+          "eval_pct_reduction": 18.0282
+        },
+        {
+          "input": "Arity comparison for electricity at max_splits=5",
+          "output": "AA=1.0000, RO=2.2800, SS=1.8000, delta=-0.4800",
+          "metadata_dataset": "electricity",
+          "metadata_max_splits": 5,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 2.28,
+          "eval_arity_ss": 1.8,
+          "eval_delta_ss_ro": -0.48,
+          "eval_pct_reduction": 21.0526
+        },
+        {
+          "input": "Arity comparison for electricity at max_splits=10",
+          "output": "AA=1.0000, RO=1.9200, SS=1.7200, delta=-0.2000",
+          "metadata_dataset": "electricity",
+          "metadata_max_splits": 10,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 1.92,
+          "eval_arity_ss": 1.72,
+          "eval_delta_ss_ro": -0.2,
+          "eval_pct_reduction": 10.4167
+        },
+        {
+          "input": "Arity comparison for electricity at max_splits=15",
+          "output": "AA=1.0000, RO=1.9333, SS=1.6400, delta=-0.2933",
+          "metadata_dataset": "electricity",
+          "metadata_max_splits": 15,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 1.933333,
+          "eval_arity_ss": 1.64,
+          "eval_delta_ss_ro": -0.293333,
+          "eval_pct_reduction": 15.1724
+        },
+        {
+          "input": "Arity comparison for electricity at max_splits=20",
+          "output": "AA=1.0000, RO=1.8600, SS=1.6200, delta=-0.2400",
+          "metadata_dataset": "electricity",
+          "metadata_max_splits": 20,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 1.86,
+          "eval_arity_ss": 1.62,
+          "eval_delta_ss_ro": -0.24,
+          "eval_pct_reduction": 12.9032
+        },
+        {
+          "input": "Arity comparison for higgs_small at max_splits=5",
+          "output": "AA=1.0000, RO=1.5200, SS=1.2400, delta=-0.2800",
+          "metadata_dataset": "higgs_small",
+          "metadata_max_splits": 5,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 1.52,
+          "eval_arity_ss": 1.24,
+          "eval_delta_ss_ro": -0.28,
+          "eval_pct_reduction": 18.4211
+        },
+        {
+          "input": "Arity comparison for higgs_small at max_splits=10",
+          "output": "AA=1.0000, RO=1.3800, SS=1.3800, delta=-0.0000",
+          "metadata_dataset": "higgs_small",
+          "metadata_max_splits": 10,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 1.38,
+          "eval_arity_ss": 1.38,
+          "eval_delta_ss_ro": -0.0,
+          "eval_pct_reduction": 0.0
+        },
+        {
+          "input": "Arity comparison for higgs_small at max_splits=15",
+          "output": "AA=1.0000, RO=1.4000, SS=1.4533, delta=0.0533",
+          "metadata_dataset": "higgs_small",
+          "metadata_max_splits": 15,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 1.4,
+          "eval_arity_ss": 1.453333,
+          "eval_delta_ss_ro": 0.053333,
+          "eval_pct_reduction": -3.8095
+        },
+        {
+          "input": "Arity comparison for higgs_small at max_splits=20",
+          "output": "AA=1.0000, RO=1.5500, SS=1.5000, delta=-0.0500",
+          "metadata_dataset": "higgs_small",
+          "metadata_max_splits": 20,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 1.55,
+          "eval_arity_ss": 1.5,
+          "eval_delta_ss_ro": -0.05,
+          "eval_pct_reduction": 3.2258
+        },
+        {
+          "input": "Arity comparison for jannis at max_splits=5",
+          "output": "AA=1.0000, RO=27.0000, SS=24.5200, delta=-2.4800",
+          "metadata_dataset": "jannis",
+          "metadata_max_splits": 5,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 27.0,
+          "eval_arity_ss": 24.52,
+          "eval_delta_ss_ro": -2.48,
+          "eval_pct_reduction": 9.1852
+        },
+        {
+          "input": "Arity comparison for jannis at max_splits=10",
+          "output": "AA=1.0000, RO=26.4800, SS=21.0600, delta=-5.4200",
+          "metadata_dataset": "jannis",
+          "metadata_max_splits": 10,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 26.48,
+          "eval_arity_ss": 21.06,
+          "eval_delta_ss_ro": -5.42,
+          "eval_pct_reduction": 20.4683
+        },
+        {
+          "input": "Arity comparison for jannis at max_splits=15",
+          "output": "AA=1.0000, RO=25.9600, SS=21.7467, delta=-4.2133",
+          "metadata_dataset": "jannis",
+          "metadata_max_splits": 15,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 25.96,
+          "eval_arity_ss": 21.746667,
+          "eval_delta_ss_ro": -4.213333,
+          "eval_pct_reduction": 16.2301
+        },
+        {
+          "input": "Arity comparison for jannis at max_splits=20",
+          "output": "AA=1.0000, RO=26.2200, SS=21.7400, delta=-4.4800",
+          "metadata_dataset": "jannis",
+          "metadata_max_splits": 20,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 26.22,
+          "eval_arity_ss": 21.74,
+          "eval_delta_ss_ro": -4.48,
+          "eval_pct_reduction": 17.0862
+        }
+      ]
+    },
+    {
+      "dataset": "pareto_analysis",
+      "examples": [
+        {
+          "input": "Pareto analysis for adult at max_splits=5",
+          "output": "Frontier: AA=1, RO=0, SS=0",
+          "metadata_dataset": "adult",
+          "metadata_max_splits": 5,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 0,
+          "eval_ss_dominates_ro": 0
+        },
+        {
+          "input": "Pareto analysis for adult at max_splits=10",
+          "output": "Frontier: AA=1, RO=0, SS=1",
+          "metadata_dataset": "adult",
+          "metadata_max_splits": 10,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 1,
+          "eval_ss_dominates_ro": 0
+        },
+        {
+          "input": "Pareto analysis for adult at max_splits=15",
+          "output": "Frontier: AA=1, RO=0, SS=0",
+          "metadata_dataset": "adult",
+          "metadata_max_splits": 15,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 0,
+          "eval_ss_dominates_ro": 0
+        },
+        {
+          "input": "Pareto analysis for adult at max_splits=20",
+          "output": "Frontier: AA=1, RO=0, SS=0",
+          "metadata_dataset": "adult",
+          "metadata_max_splits": 20,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 0,
+          "eval_ss_dominates_ro": 0
+        },
+        {
+          "input": "Pareto analysis for california_housing at max_splits=5",
+          "output": "Frontier: AA=1, RO=1, SS=0",
+          "metadata_dataset": "california_housing",
+          "metadata_max_splits": 5,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 1,
+          "eval_on_frontier_ss": 0,
+          "eval_ss_dominates_ro": 0
+        },
+        {
+          "input": "Pareto analysis for california_housing at max_splits=10",
+          "output": "Frontier: AA=1, RO=0, SS=0",
+          "metadata_dataset": "california_housing",
+          "metadata_max_splits": 10,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 0,
+          "eval_ss_dominates_ro": 1
+        },
+        {
+          "input": "Pareto analysis for california_housing at max_splits=15",
+          "output": "Frontier: AA=1, RO=0, SS=0",
+          "metadata_dataset": "california_housing",
+          "metadata_max_splits": 15,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 0,
+          "eval_ss_dominates_ro": 0
+        },
+        {
+          "input": "Pareto analysis for california_housing at max_splits=20",
+          "output": "Frontier: AA=1, RO=0, SS=0",
+          "metadata_dataset": "california_housing",
+          "metadata_max_splits": 20,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 0,
+          "eval_ss_dominates_ro": 1
+        },
+        {
+          "input": "Pareto analysis for electricity at max_splits=5",
+          "output": "Frontier: AA=1, RO=0, SS=1",
+          "metadata_dataset": "electricity",
+          "metadata_max_splits": 5,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 1,
+          "eval_ss_dominates_ro": 1
+        },
+        {
+          "input": "Pareto analysis for electricity at max_splits=10",
+          "output": "Frontier: AA=1, RO=0, SS=0",
+          "metadata_dataset": "electricity",
+          "metadata_max_splits": 10,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 0,
+          "eval_ss_dominates_ro": 0
+        },
+        {
+          "input": "Pareto analysis for electricity at max_splits=15",
+          "output": "Frontier: AA=1, RO=0, SS=0",
+          "metadata_dataset": "electricity",
+          "metadata_max_splits": 15,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 0,
+          "eval_ss_dominates_ro": 0
+        },
+        {
+          "input": "Pareto analysis for electricity at max_splits=20",
+          "output": "Frontier: AA=1, RO=0, SS=0",
+          "metadata_dataset": "electricity",
+          "metadata_max_splits": 20,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 0,
+          "eval_ss_dominates_ro": 0
+        },
+        {
+          "input": "Pareto analysis for higgs_small at max_splits=5",
+          "output": "Frontier: AA=1, RO=0, SS=0",
+          "metadata_dataset": "higgs_small",
+          "metadata_max_splits": 5,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 0,
+          "eval_ss_dominates_ro": 1
+        },
+        {
+          "input": "Pareto analysis for higgs_small at max_splits=10",
+          "output": "Frontier: AA=1, RO=0, SS=0",
+          "metadata_dataset": "higgs_small",
+          "metadata_max_splits": 10,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 0,
+          "eval_ss_dominates_ro": 1
+        },
+        {
+          "input": "Pareto analysis for higgs_small at max_splits=15",
+          "output": "Frontier: AA=1, RO=0, SS=0",
+          "metadata_dataset": "higgs_small",
+          "metadata_max_splits": 15,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 0,
+          "eval_ss_dominates_ro": 0
+        },
+        {
+          "input": "Pareto analysis for higgs_small at max_splits=20",
+          "output": "Frontier: AA=1, RO=1, SS=1",
+          "metadata_dataset": "higgs_small",
+          "metadata_max_splits": 20,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 1,
+          "eval_on_frontier_ss": 1,
+          "eval_ss_dominates_ro": 0
+        },
+        {
+          "input": "Pareto analysis for jannis at max_splits=5",
+          "output": "Frontier: AA=1, RO=0, SS=1",
+          "metadata_dataset": "jannis",
+          "metadata_max_splits": 5,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 1,
+          "eval_ss_dominates_ro": 1
+        },
+        {
+          "input": "Pareto analysis for jannis at max_splits=10",
+          "output": "Frontier: AA=1, RO=0, SS=1",
+          "metadata_dataset": "jannis",
+          "metadata_max_splits": 10,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 1,
+          "eval_ss_dominates_ro": 1
+        },
+        {
+          "input": "Pareto analysis for jannis at max_splits=15",
+          "output": "Frontier: AA=1, RO=0, SS=0",
+          "metadata_dataset": "jannis",
+          "metadata_max_splits": 15,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 0,
+          "eval_ss_dominates_ro": 1
+        },
+        {
+          "input": "Pareto analysis for jannis at max_splits=20",
+          "output": "Frontier: AA=1, RO=0, SS=0",
+          "metadata_dataset": "jannis",
+          "metadata_max_splits": 20,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 0,
+          "eval_ss_dominates_ro": 1
+        }
+      ]
+    },
+    {
+      "dataset": "statistical_tests",
+      "examples": [
+        {
+          "input": "Wilcoxon signed-rank test: SS arity vs RO arity (20 paired conditions, one-sided H1: SS < RO)",
+          "output": "W=30.5000, p=0.00270520, mean_diff=-0.9772, d=-0.5683",
+          "metadata_test": "wilcoxon_arity_ss_vs_ro",
+          "metadata_n_pairs": 20,
+          "metadata_alternative": "less",
+          "eval_test_statistic": 30.5,
+          "eval_p_value": 0.0027052,
+          "eval_effect_size": -0.568339
+        },
+        {
+          "input": "Bootstrap 95% CI on mean arity difference (SS - RO), 10000 resamples of 20 paired conditions",
+          "output": "CI=[-1.788025, -0.316975], mean=-0.977167",
+          "metadata_test": "bootstrap_ci_arity_diff",
+          "metadata_n_boot": 10000,
+          "eval_test_statistic": -0.977167,
+          "eval_p_value": 0.0027052,
+          "eval_effect_size": -0.568339
+        },
+        {
+          "input": "Arity difference sub-analysis for adult: 4 paired conditions (over max_splits)",
+          "output": "mean_diff=0.0633, 1/4 conditions SS < RO",
+          "metadata_test": "arity_subdataset_adult",
+          "metadata_n_pairs": 4,
+          "eval_test_statistic": 0.063333,
+          "eval_p_value": 0.0,
+          "eval_effect_size": 0.063333
+        },
+        {
+          "input": "Arity difference sub-analysis for california_housing: 4 paired conditions (over max_splits)",
+          "output": "mean_diff=-0.4283, 3/4 conditions SS < RO",
+          "metadata_test": "arity_subdataset_california_housing",
+          "metadata_n_pairs": 4,
+          "eval_test_statistic": -0.428333,
+          "eval_p_value": 0.0,
+          "eval_effect_size": -0.428333
+        },
+        {
+          "input": "Arity difference sub-analysis for electricity: 4 paired conditions (over max_splits)",
+          "output": "mean_diff=-0.3033, 4/4 conditions SS < RO",
+          "metadata_test": "arity_subdataset_electricity",
+          "metadata_n_pairs": 4,
+          "eval_test_statistic": -0.303333,
+          "eval_p_value": 0.0,
+          "eval_effect_size": -0.303333
+        },
+        {
+          "input": "Arity difference sub-analysis for higgs_small: 4 paired conditions (over max_splits)",
+          "output": "mean_diff=-0.0692, 3/4 conditions SS < RO",
+          "metadata_test": "arity_subdataset_higgs_small",
+          "metadata_n_pairs": 4,
+          "eval_test_statistic": -0.069167,
+          "eval_p_value": 0.0,
+          "eval_effect_size": -0.069167
+        },
+        {
+          "input": "Arity difference sub-analysis for jannis: 4 paired conditions (over max_splits)",
+          "output": "mean_diff=-4.1483, 4/4 conditions SS < RO",
+          "metadata_test": "arity_subdataset_jannis",
+          "metadata_n_pairs": 4,
+          "eval_test_statistic": -4.148333,
+          "eval_p_value": 0.0,
+          "eval_effect_size": -4.148333
+        },
+        {
+          "input": "Wilcoxon signed-rank test: SS path length vs RO path length (20 paired conditions, one-sided H1: SS < RO)",
+          "output": "W=102.0000, p=0.61091141, mean_diff=-0.0031, d=-0.0134",
+          "metadata_test": "wilcoxon_path_ss_vs_ro",
+          "metadata_n_pairs": 20,
+          "eval_test_statistic": 102.0,
+          "eval_p_value": 0.61091141,
+          "eval_effect_size": -0.013376
+        },
+        {
+          "input": "Path length comparison: both oblique methods vs axis-aligned (20 paired conditions)",
+          "output": "SS-AA=-0.7429, RO-AA=-0.7398",
+          "metadata_test": "path_oblique_vs_aa",
+          "metadata_n_pairs": 20,
+          "eval_test_statistic": -0.742901,
+          "eval_p_value": 0.61091141,
+          "eval_effect_size": -0.739826
+        }
+      ]
+    },
+    {
+      "dataset": "practical_interpretation",
+      "examples": [
+        {
+          "input": "Practical interpretation for adult (d=6)",
+          "output": "Features inspected per prediction: AA=2.9, RO=4.3, SS=4.1. Cognitive reduction SS vs RO: 4.7%",
+          "metadata_dataset": "adult",
+          "metadata_n_features": 6,
+          "eval_features_per_pred_aa": 2.8912,
+          "eval_features_per_pred_ro": 4.2922,
+          "eval_features_per_pred_ss": 4.0917,
+          "eval_cognitive_reduction_pct": 4.6707
+        },
+        {
+          "input": "Practical interpretation for california_housing (d=8)",
+          "output": "Features inspected per prediction: AA=3.4, RO=6.5, SS=6.5. Cognitive reduction SS vs RO: -0.1%",
+          "metadata_dataset": "california_housing",
+          "metadata_n_features": 8,
+          "eval_features_per_pred_aa": 3.4435,
+          "eval_features_per_pred_ro": 6.5287,
+          "eval_features_per_pred_ss": 6.5321,
+          "eval_cognitive_reduction_pct": -0.0517
+        },
+        {
+          "input": "Practical interpretation for electricity (d=7)",
+          "output": "Features inspected per prediction: AA=4.6, RO=4.7, SS=4.2. Cognitive reduction SS vs RO: 11.7%",
+          "metadata_dataset": "electricity",
+          "metadata_n_features": 7,
+          "eval_features_per_pred_aa": 4.6372,
+          "eval_features_per_pred_ro": 4.7039,
+          "eval_features_per_pred_ss": 4.1524,
+          "eval_cognitive_reduction_pct": 11.7242
+        },
+        {
+          "input": "Practical interpretation for higgs_small (d=28)",
+          "output": "Features inspected per prediction: AA=2.7, RO=2.9, SS=3.0. Cognitive reduction SS vs RO: -4.7%",
+          "metadata_dataset": "higgs_small",
+          "metadata_n_features": 28,
+          "eval_features_per_pred_aa": 2.7382,
+          "eval_features_per_pred_ro": 2.8997,
+          "eval_features_per_pred_ss": 3.0356,
+          "eval_cognitive_reduction_pct": -4.6854
+        },
+        {
+          "input": "Practical interpretation for jannis (d=54)",
+          "output": "Features inspected per prediction: AA=2.7, RO=74.3, SS=48.0. Cognitive reduction SS vs RO: 35.3%",
+          "metadata_dataset": "jannis",
+          "metadata_n_features": 54,
+          "eval_features_per_pred_aa": 2.712,
+          "eval_features_per_pred_ro": 74.2571,
+          "eval_features_per_pred_ss": 48.0182,
+          "eval_cognitive_reduction_pct": 35.3352
+        }
+      ]
+    },
+    {
+      "dataset": "per_fold_accuracy",
+      "examples": [
+        {
+          "input": "Per-fold accuracy for adult fold 0 (classification)",
+          "output": "AA=0.705866, RO=0.693499, SS=0.697881",
+          "metadata_dataset": "adult",
+          "metadata_fold": 0,
+          "eval_acc_aa": 0.70586631,
+          "eval_acc_ro": 0.69349912,
+          "eval_acc_ss": 0.69788051
+        },
+        {
+          "input": "Per-fold accuracy for adult fold 1 (classification)",
+          "output": "AA=0.699899, RO=0.693693, SS=0.700830",
+          "metadata_dataset": "adult",
+          "metadata_fold": 1,
+          "eval_acc_aa": 0.69989907,
+          "eval_acc_ro": 0.69369283,
+          "eval_acc_ss": 0.70082991
+        },
+        {
+          "input": "Per-fold accuracy for adult fold 2 (classification)",
+          "output": "AA=0.701533, RO=0.708151, SS=0.714029",
+          "metadata_dataset": "adult",
+          "metadata_fold": 2,
+          "eval_acc_aa": 0.70153268,
+          "eval_acc_ro": 0.70815068,
+          "eval_acc_ss": 0.71402875
+        },
+        {
+          "input": "Per-fold accuracy for adult fold 3 (classification)",
+          "output": "AA=0.701106, RO=0.703656, SS=0.737055",
+          "metadata_dataset": "adult",
+          "metadata_fold": 3,
+          "eval_acc_aa": 0.70110647,
+          "eval_acc_ro": 0.70365646,
+          "eval_acc_ss": 0.73705502
+        },
+        {
+          "input": "Per-fold accuracy for adult fold 4 (classification)",
+          "output": "AA=0.703065, RO=0.705032, SS=0.724075",
+          "metadata_dataset": "adult",
+          "metadata_fold": 4,
+          "eval_acc_aa": 0.70306515,
+          "eval_acc_ro": 0.70503207,
+          "eval_acc_ss": 0.72407495
+        },
+        {
+          "input": "Per-fold accuracy for california_housing fold 0 (regression)",
+          "output": "AA=0.709061, RO=0.590744, SS=0.669885",
+          "metadata_dataset": "california_housing",
+          "metadata_fold": 0,
+          "eval_acc_aa": 0.70906113,
+          "eval_acc_ro": 0.59074413,
+          "eval_acc_ss": 0.66988528
+        },
+        {
+          "input": "Per-fold accuracy for california_housing fold 1 (regression)",
+          "output": "AA=0.720882, RO=0.621456, SS=0.529111",
+          "metadata_dataset": "california_housing",
+          "metadata_fold": 1,
+          "eval_acc_aa": 0.72088242,
+          "eval_acc_ro": 0.621456,
+          "eval_acc_ss": 0.52911072
+        },
+        {
+          "input": "Per-fold accuracy for california_housing fold 2 (regression)",
+          "output": "AA=0.724805, RO=0.612321, SS=0.649436",
+          "metadata_dataset": "california_housing",
+          "metadata_fold": 2,
+          "eval_acc_aa": 0.72480545,
+          "eval_acc_ro": 0.61232141,
+          "eval_acc_ss": 0.64943641
+        },
+        {
+          "input": "Per-fold accuracy for california_housing fold 3 (regression)",
+          "output": "AA=0.741212, RO=0.655924, SS=0.695014",
+          "metadata_dataset": "california_housing",
+          "metadata_fold": 3,
+          "eval_acc_aa": 0.74121216,
+          "eval_acc_ro": 0.65592357,
+          "eval_acc_ss": 0.69501403
+        },
+        {
+          "input": "Per-fold accuracy for california_housing fold 4 (regression)",
+          "output": "AA=0.699694, RO=0.602923, SS=0.549554",
+          "metadata_dataset": "california_housing",
+          "metadata_fold": 4,
+          "eval_acc_aa": 0.69969389,
+          "eval_acc_ro": 0.60292254,
+          "eval_acc_ss": 0.54955421
+        },
+        {
+          "input": "Per-fold accuracy for electricity fold 0 (classification)",
+          "output": "AA=0.798441, RO=0.793503, SS=0.786870",
+          "metadata_dataset": "electricity",
+          "metadata_fold": 0,
+          "eval_acc_aa": 0.79844103,
+          "eval_acc_ro": 0.79350327,
+          "eval_acc_ss": 0.78686979
+        },
+        {
+          "input": "Per-fold accuracy for electricity fold 1 (classification)",
+          "output": "AA=0.795843, RO=0.787787, SS=0.793372",
+          "metadata_dataset": "electricity",
+          "metadata_fold": 1,
+          "eval_acc_aa": 0.79584279,
+          "eval_acc_ro": 0.78778709,
+          "eval_acc_ss": 0.79337181
+        },
+        {
+          "input": "Per-fold accuracy for electricity fold 2 (classification)",
+          "output": "AA=0.800910, RO=0.788175, SS=0.776744",
+          "metadata_dataset": "electricity",
+          "metadata_fold": 2,
+          "eval_acc_aa": 0.80091029,
+          "eval_acc_ro": 0.78817478,
+          "eval_acc_ss": 0.77674439
+        },
+        {
+          "input": "Per-fold accuracy for electricity fold 3 (classification)",
+          "output": "AA=0.795842, RO=0.795973, SS=0.801948",
+          "metadata_dataset": "electricity",
+          "metadata_fold": 3,
+          "eval_acc_aa": 0.79584187,
+          "eval_acc_ro": 0.79597347,
+          "eval_acc_ss": 0.80194806
+        },
+        {
+          "input": "Per-fold accuracy for electricity fold 4 (classification)",
+          "output": "AA=0.793995, RO=0.783598, SS=0.784767",
+          "metadata_dataset": "electricity",
+          "metadata_fold": 4,
+          "eval_acc_aa": 0.79399532,
+          "eval_acc_ro": 0.78359761,
+          "eval_acc_ss": 0.78476735
+        },
+        {
+          "input": "Per-fold accuracy for higgs_small fold 0 (classification)",
+          "output": "AA=0.684396, RO=0.687353, SS=0.670270",
+          "metadata_dataset": "higgs_small",
+          "metadata_fold": 0,
+          "eval_acc_aa": 0.68439572,
+          "eval_acc_ro": 0.68735339,
+          "eval_acc_ss": 0.67027027
+        },
+        {
+          "input": "Per-fold accuracy for higgs_small fold 1 (classification)",
+          "output": "AA=0.680571, RO=0.685059, SS=0.680112",
+          "metadata_dataset": "higgs_small",
+          "metadata_fold": 1,
+          "eval_acc_aa": 0.68057114,
+          "eval_acc_ro": 0.68505864,
+          "eval_acc_ss": 0.68011219
+        },
+        {
+          "input": "Per-fold accuracy for higgs_small fold 2 (classification)",
+          "output": "AA=0.677919, RO=0.680826, SS=0.683325",
+          "metadata_dataset": "higgs_small",
+          "metadata_fold": 2,
+          "eval_acc_aa": 0.67791943,
+          "eval_acc_ro": 0.68082611,
+          "eval_acc_ss": 0.68332483
+        },
+        {
+          "input": "Per-fold accuracy for higgs_small fold 3 (classification)",
+          "output": "AA=0.679092, RO=0.682101, SS=0.686639",
+          "metadata_dataset": "higgs_small",
+          "metadata_fold": 3,
+          "eval_acc_aa": 0.6790923,
+          "eval_acc_ro": 0.68210097,
+          "eval_acc_ss": 0.68663947
+        },
+        {
+          "input": "Per-fold accuracy for higgs_small fold 4 (classification)",
+          "output": "AA=0.680469, RO=0.683682, SS=0.683580",
+          "metadata_dataset": "higgs_small",
+          "metadata_fold": 4,
+          "eval_acc_aa": 0.68046915,
+          "eval_acc_ro": 0.6836818,
+          "eval_acc_ss": 0.68357981
+        },
+        {
+          "input": "Per-fold accuracy for jannis fold 0 (classification)",
+          "output": "AA=0.744616, RO=0.746092, SS=0.740535",
+          "metadata_dataset": "jannis",
+          "metadata_fold": 0,
+          "eval_acc_aa": 0.74461619,
+          "eval_acc_ro": 0.74609239,
+          "eval_acc_ss": 0.74053491
+        },
+        {
+          "input": "Per-fold accuracy for jannis fold 1 (classification)",
+          "output": "AA=0.751737, RO=0.742358, SS=0.749132",
+          "metadata_dataset": "jannis",
+          "metadata_fold": 1,
+          "eval_acc_aa": 0.75173671,
+          "eval_acc_ro": 0.74235846,
+          "eval_acc_ss": 0.74913164
+        },
+        {
+          "input": "Per-fold accuracy for jannis fold 2 (classification)",
+          "output": "AA=0.743487, RO=0.731938, SS=0.745919",
+          "metadata_dataset": "jannis",
+          "metadata_fold": 2,
+          "eval_acc_aa": 0.74348732,
+          "eval_acc_ro": 0.73193817,
+          "eval_acc_ss": 0.74591872
+        },
+        {
+          "input": "Per-fold accuracy for jannis fold 3 (classification)",
+          "output": "AA=0.745745, RO=0.735672, SS=0.736888",
+          "metadata_dataset": "jannis",
+          "metadata_fold": 3,
+          "eval_acc_aa": 0.74574505,
+          "eval_acc_ro": 0.73567211,
+          "eval_acc_ss": 0.73688781
+        },
+        {
+          "input": "Per-fold accuracy for jannis fold 4 (classification)",
+          "output": "AA=0.737843, RO=0.729854, SS=0.733501",
+          "metadata_dataset": "jannis",
+          "metadata_fold": 4,
+          "eval_acc_aa": 0.737843,
+          "eval_acc_ro": 0.72985412,
+          "eval_acc_ss": 0.73350122
+        }
+      ]
+    }
+  ]
+}

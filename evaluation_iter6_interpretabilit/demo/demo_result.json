@@ -1,0 +1,13 @@
+{
+  "id": "eval_id2_it6__opus",
+  "type": "code",
+  "title": "Interpretability Tradeoff Evaluation: Arity Reduction, Accuracy Equivalence, and Pareto Analysis for 5 FIGS Variants",
+  "summary": "Demo notebook evaluating interpretability tradeoffs across 5 FIGS split strategies (axis_aligned, random_oblique, unsigned_spectral, signed_spectral, hard_threshold). Uses 90 per-fold cross-validation results (2 datasets x 5 methods x 3 max_splits x 3 folds) to run 6 analyses: arity comparison table, arity reduction significance (Wilcoxon, bootstrap CI, Cohen's d), accuracy equivalence (Bayesian ROPE), Pareto frontier counting, path length analysis, and cognitive complexity metric. Full N_BOOTSTRAP=10,000 runs within timeout. Visualization includes arity bar chart, Pareto frontier percentages, and arity-vs-accuracy scatterplot.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_6/gen_art/eval_id2_it6__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id2_it6__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id2_it6__opus/eval_code_demo.ipynb"
+}

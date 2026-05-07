@@ -1,0 +1,13 @@
+{
+  "id": "eval_id5_it5__opus",
+  "type": "code",
+  "title": "Definitive Interpretability Analysis: Spectral CoI Arity Reduction vs. Random Oblique",
+  "summary": "Demo notebook for a comprehensive 6-part interpretability evaluation of signed spectral FIGS vs. random oblique FIGS. Loads 60 aggregated results (5 datasets x 3 methods x 4 max_splits) and runs: (A) arity comparison table, (B) Pareto frontier analysis, (C) Wilcoxon signed-rank test with bootstrap CIs, (D) path length comparison, (E) interpretability cost metrics, and (F) practical cognitive complexity interpretation. Includes 3-panel matplotlib visualization of arity, cognitive complexity, and Pareto dominance. Data sourced from mini_demo_data.json with GitHub URL + local fallback pattern.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_5/gen_art/eval_id5_it5__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id5_it5__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id5_it5__opus/eval_code_demo.ipynb"
+}

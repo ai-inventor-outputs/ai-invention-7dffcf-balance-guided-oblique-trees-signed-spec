@@ -1,0 +1,76 @@
+\begin{thebibliography}{11}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Breiman(2001)]{Breiman2001}
+Leo Breiman.
+\newblock Random forests.
+\newblock \emph{Machine Learning}, 45\penalty0 (1):\penalty0 5--32, 2001.
+
+\bibitem[Cucuringu et~al.(2020)Cucuringu, Davies, Sherlock, Li, and
+  Sherlock]{Cucuringu2020}
+Mihai Cucuringu, Peter Davies, Aimee Sherlock, Jiahui Li, and Chris Sherlock.
+\newblock {SPONGE}: A generalized eigenproblem for clustering signed networks.
+\newblock \emph{Journal of Machine Learning Research}, 21\penalty0
+  (1):\penalty0 1--75, 2020.
+
+\bibitem[Grinsztajn et~al.(2022)Grinsztajn, Oyallon, and
+  Varoquaux]{Grinsztajn2022}
+L{\'e}o Grinsztajn, Edouard Oyallon, and Ga{\"e}l Varoquaux.
+\newblock Why do tree-based models still outperform deep learning on typical
+  tabular data?
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~35, 2022.
+
+\bibitem[Hornung and Boulesteix(2022)]{Hornung2022}
+Roman Hornung and Anne-Laure Boulesteix.
+\newblock Interaction forests: Identifying and exploiting interpretable
+  quantitative and qualitative interaction effects.
+\newblock \emph{Computational Statistics \& Data Analysis}, 171:\penalty0
+  107460, 2022.
+
+\bibitem[Kraskov et~al.(2004)Kraskov, St{\"o}gbauer, and
+  Grassberger]{Kraskov2004}
+Alexander Kraskov, Harald St{\"o}gbauer, and Peter Grassberger.
+\newblock Estimating mutual information.
+\newblock \emph{Physical Review E}, 69\penalty0 (6):\penalty0 066138, 2004.
+
+\bibitem[Lou et~al.(2013)Lou, Caruana, Gehrke, and Hooker]{Lou2013}
+Yin Lou, Rich Caruana, Johannes Gehrke, and Giles Hooker.
+\newblock Accurate intelligible models with pairwise interactions.
+\newblock In \emph{Proceedings of the 19th ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining}, pages 623--631, 2013.
+
+\bibitem[McGill(1954)]{McGill1954}
+William~J. McGill.
+\newblock Multivariate information transmission.
+\newblock \emph{Psychometrika}, 19\penalty0 (2):\penalty0 97--116, 1954.
+
+\bibitem[Murthy et~al.(1994)Murthy, Kasif, and Salzberg]{Murthy1994}
+Sreerama~K. Murthy, Simon Kasif, and Steven Salzberg.
+\newblock {OC1}: A randomized algorithm for building oblique decision trees.
+\newblock \emph{Journal of Artificial Intelligence Research}, 2:\penalty0
+  1--32, 1994.
+
+\bibitem[Nori et~al.(2019)Nori, Jenkins, Koch, and Caruana]{Nori2019}
+Harsha Nori, Samuel Jenkins, Paul Koch, and Rich Caruana.
+\newblock {InterpretML}: A unified framework for machine learning
+  interpretability.
+\newblock In \emph{arXiv preprint arXiv:1909.09223}, 2019.
+
+\bibitem[Tan et~al.(2022)Tan, Singh, Nasseri, and Udell]{Tan2022}
+Yan~Shuo Tan, Chandan Singh, Keyan Nasseri, and Madeleine Udell.
+\newblock Fast interpretable greedy-tree sums ({FIGS}).
+\newblock \emph{arXiv preprint arXiv:2201.11931}, 2022.
+
+\bibitem[Westphal et~al.(2025)Westphal, Branchini, Geiger, and
+  Kersting]{Westphal2025}
+Maxwell Westphal, Nicola Branchini, Philipp Geiger, and Kristian Kersting.
+\newblock Partial information decomposition for feature interaction detection.
+\newblock In \emph{Proceedings of the 28th International Conference on
+  Artificial Intelligence and Statistics (AISTATS)}, 2025.
+
+\end{thebibliography}

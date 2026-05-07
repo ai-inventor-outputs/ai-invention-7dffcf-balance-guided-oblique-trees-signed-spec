@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "evaluation": "definitive_interpretability_analysis",
+    "description": "Comprehensive 6-part interpretability evaluation of signed spectral FIGS vs. random oblique FIGS",
+    "analyses": [
+      "A_arity_table",
+      "B_pareto",
+      "C_arity_significance"
+    ],
+    "n_conditions": 20,
+    "n_datasets": 5,
+    "n_methods": 3,
+    "n_max_splits_levels": 4
+  },
+  "metrics_agg": {
+    "arity_table_mean_delta_ss_ro": -0.977167,
+    "arity_table_pct_reduction_mean": 8.7418,
+    "arity_table_n_conditions_ss_lower": 15,
+    "pareto_rate_axis_aligned": 1.0,
+    "pareto_rate_random_oblique": 0.1,
+    "pareto_rate_signed_spectral": 0.25,
+    "pareto_dominates_ss_over_ro": 9,
+    "pareto_dominates_ro_over_ss": 4,
+    "wilcoxon_arity_ss_vs_ro_statistic": 30.5,
+    "wilcoxon_arity_ss_vs_ro_p": 0.0027052,
+    "arity_diff_mean_ss_minus_ro": -0.977167,
+    "arity_diff_bootstrap_ci_lower": -1.788025,
+    "arity_diff_bootstrap_ci_upper": -0.316975,
+    "arity_diff_cohens_d": -0.568339,
+    "arity_diff_n_negative": 15,
+    "wilcoxon_path_ss_vs_ro_p": 0.61091141,
+    "path_diff_mean_ss_minus_ro": -0.003075,
+    "path_diff_mean_ss_minus_aa": -0.742901,
+    "path_diff_mean_ro_minus_aa": -0.739826,
+    "mean_arity_cost_per_acc_point_ss": 1305.63803,
+    "mean_arity_cost_per_acc_point_ro": 635.145424,
+    "n_positive_acc_delta_ss": 5,
+    "n_positive_acc_delta_ro": 3,
+    "mean_arity_normalized_accuracy_aa": 0.704625,
+    "mean_arity_normalized_accuracy_ro": 0.271464,
+    "mean_arity_normalized_accuracy_ss": 0.292547,
+    "adult_features_per_pred_aa": 2.8912,
+    "adult_features_per_pred_ro": 4.2922,
+    "adult_features_per_pred_ss": 4.0917,
+    "jannis_features_per_pred_aa": 2.712,
+    "jannis_features_per_pred_ro": 74.2571,
+    "jannis_features_per_pred_ss": 48.0182,
+    "mean_cognitive_complexity_reduction_ss_vs_ro": 9.3986,
+    "perfold_wilcoxon_acc_ss_vs_ro_p": 0.19081426,
+    "perfold_wilcoxon_acc_ss_vs_aa_p": 0.07098365,
+    "perfold_mean_acc_diff_ss_minus_ro": 0.00316403
+  },
+  "datasets": [
+    {
+      "dataset": "arity_comparison",
+      "examples": [
+        {
+          "input": "Arity comparison for adult at max_splits=5",
+          "output": "AA=1.0000, RO=2.1200, SS=2.2800, delta=0.1600",
+          "metadata_dataset": "adult",
+          "metadata_max_splits": 5,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 2.12,
+          "eval_arity_ss": 2.28,
+          "eval_delta_ss_ro": 0.16,
+          "eval_pct_reduction": -7.5472
+        },
+        {
+          "input": "Arity comparison for adult at max_splits=10",
+          "output": "AA=1.0000, RO=2.2000, SS=2.2400, delta=0.0400",
+          "metadata_dataset": "adult",
+          "metadata_max_splits": 10,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 2.2,
+          "eval_arity_ss": 2.24,
+          "eval_delta_ss_ro": 0.04,
+          "eval_pct_reduction": -1.8182
+        },
+        {
+          "input": "Arity comparison for adult at max_splits=15",
+          "output": "AA=1.0000, RO=2.1467, SS=2.2400, delta=0.0933",
+          "metadata_dataset": "adult",
+          "metadata_max_splits": 15,
+          "eval_arity_aa": 1.0,
+          "eval_arity_ro": 2.146667,
+          "eval_arity_ss": 2.24,
+          "eval_delta_ss_ro": 0.093333,
+          "eval_pct_reduction": -4.3478
+        }
+      ]
+    },
+    {
+      "dataset": "pareto_analysis",
+      "examples": [
+        {
+          "input": "Pareto analysis for adult at max_splits=5",
+          "output": "Frontier: AA=1, RO=0, SS=0",
+          "metadata_dataset": "adult",
+          "metadata_max_splits": 5,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 0,
+          "eval_ss_dominates_ro": 0
+        },
+        {
+          "input": "Pareto analysis for adult at max_splits=10",
+          "output": "Frontier: AA=1, RO=0, SS=1",
+          "metadata_dataset": "adult",
+          "metadata_max_splits": 10,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 1,
+          "eval_ss_dominates_ro": 0
+        },
+        {
+          "input": "Pareto analysis for adult at max_splits=15",
+          "output": "Frontier: AA=1, RO=0, SS=0",
+          "metadata_dataset": "adult",
+          "metadata_max_splits": 15,
+          "eval_on_frontier_aa": 1,
+          "eval_on_frontier_ro": 0,
+          "eval_on_frontier_ss": 0,
+          "eval_ss_dominates_ro": 0
+        }
+      ]
+    },
+    {
+      "dataset": "statistical_tests",
+      "examples": [
+        {
+          "input": "Wilcoxon signed-rank test: SS arity vs RO arity (20 paired conditions, one-sided H1: SS < RO)",
+          "output": "W=30.5000, p=0.00270520, mean_diff=-0.9772, d=-0.5683",
+          "metadata_test": "wilcoxon_arity_ss_vs_ro",
+          "metadata_n_pairs": 20,
+          "metadata_alternative": "less",
+          "eval_test_statistic": 30.5,
+          "eval_p_value": 0.0027052,
+          "eval_effect_size": -0.568339
+        },
+        {
+          "input": "Bootstrap 95% CI on mean arity difference (SS - RO), 10000 resamples of 20 paired conditions",
+          "output": "CI=[-1.788025, -0.316975], mean=-0.977167",
+          "metadata_test": "bootstrap_ci_arity_diff",
+          "metadata_n_boot": 10000,
+          "eval_test_statistic": -0.977167,
+          "eval_p_value": 0.0027052,
+          "eval_effect_size": -0.568339
+        },
+        {
+          "input": "Arity difference sub-analysis for adult: 4 paired conditions (over max_splits)",
+          "output": "mean_diff=0.0633, 1/4 conditions SS < RO",
+          "metadata_test": "arity_subdataset_adult",
+          "metadata_n_pairs": 4,
+          "eval_test_statistic": 0.063333,
+          "eval_p_value": 0.0,
+          "eval_effect_size": 0.063333
+        }
+      ]
+    }
+  ]
+}

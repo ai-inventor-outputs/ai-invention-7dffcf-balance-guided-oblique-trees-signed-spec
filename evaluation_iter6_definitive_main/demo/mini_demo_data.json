@@ -1,0 +1,2104 @@
+{
+  "metadata": {
+    "evaluation_name": "definitive_main_results_8x8",
+    "description": "8 methods (5 FIGS + 3 baselines) x 8 datasets with Friedman/Nemenyi, Bayesian signed-rank, Cohen's d, winner analysis, and ranking",
+    "methods": [
+      "axis_aligned",
+      "random_oblique",
+      "unsigned_spectral",
+      "signed_spectral",
+      "hard_threshold",
+      "ebm",
+      "random_forest",
+      "linear"
+    ],
+    "figs_methods": [
+      "axis_aligned",
+      "random_oblique",
+      "unsigned_spectral",
+      "signed_spectral",
+      "hard_threshold"
+    ],
+    "baseline_methods": [
+      "ebm",
+      "random_forest",
+      "linear"
+    ],
+    "datasets": [
+      "electricity",
+      "adult",
+      "california_housing",
+      "jannis",
+      "higgs_small",
+      "eye_movements",
+      "credit",
+      "miniboone"
+    ],
+    "classification_datasets": [
+      "electricity",
+      "adult",
+      "jannis",
+      "higgs_small",
+      "eye_movements",
+      "credit",
+      "miniboone"
+    ],
+    "alpha": 0.05,
+    "rope": 0.01,
+    "main_results_table": [
+      {
+        "dataset": "electricity",
+        "method": "axis_aligned",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.793212,
+        "primary_std": 0.001515,
+        "n_folds": 5,
+        "auc_mean": 0.862021,
+        "auc_std": 0.001963,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "electricity",
+        "method": "random_oblique",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.780996,
+        "primary_std": 0.006203,
+        "n_folds": 5,
+        "auc_mean": 0.852347,
+        "auc_std": 0.004079,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "electricity",
+        "method": "unsigned_spectral",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.791157,
+        "primary_std": 0.00494,
+        "n_folds": 5,
+        "auc_mean": 0.860924,
+        "auc_std": 0.001409,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "electricity",
+        "method": "signed_spectral",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.794277,
+        "primary_std": 0.002183,
+        "n_folds": 5,
+        "auc_mean": 0.860691,
+        "auc_std": 0.001989,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "electricity",
+        "method": "hard_threshold",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.790039,
+        "primary_std": 0.003477,
+        "n_folds": 5,
+        "auc_mean": 0.861187,
+        "auc_std": 0.001965,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "electricity",
+        "method": "ebm",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.844128,
+        "primary_std": 0.003181,
+        "n_folds": 5,
+        "auc_mean": 0.927382,
+        "auc_std": 0.002271,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "electricity",
+        "method": "random_forest",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.883974,
+        "primary_std": 0.004269,
+        "n_folds": 5,
+        "auc_mean": 0.955849,
+        "auc_std": 0.001346,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "electricity",
+        "method": "linear",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.740032,
+        "primary_std": 0.001959,
+        "n_folds": 5,
+        "auc_mean": 0.818987,
+        "auc_std": 0.002724,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "adult",
+        "method": "axis_aligned",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.677758,
+        "primary_std": 0.020582,
+        "n_folds": 5,
+        "auc_mean": 0.827257,
+        "auc_std": 0.00743,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "adult",
+        "method": "random_oblique",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.707565,
+        "primary_std": 0.006786,
+        "n_folds": 5,
+        "auc_mean": 0.838537,
+        "auc_std": 0.004254,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "adult",
+        "method": "unsigned_spectral",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.702612,
+        "primary_std": 0.009237,
+        "n_folds": 5,
+        "auc_mean": 0.815327,
+        "auc_std": 0.005828,
+        "best_max_splits": 10
+      },
+      {
+        "dataset": "adult",
+        "method": "signed_spectral",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.702391,
+        "primary_std": 0.009533,
+        "n_folds": 5,
+        "auc_mean": 0.815445,
+        "auc_std": 0.005609,
+        "best_max_splits": 10
+      },
+      {
+        "dataset": "adult",
+        "method": "hard_threshold",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.702933,
+        "primary_std": 0.011137,
+        "n_folds": 5,
+        "auc_mean": 0.776676,
+        "auc_std": 0.007468,
+        "best_max_splits": 5
+      },
+      {
+        "dataset": "adult",
+        "method": "ebm",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.714748,
+        "primary_std": 0.005765,
+        "n_folds": 5,
+        "auc_mean": 0.873943,
+        "auc_std": 0.005097,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "adult",
+        "method": "random_forest",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.706233,
+        "primary_std": 0.00639,
+        "n_folds": 5,
+        "auc_mean": 0.823307,
+        "auc_std": 0.00501,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "adult",
+        "method": "linear",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.671569,
+        "primary_std": 0.0067,
+        "n_folds": 5,
+        "auc_mean": 0.831613,
+        "auc_std": 0.005021,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "california_housing",
+        "method": "axis_aligned",
+        "task_type": "regression",
+        "primary_metric_name": "r2",
+        "primary_mean": 0.60874,
+        "primary_std": 0.014573,
+        "n_folds": 5,
+        "auc_mean": null,
+        "auc_std": null,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "california_housing",
+        "method": "random_oblique",
+        "task_type": "regression",
+        "primary_metric_name": "r2",
+        "primary_mean": 0.690842,
+        "primary_std": 0.014489,
+        "n_folds": 5,
+        "auc_mean": null,
+        "auc_std": null,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "california_housing",
+        "method": "unsigned_spectral",
+        "task_type": "regression",
+        "primary_metric_name": "r2",
+        "primary_mean": 0.690312,
+        "primary_std": 0.018707,
+        "n_folds": 5,
+        "auc_mean": null,
+        "auc_std": null,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "california_housing",
+        "method": "signed_spectral",
+        "task_type": "regression",
+        "primary_metric_name": "r2",
+        "primary_mean": 0.609246,
+        "primary_std": 0.014287,
+        "n_folds": 5,
+        "auc_mean": null,
+        "auc_std": null,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "california_housing",
+        "method": "hard_threshold",
+        "task_type": "regression",
+        "primary_metric_name": "r2",
+        "primary_mean": 0.680734,
+        "primary_std": 0.013281,
+        "n_folds": 5,
+        "auc_mean": null,
+        "auc_std": null,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "california_housing",
+        "method": "ebm",
+        "task_type": "regression",
+        "primary_metric_name": "r2",
+        "primary_mean": 0.835656,
+        "primary_std": 0.010454,
+        "n_folds": 5,
+        "auc_mean": null,
+        "auc_std": null,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "california_housing",
+        "method": "random_forest",
+        "task_type": "regression",
+        "primary_metric_name": "r2",
+        "primary_mean": 0.809571,
+        "primary_std": 0.007642,
+        "n_folds": 5,
+        "auc_mean": null,
+        "auc_std": null,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "california_housing",
+        "method": "linear",
+        "task_type": "regression",
+        "primary_metric_name": "r2",
+        "primary_mean": 0.601381,
+        "primary_std": 0.019007,
+        "n_folds": 5,
+        "auc_mean": null,
+        "auc_std": null,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "jannis",
+        "method": "axis_aligned",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.727041,
+        "primary_std": 0.005173,
+        "n_folds": 5,
+        "auc_mean": 0.802138,
+        "auc_std": 0.005982,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "jannis",
+        "method": "random_oblique",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.733675,
+        "primary_std": 0.006973,
+        "n_folds": 5,
+        "auc_mean": 0.806465,
+        "auc_std": 0.00689,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "jannis",
+        "method": "unsigned_spectral",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.734179,
+        "primary_std": 0.004478,
+        "n_folds": 5,
+        "auc_mean": 0.813177,
+        "auc_std": 0.004812,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "jannis",
+        "method": "signed_spectral",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.741351,
+        "primary_std": 0.009091,
+        "n_folds": 5,
+        "auc_mean": 0.814063,
+        "auc_std": 0.006447,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "jannis",
+        "method": "hard_threshold",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.74215,
+        "primary_std": 0.005629,
+        "n_folds": 5,
+        "auc_mean": 0.822453,
+        "auc_std": 0.005447,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "jannis",
+        "method": "ebm",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.771587,
+        "primary_std": 0.003694,
+        "n_folds": 5,
+        "auc_mean": 0.848177,
+        "auc_std": 0.004028,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "jannis",
+        "method": "random_forest",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.784265,
+        "primary_std": 0.005948,
+        "n_folds": 5,
+        "auc_mean": 0.861505,
+        "auc_std": 0.00505,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "jannis",
+        "method": "linear",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.728916,
+        "primary_std": 0.005621,
+        "n_folds": 5,
+        "auc_mean": 0.805596,
+        "auc_std": 0.004943,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "higgs_small",
+        "method": "axis_aligned",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.668995,
+        "primary_std": 0.004158,
+        "n_folds": 5,
+        "auc_mean": 0.725924,
+        "auc_std": 0.003088,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "higgs_small",
+        "method": "random_oblique",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.670219,
+        "primary_std": 0.003643,
+        "n_folds": 5,
+        "auc_mean": 0.730229,
+        "auc_std": 0.005241,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "higgs_small",
+        "method": "unsigned_spectral",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.675614,
+        "primary_std": 0.002468,
+        "n_folds": 5,
+        "auc_mean": 0.737547,
+        "auc_std": 0.002644,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "higgs_small",
+        "method": "signed_spectral",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.671392,
+        "primary_std": 0.002264,
+        "n_folds": 5,
+        "auc_mean": 0.735626,
+        "auc_std": 0.000926,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "higgs_small",
+        "method": "hard_threshold",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.674044,
+        "primary_std": 0.002591,
+        "n_folds": 5,
+        "auc_mean": 0.739032,
+        "auc_std": 0.002358,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "higgs_small",
+        "method": "ebm",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.715023,
+        "primary_std": 0.001139,
+        "n_folds": 5,
+        "auc_mean": 0.793182,
+        "auc_std": 0.002415,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "higgs_small",
+        "method": "random_forest",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.718623,
+        "primary_std": 0.000933,
+        "n_folds": 5,
+        "auc_mean": 0.795169,
+        "auc_std": 0.000431,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "higgs_small",
+        "method": "linear",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.633228,
+        "primary_std": 0.002745,
+        "n_folds": 5,
+        "auc_mean": 0.679708,
+        "auc_std": 0.003337,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "eye_movements",
+        "method": "axis_aligned",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.58899,
+        "primary_std": 0.008541,
+        "n_folds": 5,
+        "auc_mean": 0.613465,
+        "auc_std": 0.011252,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "eye_movements",
+        "method": "random_oblique",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.579928,
+        "primary_std": 0.030218,
+        "n_folds": 5,
+        "auc_mean": 0.602936,
+        "auc_std": 0.03337,
+        "best_max_splits": 5
+      },
+      {
+        "dataset": "eye_movements",
+        "method": "unsigned_spectral",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.572708,
+        "primary_std": 0.016528,
+        "n_folds": 5,
+        "auc_mean": 0.602728,
+        "auc_std": 0.014323,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "eye_movements",
+        "method": "signed_spectral",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.581502,
+        "primary_std": 0.014809,
+        "n_folds": 5,
+        "auc_mean": 0.617619,
+        "auc_std": 0.011253,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "eye_movements",
+        "method": "hard_threshold",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.576283,
+        "primary_std": 0.010617,
+        "n_folds": 5,
+        "auc_mean": 0.601922,
+        "auc_std": 0.013222,
+        "best_max_splits": 5
+      },
+      {
+        "dataset": "eye_movements",
+        "method": "ebm",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.641434,
+        "primary_std": 0.017766,
+        "n_folds": 5,
+        "auc_mean": 0.700406,
+        "auc_std": 0.030034,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "eye_movements",
+        "method": "random_forest",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.637095,
+        "primary_std": 0.019854,
+        "n_folds": 5,
+        "auc_mean": 0.69167,
+        "auc_std": 0.021787,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "eye_movements",
+        "method": "linear",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.560337,
+        "primary_std": 0.017925,
+        "n_folds": 5,
+        "auc_mean": 0.584917,
+        "auc_std": 0.023532,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "credit",
+        "method": "axis_aligned",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.765165,
+        "primary_std": 0.003875,
+        "n_folds": 5,
+        "auc_mean": 0.838351,
+        "auc_std": 0.006072,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "credit",
+        "method": "random_oblique",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.767026,
+        "primary_std": 0.005381,
+        "n_folds": 5,
+        "auc_mean": 0.842139,
+        "auc_std": 0.00753,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "credit",
+        "method": "unsigned_spectral",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.767621,
+        "primary_std": 0.00587,
+        "n_folds": 5,
+        "auc_mean": 0.840682,
+        "auc_std": 0.007266,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "credit",
+        "method": "signed_spectral",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.767256,
+        "primary_std": 0.004946,
+        "n_folds": 5,
+        "auc_mean": 0.838499,
+        "auc_std": 0.006358,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "credit",
+        "method": "hard_threshold",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.765229,
+        "primary_std": 0.004492,
+        "n_folds": 5,
+        "auc_mean": 0.839885,
+        "auc_std": 0.005175,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "credit",
+        "method": "ebm",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.775217,
+        "primary_std": 0.002759,
+        "n_folds": 5,
+        "auc_mean": 0.855972,
+        "auc_std": 0.005211,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "credit",
+        "method": "random_forest",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.771927,
+        "primary_std": 0.007624,
+        "n_folds": 5,
+        "auc_mean": 0.844967,
+        "auc_std": 0.007015,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "credit",
+        "method": "linear",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.724362,
+        "primary_std": 0.014464,
+        "n_folds": 5,
+        "auc_mean": 0.794695,
+        "auc_std": 0.013986,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "miniboone",
+        "method": "axis_aligned",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.876134,
+        "primary_std": 0.001607,
+        "n_folds": 5,
+        "auc_mean": 0.936471,
+        "auc_std": 0.002656,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "miniboone",
+        "method": "random_oblique",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.886928,
+        "primary_std": 0.005478,
+        "n_folds": 5,
+        "auc_mean": 0.938684,
+        "auc_std": 0.00482,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "miniboone",
+        "method": "unsigned_spectral",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.901833,
+        "primary_std": 0.00253,
+        "n_folds": 5,
+        "auc_mean": 0.954578,
+        "auc_std": 0.003105,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "miniboone",
+        "method": "signed_spectral",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.891695,
+        "primary_std": 0.002794,
+        "n_folds": 5,
+        "auc_mean": 0.943396,
+        "auc_std": 0.003099,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "miniboone",
+        "method": "hard_threshold",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.900161,
+        "primary_std": 0.003121,
+        "n_folds": 5,
+        "auc_mean": 0.953779,
+        "auc_std": 0.002313,
+        "best_max_splits": 20
+      },
+      {
+        "dataset": "miniboone",
+        "method": "ebm",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.930094,
+        "primary_std": 0.003545,
+        "n_folds": 5,
+        "auc_mean": 0.97777,
+        "auc_std": 0.000945,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "miniboone",
+        "method": "random_forest",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.933231,
+        "primary_std": 0.003903,
+        "n_folds": 5,
+        "auc_mean": 0.979465,
+        "auc_std": 0.001071,
+        "best_max_splits": null
+      },
+      {
+        "dataset": "miniboone",
+        "method": "linear",
+        "task_type": "classification",
+        "primary_metric_name": "balanced_accuracy",
+        "primary_mean": 0.872312,
+        "primary_std": 0.003825,
+        "n_folds": 5,
+        "auc_mean": 0.94043,
+        "auc_std": 0.003001,
+        "best_max_splits": null
+      }
+    ],
+    "best_max_splits": {
+      "adult_axis_aligned": 20,
+      "adult_hard_threshold": 5,
+      "adult_random_oblique": 20,
+      "adult_signed_spectral": 10,
+      "adult_unsigned_spectral": 10,
+      "california_housing_axis_aligned": 20,
+      "california_housing_hard_threshold": 20,
+      "california_housing_random_oblique": 20,
+      "california_housing_signed_spectral": 20,
+      "california_housing_unsigned_spectral": 20,
+      "credit_axis_aligned": 20,
+      "credit_hard_threshold": 20,
+      "credit_random_oblique": 20,
+      "credit_signed_spectral": 20,
+      "credit_unsigned_spectral": 20,
+      "electricity_axis_aligned": 20,
+      "electricity_hard_threshold": 20,
+      "electricity_random_oblique": 20,
+      "electricity_signed_spectral": 20,
+      "electricity_unsigned_spectral": 20,
+      "eye_movements_axis_aligned": 20,
+      "eye_movements_hard_threshold": 5,
+      "eye_movements_random_oblique": 5,
+      "eye_movements_signed_spectral": 20,
+      "eye_movements_unsigned_spectral": 20,
+      "higgs_small_axis_aligned": 20,
+      "higgs_small_hard_threshold": 20,
+      "higgs_small_random_oblique": 20,
+      "higgs_small_signed_spectral": 20,
+      "higgs_small_unsigned_spectral": 20,
+      "jannis_axis_aligned": 20,
+      "jannis_hard_threshold": 20,
+      "jannis_random_oblique": 20,
+      "jannis_signed_spectral": 20,
+      "jannis_unsigned_spectral": 20,
+      "miniboone_axis_aligned": 20,
+      "miniboone_hard_threshold": 20,
+      "miniboone_random_oblique": 20,
+      "miniboone_signed_spectral": 20,
+      "miniboone_unsigned_spectral": 20
+    },
+    "friedman_all": {
+      "friedman_chi2": 42.75,
+      "friedman_pvalue": 3.727639474643811e-07,
+      "significant": true,
+      "n_datasets": 8,
+      "n_methods": 8,
+      "alpha": 0.05,
+      "avg_ranks": {
+        "axis_aligned": 6.25,
+        "random_oblique": 5.0,
+        "unsigned_spectral": 4.375,
+        "signed_spectral": 4.625,
+        "hard_threshold": 4.75,
+        "ebm": 1.5,
+        "random_forest": 1.625,
+        "linear": 7.875
+      },
+      "nemenyi_cd": 3.7121,
+      "nemenyi_pairwise_pvalues": {
+        "axis_aligned_vs_random_oblique": 0.971493,
+        "axis_aligned_vs_unsigned_spectral": 0.79083,
+        "axis_aligned_vs_signed_spectral": 0.888906,
+        "axis_aligned_vs_hard_threshold": 0.924821,
+        "axis_aligned_vs_ebm": 0.002662,
+        "axis_aligned_vs_random_forest": 0.003966,
+        "axis_aligned_vs_linear": 0.888906,
+        "random_oblique_vs_unsigned_spectral": 0.999616,
+        "random_oblique_vs_signed_spectral": 0.999988,
+        "random_oblique_vs_hard_threshold": 0.999999,
+        "random_oblique_vs_ebm": 0.081399,
+        "random_oblique_vs_random_forest": 0.106426,
+        "random_oblique_vs_linear": 0.267843,
+        "unsigned_spectral_vs_signed_spectral": 0.999999,
+        "unsigned_spectral_vs_hard_threshold": 0.999988,
+        "unsigned_spectral_vs_ebm": 0.267843,
+        "unsigned_spectral_vs_random_forest": 0.324494,
+        "unsigned_spectral_vs_linear": 0.081399,
+        "signed_spectral_vs_hard_threshold": 1.0,
+        "signed_spectral_vs_ebm": 0.174066,
+        "signed_spectral_vs_random_forest": 0.217608,
+        "signed_spectral_vs_linear": 0.137127,
+        "hard_threshold_vs_ebm": 0.137127,
+        "hard_threshold_vs_random_forest": 0.174066,
+        "hard_threshold_vs_linear": 0.174066,
+        "ebm_vs_random_forest": 1.0,
+        "ebm_vs_linear": 5e-06,
+        "random_forest_vs_linear": 9e-06
+      },
+      "significance_matrix": {
+        "axis_aligned_vs_random_oblique": false,
+        "axis_aligned_vs_unsigned_spectral": false,
+        "axis_aligned_vs_signed_spectral": false,
+        "axis_aligned_vs_hard_threshold": false,
+        "axis_aligned_vs_ebm": true,
+        "axis_aligned_vs_random_forest": true,
+        "axis_aligned_vs_linear": false,
+        "random_oblique_vs_unsigned_spectral": false,
+        "random_oblique_vs_signed_spectral": false,
+        "signed_spectral_vs_unsigned_spectral": false,
+        "hard_threshold_vs_random_oblique": false,
+        "hard_threshold_vs_unsigned_spectral": false,
+        "hard_threshold_vs_signed_spectral": false,
+        "hard_threshold_vs_random_forest": false,
+        "hard_threshold_vs_linear": false,
+        "ebm_vs_random_oblique": false,
+        "ebm_vs_unsigned_spectral": false,
+        "ebm_vs_signed_spectral": false,
+        "ebm_vs_hard_threshold": false,
+        "ebm_vs_random_forest": false,
+        "ebm_vs_linear": true,
+        "random_forest_vs_random_oblique": false,
+        "random_forest_vs_unsigned_spectral": false,
+        "random_forest_vs_signed_spectral": false,
+        "linear_vs_random_oblique": false,
+        "linear_vs_unsigned_spectral": false,
+        "linear_vs_signed_spectral": false,
+        "linear_vs_random_forest": true
+      },
+      "cd_diagram_data": {
+        "avg_ranks": {
+          "axis_aligned": 6.25,
+          "random_oblique": 5.0,
+          "unsigned_spectral": 4.375,
+          "signed_spectral": 4.625,
+          "hard_threshold": 4.75,
+          "ebm": 1.5,
+          "random_forest": 1.625,
+          "linear": 7.875
+        },
+        "cd": 3.7121,
+        "n_datasets": 8,
+        "n_methods": 8
+      }
+    },
+    "friedman_classif": {
+      "friedman_chi2": 37.095238,
+      "friedman_pvalue": 4.4997760782980035e-06,
+      "significant": true,
+      "n_datasets": 7,
+      "n_methods": 8,
+      "alpha": 0.05,
+      "avg_ranks": {
+        "axis_aligned": 6.1429,
+        "random_oblique": 5.2857,
+        "unsigned_spectral": 4.4286,
+        "signed_spectral": 4.4286,
+        "hard_threshold": 4.7143,
+        "ebm": 1.5714,
+        "random_forest": 1.5714,
+        "linear": 7.8571
+      },
+      "nemenyi_cd": 3.9684,
+      "nemenyi_pairwise_pvalues": {
+        "axis_aligned_vs_random_oblique": 0.998051,
+        "axis_aligned_vs_unsigned_spectral": 0.895699,
+        "axis_aligned_vs_signed_spectral": 0.895699,
+        "axis_aligned_vs_hard_threshold": 0.958863,
+        "axis_aligned_vs_ebm": 0.011316,
+        "axis_aligned_vs_random_forest": 0.011316,
+        "axis_aligned_vs_linear": 0.895699,
+        "random_oblique_vs_unsigned_spectral": 0.998051,
+        "random_oblique_vs_signed_spectral": 0.998051,
+        "random_oblique_vs_hard_threshold": 0.999865,
+        "random_oblique_vs_ebm": 0.086095,
+        "random_oblique_vs_random_forest": 0.086095,
+        "random_oblique_vs_linear": 0.506521,
+        "unsigned_spectral_vs_signed_spectral": 1.0,
+        "unsigned_spectral_vs_hard_threshold": 0.999999,
+        "unsigned_spectral_vs_ebm": 0.362495,
+        "unsigned_spectral_vs_random_forest": 0.362495,
+        "unsigned_spectral_vs_linear": 0.149068,
+        "signed_spectral_vs_hard_threshold": 0.999999,
+        "signed_spectral_vs_ebm": 0.362495,
+        "signed_spectral_vs_random_forest": 0.362495,
+        "signed_spectral_vs_linear": 0.149068,
+        "hard_threshold_vs_ebm": 0.240944,
+        "hard_threshold_vs_random_forest": 0.240944,
+        "hard_threshold_vs_linear": 0.240944,
+        "ebm_vs_random_forest": 1.0,
+        "ebm_vs_linear": 4.3e-05,
+        "random_forest_vs_linear": 4.3e-05
+      },
+      "significance_matrix": {
+        "axis_aligned_vs_random_oblique": false,
+        "axis_aligned_vs_unsigned_spectral": false,
+        "axis_aligned_vs_signed_spectral": false,
+        "axis_aligned_vs_hard_threshold": false,
+        "axis_aligned_vs_ebm": true,
+        "axis_aligned_vs_random_forest": true,
+        "axis_aligned_vs_linear": false,
+        "random_oblique_vs_unsigned_spectral": false,
+        "random_oblique_vs_signed_spectral": false,
+        "signed_spectral_vs_unsigned_spectral": false,
+        "hard_threshold_vs_random_oblique": false,
+        "hard_threshold_vs_unsigned_spectral": false,
+        "hard_threshold_vs_signed_spectral": false,
+        "hard_threshold_vs_random_forest": false,
+        "hard_threshold_vs_linear": false,
+        "ebm_vs_random_oblique": false,
+        "ebm_vs_unsigned_spectral": false,
+        "ebm_vs_signed_spectral": false,
+        "ebm_vs_hard_threshold": false,
+        "ebm_vs_random_forest": false,
+        "ebm_vs_linear": true,
+        "random_forest_vs_random_oblique": false,
+        "random_forest_vs_unsigned_spectral": false,
+        "random_forest_vs_signed_spectral": false,
+        "linear_vs_random_oblique": false,
+        "linear_vs_unsigned_spectral": false,
+        "linear_vs_signed_spectral": false,
+        "linear_vs_random_forest": true
+      },
+      "cd_diagram_data": {
+        "avg_ranks": {
+          "axis_aligned": 6.1429,
+          "random_oblique": 5.2857,
+          "unsigned_spectral": 4.4286,
+          "signed_spectral": 4.4286,
+          "hard_threshold": 4.7143,
+          "ebm": 1.5714,
+          "random_forest": 1.5714,
+          "linear": 7.8571
+        },
+        "cd": 3.9684,
+        "n_datasets": 7,
+        "n_methods": 8
+      }
+    },
+    "bayesian_tests": {
+      "unsigned_spectral_vs_ebm": {
+        "p_left": 0.0,
+        "p_rope": 0.0024,
+        "p_right": 0.9976,
+        "rope": 0.01,
+        "interpretation": "P(unsigned_spectral > ebm) = 0.0000, P(equivalent) = 0.0024, P(ebm > unsigned_spectral) = 0.9976"
+      },
+      "unsigned_spectral_vs_random_forest": {
+        "p_left": 0.0,
+        "p_rope": 0.00592,
+        "p_right": 0.99408,
+        "rope": 0.01,
+        "interpretation": "P(unsigned_spectral > random_forest) = 0.0000, P(equivalent) = 0.0059, P(random_forest > unsigned_spectral) = 0.9941"
+      },
+      "unsigned_spectral_vs_random_oblique": {
+        "p_left": 0.0043,
+        "p_rope": 0.9957,
+        "p_right": 0.0,
+        "rope": 0.01,
+        "interpretation": "P(unsigned_spectral > random_oblique) = 0.0043, P(equivalent) = 0.9957, P(random_oblique > unsigned_spectral) = 0.0000"
+      },
+      "unsigned_spectral_vs_axis_aligned": {
+        "p_left": 0.53672,
+        "p_rope": 0.46294,
+        "p_right": 0.00034,
+        "rope": 0.01,
+        "interpretation": "P(unsigned_spectral > axis_aligned) = 0.5367, P(equivalent) = 0.4629, P(axis_aligned > unsigned_spectral) = 0.0003"
+      }
+    },
+    "cohens_d": {
+      "axis_aligned_vs_ebm": {
+        "cohens_d": -3.6692,
+        "magnitude": "large",
+        "figs_mean_rank": 5.925,
+        "baseline_mean_rank": 1.6,
+        "pooled_std": 1.1787,
+        "n_observations": 40
+      },
+      "axis_aligned_vs_random_forest": {
+        "cohens_d": -3.1774,
+        "magnitude": "large",
+        "figs_mean_rank": 5.925,
+        "baseline_mean_rank": 1.675,
+        "pooled_std": 1.3376,
+        "n_observations": 40
+      },
+      "axis_aligned_vs_linear": {
+        "cohens_d": 1.484,
+        "magnitude": "large",
+        "figs_mean_rank": 5.925,
+        "baseline_mean_rank": 7.725,
+        "pooled_std": 1.2129,
+        "n_observations": 40
+      },
+      "random_oblique_vs_ebm": {
+        "cohens_d": -2.7195,
+        "magnitude": "large",
+        "figs_mean_rank": 5.1,
+        "baseline_mean_rank": 1.6,
+        "pooled_std": 1.287,
+        "n_observations": 40
+      },
+      "random_oblique_vs_random_forest": {
+        "cohens_d": -2.3886,
+        "magnitude": "large",
+        "figs_mean_rank": 5.1,
+        "baseline_mean_rank": 1.675,
+        "pooled_std": 1.4339,
+        "n_observations": 40
+      },
+      "random_oblique_vs_linear": {
+        "cohens_d": 1.9911,
+        "magnitude": "large",
+        "figs_mean_rank": 5.1,
+        "baseline_mean_rank": 7.725,
+        "pooled_std": 1.3184,
+        "n_observations": 40
+      },
+      "unsigned_spectral_vs_ebm": {
+        "cohens_d": -2.6157,
+        "magnitude": "large",
+        "figs_mean_rank": 4.275,
+        "baseline_mean_rank": 1.6,
+        "pooled_std": 1.0227,
+        "n_observations": 40
+      },
+      "unsigned_spectral_vs_random_forest": {
+        "cohens_d": -2.1625,
+        "magnitude": "large",
+        "figs_mean_rank": 4.275,
+        "baseline_mean_rank": 1.675,
+        "pooled_std": 1.2023,
+        "n_observations": 40
+      },
+      "unsigned_spectral_vs_linear": {
+        "cohens_d": 3.249,
+        "magnitude": "large",
+        "figs_mean_rank": 4.275,
+        "baseline_mean_rank": 7.725,
+        "pooled_std": 1.0619,
+        "n_observations": 40
+      },
+      "signed_spectral_vs_ebm": {
+        "cohens_d": -3.2773,
+        "magnitude": "large",
+        "figs_mean_rank": 4.95,
+        "baseline_mean_rank": 1.6,
+        "pooled_std": 1.0222,
+        "n_observations": 40
+      },
+      "signed_spectral_vs_random_forest": {
+        "cohens_d": -2.7249,
+        "magnitude": "large",
+        "figs_mean_rank": 4.95,
+        "baseline_mean_rank": 1.675,
+        "pooled_std": 1.2019,
+        "n_observations": 40
+      },
+      "signed_spectral_vs_linear": {
+        "cohens_d": 2.6144,
+        "magnitude": "large",
+        "figs_mean_rank": 4.95,
+        "baseline_mean_rank": 7.725,
+        "pooled_std": 1.0614,
+        "n_observations": 40
+      },
+      "hard_threshold_vs_ebm": {
+        "cohens_d": -3.0892,
+        "magnitude": "large",
+        "figs_mean_rank": 4.75,
+        "baseline_mean_rank": 1.6,
+        "pooled_std": 1.0197,
+        "n_observations": 40
+      },
+      "hard_threshold_vs_random_forest": {
+        "cohens_d": -2.563,
+        "magnitude": "large",
+        "figs_mean_rank": 4.75,
+        "baseline_mean_rank": 1.675,
+        "pooled_std": 1.1998,
+        "n_observations": 40
+      },
+      "hard_threshold_vs_linear": {
+        "cohens_d": 2.8093,
+        "magnitude": "large",
+        "figs_mean_rank": 4.75,
+        "baseline_mean_rank": 7.725,
+        "pooled_std": 1.059,
+        "n_observations": 40
+      }
+    },
+    "winner_analysis": {
+      "per_dataset_winners": {
+        "electricity": {
+          "winner": "random_forest",
+          "score": 0.883974,
+          "all_scores": {
+            "axis_aligned": 0.793212,
+            "random_oblique": 0.780996,
+            "unsigned_spectral": 0.791157,
+            "signed_spectral": 0.794277,
+            "hard_threshold": 0.790039,
+            "ebm": 0.844128,
+            "random_forest": 0.883974,
+            "linear": 0.740032
+          }
+        },
+        "adult": {
+          "winner": "ebm",
+          "score": 0.714748,
+          "all_scores": {
+            "axis_aligned": 0.677758,
+            "random_oblique": 0.707565,
+            "unsigned_spectral": 0.702612,
+            "signed_spectral": 0.702391,
+            "hard_threshold": 0.702933,
+            "ebm": 0.714748,
+            "random_forest": 0.706233,
+            "linear": 0.671569
+          }
+        },
+        "california_housing": {
+          "winner": "ebm",
+          "score": 0.835656,
+          "all_scores": {
+            "axis_aligned": 0.60874,
+            "random_oblique": 0.690842,
+            "unsigned_spectral": 0.690312,
+            "signed_spectral": 0.609246,
+            "hard_threshold": 0.680734,
+            "ebm": 0.835656,
+            "random_forest": 0.809571,
+            "linear": 0.601381
+          }
+        },
+        "jannis": {
+          "winner": "random_forest",
+          "score": 0.784265,
+          "all_scores": {
+            "axis_aligned": 0.727041,
+            "random_oblique": 0.733675,
+            "unsigned_spectral": 0.734179,
+            "signed_spectral": 0.741351,
+            "hard_threshold": 0.74215,
+            "ebm": 0.771587,
+            "random_forest": 0.784265,
+            "linear": 0.728916
+          }
+        },
+        "higgs_small": {
+          "winner": "random_forest",
+          "score": 0.718623,
+          "all_scores": {
+            "axis_aligned": 0.668995,
+            "random_oblique": 0.670219,
+            "unsigned_spectral": 0.675614,
+            "signed_spectral": 0.671392,
+            "hard_threshold": 0.674044,
+            "ebm": 0.715023,
+            "random_forest": 0.718623,
+            "linear": 0.633228
+          }
+        },
+        "eye_movements": {
+          "winner": "ebm",
+          "score": 0.641434,
+          "all_scores": {
+            "axis_aligned": 0.58899,
+            "random_oblique": 0.579928,
+            "unsigned_spectral": 0.572708,
+            "signed_spectral": 0.581502,
+            "hard_threshold": 0.576283,
+            "ebm": 0.641434,
+            "random_forest": 0.637095,
+            "linear": 0.560337
+          }
+        },
+        "credit": {
+          "winner": "ebm",
+          "score": 0.775217,
+          "all_scores": {
+            "axis_aligned": 0.765165,
+            "random_oblique": 0.767026,
+            "unsigned_spectral": 0.767621,
+            "signed_spectral": 0.767256,
+            "hard_threshold": 0.765229,
+            "ebm": 0.775217,
+            "random_forest": 0.771927,
+            "linear": 0.724362
+          }
+        },
+        "miniboone": {
+          "winner": "random_forest",
+          "score": 0.933231,
+          "all_scores": {
+            "axis_aligned": 0.876134,
+            "random_oblique": 0.886928,
+            "unsigned_spectral": 0.901833,
+            "signed_spectral": 0.891695,
+            "hard_threshold": 0.900161,
+            "ebm": 0.930094,
+            "random_forest": 0.933231,
+            "linear": 0.872312
+          }
+        }
+      },
+      "win_counts": {
+        "random_forest": 4,
+        "ebm": 4,
+        "axis_aligned": 0,
+        "random_oblique": 0,
+        "unsigned_spectral": 0,
+        "signed_spectral": 0,
+        "hard_threshold": 0,
+        "linear": 0
+      },
+      "feature_pattern": [
+        {
+          "dataset": "adult",
+          "winner": "ebm",
+          "n_features": 6,
+          "is_spectral_winner": false
+        },
+        {
+          "dataset": "electricity",
+          "winner": "random_forest",
+          "n_features": 7,
+          "is_spectral_winner": false
+        },
+        {
+          "dataset": "california_housing",
+          "winner": "ebm",
+          "n_features": 8,
+          "is_spectral_winner": false
+        },
+        {
+          "dataset": "credit",
+          "winner": "ebm",
+          "n_features": 10,
+          "is_spectral_winner": false
+        },
+        {
+          "dataset": "eye_movements",
+          "winner": "ebm",
+          "n_features": 20,
+          "is_spectral_winner": false
+        },
+        {
+          "dataset": "higgs_small",
+          "winner": "random_forest",
+          "n_features": 24,
+          "is_spectral_winner": false
+        },
+        {
+          "dataset": "miniboone",
+          "winner": "random_forest",
+          "n_features": 50,
+          "is_spectral_winner": false
+        },
+        {
+          "dataset": "jannis",
+          "winner": "random_forest",
+          "n_features": 54,
+          "is_spectral_winner": false
+        }
+      ],
+      "n_spectral_wins_total": 0,
+      "n_spectral_wins_high_dim": 0,
+      "n_high_dim_datasets": 4
+    },
+    "rankings": {
+      "all_8_datasets": {
+        "avg_ranks": {
+          "axis_aligned": 6.25,
+          "random_oblique": 5.0,
+          "unsigned_spectral": 4.375,
+          "signed_spectral": 4.625,
+          "hard_threshold": 4.75,
+          "ebm": 1.5,
+          "random_forest": 1.625,
+          "linear": 7.875
+        },
+        "ranking": [
+          "ebm",
+          "random_forest",
+          "unsigned_spectral",
+          "signed_spectral",
+          "hard_threshold",
+          "random_oblique",
+          "axis_aligned",
+          "linear"
+        ]
+      },
+      "classification_7_datasets": {
+        "avg_ranks": {
+          "axis_aligned": 6.1429,
+          "random_oblique": 5.2857,
+          "unsigned_spectral": 4.4286,
+          "signed_spectral": 4.4286,
+          "hard_threshold": 4.7143,
+          "ebm": 1.5714,
+          "random_forest": 1.5714,
+          "linear": 7.8571
+        },
+        "ranking": [
+          "ebm",
+          "random_forest",
+          "unsigned_spectral",
+          "signed_spectral",
+          "hard_threshold",
+          "random_oblique",
+          "axis_aligned",
+          "linear"
+        ]
+      }
+    },
+    "improvement_analysis": {
+      "electricity_unsigned_spectral_vs_ebm": {
+        "absolute_diff": -0.052971,
+        "percent_improvement": -6.2753
+      },
+      "electricity_unsigned_spectral_vs_random_forest": {
+        "absolute_diff": -0.092817,
+        "percent_improvement": -10.4999
+      },
+      "electricity_unsigned_spectral_vs_linear": {
+        "absolute_diff": 0.051125,
+        "percent_improvement": 6.9085
+      },
+      "adult_unsigned_spectral_vs_ebm": {
+        "absolute_diff": -0.012136,
+        "percent_improvement": -1.6979
+      },
+      "adult_unsigned_spectral_vs_random_forest": {
+        "absolute_diff": -0.003621,
+        "percent_improvement": -0.5127
+      },
+      "adult_unsigned_spectral_vs_linear": {
+        "absolute_diff": 0.031043,
+        "percent_improvement": 4.6225
+      },
+      "california_housing_unsigned_spectral_vs_ebm": {
+        "absolute_diff": -0.145344,
+        "percent_improvement": -17.3928
+      },
+      "california_housing_unsigned_spectral_vs_random_forest": {
+        "absolute_diff": -0.119258,
+        "percent_improvement": -14.7311
+      },
+      "california_housing_unsigned_spectral_vs_linear": {
+        "absolute_diff": 0.088931,
+        "percent_improvement": 14.7878
+      },
+      "jannis_unsigned_spectral_vs_ebm": {
+        "absolute_diff": -0.037409,
+        "percent_improvement": -4.8483
+      },
+      "jannis_unsigned_spectral_vs_random_forest": {
+        "absolute_diff": -0.050087,
+        "percent_improvement": -6.3865
+      },
+      "jannis_unsigned_spectral_vs_linear": {
+        "absolute_diff": 0.005262,
+        "percent_improvement": 0.7219
+      },
+      "higgs_small_unsigned_spectral_vs_ebm": {
+        "absolute_diff": -0.039409,
+        "percent_improvement": -5.5115
+      },
+      "higgs_small_unsigned_spectral_vs_random_forest": {
+        "absolute_diff": -0.043009,
+        "percent_improvement": -5.9849
+      },
+      "higgs_small_unsigned_spectral_vs_linear": {
+        "absolute_diff": 0.042386,
+        "percent_improvement": 6.6937
+      },
+      "eye_movements_unsigned_spectral_vs_ebm": {
+        "absolute_diff": -0.068726,
+        "percent_improvement": -10.7144
+      },
+      "eye_movements_unsigned_spectral_vs_random_forest": {
+        "absolute_diff": -0.064387,
+        "percent_improvement": -10.1064
+      },
+      "eye_movements_unsigned_spectral_vs_linear": {
+        "absolute_diff": 0.012371,
+        "percent_improvement": 2.2077
+      },
+      "credit_unsigned_spectral_vs_ebm": {
+        "absolute_diff": -0.007596,
+        "percent_improvement": -0.9799
+      },
+      "credit_unsigned_spectral_vs_random_forest": {
+        "absolute_diff": -0.004306,
+        "percent_improvement": -0.5578
+      },
+      "credit_unsigned_spectral_vs_linear": {
+        "absolute_diff": 0.043259,
+        "percent_improvement": 5.9721
+      },
+      "miniboone_unsigned_spectral_vs_ebm": {
+        "absolute_diff": -0.028261,
+        "percent_improvement": -3.0385
+      },
+      "miniboone_unsigned_spectral_vs_random_forest": {
+        "absolute_diff": -0.031398,
+        "percent_improvement": -3.3645
+      },
+      "miniboone_unsigned_spectral_vs_linear": {
+        "absolute_diff": 0.029521,
+        "percent_improvement": 3.3842
+      }
+    },
+    "top3_counts": {
+      "axis_aligned": 1,
+      "random_oblique": 2,
+      "unsigned_spectral": 3,
+      "signed_spectral": 1,
+      "hard_threshold": 1,
+      "ebm": 8,
+      "random_forest": 8,
+      "linear": 0
+    },
+    "clustering_info": {
+      "adult": {
+        "unsigned_spectral": {
+          "k": 4,
+          "module_sizes": [
+            3
+          ]
+        },
+        "signed_spectral": {
+          "k": 3,
+          "module_sizes": [
+            3,
+            2
+          ],
+          "frustration_index": -0.0
+        },
+        "hard_threshold": {
+          "k": 5,
+          "module_sizes": [
+            2
+          ]
+        },
+        "coi_time_s": 0.04,
+        "coi_subsample_n": 20000,
+        "n_valid_features": 6,
+        "n_positive_coi_pairs": 3,
+        "n_negative_coi_pairs": 3
+      },
+      "electricity": {
+        "unsigned_spectral": {
+          "k": 5,
+          "module_sizes": [
+            2,
+            2
+          ]
+        },
+        "signed_spectral": {
+          "k": 6,
+          "module_sizes": [
+            2
+          ],
+          "frustration_index": 0.00824
+        },
+        "hard_threshold": {
+          "k": 4,
+          "module_sizes": [
+            3,
+            2
+          ]
+        },
+        "coi_time_s": 0.03,
+        "coi_subsample_n": 20000,
+        "n_valid_features": 7,
+        "n_positive_coi_pairs": 12,
+        "n_negative_coi_pairs": 9
+      },
+      "eye_movements": {
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            12,
+            8
+          ]
+        },
+        "signed_spectral": {
+          "k": 2,
+          "module_sizes": [
+            10,
+            10
+          ],
+          "frustration_index": 0.0362
+        },
+        "hard_threshold": {
+          "k": 7,
+          "module_sizes": [
+            14
+          ]
+        },
+        "coi_time_s": 0.12,
+        "coi_subsample_n": 7608,
+        "n_valid_features": 20,
+        "n_positive_coi_pairs": 0,
+        "n_negative_coi_pairs": 190
+      },
+      "credit": {
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            5,
+            5
+          ]
+        },
+        "signed_spectral": {
+          "k": 9,
+          "module_sizes": [
+            2
+          ],
+          "frustration_index": 0.008032
+        },
+        "hard_threshold": {
+          "k": 7,
+          "module_sizes": [
+            4
+          ]
+        },
+        "coi_time_s": 0.05,
+        "coi_subsample_n": 16714,
+        "n_valid_features": 10,
+        "n_positive_coi_pairs": 30,
+        "n_negative_coi_pairs": 15
+      },
+      "california_housing": {
+        "unsigned_spectral": {
+          "k": 6,
+          "module_sizes": [
+            2,
+            2
+          ]
+        },
+        "signed_spectral": {
+          "k": 7,
+          "module_sizes": [
+            2
+          ],
+          "frustration_index": 0.154531
+        },
+        "hard_threshold": {
+          "k": 6,
+          "module_sizes": [
+            3
+          ]
+        },
+        "coi_time_s": 0.05,
+        "coi_subsample_n": 20000,
+        "n_valid_features": 8,
+        "n_positive_coi_pairs": 0,
+        "n_negative_coi_pairs": 28
+      },
+      "higgs_small": {
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            14,
+            10
+          ]
+        },
+        "signed_spectral": {
+          "k": 2,
+          "module_sizes": [
+            12,
+            12
+          ],
+          "frustration_index": 0.045187
+        },
+        "hard_threshold": {
+          "k": 11,
+          "module_sizes": [
+            11,
+            3,
+            2
+          ]
+        },
+        "coi_time_s": 0.37,
+        "coi_subsample_n": 20000,
+        "n_valid_features": 24,
+        "n_positive_coi_pairs": 3,
+        "n_negative_coi_pairs": 273
+      },
+      "jannis": {
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            44,
+            10
+          ]
+        },
+        "signed_spectral": {
+          "k": 4,
+          "module_sizes": [
+            9,
+            14,
+            18,
+            13
+          ],
+          "frustration_index": 0.077807
+        },
+        "hard_threshold": {
+          "k": 28,
+          "module_sizes": [
+            27
+          ]
+        },
+        "coi_time_s": 1.24,
+        "coi_subsample_n": 20000,
+        "n_valid_features": 54,
+        "n_positive_coi_pairs": 138,
+        "n_negative_coi_pairs": 1293
+      },
+      "miniboone": {
+        "unsigned_spectral": {
+          "k": 2,
+          "module_sizes": [
+            28,
+            22
+          ]
+        },
+        "signed_spectral": {
+          "k": 4,
+          "module_sizes": [
+            13,
+            11,
+            12,
+            14
+          ],
+          "frustration_index": 0.208689
+        },
+        "hard_threshold": {
+          "k": 19,
+          "module_sizes": [
+            30,
+            3
+          ]
+        },
+        "coi_time_s": 1.06,
+        "coi_subsample_n": 20000,
+        "n_valid_features": 50,
+        "n_positive_coi_pairs": 669,
+        "n_negative_coi_pairs": 556
+      }
+    }
+  },
+  "metrics_agg": {
+    "friedman_chi2_all_8": 42.75,
+    "friedman_pvalue_all_8": 3.727639474643811e-07,
+    "nemenyi_cd_all_8": 3.7121,
+    "friedman_chi2_classif_7": 37.095238,
+    "friedman_pvalue_classif_7": 4.4997760782980035e-06,
+    "nemenyi_cd_classif_7": 3.9684,
+    "rank_all_axis_aligned": 6.25,
+    "rank_all_random_oblique": 5.0,
+    "rank_all_unsigned_spectral": 4.375,
+    "rank_all_signed_spectral": 4.625,
+    "rank_all_hard_threshold": 4.75,
+    "rank_all_ebm": 1.5,
+    "rank_all_random_forest": 1.625,
+    "rank_all_linear": 7.875,
+    "rank_classif_axis_aligned": 6.1429,
+    "rank_classif_random_oblique": 5.2857,
+    "rank_classif_unsigned_spectral": 4.4286,
+    "rank_classif_signed_spectral": 4.4286,
+    "rank_classif_hard_threshold": 4.7143,
+    "rank_classif_ebm": 1.5714,
+    "rank_classif_random_forest": 1.5714,
+    "rank_classif_linear": 7.8571,
+    "bayes_unsigned_spectral_vs_ebm_p_left": 0.0,
+    "bayes_unsigned_spectral_vs_ebm_p_rope": 0.0024,
+    "bayes_unsigned_spectral_vs_ebm_p_right": 0.9976,
+    "bayes_unsigned_spectral_vs_random_forest_p_left": 0.0,
+    "bayes_unsigned_spectral_vs_random_forest_p_rope": 0.00592,
+    "bayes_unsigned_spectral_vs_random_forest_p_right": 0.99408,
+    "bayes_unsigned_spectral_vs_random_oblique_p_left": 0.0043,
+    "bayes_unsigned_spectral_vs_random_oblique_p_rope": 0.9957,
+    "bayes_unsigned_spectral_vs_random_oblique_p_right": 0.0,
+    "bayes_unsigned_spectral_vs_axis_aligned_p_left": 0.53672,
+    "bayes_unsigned_spectral_vs_axis_aligned_p_rope": 0.46294,
+    "bayes_unsigned_spectral_vs_axis_aligned_p_right": 0.00034,
+    "cohens_d_axis_aligned_vs_ebm": -3.6692,
+    "cohens_d_axis_aligned_vs_random_forest": -3.1774,
+    "cohens_d_axis_aligned_vs_linear": 1.484,
+    "cohens_d_random_oblique_vs_ebm": -2.7195,
+    "cohens_d_random_oblique_vs_random_forest": -2.3886,
+    "cohens_d_random_oblique_vs_linear": 1.9911,
+    "cohens_d_unsigned_spectral_vs_ebm": -2.6157,
+    "cohens_d_unsigned_spectral_vs_random_forest": -2.1625,
+    "cohens_d_unsigned_spectral_vs_linear": 3.249,
+    "cohens_d_signed_spectral_vs_ebm": -3.2773,
+    "cohens_d_signed_spectral_vs_random_forest": -2.7249,
+    "cohens_d_signed_spectral_vs_linear": 2.6144,
+    "cohens_d_hard_threshold_vs_ebm": -3.0892,
+    "cohens_d_hard_threshold_vs_random_forest": -2.563,
+    "cohens_d_hard_threshold_vs_linear": 2.8093,
+    "primary_electricity_axis_aligned": 0.793212,
+    "primary_std_electricity_axis_aligned": 0.001515,
+    "auc_electricity_axis_aligned": 0.862021,
+    "primary_electricity_random_oblique": 0.780996,
+    "primary_std_electricity_random_oblique": 0.006203,
+    "auc_electricity_random_oblique": 0.852347,
+    "primary_electricity_unsigned_spectral": 0.791157,
+    "primary_std_electricity_unsigned_spectral": 0.00494,
+    "auc_electricity_unsigned_spectral": 0.860924,
+    "primary_electricity_signed_spectral": 0.794277,
+    "primary_std_electricity_signed_spectral": 0.002183,
+    "auc_electricity_signed_spectral": 0.860691,
+    "primary_electricity_hard_threshold": 0.790039,
+    "primary_std_electricity_hard_threshold": 0.003477,
+    "auc_electricity_hard_threshold": 0.861187,
+    "primary_electricity_ebm": 0.844128,
+    "primary_std_electricity_ebm": 0.003181,
+    "auc_electricity_ebm": 0.927382,
+    "primary_electricity_random_forest": 0.883974,
+    "primary_std_electricity_random_forest": 0.004269,
+    "auc_electricity_random_forest": 0.955849,
+    "primary_electricity_linear": 0.740032,
+    "primary_std_electricity_linear": 0.001959,
+    "auc_electricity_linear": 0.818987,
+    "primary_adult_axis_aligned": 0.677758,
+    "primary_std_adult_axis_aligned": 0.020582,
+    "auc_adult_axis_aligned": 0.827257,
+    "primary_adult_random_oblique": 0.707565,
+    "primary_std_adult_random_oblique": 0.006786,
+    "auc_adult_random_oblique": 0.838537,
+    "primary_adult_unsigned_spectral": 0.702612,
+    "primary_std_adult_unsigned_spectral": 0.009237,
+    "auc_adult_unsigned_spectral": 0.815327,
+    "primary_adult_signed_spectral": 0.702391,
+    "primary_std_adult_signed_spectral": 0.009533,
+    "auc_adult_signed_spectral": 0.815445,
+    "primary_adult_hard_threshold": 0.702933,
+    "primary_std_adult_hard_threshold": 0.011137,
+    "auc_adult_hard_threshold": 0.776676,
+    "primary_adult_ebm": 0.714748,
+    "primary_std_adult_ebm": 0.005765,
+    "auc_adult_ebm": 0.873943,
+    "primary_adult_random_forest": 0.706233,
+    "primary_std_adult_random_forest": 0.00639,
+    "auc_adult_random_forest": 0.823307,
+    "primary_adult_linear": 0.671569,
+    "primary_std_adult_linear": 0.0067,
+    "auc_adult_linear": 0.831613,
+    "primary_california_housing_axis_aligned": 0.60874,
+    "primary_std_california_housing_axis_aligned": 0.014573,
+    "primary_california_housing_random_oblique": 0.690842,
+    "primary_std_california_housing_random_oblique": 0.014489,
+    "primary_california_housing_unsigned_spectral": 0.690312,
+    "primary_std_california_housing_unsigned_spectral": 0.018707,
+    "primary_california_housing_signed_spectral": 0.609246,
+    "primary_std_california_housing_signed_spectral": 0.014287,
+    "primary_california_housing_hard_threshold": 0.680734,
+    "primary_std_california_housing_hard_threshold": 0.013281,
+    "primary_california_housing_ebm": 0.835656,
+    "primary_std_california_housing_ebm": 0.010454,
+    "primary_california_housing_random_forest": 0.809571,
+    "primary_std_california_housing_random_forest": 0.007642,
+    "primary_california_housing_linear": 0.601381,
+    "primary_std_california_housing_linear": 0.019007,
+    "primary_jannis_axis_aligned": 0.727041,
+    "primary_std_jannis_axis_aligned": 0.005173,
+    "auc_jannis_axis_aligned": 0.802138,
+    "primary_jannis_random_oblique": 0.733675,
+    "primary_std_jannis_random_oblique": 0.006973,
+    "auc_jannis_random_oblique": 0.806465,
+    "primary_jannis_unsigned_spectral": 0.734179,
+    "primary_std_jannis_unsigned_spectral": 0.004478,
+    "auc_jannis_unsigned_spectral": 0.813177,
+    "primary_jannis_signed_spectral": 0.741351,
+    "primary_std_jannis_signed_spectral": 0.009091,
+    "auc_jannis_signed_spectral": 0.814063,
+    "primary_jannis_hard_threshold": 0.74215,
+    "primary_std_jannis_hard_threshold": 0.005629,
+    "auc_jannis_hard_threshold": 0.822453,
+    "primary_jannis_ebm": 0.771587,
+    "primary_std_jannis_ebm": 0.003694,
+    "auc_jannis_ebm": 0.848177,
+    "primary_jannis_random_forest": 0.784265,
+    "primary_std_jannis_random_forest": 0.005948,
+    "auc_jannis_random_forest": 0.861505,
+    "primary_jannis_linear": 0.728916,
+    "primary_std_jannis_linear": 0.005621,
+    "auc_jannis_linear": 0.805596,
+    "primary_higgs_small_axis_aligned": 0.668995,
+    "primary_std_higgs_small_axis_aligned": 0.004158,
+    "auc_higgs_small_axis_aligned": 0.725924,
+    "primary_higgs_small_random_oblique": 0.670219,
+    "primary_std_higgs_small_random_oblique": 0.003643,
+    "auc_higgs_small_random_oblique": 0.730229,
+    "primary_higgs_small_unsigned_spectral": 0.675614,
+    "primary_std_higgs_small_unsigned_spectral": 0.002468,
+    "auc_higgs_small_unsigned_spectral": 0.737547,
+    "primary_higgs_small_signed_spectral": 0.671392,
+    "primary_std_higgs_small_signed_spectral": 0.002264,
+    "auc_higgs_small_signed_spectral": 0.735626,
+    "primary_higgs_small_hard_threshold": 0.674044,
+    "primary_std_higgs_small_hard_threshold": 0.002591,
+    "auc_higgs_small_hard_threshold": 0.739032,
+    "primary_higgs_small_ebm": 0.715023,
+    "primary_std_higgs_small_ebm": 0.001139,
+    "auc_higgs_small_ebm": 0.793182,
+    "primary_higgs_small_random_forest": 0.718623,
+    "primary_std_higgs_small_random_forest": 0.000933,
+    "auc_higgs_small_random_forest": 0.795169,
+    "primary_higgs_small_linear": 0.633228,
+    "primary_std_higgs_small_linear": 0.002745,
+    "auc_higgs_small_linear": 0.679708,
+    "primary_eye_movements_axis_aligned": 0.58899,
+    "primary_std_eye_movements_axis_aligned": 0.008541,
+    "auc_eye_movements_axis_aligned": 0.613465,
+    "primary_eye_movements_random_oblique": 0.579928,
+    "primary_std_eye_movements_random_oblique": 0.030218,
+    "auc_eye_movements_random_oblique": 0.602936,
+    "primary_eye_movements_unsigned_spectral": 0.572708,
+    "primary_std_eye_movements_unsigned_spectral": 0.016528,
+    "auc_eye_movements_unsigned_spectral": 0.602728,
+    "primary_eye_movements_signed_spectral": 0.581502,
+    "primary_std_eye_movements_signed_spectral": 0.014809,
+    "auc_eye_movements_signed_spectral": 0.617619,
+    "primary_eye_movements_hard_threshold": 0.576283,
+    "primary_std_eye_movements_hard_threshold": 0.010617,
+    "auc_eye_movements_hard_threshold": 0.601922,
+    "primary_eye_movements_ebm": 0.641434,
+    "primary_std_eye_movements_ebm": 0.017766,
+    "auc_eye_movements_ebm": 0.700406,
+    "primary_eye_movements_random_forest": 0.637095,
+    "primary_std_eye_movements_random_forest": 0.019854,
+    "auc_eye_movements_random_forest": 0.69167,
+    "primary_eye_movements_linear": 0.560337,
+    "primary_std_eye_movements_linear": 0.017925,
+    "auc_eye_movements_linear": 0.584917,
+    "primary_credit_axis_aligned": 0.765165,
+    "primary_std_credit_axis_aligned": 0.003875,
+    "auc_credit_axis_aligned": 0.838351,
+    "primary_credit_random_oblique": 0.767026,
+    "primary_std_credit_random_oblique": 0.005381,
+    "auc_credit_random_oblique": 0.842139,
+    "primary_credit_unsigned_spectral": 0.767621,
+    "primary_std_credit_unsigned_spectral": 0.00587,
+    "auc_credit_unsigned_spectral": 0.840682,
+    "primary_credit_signed_spectral": 0.767256,
+    "primary_std_credit_signed_spectral": 0.004946,
+    "auc_credit_signed_spectral": 0.838499,
+    "primary_credit_hard_threshold": 0.765229,
+    "primary_std_credit_hard_threshold": 0.004492,
+    "auc_credit_hard_threshold": 0.839885,
+    "primary_credit_ebm": 0.775217,
+    "primary_std_credit_ebm": 0.002759,
+    "auc_credit_ebm": 0.855972,
+    "primary_credit_random_forest": 0.771927,
+    "primary_std_credit_random_forest": 0.007624,
+    "auc_credit_random_forest": 0.844967,
+    "primary_credit_linear": 0.724362,
+    "primary_std_credit_linear": 0.014464,
+    "auc_credit_linear": 0.794695,
+    "primary_miniboone_axis_aligned": 0.876134,
+    "primary_std_miniboone_axis_aligned": 0.001607,
+    "auc_miniboone_axis_aligned": 0.936471,
+    "primary_miniboone_random_oblique": 0.886928,
+    "primary_std_miniboone_random_oblique": 0.005478,
+    "auc_miniboone_random_oblique": 0.938684,
+    "primary_miniboone_unsigned_spectral": 0.901833,
+    "primary_std_miniboone_unsigned_spectral": 0.00253,
+    "auc_miniboone_unsigned_spectral": 0.954578,
+    "primary_miniboone_signed_spectral": 0.891695,
+    "primary_std_miniboone_signed_spectral": 0.002794,
+    "auc_miniboone_signed_spectral": 0.943396,
+    "primary_miniboone_hard_threshold": 0.900161,
+    "primary_std_miniboone_hard_threshold": 0.003121,
+    "auc_miniboone_hard_threshold": 0.953779,
+    "primary_miniboone_ebm": 0.930094,
+    "primary_std_miniboone_ebm": 0.003545,
+    "auc_miniboone_ebm": 0.97777,
+    "primary_miniboone_random_forest": 0.933231,
+    "primary_std_miniboone_random_forest": 0.003903,
+    "auc_miniboone_random_forest": 0.979465,
+    "primary_miniboone_linear": 0.872312,
+    "primary_std_miniboone_linear": 0.003825,
+    "auc_miniboone_linear": 0.94043,
+    "n_wins_random_forest": 4,
+    "n_wins_ebm": 4,
+    "n_wins_axis_aligned": 0,
+    "n_wins_random_oblique": 0,
+    "n_wins_unsigned_spectral": 0,
+    "n_wins_signed_spectral": 0,
+    "n_wins_hard_threshold": 0,
+    "n_wins_linear": 0,
+    "n_top3_axis_aligned": 1,
+    "n_top3_random_oblique": 2,
+    "n_top3_unsigned_spectral": 3,
+    "n_top3_signed_spectral": 1,
+    "n_top3_hard_threshold": 1,
+    "n_top3_ebm": 8,
+    "n_top3_random_forest": 8,
+    "n_top3_linear": 0
+  },
+  "datasets": [
+    {
+      "dataset": "electricity",
+      "examples": [
+        {
+          "input": "{\"date\":0.898987,\"period\":0.957447,\"nswprice\":0.068632,\"nswdemand\":0.568283,\"vicprice\":0.004456,\"vicdemand\":0.456499,\"transfer\":0.644737}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "date",
+            "period",
+            "nswprice",
+            "nswdemand",
+            "vicprice",
+            "vicdemand",
+            "transfer"
+          ],
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 0,
+          "metadata_n_classes": 2,
+          "predict_ebm": "0",
+          "predict_random_forest": "1",
+          "predict_linear": "1",
+          "predict_axis_aligned": "0",
+          "predict_random_oblique": "0",
+          "predict_unsigned_spectral": "0",
+          "predict_signed_spectral": "0",
+          "predict_hard_threshold": "0",
+          "eval_correct_ebm": 1,
+          "eval_correct_random_forest": 0,
+          "eval_correct_linear": 0,
+          "eval_correct_axis_aligned": 1,
+          "eval_correct_random_oblique": 1,
+          "eval_correct_unsigned_spectral": 1,
+          "eval_correct_signed_spectral": 1,
+          "eval_correct_hard_threshold": 1
+        },
+        {
+          "input": "{\"date\":0.9158,\"period\":0.659574,\"nswprice\":0.053441,\"nswdemand\":0.341119,\"vicprice\":0.003671,\"vicdemand\":0.308907,\"transfer\":0.363596}",
+          "output": "0",
+          "metadata_fold": 4,
+          "metadata_feature_names": [
+            "date",
+            "period",
+            "nswprice",
+            "nswdemand",
+            "vicprice",
+            "vicdemand",
+            "transfer"
+          ],
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 19,
+          "metadata_n_classes": 2,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0",
+          "eval_correct_ebm": 1,
+          "eval_correct_random_forest": 1,
+          "eval_correct_linear": 1
+        },
+        {
+          "input": "{\"date\":0.885403,\"period\":0.617021,\"nswprice\":0.029242,\"nswdemand\":0.535109,\"vicprice\":0.001992,\"vicdemand\":0.516054,\"transfer\":0.435526}",
+          "output": "0",
+          "metadata_fold": 0,
+          "metadata_feature_names": [
+            "date",
+            "period",
+            "nswprice",
+            "nswdemand",
+            "vicprice",
+            "vicdemand",
+            "transfer"
+          ],
+          "metadata_task_type": "classification",
+          "metadata_source": "hf_inria-soda/tabular-benchmark_clf_num_electricity",
+          "metadata_row_index": 38,
+          "metadata_n_classes": 2,
+          "predict_ebm": "0",
+          "predict_random_forest": "0",
+          "predict_linear": "0",
+          "eval_correct_ebm": 1,
+          "eval_correct_random_forest": 1,
+          "eval_correct_linear": 1
+        }
+      ]
+    }
+  ]
+}

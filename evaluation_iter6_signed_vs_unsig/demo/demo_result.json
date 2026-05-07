@@ -1,0 +1,13 @@
+{
+  "id": "eval_id3_it6__opus",
+  "type": "code",
+  "title": "Signed vs Unsigned Spectral Ablation: Statistical Analysis with Root Cause Synthesis",
+  "summary": "Demo notebook for the signed vs unsigned spectral ablation evaluation. Loads pre-computed results from 3 experiments (real-data 8-dataset benchmark, synthetic 6-variant benchmark, CoI estimator bias diagnostics) and demonstrates the statistical analysis pipeline: Hedges' g effect sizes, Wilcoxon signed-rank tests, Holm-Bonferroni correction, win/loss/tie analysis, causal chain construction, and frustration index correlation. Produces a 3-panel visualization comparing per-dataset effect sizes, synthetic benchmark accuracy, and clustering ARI (unsigned spectral vs SPONGE). Uses 9 examples across 3 dataset groups from the mini demo data.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_6/gen_art/eval_id3_it6__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id3_it6__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id3_it6__opus/eval_code_demo.ipynb"
+}

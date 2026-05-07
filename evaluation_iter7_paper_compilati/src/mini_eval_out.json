@@ -1,0 +1,511 @@
+{
+  "metadata": {
+    "evaluation_name": "paper_compilation_all_statistics",
+    "description": "Complete statistical analysis and paper compilation for Spectral CoI Feature Graphs",
+    "paper_title": "Spectral Decomposition of Co-Information Feature Graphs for Interpretable Oblique Decision Trees",
+    "output_files": [
+      "paper.pdf",
+      "paper.tex",
+      "references.bib"
+    ],
+    "friedman_chi2": 37.095238095238074,
+    "friedman_p": 4.4997760782980035e-06,
+    "wilcoxon_arity_p": 0.21875,
+    "wilcoxon_arity_cohens_d": -0.6651829555257596,
+    "frustration_spearman_rho": -0.1076923076923077,
+    "frustration_spearman_p": 0.7140308087262492,
+    "per_method_mean_balanced_accuracy": {
+      "axis_aligned": 0.7281849142857144,
+      "random_oblique": 0.7323337142857144,
+      "unsigned_spectral": 0.7351033714285714,
+      "signed_spectral": 0.7356948857142857,
+      "hard_threshold": 0.7358342571428571,
+      "ebm": 0.7703187003176468,
+      "random_forest": 0.7764783919612022,
+      "linear": 0.704393668966922
+    },
+    "per_method_mean_arity": {
+      "axis_aligned": 1.0,
+      "random_oblique": 3.244285714285714,
+      "unsigned_spectral": 10.937142857142856,
+      "signed_spectral": 6.641428571428572,
+      "hard_threshold": 9.922857142857143
+    },
+    "signed_vs_unsigned_pooled_hedges_g": -0.006189153260605072,
+    "all_tables": {
+      "table1_description": "Main results: 8 methods x 8 datasets balanced accuracy",
+      "table2_description": "Interpretability metrics per FIGS method",
+      "table3_description": "Hedges g signed vs unsigned per dataset",
+      "table4_description": "Module recovery Jaccard on synthetic"
+    }
+  },
+  "metrics_agg": {
+    "friedman_chi2": 37.095238,
+    "friedman_p_value": 4e-06,
+    "wilcoxon_arity_p_value": 0.21875,
+    "arity_cohens_d": -0.665183,
+    "frustration_spearman_rho": -0.107692,
+    "frustration_spearman_p": 0.714031,
+    "mean_bacc_unsigned_spectral": 0.735103,
+    "mean_bacc_random_oblique": 0.732334,
+    "mean_bacc_axis_aligned": 0.728185,
+    "mean_bacc_ebm": 0.770319,
+    "mean_bacc_random_forest": 0.776478,
+    "mean_bacc_linear": 0.704394,
+    "n_real_datasets": 7,
+    "n_synthetic_datasets": 6,
+    "n_methods_compared": 8,
+    "paper_compiled": 1,
+    "signed_vs_unsigned_pooled_hedges_g": -0.006189
+  },
+  "datasets": [
+    {
+      "dataset": "adult",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"adult\", \"method\": \"axis_aligned\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.677758, \"balanced_accuracy_std\": 0.020582, \"avg_split_arity_mean\": 1.0}",
+          "metadata_dataset": "adult",
+          "metadata_method": "axis_aligned",
+          "eval_balanced_accuracy_mean": 0.677758,
+          "eval_avg_split_arity": 1.0,
+          "predict_best_max_splits": "20"
+        },
+        {
+          "input": "{\"dataset\": \"adult\", \"method\": \"random_oblique\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.707565, \"balanced_accuracy_std\": 0.006786, \"avg_split_arity_mean\": 2.9}",
+          "metadata_dataset": "adult",
+          "metadata_method": "random_oblique",
+          "eval_balanced_accuracy_mean": 0.707565,
+          "eval_avg_split_arity": 2.9,
+          "predict_best_max_splits": "20"
+        },
+        {
+          "input": "{\"dataset\": \"adult\", \"method\": \"unsigned_spectral\", \"best_max_splits\": 10}",
+          "output": "{\"balanced_accuracy_mean\": 0.702612, \"balanced_accuracy_std\": 0.009237, \"avg_split_arity_mean\": 1.76}",
+          "metadata_dataset": "adult",
+          "metadata_method": "unsigned_spectral",
+          "eval_balanced_accuracy_mean": 0.702612,
+          "eval_avg_split_arity": 1.76,
+          "predict_best_max_splits": "10"
+        }
+      ]
+    },
+    {
+      "dataset": "electricity",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"electricity\", \"method\": \"axis_aligned\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.793212, \"balanced_accuracy_std\": 0.001515, \"avg_split_arity_mean\": 1.0}",
+          "metadata_dataset": "electricity",
+          "metadata_method": "axis_aligned",
+          "eval_balanced_accuracy_mean": 0.793212,
+          "eval_avg_split_arity": 1.0,
+          "predict_best_max_splits": "20"
+        },
+        {
+          "input": "{\"dataset\": \"electricity\", \"method\": \"random_oblique\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.780996, \"balanced_accuracy_std\": 0.006203, \"avg_split_arity_mean\": 2.47}",
+          "metadata_dataset": "electricity",
+          "metadata_method": "random_oblique",
+          "eval_balanced_accuracy_mean": 0.780996,
+          "eval_avg_split_arity": 2.47,
+          "predict_best_max_splits": "20"
+        },
+        {
+          "input": "{\"dataset\": \"electricity\", \"method\": \"unsigned_spectral\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.791157, \"balanced_accuracy_std\": 0.00494, \"avg_split_arity_mean\": 1.4}",
+          "metadata_dataset": "electricity",
+          "metadata_method": "unsigned_spectral",
+          "eval_balanced_accuracy_mean": 0.791157,
+          "eval_avg_split_arity": 1.4,
+          "predict_best_max_splits": "20"
+        }
+      ]
+    },
+    {
+      "dataset": "jannis",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"jannis\", \"method\": \"axis_aligned\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.727041, \"balanced_accuracy_std\": 0.005173, \"avg_split_arity_mean\": 1.0}",
+          "metadata_dataset": "jannis",
+          "metadata_method": "axis_aligned",
+          "eval_balanced_accuracy_mean": 0.727041,
+          "eval_avg_split_arity": 1.0,
+          "predict_best_max_splits": "20"
+        },
+        {
+          "input": "{\"dataset\": \"jannis\", \"method\": \"random_oblique\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.733675, \"balanced_accuracy_std\": 0.006973, \"avg_split_arity_mean\": 3.4}",
+          "metadata_dataset": "jannis",
+          "metadata_method": "random_oblique",
+          "eval_balanced_accuracy_mean": 0.733675,
+          "eval_avg_split_arity": 3.4,
+          "predict_best_max_splits": "20"
+        },
+        {
+          "input": "{\"dataset\": \"jannis\", \"method\": \"unsigned_spectral\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.734179, \"balanced_accuracy_std\": 0.004478, \"avg_split_arity_mean\": 31.24}",
+          "metadata_dataset": "jannis",
+          "metadata_method": "unsigned_spectral",
+          "eval_balanced_accuracy_mean": 0.734179,
+          "eval_avg_split_arity": 31.24,
+          "predict_best_max_splits": "20"
+        }
+      ]
+    },
+    {
+      "dataset": "higgs_small",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"higgs_small\", \"method\": \"axis_aligned\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.668995, \"balanced_accuracy_std\": 0.004158, \"avg_split_arity_mean\": 1.0}",
+          "metadata_dataset": "higgs_small",
+          "metadata_method": "axis_aligned",
+          "eval_balanced_accuracy_mean": 0.668995,
+          "eval_avg_split_arity": 1.0,
+          "predict_best_max_splits": "20"
+        },
+        {
+          "input": "{\"dataset\": \"higgs_small\", \"method\": \"random_oblique\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.670219, \"balanced_accuracy_std\": 0.003643, \"avg_split_arity_mean\": 3.5}",
+          "metadata_dataset": "higgs_small",
+          "metadata_method": "random_oblique",
+          "eval_balanced_accuracy_mean": 0.670219,
+          "eval_avg_split_arity": 3.5,
+          "predict_best_max_splits": "20"
+        },
+        {
+          "input": "{\"dataset\": \"higgs_small\", \"method\": \"unsigned_spectral\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.675614, \"balanced_accuracy_std\": 0.002468, \"avg_split_arity_mean\": 6.98}",
+          "metadata_dataset": "higgs_small",
+          "metadata_method": "unsigned_spectral",
+          "eval_balanced_accuracy_mean": 0.675614,
+          "eval_avg_split_arity": 6.98,
+          "predict_best_max_splits": "20"
+        }
+      ]
+    },
+    {
+      "dataset": "eye_movements",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"eye_movements\", \"method\": \"axis_aligned\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.58899, \"balanced_accuracy_std\": 0.008541, \"avg_split_arity_mean\": 1.0}",
+          "metadata_dataset": "eye_movements",
+          "metadata_method": "axis_aligned",
+          "eval_balanced_accuracy_mean": 0.58899,
+          "eval_avg_split_arity": 1.0,
+          "predict_best_max_splits": "20"
+        },
+        {
+          "input": "{\"dataset\": \"eye_movements\", \"method\": \"random_oblique\", \"best_max_splits\": 5}",
+          "output": "{\"balanced_accuracy_mean\": 0.579928, \"balanced_accuracy_std\": 0.030218, \"avg_split_arity_mean\": 3.4}",
+          "metadata_dataset": "eye_movements",
+          "metadata_method": "random_oblique",
+          "eval_balanced_accuracy_mean": 0.579928,
+          "eval_avg_split_arity": 3.4,
+          "predict_best_max_splits": "5"
+        },
+        {
+          "input": "{\"dataset\": \"eye_movements\", \"method\": \"unsigned_spectral\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.572708, \"balanced_accuracy_std\": 0.016528, \"avg_split_arity_mean\": 8.59}",
+          "metadata_dataset": "eye_movements",
+          "metadata_method": "unsigned_spectral",
+          "eval_balanced_accuracy_mean": 0.572708,
+          "eval_avg_split_arity": 8.59,
+          "predict_best_max_splits": "20"
+        }
+      ]
+    },
+    {
+      "dataset": "credit",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"credit\", \"method\": \"axis_aligned\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.765165, \"balanced_accuracy_std\": 0.003875, \"avg_split_arity_mean\": 1.0}",
+          "metadata_dataset": "credit",
+          "metadata_method": "axis_aligned",
+          "eval_balanced_accuracy_mean": 0.765165,
+          "eval_avg_split_arity": 1.0,
+          "predict_best_max_splits": "20"
+        },
+        {
+          "input": "{\"dataset\": \"credit\", \"method\": \"random_oblique\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.767026, \"balanced_accuracy_std\": 0.005381, \"avg_split_arity_mean\": 3.54}",
+          "metadata_dataset": "credit",
+          "metadata_method": "random_oblique",
+          "eval_balanced_accuracy_mean": 0.767026,
+          "eval_avg_split_arity": 3.54,
+          "predict_best_max_splits": "20"
+        },
+        {
+          "input": "{\"dataset\": \"credit\", \"method\": \"unsigned_spectral\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.767621, \"balanced_accuracy_std\": 0.00587, \"avg_split_arity_mean\": 3.09}",
+          "metadata_dataset": "credit",
+          "metadata_method": "unsigned_spectral",
+          "eval_balanced_accuracy_mean": 0.767621,
+          "eval_avg_split_arity": 3.09,
+          "predict_best_max_splits": "20"
+        }
+      ]
+    },
+    {
+      "dataset": "miniboone",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"miniboone\", \"method\": \"axis_aligned\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.876134, \"balanced_accuracy_std\": 0.001607, \"avg_split_arity_mean\": 1.0}",
+          "metadata_dataset": "miniboone",
+          "metadata_method": "axis_aligned",
+          "eval_balanced_accuracy_mean": 0.876134,
+          "eval_avg_split_arity": 1.0,
+          "predict_best_max_splits": "20"
+        },
+        {
+          "input": "{\"dataset\": \"miniboone\", \"method\": \"random_oblique\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.886928, \"balanced_accuracy_std\": 0.005478, \"avg_split_arity_mean\": 3.5}",
+          "metadata_dataset": "miniboone",
+          "metadata_method": "random_oblique",
+          "eval_balanced_accuracy_mean": 0.886928,
+          "eval_avg_split_arity": 3.5,
+          "predict_best_max_splits": "20"
+        },
+        {
+          "input": "{\"dataset\": \"miniboone\", \"method\": \"unsigned_spectral\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.901833, \"balanced_accuracy_std\": 0.00253, \"avg_split_arity_mean\": 23.5}",
+          "metadata_dataset": "miniboone",
+          "metadata_method": "unsigned_spectral",
+          "eval_balanced_accuracy_mean": 0.901833,
+          "eval_avg_split_arity": 23.5,
+          "predict_best_max_splits": "20"
+        }
+      ]
+    },
+    {
+      "dataset": "california_housing",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"california_housing\", \"method\": \"axis_aligned\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.0, \"balanced_accuracy_std\": 0.0, \"avg_split_arity_mean\": 1.0}",
+          "metadata_dataset": "california_housing",
+          "metadata_method": "axis_aligned",
+          "eval_balanced_accuracy_mean": 0.0,
+          "eval_avg_split_arity": 1.0,
+          "predict_best_max_splits": "20"
+        },
+        {
+          "input": "{\"dataset\": \"california_housing\", \"method\": \"random_oblique\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.0, \"balanced_accuracy_std\": 0.0, \"avg_split_arity_mean\": 3.67}",
+          "metadata_dataset": "california_housing",
+          "metadata_method": "random_oblique",
+          "eval_balanced_accuracy_mean": 0.0,
+          "eval_avg_split_arity": 3.67,
+          "predict_best_max_splits": "20"
+        },
+        {
+          "input": "{\"dataset\": \"california_housing\", \"method\": \"unsigned_spectral\", \"best_max_splits\": 20}",
+          "output": "{\"balanced_accuracy_mean\": 0.0, \"balanced_accuracy_std\": 0.0, \"avg_split_arity_mean\": 1.77}",
+          "metadata_dataset": "california_housing",
+          "metadata_method": "unsigned_spectral",
+          "eval_balanced_accuracy_mean": 0.0,
+          "eval_avg_split_arity": 1.77,
+          "predict_best_max_splits": "20"
+        }
+      ]
+    },
+    {
+      "dataset": "easy_2mod_xor",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"easy_2mod_xor\", \"method\": \"axis_aligned\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.60466, \"balanced_accuracy_std\": 0.096714, \"module_recovery_ari\": 0.0, \"module_recovery_jaccard\": 0.0}",
+          "metadata_dataset": "easy_2mod_xor",
+          "metadata_method": "axis_aligned",
+          "eval_balanced_accuracy_mean": 0.60466,
+          "eval_module_recovery_ari": 0.0,
+          "predict_best_max_splits": "best"
+        },
+        {
+          "input": "{\"dataset\": \"easy_2mod_xor\", \"method\": \"random_oblique\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.73622, \"balanced_accuracy_std\": 0.022009, \"module_recovery_ari\": 0.0, \"module_recovery_jaccard\": 0.0}",
+          "metadata_dataset": "easy_2mod_xor",
+          "metadata_method": "random_oblique",
+          "eval_balanced_accuracy_mean": 0.73622,
+          "eval_module_recovery_ari": 0.0,
+          "predict_best_max_splits": "best"
+        },
+        {
+          "input": "{\"dataset\": \"easy_2mod_xor\", \"method\": \"unsigned_spectral\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.7283, \"balanced_accuracy_std\": 0.021757, \"module_recovery_ari\": 1.0, \"module_recovery_jaccard\": 0.0959}",
+          "metadata_dataset": "easy_2mod_xor",
+          "metadata_method": "unsigned_spectral",
+          "eval_balanced_accuracy_mean": 0.7283,
+          "eval_module_recovery_ari": 1.0,
+          "predict_best_max_splits": "best"
+        }
+      ]
+    },
+    {
+      "dataset": "medium_4mod_mixed",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"medium_4mod_mixed\", \"method\": \"axis_aligned\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.76458, \"balanced_accuracy_std\": 0.00894, \"module_recovery_ari\": 0.0, \"module_recovery_jaccard\": 0.0}",
+          "metadata_dataset": "medium_4mod_mixed",
+          "metadata_method": "axis_aligned",
+          "eval_balanced_accuracy_mean": 0.76458,
+          "eval_module_recovery_ari": 0.0,
+          "predict_best_max_splits": "best"
+        },
+        {
+          "input": "{\"dataset\": \"medium_4mod_mixed\", \"method\": \"random_oblique\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.75326, \"balanced_accuracy_std\": 0.008475, \"module_recovery_ari\": 0.0, \"module_recovery_jaccard\": 0.0}",
+          "metadata_dataset": "medium_4mod_mixed",
+          "metadata_method": "random_oblique",
+          "eval_balanced_accuracy_mean": 0.75326,
+          "eval_module_recovery_ari": 0.0,
+          "predict_best_max_splits": "best"
+        },
+        {
+          "input": "{\"dataset\": \"medium_4mod_mixed\", \"method\": \"unsigned_spectral\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.75762, \"balanced_accuracy_std\": 0.001794, \"module_recovery_ari\": 0.7468, \"module_recovery_jaccard\": 0.1281}",
+          "metadata_dataset": "medium_4mod_mixed",
+          "metadata_method": "unsigned_spectral",
+          "eval_balanced_accuracy_mean": 0.75762,
+          "eval_module_recovery_ari": 0.7468,
+          "predict_best_max_splits": "best"
+        }
+      ]
+    },
+    {
+      "dataset": "overlapping_modules",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"overlapping_modules\", \"method\": \"axis_aligned\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.76114, \"balanced_accuracy_std\": 0.010627, \"module_recovery_ari\": 0.0, \"module_recovery_jaccard\": 0.0}",
+          "metadata_dataset": "overlapping_modules",
+          "metadata_method": "axis_aligned",
+          "eval_balanced_accuracy_mean": 0.76114,
+          "eval_module_recovery_ari": 0.0,
+          "predict_best_max_splits": "best"
+        },
+        {
+          "input": "{\"dataset\": \"overlapping_modules\", \"method\": \"random_oblique\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.747, \"balanced_accuracy_std\": 0.011093, \"module_recovery_ari\": 0.0, \"module_recovery_jaccard\": 0.0}",
+          "metadata_dataset": "overlapping_modules",
+          "metadata_method": "random_oblique",
+          "eval_balanced_accuracy_mean": 0.747,
+          "eval_module_recovery_ari": 0.0,
+          "predict_best_max_splits": "best"
+        },
+        {
+          "input": "{\"dataset\": \"overlapping_modules\", \"method\": \"unsigned_spectral\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.75164, \"balanced_accuracy_std\": 0.0082, \"module_recovery_ari\": 0.0742, \"module_recovery_jaccard\": 0.1}",
+          "metadata_dataset": "overlapping_modules",
+          "metadata_method": "unsigned_spectral",
+          "eval_balanced_accuracy_mean": 0.75164,
+          "eval_module_recovery_ari": 0.0742,
+          "predict_best_max_splits": "best"
+        }
+      ]
+    },
+    {
+      "dataset": "no_structure_control",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"no_structure_control\", \"method\": \"axis_aligned\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.8157, \"balanced_accuracy_std\": 0.004672, \"module_recovery_ari\": 0.0, \"module_recovery_jaccard\": 0.0}",
+          "metadata_dataset": "no_structure_control",
+          "metadata_method": "axis_aligned",
+          "eval_balanced_accuracy_mean": 0.8157,
+          "eval_module_recovery_ari": 0.0,
+          "predict_best_max_splits": "best"
+        },
+        {
+          "input": "{\"dataset\": \"no_structure_control\", \"method\": \"random_oblique\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.8947, \"balanced_accuracy_std\": 0.009719, \"module_recovery_ari\": 0.0, \"module_recovery_jaccard\": 0.0}",
+          "metadata_dataset": "no_structure_control",
+          "metadata_method": "random_oblique",
+          "eval_balanced_accuracy_mean": 0.8947,
+          "eval_module_recovery_ari": 0.0,
+          "predict_best_max_splits": "best"
+        },
+        {
+          "input": "{\"dataset\": \"no_structure_control\", \"method\": \"unsigned_spectral\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.90622, \"balanced_accuracy_std\": 0.008679, \"module_recovery_ari\": 0.0, \"module_recovery_jaccard\": 0.0}",
+          "metadata_dataset": "no_structure_control",
+          "metadata_method": "unsigned_spectral",
+          "eval_balanced_accuracy_mean": 0.90622,
+          "eval_module_recovery_ari": 0.0,
+          "predict_best_max_splits": "best"
+        }
+      ]
+    },
+    {
+      "dataset": "hard_4mod_unequal",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"hard_4mod_unequal\", \"method\": \"axis_aligned\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.5561, \"balanced_accuracy_std\": 0.024173, \"module_recovery_ari\": 0.0, \"module_recovery_jaccard\": 0.0}",
+          "metadata_dataset": "hard_4mod_unequal",
+          "metadata_method": "axis_aligned",
+          "eval_balanced_accuracy_mean": 0.5561,
+          "eval_module_recovery_ari": 0.0,
+          "predict_best_max_splits": "best"
+        },
+        {
+          "input": "{\"dataset\": \"hard_4mod_unequal\", \"method\": \"random_oblique\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.64622, \"balanced_accuracy_std\": 0.067359, \"module_recovery_ari\": 0.0, \"module_recovery_jaccard\": 0.0}",
+          "metadata_dataset": "hard_4mod_unequal",
+          "metadata_method": "random_oblique",
+          "eval_balanced_accuracy_mean": 0.64622,
+          "eval_module_recovery_ari": 0.0,
+          "predict_best_max_splits": "best"
+        },
+        {
+          "input": "{\"dataset\": \"hard_4mod_unequal\", \"method\": \"unsigned_spectral\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.67032, \"balanced_accuracy_std\": 0.046082, \"module_recovery_ari\": 0.1511, \"module_recovery_jaccard\": 0.0567}",
+          "metadata_dataset": "hard_4mod_unequal",
+          "metadata_method": "unsigned_spectral",
+          "eval_balanced_accuracy_mean": 0.67032,
+          "eval_module_recovery_ari": 0.1511,
+          "predict_best_max_splits": "best"
+        }
+      ]
+    },
+    {
+      "dataset": "highdim_8mod",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"highdim_8mod\", \"method\": \"axis_aligned\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.68508, \"balanced_accuracy_std\": 0.003436, \"module_recovery_ari\": 0.0, \"module_recovery_jaccard\": 0.0}",
+          "metadata_dataset": "highdim_8mod",
+          "metadata_method": "axis_aligned",
+          "eval_balanced_accuracy_mean": 0.68508,
+          "eval_module_recovery_ari": 0.0,
+          "predict_best_max_splits": "best"
+        },
+        {
+          "input": "{\"dataset\": \"highdim_8mod\", \"method\": \"random_oblique\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.67442, \"balanced_accuracy_std\": 0.004316, \"module_recovery_ari\": 0.0, \"module_recovery_jaccard\": 0.0}",
+          "metadata_dataset": "highdim_8mod",
+          "metadata_method": "random_oblique",
+          "eval_balanced_accuracy_mean": 0.67442,
+          "eval_module_recovery_ari": 0.0,
+          "predict_best_max_splits": "best"
+        },
+        {
+          "input": "{\"dataset\": \"highdim_8mod\", \"method\": \"unsigned_spectral\", \"type\": \"synthetic\"}",
+          "output": "{\"balanced_accuracy_mean\": 0.67554, \"balanced_accuracy_std\": 0.011457, \"module_recovery_ari\": 0.0348, \"module_recovery_jaccard\": 0.0012}",
+          "metadata_dataset": "highdim_8mod",
+          "metadata_method": "unsigned_spectral",
+          "eval_balanced_accuracy_mean": 0.67554,
+          "eval_module_recovery_ari": 0.0348,
+          "predict_best_max_splits": "best"
+        }
+      ]
+    }
+  ]
+}

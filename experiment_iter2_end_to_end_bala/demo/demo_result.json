@@ -1,0 +1,13 @@
+{
+  "id": "exp_id2_it2__opus",
+  "type": "code",
+  "title": "End-to-End Balance-Guided Oblique Trees on 5 Real Benchmarks",
+  "summary": "Demo notebook for the Balance-Guided Oblique Trees experiment. Compares three FIGS tree methods (axis-aligned, random oblique, signed-spectral) on synthetic electricity data (80 examples, 7 features, binary classification). Demonstrates the full pipeline: Co-Information matrix computation, SPONGE signed spectral clustering for feature module discovery, oblique FIGS training, and evaluation with accuracy/interpretability metrics visualization.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_2/gen_art/exp_id2_it2__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id2_it2__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/exp_id2_it2__opus/method_code_demo.ipynb"
+}

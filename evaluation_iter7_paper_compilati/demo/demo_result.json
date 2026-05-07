@@ -1,0 +1,13 @@
+{
+  "id": "eval_id2_it7__opus",
+  "type": "code",
+  "title": "Paper Compilation: Recompute Statistics from Raw Data, Write LaTeX, Compile PDF",
+  "summary": "Demo notebook that loads pre-computed evaluation results (94 examples across 14 datasets: 8 real + 6 synthetic) and recreates the full statistical analysis pipeline from the paper \"Spectral Decomposition of Co-Information Feature Graphs for Interpretable Oblique Decision Trees\". Recomputes Friedman test (chi2=37.10, p<0.001), Nemenyi post-hoc comparisons, Wilcoxon signed-rank arity test, Hedges' g signed-vs-unsigned ablation, and Spearman frustration correlation. Generates 4 matplotlib figures: pipeline diagram, arity comparison bar chart, frustration scatter plot, and CoI sign distribution. Displays results tables for 8 methods x 8 datasets with best-in-row highlighting, module recovery on synthetic data, and per-method accuracy rankings.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_7/gen_art/eval_id2_it7__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id2_it7__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id2_it7__opus/eval_code_demo.ipynb"
+}

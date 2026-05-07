@@ -1,0 +1,9 @@
+[project]
+name = "eval-scalability-cost-analysis"
+version = "1.0.0"
+requires-python = ">=3.10,<3.12"
+description = "Scalability & Computational Cost Analysis for Balance-Guided Oblique Trees"
+dependencies = [
+    "numpy==2.2.6",
+    "loguru==0.7.3",
+]

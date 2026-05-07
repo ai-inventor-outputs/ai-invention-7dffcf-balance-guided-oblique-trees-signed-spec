@@ -1,0 +1,10 @@
+[project]
+name = "eval-id3-it7-opus-cross-validate-claims"
+version = "1.0.0"
+requires-python = ">=3.10,<3.12"
+description = "Cross-validate all paper claims: master fact sheet from raw experiment data"
+dependencies = [
+    "loguru==0.7.3",
+    "numpy==2.4.3",
+    "scipy==1.17.1",
+]

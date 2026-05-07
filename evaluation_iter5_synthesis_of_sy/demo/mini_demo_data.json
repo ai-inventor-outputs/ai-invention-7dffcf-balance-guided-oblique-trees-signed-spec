@@ -1,0 +1,2345 @@
+{
+  "exp1_metadata": {
+    "per_variant": {
+      "easy_2mod_xor": {
+        "methods": {
+          "sponge_auto_k": {
+            "synergistic_pair_jaccard": 1.0,
+            "adjusted_rand_index": 0.594595,
+            "module_focused_ari": 1.0,
+            "xor_recovery_fraction": 1.0
+          },
+          "sponge_oracle_k": {
+            "synergistic_pair_jaccard": 1.0,
+            "adjusted_rand_index": 0.237288,
+            "module_focused_ari": 1.0,
+            "xor_recovery_fraction": 1.0
+          },
+          "hard_threshold": {
+            "synergistic_pair_jaccard": 1.0,
+            "adjusted_rand_index": 0.761905,
+            "module_focused_ari": 1.0,
+            "xor_recovery_fraction": 1.0
+          },
+          "unsigned_spectral": {
+            "synergistic_pair_jaccard": 1.0,
+            "adjusted_rand_index": 0.237288,
+            "module_focused_ari": 1.0,
+            "xor_recovery_fraction": 1.0
+          },
+          "random_partition": {
+            "synergistic_pair_jaccard": 0.0,
+            "adjusted_rand_index": -0.074766,
+            "module_focused_ari": -0.111111,
+            "xor_recovery_fraction": 0.0
+          }
+        },
+        "coi_computation_time_sec": 2.38
+      },
+      "medium_4mod_mixed": {
+        "methods": {
+          "sponge_auto_k": {
+            "synergistic_pair_jaccard": 0.5,
+            "adjusted_rand_index": 0.174757,
+            "module_focused_ari": 0.645161,
+            "xor_recovery_fraction": 1.0
+          },
+          "sponge_oracle_k": {
+            "synergistic_pair_jaccard": 1.0,
+            "adjusted_rand_index": 0.338889,
+            "module_focused_ari": 0.753363,
+            "xor_recovery_fraction": 1.0
+          },
+          "hard_threshold": {
+            "synergistic_pair_jaccard": 0.142857,
+            "adjusted_rand_index": 0.074898,
+            "module_focused_ari": 0.0,
+            "xor_recovery_fraction": 1.0
+          },
+          "unsigned_spectral": {
+            "synergistic_pair_jaccard": 1.0,
+            "adjusted_rand_index": 0.338889,
+            "module_focused_ari": 0.753363,
+            "xor_recovery_fraction": 1.0
+          },
+          "random_partition": {
+            "synergistic_pair_jaccard": 0.0,
+            "adjusted_rand_index": -0.086111,
+            "module_focused_ari": -0.134529,
+            "xor_recovery_fraction": 0.0
+          }
+        },
+        "coi_computation_time_sec": 1.53
+      },
+      "hard_4mod_unequal": {
+        "methods": {
+          "sponge_auto_k": {
+            "synergistic_pair_jaccard": 0.298507,
+            "adjusted_rand_index": 0.040657,
+            "module_focused_ari": 0.212943,
+            "xor_recovery_fraction": 1.0
+          },
+          "sponge_oracle_k": {
+            "synergistic_pair_jaccard": 0.3125,
+            "adjusted_rand_index": 0.092627,
+            "module_focused_ari": 0.369236,
+            "xor_recovery_fraction": 0.666667
+          },
+          "hard_threshold": {
+            "synergistic_pair_jaccard": 0.178082,
+            "adjusted_rand_index": 0.00937,
+            "module_focused_ari": -0.059122,
+            "xor_recovery_fraction": 1.0
+          },
+          "unsigned_spectral": {
+            "synergistic_pair_jaccard": 0.457143,
+            "adjusted_rand_index": 0.091154,
+            "module_focused_ari": 0.534209,
+            "xor_recovery_fraction": 0.666667
+          },
+          "random_partition": {
+            "synergistic_pair_jaccard": 0.114286,
+            "adjusted_rand_index": -0.01994,
+            "module_focused_ari": -0.051462,
+            "xor_recovery_fraction": 0.0
+          }
+        },
+        "coi_computation_time_sec": 4.12
+      },
+      "overlapping_modules": {
+        "methods": {
+          "sponge_auto_k": {
+            "synergistic_pair_jaccard": 0.285714,
+            "adjusted_rand_index": -0.017799,
+            "module_focused_ari": 0.143599,
+            "xor_recovery_fraction": 0.0
+          },
+          "sponge_oracle_k": {
+            "synergistic_pair_jaccard": 0.25,
+            "adjusted_rand_index": 0.05084,
+            "module_focused_ari": 0.206186,
+            "xor_recovery_fraction": 0.0
+          },
+          "hard_threshold": {
+            "synergistic_pair_jaccard": 0.3,
+            "adjusted_rand_index": 0.073764,
+            "module_focused_ari": 0.083899,
+            "xor_recovery_fraction": 0.5
+          },
+          "unsigned_spectral": {
+            "synergistic_pair_jaccard": 0.4,
+            "adjusted_rand_index": 0.081475,
+            "module_focused_ari": 0.319588,
+            "xor_recovery_fraction": 0.0
+          },
+          "random_partition": {
+            "synergistic_pair_jaccard": 0.076923,
+            "adjusted_rand_index": -0.038889,
+            "module_focused_ari": -0.043956,
+            "xor_recovery_fraction": 0.0
+          }
+        },
+        "coi_computation_time_sec": 1.43
+      },
+      "no_structure_control": {
+        "methods": {
+          "sponge_auto_k": {
+            "synergistic_pair_jaccard": null,
+            "adjusted_rand_index": null,
+            "module_focused_ari": null,
+            "xor_recovery_fraction": null
+          },
+          "sponge_oracle_k": {
+            "synergistic_pair_jaccard": null,
+            "adjusted_rand_index": null,
+            "module_focused_ari": null,
+            "xor_recovery_fraction": null
+          },
+          "hard_threshold": {
+            "synergistic_pair_jaccard": null,
+            "adjusted_rand_index": null,
+            "module_focused_ari": null,
+            "xor_recovery_fraction": null
+          },
+          "unsigned_spectral": {
+            "synergistic_pair_jaccard": null,
+            "adjusted_rand_index": null,
+            "module_focused_ari": null,
+            "xor_recovery_fraction": null
+          },
+          "random_partition": {
+            "synergistic_pair_jaccard": null,
+            "adjusted_rand_index": null,
+            "module_focused_ari": null,
+            "xor_recovery_fraction": null
+          }
+        },
+        "coi_computation_time_sec": 1.85
+      },
+      "highdim_8mod": {
+        "methods": {
+          "sponge_auto_k": {
+            "synergistic_pair_jaccard": 0.086957,
+            "adjusted_rand_index": 0.000247,
+            "module_focused_ari": 0.0,
+            "xor_recovery_fraction": 1.0
+          },
+          "sponge_oracle_k": {
+            "synergistic_pair_jaccard": 0.22,
+            "adjusted_rand_index": 0.011959,
+            "module_focused_ari": 0.142531,
+            "xor_recovery_fraction": 0.25
+          },
+          "hard_threshold": {
+            "synergistic_pair_jaccard": 0.085106,
+            "adjusted_rand_index": 6.5e-05,
+            "module_focused_ari": -0.000228,
+            "xor_recovery_fraction": 0.75
+          },
+          "unsigned_spectral": {
+            "synergistic_pair_jaccard": 0.137255,
+            "adjusted_rand_index": 0.010812,
+            "module_focused_ari": 0.164502,
+            "xor_recovery_fraction": 0.0
+          },
+          "random_partition": {
+            "synergistic_pair_jaccard": 0.039216,
+            "adjusted_rand_index": 0.003748,
+            "module_focused_ari": 0.049835,
+            "xor_recovery_fraction": 0.0
+          }
+        },
+        "coi_computation_time_sec": 116.6
+      }
+    },
+    "total_wallclock_sec": 130.01
+  },
+  "exp3_it3_metadata": {
+    "per_variant_results": {
+      "easy_2mod_xor": {
+        "methods": {
+          "axis_aligned": {
+            "mean_balanced_accuracy": 0.6047,
+            "std_balanced_accuracy": 0.0865,
+            "mean_auc": 0.6228,
+            "mean_avg_split_arity": 1.0,
+            "mean_avg_path_length": 5.0,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.5062,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.6194,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.7091,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.5038,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.6848,
+                "fold": 4
+              }
+            ]
+          },
+          "random_oblique": {
+            "mean_balanced_accuracy": 0.7362,
+            "std_balanced_accuracy": 0.0197,
+            "mean_auc": 0.7689,
+            "mean_avg_split_arity": 1.96,
+            "mean_avg_path_length": 4.934,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.7518,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.7524,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.7224,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.7505,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.704,
+                "fold": 4
+              }
+            ]
+          },
+          "signed_spectral": {
+            "mean_balanced_accuracy": 0.561,
+            "std_balanced_accuracy": 0.0609,
+            "mean_auc": 0.5898,
+            "mean_avg_split_arity": 1.68,
+            "mean_avg_path_length": 5.01,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.515,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.5957,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.5157,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.6654,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.5132,
+                "fold": 4
+              }
+            ]
+          },
+          "unsigned_spectral": {
+            "mean_balanced_accuracy": 0.7283,
+            "std_balanced_accuracy": 0.0195,
+            "mean_auc": 0.7632,
+            "mean_avg_split_arity": 1.98,
+            "mean_avg_path_length": 5.0,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.7094,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.7147,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.7349,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.7192,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.7633,
+                "fold": 4
+              }
+            ]
+          },
+          "hard_threshold": {
+            "mean_balanced_accuracy": 0.7291,
+            "std_balanced_accuracy": 0.0188,
+            "mean_auc": 0.764,
+            "mean_avg_split_arity": 1.94,
+            "mean_avg_path_length": 4.991,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.7132,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.7147,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.7349,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.7192,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.7633,
+                "fold": 4
+              }
+            ]
+          }
+        }
+      },
+      "medium_4mod_mixed": {
+        "methods": {
+          "axis_aligned": {
+            "mean_balanced_accuracy": 0.7646,
+            "std_balanced_accuracy": 0.008,
+            "mean_auc": 0.7754,
+            "mean_avg_split_arity": 1.0,
+            "mean_avg_path_length": 3.654,
+            "best_max_splits": 10,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.7535,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.7591,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.7631,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.7746,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.7726,
+                "fold": 4
+              }
+            ]
+          },
+          "random_oblique": {
+            "mean_balanced_accuracy": 0.7533,
+            "std_balanced_accuracy": 0.0076,
+            "mean_auc": 0.7777,
+            "mean_avg_split_arity": 2.9,
+            "mean_avg_path_length": 4.695,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.7425,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.7503,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.7527,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.7659,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.7549,
+                "fold": 4
+              }
+            ]
+          },
+          "signed_spectral": {
+            "mean_balanced_accuracy": 0.756,
+            "std_balanced_accuracy": 0.0085,
+            "mean_auc": 0.783,
+            "mean_avg_split_arity": 2.4,
+            "mean_avg_path_length": 4.657,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.7487,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.743,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.7613,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.7619,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.7649,
+                "fold": 4
+              }
+            ]
+          },
+          "unsigned_spectral": {
+            "mean_balanced_accuracy": 0.7576,
+            "std_balanced_accuracy": 0.0016,
+            "mean_auc": 0.7926,
+            "mean_avg_split_arity": 3.05,
+            "mean_avg_path_length": 4.8,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.7559,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.7563,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.7594,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.7568,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.7597,
+                "fold": 4
+              }
+            ]
+          },
+          "hard_threshold": {
+            "mean_balanced_accuracy": 0.7625,
+            "std_balanced_accuracy": 0.0133,
+            "mean_auc": 0.7984,
+            "mean_avg_split_arity": 2.9,
+            "mean_avg_path_length": 4.772,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.7458,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.7695,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.7514,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.7834,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.7622,
+                "fold": 4
+              }
+            ]
+          }
+        }
+      },
+      "overlapping_modules": {
+        "methods": {
+          "axis_aligned": {
+            "mean_balanced_accuracy": 0.7611,
+            "std_balanced_accuracy": 0.0095,
+            "mean_auc": 0.7873,
+            "mean_avg_split_arity": 1.0,
+            "mean_avg_path_length": 4.475,
+            "best_max_splits": 15,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.756,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.7516,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.7531,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.7749,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.7701,
+                "fold": 4
+              }
+            ]
+          },
+          "random_oblique": {
+            "mean_balanced_accuracy": 0.747,
+            "std_balanced_accuracy": 0.0099,
+            "mean_auc": 0.7717,
+            "mean_avg_split_arity": 2.4,
+            "mean_avg_path_length": 4.657,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.7382,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.7456,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.7367,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.7503,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.7642,
+                "fold": 4
+              }
+            ]
+          },
+          "signed_spectral": {
+            "mean_balanced_accuracy": 0.7574,
+            "std_balanced_accuracy": 0.0058,
+            "mean_auc": 0.7773,
+            "mean_avg_split_arity": 2.4,
+            "mean_avg_path_length": 4.714,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.7477,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.7556,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.7593,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.7655,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.759,
+                "fold": 4
+              }
+            ]
+          },
+          "unsigned_spectral": {
+            "mean_balanced_accuracy": 0.7516,
+            "std_balanced_accuracy": 0.0073,
+            "mean_auc": 0.7723,
+            "mean_avg_split_arity": 2.7,
+            "mean_avg_path_length": 4.781,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.7548,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.7471,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.75,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.7639,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.7424,
+                "fold": 4
+              }
+            ]
+          },
+          "hard_threshold": {
+            "mean_balanced_accuracy": 0.7608,
+            "std_balanced_accuracy": 0.0121,
+            "mean_auc": 0.7939,
+            "mean_avg_split_arity": 2.95,
+            "mean_avg_path_length": 4.81,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.7558,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.762,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.7423,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.7797,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.7642,
+                "fold": 4
+              }
+            ]
+          }
+        }
+      },
+      "no_structure_control": {
+        "methods": {
+          "axis_aligned": {
+            "mean_balanced_accuracy": 0.8157,
+            "std_balanced_accuracy": 0.0042,
+            "mean_auc": 0.8821,
+            "mean_avg_split_arity": 1.0,
+            "mean_avg_path_length": 4.629,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.821,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.8205,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.8135,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.8115,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.812,
+                "fold": 4
+              }
+            ]
+          },
+          "random_oblique": {
+            "mean_balanced_accuracy": 0.8947,
+            "std_balanced_accuracy": 0.0087,
+            "mean_auc": 0.9514,
+            "mean_avg_split_arity": 5.85,
+            "mean_avg_path_length": 4.629,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.893,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.906,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.898,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.8795,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.897,
+                "fold": 4
+              }
+            ]
+          },
+          "signed_spectral": {
+            "mean_balanced_accuracy": 0.8718,
+            "std_balanced_accuracy": 0.0319,
+            "mean_auc": 0.9294,
+            "mean_avg_split_arity": 3.45,
+            "mean_avg_path_length": 4.6,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.885,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.91,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.8135,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.872,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.8785,
+                "fold": 4
+              }
+            ]
+          },
+          "unsigned_spectral": {
+            "mean_balanced_accuracy": 0.9062,
+            "std_balanced_accuracy": 0.0078,
+            "mean_auc": 0.9554,
+            "mean_avg_split_arity": 5.5,
+            "mean_avg_path_length": 3.745,
+            "best_max_splits": 10,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.9111,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.9095,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.8995,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.895,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.916,
+                "fold": 4
+              }
+            ]
+          },
+          "hard_threshold": {
+            "mean_balanced_accuracy": 0.894,
+            "std_balanced_accuracy": 0.0103,
+            "mean_auc": 0.9504,
+            "mean_avg_split_arity": 3.0,
+            "mean_avg_path_length": 4.648,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.892,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.913,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.889,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.894,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.882,
+                "fold": 4
+              }
+            ]
+          }
+        }
+      },
+      "hard_4mod_unequal": {
+        "methods": {
+          "axis_aligned": {
+            "mean_balanced_accuracy": 0.5561,
+            "std_balanced_accuracy": 0.0216,
+            "mean_auc": 0.576,
+            "mean_avg_split_arity": 1.0,
+            "mean_avg_path_length": 4.625,
+            "best_max_splits": 15,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.5678,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.5904,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.5392,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.529,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.5541,
+                "fold": 4
+              }
+            ]
+          },
+          "random_oblique": {
+            "mean_balanced_accuracy": 0.6462,
+            "std_balanced_accuracy": 0.0602,
+            "mean_auc": 0.6768,
+            "mean_avg_split_arity": 3.8,
+            "mean_avg_path_length": 4.8,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.7058,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.5795,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.5705,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.6655,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.7098,
+                "fold": 4
+              }
+            ]
+          },
+          "signed_spectral": {
+            "mean_balanced_accuracy": 0.6115,
+            "std_balanced_accuracy": 0.0681,
+            "mean_auc": 0.6352,
+            "mean_avg_split_arity": 3.59,
+            "mean_avg_path_length": 4.867,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.7355,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.6234,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.5385,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.5664,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.5939,
+                "fold": 4
+              }
+            ]
+          },
+          "unsigned_spectral": {
+            "mean_balanced_accuracy": 0.6703,
+            "std_balanced_accuracy": 0.0412,
+            "mean_auc": 0.7097,
+            "mean_avg_split_arity": 3.24,
+            "mean_avg_path_length": 4.838,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.6964,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.5954,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.656,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.7027,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.7011,
+                "fold": 4
+              }
+            ]
+          },
+          "hard_threshold": {
+            "mean_balanced_accuracy": 0.6596,
+            "std_balanced_accuracy": 0.0431,
+            "mean_auc": 0.6965,
+            "mean_avg_split_arity": 3.24,
+            "mean_avg_path_length": 4.8,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.6108,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.713,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.6438,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.7085,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.6218,
+                "fold": 4
+              }
+            ]
+          }
+        }
+      },
+      "highdim_8mod": {
+        "methods": {
+          "axis_aligned": {
+            "mean_balanced_accuracy": 0.6851,
+            "std_balanced_accuracy": 0.0031,
+            "mean_auc": 0.7073,
+            "mean_avg_split_arity": 1.0,
+            "mean_avg_path_length": 4.667,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.6883,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.6884,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.6852,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.6831,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.6804,
+                "fold": 4
+              }
+            ]
+          },
+          "random_oblique": {
+            "mean_balanced_accuracy": 0.6744,
+            "std_balanced_accuracy": 0.0039,
+            "mean_auc": 0.6984,
+            "mean_avg_split_arity": 1.77,
+            "mean_avg_path_length": 4.705,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.67,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.6723,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.672,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.6774,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.6804,
+                "fold": 4
+              }
+            ]
+          },
+          "signed_spectral": {
+            "mean_balanced_accuracy": 0.6851,
+            "std_balanced_accuracy": 0.0031,
+            "mean_auc": 0.7073,
+            "mean_avg_split_arity": 1.0,
+            "mean_avg_path_length": 4.667,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.6883,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.6884,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.6852,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.6831,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.6804,
+                "fold": 4
+              }
+            ]
+          },
+          "unsigned_spectral": {
+            "mean_balanced_accuracy": 0.6755,
+            "std_balanced_accuracy": 0.0102,
+            "mean_auc": 0.7037,
+            "mean_avg_split_arity": 1.7,
+            "mean_avg_path_length": 4.619,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.6603,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.6816,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.6671,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.6882,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.6805,
+                "fold": 4
+              }
+            ]
+          },
+          "hard_threshold": {
+            "mean_balanced_accuracy": 0.6851,
+            "std_balanced_accuracy": 0.0031,
+            "mean_auc": 0.7073,
+            "mean_avg_split_arity": 1.0,
+            "mean_avg_path_length": 4.667,
+            "best_max_splits": 20,
+            "best_folds": [
+              {
+                "balanced_accuracy": 0.6883,
+                "fold": 0
+              },
+              {
+                "balanced_accuracy": 0.6884,
+                "fold": 1
+              },
+              {
+                "balanced_accuracy": 0.6852,
+                "fold": 2
+              },
+              {
+                "balanced_accuracy": 0.6831,
+                "fold": 3
+              },
+              {
+                "balanced_accuracy": 0.6804,
+                "fold": 4
+              }
+            ]
+          }
+        }
+      }
+    },
+    "aggregate": {
+      "axis_aligned": {
+        "grand_mean_balanced_accuracy": 0.6979,
+        "grand_std_balanced_accuracy": 0.0924
+      },
+      "random_oblique": {
+        "grand_mean_balanced_accuracy": 0.742,
+        "grand_std_balanced_accuracy": 0.0788
+      },
+      "signed_spectral": {
+        "grand_mean_balanced_accuracy": 0.7071,
+        "grand_std_balanced_accuracy": 0.1025
+      },
+      "unsigned_spectral": {
+        "grand_mean_balanced_accuracy": 0.7482,
+        "grand_std_balanced_accuracy": 0.0783
+      },
+      "hard_threshold": {
+        "grand_mean_balanced_accuracy": 0.7485,
+        "grand_std_balanced_accuracy": 0.0751
+      }
+    },
+    "frustration_benefit_analysis": [
+      [
+        "easy_2mod_xor",
+        0.0071,
+        -0.0437
+      ],
+      [
+        "medium_4mod_mixed",
+        0.005967,
+        -0.0086
+      ],
+      [
+        "overlapping_modules",
+        0.005236,
+        -0.0037
+      ],
+      [
+        "no_structure_control",
+        0.002411,
+        0.0561
+      ],
+      [
+        "hard_4mod_unequal",
+        0.003027,
+        0.0554
+      ],
+      [
+        "highdim_8mod",
+        0.003945,
+        0.0
+      ]
+    ],
+    "total_runtime_s": 1222.6
+  },
+  "exp3_it4_metadata": {
+    "part1_estimator_bias": {
+      "calibration_pure_xor": {
+        "npeet_ksg": {
+          "sign_distribution": {
+            "n_positive": 7,
+            "n_negative": 3,
+            "n_near_zero": 0,
+            "frac_positive": 0.7,
+            "frac_negative": 0.3,
+            "frac_near_zero": 0.0
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.666897,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "coi_value": 0.006315,
+              "sign": "positive"
+            }
+          ],
+          "n_negative_individual_mi": null
+        },
+        "raw_npeet_ksg": {
+          "sign_distribution": {
+            "n_positive": 3,
+            "n_negative": 7,
+            "n_near_zero": 0,
+            "frac_positive": 0.3,
+            "frac_negative": 0.7,
+            "frac_near_zero": 0.0
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.670933,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "coi_value": 0.00665,
+              "sign": "positive"
+            }
+          ],
+          "n_negative_individual_mi": 4
+        },
+        "binned_10": {
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 2,
+            "n_near_zero": 8,
+            "frac_positive": 0.0,
+            "frac_negative": 0.2,
+            "frac_near_zero": 0.8
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.556861,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "coi_value": -0.000256,
+              "sign": "near_zero"
+            }
+          ],
+          "n_negative_individual_mi": null
+        },
+        "binned_20": {
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 9,
+            "n_near_zero": 1,
+            "frac_positive": 0.0,
+            "frac_negative": 0.9,
+            "frac_near_zero": 0.1
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.577122,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "coi_value": -0.000744,
+              "sign": "near_zero"
+            }
+          ],
+          "n_negative_individual_mi": null
+        },
+        "binned_50": {
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 10,
+            "n_near_zero": 0,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.611861,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "coi_value": -0.003936,
+              "sign": "negative"
+            }
+          ],
+          "n_negative_individual_mi": null
+        },
+        "sklearn_ksg": {
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 10,
+            "n_near_zero": 0,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.674805,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                3
+              ],
+              "coi_value": -0.006308,
+              "sign": "negative"
+            }
+          ],
+          "n_negative_individual_mi": null
+        },
+        "analytical_ground_truth": {
+          "sign_distribution": {},
+          "synergistic_pair_coi": [],
+          "redundant_pair_coi": [],
+          "n_negative_individual_mi": null
+        },
+        "bias_analysis": {
+          "npeet_ksg": {
+            "xor_pair_01_coi": -0.666897,
+            "error_vs_analytical": 0.0263,
+            "redundant_pair_03_coi": 0.006315
+          },
+          "raw_npeet_ksg": {
+            "xor_pair_01_coi": -0.670933,
+            "error_vs_analytical": 0.0222,
+            "redundant_pair_03_coi": 0.00665
+          },
+          "binned_10": {
+            "xor_pair_01_coi": -0.556861,
+            "error_vs_analytical": 0.1363,
+            "redundant_pair_03_coi": -0.000256
+          },
+          "binned_20": {
+            "xor_pair_01_coi": -0.577122,
+            "error_vs_analytical": 0.116,
+            "redundant_pair_03_coi": -0.000744
+          },
+          "binned_50": {
+            "xor_pair_01_coi": -0.611861,
+            "error_vs_analytical": 0.0813,
+            "redundant_pair_03_coi": -0.003936
+          },
+          "sklearn_ksg": {
+            "xor_pair_01_coi": -0.674805,
+            "error_vs_analytical": 0.0183,
+            "redundant_pair_03_coi": -0.006308
+          }
+        }
+      },
+      "easy_2mod_xor": {
+        "npeet_ksg": {
+          "sign_distribution": {
+            "n_positive": 30,
+            "n_negative": 14,
+            "n_near_zero": 1,
+            "frac_positive": 0.6667,
+            "frac_negative": 0.3111,
+            "frac_near_zero": 0.0222
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.130195,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.114095,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "coi_value": 0.001487,
+              "sign": "positive"
+            },
+            {
+              "pair": [
+                2,
+                5
+              ],
+              "coi_value": 0.005453,
+              "sign": "positive"
+            }
+          ],
+          "n_negative_individual_mi": null
+        },
+        "raw_npeet_ksg": {
+          "sign_distribution": {
+            "n_positive": 18,
+            "n_negative": 25,
+            "n_near_zero": 2,
+            "frac_positive": 0.4,
+            "frac_negative": 0.5556,
+            "frac_near_zero": 0.0444
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.145704,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.140439,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "coi_value": 0.001487,
+              "sign": "positive"
+            },
+            {
+              "pair": [
+                2,
+                5
+              ],
+              "coi_value": -0.020891,
+              "sign": "negative"
+            }
+          ],
+          "n_negative_individual_mi": 2
+        },
+        "binned_10": {
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 43,
+            "n_near_zero": 2,
+            "frac_positive": 0.0,
+            "frac_negative": 0.9556,
+            "frac_near_zero": 0.0444
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.100205,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.106362,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "coi_value": -0.000595,
+              "sign": "near_zero"
+            },
+            {
+              "pair": [
+                2,
+                5
+              ],
+              "coi_value": -0.000964,
+              "sign": "near_zero"
+            }
+          ],
+          "n_negative_individual_mi": null
+        },
+        "binned_20": {
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 45,
+            "n_near_zero": 0,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.115018,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.117435,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "coi_value": -0.003662,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                5
+              ],
+              "coi_value": -0.003731,
+              "sign": "negative"
+            }
+          ],
+          "n_negative_individual_mi": null
+        },
+        "binned_50": {
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 45,
+            "n_near_zero": 0,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.174293,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.182076,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "coi_value": -0.016303,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                5
+              ],
+              "coi_value": -0.019668,
+              "sign": "negative"
+            }
+          ],
+          "n_negative_individual_mi": null
+        },
+        "sklearn_ksg": {
+          "sign_distribution": {
+            "n_positive": 9,
+            "n_negative": 27,
+            "n_near_zero": 9,
+            "frac_positive": 0.2,
+            "frac_negative": 0.6,
+            "frac_near_zero": 0.2
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.137215,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.132842,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                4
+              ],
+              "coi_value": -0.001158,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                5
+              ],
+              "coi_value": -0.011675,
+              "sign": "negative"
+            }
+          ],
+          "n_negative_individual_mi": null
+        }
+      },
+      "medium_4mod_mixed": {
+        "npeet_ksg": {
+          "sign_distribution": {
+            "n_positive": 97,
+            "n_negative": 44,
+            "n_near_zero": 12,
+            "frac_positive": 0.634,
+            "frac_negative": 0.2876,
+            "frac_near_zero": 0.0784
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.111199,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.105937,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                5
+              ],
+              "module": 2,
+              "module_type": "and",
+              "coi_value": -0.016924,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                8
+              ],
+              "coi_value": 0.005457,
+              "sign": "positive"
+            },
+            {
+              "pair": [
+                2,
+                9
+              ],
+              "coi_value": 0.012568,
+              "sign": "positive"
+            },
+            {
+              "pair": [
+                4,
+                10
+              ],
+              "coi_value": 0.024773,
+              "sign": "positive"
+            }
+          ],
+          "n_negative_individual_mi": null
+        },
+        "raw_npeet_ksg": {
+          "sign_distribution": {
+            "n_positive": 57,
+            "n_negative": 84,
+            "n_near_zero": 12,
+            "frac_positive": 0.3725,
+            "frac_negative": 0.549,
+            "frac_near_zero": 0.0784
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.111199,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.118609,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                5
+              ],
+              "module": 2,
+              "module_type": "and",
+              "coi_value": -0.016924,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                8
+              ],
+              "coi_value": -0.024166,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                9
+              ],
+              "coi_value": -0.022067,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                10
+              ],
+              "coi_value": 0.024773,
+              "sign": "positive"
+            }
+          ],
+          "n_negative_individual_mi": 5
+        },
+        "binned_10": {
+          "sign_distribution": {
+            "n_positive": 2,
+            "n_negative": 148,
+            "n_near_zero": 3,
+            "frac_positive": 0.0131,
+            "frac_negative": 0.9673,
+            "frac_near_zero": 0.0196
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.071227,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.068106,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                5
+              ],
+              "module": 2,
+              "module_type": "and",
+              "coi_value": -0.025524,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                8
+              ],
+              "coi_value": -0.000378,
+              "sign": "near_zero"
+            },
+            {
+              "pair": [
+                2,
+                9
+              ],
+              "coi_value": -0.00036,
+              "sign": "near_zero"
+            },
+            {
+              "pair": [
+                4,
+                10
+              ],
+              "coi_value": 0.016332,
+              "sign": "positive"
+            }
+          ],
+          "n_negative_individual_mi": null
+        },
+        "binned_20": {
+          "sign_distribution": {
+            "n_positive": 2,
+            "n_negative": 151,
+            "n_near_zero": 0,
+            "frac_positive": 0.0131,
+            "frac_negative": 0.9869,
+            "frac_near_zero": 0.0
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.089498,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.088544,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                5
+              ],
+              "module": 2,
+              "module_type": "and",
+              "coi_value": -0.029973,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                8
+              ],
+              "coi_value": -0.001492,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                9
+              ],
+              "coi_value": -0.001448,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                10
+              ],
+              "coi_value": 0.01611,
+              "sign": "positive"
+            }
+          ],
+          "n_negative_individual_mi": null
+        },
+        "binned_50": {
+          "sign_distribution": {
+            "n_positive": 2,
+            "n_negative": 151,
+            "n_near_zero": 0,
+            "frac_positive": 0.0131,
+            "frac_negative": 0.9869,
+            "frac_near_zero": 0.0
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.13171,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.128922,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                5
+              ],
+              "module": 2,
+              "module_type": "and",
+              "coi_value": -0.057842,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                8
+              ],
+              "coi_value": -0.008946,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                9
+              ],
+              "coi_value": -0.009444,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                10
+              ],
+              "coi_value": 0.007504,
+              "sign": "positive"
+            }
+          ],
+          "n_negative_individual_mi": null
+        },
+        "sklearn_ksg": {
+          "sign_distribution": {
+            "n_positive": 58,
+            "n_negative": 71,
+            "n_near_zero": 24,
+            "frac_positive": 0.3791,
+            "frac_negative": 0.4641,
+            "frac_near_zero": 0.1569
+          },
+          "synergistic_pair_coi": [
+            {
+              "pair": [
+                0,
+                1
+              ],
+              "module": 0,
+              "module_type": "xor",
+              "coi_value": -0.114239,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                3
+              ],
+              "module": 1,
+              "module_type": "xor",
+              "coi_value": -0.116667,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                5
+              ],
+              "module": 2,
+              "module_type": "and",
+              "coi_value": -0.017672,
+              "sign": "negative"
+            }
+          ],
+          "redundant_pair_coi": [
+            {
+              "pair": [
+                0,
+                8
+              ],
+              "coi_value": -0.011402,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                2,
+                9
+              ],
+              "coi_value": -0.00475,
+              "sign": "negative"
+            },
+            {
+              "pair": [
+                4,
+                10
+              ],
+              "coi_value": 0.02233,
+              "sign": "positive"
+            }
+          ],
+          "n_negative_individual_mi": null
+        }
+      },
+      "no_structure_control": {
+        "npeet_ksg": {
+          "sign_distribution": {
+            "n_positive": 126,
+            "n_negative": 43,
+            "n_near_zero": 21,
+            "frac_positive": 0.6632,
+            "frac_negative": 0.2263,
+            "frac_near_zero": 0.1105
+          },
+          "synergistic_pair_coi": [],
+          "redundant_pair_coi": [],
+          "n_negative_individual_mi": null
+        },
+        "raw_npeet_ksg": {
+          "sign_distribution": {
+            "n_positive": 76,
+            "n_negative": 100,
+            "n_near_zero": 14,
+            "frac_positive": 0.4,
+            "frac_negative": 0.5263,
+            "frac_near_zero": 0.0737
+          },
+          "synergistic_pair_coi": [],
+          "redundant_pair_coi": [],
+          "n_negative_individual_mi": 6
+        },
+        "binned_10": {
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 190,
+            "n_near_zero": 0,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "synergistic_pair_coi": [],
+          "redundant_pair_coi": [],
+          "n_negative_individual_mi": null
+        },
+        "binned_20": {
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 190,
+            "n_near_zero": 0,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "synergistic_pair_coi": [],
+          "redundant_pair_coi": [],
+          "n_negative_individual_mi": null
+        },
+        "binned_50": {
+          "sign_distribution": {
+            "n_positive": 0,
+            "n_negative": 190,
+            "n_near_zero": 0,
+            "frac_positive": 0.0,
+            "frac_negative": 1.0,
+            "frac_near_zero": 0.0
+          },
+          "synergistic_pair_coi": [],
+          "redundant_pair_coi": [],
+          "n_negative_individual_mi": null
+        },
+        "sklearn_ksg": {
+          "sign_distribution": {
+            "n_positive": 34,
+            "n_negative": 127,
+            "n_near_zero": 29,
+            "frac_positive": 0.1789,
+            "frac_negative": 0.6684,
+            "frac_near_zero": 0.1526
+          },
+          "synergistic_pair_coi": [],
+          "redundant_pair_coi": [],
+          "n_negative_individual_mi": null
+        }
+      }
+    },
+    "part2_sponge_diagnosis": {
+      "easy_2mod_xor": {
+        "eigenspectrum": {
+          "positive_edge_fraction": 0.294806
+        },
+        "clustering_comparison": {
+          "unsigned_spectral_ari": 1.0,
+          "sponge_sym_weighted_ari": -0.5
+        }
+      },
+      "medium_4mod_mixed": {
+        "eigenspectrum": {
+          "positive_edge_fraction": 0.564861
+        },
+        "clustering_comparison": {
+          "unsigned_spectral_ari": 0.6038,
+          "sponge_sym_weighted_ari": -0.1887
+        }
+      }
+    },
+    "conclusions": {
+      "is_all_negative_genuine": false,
+      "explanation": "Some AND-module redundant pairs show positive CoI with certain estimators, suggesting estimator bias partially explains the all-negative pattern.",
+      "frac_negative_by_method": {
+        "easy_2mod_xor/npeet_ksg": 0.3111,
+        "easy_2mod_xor/raw_npeet_ksg": 0.5556,
+        "easy_2mod_xor/binned_20": 1.0,
+        "easy_2mod_xor/sklearn_ksg": 0.6,
+        "medium_4mod_mixed/npeet_ksg": 0.2876,
+        "medium_4mod_mixed/raw_npeet_ksg": 0.549,
+        "medium_4mod_mixed/binned_20": 0.9869,
+        "medium_4mod_mixed/sklearn_ksg": 0.4641,
+        "no_structure_control/npeet_ksg": 0.2263,
+        "no_structure_control/raw_npeet_ksg": 0.5263,
+        "no_structure_control/binned_20": 1.0,
+        "no_structure_control/sklearn_ksg": 0.6684
+      },
+      "raw_ksg_negative_individual_mi": {
+        "calibration_pure_xor": {
+          "n_negative_individual_mi": 4,
+          "negative_mi_values": [
+            -0.002018,
+            -0.01166,
+            -0.006733,
+            -0.00128
+          ]
+        },
+        "easy_2mod_xor": {
+          "n_negative_individual_mi": 2,
+          "negative_mi_values": [
+            -0.007754,
+            -0.013172
+          ]
+        },
+        "medium_4mod_mixed": {
+          "n_negative_individual_mi": 5,
+          "negative_mi_values": [
+            -0.006336,
+            -0.014811,
+            -0.010981,
+            -0.000784,
+            -0.001628
+          ]
+        },
+        "no_structure_control": {
+          "n_negative_individual_mi": 6,
+          "negative_mi_values": [
+            -0.010072,
+            -0.00277,
+            -0.006773,
+            -0.009382,
+            -0.004159,
+            -0.000765
+          ]
+        }
+      },
+      "sponge_failure_mechanism": "When CoI is predominantly negative, A_pos ~= 0, so L_pos has rank ~0. SPONGE's B matrix (L_neg + tau*D_pos) degenerates to L_neg. The generalized eigenproblem becomes trivial (A~=0), yielding uninformative eigenvectors. SPONGE_sym partially mitigates via identity regularization, but the A matrix is dominated by tau_n*I rather than graph structure.",
+      "sponge_diagnostic_details": [
+        {
+          "dataset": "easy_2mod_xor",
+          "L_pos_rank": 9,
+          "positive_edge_fraction": 0.294806,
+          "frustration_index": 0.051771,
+          "unsigned_ari": 1.0,
+          "sponge_weighted_ari": -0.5,
+          "sponge_unweighted_ari": -0.5
+        },
+        {
+          "dataset": "medium_4mod_mixed",
+          "L_pos_rank": 17,
+          "positive_edge_fraction": 0.564861,
+          "frustration_index": 0.126016,
+          "unsigned_ari": 0.6038,
+          "sponge_weighted_ari": -0.1887,
+          "sponge_unweighted_ari": -0.1887
+        }
+      ],
+      "recommendations": "1) Use unsigned spectral on |CoI| \u2014 discards signs but preserves magnitudes. 2) Center CoI by subtracting median to create artificial sign structure. 3) Consider partial correlation or conditional MI for natural mixed signs. 4) If signed clustering needed, percentile-shift injection may rescue SPONGE."
+    }
+  }
+}

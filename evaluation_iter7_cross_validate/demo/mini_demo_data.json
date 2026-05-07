@@ -1,0 +1,185 @@
+{
+  "metadata": {
+    "evaluation_name": "cross_validate_paper_claims",
+    "description": "Master fact sheet recomputing all quantitative claims from raw experiment data",
+    "blocks_clean": [
+      "block_A_main_results",
+      "block_B_arity",
+      "block_C_ablation",
+      "block_D_timing",
+      "block_E_frustration"
+    ],
+    "blocks_flagged": [
+      "block_F_module_recovery"
+    ],
+    "n_claims_total": 193,
+    "consistency_rate": 0.989637
+  },
+  "metrics_agg": {
+    "n_claims_total": 193,
+    "n_match": 191,
+    "n_approximate": 0,
+    "n_mismatch": 2,
+    "consistency_rate": 0.989637,
+    "n_blocks_clean": 5,
+    "n_blocks_flagged": 1
+  },
+  "datasets": [
+    {
+      "dataset": "block_A_main_results",
+      "examples": [
+        {
+          "input": "{\"claim_id\": \"A_adult_axis_aligned_mean\", \"claim_text\": \"Mean balanced_accuracy for axis_aligned on adult at best_max_splits=20\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id1_it6__opus\"}",
+          "output": "{\"expected_value\": 0.677758, \"recomputed_value\": 0.6777576000000001, \"tolerance\": 0.0001, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"A_adult_axis_aligned_std\", \"claim_text\": \"Std balanced_accuracy for axis_aligned on adult at best_max_splits=20\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id1_it6__opus\"}",
+          "output": "{\"expected_value\": 0.018409, \"recomputed_value\": 0.01840889203184155, \"tolerance\": 0.001, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"A_adult_random_oblique_mean\", \"claim_text\": \"Mean balanced_accuracy for random_oblique on adult at best_max_splits=20\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id1_it6__opus\"}",
+          "output": "{\"expected_value\": 0.707565, \"recomputed_value\": 0.7075648000000001, \"tolerance\": 0.0001, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        }
+      ]
+    },
+    {
+      "dataset": "block_B_arity",
+      "examples": [
+        {
+          "input": "{\"claim_id\": \"B1_arity_us_vs_ro_wilcoxon_p\", \"claim_text\": \"Wilcoxon p for unsigned_spectral vs random_oblique arity\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id2_it6__opus\"}",
+          "output": "{\"expected_value\": 1e-06, \"recomputed_value\": 1.3359620261614865e-06, \"tolerance\": 1.0, \"tolerance_type\": \"order_of_magnitude\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"B2_arity_us_vs_ro_cohens_d\", \"claim_text\": \"Cohen's d for unsigned_spectral vs random_oblique arity\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id2_it6__opus\"}",
+          "output": "{\"expected_value\": 0.857, \"recomputed_value\": 0.8570409388466709, \"tolerance\": 0.01, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"B3_arity_ss_vs_ro_wilcoxon_p\", \"claim_text\": \"Wilcoxon p for signed_spectral vs random_oblique arity\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id2_it6__opus\"}",
+          "output": "{\"expected_value\": 0.000131, \"recomputed_value\": 0.00013144217046084065, \"tolerance\": 1.0, \"tolerance_type\": \"order_of_magnitude\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        }
+      ]
+    },
+    {
+      "dataset": "block_C_ablation",
+      "examples": [
+        {
+          "input": "{\"claim_id\": \"C1_ablation_wilcoxon_W\", \"claim_text\": \"Wilcoxon W for unsigned vs signed (105 pairs)\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id3_it6__opus\"}",
+          "output": "{\"expected_value\": 1727, \"recomputed_value\": 1727.0, \"tolerance\": 5, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"C2_ablation_wilcoxon_p\", \"claim_text\": \"Wilcoxon p-value for unsigned vs signed ablation\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id3_it6__opus\"}",
+          "output": "{\"expected_value\": 0.1087, \"recomputed_value\": 0.1086508606327614, \"tolerance\": 0.5, \"tolerance_type\": \"relative\", \"status\": \"MATCH\", \"notes\": \"p=0.1087, expected ~0.1087\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"C3_ablation_hedges_g\", \"claim_text\": \"Hedges' g for unsigned vs signed on real data\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id3_it6__opus\"}",
+          "output": "{\"expected_value\": 0.072, \"recomputed_value\": 0.07251896923634497, \"tolerance\": 0.005, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        }
+      ]
+    },
+    {
+      "dataset": "block_D_timing",
+      "examples": [
+        {
+          "input": "{\"claim_id\": \"D1_total_time\", \"claim_text\": \"Total experiment time from metadata total_time_s\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id5_it6__opus\"}",
+          "output": "{\"expected_value\": 1678.9, \"recomputed_value\": 1678.9, \"tolerance\": 10, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"Sum fit_time_s=1466.36s (excludes CoI overhead)\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"D2_max_dataset_time\", \"claim_text\": \"Max single-dataset total time (miniboone)\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id5_it6__opus\"}",
+          "output": "{\"expected_value\": 488.86, \"recomputed_value\": 487.8, \"tolerance\": 10, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"D3_all_under_30min\", \"claim_text\": \"All 8 datasets complete pipeline in <30 minutes each (1800s)\", \"source_experiment\": \"exp_id1_it5__opus\", \"source_eval_reference\": \"eval_id5_it6__opus\"}",
+          "output": "{\"expected_value\": 1, \"recomputed_value\": 1, \"tolerance\": 0, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"Max=487.8s, threshold=1800s\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        }
+      ]
+    },
+    {
+      "dataset": "block_E_frustration",
+      "examples": [
+        {
+          "input": "{\"claim_id\": \"E1_spearman_rho\", \"claim_text\": \"Spearman correlation between frustration_raw and oblique_benefit\", \"source_experiment\": \"exp_id2_it5__opus\", \"source_eval_reference\": \"eval_id3_it6__opus\"}",
+          "output": "{\"expected_value\": -0.108, \"recomputed_value\": -0.1076923076923077, \"tolerance\": 0.005, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"E2_spearman_p\", \"claim_text\": \"Spearman p-value for frustration-oblique correlation\", \"source_experiment\": \"exp_id2_it5__opus\", \"source_eval_reference\": \"eval_id3_it6__opus\"}",
+          "output": "{\"expected_value\": 0.714, \"recomputed_value\": 0.7140308087262492, \"tolerance\": 0.01, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"E3_kendall_tau\", \"claim_text\": \"Kendall's tau for frustration-oblique correlation\", \"source_experiment\": \"exp_id2_it5__opus\", \"source_eval_reference\": \"eval_id3_it6__opus\"}",
+          "output": "{\"expected_value\": -0.055, \"recomputed_value\": -0.05494505494505495, \"tolerance\": 0.01, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        }
+      ]
+    },
+    {
+      "dataset": "block_F_module_recovery",
+      "examples": [
+        {
+          "input": "{\"claim_id\": \"F1_easy_2mod_xor_signed_spectral_jaccard\", \"claim_text\": \"Mean tree-level Jaccard for signed_spectral on easy_2mod_xor\", \"source_experiment\": \"exp_id3_it3__opus\", \"source_eval_reference\": \"eval_id4_it6__opus\"}",
+          "output": "{\"expected_value\": 0.00952, \"recomputed_value\": 0.00952, \"tolerance\": 0.005, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"Self-consistent: n_values=5\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"F1_easy_2mod_xor_unsigned_spectral_jaccard\", \"claim_text\": \"Mean tree-level Jaccard for unsigned_spectral on easy_2mod_xor\", \"source_experiment\": \"exp_id3_it3__opus\", \"source_eval_reference\": \"eval_id4_it6__opus\"}",
+          "output": "{\"expected_value\": 0.09587999999999999, \"recomputed_value\": 0.09587999999999999, \"tolerance\": 0.005, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"Self-consistent: n_values=5\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        },
+        {
+          "input": "{\"claim_id\": \"F1_easy_2mod_xor_hard_threshold_jaccard\", \"claim_text\": \"Mean tree-level Jaccard for hard_threshold on easy_2mod_xor\", \"source_experiment\": \"exp_id3_it3__opus\", \"source_eval_reference\": \"eval_id4_it6__opus\"}",
+          "output": "{\"expected_value\": 0.2222, \"recomputed_value\": 0.2222, \"tolerance\": 0.005, \"tolerance_type\": \"absolute\", \"status\": \"MATCH\", \"notes\": \"Self-consistent: n_values=5\"}",
+          "eval_status_match": 1.0,
+          "eval_status_approximate": 0.0,
+          "eval_status_mismatch": 0.0
+        }
+      ]
+    }
+  ]
+}

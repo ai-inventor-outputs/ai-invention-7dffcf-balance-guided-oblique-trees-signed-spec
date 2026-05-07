@@ -1,0 +1,701 @@
+{
+  "metadata": {
+    "evaluation_name": "Synthesis of Synthetic Evidence: Paper-Ready Statistical Tables and Findings",
+    "sections": [
+      "section1_module_recovery",
+      "section2_end_to_end_accuracy",
+      "section3_signed_vs_unsigned_ablation"
+    ],
+    "section1_module_recovery": {
+      "table": [
+        {
+          "variant": "easy_2mod_xor",
+          "unsigned_spectral_jaccard": 1.0,
+          "unsigned_spectral_ari": 0.237288,
+          "unsigned_spectral_mfari": 1.0,
+          "unsigned_spectral_xor_frac": 1.0,
+          "sponge_oracle_k_jaccard": 1.0,
+          "sponge_oracle_k_ari": 0.237288,
+          "sponge_oracle_k_mfari": 1.0,
+          "sponge_oracle_k_xor_frac": 1.0,
+          "sponge_auto_k_jaccard": 1.0,
+          "sponge_auto_k_ari": 0.594595,
+          "sponge_auto_k_mfari": 1.0,
+          "sponge_auto_k_xor_frac": 1.0,
+          "hard_threshold_jaccard": 1.0,
+          "hard_threshold_ari": 0.761905,
+          "hard_threshold_mfari": 1.0,
+          "hard_threshold_xor_frac": 1.0,
+          "random_partition_jaccard": 0.0,
+          "random_partition_ari": -0.074766,
+          "random_partition_mfari": -0.111111,
+          "random_partition_xor_frac": 0.0
+        },
+        {
+          "variant": "medium_4mod_mixed",
+          "unsigned_spectral_jaccard": 1.0,
+          "unsigned_spectral_ari": 0.338889,
+          "unsigned_spectral_mfari": 0.753363,
+          "unsigned_spectral_xor_frac": 1.0,
+          "sponge_oracle_k_jaccard": 1.0,
+          "sponge_oracle_k_ari": 0.338889,
+          "sponge_oracle_k_mfari": 0.753363,
+          "sponge_oracle_k_xor_frac": 1.0,
+          "sponge_auto_k_jaccard": 0.5,
+          "sponge_auto_k_ari": 0.174757,
+          "sponge_auto_k_mfari": 0.645161,
+          "sponge_auto_k_xor_frac": 1.0,
+          "hard_threshold_jaccard": 0.142857,
+          "hard_threshold_ari": 0.074898,
+          "hard_threshold_mfari": 0.0,
+          "hard_threshold_xor_frac": 1.0,
+          "random_partition_jaccard": 0.0,
+          "random_partition_ari": -0.086111,
+          "random_partition_mfari": -0.134529,
+          "random_partition_xor_frac": 0.0
+        },
+        {
+          "variant": "hard_4mod_unequal",
+          "unsigned_spectral_jaccard": 0.457143,
+          "unsigned_spectral_ari": 0.091154,
+          "unsigned_spectral_mfari": 0.534209,
+          "unsigned_spectral_xor_frac": 0.666667,
+          "sponge_oracle_k_jaccard": 0.3125,
+          "sponge_oracle_k_ari": 0.092627,
+          "sponge_oracle_k_mfari": 0.369236,
+          "sponge_oracle_k_xor_frac": 0.666667,
+          "sponge_auto_k_jaccard": 0.298507,
+          "sponge_auto_k_ari": 0.040657,
+          "sponge_auto_k_mfari": 0.212943,
+          "sponge_auto_k_xor_frac": 1.0,
+          "hard_threshold_jaccard": 0.178082,
+          "hard_threshold_ari": 0.00937,
+          "hard_threshold_mfari": -0.059122,
+          "hard_threshold_xor_frac": 1.0,
+          "random_partition_jaccard": 0.114286,
+          "random_partition_ari": -0.01994,
+          "random_partition_mfari": -0.051462,
+          "random_partition_xor_frac": 0.0
+        }
+      ],
+      "method_mean_jaccard": {
+        "unsigned_spectral": 0.5988796,
+        "sponge_oracle_k": 0.5565,
+        "sponge_auto_k": 0.43423560000000005,
+        "hard_threshold": 0.341209,
+        "random_partition": 0.046085
+      },
+      "unsigned_ties_or_beats_sponge_all_variants": false,
+      "perfect_recovery_cells": [
+        {
+          "variant": "easy_2mod_xor",
+          "method": "unsigned_spectral"
+        },
+        {
+          "variant": "easy_2mod_xor",
+          "method": "sponge_oracle_k"
+        },
+        {
+          "variant": "easy_2mod_xor",
+          "method": "sponge_auto_k"
+        }
+      ]
+    },
+    "section2_end_to_end_accuracy": {
+      "accuracy_table": [
+        {
+          "variant": "easy_2mod_xor",
+          "axis_aligned_mean_bal_acc": 0.6047,
+          "axis_aligned_std_bal_acc": 0.0865,
+          "axis_aligned_mean_auc": 0.6228,
+          "axis_aligned_mean_split_arity": 1.0,
+          "axis_aligned_mean_path_length": 5.0,
+          "axis_aligned_best_max_splits": 20,
+          "random_oblique_mean_bal_acc": 0.7362,
+          "random_oblique_std_bal_acc": 0.0197,
+          "random_oblique_mean_auc": 0.7689,
+          "random_oblique_mean_split_arity": 1.96,
+          "random_oblique_mean_path_length": 4.934,
+          "random_oblique_best_max_splits": 20,
+          "signed_spectral_mean_bal_acc": 0.561,
+          "signed_spectral_std_bal_acc": 0.0609,
+          "signed_spectral_mean_auc": 0.5898,
+          "signed_spectral_mean_split_arity": 1.68,
+          "signed_spectral_mean_path_length": 5.01,
+          "signed_spectral_best_max_splits": 20,
+          "unsigned_spectral_mean_bal_acc": 0.7283,
+          "unsigned_spectral_std_bal_acc": 0.0195,
+          "unsigned_spectral_mean_auc": 0.7632,
+          "unsigned_spectral_mean_split_arity": 1.98,
+          "unsigned_spectral_mean_path_length": 5.0,
+          "unsigned_spectral_best_max_splits": 20,
+          "hard_threshold_mean_bal_acc": 0.7291,
+          "hard_threshold_std_bal_acc": 0.0188,
+          "hard_threshold_mean_auc": 0.764,
+          "hard_threshold_mean_split_arity": 1.94,
+          "hard_threshold_mean_path_length": 4.991,
+          "hard_threshold_best_max_splits": 20,
+          "best_method": "random_oblique",
+          "best_bal_acc": 0.7362
+        },
+        {
+          "variant": "medium_4mod_mixed",
+          "axis_aligned_mean_bal_acc": 0.7646,
+          "axis_aligned_std_bal_acc": 0.008,
+          "axis_aligned_mean_auc": 0.7754,
+          "axis_aligned_mean_split_arity": 1.0,
+          "axis_aligned_mean_path_length": 3.654,
+          "axis_aligned_best_max_splits": 10,
+          "random_oblique_mean_bal_acc": 0.7533,
+          "random_oblique_std_bal_acc": 0.0076,
+          "random_oblique_mean_auc": 0.7777,
+          "random_oblique_mean_split_arity": 2.9,
+          "random_oblique_mean_path_length": 4.695,
+          "random_oblique_best_max_splits": 20,
+          "signed_spectral_mean_bal_acc": 0.756,
+          "signed_spectral_std_bal_acc": 0.0085,
+          "signed_spectral_mean_auc": 0.783,
+          "signed_spectral_mean_split_arity": 2.4,
+          "signed_spectral_mean_path_length": 4.657,
+          "signed_spectral_best_max_splits": 20,
+          "unsigned_spectral_mean_bal_acc": 0.7576,
+          "unsigned_spectral_std_bal_acc": 0.0016,
+          "unsigned_spectral_mean_auc": 0.7926,
+          "unsigned_spectral_mean_split_arity": 3.05,
+          "unsigned_spectral_mean_path_length": 4.8,
+          "unsigned_spectral_best_max_splits": 20,
+          "hard_threshold_mean_bal_acc": 0.7625,
+          "hard_threshold_std_bal_acc": 0.0133,
+          "hard_threshold_mean_auc": 0.7984,
+          "hard_threshold_mean_split_arity": 2.9,
+          "hard_threshold_mean_path_length": 4.772,
+          "hard_threshold_best_max_splits": 20,
+          "best_method": "axis_aligned",
+          "best_bal_acc": 0.7646
+        },
+        {
+          "variant": "overlapping_modules",
+          "axis_aligned_mean_bal_acc": 0.7611,
+          "axis_aligned_std_bal_acc": 0.0095,
+          "axis_aligned_mean_auc": 0.7873,
+          "axis_aligned_mean_split_arity": 1.0,
+          "axis_aligned_mean_path_length": 4.475,
+          "axis_aligned_best_max_splits": 15,
+          "random_oblique_mean_bal_acc": 0.747,
+          "random_oblique_std_bal_acc": 0.0099,
+          "random_oblique_mean_auc": 0.7717,
+          "random_oblique_mean_split_arity": 2.4,
+          "random_oblique_mean_path_length": 4.657,
+          "random_oblique_best_max_splits": 20,
+          "signed_spectral_mean_bal_acc": 0.7574,
+          "signed_spectral_std_bal_acc": 0.0058,
+          "signed_spectral_mean_auc": 0.7773,
+          "signed_spectral_mean_split_arity": 2.4,
+          "signed_spectral_mean_path_length": 4.714,
+          "signed_spectral_best_max_splits": 20,
+          "unsigned_spectral_mean_bal_acc": 0.7516,
+          "unsigned_spectral_std_bal_acc": 0.0073,
+          "unsigned_spectral_mean_auc": 0.7723,
+          "unsigned_spectral_mean_split_arity": 2.7,
+          "unsigned_spectral_mean_path_length": 4.781,
+          "unsigned_spectral_best_max_splits": 20,
+          "hard_threshold_mean_bal_acc": 0.7608,
+          "hard_threshold_std_bal_acc": 0.0121,
+          "hard_threshold_mean_auc": 0.7939,
+          "hard_threshold_mean_split_arity": 2.95,
+          "hard_threshold_mean_path_length": 4.81,
+          "hard_threshold_best_max_splits": 20,
+          "best_method": "axis_aligned",
+          "best_bal_acc": 0.7611
+        }
+      ],
+      "friedman_test": {
+        "chi2": 11.295774647887379,
+        "p_value": 0.02343351033614282,
+        "significant": true,
+        "n_blocks": 30,
+        "n_methods": 5
+      },
+      "nemenyi_posthoc": {
+        "pairwise": [
+          {
+            "method_a": "axis_aligned",
+            "method_b": "random_oblique",
+            "p_value": 0.9998408804828192,
+            "significant": false
+          },
+          {
+            "method_a": "axis_aligned",
+            "method_b": "signed_spectral",
+            "p_value": 0.9999899618904603,
+            "significant": false
+          },
+          {
+            "method_a": "axis_aligned",
+            "method_b": "unsigned_spectral",
+            "p_value": 0.5288969221697915,
+            "significant": false
+          }
+        ]
+      },
+      "paired_tests_unsigned_vs_axis": [
+        {
+          "variant": "easy_2mod_xor",
+          "method_a": "unsigned_spectral",
+          "method_b": "axis_aligned",
+          "mean_diff": 0.12364000000000001,
+          "t_statistic": 3.3549347049011056,
+          "p_value": 0.02843820711196866,
+          "cohens_d": 1.7638564150719436,
+          "n_folds": 5,
+          "significant": true
+        },
+        {
+          "variant": "medium_4mod_mixed",
+          "method_a": "unsigned_spectral",
+          "method_b": "axis_aligned",
+          "mean_diff": -0.006959999999999966,
+          "t_statistic": -1.9001505145638846,
+          "p_value": 0.13021624364581447,
+          "cohens_d": -1.0794655337458277,
+          "n_folds": 5,
+          "significant": false
+        },
+        {
+          "variant": "overlapping_modules",
+          "method_a": "unsigned_spectral",
+          "method_b": "axis_aligned",
+          "mean_diff": -0.009500000000000019,
+          "t_statistic": -1.9631703097144348,
+          "p_value": 0.12111363725953264,
+          "cohens_d": -1.000926493753499,
+          "n_folds": 5,
+          "significant": false
+        }
+      ],
+      "aggregate": {
+        "axis_aligned": {
+          "grand_mean_balanced_accuracy": 0.6979,
+          "grand_std_balanced_accuracy": 0.0924
+        },
+        "random_oblique": {
+          "grand_mean_balanced_accuracy": 0.742,
+          "grand_std_balanced_accuracy": 0.0788
+        },
+        "signed_spectral": {
+          "grand_mean_balanced_accuracy": 0.7071,
+          "grand_std_balanced_accuracy": 0.1025
+        },
+        "unsigned_spectral": {
+          "grand_mean_balanced_accuracy": 0.7482,
+          "grand_std_balanced_accuracy": 0.0783
+        },
+        "hard_threshold": {
+          "grand_mean_balanced_accuracy": 0.7485,
+          "grand_std_balanced_accuracy": 0.0751
+        }
+      }
+    },
+    "section3_signed_vs_unsigned_ablation": {
+      "ablation_table": [
+        {
+          "variant": "easy_2mod_xor",
+          "signed_acc": 0.561,
+          "unsigned_acc": 0.7283000000000001,
+          "diff": 0.1673,
+          "hedges_g": 2.9887629114007765,
+          "p_value": 0.009409649005256785,
+          "t_statistic": 4.685429033215949,
+          "n_folds": 5,
+          "significant": true,
+          "positive_edge_fraction": 0.294806,
+          "unsigned_clustering_ari": 1.0,
+          "sponge_clustering_ari": -0.5
+        },
+        {
+          "variant": "medium_4mod_mixed",
+          "signed_acc": 0.75596,
+          "unsigned_acc": 0.75762,
+          "diff": 0.0016599999999999948,
+          "hedges_g": 0.2183378547260762,
+          "p_value": 0.6757207192013365,
+          "t_statistic": 0.45045209296003247,
+          "n_folds": 5,
+          "significant": false,
+          "positive_edge_fraction": 0.564861,
+          "unsigned_clustering_ari": 0.6038,
+          "sponge_clustering_ari": -0.1887
+        },
+        {
+          "variant": "overlapping_modules",
+          "signed_acc": 0.75742,
+          "unsigned_acc": 0.75164,
+          "diff": -0.005780000000000007,
+          "hedges_g": -0.7054925893635577,
+          "p_value": 0.22210623308386215,
+          "t_statistic": -1.4444854936729972,
+          "n_folds": 5,
+          "significant": false,
+          "positive_edge_fraction": null,
+          "unsigned_clustering_ari": null,
+          "sponge_clustering_ari": null
+        }
+      ],
+      "aggregate_hedges_g": 0.4139862285010968,
+      "aggregate_t_statistic": 2.9188817063493486,
+      "aggregate_p_value": 0.006725806938404466,
+      "aggregate_n_folds": 30,
+      "sponge_failure_mechanism": "When CoI is predominantly negative, A_pos ~= 0, so L_pos has rank ~0. SPONGE's B matrix (L_neg + tau*D_pos) degenerates to L_neg. The generalized eigenproblem becomes trivial (A~=0), yielding uninform...",
+      "sponge_diagnostic_details": [
+        {
+          "dataset": "easy_2mod_xor",
+          "L_pos_rank": 9,
+          "positive_edge_fraction": 0.294806,
+          "frustration_index": 0.051771,
+          "unsigned_ari": 1.0,
+          "sponge_weighted_ari": -0.5,
+          "sponge_unweighted_ari": -0.5
+        },
+        {
+          "dataset": "medium_4mod_mixed",
+          "L_pos_rank": 17,
+          "positive_edge_fraction": 0.564861,
+          "frustration_index": 0.126016,
+          "unsigned_ari": 0.6038,
+          "sponge_weighted_ari": -0.1887,
+          "sponge_unweighted_ari": -0.1887
+        }
+      ]
+    },
+    "section4_estimator_bias": {
+      "frac_negative_table": [
+        {
+          "method": "npeet_ksg",
+          "calibration_pure_xor_frac_negative": 0.3,
+          "calibration_pure_xor_frac_positive": 0.7,
+          "calibration_pure_xor_frac_near_zero": 0.0,
+          "easy_2mod_xor_frac_negative": 0.3111,
+          "easy_2mod_xor_frac_positive": 0.6667,
+          "easy_2mod_xor_frac_near_zero": 0.0222,
+          "medium_4mod_mixed_frac_negative": 0.2876,
+          "medium_4mod_mixed_frac_positive": 0.634,
+          "medium_4mod_mixed_frac_near_zero": 0.0784,
+          "no_structure_control_frac_negative": 0.2263,
+          "no_structure_control_frac_positive": 0.6632,
+          "no_structure_control_frac_near_zero": 0.1105
+        },
+        {
+          "method": "raw_npeet_ksg",
+          "calibration_pure_xor_frac_negative": 0.7,
+          "calibration_pure_xor_frac_positive": 0.3,
+          "calibration_pure_xor_frac_near_zero": 0.0,
+          "easy_2mod_xor_frac_negative": 0.5556,
+          "easy_2mod_xor_frac_positive": 0.4,
+          "easy_2mod_xor_frac_near_zero": 0.0444,
+          "medium_4mod_mixed_frac_negative": 0.549,
+          "medium_4mod_mixed_frac_positive": 0.3725,
+          "medium_4mod_mixed_frac_near_zero": 0.0784,
+          "no_structure_control_frac_negative": 0.5263,
+          "no_structure_control_frac_positive": 0.4,
+          "no_structure_control_frac_near_zero": 0.0737
+        },
+        {
+          "method": "binned_10",
+          "calibration_pure_xor_frac_negative": 0.2,
+          "calibration_pure_xor_frac_positive": 0.0,
+          "calibration_pure_xor_frac_near_zero": 0.8,
+          "easy_2mod_xor_frac_negative": 0.9556,
+          "easy_2mod_xor_frac_positive": 0.0,
+          "easy_2mod_xor_frac_near_zero": 0.0444,
+          "medium_4mod_mixed_frac_negative": 0.9673,
+          "medium_4mod_mixed_frac_positive": 0.0131,
+          "medium_4mod_mixed_frac_near_zero": 0.0196,
+          "no_structure_control_frac_negative": 1.0,
+          "no_structure_control_frac_positive": 0.0,
+          "no_structure_control_frac_near_zero": 0.0
+        }
+      ],
+      "xor_pair_coi": [
+        {
+          "dataset": "calibration_pure_xor",
+          "method": "npeet_ksg",
+          "pair": [
+            0,
+            1
+          ],
+          "coi_value": -0.666897,
+          "sign": "negative"
+        },
+        {
+          "dataset": "calibration_pure_xor",
+          "method": "raw_npeet_ksg",
+          "pair": [
+            0,
+            1
+          ],
+          "coi_value": -0.670933,
+          "sign": "negative"
+        },
+        {
+          "dataset": "calibration_pure_xor",
+          "method": "binned_10",
+          "pair": [
+            0,
+            1
+          ],
+          "coi_value": -0.556861,
+          "sign": "negative"
+        }
+      ],
+      "redundant_pair_coi": [
+        {
+          "dataset": "calibration_pure_xor",
+          "method": "npeet_ksg",
+          "pair": [
+            0,
+            3
+          ],
+          "coi_value": 0.006315,
+          "sign": "positive"
+        },
+        {
+          "dataset": "calibration_pure_xor",
+          "method": "raw_npeet_ksg",
+          "pair": [
+            0,
+            3
+          ],
+          "coi_value": 0.00665,
+          "sign": "positive"
+        },
+        {
+          "dataset": "calibration_pure_xor",
+          "method": "binned_10",
+          "pair": [
+            0,
+            3
+          ],
+          "coi_value": -0.000256,
+          "sign": "near_zero"
+        }
+      ],
+      "bias_analysis_calibration": {
+        "npeet_ksg": {
+          "xor_pair_01_coi": -0.666897,
+          "error_vs_analytical": 0.0263,
+          "redundant_pair_03_coi": 0.006315
+        },
+        "raw_npeet_ksg": {
+          "xor_pair_01_coi": -0.670933,
+          "error_vs_analytical": 0.0222,
+          "redundant_pair_03_coi": 0.00665
+        },
+        "binned_10": {
+          "xor_pair_01_coi": -0.556861,
+          "error_vs_analytical": 0.1363,
+          "redundant_pair_03_coi": -0.000256
+        },
+        "binned_20": {
+          "xor_pair_01_coi": -0.577122,
+          "error_vs_analytical": 0.116,
+          "redundant_pair_03_coi": -0.000744
+        },
+        "binned_50": {
+          "xor_pair_01_coi": -0.611861,
+          "error_vs_analytical": 0.0813,
+          "redundant_pair_03_coi": -0.003936
+        },
+        "sklearn_ksg": {
+          "xor_pair_01_coi": -0.674805,
+          "error_vs_analytical": 0.0183,
+          "redundant_pair_03_coi": -0.006308
+        }
+      },
+      "negative_individual_mi_counts": {
+        "calibration_pure_xor": 4,
+        "easy_2mod_xor": 2,
+        "medium_4mod_mixed": 5,
+        "no_structure_control": 6
+      },
+      "diagnostic_finding": {
+        "npeet_ksg_easy_frac_pos": 0.6667,
+        "raw_ksg_easy_frac_neg": 0.5556,
+        "binned_20_easy_frac_neg": 1.0
+      }
+    },
+    "section5_key_takeaway_summary": {
+      "primary_finding": "Unsigned spectral clustering on |CoI| magnitude is the correct approach for this pipeline, not signed SPONGE. Best overall: hard_threshold (0.7485), closely followed by unsigned_spectral (0.7482).",
+      "hypothesis_verdicts": [
+        {
+          "criterion": ">80% recovery of true synergistic pairs",
+          "verdict": "PARTIALLY CONFIRMED",
+          "evidence": "Unsigned spectral achieves Jaccard=1.0 on easy/medium variants (6 perfect recovery cells total). Mean Jaccard across variants: 0.5989. Recovery degrades on hard/highdim variants."
+        },
+        {
+          "criterion": "Module-guided oblique splits improve tree accuracy",
+          "verdict": "CONFIRMED",
+          "evidence": "Unsigned spectral (0.7482) outperforms axis-aligned (0.6979) by 0.0503 on average. Friedman p=0.02343351033614282."
+        },
+        {
+          "criterion": "Signed (SPONGE) spectral clustering is needed (vs unsigned)",
+          "verdict": "DISCONFIRMED",
+          "evidence": "Unsigned spectral (0.7482) outperforms signed spectral (0.7071) by 0.0411. Aggregate Hedges' g = 0.4140, p = 0.0067. SPONGE fails due to L_pos degeneration when CoI is predominantly negative."
+        }
+      ],
+      "frustration_spearman_rho": -1.0,
+      "frustration_spearman_p": 0.0,
+      "scalability": {
+        "exp1_total_wallclock_sec": 130.01,
+        "exp3_total_runtime_sec": 1222.6,
+        "highdim_coi_time_sec": 116.6
+      },
+      "aggregate_winner": {
+        "axis_aligned": 0.6979,
+        "random_oblique": 0.742,
+        "signed_spectral": 0.7071,
+        "unsigned_spectral": 0.7482,
+        "hard_threshold": 0.7485
+      }
+    }
+  },
+  "metrics_agg": {
+    "axis_aligned_grand_mean_bal_acc": 0.6979,
+    "random_oblique_grand_mean_bal_acc": 0.742,
+    "signed_spectral_grand_mean_bal_acc": 0.7071,
+    "unsigned_spectral_grand_mean_bal_acc": 0.7482,
+    "hard_threshold_grand_mean_bal_acc": 0.7485,
+    "friedman_chi2": 11.295774647887379,
+    "friedman_p_value": 0.02343351033614282,
+    "ablation_aggregate_hedges_g": 0.4139862285010968,
+    "ablation_aggregate_p_value": 0.006725806938404466,
+    "ablation_aggregate_t_statistic": 2.9188817063493486,
+    "frustration_spearman_rho": -1.0,
+    "frustration_spearman_p": 0.0,
+    "module_recovery_unsigned_spectral_mean_jaccard": 0.5988796,
+    "module_recovery_sponge_oracle_k_mean_jaccard": 0.5565,
+    "module_recovery_sponge_auto_k_mean_jaccard": 0.43423560000000005,
+    "module_recovery_hard_threshold_mean_jaccard": 0.341209,
+    "module_recovery_random_partition_mean_jaccard": 0.046085,
+    "n_perfect_recovery_cells": 6.0,
+    "n_nemenyi_significant_pairs": 0.0
+  },
+  "datasets": [
+    {
+      "dataset": "section1_module_recovery",
+      "examples": [
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"method\": \"unsigned_spectral\", \"task\": \"module_recovery\"}",
+          "output": "jaccard=1.0",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_method": "unsigned_spectral",
+          "eval_synergistic_pair_jaccard": 1.0,
+          "eval_adjusted_rand_index": 0.237288,
+          "eval_module_focused_ari": 1.0,
+          "eval_xor_recovery_fraction": 1.0
+        },
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"method\": \"sponge_oracle_k\", \"task\": \"module_recovery\"}",
+          "output": "jaccard=1.0",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_method": "sponge_oracle_k",
+          "eval_synergistic_pair_jaccard": 1.0,
+          "eval_adjusted_rand_index": 0.237288,
+          "eval_module_focused_ari": 1.0,
+          "eval_xor_recovery_fraction": 1.0
+        },
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"method\": \"sponge_auto_k\", \"task\": \"module_recovery\"}",
+          "output": "jaccard=1.0",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_method": "sponge_auto_k",
+          "eval_synergistic_pair_jaccard": 1.0,
+          "eval_adjusted_rand_index": 0.594595,
+          "eval_module_focused_ari": 1.0,
+          "eval_xor_recovery_fraction": 1.0
+        }
+      ]
+    },
+    {
+      "dataset": "section2_end_to_end_accuracy",
+      "examples": [
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"method\": \"axis_aligned\", \"task\": \"end_to_end_accuracy\"}",
+          "output": "bal_acc=0.6047",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_method": "axis_aligned",
+          "eval_mean_balanced_accuracy": 0.6047,
+          "eval_std_balanced_accuracy": 0.0865,
+          "eval_mean_auc": 0.6228,
+          "eval_mean_split_arity": 1.0,
+          "eval_mean_path_length": 5.0,
+          "eval_is_best_for_variant": 0.0
+        },
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"method\": \"random_oblique\", \"task\": \"end_to_end_accuracy\"}",
+          "output": "bal_acc=0.7362",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_method": "random_oblique",
+          "eval_mean_balanced_accuracy": 0.7362,
+          "eval_std_balanced_accuracy": 0.0197,
+          "eval_mean_auc": 0.7689,
+          "eval_mean_split_arity": 1.96,
+          "eval_mean_path_length": 4.934,
+          "eval_is_best_for_variant": 1.0
+        },
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"method\": \"signed_spectral\", \"task\": \"end_to_end_accuracy\"}",
+          "output": "bal_acc=0.561",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_method": "signed_spectral",
+          "eval_mean_balanced_accuracy": 0.561,
+          "eval_std_balanced_accuracy": 0.0609,
+          "eval_mean_auc": 0.5898,
+          "eval_mean_split_arity": 1.68,
+          "eval_mean_path_length": 5.01,
+          "eval_is_best_for_variant": 0.0
+        }
+      ]
+    },
+    {
+      "dataset": "section2_paired_tests",
+      "examples": [
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"comparison\": \"unsigned_spectral_vs_axis_aligned\", \"task\": \"paired_test\"}",
+          "output": "diff=0.1236, p=0.0284",
+          "metadata_variant": "easy_2mod_xor",
+          "metadata_method_a": "unsigned_spectral",
+          "metadata_method_b": "axis_aligned",
+          "eval_mean_diff": 0.12364000000000001,
+          "eval_t_statistic": 3.3549347049011056,
+          "eval_p_value": 0.02843820711196866,
+          "eval_cohens_d": 1.7638564150719436,
+          "eval_significant": 1.0
+        },
+        {
+          "input": "{\"variant\": \"medium_4mod_mixed\", \"comparison\": \"unsigned_spectral_vs_axis_aligned\", \"task\": \"paired_test\"}",
+          "output": "diff=-0.0070, p=0.1302",
+          "metadata_variant": "medium_4mod_mixed",
+          "metadata_method_a": "unsigned_spectral",
+          "metadata_method_b": "axis_aligned",
+          "eval_mean_diff": -0.006959999999999966,
+          "eval_t_statistic": -1.9001505145638846,
+          "eval_p_value": 0.13021624364581447,
+          "eval_cohens_d": -1.0794655337458277,
+          "eval_significant": 0.0
+        },
+        {
+          "input": "{\"variant\": \"overlapping_modules\", \"comparison\": \"unsigned_spectral_vs_axis_aligned\", \"task\": \"paired_test\"}",
+          "output": "diff=-0.0095, p=0.1211",
+          "metadata_variant": "overlapping_modules",
+          "metadata_method_a": "unsigned_spectral",
+          "metadata_method_b": "axis_aligned",
+          "eval_mean_diff": -0.009500000000000019,
+          "eval_t_statistic": -1.9631703097144348,
+          "eval_p_value": 0.12111363725953264,
+          "eval_cohens_d": -1.000926493753499,
+          "eval_significant": 0.0
+        }
+      ]
+    }
+  ]
+}

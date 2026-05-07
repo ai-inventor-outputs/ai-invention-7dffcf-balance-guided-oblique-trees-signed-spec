@@ -1,0 +1,13 @@
+{
+  "id": "eval_id4_it5__opus",
+  "type": "code",
+  "title": "Synthesis of Synthetic Evidence: Paper-Ready Statistical Tables and Findings",
+  "summary": "Demo notebook synthesizing three upstream experiments into five paper-ready statistical analysis sections: Module Recovery Table (Jaccard index), End-to-End Accuracy (Friedman/Nemenyi tests), Signed vs Unsigned Ablation (Hedges' g effect sizes), Estimator Bias (CoI sign distributions), and Hypothesis Verdicts. Uses trimmed metadata from three experiment JSON files as input data, runs scipy statistical tests and scikit-posthocs Nemenyi comparisons, and produces a 4-panel visualization of key findings.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_5/gen_art/eval_id4_it5__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id4_it5__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id4_it5__opus/eval_code_demo.ipynb"
+}

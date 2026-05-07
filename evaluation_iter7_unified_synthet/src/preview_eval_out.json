@@ -1,0 +1,384 @@
+{
+  "metadata": {
+    "evaluation_name": "unified_results_and_statistical_catalogue",
+    "dependencies": [
+      "exp_id1_it5__opus",
+      "exp_id3_it3__opus",
+      "exp_id1_it2__opus"
+    ],
+    "n_figs_methods": 5,
+    "n_baseline_methods": 3,
+    "n_real_datasets": 8,
+    "n_classification_datasets": 7,
+    "n_synthetic_variants": 6,
+    "alpha": 0.05,
+    "rope_width": 0.01,
+    "A_method_progression_table": {
+      "description": "Method progression: accuracy/arity on synthetic vs real data",
+      "rows": [
+        {
+          "method": "axis_aligned",
+          "synth_acc_easy_medium": 0.68465,
+          "synth_arity_easy_medium": 1.0,
+          "synth_acc_all6": 0.697883,
+          "synth_arity_all6": 1.0,
+          "real_acc_7ds": 0.728185,
+          "real_arity_7ds": 1.0,
+          "delta_synth_vs_axis": 0.0,
+          "delta_real_vs_axis": 0.0
+        },
+        {
+          "method": "random_oblique",
+          "synth_acc_easy_medium": 0.74475,
+          "synth_arity_easy_medium": 2.43,
+          "synth_acc_all6": 0.741967,
+          "synth_arity_all6": 3.1133,
+          "real_acc_7ds": 0.731888,
+          "real_arity_7ds": 3.3,
+          "delta_synth_vs_axis": 0.0601,
+          "delta_real_vs_axis": 0.003703
+        },
+        {
+          "method": "unsigned_spectral",
+          "synth_acc_easy_medium": 0.74295,
+          "synth_arity_easy_medium": 2.515,
+          "synth_acc_all6": 0.74825,
+          "synth_arity_all6": 3.0283,
+          "real_acc_7ds": 0.734921,
+          "real_arity_7ds": 10.9214,
+          "delta_synth_vs_axis": 0.0583,
+          "delta_real_vs_axis": 0.006736
+        }
+      ],
+      "narrative": "unsigned-signed gap on synthetic(easy+medium)=0.0845, on real(7ds)=-0.0007. Synthetic data with planted XOR modules has stronger CoI signal, so oblique methods show larger gains over axis-aligned ther..."
+    },
+    "B_recovery_accuracy_correlation": {
+      "description": "Spearman correlation: module recovery Jaccard vs downstream accuracy improvement",
+      "n_points": 15,
+      "per_variant_tables": [
+        {
+          "variant": "easy_2mod_xor",
+          "rows": [
+            {
+              "method": "signed_spectral",
+              "dep3_method": "sponge_auto_k",
+              "jaccard": 1.0,
+              "accuracy": 0.561,
+              "accuracy_improvement": -0.0437
+            },
+            {
+              "method": "unsigned_spectral",
+              "dep3_method": "unsigned_spectral",
+              "jaccard": 1.0,
+              "accuracy": 0.7283,
+              "accuracy_improvement": 0.1236
+            },
+            {
+              "method": "hard_threshold",
+              "dep3_method": "hard_threshold",
+              "jaccard": 1.0,
+              "accuracy": 0.7291,
+              "accuracy_improvement": 0.1244
+            }
+          ]
+        },
+        {
+          "variant": "medium_4mod_mixed",
+          "rows": [
+            {
+              "method": "signed_spectral",
+              "dep3_method": "sponge_auto_k",
+              "jaccard": 0.5,
+              "accuracy": 0.756,
+              "accuracy_improvement": -0.0086
+            },
+            {
+              "method": "unsigned_spectral",
+              "dep3_method": "unsigned_spectral",
+              "jaccard": 1.0,
+              "accuracy": 0.7576,
+              "accuracy_improvement": -0.007
+            },
+            {
+              "method": "hard_threshold",
+              "dep3_method": "hard_threshold",
+              "jaccard": 0.142857,
+              "accuracy": 0.7625,
+              "accuracy_improvement": -0.0021
+            }
+          ]
+        },
+        {
+          "variant": "overlapping_modules",
+          "rows": [
+            {
+              "method": "signed_spectral",
+              "dep3_method": "sponge_auto_k",
+              "jaccard": 0.285714,
+              "accuracy": 0.7574,
+              "accuracy_improvement": -0.0037
+            },
+            {
+              "method": "unsigned_spectral",
+              "dep3_method": "unsigned_spectral",
+              "jaccard": 0.4,
+              "accuracy": 0.7516,
+              "accuracy_improvement": -0.0095
+            },
+            {
+              "method": "hard_threshold",
+              "dep3_method": "hard_threshold",
+              "jaccard": 0.3,
+              "accuracy": 0.7608,
+              "accuracy_improvement": -0.0003
+            }
+          ]
+        }
+      ],
+      "spearman_rho": 0.046891,
+      "spearman_p": 0.868203,
+      "pearson_r": 0.251548,
+      "pearson_p": 0.36579,
+      "interpretation": "Spearman rho=0.0469 (p=0.8682) across 15 variant-method pairs. No significant correlation at alpha=0.05."
+    },
+    "C_signed_vs_unsigned_narrative": {
+      "description": "Signed-vs-unsigned Hedges' g analysis (real and synthetic)",
+      "real_hedges_g_accuracy": -0.420317,
+      "real_hedges_g_arity": -5.401037,
+      "synthetic_hedges_g_accuracy": -0.465295,
+      "synthetic_hedges_g_arity": -1.005031,
+      "per_item_breakdown": [
+        {
+          "name": "adult",
+          "domain": "real",
+          "signed_acc_mean": 0.701791,
+          "unsigned_acc_mean": 0.701338,
+          "hedges_g_acc": 0.016582,
+          "signed_arity_mean": 1.69,
+          "unsigned_arity_mean": 1.65,
+          "hedges_g_arity": 0.932848
+        },
+        {
+          "name": "electricity",
+          "domain": "real",
+          "signed_acc_mean": 0.794277,
+          "unsigned_acc_mean": 0.791157,
+          "hedges_g_acc": 0.737897,
+          "signed_arity_mean": 1.1,
+          "unsigned_arity_mean": 1.4,
+          "hedges_g_arity": -2.896767
+        },
+        {
+          "name": "eye_movements",
+          "domain": "real",
+          "signed_acc_mean": 0.581502,
+          "unsigned_acc_mean": 0.572708,
+          "hedges_g_acc": 0.506176,
+          "signed_arity_mean": 7.66,
+          "unsigned_arity_mean": 8.59,
+          "hedges_g_arity": -1.394203
+        }
+      ],
+      "coi_diagnostics": {
+        "mean_abs_coi_synthetic": 0.086259,
+        "real_pos_neg_pairs": [
+          {
+            "dataset": "adult",
+            "n_positive": 3,
+            "n_negative": 3
+          },
+          {
+            "dataset": "electricity",
+            "n_positive": 12,
+            "n_negative": 9
+          },
+          {
+            "dataset": "eye_movements",
+            "n_positive": 0,
+            "n_negative": 190
+          }
+        ]
+      },
+      "divergence_explanation": "Mean |CoI| on synthetic=0.0863. Avg Hedges' g(acc): real=-0.420317, synthetic=-0.465295. Synthetic has stronger CoI signal with more extreme values. On real data, the CoI signal is weaker and noisier,..."
+    },
+    "D_statistical_test_catalogue": {
+      "description": "Complete catalogue of all statistical tests",
+      "n_tests": 28,
+      "tests": [
+        {
+          "test_id": "D1_friedman_8methods",
+          "test_name": "Friedman",
+          "scope": "8 methods x 7 classification datasets",
+          "null_hypothesis": "All methods have equal mean ranks across datasets",
+          "metric": "balanced_accuracy",
+          "test_statistic": 37.714286,
+          "statistic_name": "chi2",
+          "p_value": 3.43e-06,
+          "effect_size": 0.769679,
+          "effect_size_name": "Kendall_W",
+          "n": 7,
+          "k": 8,
+          "significant_at_005": true,
+          "interpretation": "Friedman chi2=37.71, p=0.000003. Reject H0: methods differ significantly.",
+          "details": {
+            "average_ranks": {
+              "axis_aligned": 6.1429,
+              "random_oblique": 5.2857,
+              "unsigned_spectral": 4.2857,
+              "signed_spectral": 4.1429,
+              "hard_threshold": 5.1429,
+              "ebm": 1.5714,
+              "random_forest": 1.5714,
+              "linear": 7.8571
+            }
+          }
+        },
+        {
+          "test_id": "D2_nemenyi_posthoc",
+          "test_name": "Nemenyi post-hoc",
+          "scope": "8 methods x 7 datasets (pairwise)",
+          "null_hypothesis": "Each pair of methods has equal mean ranks",
+          "metric": "balanced_accuracy",
+          "test_statistic": 3.9685,
+          "statistic_name": "critical_difference",
+          "p_value": null,
+          "effect_size": null,
+          "effect_size_name": null,
+          "n": 7,
+          "k": 8,
+          "significant_at_005": true,
+          "interpretation": "Critical difference=3.969. 4 significant pairs found.",
+          "details": {
+            "significant_pairs": [
+              {
+                "method_a": "axis_aligned",
+                "method_b": "ebm",
+                "p_value": 0.011316
+              },
+              {
+                "method_a": "axis_aligned",
+                "method_b": "random_forest",
+                "p_value": 0.011316
+              },
+              {
+                "method_a": "ebm",
+                "method_b": "linear",
+                "p_value": 4.3e-05
+              }
+            ],
+            "n_total_pairs": 28
+          }
+        },
+        {
+          "test_id": "D3_wilcoxon_acc_signed_spectral_vs_axis_aligned",
+          "test_name": "Wilcoxon signed-rank",
+          "scope": "signed_spectral vs axis_aligned, 7 classification datasets",
+          "null_hypothesis": "signed_spectral and axis_aligned have equal balanced_accuracy across datasets",
+          "metric": "balanced_accuracy",
+          "test_statistic": 4.0,
+          "statistic_name": "W",
+          "p_value": 0.109375,
+          "effect_size": null,
+          "effect_size_name": null,
+          "n": 7,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "W=4.0, p_raw=0.109375, p_bonferroni=0.765625.",
+          "details": {
+            "p_bonferroni": 0.765625,
+            "n_comparisons": 7,
+            "mean_diff": 0.007424,
+            "per_dataset": {
+              "adult": 0.024033,
+              "credit": 0.002091,
+              "electricity": 0.001065,
+              "eye_movements": -0.007488,
+              "higgs_small": 0.002397,
+              "jannis": 0.01431,
+              "miniboone": 0.015561
+            }
+          }
+        }
+      ]
+    }
+  },
+  "metrics_agg": {
+    "axis_aligned_real_acc": 0.728185,
+    "signed_spectral_real_acc": 0.735609,
+    "signed_spectral_synth_acc_em": 0.6585,
+    "recovery_accuracy_spearman_rho": 0.046891,
+    "recovery_accuracy_spearman_p": 0.868203,
+    "signed_vs_unsigned_hedges_g_real": -0.420317,
+    "signed_vs_unsigned_hedges_g_synth": -0.465295,
+    "n_statistical_tests": 28,
+    "n_significant_tests": 8
+  },
+  "datasets": [
+    {
+      "dataset": "A_method_progression",
+      "examples": [
+        {
+          "input": "{\"method\": \"axis_aligned\", \"analysis\": \"method_progression_table\"}",
+          "output": "{\"synth_acc_easy_medium\": 0.68465, \"synth_arity_easy_medium\": 1.0, \"synth_acc_all6\": 0.697883, \"synth_arity_all6\": 1.0, \"real_acc_7ds\": 0.728185, \"real_arity_7ds\": 1.0, \"delta_synth_vs_axis\": 0.0, \"de...",
+          "eval_delta_synth_vs_axis": 0.0,
+          "eval_delta_real_vs_axis": 0.0
+        },
+        {
+          "input": "{\"method\": \"random_oblique\", \"analysis\": \"method_progression_table\"}",
+          "output": "{\"synth_acc_easy_medium\": 0.74475, \"synth_arity_easy_medium\": 2.43, \"synth_acc_all6\": 0.741967, \"synth_arity_all6\": 3.1133, \"real_acc_7ds\": 0.731888, \"real_arity_7ds\": 3.3, \"delta_synth_vs_axis\": 0.06...",
+          "eval_delta_synth_vs_axis": 0.0601,
+          "eval_delta_real_vs_axis": 0.003703
+        },
+        {
+          "input": "{\"method\": \"unsigned_spectral\", \"analysis\": \"method_progression_table\"}",
+          "output": "{\"synth_acc_easy_medium\": 0.74295, \"synth_arity_easy_medium\": 2.515, \"synth_acc_all6\": 0.74825, \"synth_arity_all6\": 3.0283, \"real_acc_7ds\": 0.734921, \"real_arity_7ds\": 10.9214, \"delta_synth_vs_axis\": ...",
+          "eval_delta_synth_vs_axis": 0.0583,
+          "eval_delta_real_vs_axis": 0.006736
+        }
+      ]
+    },
+    {
+      "dataset": "B_recovery_accuracy",
+      "examples": [
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"method\": \"signed_spectral\", \"analysis\": \"recovery_accuracy_correlation\"}",
+          "output": "{\"jaccard\": 1.0, \"accuracy_improvement\": -0.0437}",
+          "eval_jaccard": 1.0,
+          "eval_accuracy_improvement": -0.0437
+        },
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"method\": \"unsigned_spectral\", \"analysis\": \"recovery_accuracy_correlation\"}",
+          "output": "{\"jaccard\": 1.0, \"accuracy_improvement\": 0.1236}",
+          "eval_jaccard": 1.0,
+          "eval_accuracy_improvement": 0.1236
+        },
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"method\": \"hard_threshold\", \"analysis\": \"recovery_accuracy_correlation\"}",
+          "output": "{\"jaccard\": 1.0, \"accuracy_improvement\": 0.1244}",
+          "eval_jaccard": 1.0,
+          "eval_accuracy_improvement": 0.1244
+        }
+      ]
+    },
+    {
+      "dataset": "C_signed_vs_unsigned",
+      "examples": [
+        {
+          "input": "{\"name\": \"adult\", \"domain\": \"real\", \"analysis\": \"signed_vs_unsigned\"}",
+          "output": "{\"signed_acc_mean\": 0.701791, \"unsigned_acc_mean\": 0.701338, \"hedges_g_acc\": 0.016582, \"signed_arity_mean\": 1.69, \"unsigned_arity_mean\": 1.65, \"hedges_g_arity\": 0.932848}",
+          "eval_hedges_g_acc": 0.016582
+        },
+        {
+          "input": "{\"name\": \"electricity\", \"domain\": \"real\", \"analysis\": \"signed_vs_unsigned\"}",
+          "output": "{\"signed_acc_mean\": 0.794277, \"unsigned_acc_mean\": 0.791157, \"hedges_g_acc\": 0.737897, \"signed_arity_mean\": 1.1, \"unsigned_arity_mean\": 1.4, \"hedges_g_arity\": -2.896767}",
+          "eval_hedges_g_acc": 0.737897
+        },
+        {
+          "input": "{\"name\": \"eye_movements\", \"domain\": \"real\", \"analysis\": \"signed_vs_unsigned\"}",
+          "output": "{\"signed_acc_mean\": 0.581502, \"unsigned_acc_mean\": 0.572708, \"hedges_g_acc\": 0.506176, \"signed_arity_mean\": 7.66, \"unsigned_arity_mean\": 8.59, \"hedges_g_arity\": -1.394203}",
+          "eval_hedges_g_acc": 0.506176
+        }
+      ]
+    }
+  ]
+}

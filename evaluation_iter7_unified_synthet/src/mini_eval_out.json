@@ -1,0 +1,1247 @@
+{
+  "metadata": {
+    "evaluation_name": "unified_results_and_statistical_catalogue",
+    "dependencies": [
+      "exp_id1_it5__opus",
+      "exp_id3_it3__opus",
+      "exp_id1_it2__opus",
+      "exp_id2_it4__opus"
+    ],
+    "n_figs_methods": 5,
+    "n_baseline_methods": 3,
+    "n_real_datasets": 8,
+    "n_classification_datasets": 7,
+    "n_synthetic_variants": 6,
+    "alpha": 0.05,
+    "rope_width": 0.01,
+    "A_method_progression_table": {
+      "description": "Method progression: accuracy/arity on synthetic vs real data",
+      "rows": [
+        {
+          "method": "axis_aligned",
+          "synth_acc_easy_medium": 0.68465,
+          "synth_arity_easy_medium": 1.0,
+          "synth_acc_all6": 0.697883,
+          "synth_arity_all6": 1.0,
+          "real_acc_7ds": 0.728185,
+          "real_arity_7ds": 1.0,
+          "delta_synth_vs_axis": 0.0,
+          "delta_real_vs_axis": 0.0
+        },
+        {
+          "method": "random_oblique",
+          "synth_acc_easy_medium": 0.74475,
+          "synth_arity_easy_medium": 2.43,
+          "synth_acc_all6": 0.741967,
+          "synth_arity_all6": 3.1133,
+          "real_acc_7ds": 0.731888,
+          "real_arity_7ds": 3.3,
+          "delta_synth_vs_axis": 0.0601,
+          "delta_real_vs_axis": 0.003703
+        },
+        {
+          "method": "unsigned_spectral",
+          "synth_acc_easy_medium": 0.74295,
+          "synth_arity_easy_medium": 2.515,
+          "synth_acc_all6": 0.74825,
+          "synth_arity_all6": 3.0283,
+          "real_acc_7ds": 0.734921,
+          "real_arity_7ds": 10.9214,
+          "delta_synth_vs_axis": 0.0583,
+          "delta_real_vs_axis": 0.006736
+        },
+        {
+          "method": "signed_spectral",
+          "synth_acc_easy_medium": 0.6585,
+          "synth_arity_easy_medium": 2.04,
+          "synth_acc_all6": 0.707133,
+          "synth_arity_all6": 2.42,
+          "real_acc_7ds": 0.735609,
+          "real_arity_7ds": 6.6286,
+          "delta_synth_vs_axis": -0.02615,
+          "delta_real_vs_axis": 0.007424
+        },
+        {
+          "method": "hard_threshold",
+          "synth_acc_easy_medium": 0.7458,
+          "synth_arity_easy_medium": 2.42,
+          "synth_acc_all6": 0.748517,
+          "synth_arity_all6": 2.505,
+          "real_acc_7ds": 0.730455,
+          "real_arity_7ds": 10.1414,
+          "delta_synth_vs_axis": 0.06115,
+          "delta_real_vs_axis": 0.00227
+        },
+        {
+          "method": "ebm",
+          "synth_acc_easy_medium": null,
+          "synth_arity_easy_medium": null,
+          "synth_acc_all6": null,
+          "synth_arity_all6": null,
+          "real_acc_7ds": 0.770319,
+          "real_arity_7ds": null,
+          "delta_synth_vs_axis": null,
+          "delta_real_vs_axis": 0.042134
+        },
+        {
+          "method": "random_forest",
+          "synth_acc_easy_medium": null,
+          "synth_arity_easy_medium": null,
+          "synth_acc_all6": null,
+          "synth_arity_all6": null,
+          "real_acc_7ds": 0.776478,
+          "real_arity_7ds": null,
+          "delta_synth_vs_axis": null,
+          "delta_real_vs_axis": 0.048293
+        },
+        {
+          "method": "linear",
+          "synth_acc_easy_medium": null,
+          "synth_arity_easy_medium": null,
+          "synth_acc_all6": null,
+          "synth_arity_all6": null,
+          "real_acc_7ds": 0.704394,
+          "real_arity_7ds": null,
+          "delta_synth_vs_axis": null,
+          "delta_real_vs_axis": -0.023791
+        }
+      ],
+      "narrative": "unsigned-signed gap on synthetic(easy+medium)=0.0845, on real(7ds)=-0.0007. Synthetic data with planted XOR modules has stronger CoI signal, so oblique methods show larger gains over axis-aligned there. On real data the CoI signal is weaker and noisier, narrowing the gap."
+    },
+    "B_recovery_accuracy_correlation": {
+      "description": "Spearman correlation: module recovery Jaccard vs downstream accuracy improvement",
+      "n_points": 15,
+      "per_variant_tables": [
+        {
+          "variant": "easy_2mod_xor",
+          "rows": [
+            {
+              "method": "signed_spectral",
+              "dep3_method": "sponge_auto_k",
+              "jaccard": 1.0,
+              "accuracy": 0.561,
+              "accuracy_improvement": -0.0437
+            },
+            {
+              "method": "unsigned_spectral",
+              "dep3_method": "unsigned_spectral",
+              "jaccard": 1.0,
+              "accuracy": 0.7283,
+              "accuracy_improvement": 0.1236
+            },
+            {
+              "method": "hard_threshold",
+              "dep3_method": "hard_threshold",
+              "jaccard": 1.0,
+              "accuracy": 0.7291,
+              "accuracy_improvement": 0.1244
+            }
+          ]
+        },
+        {
+          "variant": "medium_4mod_mixed",
+          "rows": [
+            {
+              "method": "signed_spectral",
+              "dep3_method": "sponge_auto_k",
+              "jaccard": 0.5,
+              "accuracy": 0.756,
+              "accuracy_improvement": -0.0086
+            },
+            {
+              "method": "unsigned_spectral",
+              "dep3_method": "unsigned_spectral",
+              "jaccard": 1.0,
+              "accuracy": 0.7576,
+              "accuracy_improvement": -0.007
+            },
+            {
+              "method": "hard_threshold",
+              "dep3_method": "hard_threshold",
+              "jaccard": 0.142857,
+              "accuracy": 0.7625,
+              "accuracy_improvement": -0.0021
+            }
+          ]
+        },
+        {
+          "variant": "overlapping_modules",
+          "rows": [
+            {
+              "method": "signed_spectral",
+              "dep3_method": "sponge_auto_k",
+              "jaccard": 0.285714,
+              "accuracy": 0.7574,
+              "accuracy_improvement": -0.0037
+            },
+            {
+              "method": "unsigned_spectral",
+              "dep3_method": "unsigned_spectral",
+              "jaccard": 0.4,
+              "accuracy": 0.7516,
+              "accuracy_improvement": -0.0095
+            },
+            {
+              "method": "hard_threshold",
+              "dep3_method": "hard_threshold",
+              "jaccard": 0.3,
+              "accuracy": 0.7608,
+              "accuracy_improvement": -0.0003
+            }
+          ]
+        },
+        {
+          "variant": "hard_4mod_unequal",
+          "rows": [
+            {
+              "method": "signed_spectral",
+              "dep3_method": "sponge_auto_k",
+              "jaccard": 0.298507,
+              "accuracy": 0.6115,
+              "accuracy_improvement": 0.0554
+            },
+            {
+              "method": "unsigned_spectral",
+              "dep3_method": "unsigned_spectral",
+              "jaccard": 0.457143,
+              "accuracy": 0.6703,
+              "accuracy_improvement": 0.1142
+            },
+            {
+              "method": "hard_threshold",
+              "dep3_method": "hard_threshold",
+              "jaccard": 0.178082,
+              "accuracy": 0.6596,
+              "accuracy_improvement": 0.1035
+            }
+          ]
+        },
+        {
+          "variant": "highdim_8mod",
+          "rows": [
+            {
+              "method": "signed_spectral",
+              "dep3_method": "sponge_auto_k",
+              "jaccard": 0.086957,
+              "accuracy": 0.6851,
+              "accuracy_improvement": 0.0
+            },
+            {
+              "method": "unsigned_spectral",
+              "dep3_method": "unsigned_spectral",
+              "jaccard": 0.137255,
+              "accuracy": 0.6755,
+              "accuracy_improvement": -0.0096
+            },
+            {
+              "method": "hard_threshold",
+              "dep3_method": "hard_threshold",
+              "jaccard": 0.085106,
+              "accuracy": 0.6851,
+              "accuracy_improvement": 0.0
+            }
+          ]
+        }
+      ],
+      "spearman_rho": 0.046891,
+      "spearman_p": 0.868203,
+      "pearson_r": 0.251548,
+      "pearson_p": 0.36579,
+      "interpretation": "Spearman rho=0.0469 (p=0.8682) across 15 variant-method pairs. No significant correlation at alpha=0.05."
+    },
+    "C_signed_vs_unsigned_narrative": {
+      "description": "Signed-vs-unsigned Hedges' g analysis (real and synthetic)",
+      "real_hedges_g_accuracy": -0.420317,
+      "real_hedges_g_arity": -5.401037,
+      "synthetic_hedges_g_accuracy": -0.465295,
+      "synthetic_hedges_g_arity": -1.005031,
+      "per_item_breakdown": [
+        {
+          "name": "adult",
+          "domain": "real",
+          "signed_acc_mean": 0.701791,
+          "unsigned_acc_mean": 0.701338,
+          "hedges_g_acc": 0.016582,
+          "signed_arity_mean": 1.69,
+          "unsigned_arity_mean": 1.65,
+          "hedges_g_arity": 0.932848
+        },
+        {
+          "name": "electricity",
+          "domain": "real",
+          "signed_acc_mean": 0.794277,
+          "unsigned_acc_mean": 0.791157,
+          "hedges_g_acc": 0.737897,
+          "signed_arity_mean": 1.1,
+          "unsigned_arity_mean": 1.4,
+          "hedges_g_arity": -2.896767
+        },
+        {
+          "name": "eye_movements",
+          "domain": "real",
+          "signed_acc_mean": 0.581502,
+          "unsigned_acc_mean": 0.572708,
+          "hedges_g_acc": 0.506176,
+          "signed_arity_mean": 7.66,
+          "unsigned_arity_mean": 8.59,
+          "hedges_g_arity": -1.394203
+        },
+        {
+          "name": "credit",
+          "domain": "real",
+          "signed_acc_mean": 0.767256,
+          "unsigned_acc_mean": 0.767621,
+          "hedges_g_acc": -0.060742,
+          "signed_arity_mean": 1.13,
+          "unsigned_arity_mean": 3.09,
+          "hedges_g_arity": -8.587326
+        },
+        {
+          "name": "higgs_small",
+          "domain": "real",
+          "signed_acc_mean": 0.671392,
+          "unsigned_acc_mean": 0.675614,
+          "hedges_g_acc": -1.610436,
+          "signed_arity_mean": 8.26,
+          "unsigned_arity_mean": 6.98,
+          "hedges_g_arity": 2.7736
+        },
+        {
+          "name": "jannis",
+          "domain": "real",
+          "signed_acc_mean": 0.741351,
+          "unsigned_acc_mean": 0.734179,
+          "hedges_g_acc": 0.904061,
+          "signed_arity_mean": 15.09,
+          "unsigned_arity_mean": 31.24,
+          "hedges_g_arity": -6.587342
+        },
+        {
+          "name": "miniboone",
+          "domain": "real",
+          "signed_acc_mean": 0.891695,
+          "unsigned_acc_mean": 0.901833,
+          "hedges_g_acc": -3.43576,
+          "signed_arity_mean": 11.47,
+          "unsigned_arity_mean": 23.5,
+          "hedges_g_arity": -22.048069
+        },
+        {
+          "name": "easy_2mod_xor",
+          "domain": "synthetic",
+          "signed_acc_mean": 0.561,
+          "unsigned_acc_mean": 0.7283,
+          "hedges_g_acc": -2.988763,
+          "signed_arity_mean": 1.68,
+          "unsigned_arity_mean": 1.98,
+          "hedges_g_arity": -1.363387
+        },
+        {
+          "name": "medium_4mod_mixed",
+          "domain": "synthetic",
+          "signed_acc_mean": 0.75596,
+          "unsigned_acc_mean": 0.75762,
+          "hedges_g_acc": -0.218338,
+          "signed_arity_mean": 2.4,
+          "unsigned_arity_mean": 3.05,
+          "hedges_g_arity": -1.416131
+        },
+        {
+          "name": "overlapping_modules",
+          "domain": "synthetic",
+          "signed_acc_mean": 0.75742,
+          "unsigned_acc_mean": 0.75164,
+          "hedges_g_acc": 0.705493,
+          "signed_arity_mean": 2.4,
+          "unsigned_arity_mean": 2.7,
+          "hedges_g_arity": -0.452005
+        },
+        {
+          "name": "hard_4mod_unequal",
+          "domain": "synthetic",
+          "signed_acc_mean": 0.61154,
+          "unsigned_acc_mean": 0.67032,
+          "hedges_g_acc": -0.843621,
+          "signed_arity_mean": 3.59,
+          "unsigned_arity_mean": 3.24,
+          "hedges_g_arity": 0.292277
+        },
+        {
+          "name": "highdim_8mod",
+          "domain": "synthetic",
+          "signed_acc_mean": 0.68508,
+          "unsigned_acc_mean": 0.67554,
+          "hedges_g_acc": 1.018756,
+          "signed_arity_mean": 1.0,
+          "unsigned_arity_mean": 1.7,
+          "hedges_g_arity": -2.085911
+        }
+      ],
+      "coi_diagnostics": {
+        "mean_abs_coi_synthetic": 0.086259,
+        "real_pos_neg_pairs": [
+          {
+            "dataset": "adult",
+            "n_positive": 3,
+            "n_negative": 3
+          },
+          {
+            "dataset": "electricity",
+            "n_positive": 12,
+            "n_negative": 9
+          },
+          {
+            "dataset": "eye_movements",
+            "n_positive": 0,
+            "n_negative": 190
+          },
+          {
+            "dataset": "credit",
+            "n_positive": 30,
+            "n_negative": 15
+          },
+          {
+            "dataset": "higgs_small",
+            "n_positive": 3,
+            "n_negative": 273
+          },
+          {
+            "dataset": "jannis",
+            "n_positive": 138,
+            "n_negative": 1293
+          },
+          {
+            "dataset": "miniboone",
+            "n_positive": 669,
+            "n_negative": 556
+          },
+          {
+            "dataset": "california_housing",
+            "n_positive": 0,
+            "n_negative": 28
+          }
+        ]
+      },
+      "divergence_explanation": "Mean |CoI| on synthetic=0.0863. Avg Hedges' g(acc): real=-0.420317, synthetic=-0.465295. Synthetic has stronger CoI signal with more extreme values. On real data, the CoI signal is weaker and noisier, so the signed/unsigned distinction matters less and both are closer to axis-aligned."
+    },
+    "D_statistical_test_catalogue": {
+      "description": "Complete catalogue of all statistical tests",
+      "n_tests": 28,
+      "tests": [
+        {
+          "test_id": "D1_friedman_8methods",
+          "test_name": "Friedman",
+          "scope": "8 methods x 7 classification datasets",
+          "null_hypothesis": "All methods have equal mean ranks across datasets",
+          "metric": "balanced_accuracy",
+          "test_statistic": 37.714286,
+          "statistic_name": "chi2",
+          "p_value": 3.43e-06,
+          "effect_size": 0.769679,
+          "effect_size_name": "Kendall_W",
+          "n": 7,
+          "k": 8,
+          "significant_at_005": true,
+          "interpretation": "Friedman chi2=37.71, p=0.000003. Reject H0: methods differ significantly.",
+          "details": {
+            "average_ranks": {
+              "axis_aligned": 6.1429,
+              "random_oblique": 5.2857,
+              "unsigned_spectral": 4.2857,
+              "signed_spectral": 4.1429,
+              "hard_threshold": 5.1429,
+              "ebm": 1.5714,
+              "random_forest": 1.5714,
+              "linear": 7.8571
+            }
+          }
+        },
+        {
+          "test_id": "D2_nemenyi_posthoc",
+          "test_name": "Nemenyi post-hoc",
+          "scope": "8 methods x 7 datasets (pairwise)",
+          "null_hypothesis": "Each pair of methods has equal mean ranks",
+          "metric": "balanced_accuracy",
+          "test_statistic": 3.9685,
+          "statistic_name": "critical_difference",
+          "p_value": null,
+          "effect_size": null,
+          "effect_size_name": null,
+          "n": 7,
+          "k": 8,
+          "significant_at_005": true,
+          "interpretation": "Critical difference=3.969. 4 significant pairs found.",
+          "details": {
+            "significant_pairs": [
+              {
+                "method_a": "axis_aligned",
+                "method_b": "ebm",
+                "p_value": 0.011316
+              },
+              {
+                "method_a": "axis_aligned",
+                "method_b": "random_forest",
+                "p_value": 0.011316
+              },
+              {
+                "method_a": "ebm",
+                "method_b": "linear",
+                "p_value": 4.3e-05
+              },
+              {
+                "method_a": "random_forest",
+                "method_b": "linear",
+                "p_value": 4.3e-05
+              }
+            ],
+            "n_total_pairs": 28
+          }
+        },
+        {
+          "test_id": "D3_wilcoxon_acc_signed_spectral_vs_axis_aligned",
+          "test_name": "Wilcoxon signed-rank",
+          "scope": "signed_spectral vs axis_aligned, 7 classification datasets",
+          "null_hypothesis": "signed_spectral and axis_aligned have equal balanced_accuracy across datasets",
+          "metric": "balanced_accuracy",
+          "test_statistic": 4.0,
+          "statistic_name": "W",
+          "p_value": 0.109375,
+          "effect_size": null,
+          "effect_size_name": null,
+          "n": 7,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "W=4.0, p_raw=0.109375, p_bonferroni=0.765625.",
+          "details": {
+            "p_bonferroni": 0.765625,
+            "n_comparisons": 7,
+            "mean_diff": 0.007424,
+            "per_dataset": {
+              "adult": 0.024033,
+              "credit": 0.002091,
+              "electricity": 0.001065,
+              "eye_movements": -0.007488,
+              "higgs_small": 0.002397,
+              "jannis": 0.01431,
+              "miniboone": 0.015561
+            }
+          }
+        },
+        {
+          "test_id": "D3_wilcoxon_acc_signed_spectral_vs_random_oblique",
+          "test_name": "Wilcoxon signed-rank",
+          "scope": "signed_spectral vs random_oblique, 7 classification datasets",
+          "null_hypothesis": "signed_spectral and random_oblique have equal balanced_accuracy across datasets",
+          "metric": "balanced_accuracy",
+          "test_statistic": 5.0,
+          "statistic_name": "W",
+          "p_value": 0.15625,
+          "effect_size": null,
+          "effect_size_name": null,
+          "n": 7,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "W=5.0, p_raw=0.156250, p_bonferroni=1.000000.",
+          "details": {
+            "p_bonferroni": 1.0,
+            "n_comparisons": 7,
+            "mean_diff": 0.003721,
+            "per_dataset": {
+              "adult": -0.005774,
+              "credit": 0.00023,
+              "electricity": 0.013281,
+              "eye_movements": 0.004697,
+              "higgs_small": 0.001173,
+              "jannis": 0.007676,
+              "miniboone": 0.004767
+            }
+          }
+        },
+        {
+          "test_id": "D3_wilcoxon_acc_signed_spectral_vs_unsigned_spectral",
+          "test_name": "Wilcoxon signed-rank",
+          "scope": "signed_spectral vs unsigned_spectral, 7 classification datasets",
+          "null_hypothesis": "signed_spectral and unsigned_spectral have equal balanced_accuracy across datasets",
+          "metric": "balanced_accuracy",
+          "test_statistic": 12.0,
+          "statistic_name": "W",
+          "p_value": 0.8125,
+          "effect_size": null,
+          "effect_size_name": null,
+          "n": 7,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "W=12.0, p_raw=0.812500, p_bonferroni=1.000000.",
+          "details": {
+            "p_bonferroni": 1.0,
+            "n_comparisons": 7,
+            "mean_diff": 0.000688,
+            "per_dataset": {
+              "adult": 0.000453,
+              "credit": -0.000365,
+              "electricity": 0.00312,
+              "eye_movements": 0.008794,
+              "higgs_small": -0.004222,
+              "jannis": 0.007172,
+              "miniboone": -0.010138
+            }
+          }
+        },
+        {
+          "test_id": "D3_wilcoxon_acc_unsigned_spectral_vs_axis_aligned",
+          "test_name": "Wilcoxon signed-rank",
+          "scope": "unsigned_spectral vs axis_aligned, 7 classification datasets",
+          "null_hypothesis": "unsigned_spectral and axis_aligned have equal balanced_accuracy across datasets",
+          "metric": "balanced_accuracy",
+          "test_statistic": 6.0,
+          "statistic_name": "W",
+          "p_value": 0.21875,
+          "effect_size": null,
+          "effect_size_name": null,
+          "n": 7,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "W=6.0, p_raw=0.218750, p_bonferroni=1.000000.",
+          "details": {
+            "p_bonferroni": 1.0,
+            "n_comparisons": 7,
+            "mean_diff": 0.006736,
+            "per_dataset": {
+              "adult": 0.02358,
+              "credit": 0.002456,
+              "electricity": -0.002055,
+              "eye_movements": -0.016282,
+              "higgs_small": 0.006619,
+              "jannis": 0.007138,
+              "miniboone": 0.025699
+            }
+          }
+        },
+        {
+          "test_id": "D3_wilcoxon_acc_hard_threshold_vs_axis_aligned",
+          "test_name": "Wilcoxon signed-rank",
+          "scope": "hard_threshold vs axis_aligned, 7 classification datasets",
+          "null_hypothesis": "hard_threshold and axis_aligned have equal balanced_accuracy across datasets",
+          "metric": "balanced_accuracy",
+          "test_statistic": 10.0,
+          "statistic_name": "W",
+          "p_value": 0.578125,
+          "effect_size": null,
+          "effect_size_name": null,
+          "n": 7,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "W=10.0, p_raw=0.578125, p_bonferroni=1.000000.",
+          "details": {
+            "p_bonferroni": 1.0,
+            "n_comparisons": 7,
+            "mean_diff": 0.00227,
+            "per_dataset": {
+              "adult": 0.002419,
+              "credit": 6.4e-05,
+              "electricity": -0.003173,
+              "eye_movements": -0.027605,
+              "higgs_small": 0.005049,
+              "jannis": 0.015109,
+              "miniboone": 0.024027
+            }
+          }
+        },
+        {
+          "test_id": "D3_wilcoxon_acc_signed_spectral_vs_ebm",
+          "test_name": "Wilcoxon signed-rank",
+          "scope": "signed_spectral vs ebm, 7 classification datasets",
+          "null_hypothesis": "signed_spectral and ebm have equal balanced_accuracy across datasets",
+          "metric": "balanced_accuracy",
+          "test_statistic": 0.0,
+          "statistic_name": "W",
+          "p_value": 0.015625,
+          "effect_size": null,
+          "effect_size_name": null,
+          "n": 7,
+          "k": null,
+          "significant_at_005": true,
+          "interpretation": "W=0.0, p_raw=0.015625, p_bonferroni=0.109375.",
+          "details": {
+            "p_bonferroni": 0.109375,
+            "n_comparisons": 7,
+            "mean_diff": -0.03471,
+            "per_dataset": {
+              "adult": -0.012957,
+              "credit": -0.007961,
+              "electricity": -0.049851,
+              "eye_movements": -0.059932,
+              "higgs_small": -0.043631,
+              "jannis": -0.030236,
+              "miniboone": -0.038399
+            }
+          }
+        },
+        {
+          "test_id": "D3_wilcoxon_acc_signed_spectral_vs_random_forest",
+          "test_name": "Wilcoxon signed-rank",
+          "scope": "signed_spectral vs random_forest, 7 classification datasets",
+          "null_hypothesis": "signed_spectral and random_forest have equal balanced_accuracy across datasets",
+          "metric": "balanced_accuracy",
+          "test_statistic": 0.0,
+          "statistic_name": "W",
+          "p_value": 0.015625,
+          "effect_size": null,
+          "effect_size_name": null,
+          "n": 7,
+          "k": null,
+          "significant_at_005": true,
+          "interpretation": "W=0.0, p_raw=0.015625, p_bonferroni=0.109375.",
+          "details": {
+            "p_bonferroni": 0.109375,
+            "n_comparisons": 7,
+            "mean_diff": -0.040869,
+            "per_dataset": {
+              "adult": -0.004442,
+              "credit": -0.004671,
+              "electricity": -0.089697,
+              "eye_movements": -0.055593,
+              "higgs_small": -0.047231,
+              "jannis": -0.042914,
+              "miniboone": -0.041536
+            }
+          }
+        },
+        {
+          "test_id": "D4_wilcoxon_arity_signed_spectral_vs_random_oblique",
+          "test_name": "Wilcoxon signed-rank",
+          "scope": "signed_spectral vs random_oblique arity, 7 classification datasets",
+          "null_hypothesis": "signed_spectral and random_oblique have equal avg_split_arity across datasets",
+          "metric": "avg_split_arity",
+          "test_statistic": 6.0,
+          "statistic_name": "W",
+          "p_value": 0.21875,
+          "effect_size": null,
+          "effect_size_name": null,
+          "n": 7,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "W=6.0, p_raw=0.218750, p_bonferroni=0.656250.",
+          "details": {
+            "p_bonferroni": 0.65625,
+            "n_comparisons": 3,
+            "mean_diff": 3.328571
+          }
+        },
+        {
+          "test_id": "D4_wilcoxon_arity_unsigned_spectral_vs_random_oblique",
+          "test_name": "Wilcoxon signed-rank",
+          "scope": "unsigned_spectral vs random_oblique arity, 7 classification datasets",
+          "null_hypothesis": "unsigned_spectral and random_oblique have equal avg_split_arity across datasets",
+          "metric": "avg_split_arity",
+          "test_statistic": 6.0,
+          "statistic_name": "W",
+          "p_value": 0.21875,
+          "effect_size": null,
+          "effect_size_name": null,
+          "n": 7,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "W=6.0, p_raw=0.218750, p_bonferroni=0.656250.",
+          "details": {
+            "p_bonferroni": 0.65625,
+            "n_comparisons": 3,
+            "mean_diff": 7.621429
+          }
+        },
+        {
+          "test_id": "D4_wilcoxon_arity_signed_spectral_vs_unsigned_spectral",
+          "test_name": "Wilcoxon signed-rank",
+          "scope": "signed_spectral vs unsigned_spectral arity, 7 classification datasets",
+          "null_hypothesis": "signed_spectral and unsigned_spectral have equal avg_split_arity across datasets",
+          "metric": "avg_split_arity",
+          "test_statistic": 5.0,
+          "statistic_name": "W",
+          "p_value": 0.15625,
+          "effect_size": null,
+          "effect_size_name": null,
+          "n": 7,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "W=5.0, p_raw=0.156250, p_bonferroni=0.468750.",
+          "details": {
+            "p_bonferroni": 0.46875,
+            "n_comparisons": 3,
+            "mean_diff": -4.292857
+          }
+        },
+        {
+          "test_id": "D5_hedges_g_signed_spectral_vs_unsigned_spectral_balanced_accuracy_real",
+          "test_name": "Hedges' g",
+          "scope": "signed_spectral vs unsigned_spectral on real data",
+          "null_hypothesis": "No effect size difference in balanced_accuracy",
+          "metric": "balanced_accuracy",
+          "test_statistic": null,
+          "statistic_name": null,
+          "p_value": null,
+          "effect_size": 0.007168,
+          "effect_size_name": "Hedges_g",
+          "n": 35,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "g=0.0072 (negligible). signed_spectral higher than unsigned_spectral.",
+          "details": {
+            "n1": 35,
+            "n2": 35,
+            "mean1": 0.735609,
+            "mean2": 0.734921
+          }
+        },
+        {
+          "test_id": "D5_hedges_g_signed_spectral_vs_unsigned_spectral_balanced_accuracy_synthetic",
+          "test_name": "Hedges' g",
+          "scope": "signed_spectral vs unsigned_spectral on synthetic data",
+          "null_hypothesis": "No effect size difference in balanced_accuracy",
+          "metric": "balanced_accuracy",
+          "test_statistic": null,
+          "statistic_name": null,
+          "p_value": null,
+          "effect_size": -0.591078,
+          "effect_size_name": "Hedges_g",
+          "n": 25,
+          "k": null,
+          "significant_at_005": true,
+          "interpretation": "g=-0.5911 (medium). signed_spectral lower than unsigned_spectral.",
+          "details": {
+            "n1": 25,
+            "n2": 25,
+            "mean1": 0.6742,
+            "mean2": 0.716684
+          }
+        },
+        {
+          "test_id": "D5_hedges_g_signed_spectral_vs_unsigned_spectral_avg_split_arity_real",
+          "test_name": "Hedges' g",
+          "scope": "signed_spectral vs unsigned_spectral on real data",
+          "null_hypothesis": "No effect size difference in avg_split_arity",
+          "metric": "avg_split_arity",
+          "test_statistic": null,
+          "statistic_name": null,
+          "p_value": null,
+          "effect_size": -0.489463,
+          "effect_size_name": "Hedges_g",
+          "n": 35,
+          "k": null,
+          "significant_at_005": true,
+          "interpretation": "g=-0.4895 (small). signed_spectral lower than unsigned_spectral.",
+          "details": {
+            "n1": 35,
+            "n2": 35,
+            "mean1": 6.628571,
+            "mean2": 10.921429
+          }
+        },
+        {
+          "test_id": "D5_hedges_g_signed_spectral_vs_unsigned_spectral_avg_split_arity_synthetic",
+          "test_name": "Hedges' g",
+          "scope": "signed_spectral vs unsigned_spectral on synthetic data",
+          "null_hypothesis": "No effect size difference in avg_split_arity",
+          "metric": "avg_split_arity",
+          "test_statistic": null,
+          "statistic_name": null,
+          "p_value": null,
+          "effect_size": -0.335758,
+          "effect_size_name": "Hedges_g",
+          "n": 25,
+          "k": null,
+          "significant_at_005": true,
+          "interpretation": "g=-0.3358 (small). signed_spectral lower than unsigned_spectral.",
+          "details": {
+            "n1": 25,
+            "n2": 25,
+            "mean1": 2.214,
+            "mean2": 2.534
+          }
+        },
+        {
+          "test_id": "D5_hedges_g_signed_spectral_vs_axis_aligned_balanced_accuracy_real",
+          "test_name": "Hedges' g",
+          "scope": "signed_spectral vs axis_aligned on real data",
+          "null_hypothesis": "No effect size difference in balanced_accuracy",
+          "metric": "balanced_accuracy",
+          "test_statistic": null,
+          "statistic_name": null,
+          "p_value": null,
+          "effect_size": 0.080914,
+          "effect_size_name": "Hedges_g",
+          "n": 35,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "g=0.0809 (negligible). signed_spectral higher than axis_aligned.",
+          "details": {
+            "n1": 35,
+            "n2": 35,
+            "mean1": 0.735609,
+            "mean2": 0.728185
+          }
+        },
+        {
+          "test_id": "D5_hedges_g_signed_spectral_vs_axis_aligned_balanced_accuracy_synthetic",
+          "test_name": "Hedges' g",
+          "scope": "signed_spectral vs axis_aligned on synthetic data",
+          "null_hypothesis": "No effect size difference in balanced_accuracy",
+          "metric": "balanced_accuracy",
+          "test_statistic": null,
+          "statistic_name": null,
+          "p_value": null,
+          "effect_size": -0.001195,
+          "effect_size_name": "Hedges_g",
+          "n": 25,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "g=-0.0012 (negligible). signed_spectral lower than axis_aligned.",
+          "details": {
+            "n1": 25,
+            "n2": 25,
+            "mean1": 0.6742,
+            "mean2": 0.674312
+          }
+        },
+        {
+          "test_id": "D5_hedges_g_random_oblique_vs_axis_aligned_balanced_accuracy_real",
+          "test_name": "Hedges' g",
+          "scope": "random_oblique vs axis_aligned on real data",
+          "null_hypothesis": "No effect size difference in balanced_accuracy",
+          "metric": "balanced_accuracy",
+          "test_statistic": null,
+          "statistic_name": null,
+          "p_value": null,
+          "effect_size": 0.040768,
+          "effect_size_name": "Hedges_g",
+          "n": 35,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "g=0.0408 (negligible). random_oblique higher than axis_aligned.",
+          "details": {
+            "n1": 35,
+            "n2": 35,
+            "mean1": 0.731888,
+            "mean2": 0.728185
+          }
+        },
+        {
+          "test_id": "D5_hedges_g_random_oblique_vs_axis_aligned_balanced_accuracy_synthetic",
+          "test_name": "Hedges' g",
+          "scope": "random_oblique vs axis_aligned on synthetic data",
+          "null_hypothesis": "No effect size difference in balanced_accuracy",
+          "metric": "balanced_accuracy",
+          "test_statistic": null,
+          "statistic_name": null,
+          "p_value": null,
+          "effect_size": 0.4775,
+          "effect_size_name": "Hedges_g",
+          "n": 25,
+          "k": null,
+          "significant_at_005": true,
+          "interpretation": "g=0.4775 (small). random_oblique higher than axis_aligned.",
+          "details": {
+            "n1": 25,
+            "n2": 25,
+            "mean1": 0.711424,
+            "mean2": 0.674312
+          }
+        },
+        {
+          "test_id": "D6_bayesian_rope_signed_spectral_vs_axis_aligned",
+          "test_name": "Bayesian signed-rank (ROPE)",
+          "scope": "signed_spectral vs axis_aligned, ROPE=[-0.01,0.01], 7 datasets",
+          "null_hypothesis": "Difference between signed_spectral and axis_aligned is practically equivalent (within ROPE)",
+          "metric": "balanced_accuracy",
+          "test_statistic": null,
+          "statistic_name": null,
+          "p_value": null,
+          "effect_size": null,
+          "effect_size_name": null,
+          "n": 7,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "P(left)=0.0, P(ROPE)=0.5714, P(right)=0.4286. Practically equivalent.",
+          "details": {
+            "p_left": 0.0,
+            "p_rope": 0.5714,
+            "p_right": 0.4286
+          }
+        },
+        {
+          "test_id": "D6_bayesian_rope_signed_spectral_vs_unsigned_spectral",
+          "test_name": "Bayesian signed-rank (ROPE)",
+          "scope": "signed_spectral vs unsigned_spectral, ROPE=[-0.01,0.01], 7 datasets",
+          "null_hypothesis": "Difference between signed_spectral and unsigned_spectral is practically equivalent (within ROPE)",
+          "metric": "balanced_accuracy",
+          "test_statistic": null,
+          "statistic_name": null,
+          "p_value": null,
+          "effect_size": null,
+          "effect_size_name": null,
+          "n": 7,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "P(left)=0.1429, P(ROPE)=0.8571, P(right)=0.0. Practically equivalent.",
+          "details": {
+            "p_left": 0.1429,
+            "p_rope": 0.8571,
+            "p_right": 0.0
+          }
+        },
+        {
+          "test_id": "D6_bayesian_rope_signed_spectral_vs_random_oblique",
+          "test_name": "Bayesian signed-rank (ROPE)",
+          "scope": "signed_spectral vs random_oblique, ROPE=[-0.01,0.01], 7 datasets",
+          "null_hypothesis": "Difference between signed_spectral and random_oblique is practically equivalent (within ROPE)",
+          "metric": "balanced_accuracy",
+          "test_statistic": null,
+          "statistic_name": null,
+          "p_value": null,
+          "effect_size": null,
+          "effect_size_name": null,
+          "n": 7,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "P(left)=0.0, P(ROPE)=0.8571, P(right)=0.1429. Practically equivalent.",
+          "details": {
+            "p_left": 0.0,
+            "p_rope": 0.8571,
+            "p_right": 0.1429
+          }
+        },
+        {
+          "test_id": "D6_bayesian_rope_unsigned_spectral_vs_axis_aligned",
+          "test_name": "Bayesian signed-rank (ROPE)",
+          "scope": "unsigned_spectral vs axis_aligned, ROPE=[-0.01,0.01], 7 datasets",
+          "null_hypothesis": "Difference between unsigned_spectral and axis_aligned is practically equivalent (within ROPE)",
+          "metric": "balanced_accuracy",
+          "test_statistic": null,
+          "statistic_name": null,
+          "p_value": null,
+          "effect_size": null,
+          "effect_size_name": null,
+          "n": 7,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "P(left)=0.1429, P(ROPE)=0.5714, P(right)=0.2857. Practically equivalent.",
+          "details": {
+            "p_left": 0.1429,
+            "p_rope": 0.5714,
+            "p_right": 0.2857
+          }
+        },
+        {
+          "test_id": "D7a_spearman_frustration_real",
+          "test_name": "Spearman correlation",
+          "scope": "Frustration index vs accuracy gap, 7 real datasets",
+          "null_hypothesis": "No correlation between frustration index and oblique accuracy gain",
+          "metric": "frustration_index vs accuracy_gap",
+          "test_statistic": 0.107143,
+          "statistic_name": "Spearman_rho",
+          "p_value": 0.81915086,
+          "effect_size": 0.107143,
+          "effect_size_name": "rho",
+          "n": 7,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "rho=0.1071, p=0.8192. Not significant.",
+          "details": {
+            "frustrations": [
+              -0.0,
+              0.00824,
+              0.0362,
+              0.008032,
+              0.045187,
+              0.077807,
+              0.208689
+            ],
+            "acc_gaps": [
+              0.029807,
+              0.001065,
+              -0.007488,
+              0.002456,
+              0.006619,
+              0.01431,
+              0.025699
+            ]
+          }
+        },
+        {
+          "test_id": "D7b_spearman_frustration_synth",
+          "test_name": "Spearman correlation",
+          "scope": "Frustration index vs accuracy gap, 6 synthetic variants",
+          "null_hypothesis": "No correlation between frustration index and oblique accuracy gain (synthetic)",
+          "metric": "frustration_index vs accuracy_gap",
+          "test_statistic": -0.714286,
+          "statistic_name": "Spearman_rho",
+          "p_value": 0.11078717,
+          "effect_size": -0.714286,
+          "effect_size_name": "rho",
+          "n": 6,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "rho=-0.7143, p=0.1108.",
+          "details": {
+            "frustrations": [
+              0.247895,
+              0.312443,
+              0.357087,
+              0.326793,
+              0.30098,
+              0.307533
+            ],
+            "acc_gaps": [
+              0.1315,
+              -0.007,
+              -0.0037,
+              0.0905,
+              0.1142,
+              0.0
+            ]
+          }
+        },
+        {
+          "test_id": "D8_module_recovery_corr",
+          "test_name": "Spearman correlation",
+          "scope": "Jaccard recovery vs accuracy improvement, 15 points",
+          "null_hypothesis": "No correlation between module recovery and accuracy improvement",
+          "metric": "jaccard vs accuracy_improvement",
+          "test_statistic": 0.046891,
+          "statistic_name": "Spearman_rho",
+          "p_value": 0.868203,
+          "effect_size": 0.046891,
+          "effect_size_name": "rho",
+          "n": 15,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "Spearman rho=0.0469 (p=0.8682) across 15 variant-method pairs. No significant correlation at alpha=0.05.",
+          "details": {}
+        },
+        {
+          "test_id": "D9_fisher_z_hedges_g_real_vs_synth",
+          "test_name": "Fisher z-test",
+          "scope": "Compare Hedges' g (signed-vs-unsigned accuracy) between real and synthetic",
+          "null_hypothesis": "The signed-vs-unsigned effect size is the same on real and synthetic data",
+          "metric": "Hedges_g difference",
+          "test_statistic": 1.5758,
+          "statistic_name": "z",
+          "p_value": 0.11507197,
+          "effect_size": 0.598246,
+          "effect_size_name": "delta_g",
+          "n": null,
+          "k": null,
+          "significant_at_005": false,
+          "interpretation": "z=1.5758, p=0.1151. g_real=0.0072, g_synth=-0.5911. No significant difference in effect sizes.",
+          "details": {
+            "g_real": 0.007168,
+            "g_synth": -0.591078,
+            "se_real": 0.239047,
+            "se_synth": 0.294936
+          }
+        }
+      ]
+    }
+  },
+  "metrics_agg": {
+    "axis_aligned_real_acc": 0.728185,
+    "signed_spectral_real_acc": 0.735609,
+    "signed_spectral_synth_acc_em": 0.6585,
+    "recovery_accuracy_spearman_rho": 0.046891,
+    "recovery_accuracy_spearman_p": 0.868203,
+    "signed_vs_unsigned_hedges_g_real": -0.420317,
+    "signed_vs_unsigned_hedges_g_synth": -0.465295,
+    "n_statistical_tests": 28,
+    "n_significant_tests": 8
+  },
+  "datasets": [
+    {
+      "dataset": "A_method_progression",
+      "examples": [
+        {
+          "input": "{\"method\": \"axis_aligned\", \"analysis\": \"method_progression_table\"}",
+          "output": "{\"synth_acc_easy_medium\": 0.68465, \"synth_arity_easy_medium\": 1.0, \"synth_acc_all6\": 0.697883, \"synth_arity_all6\": 1.0, \"real_acc_7ds\": 0.728185, \"real_arity_7ds\": 1.0, \"delta_synth_vs_axis\": 0.0, \"delta_real_vs_axis\": 0.0}",
+          "eval_delta_synth_vs_axis": 0.0,
+          "eval_delta_real_vs_axis": 0.0
+        },
+        {
+          "input": "{\"method\": \"random_oblique\", \"analysis\": \"method_progression_table\"}",
+          "output": "{\"synth_acc_easy_medium\": 0.74475, \"synth_arity_easy_medium\": 2.43, \"synth_acc_all6\": 0.741967, \"synth_arity_all6\": 3.1133, \"real_acc_7ds\": 0.731888, \"real_arity_7ds\": 3.3, \"delta_synth_vs_axis\": 0.0601, \"delta_real_vs_axis\": 0.003703}",
+          "eval_delta_synth_vs_axis": 0.0601,
+          "eval_delta_real_vs_axis": 0.003703
+        },
+        {
+          "input": "{\"method\": \"unsigned_spectral\", \"analysis\": \"method_progression_table\"}",
+          "output": "{\"synth_acc_easy_medium\": 0.74295, \"synth_arity_easy_medium\": 2.515, \"synth_acc_all6\": 0.74825, \"synth_arity_all6\": 3.0283, \"real_acc_7ds\": 0.734921, \"real_arity_7ds\": 10.9214, \"delta_synth_vs_axis\": 0.0583, \"delta_real_vs_axis\": 0.006736}",
+          "eval_delta_synth_vs_axis": 0.0583,
+          "eval_delta_real_vs_axis": 0.006736
+        }
+      ]
+    },
+    {
+      "dataset": "B_recovery_accuracy",
+      "examples": [
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"method\": \"signed_spectral\", \"analysis\": \"recovery_accuracy_correlation\"}",
+          "output": "{\"jaccard\": 1.0, \"accuracy_improvement\": -0.0437}",
+          "eval_jaccard": 1.0,
+          "eval_accuracy_improvement": -0.0437
+        },
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"method\": \"unsigned_spectral\", \"analysis\": \"recovery_accuracy_correlation\"}",
+          "output": "{\"jaccard\": 1.0, \"accuracy_improvement\": 0.1236}",
+          "eval_jaccard": 1.0,
+          "eval_accuracy_improvement": 0.1236
+        },
+        {
+          "input": "{\"variant\": \"easy_2mod_xor\", \"method\": \"hard_threshold\", \"analysis\": \"recovery_accuracy_correlation\"}",
+          "output": "{\"jaccard\": 1.0, \"accuracy_improvement\": 0.1244}",
+          "eval_jaccard": 1.0,
+          "eval_accuracy_improvement": 0.1244
+        }
+      ]
+    },
+    {
+      "dataset": "C_signed_vs_unsigned",
+      "examples": [
+        {
+          "input": "{\"name\": \"adult\", \"domain\": \"real\", \"analysis\": \"signed_vs_unsigned\"}",
+          "output": "{\"signed_acc_mean\": 0.701791, \"unsigned_acc_mean\": 0.701338, \"hedges_g_acc\": 0.016582, \"signed_arity_mean\": 1.69, \"unsigned_arity_mean\": 1.65, \"hedges_g_arity\": 0.932848}",
+          "eval_hedges_g_acc": 0.016582
+        },
+        {
+          "input": "{\"name\": \"electricity\", \"domain\": \"real\", \"analysis\": \"signed_vs_unsigned\"}",
+          "output": "{\"signed_acc_mean\": 0.794277, \"unsigned_acc_mean\": 0.791157, \"hedges_g_acc\": 0.737897, \"signed_arity_mean\": 1.1, \"unsigned_arity_mean\": 1.4, \"hedges_g_arity\": -2.896767}",
+          "eval_hedges_g_acc": 0.737897
+        },
+        {
+          "input": "{\"name\": \"eye_movements\", \"domain\": \"real\", \"analysis\": \"signed_vs_unsigned\"}",
+          "output": "{\"signed_acc_mean\": 0.581502, \"unsigned_acc_mean\": 0.572708, \"hedges_g_acc\": 0.506176, \"signed_arity_mean\": 7.66, \"unsigned_arity_mean\": 8.59, \"hedges_g_arity\": -1.394203}",
+          "eval_hedges_g_acc": 0.506176
+        }
+      ]
+    },
+    {
+      "dataset": "D_statistical_tests",
+      "examples": [
+        {
+          "input": "{\"test_id\": \"D1_friedman_8methods\", \"test_name\": \"Friedman\", \"scope\": \"8 methods x 7 classification datasets\"}",
+          "output": "{\"p_value\": 3.43e-06, \"effect_size\": 0.769679, \"significant\": true, \"interpretation\": \"Friedman chi2=37.71, p=0.000003. Reject H0: methods differ significantly.\"}",
+          "eval_p_value": 3.43e-06,
+          "eval_significant": 1
+        },
+        {
+          "input": "{\"test_id\": \"D2_nemenyi_posthoc\", \"test_name\": \"Nemenyi post-hoc\", \"scope\": \"8 methods x 7 datasets (pairwise)\"}",
+          "output": "{\"p_value\": null, \"effect_size\": null, \"significant\": true, \"interpretation\": \"Critical difference=3.969. 4 significant pairs found.\"}",
+          "eval_p_value": 1.0,
+          "eval_significant": 1
+        },
+        {
+          "input": "{\"test_id\": \"D3_wilcoxon_acc_signed_spectral_vs_axis_aligned\", \"test_name\": \"Wilcoxon signed-rank\", \"scope\": \"signed_spectral vs axis_aligned, 7 classification datasets\"}",
+          "output": "{\"p_value\": 0.109375, \"effect_size\": null, \"significant\": false, \"interpretation\": \"W=4.0, p_raw=0.109375, p_bonferroni=0.765625.\"}",
+          "eval_p_value": 0.109375,
+          "eval_significant": 0
+        }
+      ]
+    }
+  ]
+}

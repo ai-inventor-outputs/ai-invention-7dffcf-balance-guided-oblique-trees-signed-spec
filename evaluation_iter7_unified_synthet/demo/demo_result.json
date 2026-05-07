@@ -1,0 +1,13 @@
+{
+  "id": "eval_id5_it7__opus",
+  "type": "code",
+  "title": "Unified Synthetic+Real Results Tables & Complete Statistical Test Catalogue",
+  "summary": "Demo notebook loading pre-computed unified evaluation results (8 methods across synthetic+real datasets). Demonstrates: (A) method progression table comparing 5 FIGS methods + 3 baselines, (B) Spearman recovery-accuracy correlation (rho=0.047, p=0.868), (C) signed-vs-unsigned Hedges' g analysis with CoI divergence, (D) complete catalogue of 28 statistical tests. Includes 4-panel visualization of accuracy comparisons, scatter plots, effect sizes, and significance overview. Data: mini_demo_data.json (42.8 KB) with all sections from the evaluation output.",
+  "original_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/3_invention_loop/iter_7/gen_art/eval_id5_it7__opus",
+  "demo_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id5_it7__opus",
+  "out_expected_files": {
+    "notebook": "code_demo.ipynb",
+    "mini_data_file": "mini_demo_data.json"
+  },
+  "notebook_path": "/ai-inventor/aii_pipeline/runs/jamnik-sgfigs-pid-v2/4_gen_paper_repo/eval_id5_it7__opus/eval_code_demo.ipynb"
+}

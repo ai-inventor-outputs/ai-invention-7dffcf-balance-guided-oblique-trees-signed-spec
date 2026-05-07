@@ -1,0 +1,3896 @@
+{
+  "metadata": {
+    "evaluation_name": "interpretability_tradeoff_evaluation",
+    "description": "Six-block evaluation of FIGS interpretability tradeoffs: (A) arity comparison, (B) arity significance, (C) accuracy equivalence, (D) Pareto frontier, (E) path length, (F) cognitive complexity.",
+    "methods": [
+      "axis_aligned",
+      "random_oblique",
+      "unsigned_spectral",
+      "signed_spectral",
+      "hard_threshold"
+    ],
+    "max_splits_values": [
+      5,
+      10,
+      20
+    ],
+    "n_datasets": 8,
+    "n_folds": 5,
+    "n_bootstrap": 10000,
+    "rope": 0.01,
+    "high_dim_datasets": [
+      "jannis",
+      "miniboone",
+      "higgs_small"
+    ],
+    "analyses": {
+      "A_arity_table": {
+        "adult__axis_aligned__ms5": {
+          "dataset": "adult",
+          "method": "axis_aligned",
+          "max_splits": 5,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "adult__axis_aligned__ms10": {
+          "dataset": "adult",
+          "method": "axis_aligned",
+          "max_splits": 10,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "adult__axis_aligned__ms20": {
+          "dataset": "adult",
+          "method": "axis_aligned",
+          "max_splits": 20,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "adult__hard_threshold__ms5": {
+          "dataset": "adult",
+          "method": "hard_threshold",
+          "max_splits": 5,
+          "arity_mean": 1.4,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "adult__hard_threshold__ms10": {
+          "dataset": "adult",
+          "method": "hard_threshold",
+          "max_splits": 10,
+          "arity_mean": 1.3,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "adult__hard_threshold__ms20": {
+          "dataset": "adult",
+          "method": "hard_threshold",
+          "max_splits": 20,
+          "arity_mean": 1.24,
+          "arity_std": 0.0418,
+          "n_folds": 5
+        },
+        "adult__random_oblique__ms5": {
+          "dataset": "adult",
+          "method": "random_oblique",
+          "max_splits": 5,
+          "arity_mean": 3.68,
+          "arity_std": 0.5586,
+          "n_folds": 5
+        },
+        "adult__random_oblique__ms10": {
+          "dataset": "adult",
+          "method": "random_oblique",
+          "max_splits": 10,
+          "arity_mean": 3.04,
+          "arity_std": 0.498,
+          "n_folds": 5
+        },
+        "adult__random_oblique__ms20": {
+          "dataset": "adult",
+          "method": "random_oblique",
+          "max_splits": 20,
+          "arity_mean": 2.9,
+          "arity_std": 0.2693,
+          "n_folds": 5
+        },
+        "adult__signed_spectral__ms5": {
+          "dataset": "adult",
+          "method": "signed_spectral",
+          "max_splits": 5,
+          "arity_mean": 2.2,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "adult__signed_spectral__ms10": {
+          "dataset": "adult",
+          "method": "signed_spectral",
+          "max_splits": 10,
+          "arity_mean": 1.78,
+          "arity_std": 0.0447,
+          "n_folds": 5
+        },
+        "adult__signed_spectral__ms20": {
+          "dataset": "adult",
+          "method": "signed_spectral",
+          "max_splits": 20,
+          "arity_mean": 1.69,
+          "arity_std": 0.0418,
+          "n_folds": 5
+        },
+        "adult__unsigned_spectral__ms5": {
+          "dataset": "adult",
+          "method": "unsigned_spectral",
+          "max_splits": 5,
+          "arity_mean": 2.2,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "adult__unsigned_spectral__ms10": {
+          "dataset": "adult",
+          "method": "unsigned_spectral",
+          "max_splits": 10,
+          "arity_mean": 1.76,
+          "arity_std": 0.0894,
+          "n_folds": 5
+        },
+        "adult__unsigned_spectral__ms20": {
+          "dataset": "adult",
+          "method": "unsigned_spectral",
+          "max_splits": 20,
+          "arity_mean": 1.65,
+          "arity_std": 0.0354,
+          "n_folds": 5
+        },
+        "california_housing__axis_aligned__ms5": {
+          "dataset": "california_housing",
+          "method": "axis_aligned",
+          "max_splits": 5,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "california_housing__axis_aligned__ms10": {
+          "dataset": "california_housing",
+          "method": "axis_aligned",
+          "max_splits": 10,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "california_housing__axis_aligned__ms20": {
+          "dataset": "california_housing",
+          "method": "axis_aligned",
+          "max_splits": 20,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "california_housing__hard_threshold__ms5": {
+          "dataset": "california_housing",
+          "method": "hard_threshold",
+          "max_splits": 5,
+          "arity_mean": 1.6,
+          "arity_std": 0.2,
+          "n_folds": 5
+        },
+        "california_housing__hard_threshold__ms10": {
+          "dataset": "california_housing",
+          "method": "hard_threshold",
+          "max_splits": 10,
+          "arity_mean": 1.74,
+          "arity_std": 0.114,
+          "n_folds": 5
+        },
+        "california_housing__hard_threshold__ms20": {
+          "dataset": "california_housing",
+          "method": "hard_threshold",
+          "max_splits": 20,
+          "arity_mean": 1.68,
+          "arity_std": 0.1204,
+          "n_folds": 5
+        },
+        "california_housing__random_oblique__ms5": {
+          "dataset": "california_housing",
+          "method": "random_oblique",
+          "max_splits": 5,
+          "arity_mean": 3.4,
+          "arity_std": 0.8832,
+          "n_folds": 5
+        },
+        "california_housing__random_oblique__ms10": {
+          "dataset": "california_housing",
+          "method": "random_oblique",
+          "max_splits": 10,
+          "arity_mean": 3.48,
+          "arity_std": 0.507,
+          "n_folds": 5
+        },
+        "california_housing__random_oblique__ms20": {
+          "dataset": "california_housing",
+          "method": "random_oblique",
+          "max_splits": 20,
+          "arity_mean": 3.67,
+          "arity_std": 0.3402,
+          "n_folds": 5
+        },
+        "california_housing__signed_spectral__ms5": {
+          "dataset": "california_housing",
+          "method": "signed_spectral",
+          "max_splits": 5,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "california_housing__signed_spectral__ms10": {
+          "dataset": "california_housing",
+          "method": "signed_spectral",
+          "max_splits": 10,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "california_housing__signed_spectral__ms20": {
+          "dataset": "california_housing",
+          "method": "signed_spectral",
+          "max_splits": 20,
+          "arity_mean": 1.01,
+          "arity_std": 0.0224,
+          "n_folds": 5
+        },
+        "california_housing__unsigned_spectral__ms5": {
+          "dataset": "california_housing",
+          "method": "unsigned_spectral",
+          "max_splits": 5,
+          "arity_mean": 1.84,
+          "arity_std": 0.0894,
+          "n_folds": 5
+        },
+        "california_housing__unsigned_spectral__ms10": {
+          "dataset": "california_housing",
+          "method": "unsigned_spectral",
+          "max_splits": 10,
+          "arity_mean": 1.72,
+          "arity_std": 0.0447,
+          "n_folds": 5
+        },
+        "california_housing__unsigned_spectral__ms20": {
+          "dataset": "california_housing",
+          "method": "unsigned_spectral",
+          "max_splits": 20,
+          "arity_mean": 1.77,
+          "arity_std": 0.0274,
+          "n_folds": 5
+        },
+        "credit__axis_aligned__ms5": {
+          "dataset": "credit",
+          "method": "axis_aligned",
+          "max_splits": 5,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "credit__axis_aligned__ms10": {
+          "dataset": "credit",
+          "method": "axis_aligned",
+          "max_splits": 10,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "credit__axis_aligned__ms20": {
+          "dataset": "credit",
+          "method": "axis_aligned",
+          "max_splits": 20,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "credit__hard_threshold__ms5": {
+          "dataset": "credit",
+          "method": "hard_threshold",
+          "max_splits": 5,
+          "arity_mean": 2.44,
+          "arity_std": 0.0894,
+          "n_folds": 5
+        },
+        "credit__hard_threshold__ms10": {
+          "dataset": "credit",
+          "method": "hard_threshold",
+          "max_splits": 10,
+          "arity_mean": 2.42,
+          "arity_std": 0.1304,
+          "n_folds": 5
+        },
+        "credit__hard_threshold__ms20": {
+          "dataset": "credit",
+          "method": "hard_threshold",
+          "max_splits": 20,
+          "arity_mean": 2.04,
+          "arity_std": 0.1294,
+          "n_folds": 5
+        },
+        "credit__random_oblique__ms5": {
+          "dataset": "credit",
+          "method": "random_oblique",
+          "max_splits": 5,
+          "arity_mean": 2.92,
+          "arity_std": 0.6419,
+          "n_folds": 5
+        },
+        "credit__random_oblique__ms10": {
+          "dataset": "credit",
+          "method": "random_oblique",
+          "max_splits": 10,
+          "arity_mean": 3.38,
+          "arity_std": 0.3899,
+          "n_folds": 5
+        },
+        "credit__random_oblique__ms20": {
+          "dataset": "credit",
+          "method": "random_oblique",
+          "max_splits": 20,
+          "arity_mean": 3.54,
+          "arity_std": 0.3748,
+          "n_folds": 5
+        },
+        "credit__signed_spectral__ms5": {
+          "dataset": "credit",
+          "method": "signed_spectral",
+          "max_splits": 5,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "credit__signed_spectral__ms10": {
+          "dataset": "credit",
+          "method": "signed_spectral",
+          "max_splits": 10,
+          "arity_mean": 1.06,
+          "arity_std": 0.0548,
+          "n_folds": 5
+        },
+        "credit__signed_spectral__ms20": {
+          "dataset": "credit",
+          "method": "signed_spectral",
+          "max_splits": 20,
+          "arity_mean": 1.13,
+          "arity_std": 0.0671,
+          "n_folds": 5
+        },
+        "credit__unsigned_spectral__ms5": {
+          "dataset": "credit",
+          "method": "unsigned_spectral",
+          "max_splits": 5,
+          "arity_mean": 2.84,
+          "arity_std": 0.0894,
+          "n_folds": 5
+        },
+        "credit__unsigned_spectral__ms10": {
+          "dataset": "credit",
+          "method": "unsigned_spectral",
+          "max_splits": 10,
+          "arity_mean": 3.0,
+          "arity_std": 0.4796,
+          "n_folds": 5
+        },
+        "credit__unsigned_spectral__ms20": {
+          "dataset": "credit",
+          "method": "unsigned_spectral",
+          "max_splits": 20,
+          "arity_mean": 3.09,
+          "arity_std": 0.2837,
+          "n_folds": 5
+        },
+        "electricity__axis_aligned__ms5": {
+          "dataset": "electricity",
+          "method": "axis_aligned",
+          "max_splits": 5,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "electricity__axis_aligned__ms10": {
+          "dataset": "electricity",
+          "method": "axis_aligned",
+          "max_splits": 10,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "electricity__axis_aligned__ms20": {
+          "dataset": "electricity",
+          "method": "axis_aligned",
+          "max_splits": 20,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "electricity__hard_threshold__ms5": {
+          "dataset": "electricity",
+          "method": "hard_threshold",
+          "max_splits": 5,
+          "arity_mean": 1.6,
+          "arity_std": 0.2,
+          "n_folds": 5
+        },
+        "electricity__hard_threshold__ms10": {
+          "dataset": "electricity",
+          "method": "hard_threshold",
+          "max_splits": 10,
+          "arity_mean": 1.82,
+          "arity_std": 0.1643,
+          "n_folds": 5
+        },
+        "electricity__hard_threshold__ms20": {
+          "dataset": "electricity",
+          "method": "hard_threshold",
+          "max_splits": 20,
+          "arity_mean": 1.9,
+          "arity_std": 0.1969,
+          "n_folds": 5
+        },
+        "electricity__random_oblique__ms5": {
+          "dataset": "electricity",
+          "method": "random_oblique",
+          "max_splits": 5,
+          "arity_mean": 2.92,
+          "arity_std": 0.4382,
+          "n_folds": 5
+        },
+        "electricity__random_oblique__ms10": {
+          "dataset": "electricity",
+          "method": "random_oblique",
+          "max_splits": 10,
+          "arity_mean": 2.54,
+          "arity_std": 0.4037,
+          "n_folds": 5
+        },
+        "electricity__random_oblique__ms20": {
+          "dataset": "electricity",
+          "method": "random_oblique",
+          "max_splits": 20,
+          "arity_mean": 2.47,
+          "arity_std": 0.4087,
+          "n_folds": 5
+        },
+        "electricity__signed_spectral__ms5": {
+          "dataset": "electricity",
+          "method": "signed_spectral",
+          "max_splits": 5,
+          "arity_mean": 1.08,
+          "arity_std": 0.1095,
+          "n_folds": 5
+        },
+        "electricity__signed_spectral__ms10": {
+          "dataset": "electricity",
+          "method": "signed_spectral",
+          "max_splits": 10,
+          "arity_mean": 1.1,
+          "arity_std": 0.1414,
+          "n_folds": 5
+        },
+        "electricity__signed_spectral__ms20": {
+          "dataset": "electricity",
+          "method": "signed_spectral",
+          "max_splits": 20,
+          "arity_mean": 1.1,
+          "arity_std": 0.0935,
+          "n_folds": 5
+        },
+        "electricity__unsigned_spectral__ms5": {
+          "dataset": "electricity",
+          "method": "unsigned_spectral",
+          "max_splits": 5,
+          "arity_mean": 1.24,
+          "arity_std": 0.0894,
+          "n_folds": 5
+        },
+        "electricity__unsigned_spectral__ms10": {
+          "dataset": "electricity",
+          "method": "unsigned_spectral",
+          "max_splits": 10,
+          "arity_mean": 1.42,
+          "arity_std": 0.0837,
+          "n_folds": 5
+        },
+        "electricity__unsigned_spectral__ms20": {
+          "dataset": "electricity",
+          "method": "unsigned_spectral",
+          "max_splits": 20,
+          "arity_mean": 1.4,
+          "arity_std": 0.0935,
+          "n_folds": 5
+        },
+        "eye_movements__axis_aligned__ms5": {
+          "dataset": "eye_movements",
+          "method": "axis_aligned",
+          "max_splits": 5,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "eye_movements__axis_aligned__ms10": {
+          "dataset": "eye_movements",
+          "method": "axis_aligned",
+          "max_splits": 10,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "eye_movements__axis_aligned__ms20": {
+          "dataset": "eye_movements",
+          "method": "axis_aligned",
+          "max_splits": 20,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "eye_movements__hard_threshold__ms5": {
+          "dataset": "eye_movements",
+          "method": "hard_threshold",
+          "max_splits": 5,
+          "arity_mean": 7.76,
+          "arity_std": 2.9645,
+          "n_folds": 5
+        },
+        "eye_movements__hard_threshold__ms10": {
+          "dataset": "eye_movements",
+          "method": "hard_threshold",
+          "max_splits": 10,
+          "arity_mean": 9.06,
+          "arity_std": 1.0877,
+          "n_folds": 5
+        },
+        "eye_movements__hard_threshold__ms20": {
+          "dataset": "eye_movements",
+          "method": "hard_threshold",
+          "max_splits": 20,
+          "arity_mean": 9.45,
+          "arity_std": 0.4596,
+          "n_folds": 5
+        },
+        "eye_movements__random_oblique__ms5": {
+          "dataset": "eye_movements",
+          "method": "random_oblique",
+          "max_splits": 5,
+          "arity_mean": 3.4,
+          "arity_std": 0.9274,
+          "n_folds": 5
+        },
+        "eye_movements__random_oblique__ms10": {
+          "dataset": "eye_movements",
+          "method": "random_oblique",
+          "max_splits": 10,
+          "arity_mean": 3.5,
+          "arity_std": 0.5431,
+          "n_folds": 5
+        },
+        "eye_movements__random_oblique__ms20": {
+          "dataset": "eye_movements",
+          "method": "random_oblique",
+          "max_splits": 20,
+          "arity_mean": 3.79,
+          "arity_std": 0.3896,
+          "n_folds": 5
+        },
+        "eye_movements__signed_spectral__ms5": {
+          "dataset": "eye_movements",
+          "method": "signed_spectral",
+          "max_splits": 5,
+          "arity_mean": 7.48,
+          "arity_std": 0.9859,
+          "n_folds": 5
+        },
+        "eye_movements__signed_spectral__ms10": {
+          "dataset": "eye_movements",
+          "method": "signed_spectral",
+          "max_splits": 10,
+          "arity_mean": 6.94,
+          "arity_std": 0.805,
+          "n_folds": 5
+        },
+        "eye_movements__signed_spectral__ms20": {
+          "dataset": "eye_movements",
+          "method": "signed_spectral",
+          "max_splits": 20,
+          "arity_mean": 7.66,
+          "arity_std": 0.7394,
+          "n_folds": 5
+        },
+        "eye_movements__unsigned_spectral__ms5": {
+          "dataset": "eye_movements",
+          "method": "unsigned_spectral",
+          "max_splits": 5,
+          "arity_mean": 7.32,
+          "arity_std": 0.9445,
+          "n_folds": 5
+        },
+        "eye_movements__unsigned_spectral__ms10": {
+          "dataset": "eye_movements",
+          "method": "unsigned_spectral",
+          "max_splits": 10,
+          "arity_mean": 8.86,
+          "arity_std": 0.4722,
+          "n_folds": 5
+        },
+        "eye_movements__unsigned_spectral__ms20": {
+          "dataset": "eye_movements",
+          "method": "unsigned_spectral",
+          "max_splits": 20,
+          "arity_mean": 8.59,
+          "arity_std": 0.4234,
+          "n_folds": 5
+        },
+        "higgs_small__axis_aligned__ms5": {
+          "dataset": "higgs_small",
+          "method": "axis_aligned",
+          "max_splits": 5,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "higgs_small__axis_aligned__ms10": {
+          "dataset": "higgs_small",
+          "method": "axis_aligned",
+          "max_splits": 10,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "higgs_small__axis_aligned__ms20": {
+          "dataset": "higgs_small",
+          "method": "axis_aligned",
+          "max_splits": 20,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "higgs_small__hard_threshold__ms5": {
+          "dataset": "higgs_small",
+          "method": "hard_threshold",
+          "max_splits": 5,
+          "arity_mean": 8.6,
+          "arity_std": 0.8944,
+          "n_folds": 5
+        },
+        "higgs_small__hard_threshold__ms10": {
+          "dataset": "higgs_small",
+          "method": "hard_threshold",
+          "max_splits": 10,
+          "arity_mean": 7.4,
+          "arity_std": 0.8944,
+          "n_folds": 5
+        },
+        "higgs_small__hard_threshold__ms20": {
+          "dataset": "higgs_small",
+          "method": "hard_threshold",
+          "max_splits": 20,
+          "arity_mean": 7.3,
+          "arity_std": 0.2739,
+          "n_folds": 5
+        },
+        "higgs_small__random_oblique__ms5": {
+          "dataset": "higgs_small",
+          "method": "random_oblique",
+          "max_splits": 5,
+          "arity_mean": 3.44,
+          "arity_std": 0.6986,
+          "n_folds": 5
+        },
+        "higgs_small__random_oblique__ms10": {
+          "dataset": "higgs_small",
+          "method": "random_oblique",
+          "max_splits": 10,
+          "arity_mean": 3.56,
+          "arity_std": 0.4037,
+          "n_folds": 5
+        },
+        "higgs_small__random_oblique__ms20": {
+          "dataset": "higgs_small",
+          "method": "random_oblique",
+          "max_splits": 20,
+          "arity_mean": 3.5,
+          "arity_std": 0.3102,
+          "n_folds": 5
+        },
+        "higgs_small__signed_spectral__ms5": {
+          "dataset": "higgs_small",
+          "method": "signed_spectral",
+          "max_splits": 5,
+          "arity_mean": 5.4,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "higgs_small__signed_spectral__ms10": {
+          "dataset": "higgs_small",
+          "method": "signed_spectral",
+          "max_splits": 10,
+          "arity_mean": 5.62,
+          "arity_std": 0.4919,
+          "n_folds": 5
+        },
+        "higgs_small__signed_spectral__ms20": {
+          "dataset": "higgs_small",
+          "method": "signed_spectral",
+          "max_splits": 20,
+          "arity_mean": 8.26,
+          "arity_std": 0.246,
+          "n_folds": 5
+        },
+        "higgs_small__unsigned_spectral__ms5": {
+          "dataset": "higgs_small",
+          "method": "unsigned_spectral",
+          "max_splits": 5,
+          "arity_mean": 7.48,
+          "arity_std": 0.9859,
+          "n_folds": 5
+        },
+        "higgs_small__unsigned_spectral__ms10": {
+          "dataset": "higgs_small",
+          "method": "unsigned_spectral",
+          "max_splits": 10,
+          "arity_mean": 6.94,
+          "arity_std": 1.0262,
+          "n_folds": 5
+        },
+        "higgs_small__unsigned_spectral__ms20": {
+          "dataset": "higgs_small",
+          "method": "unsigned_spectral",
+          "max_splits": 20,
+          "arity_mean": 6.98,
+          "arity_std": 0.5357,
+          "n_folds": 5
+        },
+        "jannis__axis_aligned__ms5": {
+          "dataset": "jannis",
+          "method": "axis_aligned",
+          "max_splits": 5,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "jannis__axis_aligned__ms10": {
+          "dataset": "jannis",
+          "method": "axis_aligned",
+          "max_splits": 10,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "jannis__axis_aligned__ms20": {
+          "dataset": "jannis",
+          "method": "axis_aligned",
+          "max_splits": 20,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "jannis__hard_threshold__ms5": {
+          "dataset": "jannis",
+          "method": "hard_threshold",
+          "max_splits": 5,
+          "arity_mean": 27.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "jannis__hard_threshold__ms10": {
+          "dataset": "jannis",
+          "method": "hard_threshold",
+          "max_splits": 10,
+          "arity_mean": 27.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "jannis__hard_threshold__ms20": {
+          "dataset": "jannis",
+          "method": "hard_threshold",
+          "max_splits": 20,
+          "arity_mean": 25.44,
+          "arity_std": 0.5814,
+          "n_folds": 5
+        },
+        "jannis__random_oblique__ms5": {
+          "dataset": "jannis",
+          "method": "random_oblique",
+          "max_splits": 5,
+          "arity_mean": 3.4,
+          "arity_std": 0.5477,
+          "n_folds": 5
+        },
+        "jannis__random_oblique__ms10": {
+          "dataset": "jannis",
+          "method": "random_oblique",
+          "max_splits": 10,
+          "arity_mean": 3.42,
+          "arity_std": 0.3033,
+          "n_folds": 5
+        },
+        "jannis__random_oblique__ms20": {
+          "dataset": "jannis",
+          "method": "random_oblique",
+          "max_splits": 20,
+          "arity_mean": 3.4,
+          "arity_std": 0.3953,
+          "n_folds": 5
+        },
+        "jannis__signed_spectral__ms5": {
+          "dataset": "jannis",
+          "method": "signed_spectral",
+          "max_splits": 5,
+          "arity_mean": 18.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "jannis__signed_spectral__ms10": {
+          "dataset": "jannis",
+          "method": "signed_spectral",
+          "max_splits": 10,
+          "arity_mean": 15.76,
+          "arity_std": 0.9607,
+          "n_folds": 5
+        },
+        "jannis__signed_spectral__ms20": {
+          "dataset": "jannis",
+          "method": "signed_spectral",
+          "max_splits": 20,
+          "arity_mean": 15.09,
+          "arity_std": 1.3695,
+          "n_folds": 5
+        },
+        "jannis__unsigned_spectral__ms5": {
+          "dataset": "jannis",
+          "method": "unsigned_spectral",
+          "max_splits": 5,
+          "arity_mean": 23.6,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "jannis__unsigned_spectral__ms10": {
+          "dataset": "jannis",
+          "method": "unsigned_spectral",
+          "max_splits": 10,
+          "arity_mean": 30.4,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "jannis__unsigned_spectral__ms20": {
+          "dataset": "jannis",
+          "method": "unsigned_spectral",
+          "max_splits": 20,
+          "arity_mean": 31.24,
+          "arity_std": 2.8163,
+          "n_folds": 5
+        },
+        "miniboone__axis_aligned__ms5": {
+          "dataset": "miniboone",
+          "method": "axis_aligned",
+          "max_splits": 5,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "miniboone__axis_aligned__ms10": {
+          "dataset": "miniboone",
+          "method": "axis_aligned",
+          "max_splits": 10,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "miniboone__axis_aligned__ms20": {
+          "dataset": "miniboone",
+          "method": "axis_aligned",
+          "max_splits": 20,
+          "arity_mean": 1.0,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "miniboone__hard_threshold__ms5": {
+          "dataset": "miniboone",
+          "method": "hard_threshold",
+          "max_splits": 5,
+          "arity_mean": 18.4,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "miniboone__hard_threshold__ms10": {
+          "dataset": "miniboone",
+          "method": "hard_threshold",
+          "max_splits": 10,
+          "arity_mean": 24.2,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "miniboone__hard_threshold__ms20": {
+          "dataset": "miniboone",
+          "method": "hard_threshold",
+          "max_splits": 20,
+          "arity_mean": 23.62,
+          "arity_std": 0.7942,
+          "n_folds": 5
+        },
+        "miniboone__random_oblique__ms5": {
+          "dataset": "miniboone",
+          "method": "random_oblique",
+          "max_splits": 5,
+          "arity_mean": 3.48,
+          "arity_std": 0.3033,
+          "n_folds": 5
+        },
+        "miniboone__random_oblique__ms10": {
+          "dataset": "miniboone",
+          "method": "random_oblique",
+          "max_splits": 10,
+          "arity_mean": 3.38,
+          "arity_std": 0.3564,
+          "n_folds": 5
+        },
+        "miniboone__random_oblique__ms20": {
+          "dataset": "miniboone",
+          "method": "random_oblique",
+          "max_splits": 20,
+          "arity_mean": 3.5,
+          "arity_std": 0.2894,
+          "n_folds": 5
+        },
+        "miniboone__signed_spectral__ms5": {
+          "dataset": "miniboone",
+          "method": "signed_spectral",
+          "max_splits": 5,
+          "arity_mean": 12.8,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "miniboone__signed_spectral__ms10": {
+          "dataset": "miniboone",
+          "method": "signed_spectral",
+          "max_splits": 10,
+          "arity_mean": 10.5,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "miniboone__signed_spectral__ms20": {
+          "dataset": "miniboone",
+          "method": "signed_spectral",
+          "max_splits": 20,
+          "arity_mean": 11.47,
+          "arity_std": 0.0447,
+          "n_folds": 5
+        },
+        "miniboone__unsigned_spectral__ms5": {
+          "dataset": "miniboone",
+          "method": "unsigned_spectral",
+          "max_splits": 5,
+          "arity_mean": 25.6,
+          "arity_std": 0.0,
+          "n_folds": 5
+        },
+        "miniboone__unsigned_spectral__ms10": {
+          "dataset": "miniboone",
+          "method": "unsigned_spectral",
+          "max_splits": 10,
+          "arity_mean": 26.44,
+          "arity_std": 0.3286,
+          "n_folds": 5
+        },
+        "miniboone__unsigned_spectral__ms20": {
+          "dataset": "miniboone",
+          "method": "unsigned_spectral",
+          "max_splits": 20,
+          "arity_mean": 23.5,
+          "arity_std": 0.6955,
+          "n_folds": 5
+        }
+      },
+      "B_arity_significance": {
+        "unsigned_spectral_vs_random_oblique": {
+          "pooled_wilcoxon": {
+            "W": 1747.0,
+            "p": 1.3359620261614865e-06,
+            "n_pairs": 120,
+            "n_nonzero": 119
+          },
+          "bootstrap_ci_mean_diff": {
+            "mean": 6.29875,
+            "ci_lo": 4.52740625,
+            "ci_hi": 8.145468750000001,
+            "n_boot": 10000
+          },
+          "cohens_d": {
+            "d": 0.8570409388466705,
+            "ci_lo": 0.6860800633622743,
+            "ci_hi": 1.0434074854776083
+          },
+          "per_dataset_wilcoxon": {
+            "adult": {
+              "W": 0.0,
+              "p": 0.0006516660806139112,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "california_housing": {
+              "W": 0.0,
+              "p": 6.103515625e-05,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "credit": {
+              "W": 26.0,
+              "p": 0.09603314386478143,
+              "n_pairs": 15,
+              "n_nonzero": 14
+            },
+            "electricity": {
+              "W": 0.0,
+              "p": 0.0006500242387180628,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "eye_movements": {
+              "W": 0.0,
+              "p": 0.0006533107814151376,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "higgs_small": {
+              "W": 0.0,
+              "p": 0.0006500242387180628,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "jannis": {
+              "W": 0.0,
+              "p": 0.0006533107814151376,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "miniboone": {
+              "W": 0.0,
+              "p": 0.0006533107814151376,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            }
+          }
+        },
+        "unsigned_spectral_vs_hard_threshold": {
+          "pooled_wilcoxon": {
+            "W": 2615.5,
+            "p": 0.04459551097704437,
+            "n_pairs": 120,
+            "n_nonzero": 115
+          },
+          "bootstrap_ci_mean_diff": {
+            "mean": 0.6029166666666668,
+            "ci_lo": 0.21121874999999998,
+            "ci_hi": 1.0375104166666669,
+            "n_boot": 10000
+          },
+          "cohens_d": {
+            "d": 0.060917827800071,
+            "ci_lo": 0.022091162425082203,
+            "ci_hi": 0.09983321623448593
+          },
+          "per_dataset_wilcoxon": {
+            "adult": {
+              "W": 0.0,
+              "p": 0.0005912650237009975,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "california_housing": {
+              "W": 13.5,
+              "p": 0.08113589702211402,
+              "n_pairs": 15,
+              "n_nonzero": 11
+            },
+            "credit": {
+              "W": 0.0,
+              "p": 0.0006162019349793729,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "electricity": {
+              "W": 0.0,
+              "p": 0.0006321520160876121,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "eye_movements": {
+              "W": 35.0,
+              "p": 0.1688232421875,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "higgs_small": {
+              "W": 5.0,
+              "p": 0.002803366990975858,
+              "n_pairs": 15,
+              "n_nonzero": 14
+            },
+            "jannis": {
+              "W": 32.5,
+              "p": 0.10588954093164366,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "miniboone": {
+              "W": 7.0,
+              "p": 0.002482340838324793,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            }
+          }
+        },
+        "signed_spectral_vs_random_oblique": {
+          "pooled_wilcoxon": {
+            "W": 2170.0,
+            "p": 0.00013144217046084065,
+            "n_pairs": 120,
+            "n_nonzero": 120
+          },
+          "bootstrap_ci_mean_diff": {
+            "mean": 2.5175,
+            "ci_lo": 1.5766666666666669,
+            "ci_hi": 3.4925,
+            "n_boot": 10000
+          },
+          "cohens_d": {
+            "d": 0.6509887554394718,
+            "ci_lo": 0.4431056675069237,
+            "ci_hi": 0.8588925057220997
+          },
+          "per_dataset_wilcoxon": {
+            "adult": {
+              "W": 0.0,
+              "p": 0.0006516660806139112,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "california_housing": {
+              "W": 0.0,
+              "p": 0.0006516660806139112,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "credit": {
+              "W": 0.0,
+              "p": 0.0006451158437926242,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "electricity": {
+              "W": 0.0,
+              "p": 0.0006516660806139112,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "eye_movements": {
+              "W": 0.0,
+              "p": 6.103515625e-05,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "higgs_small": {
+              "W": 0.0,
+              "p": 0.0006467491225764764,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "jannis": {
+              "W": 0.0,
+              "p": 6.103515625e-05,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            },
+            "miniboone": {
+              "W": 0.0,
+              "p": 0.0006516660806139112,
+              "n_pairs": 15,
+              "n_nonzero": 15
+            }
+          }
+        }
+      },
+      "C_accuracy_equivalence": {
+        "unsigned_spectral_vs_random_oblique": {
+          "wilcoxon": {
+            "W": 3045.0,
+            "p": 0.12551295336826823,
+            "n_pairs": 120,
+            "n_nonzero": 120
+          },
+          "bayesian_rope": {
+            "p_equivalent": 0.4583,
+            "p_method1_better": 0.3167,
+            "p_method2_better": 0.225,
+            "rope": 0.01,
+            "n": 120
+          },
+          "bootstrap_ci_mean_diff": {
+            "mean": 0.002269775,
+            "ci_lo": -0.001542475833333331,
+            "ci_hi": 0.006108463333333326,
+            "n_boot": 10000
+          },
+          "cohens_d": {
+            "d": 0.025042249095041554,
+            "ci_lo": -0.017757726858146628,
+            "ci_hi": 0.0672613120340036
+          },
+          "mean_performance_method1": 0.714285,
+          "mean_performance_method2": 0.712016,
+          "note": "performance = balanced_accuracy for classification, r2 for regression"
+        },
+        "unsigned_spectral_vs_hard_threshold": {
+          "wilcoxon": {
+            "W": 2882.0,
+            "p": 0.09144824685145371,
+            "n_pairs": 120,
+            "n_nonzero": 118
+          },
+          "bayesian_rope": {
+            "p_equivalent": 0.7,
+            "p_method1_better": 0.175,
+            "p_method2_better": 0.125,
+            "rope": 0.01,
+            "n": 120
+          },
+          "bootstrap_ci_mean_diff": {
+            "mean": 0.0025931416666666687,
+            "ci_lo": -0.0006971622916666687,
+            "ci_hi": 0.006172437708333339,
+            "n_boot": 10000
+          },
+          "cohens_d": {
+            "d": 0.027063689377161335,
+            "ci_lo": -0.007814678642952365,
+            "ci_hi": 0.06408203997338559
+          },
+          "mean_performance_method1": 0.714285,
+          "mean_performance_method2": 0.711692,
+          "note": "performance = balanced_accuracy for classification, r2 for regression"
+        },
+        "unsigned_spectral_vs_axis_aligned": {
+          "wilcoxon": {
+            "W": 1048.0,
+            "p": 2.2644628609230236e-11,
+            "n_pairs": 120,
+            "n_nonzero": 119
+          },
+          "bayesian_rope": {
+            "p_equivalent": 0.4083,
+            "p_method1_better": 0.5083,
+            "p_method2_better": 0.0833,
+            "rope": 0.01,
+            "n": 120
+          },
+          "bootstrap_ci_mean_diff": {
+            "mean": 0.021500725,
+            "ci_lo": 0.015800728124999996,
+            "ci_hi": 0.027555541458333336,
+            "n_boot": 10000
+          },
+          "cohens_d": {
+            "d": 0.2204192397570645,
+            "ci_lo": 0.16264527291317107,
+            "ci_hi": 0.28852016429183763
+          },
+          "mean_performance_method1": 0.714285,
+          "mean_performance_method2": 0.692785,
+          "note": "performance = balanced_accuracy for classification, r2 for regression"
+        }
+      },
+      "D_pareto": {
+        "n_settings": 24,
+        "frontier_table": {
+          "axis_aligned": {
+            "count": 24,
+            "percentage": 100.0,
+            "best_tradeoff_count": 0,
+            "best_tradeoff_pct": 0.0
+          },
+          "random_oblique": {
+            "count": 15,
+            "percentage": 62.5,
+            "best_tradeoff_count": 10,
+            "best_tradeoff_pct": 41.7
+          },
+          "unsigned_spectral": {
+            "count": 15,
+            "percentage": 62.5,
+            "best_tradeoff_count": 2,
+            "best_tradeoff_pct": 8.3
+          },
+          "signed_spectral": {
+            "count": 15,
+            "percentage": 62.5,
+            "best_tradeoff_count": 8,
+            "best_tradeoff_pct": 33.3
+          },
+          "hard_threshold": {
+            "count": 14,
+            "percentage": 58.3,
+            "best_tradeoff_count": 2,
+            "best_tradeoff_pct": 8.3
+          }
+        },
+        "per_setting_details": {
+          "adult__ms5": {
+            "on_frontier": [
+              "axis_aligned",
+              "hard_threshold"
+            ],
+            "best_tradeoff": "hard_threshold"
+          },
+          "adult__ms10": {
+            "on_frontier": [
+              "axis_aligned",
+              "unsigned_spectral"
+            ],
+            "best_tradeoff": "unsigned_spectral"
+          },
+          "adult__ms20": {
+            "on_frontier": [
+              "axis_aligned",
+              "hard_threshold",
+              "random_oblique",
+              "signed_spectral",
+              "unsigned_spectral"
+            ],
+            "best_tradeoff": "hard_threshold"
+          },
+          "california_housing__ms5": {
+            "on_frontier": [
+              "axis_aligned",
+              "hard_threshold",
+              "random_oblique",
+              "signed_spectral",
+              "unsigned_spectral"
+            ],
+            "best_tradeoff": "signed_spectral"
+          },
+          "california_housing__ms10": {
+            "on_frontier": [
+              "axis_aligned",
+              "random_oblique",
+              "signed_spectral",
+              "unsigned_spectral"
+            ],
+            "best_tradeoff": "signed_spectral"
+          },
+          "california_housing__ms20": {
+            "on_frontier": [
+              "axis_aligned",
+              "hard_threshold",
+              "random_oblique",
+              "signed_spectral",
+              "unsigned_spectral"
+            ],
+            "best_tradeoff": "signed_spectral"
+          },
+          "credit__ms5": {
+            "on_frontier": [
+              "axis_aligned",
+              "hard_threshold",
+              "signed_spectral"
+            ],
+            "best_tradeoff": "signed_spectral"
+          },
+          "credit__ms10": {
+            "on_frontier": [
+              "axis_aligned",
+              "hard_threshold",
+              "random_oblique",
+              "signed_spectral",
+              "unsigned_spectral"
+            ],
+            "best_tradeoff": "signed_spectral"
+          },
+          "credit__ms20": {
+            "on_frontier": [
+              "axis_aligned",
+              "signed_spectral",
+              "unsigned_spectral"
+            ],
+            "best_tradeoff": "signed_spectral"
+          },
+          "electricity__ms5": {
+            "on_frontier": [
+              "axis_aligned",
+              "hard_threshold",
+              "signed_spectral",
+              "unsigned_spectral"
+            ],
+            "best_tradeoff": "signed_spectral"
+          },
+          "electricity__ms10": {
+            "on_frontier": [
+              "axis_aligned",
+              "hard_threshold",
+              "unsigned_spectral"
+            ],
+            "best_tradeoff": "unsigned_spectral"
+          },
+          "electricity__ms20": {
+            "on_frontier": [
+              "axis_aligned",
+              "signed_spectral"
+            ],
+            "best_tradeoff": "signed_spectral"
+          },
+          "eye_movements__ms5": {
+            "on_frontier": [
+              "axis_aligned",
+              "random_oblique"
+            ],
+            "best_tradeoff": "random_oblique"
+          },
+          "eye_movements__ms10": {
+            "on_frontier": [
+              "axis_aligned"
+            ],
+            "best_tradeoff": null
+          },
+          "eye_movements__ms20": {
+            "on_frontier": [
+              "axis_aligned"
+            ],
+            "best_tradeoff": null
+          },
+          "higgs_small__ms5": {
+            "on_frontier": [
+              "axis_aligned",
+              "hard_threshold",
+              "random_oblique",
+              "unsigned_spectral"
+            ],
+            "best_tradeoff": "random_oblique"
+          },
+          "higgs_small__ms10": {
+            "on_frontier": [
+              "axis_aligned",
+              "hard_threshold",
+              "random_oblique",
+              "unsigned_spectral"
+            ],
+            "best_tradeoff": "random_oblique"
+          },
+          "higgs_small__ms20": {
+            "on_frontier": [
+              "axis_aligned",
+              "random_oblique",
+              "unsigned_spectral"
+            ],
+            "best_tradeoff": "random_oblique"
+          },
+          "jannis__ms5": {
+            "on_frontier": [
+              "axis_aligned",
+              "hard_threshold",
+              "random_oblique",
+              "signed_spectral"
+            ],
+            "best_tradeoff": "random_oblique"
+          },
+          "jannis__ms10": {
+            "on_frontier": [
+              "axis_aligned",
+              "random_oblique",
+              "signed_spectral"
+            ],
+            "best_tradeoff": "random_oblique"
+          },
+          "jannis__ms20": {
+            "on_frontier": [
+              "axis_aligned",
+              "hard_threshold",
+              "random_oblique",
+              "signed_spectral"
+            ],
+            "best_tradeoff": "random_oblique"
+          },
+          "miniboone__ms5": {
+            "on_frontier": [
+              "axis_aligned",
+              "hard_threshold",
+              "random_oblique",
+              "signed_spectral",
+              "unsigned_spectral"
+            ],
+            "best_tradeoff": "random_oblique"
+          },
+          "miniboone__ms10": {
+            "on_frontier": [
+              "axis_aligned",
+              "hard_threshold",
+              "random_oblique",
+              "signed_spectral",
+              "unsigned_spectral"
+            ],
+            "best_tradeoff": "random_oblique"
+          },
+          "miniboone__ms20": {
+            "on_frontier": [
+              "axis_aligned",
+              "random_oblique",
+              "signed_spectral",
+              "unsigned_spectral"
+            ],
+            "best_tradeoff": "random_oblique"
+          }
+        }
+      },
+      "E_path_length": {
+        "descriptive": {
+          "adult__axis_aligned__ms5": {
+            "dataset": "adult",
+            "method": "axis_aligned",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "adult__axis_aligned__ms10": {
+            "dataset": "adult",
+            "method": "axis_aligned",
+            "max_splits": 10,
+            "path_length_mean": 3.9091,
+            "path_length_std": 0.0
+          },
+          "adult__axis_aligned__ms20": {
+            "dataset": "adult",
+            "method": "axis_aligned",
+            "max_splits": 20,
+            "path_length_mean": 5.0381,
+            "path_length_std": 0.0521
+          },
+          "adult__hard_threshold__ms5": {
+            "dataset": "adult",
+            "method": "hard_threshold",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "adult__hard_threshold__ms10": {
+            "dataset": "adult",
+            "method": "hard_threshold",
+            "max_splits": 10,
+            "path_length_mean": 3.8,
+            "path_length_std": 0.0407
+          },
+          "adult__hard_threshold__ms20": {
+            "dataset": "adult",
+            "method": "hard_threshold",
+            "max_splits": 20,
+            "path_length_mean": 4.9048,
+            "path_length_std": 0.1065
+          },
+          "adult__random_oblique__ms5": {
+            "dataset": "adult",
+            "method": "random_oblique",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "adult__random_oblique__ms10": {
+            "dataset": "adult",
+            "method": "random_oblique",
+            "max_splits": 10,
+            "path_length_mean": 3.6909,
+            "path_length_std": 0.0813
+          },
+          "adult__random_oblique__ms20": {
+            "dataset": "adult",
+            "method": "random_oblique",
+            "max_splits": 20,
+            "path_length_mean": 4.7048,
+            "path_length_std": 0.0916
+          },
+          "adult__signed_spectral__ms5": {
+            "dataset": "adult",
+            "method": "signed_spectral",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "adult__signed_spectral__ms10": {
+            "dataset": "adult",
+            "method": "signed_spectral",
+            "max_splits": 10,
+            "path_length_mean": 3.8909,
+            "path_length_std": 0.0761
+          },
+          "adult__signed_spectral__ms20": {
+            "dataset": "adult",
+            "method": "signed_spectral",
+            "max_splits": 20,
+            "path_length_mean": 4.9048,
+            "path_length_std": 0.0753
+          },
+          "adult__unsigned_spectral__ms5": {
+            "dataset": "adult",
+            "method": "unsigned_spectral",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "adult__unsigned_spectral__ms10": {
+            "dataset": "adult",
+            "method": "unsigned_spectral",
+            "max_splits": 10,
+            "path_length_mean": 3.8909,
+            "path_length_std": 0.0761
+          },
+          "adult__unsigned_spectral__ms20": {
+            "dataset": "adult",
+            "method": "unsigned_spectral",
+            "max_splits": 20,
+            "path_length_mean": 4.9048,
+            "path_length_std": 0.0753
+          },
+          "california_housing__axis_aligned__ms5": {
+            "dataset": "california_housing",
+            "method": "axis_aligned",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "california_housing__axis_aligned__ms10": {
+            "dataset": "california_housing",
+            "method": "axis_aligned",
+            "max_splits": 10,
+            "path_length_mean": 3.7091,
+            "path_length_std": 0.0407
+          },
+          "california_housing__axis_aligned__ms20": {
+            "dataset": "california_housing",
+            "method": "axis_aligned",
+            "max_splits": 20,
+            "path_length_mean": 4.6286,
+            "path_length_std": 0.0522
+          },
+          "california_housing__hard_threshold__ms5": {
+            "dataset": "california_housing",
+            "method": "hard_threshold",
+            "max_splits": 5,
+            "path_length_mean": 2.8,
+            "path_length_std": 0.0745
+          },
+          "california_housing__hard_threshold__ms10": {
+            "dataset": "california_housing",
+            "method": "hard_threshold",
+            "max_splits": 10,
+            "path_length_mean": 3.8727,
+            "path_length_std": 0.0813
+          },
+          "california_housing__hard_threshold__ms20": {
+            "dataset": "california_housing",
+            "method": "hard_threshold",
+            "max_splits": 20,
+            "path_length_mean": 4.9048,
+            "path_length_std": 0.0953
+          },
+          "california_housing__random_oblique__ms5": {
+            "dataset": "california_housing",
+            "method": "random_oblique",
+            "max_splits": 5,
+            "path_length_mean": 2.7333,
+            "path_length_std": 0.0913
+          },
+          "california_housing__random_oblique__ms10": {
+            "dataset": "california_housing",
+            "method": "random_oblique",
+            "max_splits": 10,
+            "path_length_mean": 3.6,
+            "path_length_std": 0.0813
+          },
+          "california_housing__random_oblique__ms20": {
+            "dataset": "california_housing",
+            "method": "random_oblique",
+            "max_splits": 20,
+            "path_length_mean": 4.619,
+            "path_length_std": 0.0953
+          },
+          "california_housing__signed_spectral__ms5": {
+            "dataset": "california_housing",
+            "method": "signed_spectral",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "california_housing__signed_spectral__ms10": {
+            "dataset": "california_housing",
+            "method": "signed_spectral",
+            "max_splits": 10,
+            "path_length_mean": 3.7091,
+            "path_length_std": 0.0407
+          },
+          "california_housing__signed_spectral__ms20": {
+            "dataset": "california_housing",
+            "method": "signed_spectral",
+            "max_splits": 20,
+            "path_length_mean": 4.6286,
+            "path_length_std": 0.0522
+          },
+          "california_housing__unsigned_spectral__ms5": {
+            "dataset": "california_housing",
+            "method": "unsigned_spectral",
+            "max_splits": 5,
+            "path_length_mean": 2.8333,
+            "path_length_std": 0.0
+          },
+          "california_housing__unsigned_spectral__ms10": {
+            "dataset": "california_housing",
+            "method": "unsigned_spectral",
+            "max_splits": 10,
+            "path_length_mean": 3.7455,
+            "path_length_std": 0.1494
+          },
+          "california_housing__unsigned_spectral__ms20": {
+            "dataset": "california_housing",
+            "method": "unsigned_spectral",
+            "max_splits": 20,
+            "path_length_mean": 4.7619,
+            "path_length_std": 0.0753
+          },
+          "credit__axis_aligned__ms5": {
+            "dataset": "credit",
+            "method": "axis_aligned",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "credit__axis_aligned__ms10": {
+            "dataset": "credit",
+            "method": "axis_aligned",
+            "max_splits": 10,
+            "path_length_mean": 3.7818,
+            "path_length_std": 0.122
+          },
+          "credit__axis_aligned__ms20": {
+            "dataset": "credit",
+            "method": "axis_aligned",
+            "max_splits": 20,
+            "path_length_mean": 5.1714,
+            "path_length_std": 0.0987
+          },
+          "credit__hard_threshold__ms5": {
+            "dataset": "credit",
+            "method": "hard_threshold",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "credit__hard_threshold__ms10": {
+            "dataset": "credit",
+            "method": "hard_threshold",
+            "max_splits": 10,
+            "path_length_mean": 3.6546,
+            "path_length_std": 0.0407
+          },
+          "credit__hard_threshold__ms20": {
+            "dataset": "credit",
+            "method": "hard_threshold",
+            "max_splits": 20,
+            "path_length_mean": 4.8952,
+            "path_length_std": 0.1032
+          },
+          "credit__random_oblique__ms5": {
+            "dataset": "credit",
+            "method": "random_oblique",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "credit__random_oblique__ms10": {
+            "dataset": "credit",
+            "method": "random_oblique",
+            "max_splits": 10,
+            "path_length_mean": 3.7455,
+            "path_length_std": 0.0761
+          },
+          "credit__random_oblique__ms20": {
+            "dataset": "credit",
+            "method": "random_oblique",
+            "max_splits": 20,
+            "path_length_mean": 4.9238,
+            "path_length_std": 0.1372
+          },
+          "credit__signed_spectral__ms5": {
+            "dataset": "credit",
+            "method": "signed_spectral",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "credit__signed_spectral__ms10": {
+            "dataset": "credit",
+            "method": "signed_spectral",
+            "max_splits": 10,
+            "path_length_mean": 3.8,
+            "path_length_std": 0.0761
+          },
+          "credit__signed_spectral__ms20": {
+            "dataset": "credit",
+            "method": "signed_spectral",
+            "max_splits": 20,
+            "path_length_mean": 5.2,
+            "path_length_std": 0.0851
+          },
+          "credit__unsigned_spectral__ms5": {
+            "dataset": "credit",
+            "method": "unsigned_spectral",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "credit__unsigned_spectral__ms10": {
+            "dataset": "credit",
+            "method": "unsigned_spectral",
+            "max_splits": 10,
+            "path_length_mean": 3.7091,
+            "path_length_std": 0.0407
+          },
+          "credit__unsigned_spectral__ms20": {
+            "dataset": "credit",
+            "method": "unsigned_spectral",
+            "max_splits": 20,
+            "path_length_mean": 4.8857,
+            "path_length_std": 0.1528
+          },
+          "electricity__axis_aligned__ms5": {
+            "dataset": "electricity",
+            "method": "axis_aligned",
+            "max_splits": 5,
+            "path_length_mean": 3.0333,
+            "path_length_std": 0.1826
+          },
+          "electricity__axis_aligned__ms10": {
+            "dataset": "electricity",
+            "method": "axis_aligned",
+            "max_splits": 10,
+            "path_length_mean": 4.4,
+            "path_length_std": 0.2371
+          },
+          "electricity__axis_aligned__ms20": {
+            "dataset": "electricity",
+            "method": "axis_aligned",
+            "max_splits": 20,
+            "path_length_mean": 5.8572,
+            "path_length_std": 0.4219
+          },
+          "electricity__hard_threshold__ms5": {
+            "dataset": "electricity",
+            "method": "hard_threshold",
+            "max_splits": 5,
+            "path_length_mean": 3.1333,
+            "path_length_std": 0.2739
+          },
+          "electricity__hard_threshold__ms10": {
+            "dataset": "electricity",
+            "method": "hard_threshold",
+            "max_splits": 10,
+            "path_length_mean": 4.2182,
+            "path_length_std": 0.0498
+          },
+          "electricity__hard_threshold__ms20": {
+            "dataset": "electricity",
+            "method": "hard_threshold",
+            "max_splits": 20,
+            "path_length_mean": 5.381,
+            "path_length_std": 0.303
+          },
+          "electricity__random_oblique__ms5": {
+            "dataset": "electricity",
+            "method": "random_oblique",
+            "max_splits": 5,
+            "path_length_mean": 2.8,
+            "path_length_std": 0.2981
+          },
+          "electricity__random_oblique__ms10": {
+            "dataset": "electricity",
+            "method": "random_oblique",
+            "max_splits": 10,
+            "path_length_mean": 3.8364,
+            "path_length_std": 0.1626
+          },
+          "electricity__random_oblique__ms20": {
+            "dataset": "electricity",
+            "method": "random_oblique",
+            "max_splits": 20,
+            "path_length_mean": 5.0571,
+            "path_length_std": 0.3237
+          },
+          "electricity__signed_spectral__ms5": {
+            "dataset": "electricity",
+            "method": "signed_spectral",
+            "max_splits": 5,
+            "path_length_mean": 3.0333,
+            "path_length_std": 0.1826
+          },
+          "electricity__signed_spectral__ms10": {
+            "dataset": "electricity",
+            "method": "signed_spectral",
+            "max_splits": 10,
+            "path_length_mean": 4.2909,
+            "path_length_std": 0.2439
+          },
+          "electricity__signed_spectral__ms20": {
+            "dataset": "electricity",
+            "method": "signed_spectral",
+            "max_splits": 20,
+            "path_length_mean": 5.7333,
+            "path_length_std": 0.5818
+          },
+          "electricity__unsigned_spectral__ms5": {
+            "dataset": "electricity",
+            "method": "unsigned_spectral",
+            "max_splits": 5,
+            "path_length_mean": 3.1333,
+            "path_length_std": 0.2739
+          },
+          "electricity__unsigned_spectral__ms10": {
+            "dataset": "electricity",
+            "method": "unsigned_spectral",
+            "max_splits": 10,
+            "path_length_mean": 4.1636,
+            "path_length_std": 0.0996
+          },
+          "electricity__unsigned_spectral__ms20": {
+            "dataset": "electricity",
+            "method": "unsigned_spectral",
+            "max_splits": 20,
+            "path_length_mean": 5.3428,
+            "path_length_std": 0.3289
+          },
+          "eye_movements__axis_aligned__ms5": {
+            "dataset": "eye_movements",
+            "method": "axis_aligned",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "eye_movements__axis_aligned__ms10": {
+            "dataset": "eye_movements",
+            "method": "axis_aligned",
+            "max_splits": 10,
+            "path_length_mean": 3.6728,
+            "path_length_std": 0.0813
+          },
+          "eye_movements__axis_aligned__ms20": {
+            "dataset": "eye_movements",
+            "method": "axis_aligned",
+            "max_splits": 20,
+            "path_length_mean": 4.9524,
+            "path_length_std": 0.2103
+          },
+          "eye_movements__hard_threshold__ms5": {
+            "dataset": "eye_movements",
+            "method": "hard_threshold",
+            "max_splits": 5,
+            "path_length_mean": 2.7333,
+            "path_length_std": 0.0913
+          },
+          "eye_movements__hard_threshold__ms10": {
+            "dataset": "eye_movements",
+            "method": "hard_threshold",
+            "max_splits": 10,
+            "path_length_mean": 3.7637,
+            "path_length_std": 0.1651
+          },
+          "eye_movements__hard_threshold__ms20": {
+            "dataset": "eye_movements",
+            "method": "hard_threshold",
+            "max_splits": 20,
+            "path_length_mean": 4.8,
+            "path_length_std": 0.0976
+          },
+          "eye_movements__random_oblique__ms5": {
+            "dataset": "eye_movements",
+            "method": "random_oblique",
+            "max_splits": 5,
+            "path_length_mean": 2.8667,
+            "path_length_std": 0.2173
+          },
+          "eye_movements__random_oblique__ms10": {
+            "dataset": "eye_movements",
+            "method": "random_oblique",
+            "max_splits": 10,
+            "path_length_mean": 3.8727,
+            "path_length_std": 0.2619
+          },
+          "eye_movements__random_oblique__ms20": {
+            "dataset": "eye_movements",
+            "method": "random_oblique",
+            "max_splits": 20,
+            "path_length_mean": 5.0667,
+            "path_length_std": 0.2643
+          },
+          "eye_movements__signed_spectral__ms5": {
+            "dataset": "eye_movements",
+            "method": "signed_spectral",
+            "max_splits": 5,
+            "path_length_mean": 2.7333,
+            "path_length_std": 0.0913
+          },
+          "eye_movements__signed_spectral__ms10": {
+            "dataset": "eye_movements",
+            "method": "signed_spectral",
+            "max_splits": 10,
+            "path_length_mean": 3.6909,
+            "path_length_std": 0.0813
+          },
+          "eye_movements__signed_spectral__ms20": {
+            "dataset": "eye_movements",
+            "method": "signed_spectral",
+            "max_splits": 20,
+            "path_length_mean": 5.0286,
+            "path_length_std": 0.1528
+          },
+          "eye_movements__unsigned_spectral__ms5": {
+            "dataset": "eye_movements",
+            "method": "unsigned_spectral",
+            "max_splits": 5,
+            "path_length_mean": 2.8,
+            "path_length_std": 0.0745
+          },
+          "eye_movements__unsigned_spectral__ms10": {
+            "dataset": "eye_movements",
+            "method": "unsigned_spectral",
+            "max_splits": 10,
+            "path_length_mean": 3.6909,
+            "path_length_std": 0.1379
+          },
+          "eye_movements__unsigned_spectral__ms20": {
+            "dataset": "eye_movements",
+            "method": "unsigned_spectral",
+            "max_splits": 20,
+            "path_length_mean": 4.8381,
+            "path_length_std": 0.1863
+          },
+          "higgs_small__axis_aligned__ms5": {
+            "dataset": "higgs_small",
+            "method": "axis_aligned",
+            "max_splits": 5,
+            "path_length_mean": 2.8333,
+            "path_length_std": 0.0
+          },
+          "higgs_small__axis_aligned__ms10": {
+            "dataset": "higgs_small",
+            "method": "axis_aligned",
+            "max_splits": 10,
+            "path_length_mean": 4.0,
+            "path_length_std": 0.0909
+          },
+          "higgs_small__axis_aligned__ms20": {
+            "dataset": "higgs_small",
+            "method": "axis_aligned",
+            "max_splits": 20,
+            "path_length_mean": 4.8857,
+            "path_length_std": 0.0543
+          },
+          "higgs_small__hard_threshold__ms5": {
+            "dataset": "higgs_small",
+            "method": "hard_threshold",
+            "max_splits": 5,
+            "path_length_mean": 2.7,
+            "path_length_std": 0.0745
+          },
+          "higgs_small__hard_threshold__ms10": {
+            "dataset": "higgs_small",
+            "method": "hard_threshold",
+            "max_splits": 10,
+            "path_length_mean": 3.7091,
+            "path_length_std": 0.0996
+          },
+          "higgs_small__hard_threshold__ms20": {
+            "dataset": "higgs_small",
+            "method": "hard_threshold",
+            "max_splits": 20,
+            "path_length_mean": 4.6476,
+            "path_length_std": 0.0426
+          },
+          "higgs_small__random_oblique__ms5": {
+            "dataset": "higgs_small",
+            "method": "random_oblique",
+            "max_splits": 5,
+            "path_length_mean": 2.8333,
+            "path_length_std": 0.1178
+          },
+          "higgs_small__random_oblique__ms10": {
+            "dataset": "higgs_small",
+            "method": "random_oblique",
+            "max_splits": 10,
+            "path_length_mean": 3.7637,
+            "path_length_std": 0.122
+          },
+          "higgs_small__random_oblique__ms20": {
+            "dataset": "higgs_small",
+            "method": "random_oblique",
+            "max_splits": 20,
+            "path_length_mean": 4.8,
+            "path_length_std": 0.1032
+          },
+          "higgs_small__signed_spectral__ms5": {
+            "dataset": "higgs_small",
+            "method": "signed_spectral",
+            "max_splits": 5,
+            "path_length_mean": 2.8333,
+            "path_length_std": 0.0
+          },
+          "higgs_small__signed_spectral__ms10": {
+            "dataset": "higgs_small",
+            "method": "signed_spectral",
+            "max_splits": 10,
+            "path_length_mean": 3.8,
+            "path_length_std": 0.0407
+          },
+          "higgs_small__signed_spectral__ms20": {
+            "dataset": "higgs_small",
+            "method": "signed_spectral",
+            "max_splits": 20,
+            "path_length_mean": 4.7524,
+            "path_length_std": 0.0621
+          },
+          "higgs_small__unsigned_spectral__ms5": {
+            "dataset": "higgs_small",
+            "method": "unsigned_spectral",
+            "max_splits": 5,
+            "path_length_mean": 2.7667,
+            "path_length_std": 0.1491
+          },
+          "higgs_small__unsigned_spectral__ms10": {
+            "dataset": "higgs_small",
+            "method": "unsigned_spectral",
+            "max_splits": 10,
+            "path_length_mean": 3.7455,
+            "path_length_std": 0.1971
+          },
+          "higgs_small__unsigned_spectral__ms20": {
+            "dataset": "higgs_small",
+            "method": "unsigned_spectral",
+            "max_splits": 20,
+            "path_length_mean": 4.6667,
+            "path_length_std": 0.165
+          },
+          "jannis__axis_aligned__ms5": {
+            "dataset": "jannis",
+            "method": "axis_aligned",
+            "max_splits": 5,
+            "path_length_mean": 2.7,
+            "path_length_std": 0.0745
+          },
+          "jannis__axis_aligned__ms10": {
+            "dataset": "jannis",
+            "method": "axis_aligned",
+            "max_splits": 10,
+            "path_length_mean": 3.5637,
+            "path_length_std": 0.0407
+          },
+          "jannis__axis_aligned__ms20": {
+            "dataset": "jannis",
+            "method": "axis_aligned",
+            "max_splits": 20,
+            "path_length_mean": 4.5714,
+            "path_length_std": 0.0476
+          },
+          "jannis__hard_threshold__ms5": {
+            "dataset": "jannis",
+            "method": "hard_threshold",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "jannis__hard_threshold__ms10": {
+            "dataset": "jannis",
+            "method": "hard_threshold",
+            "max_splits": 10,
+            "path_length_mean": 3.5637,
+            "path_length_std": 0.0407
+          },
+          "jannis__hard_threshold__ms20": {
+            "dataset": "jannis",
+            "method": "hard_threshold",
+            "max_splits": 20,
+            "path_length_mean": 4.6286,
+            "path_length_std": 0.0706
+          },
+          "jannis__random_oblique__ms5": {
+            "dataset": "jannis",
+            "method": "random_oblique",
+            "max_splits": 5,
+            "path_length_mean": 2.7,
+            "path_length_std": 0.0745
+          },
+          "jannis__random_oblique__ms10": {
+            "dataset": "jannis",
+            "method": "random_oblique",
+            "max_splits": 10,
+            "path_length_mean": 3.6546,
+            "path_length_std": 0.1494
+          },
+          "jannis__random_oblique__ms20": {
+            "dataset": "jannis",
+            "method": "random_oblique",
+            "max_splits": 20,
+            "path_length_mean": 4.6857,
+            "path_length_std": 0.1923
+          },
+          "jannis__signed_spectral__ms5": {
+            "dataset": "jannis",
+            "method": "signed_spectral",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "jannis__signed_spectral__ms10": {
+            "dataset": "jannis",
+            "method": "signed_spectral",
+            "max_splits": 10,
+            "path_length_mean": 3.6182,
+            "path_length_std": 0.0761
+          },
+          "jannis__signed_spectral__ms20": {
+            "dataset": "jannis",
+            "method": "signed_spectral",
+            "max_splits": 20,
+            "path_length_mean": 4.7428,
+            "path_length_std": 0.0928
+          },
+          "jannis__unsigned_spectral__ms5": {
+            "dataset": "jannis",
+            "method": "unsigned_spectral",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "jannis__unsigned_spectral__ms10": {
+            "dataset": "jannis",
+            "method": "unsigned_spectral",
+            "max_splits": 10,
+            "path_length_mean": 3.5455,
+            "path_length_std": 0.0
+          },
+          "jannis__unsigned_spectral__ms20": {
+            "dataset": "jannis",
+            "method": "unsigned_spectral",
+            "max_splits": 20,
+            "path_length_mean": 4.5238,
+            "path_length_std": 0.0337
+          },
+          "miniboone__axis_aligned__ms5": {
+            "dataset": "miniboone",
+            "method": "axis_aligned",
+            "max_splits": 5,
+            "path_length_mean": 2.8333,
+            "path_length_std": 0.0
+          },
+          "miniboone__axis_aligned__ms10": {
+            "dataset": "miniboone",
+            "method": "axis_aligned",
+            "max_splits": 10,
+            "path_length_mean": 3.7273,
+            "path_length_std": 0.0
+          },
+          "miniboone__axis_aligned__ms20": {
+            "dataset": "miniboone",
+            "method": "axis_aligned",
+            "max_splits": 20,
+            "path_length_mean": 4.7714,
+            "path_length_std": 0.0521
+          },
+          "miniboone__hard_threshold__ms5": {
+            "dataset": "miniboone",
+            "method": "hard_threshold",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "miniboone__hard_threshold__ms10": {
+            "dataset": "miniboone",
+            "method": "hard_threshold",
+            "max_splits": 10,
+            "path_length_mean": 3.6364,
+            "path_length_std": 0.0
+          },
+          "miniboone__hard_threshold__ms20": {
+            "dataset": "miniboone",
+            "method": "hard_threshold",
+            "max_splits": 20,
+            "path_length_mean": 4.7905,
+            "path_length_std": 0.0426
+          },
+          "miniboone__random_oblique__ms5": {
+            "dataset": "miniboone",
+            "method": "random_oblique",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "miniboone__random_oblique__ms10": {
+            "dataset": "miniboone",
+            "method": "random_oblique",
+            "max_splits": 10,
+            "path_length_mean": 3.5819,
+            "path_length_std": 0.0498
+          },
+          "miniboone__random_oblique__ms20": {
+            "dataset": "miniboone",
+            "method": "random_oblique",
+            "max_splits": 20,
+            "path_length_mean": 4.5619,
+            "path_length_std": 0.0521
+          },
+          "miniboone__signed_spectral__ms5": {
+            "dataset": "miniboone",
+            "method": "signed_spectral",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "miniboone__signed_spectral__ms10": {
+            "dataset": "miniboone",
+            "method": "signed_spectral",
+            "max_splits": 10,
+            "path_length_mean": 3.5455,
+            "path_length_std": 0.0
+          },
+          "miniboone__signed_spectral__ms20": {
+            "dataset": "miniboone",
+            "method": "signed_spectral",
+            "max_splits": 20,
+            "path_length_mean": 4.5619,
+            "path_length_std": 0.0521
+          },
+          "miniboone__unsigned_spectral__ms5": {
+            "dataset": "miniboone",
+            "method": "unsigned_spectral",
+            "max_splits": 5,
+            "path_length_mean": 2.6667,
+            "path_length_std": 0.0
+          },
+          "miniboone__unsigned_spectral__ms10": {
+            "dataset": "miniboone",
+            "method": "unsigned_spectral",
+            "max_splits": 10,
+            "path_length_mean": 3.6364,
+            "path_length_std": 0.0
+          },
+          "miniboone__unsigned_spectral__ms20": {
+            "dataset": "miniboone",
+            "method": "unsigned_spectral",
+            "max_splits": 20,
+            "path_length_mean": 4.6381,
+            "path_length_std": 0.0426
+          }
+        },
+        "significance_tests": {
+          "unsigned_spectral_vs_random_oblique": {
+            "pooled_wilcoxon": {
+              "W": 1429.5,
+              "p": 0.20820520527094033,
+              "n_pairs": 120,
+              "n_nonzero": 82
+            },
+            "bootstrap_ci_mean_diff": {
+              "mean": 0.03296916666666665,
+              "ci_lo": -0.008515500000000025,
+              "ci_hi": 0.07546352083333331,
+              "n_boot": 10000
+            },
+            "cohens_d": {
+              "d": 0.038028489024642675,
+              "ci_lo": -0.009721051350724283,
+              "ci_hi": 0.08744667278492485
+            },
+            "per_dataset_wilcoxon": {
+              "adult": {
+                "W": 0.0,
+                "p": 0.005005074402905223,
+                "n_pairs": 15,
+                "n_nonzero": 10
+              },
+              "california_housing": {
+                "W": 1.0,
+                "p": 0.004341753952516261,
+                "n_pairs": 15,
+                "n_nonzero": 11
+              },
+              "credit": {
+                "W": 18.5,
+                "p": 0.6325851216960414,
+                "n_pairs": 15,
+                "n_nonzero": 9
+              },
+              "electricity": {
+                "W": 11.0,
+                "p": 0.009129903938963133,
+                "n_pairs": 15,
+                "n_nonzero": 14
+              },
+              "eye_movements": {
+                "W": 4.0,
+                "p": 0.009925485845323257,
+                "n_pairs": 15,
+                "n_nonzero": 11
+              },
+              "higgs_small": {
+                "W": 19.0,
+                "p": 0.21299677467111144,
+                "n_pairs": 15,
+                "n_nonzero": 11
+              },
+              "jannis": {
+                "W": 1.0,
+                "p": 0.010792782163388177,
+                "n_pairs": 15,
+                "n_nonzero": 9
+              },
+              "miniboone": {
+                "W": 0.0,
+                "p": 0.0169473483375683,
+                "n_pairs": 15,
+                "n_nonzero": 7
+              }
+            }
+          },
+          "unsigned_spectral_vs_axis_aligned": {
+            "pooled_wilcoxon": {
+              "W": 1084.0,
+              "p": 0.00042919522627533305,
+              "n_pairs": 120,
+              "n_nonzero": 87
+            },
+            "bootstrap_ci_mean_diff": {
+              "mean": -0.0757216666666667,
+              "ci_lo": -0.11481514583333341,
+              "ci_hi": -0.03941487500000003,
+              "n_boot": 10000
+            },
+            "cohens_d": {
+              "d": -0.08280103333979512,
+              "ci_lo": -0.12402808617785548,
+              "ci_hi": -0.045062308079398115
+            },
+            "per_dataset_wilcoxon": {
+              "adult": {
+                "W": 3.0,
+                "p": 0.061100930439551705,
+                "n_pairs": 15,
+                "n_nonzero": 7
+              },
+              "california_housing": {
+                "W": 5.0,
+                "p": 0.004377836339321793,
+                "n_pairs": 15,
+                "n_nonzero": 13
+              },
+              "credit": {
+                "W": 0.0,
+                "p": 0.027707849358079864,
+                "n_pairs": 15,
+                "n_nonzero": 6
+              },
+              "electricity": {
+                "W": 15.5,
+                "p": 0.035240223824274504,
+                "n_pairs": 15,
+                "n_nonzero": 13
+              },
+              "eye_movements": {
+                "W": 49.0,
+                "p": 0.8254979107046321,
+                "n_pairs": 15,
+                "n_nonzero": 14
+              },
+              "higgs_small": {
+                "W": 12.0,
+                "p": 0.010909498364269283,
+                "n_pairs": 15,
+                "n_nonzero": 14
+              },
+              "jannis": {
+                "W": 0.0,
+                "p": 0.04216819709715596,
+                "n_pairs": 15,
+                "n_nonzero": 5
+              },
+              "miniboone": {
+                "W": 0.0,
+                "p": 0.0005897301226638464,
+                "n_pairs": 15,
+                "n_nonzero": 15
+              }
+            }
+          },
+          "unsigned_spectral_vs_hard_threshold": {
+            "pooled_wilcoxon": {
+              "W": 782.5,
+              "p": 0.12220680680106713,
+              "n_pairs": 120,
+              "n_nonzero": 63
+            },
+            "bootstrap_ci_mean_diff": {
+              "mean": -0.013115833333333342,
+              "ci_lo": -0.036348687500000004,
+              "ci_hi": 0.010219208333333327,
+              "n_boot": 10000
+            },
+            "cohens_d": {
+              "d": -0.014895911026385033,
+              "ci_lo": -0.042476313120542876,
+              "ci_hi": 0.012301010075455
+            },
+            "per_dataset_wilcoxon": {
+              "adult": {
+                "W": 14.5,
+                "p": 0.34112609947633954,
+                "n_pairs": 15,
+                "n_nonzero": 9
+              },
+              "california_housing": {
+                "W": 5.0,
+                "p": 0.03798263464326016,
+                "n_pairs": 15,
+                "n_nonzero": 9
+              },
+              "credit": {
+                "W": 15.5,
+                "p": 0.7243337472317561,
+                "n_pairs": 15,
+                "n_nonzero": 8
+              },
+              "electricity": {
+                "W": 8.0,
+                "p": 0.5991742659401892,
+                "n_pairs": 15,
+                "n_nonzero": 6
+              },
+              "eye_movements": {
+                "W": 33.0,
+                "p": 1.0,
+                "n_pairs": 15,
+                "n_nonzero": 11
+              },
+              "higgs_small": {
+                "W": 16.5,
+                "p": 0.47328946538009,
+                "n_pairs": 15,
+                "n_nonzero": 9
+              },
+              "jannis": {
+                "W": 1.0,
+                "p": 0.045799589111186666,
+                "n_pairs": 15,
+                "n_nonzero": 6
+              },
+              "miniboone": {
+                "W": 0.0,
+                "p": 0.039359508888249725,
+                "n_pairs": 15,
+                "n_nonzero": 5
+              }
+            }
+          }
+        }
+      },
+      "F_cognitive_complexity": {
+        "descriptive": {
+          "adult__axis_aligned__ms5": {
+            "dataset": "adult",
+            "method": "axis_aligned",
+            "max_splits": 5,
+            "cc_mean": 2.6667,
+            "cc_std": 0.0
+          },
+          "adult__axis_aligned__ms10": {
+            "dataset": "adult",
+            "method": "axis_aligned",
+            "max_splits": 10,
+            "cc_mean": 3.9091,
+            "cc_std": 0.0
+          },
+          "adult__axis_aligned__ms20": {
+            "dataset": "adult",
+            "method": "axis_aligned",
+            "max_splits": 20,
+            "cc_mean": 5.0381,
+            "cc_std": 0.0521
+          },
+          "adult__hard_threshold__ms5": {
+            "dataset": "adult",
+            "method": "hard_threshold",
+            "max_splits": 5,
+            "cc_mean": 3.7334,
+            "cc_std": 0.0
+          },
+          "adult__hard_threshold__ms10": {
+            "dataset": "adult",
+            "method": "hard_threshold",
+            "max_splits": 10,
+            "cc_mean": 4.94,
+            "cc_std": 0.0528
+          },
+          "adult__hard_threshold__ms20": {
+            "dataset": "adult",
+            "method": "hard_threshold",
+            "max_splits": 20,
+            "cc_mean": 6.0819,
+            "cc_std": 0.242
+          },
+          "adult__random_oblique__ms5": {
+            "dataset": "adult",
+            "method": "random_oblique",
+            "max_splits": 5,
+            "cc_mean": 9.8135,
+            "cc_std": 1.4895
+          },
+          "adult__random_oblique__ms10": {
+            "dataset": "adult",
+            "method": "random_oblique",
+            "max_splits": 10,
+            "cc_mean": 11.2128,
+            "cc_std": 1.7737
+          },
+          "adult__random_oblique__ms20": {
+            "dataset": "adult",
+            "method": "random_oblique",
+            "max_splits": 20,
+            "cc_mean": 13.6386,
+            "cc_std": 1.2309
+          },
+          "adult__signed_spectral__ms5": {
+            "dataset": "adult",
+            "method": "signed_spectral",
+            "max_splits": 5,
+            "cc_mean": 5.8667,
+            "cc_std": 0.0
+          },
+          "adult__signed_spectral__ms10": {
+            "dataset": "adult",
+            "method": "signed_spectral",
+            "max_splits": 10,
+            "cc_mean": 6.9237,
+            "cc_std": 0.1071
+          },
+          "adult__signed_spectral__ms20": {
+            "dataset": "adult",
+            "method": "signed_spectral",
+            "max_splits": 20,
+            "cc_mean": 8.2876,
+            "cc_std": 0.1678
+          },
+          "adult__unsigned_spectral__ms5": {
+            "dataset": "adult",
+            "method": "unsigned_spectral",
+            "max_splits": 5,
+            "cc_mean": 5.8667,
+            "cc_std": 0.0
+          },
+          "adult__unsigned_spectral__ms10": {
+            "dataset": "adult",
+            "method": "unsigned_spectral",
+            "max_splits": 10,
+            "cc_mean": 6.8437,
+            "cc_std": 0.2612
+          },
+          "adult__unsigned_spectral__ms20": {
+            "dataset": "adult",
+            "method": "unsigned_spectral",
+            "max_splits": 20,
+            "cc_mean": 8.0938,
+            "cc_std": 0.2527
+          },
+          "california_housing__axis_aligned__ms5": {
+            "dataset": "california_housing",
+            "method": "axis_aligned",
+            "max_splits": 5,
+            "cc_mean": 2.6667,
+            "cc_std": 0.0
+          },
+          "california_housing__axis_aligned__ms10": {
+            "dataset": "california_housing",
+            "method": "axis_aligned",
+            "max_splits": 10,
+            "cc_mean": 3.7091,
+            "cc_std": 0.0407
+          },
+          "california_housing__axis_aligned__ms20": {
+            "dataset": "california_housing",
+            "method": "axis_aligned",
+            "max_splits": 20,
+            "cc_mean": 4.6286,
+            "cc_std": 0.0522
+          },
+          "california_housing__hard_threshold__ms5": {
+            "dataset": "california_housing",
+            "method": "hard_threshold",
+            "max_splits": 5,
+            "cc_mean": 4.4733,
+            "cc_std": 0.5041
+          },
+          "california_housing__hard_threshold__ms10": {
+            "dataset": "california_housing",
+            "method": "hard_threshold",
+            "max_splits": 10,
+            "cc_mean": 6.74,
+            "cc_std": 0.4919
+          },
+          "california_housing__hard_threshold__ms20": {
+            "dataset": "california_housing",
+            "method": "hard_threshold",
+            "max_splits": 20,
+            "cc_mean": 8.2371,
+            "cc_std": 0.5668
+          },
+          "california_housing__random_oblique__ms5": {
+            "dataset": "california_housing",
+            "method": "random_oblique",
+            "max_splits": 5,
+            "cc_mean": 9.2934,
+            "cc_std": 2.3755
+          },
+          "california_housing__random_oblique__ms10": {
+            "dataset": "california_housing",
+            "method": "random_oblique",
+            "max_splits": 10,
+            "cc_mean": 12.5092,
+            "cc_std": 1.6944
+          },
+          "california_housing__random_oblique__ms20": {
+            "dataset": "california_housing",
+            "method": "random_oblique",
+            "max_splits": 20,
+            "cc_mean": 16.9443,
+            "cc_std": 1.5002
+          },
+          "california_housing__signed_spectral__ms5": {
+            "dataset": "california_housing",
+            "method": "signed_spectral",
+            "max_splits": 5,
+            "cc_mean": 2.6667,
+            "cc_std": 0.0
+          },
+          "california_housing__signed_spectral__ms10": {
+            "dataset": "california_housing",
+            "method": "signed_spectral",
+            "max_splits": 10,
+            "cc_mean": 3.7091,
+            "cc_std": 0.0407
+          },
+          "california_housing__signed_spectral__ms20": {
+            "dataset": "california_housing",
+            "method": "signed_spectral",
+            "max_splits": 20,
+            "cc_mean": 4.6743,
+            "cc_std": 0.0815
+          },
+          "california_housing__unsigned_spectral__ms5": {
+            "dataset": "california_housing",
+            "method": "unsigned_spectral",
+            "max_splits": 5,
+            "cc_mean": 5.2133,
+            "cc_std": 0.2534
+          },
+          "california_housing__unsigned_spectral__ms10": {
+            "dataset": "california_housing",
+            "method": "unsigned_spectral",
+            "max_splits": 10,
+            "cc_mean": 6.4455,
+            "cc_std": 0.3865
+          },
+          "california_housing__unsigned_spectral__ms20": {
+            "dataset": "california_housing",
+            "method": "unsigned_spectral",
+            "max_splits": 20,
+            "cc_mean": 8.429,
+            "cc_std": 0.212
+          },
+          "credit__axis_aligned__ms5": {
+            "dataset": "credit",
+            "method": "axis_aligned",
+            "max_splits": 5,
+            "cc_mean": 2.6667,
+            "cc_std": 0.0
+          },
+          "credit__axis_aligned__ms10": {
+            "dataset": "credit",
+            "method": "axis_aligned",
+            "max_splits": 10,
+            "cc_mean": 3.7818,
+            "cc_std": 0.122
+          },
+          "credit__axis_aligned__ms20": {
+            "dataset": "credit",
+            "method": "axis_aligned",
+            "max_splits": 20,
+            "cc_mean": 5.1714,
+            "cc_std": 0.0987
+          },
+          "credit__hard_threshold__ms5": {
+            "dataset": "credit",
+            "method": "hard_threshold",
+            "max_splits": 5,
+            "cc_mean": 6.5067,
+            "cc_std": 0.2385
+          },
+          "credit__hard_threshold__ms10": {
+            "dataset": "credit",
+            "method": "hard_threshold",
+            "max_splits": 10,
+            "cc_mean": 8.8401,
+            "cc_std": 0.3909
+          },
+          "credit__hard_threshold__ms20": {
+            "dataset": "credit",
+            "method": "hard_threshold",
+            "max_splits": 20,
+            "cc_mean": 9.9814,
+            "cc_std": 0.5719
+          },
+          "credit__random_oblique__ms5": {
+            "dataset": "credit",
+            "method": "random_oblique",
+            "max_splits": 5,
+            "cc_mean": 7.7868,
+            "cc_std": 1.7117
+          },
+          "credit__random_oblique__ms10": {
+            "dataset": "credit",
+            "method": "random_oblique",
+            "max_splits": 10,
+            "cc_mean": 12.6474,
+            "cc_std": 1.3661
+          },
+          "credit__random_oblique__ms20": {
+            "dataset": "credit",
+            "method": "random_oblique",
+            "max_splits": 20,
+            "cc_mean": 17.4275,
+            "cc_std": 1.9246
+          },
+          "credit__signed_spectral__ms5": {
+            "dataset": "credit",
+            "method": "signed_spectral",
+            "max_splits": 5,
+            "cc_mean": 2.6667,
+            "cc_std": 0.0
+          },
+          "credit__signed_spectral__ms10": {
+            "dataset": "credit",
+            "method": "signed_spectral",
+            "max_splits": 10,
+            "cc_mean": 4.0309,
+            "cc_std": 0.2802
+          },
+          "credit__signed_spectral__ms20": {
+            "dataset": "credit",
+            "method": "signed_spectral",
+            "max_splits": 20,
+            "cc_mean": 5.8781,
+            "cc_std": 0.4029
+          },
+          "credit__unsigned_spectral__ms5": {
+            "dataset": "credit",
+            "method": "unsigned_spectral",
+            "max_splits": 5,
+            "cc_mean": 7.5734,
+            "cc_std": 0.2385
+          },
+          "credit__unsigned_spectral__ms10": {
+            "dataset": "credit",
+            "method": "unsigned_spectral",
+            "max_splits": 10,
+            "cc_mean": 11.1328,
+            "cc_std": 1.8288
+          },
+          "credit__unsigned_spectral__ms20": {
+            "dataset": "credit",
+            "method": "unsigned_spectral",
+            "max_splits": 20,
+            "cc_mean": 15.0833,
+            "cc_std": 1.2812
+          },
+          "electricity__axis_aligned__ms5": {
+            "dataset": "electricity",
+            "method": "axis_aligned",
+            "max_splits": 5,
+            "cc_mean": 3.0333,
+            "cc_std": 0.1826
+          },
+          "electricity__axis_aligned__ms10": {
+            "dataset": "electricity",
+            "method": "axis_aligned",
+            "max_splits": 10,
+            "cc_mean": 4.4,
+            "cc_std": 0.2371
+          },
+          "electricity__axis_aligned__ms20": {
+            "dataset": "electricity",
+            "method": "axis_aligned",
+            "max_splits": 20,
+            "cc_mean": 5.8572,
+            "cc_std": 0.4219
+          },
+          "electricity__hard_threshold__ms5": {
+            "dataset": "electricity",
+            "method": "hard_threshold",
+            "max_splits": 5,
+            "cc_mean": 4.9933,
+            "cc_std": 0.602
+          },
+          "electricity__hard_threshold__ms10": {
+            "dataset": "electricity",
+            "method": "hard_threshold",
+            "max_splits": 10,
+            "cc_mean": 7.6745,
+            "cc_std": 0.6589
+          },
+          "electricity__hard_threshold__ms20": {
+            "dataset": "electricity",
+            "method": "hard_threshold",
+            "max_splits": 20,
+            "cc_mean": 10.2262,
+            "cc_std": 1.2719
+          },
+          "electricity__random_oblique__ms5": {
+            "dataset": "electricity",
+            "method": "random_oblique",
+            "max_splits": 5,
+            "cc_mean": 8.1067,
+            "cc_std": 0.8764
+          },
+          "electricity__random_oblique__ms10": {
+            "dataset": "electricity",
+            "method": "random_oblique",
+            "max_splits": 10,
+            "cc_mean": 9.7146,
+            "cc_std": 1.3478
+          },
+          "electricity__random_oblique__ms20": {
+            "dataset": "electricity",
+            "method": "random_oblique",
+            "max_splits": 20,
+            "cc_mean": 12.4943,
+            "cc_std": 2.1752
+          },
+          "electricity__signed_spectral__ms5": {
+            "dataset": "electricity",
+            "method": "signed_spectral",
+            "max_splits": 5,
+            "cc_mean": 3.26,
+            "cc_std": 0.1278
+          },
+          "electricity__signed_spectral__ms10": {
+            "dataset": "electricity",
+            "method": "signed_spectral",
+            "max_splits": 10,
+            "cc_mean": 4.6982,
+            "cc_std": 0.4252
+          },
+          "electricity__signed_spectral__ms20": {
+            "dataset": "electricity",
+            "method": "signed_spectral",
+            "max_splits": 20,
+            "cc_mean": 6.2638,
+            "cc_std": 0.1546
+          },
+          "electricity__unsigned_spectral__ms5": {
+            "dataset": "electricity",
+            "method": "unsigned_spectral",
+            "max_splits": 5,
+            "cc_mean": 3.8733,
+            "cc_std": 0.265
+          },
+          "electricity__unsigned_spectral__ms10": {
+            "dataset": "electricity",
+            "method": "unsigned_spectral",
+            "max_splits": 10,
+            "cc_mean": 5.9109,
+            "cc_std": 0.3495
+          },
+          "electricity__unsigned_spectral__ms20": {
+            "dataset": "electricity",
+            "method": "unsigned_spectral",
+            "max_splits": 20,
+            "cc_mean": 7.4857,
+            "cc_std": 0.7492
+          },
+          "eye_movements__axis_aligned__ms5": {
+            "dataset": "eye_movements",
+            "method": "axis_aligned",
+            "max_splits": 5,
+            "cc_mean": 2.6667,
+            "cc_std": 0.0
+          },
+          "eye_movements__axis_aligned__ms10": {
+            "dataset": "eye_movements",
+            "method": "axis_aligned",
+            "max_splits": 10,
+            "cc_mean": 3.6728,
+            "cc_std": 0.0813
+          },
+          "eye_movements__axis_aligned__ms20": {
+            "dataset": "eye_movements",
+            "method": "axis_aligned",
+            "max_splits": 20,
+            "cc_mean": 4.9524,
+            "cc_std": 0.2103
+          },
+          "eye_movements__hard_threshold__ms5": {
+            "dataset": "eye_movements",
+            "method": "hard_threshold",
+            "max_splits": 5,
+            "cc_mean": 21.1934,
+            "cc_std": 7.9291
+          },
+          "eye_movements__hard_threshold__ms10": {
+            "dataset": "eye_movements",
+            "method": "hard_threshold",
+            "max_splits": 10,
+            "cc_mean": 34.1838,
+            "cc_std": 5.1827
+          },
+          "eye_movements__hard_threshold__ms20": {
+            "dataset": "eye_movements",
+            "method": "hard_threshold",
+            "max_splits": 20,
+            "cc_mean": 45.3414,
+            "cc_std": 1.9252
+          },
+          "eye_movements__random_oblique__ms5": {
+            "dataset": "eye_movements",
+            "method": "random_oblique",
+            "max_splits": 5,
+            "cc_mean": 9.8067,
+            "cc_std": 3.0209
+          },
+          "eye_movements__random_oblique__ms10": {
+            "dataset": "eye_movements",
+            "method": "random_oblique",
+            "max_splits": 10,
+            "cc_mean": 13.6219,
+            "cc_std": 2.7657
+          },
+          "eye_movements__random_oblique__ms20": {
+            "dataset": "eye_movements",
+            "method": "random_oblique",
+            "max_splits": 20,
+            "cc_mean": 19.2543,
+            "cc_std": 2.6736
+          },
+          "eye_movements__signed_spectral__ms5": {
+            "dataset": "eye_movements",
+            "method": "signed_spectral",
+            "max_splits": 5,
+            "cc_mean": 20.4934,
+            "cc_std": 3.1773
+          },
+          "eye_movements__signed_spectral__ms10": {
+            "dataset": "eye_movements",
+            "method": "signed_spectral",
+            "max_splits": 10,
+            "cc_mean": 25.6184,
+            "cc_std": 3.0346
+          },
+          "eye_movements__signed_spectral__ms20": {
+            "dataset": "eye_movements",
+            "method": "signed_spectral",
+            "max_splits": 20,
+            "cc_mean": 38.5171,
+            "cc_std": 3.911
+          },
+          "eye_movements__unsigned_spectral__ms5": {
+            "dataset": "eye_movements",
+            "method": "unsigned_spectral",
+            "max_splits": 5,
+            "cc_mean": 20.4932,
+            "cc_std": 2.7064
+          },
+          "eye_movements__unsigned_spectral__ms10": {
+            "dataset": "eye_movements",
+            "method": "unsigned_spectral",
+            "max_splits": 10,
+            "cc_mean": 32.713,
+            "cc_std": 2.3592
+          },
+          "eye_movements__unsigned_spectral__ms20": {
+            "dataset": "eye_movements",
+            "method": "unsigned_spectral",
+            "max_splits": 20,
+            "cc_mean": 41.5962,
+            "cc_std": 3.2309
+          },
+          "higgs_small__axis_aligned__ms5": {
+            "dataset": "higgs_small",
+            "method": "axis_aligned",
+            "max_splits": 5,
+            "cc_mean": 2.8333,
+            "cc_std": 0.0
+          },
+          "higgs_small__axis_aligned__ms10": {
+            "dataset": "higgs_small",
+            "method": "axis_aligned",
+            "max_splits": 10,
+            "cc_mean": 4.0,
+            "cc_std": 0.0909
+          },
+          "higgs_small__axis_aligned__ms20": {
+            "dataset": "higgs_small",
+            "method": "axis_aligned",
+            "max_splits": 20,
+            "cc_mean": 4.8857,
+            "cc_std": 0.0543
+          },
+          "higgs_small__hard_threshold__ms5": {
+            "dataset": "higgs_small",
+            "method": "hard_threshold",
+            "max_splits": 5,
+            "cc_mean": 23.1669,
+            "cc_std": 1.8636
+          },
+          "higgs_small__hard_threshold__ms10": {
+            "dataset": "higgs_small",
+            "method": "hard_threshold",
+            "max_splits": 10,
+            "cc_mean": 27.4184,
+            "cc_std": 3.145
+          },
+          "higgs_small__hard_threshold__ms20": {
+            "dataset": "higgs_small",
+            "method": "hard_threshold",
+            "max_splits": 20,
+            "cc_mean": 33.924,
+            "cc_std": 1.1841
+          },
+          "higgs_small__random_oblique__ms5": {
+            "dataset": "higgs_small",
+            "method": "random_oblique",
+            "max_splits": 5,
+            "cc_mean": 9.7466,
+            "cc_std": 2.0403
+          },
+          "higgs_small__random_oblique__ms10": {
+            "dataset": "higgs_small",
+            "method": "random_oblique",
+            "max_splits": 10,
+            "cc_mean": 13.4074,
+            "cc_std": 1.6919
+          },
+          "higgs_small__random_oblique__ms20": {
+            "dataset": "higgs_small",
+            "method": "random_oblique",
+            "max_splits": 20,
+            "cc_mean": 16.7795,
+            "cc_std": 1.2182
+          },
+          "higgs_small__signed_spectral__ms5": {
+            "dataset": "higgs_small",
+            "method": "signed_spectral",
+            "max_splits": 5,
+            "cc_mean": 15.2998,
+            "cc_std": 0.0
+          },
+          "higgs_small__signed_spectral__ms10": {
+            "dataset": "higgs_small",
+            "method": "signed_spectral",
+            "max_splits": 10,
+            "cc_mean": 21.3601,
+            "cc_std": 1.9448
+          },
+          "higgs_small__signed_spectral__ms20": {
+            "dataset": "higgs_small",
+            "method": "signed_spectral",
+            "max_splits": 20,
+            "cc_mean": 39.2452,
+            "cc_std": 0.823
+          },
+          "higgs_small__unsigned_spectral__ms5": {
+            "dataset": "higgs_small",
+            "method": "unsigned_spectral",
+            "max_splits": 5,
+            "cc_mean": 20.5868,
+            "cc_std": 1.793
+          },
+          "higgs_small__unsigned_spectral__ms10": {
+            "dataset": "higgs_small",
+            "method": "unsigned_spectral",
+            "max_splits": 10,
+            "cc_mean": 25.8529,
+            "cc_std": 2.8249
+          },
+          "higgs_small__unsigned_spectral__ms20": {
+            "dataset": "higgs_small",
+            "method": "unsigned_spectral",
+            "max_splits": 20,
+            "cc_mean": 32.539,
+            "cc_std": 2.1752
+          },
+          "jannis__axis_aligned__ms5": {
+            "dataset": "jannis",
+            "method": "axis_aligned",
+            "max_splits": 5,
+            "cc_mean": 2.7,
+            "cc_std": 0.0745
+          },
+          "jannis__axis_aligned__ms10": {
+            "dataset": "jannis",
+            "method": "axis_aligned",
+            "max_splits": 10,
+            "cc_mean": 3.5637,
+            "cc_std": 0.0407
+          },
+          "jannis__axis_aligned__ms20": {
+            "dataset": "jannis",
+            "method": "axis_aligned",
+            "max_splits": 20,
+            "cc_mean": 4.5714,
+            "cc_std": 0.0476
+          },
+          "jannis__hard_threshold__ms5": {
+            "dataset": "jannis",
+            "method": "hard_threshold",
+            "max_splits": 5,
+            "cc_mean": 72.0009,
+            "cc_std": 0.0
+          },
+          "jannis__hard_threshold__ms10": {
+            "dataset": "jannis",
+            "method": "hard_threshold",
+            "max_splits": 10,
+            "cc_mean": 96.2194,
+            "cc_std": 1.0976
+          },
+          "jannis__hard_threshold__ms20": {
+            "dataset": "jannis",
+            "method": "hard_threshold",
+            "max_splits": 20,
+            "cc_mean": 117.7531,
+            "cc_std": 3.3534
+          },
+          "jannis__random_oblique__ms5": {
+            "dataset": "jannis",
+            "method": "random_oblique",
+            "max_splits": 5,
+            "cc_mean": 9.2001,
+            "cc_std": 1.6599
+          },
+          "jannis__random_oblique__ms10": {
+            "dataset": "jannis",
+            "method": "random_oblique",
+            "max_splits": 10,
+            "cc_mean": 12.5001,
+            "cc_std": 1.2182
+          },
+          "jannis__random_oblique__ms20": {
+            "dataset": "jannis",
+            "method": "random_oblique",
+            "max_splits": 20,
+            "cc_mean": 15.9647,
+            "cc_std": 2.2329
+          },
+          "jannis__signed_spectral__ms5": {
+            "dataset": "jannis",
+            "method": "signed_spectral",
+            "max_splits": 5,
+            "cc_mean": 48.0006,
+            "cc_std": 0.0
+          },
+          "jannis__signed_spectral__ms10": {
+            "dataset": "jannis",
+            "method": "signed_spectral",
+            "max_splits": 10,
+            "cc_mean": 56.9988,
+            "cc_std": 3.1978
+          },
+          "jannis__signed_spectral__ms20": {
+            "dataset": "jannis",
+            "method": "signed_spectral",
+            "max_splits": 20,
+            "cc_mean": 71.574,
+            "cc_std": 6.6864
+          },
+          "jannis__unsigned_spectral__ms5": {
+            "dataset": "jannis",
+            "method": "unsigned_spectral",
+            "max_splits": 5,
+            "cc_mean": 62.9341,
+            "cc_std": 0.0
+          },
+          "jannis__unsigned_spectral__ms10": {
+            "dataset": "jannis",
+            "method": "unsigned_spectral",
+            "max_splits": 10,
+            "cc_mean": 107.7832,
+            "cc_std": 0.0
+          },
+          "jannis__unsigned_spectral__ms20": {
+            "dataset": "jannis",
+            "method": "unsigned_spectral",
+            "max_splits": 20,
+            "cc_mean": 141.2869,
+            "cc_std": 12.3
+          },
+          "miniboone__axis_aligned__ms5": {
+            "dataset": "miniboone",
+            "method": "axis_aligned",
+            "max_splits": 5,
+            "cc_mean": 2.8333,
+            "cc_std": 0.0
+          },
+          "miniboone__axis_aligned__ms10": {
+            "dataset": "miniboone",
+            "method": "axis_aligned",
+            "max_splits": 10,
+            "cc_mean": 3.7273,
+            "cc_std": 0.0
+          },
+          "miniboone__axis_aligned__ms20": {
+            "dataset": "miniboone",
+            "method": "axis_aligned",
+            "max_splits": 20,
+            "cc_mean": 4.7714,
+            "cc_std": 0.0521
+          },
+          "miniboone__hard_threshold__ms5": {
+            "dataset": "miniboone",
+            "method": "hard_threshold",
+            "max_splits": 5,
+            "cc_mean": 49.0673,
+            "cc_std": 0.0
+          },
+          "miniboone__hard_threshold__ms10": {
+            "dataset": "miniboone",
+            "method": "hard_threshold",
+            "max_splits": 10,
+            "cc_mean": 88.0009,
+            "cc_std": 0.0
+          },
+          "miniboone__hard_threshold__ms20": {
+            "dataset": "miniboone",
+            "method": "hard_threshold",
+            "max_splits": 20,
+            "cc_mean": 113.1258,
+            "cc_std": 2.9174
+          },
+          "miniboone__random_oblique__ms5": {
+            "dataset": "miniboone",
+            "method": "random_oblique",
+            "max_splits": 5,
+            "cc_mean": 9.2801,
+            "cc_std": 0.8089
+          },
+          "miniboone__random_oblique__ms10": {
+            "dataset": "miniboone",
+            "method": "random_oblique",
+            "max_splits": 10,
+            "cc_mean": 12.1092,
+            "cc_std": 1.3205
+          },
+          "miniboone__random_oblique__ms20": {
+            "dataset": "miniboone",
+            "method": "random_oblique",
+            "max_splits": 20,
+            "cc_mean": 15.9751,
+            "cc_std": 1.4648
+          },
+          "miniboone__signed_spectral__ms5": {
+            "dataset": "miniboone",
+            "method": "signed_spectral",
+            "max_splits": 5,
+            "cc_mean": 34.1338,
+            "cc_std": 0.0
+          },
+          "miniboone__signed_spectral__ms10": {
+            "dataset": "miniboone",
+            "method": "signed_spectral",
+            "max_splits": 10,
+            "cc_mean": 37.2278,
+            "cc_std": 0.0
+          },
+          "miniboone__signed_spectral__ms20": {
+            "dataset": "miniboone",
+            "method": "signed_spectral",
+            "max_splits": 20,
+            "cc_mean": 52.3245,
+            "cc_std": 0.6032
+          },
+          "miniboone__unsigned_spectral__ms5": {
+            "dataset": "miniboone",
+            "method": "unsigned_spectral",
+            "max_splits": 5,
+            "cc_mean": 68.2675,
+            "cc_std": 0.0
+          },
+          "miniboone__unsigned_spectral__ms10": {
+            "dataset": "miniboone",
+            "method": "unsigned_spectral",
+            "max_splits": 10,
+            "cc_mean": 96.1464,
+            "cc_std": 1.195
+          },
+          "miniboone__unsigned_spectral__ms20": {
+            "dataset": "miniboone",
+            "method": "unsigned_spectral",
+            "max_splits": 20,
+            "cc_mean": 108.9996,
+            "cc_std": 3.5403
+          }
+        },
+        "high_dim_analysis": {
+          "datasets": [
+            "jannis",
+            "miniboone",
+            "higgs_small"
+          ],
+          "pooled_tests": {
+            "pooled_wilcoxon": {
+              "W": 0.0,
+              "p": 5.176362783871986e-09,
+              "n_pairs": 45,
+              "n_nonzero": 45
+            },
+            "bootstrap_ci": {
+              "mean": 61.048172555555546,
+              "ci_lo": 49.365065511111105,
+              "ci_hi": 72.62401908333331,
+              "n_boot": 10000
+            },
+            "cohens_d": {
+              "d": 2.114983165307752,
+              "ci_lo": 1.7276652568235005,
+              "ci_hi": 2.7039962885458637
+            },
+            "pct_reduction": -477.92,
+            "us_mean_cc": 73.8218,
+            "ro_mean_cc": 12.7737
+          },
+          "per_dataset": {
+            "jannis": {
+              "wilcoxon": {
+                "W": 0.0,
+                "p": 0.0006533107814151376,
+                "n_pairs": 15,
+                "n_nonzero": 15
+              },
+              "us_mean_cc": 104.0014,
+              "ro_mean_cc": 12.555,
+              "pct_reduction": -728.37
+            },
+            "miniboone": {
+              "wilcoxon": {
+                "W": 0.0,
+                "p": 0.0006533107814151376,
+                "n_pairs": 15,
+                "n_nonzero": 15
+              },
+              "us_mean_cc": 91.1379,
+              "ro_mean_cc": 12.4548,
+              "pct_reduction": -631.75
+            },
+            "higgs_small": {
+              "wilcoxon": {
+                "W": 0.0,
+                "p": 6.103515625e-05,
+                "n_pairs": 15,
+                "n_nonzero": 15
+              },
+              "us_mean_cc": 26.3262,
+              "ro_mean_cc": 13.3112,
+              "pct_reduction": -97.78
+            }
+          }
+        },
+        "interpretation": "Cognitive complexity = path_length x arity measures total features inspected per prediction. For a 4-split path: arity 1.8 => ~7.2 feature values inspected; arity 3.0 => ~12.0 feature values. Lower CC means the model is easier for domain experts to understand."
+      }
+    }
+  },
+  "metrics_agg": {
+    "arity_unsigned_spectral_vs_random_oblique_wilcoxon_p": 1e-06,
+    "arity_unsigned_spectral_vs_random_oblique_cohens_d": 0.857041,
+    "arity_unsigned_spectral_vs_hard_threshold_wilcoxon_p": 0.044596,
+    "arity_unsigned_spectral_vs_hard_threshold_cohens_d": 0.060918,
+    "arity_signed_spectral_vs_random_oblique_wilcoxon_p": 0.000131,
+    "arity_signed_spectral_vs_random_oblique_cohens_d": 0.650989,
+    "accuracy_unsigned_spectral_vs_random_oblique_wilcoxon_p": 0.125513,
+    "accuracy_unsigned_spectral_vs_random_oblique_rope_p_equiv": 0.4583,
+    "accuracy_unsigned_spectral_vs_hard_threshold_wilcoxon_p": 0.091448,
+    "accuracy_unsigned_spectral_vs_hard_threshold_rope_p_equiv": 0.7,
+    "accuracy_unsigned_spectral_vs_axis_aligned_wilcoxon_p": 0.0,
+    "accuracy_unsigned_spectral_vs_axis_aligned_rope_p_equiv": 0.4083,
+    "pareto_frontier_pct_axis_aligned": 100.0,
+    "pareto_best_tradeoff_pct_axis_aligned": 0.0,
+    "pareto_frontier_pct_random_oblique": 62.5,
+    "pareto_best_tradeoff_pct_random_oblique": 41.7,
+    "pareto_frontier_pct_unsigned_spectral": 62.5,
+    "pareto_best_tradeoff_pct_unsigned_spectral": 8.3,
+    "pareto_frontier_pct_signed_spectral": 62.5,
+    "pareto_best_tradeoff_pct_signed_spectral": 33.3,
+    "pareto_frontier_pct_hard_threshold": 58.3,
+    "pareto_best_tradeoff_pct_hard_threshold": 8.3,
+    "cc_high_dim_pct_reduction": -477.92,
+    "cc_high_dim_us_mean": 73.8218,
+    "cc_high_dim_ro_mean": 12.7737
+  },
+  "datasets": [
+    {
+      "dataset": "adult",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"adult\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 0, \"n_features\": 6}",
+          "output": "{\"performance\": 0.582035, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.6667, \"cognitive_complexity\": 2.6667}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 0,
+          "metadata_n_features": 6,
+          "metadata_task_type": "classification",
+          "eval_performance": 0.582035,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.6667,
+          "eval_cognitive_complexity": 2.6667,
+          "eval_fit_time_s": 0.089
+        },
+        {
+          "input": "{\"dataset\": \"adult\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 1, \"n_features\": 6}",
+          "output": "{\"performance\": 0.575073, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.6667, \"cognitive_complexity\": 2.6667}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 1,
+          "metadata_n_features": 6,
+          "metadata_task_type": "classification",
+          "eval_performance": 0.575073,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.6667,
+          "eval_cognitive_complexity": 2.6667,
+          "eval_fit_time_s": 0.042
+        },
+        {
+          "input": "{\"dataset\": \"adult\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 2, \"n_features\": 6}",
+          "output": "{\"performance\": 0.587727, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.6667, \"cognitive_complexity\": 2.6667}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 2,
+          "metadata_n_features": 6,
+          "metadata_task_type": "classification",
+          "eval_performance": 0.587727,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.6667,
+          "eval_cognitive_complexity": 2.6667,
+          "eval_fit_time_s": 0.042
+        }
+      ]
+    },
+    {
+      "dataset": "california_housing",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"california_housing\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 0, \"n_features\": 8}",
+          "output": "{\"performance\": 0.485448, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.6667, \"cognitive_complexity\": 2.6667}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 0,
+          "metadata_n_features": 8,
+          "metadata_task_type": "regression",
+          "eval_performance": 0.485448,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.6667,
+          "eval_cognitive_complexity": 2.6667,
+          "eval_fit_time_s": 0.055
+        },
+        {
+          "input": "{\"dataset\": \"california_housing\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 1, \"n_features\": 8}",
+          "output": "{\"performance\": 0.514274, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.6667, \"cognitive_complexity\": 2.6667}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 1,
+          "metadata_n_features": 8,
+          "metadata_task_type": "regression",
+          "eval_performance": 0.514274,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.6667,
+          "eval_cognitive_complexity": 2.6667,
+          "eval_fit_time_s": 0.055
+        },
+        {
+          "input": "{\"dataset\": \"california_housing\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 2, \"n_features\": 8}",
+          "output": "{\"performance\": 0.511263, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.6667, \"cognitive_complexity\": 2.6667}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 2,
+          "metadata_n_features": 8,
+          "metadata_task_type": "regression",
+          "eval_performance": 0.511263,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.6667,
+          "eval_cognitive_complexity": 2.6667,
+          "eval_fit_time_s": 0.055
+        }
+      ]
+    },
+    {
+      "dataset": "credit",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"credit\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 0, \"n_features\": 10}",
+          "output": "{\"performance\": 0.749357, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.6667, \"cognitive_complexity\": 2.6667}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 0,
+          "metadata_n_features": 10,
+          "metadata_task_type": "binary_classification",
+          "eval_performance": 0.749357,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.6667,
+          "eval_cognitive_complexity": 2.6667,
+          "eval_fit_time_s": 0.049
+        },
+        {
+          "input": "{\"dataset\": \"credit\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 1, \"n_features\": 10}",
+          "output": "{\"performance\": 0.738291, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.6667, \"cognitive_complexity\": 2.6667}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 1,
+          "metadata_n_features": 10,
+          "metadata_task_type": "binary_classification",
+          "eval_performance": 0.738291,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.6667,
+          "eval_cognitive_complexity": 2.6667,
+          "eval_fit_time_s": 0.05
+        },
+        {
+          "input": "{\"dataset\": \"credit\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 2, \"n_features\": 10}",
+          "output": "{\"performance\": 0.730744, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.6667, \"cognitive_complexity\": 2.6667}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 2,
+          "metadata_n_features": 10,
+          "metadata_task_type": "binary_classification",
+          "eval_performance": 0.730744,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.6667,
+          "eval_cognitive_complexity": 2.6667,
+          "eval_fit_time_s": 0.049
+        }
+      ]
+    },
+    {
+      "dataset": "electricity",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"electricity\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 0, \"n_features\": 7}",
+          "output": "{\"performance\": 0.748137, \"avg_split_arity\": 1.0, \"avg_path_length\": 3.1667, \"cognitive_complexity\": 3.1667}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 0,
+          "metadata_n_features": 7,
+          "metadata_task_type": "classification",
+          "eval_performance": 0.748137,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 3.1667,
+          "eval_cognitive_complexity": 3.1667,
+          "eval_fit_time_s": 0.069
+        },
+        {
+          "input": "{\"dataset\": \"electricity\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 1, \"n_features\": 7}",
+          "output": "{\"performance\": 0.728121, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.8333, \"cognitive_complexity\": 2.8333}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 1,
+          "metadata_n_features": 7,
+          "metadata_task_type": "classification",
+          "eval_performance": 0.728121,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.8333,
+          "eval_cognitive_complexity": 2.8333,
+          "eval_fit_time_s": 0.069
+        },
+        {
+          "input": "{\"dataset\": \"electricity\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 2, \"n_features\": 7}",
+          "output": "{\"performance\": 0.746601, \"avg_split_arity\": 1.0, \"avg_path_length\": 3.1667, \"cognitive_complexity\": 3.1667}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 2,
+          "metadata_n_features": 7,
+          "metadata_task_type": "classification",
+          "eval_performance": 0.746601,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 3.1667,
+          "eval_cognitive_complexity": 3.1667,
+          "eval_fit_time_s": 0.069
+        }
+      ]
+    },
+    {
+      "dataset": "eye_movements",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"eye_movements\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 0, \"n_features\": 20}",
+          "output": "{\"performance\": 0.595269, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.6667, \"cognitive_complexity\": 2.6667}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 0,
+          "metadata_n_features": 20,
+          "metadata_task_type": "binary_classification",
+          "eval_performance": 0.595269,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.6667,
+          "eval_cognitive_complexity": 2.6667,
+          "eval_fit_time_s": 0.076
+        },
+        {
+          "input": "{\"dataset\": \"eye_movements\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 1, \"n_features\": 20}",
+          "output": "{\"performance\": 0.568331, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.6667, \"cognitive_complexity\": 2.6667}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 1,
+          "metadata_n_features": 20,
+          "metadata_task_type": "binary_classification",
+          "eval_performance": 0.568331,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.6667,
+          "eval_cognitive_complexity": 2.6667,
+          "eval_fit_time_s": 0.076
+        },
+        {
+          "input": "{\"dataset\": \"eye_movements\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 2, \"n_features\": 20}",
+          "output": "{\"performance\": 0.559133, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.6667, \"cognitive_complexity\": 2.6667}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 2,
+          "metadata_n_features": 20,
+          "metadata_task_type": "binary_classification",
+          "eval_performance": 0.559133,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.6667,
+          "eval_cognitive_complexity": 2.6667,
+          "eval_fit_time_s": 0.075
+        }
+      ]
+    },
+    {
+      "dataset": "higgs_small",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"higgs_small\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 0, \"n_features\": 24}",
+          "output": "{\"performance\": 0.64462, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.8333, \"cognitive_complexity\": 2.8333}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 0,
+          "metadata_n_features": 24,
+          "metadata_task_type": "classification",
+          "eval_performance": 0.64462,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.8333,
+          "eval_cognitive_complexity": 2.8333,
+          "eval_fit_time_s": 0.793
+        },
+        {
+          "input": "{\"dataset\": \"higgs_small\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 1, \"n_features\": 24}",
+          "output": "{\"performance\": 0.636563, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.8333, \"cognitive_complexity\": 2.8333}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 1,
+          "metadata_n_features": 24,
+          "metadata_task_type": "classification",
+          "eval_performance": 0.636563,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.8333,
+          "eval_cognitive_complexity": 2.8333,
+          "eval_fit_time_s": 0.802
+        },
+        {
+          "input": "{\"dataset\": \"higgs_small\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 2, \"n_features\": 24}",
+          "output": "{\"performance\": 0.638093, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.8333, \"cognitive_complexity\": 2.8333}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 2,
+          "metadata_n_features": 24,
+          "metadata_task_type": "classification",
+          "eval_performance": 0.638093,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.8333,
+          "eval_cognitive_complexity": 2.8333,
+          "eval_fit_time_s": 0.8
+        }
+      ]
+    },
+    {
+      "dataset": "jannis",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"jannis\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 0, \"n_features\": 54}",
+          "output": "{\"performance\": 0.709535, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.8333, \"cognitive_complexity\": 2.8333}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 0,
+          "metadata_n_features": 54,
+          "metadata_task_type": "classification",
+          "eval_performance": 0.709535,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.8333,
+          "eval_cognitive_complexity": 2.8333,
+          "eval_fit_time_s": 1.103
+        },
+        {
+          "input": "{\"dataset\": \"jannis\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 1, \"n_features\": 54}",
+          "output": "{\"performance\": 0.695554, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.6667, \"cognitive_complexity\": 2.6667}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 1,
+          "metadata_n_features": 54,
+          "metadata_task_type": "classification",
+          "eval_performance": 0.695554,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.6667,
+          "eval_cognitive_complexity": 2.6667,
+          "eval_fit_time_s": 1.1
+        },
+        {
+          "input": "{\"dataset\": \"jannis\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 2, \"n_features\": 54}",
+          "output": "{\"performance\": 0.692949, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.6667, \"cognitive_complexity\": 2.6667}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 2,
+          "metadata_n_features": 54,
+          "metadata_task_type": "classification",
+          "eval_performance": 0.692949,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.6667,
+          "eval_cognitive_complexity": 2.6667,
+          "eval_fit_time_s": 1.1
+        }
+      ]
+    },
+    {
+      "dataset": "miniboone",
+      "examples": [
+        {
+          "input": "{\"dataset\": \"miniboone\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 0, \"n_features\": 50}",
+          "output": "{\"performance\": 0.852123, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.8333, \"cognitive_complexity\": 2.8333}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 0,
+          "metadata_n_features": 50,
+          "metadata_task_type": "binary_classification",
+          "eval_performance": 0.852123,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.8333,
+          "eval_cognitive_complexity": 2.8333,
+          "eval_fit_time_s": 1.237
+        },
+        {
+          "input": "{\"dataset\": \"miniboone\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 1, \"n_features\": 50}",
+          "output": "{\"performance\": 0.854178, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.8333, \"cognitive_complexity\": 2.8333}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 1,
+          "metadata_n_features": 50,
+          "metadata_task_type": "binary_classification",
+          "eval_performance": 0.854178,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.8333,
+          "eval_cognitive_complexity": 2.8333,
+          "eval_fit_time_s": 1.248
+        },
+        {
+          "input": "{\"dataset\": \"miniboone\", \"method\": \"axis_aligned\", \"max_splits\": 5, \"fold\": 2, \"n_features\": 50}",
+          "output": "{\"performance\": 0.86089, \"avg_split_arity\": 1.0, \"avg_path_length\": 2.8333, \"cognitive_complexity\": 2.8333}",
+          "metadata_method": "axis_aligned",
+          "metadata_max_splits": 5,
+          "metadata_fold": 2,
+          "metadata_n_features": 50,
+          "metadata_task_type": "binary_classification",
+          "eval_performance": 0.86089,
+          "eval_avg_split_arity": 1.0,
+          "eval_avg_path_length": 2.8333,
+          "eval_cognitive_complexity": 2.8333,
+          "eval_fit_time_s": 1.246
+        }
+      ]
+    }
+  ]
+}
